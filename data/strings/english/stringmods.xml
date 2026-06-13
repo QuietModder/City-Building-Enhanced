@@ -32,13 +32,31 @@
             <string _locid="990050">Weapons Training</string>
             <string _locid="990051">Conscripts and Volunteers attack 15% faster.</string>
 
+            <string _locid="990060">Close Quarters</string>
+            <string _locid="990061">Ranged Infantry gain +4 Hand Attack. Hand Infantry gain +8 Hand Attack.</string>
+
             <string _locid="990120">Veteran Conscripts</string>
             <string _locid="990121">Upgrades Conscripts to Veteran status.</string>
+
+            <string _locid="990122">Guard Conscripts</string>
+            <string _locid="990123">Upgrades Conscripts to Guard status.</string>
+
+            <string _locid="990124">Imperial Conscripts</string>
+            <string _locid="990125">Upgrades Conscripts to Imperial status.</string>
+
             <string _locid="990130">National Guard</string>
 
             <string _locid="990126">Imperial Volunteers</string>
             <string _locid="990127">Upgrades Volunteers to Imperial status.</string>
 
+            <string _locid="990070">Crack Shots</string>
+            <string _locid="990071">Musketeer-type infantry gain +1.0 ranged damage multiplier against cavalry. Ranged infantry gain +2 range.</string>
+
+            <string _locid="990080">Sword to a Gun Fight</string>
+            <string _locid="990081">Hand Infantry move 1.0 faster and gain +1.0 damage multiplier against Light Infantry.</string>
+
+            <string _locid="990090">Hold the Line</string>
+            <string _locid="990091">Musket infantry gain +4 range while in Stand Ground stance.</string>
         </language>
     </stringtable>
 </stringmods>

@@ -15,7 +15,7 @@
         <displaynameid>122052</displaynameid>
         <editornameid>122053</editornameid>
 
-        <populationcount>0</populationcount>
+        <populationcount>1</populationcount>
         <obstructionradiusx>0.4900</obstructionradiusx>
         <obstructionradiusz>0.4900</obstructionradiusz>
 
@@ -38,7 +38,7 @@
 
         <unitaitype>Civilian</unitaitype>
         <trainpoints>10.0000</trainpoints>
-        <buildlimit>2</buildlimit>
+        <buildlimit>5</buildlimit>
         <allowedage>0</allowedage>
 
         <cost resourcetype="Food">50.0000</cost>
@@ -124,7 +124,6 @@
         <rollovertextid>990021</rollovertextid>
         <shortrollovertextid>990022</shortrollovertextid>
 
-
         <populationcount>1</populationcount>
         <obstructionradiusx>0.4900</obstructionradiusx>
         <obstructionradiusz>0.4900</obstructionradiusz>
@@ -179,6 +178,7 @@
         <flag>CorpseDecays</flag>
         <flag>ShowGarrisonButton</flag>
         <flag>Tracked</flag>
+        <flag>UseTacticArmorOverride</flag>
 
         <command page="10" column="1">Stop</command>
         <command page="10" column="0">Garrison</command>
@@ -222,7 +222,7 @@
 
         <protoaction>
             <name>DefendHandAttack</name>
-            <damage>6.000000</damage>
+            <damage>12.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>1.500000</rof>
             <damagebonus type="AbstractCavalry">1.500000</damagebonus>
@@ -240,7 +240,7 @@
 
         <protoaction>
             <name>MeleeHandAttack</name>
-            <damage>6.000000</damage>
+            <damage>12.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>1.500000</rof>
             <damagebonus type="AbstractCavalry">1.500000</damagebonus>

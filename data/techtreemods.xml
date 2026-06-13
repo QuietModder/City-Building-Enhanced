@@ -39,6 +39,7 @@
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
 
+
         <cost resourcetype="Food">300.0000</cost>
         <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
@@ -63,10 +64,28 @@
                 <target type="ProtoUnit">AbstractInfantry</target>
             </effect>
 
-
             <!-- Focus Unlocks  -->
             <effect type="TechStatus" status="obtainable">ModConscription</effect>
             <effect type="CommandAdd" tech="ModConscription" page="2" column="0">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">ModCloseQuarters</effect>
+            <effect type="CommandAdd" tech="ModCloseQuarters" page="2" column="1">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">ModCrackShots</effect>
+            <effect type="CommandAdd" tech="ModCrackShots" page="2" column="2">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">ModSwordToAGunFight</effect>
+            <effect type="CommandAdd" tech="ModSwordToAGunFight" page="2" column="3">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">ModHoldTheLine</effect>
+            <effect type="CommandAdd" tech="ModHoldTheLine" page="2" column="4">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
 
@@ -127,6 +146,7 @@
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
 
+
         <cost resourcetype="Food">300.0000</cost>
         <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
@@ -159,7 +179,7 @@
         <rollovertextid>990041</rollovertextid>
         <researchpoints>40.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Conscripts_companies.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Conscripts_Companies.png</icon>
 
         <allowedage>1</allowedage>
         <cost resourcetype="Food">100.0000</cost>
@@ -393,6 +413,11 @@
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
 
+            <effect type="Data" action="StandGroundRangedAttack" amount="0.85" subtype="RateOfFire"
+                relativity="BasePercent">
+                <target type="ProtoUnit">ModConscript</target>
+            </effect>
+
             <!-- Conscript hand attack speed -->
             <effect type="Data" action="DefendHandAttack" amount="0.85" subtype="RateOfFire"
                 relativity="BasePercent">
@@ -414,6 +439,11 @@
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
 
+            <effect type="Data" action="StandGroundHandAttack" amount="0.85" subtype="RateOfFire"
+                relativity="BasePercent">
+                <target type="ProtoUnit">ModConscript</target>
+            </effect>
+
 
             <!-- Volunteer ranged attack speed -->
             <effect type="Data" action="DefendRangedAttack" amount="0.85" subtype="RateOfFire"
@@ -427,6 +457,11 @@
             </effect>
 
             <effect type="Data" action="VolleyRangedAttack" amount="0.85" subtype="RateOfFire"
+                relativity="BasePercent">
+                <target type="ProtoUnit">deSPCUSVolunteer</target>
+            </effect>
+
+            <effect type="Data" action="StandGroundRangedAttack" amount="0.85" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">deSPCUSVolunteer</target>
             </effect>
@@ -452,10 +487,270 @@
                 <target type="ProtoUnit">deSPCUSVolunteer</target>
             </effect>
 
+            <effect type="Data" action="StandGroundHandAttack" amount="0.85" subtype="RateOfFire"
+                relativity="BasePercent">
+                <target type="ProtoUnit">deSPCUSVolunteer</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModWeaponsTraining">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
 
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModCloseQuarters" type="Normal">
+        <dbid>90106</dbid>
+
+        <displaynameid>990060</displaynameid>
+        <rollovertextid>990061</rollovertextid>
+
+        <researchpoints>45.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+
+        <icon>resources\images\icons\techs\Squared Icons\Close_Quarters.png</icon>
+
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">100.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+
+        <effects>
+
+            <!-- Ranged Infantry hand attacks -->
+            <effect type="Data" amount="4.00" subtype="Damage" action="MeleeHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" amount="4.00" subtype="Damage" action="DefendHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" amount="4.00" subtype="Damage" action="StaggerHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" amount="4.00" subtype="Damage" action="VolleyHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" amount="4.00" subtype="Damage" action="StandGroundHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+
+            <!-- Hand Infantry hand attacks -->
+            <effect type="Data" amount="8.00" subtype="Damage" action="MeleeHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+            <effect type="Data" amount="8.00" subtype="Damage" action="DefendHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+            <effect type="Data" amount="8.00" subtype="Damage" action="StaggerHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+            <effect type="Data" amount="8.00" subtype="Damage" action="VolleyHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+            <effect type="Data" amount="8.00" subtype="Damage" action="StandGroundHandAttack"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="ModCloseQuarters">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModCrackShots" type="Normal">
+        <dbid>90107</dbid>
+        <displaynameid>990070</displaynameid>
+        <rollovertextid>990071</rollovertextid>
+        <researchpoints>45.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\Crack_Shots.png</icon>
+
+        <Prereqs>
+            <techstatus status="Active">Fortressize</techstatus>
+        </Prereqs>
+
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
+
+        <effects>
+            <!-- Musketeer-type ranged damage bonus vs cavalry -->
+            <effect type="Data" action="DefendRangedAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractCavalry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+            <effect type="Data" action="StaggerRangedAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractCavalry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+            <effect type="Data" action="VolleyRangedAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractCavalry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+            <effect type="Data" action="StandGroundRangedAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractCavalry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+            <!-- All ranged infantry gain +2 range generally, not only vs cavalry -->
+            <effect type="Data" action="DefendRangedAttack" amount="2.00" subtype="MaximumRange"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+
+            <effect type="Data" action="StaggerRangedAttack" amount="2.00" subtype="MaximumRange"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+
+            <effect type="Data" action="VolleyRangedAttack" amount="2.00" subtype="MaximumRange"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+
+            <effect type="Data" action="StandGroundRangedAttack" amount="2.00"
+                subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="ModCrackShots">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModSwordToAGunFight" type="Normal">
+        <dbid>90108</dbid>
+        <displaynameid>990080</displaynameid>
+        <rollovertextid>990081</rollovertextid>
+        <researchpoints>45.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\Sword_To_A_Gun_Fight.png</icon>
+
+        <Prereqs>
+            <techstatus status="Active">Fortressize</techstatus>
+        </Prereqs>
+
+        <cost resourcetype="Wood">400.0000</cost>
+        <cost resourcetype="Gold">400.0000</cost>
+
+        <effects>
+            <!-- Hand Infantry +1 movement speed -->
+            <effect type="Data" amount="1.00" subtype="Speed" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+
+            <!-- Hand Infantry hand damage bonus vs Light Infantry -->
+            <effect type="Data" action="MeleeHandAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractLightInfantry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+
+            <effect type="Data" action="DefendHandAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractLightInfantry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+
+            <effect type="Data" action="StaggerHandAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractLightInfantry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+
+            <effect type="Data" action="VolleyHandAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractLightInfantry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+
+            <effect type="Data" action="StandGroundHandAttack" amount="1.00" subtype="DamageBonus"
+                unittype="AbstractLightInfantry" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHandInfantry</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="ModSwordToAGunFight">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModHoldTheLine" type="Normal">
+        <dbid>90109</dbid>
+        <displaynameid>990090</displaynameid>
+        <rollovertextid>990091</rollovertextid>
+        <researchpoints>45.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\Hold_The_Line.png</icon>
+
+        <Prereqs>
+            <techstatus status="Active">Fortressize</techstatus>
+        </Prereqs>
+
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+
+        <effects>
+            <effect type="Data" action="DefendRangedAttack" amount="4.00"
+                subtype="MaximumRange"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+            <effect type="Data" amount="2.00"
+                tactic="StandGround"
+                subtype="LOS"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+            <!-- <effect type="Data" amount="0.05"
+                subtype="TacticArmor" tactic="StandGround"
+                armortype="Hand" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+
+            <effect type="Data" amount="0.15"
+                subtype="TacticArmor" tactic="StandGround"
+                armortype="Ranged" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect> -->
+
+            <effect type="Data" amount="1.00"
+                subtype="ProtoUnitFlag"
+                flagid="194"
+                relativity="Assign">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+            <effect type="Data"
+                amount="0.05"
+                subtype="TacticArmor"
+                tactic="StandGround"
+                armortype="Ranged"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+
+            <effect type="Data" tactic="StandGround" amount="-0.25"
+                subtype="SpeedModifier" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMusketeer</target>
+            </effect>
+
+
+            <effect type="CommandRemove" tech="ModHoldTheLine">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
         </effects>
     </tech>
 
