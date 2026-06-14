@@ -13,7 +13,7 @@
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
 
-            <!-- Technologies  -->
+            <!-- Focus Technology Trees  -->
             <effect type="TechStatus" status="obtainable">ModInfantryFocus</effect>
             <effect type="CommandAdd" tech="ModInfantryFocus" page="0" column="0">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -39,7 +39,6 @@
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
 
-
         <cost resourcetype="Food">300.0000</cost>
         <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
@@ -64,7 +63,7 @@
                 <target type="ProtoUnit">AbstractInfantry</target>
             </effect>
 
-            <!-- Focus Unlocks  -->
+            <!-- Focus Tree Unlocks  -->
             <effect type="TechStatus" status="obtainable">ModConscription</effect>
             <effect type="CommandAdd" tech="ModConscription" page="2" column="0">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -89,7 +88,8 @@
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
 
-            <!-- Focus Blocks  -->
+            <!-- Focus Tree Blocks  -->
+            <!-- Removing to clean back up UI for its slot be used again -->
             <effect type="TechStatus" status="unobtainable">ModInfantryFocus</effect>
             <effect type="CommandRemove" tech="ModInfantryFocus">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -123,6 +123,7 @@
             </effect>
 
             <!-- Focus Blocks  -->
+            <!-- Removing to clean back up UI for its slot be used again -->
             <effect type="TechStatus" status="unobtainable">ModInfantryFocus</effect>
             <effect type="CommandRemove" tech="ModInfantryFocus">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -157,6 +158,7 @@
             </effect>
 
             <!-- Focus Blocks  -->
+            <!-- Removing to clean back up UI for its slot be used again -->
             <effect type="TechStatus" status="unobtainable">ModInfantryFocus</effect>
             <effect type="CommandRemove" tech="ModInfantryFocus">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -270,6 +272,7 @@
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
 
+            <!-- Removing to clean back up UI for its slot be used again -->
             <effect type="CommandRemove" tech="ModVeteranConscript">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
@@ -307,6 +310,7 @@
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
 
+            <!-- Removing to clean back up UI for its slot be used again -->
             <effect type="CommandRemove" tech="ModGuardConscript">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
@@ -712,19 +716,6 @@
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
 
-            <!-- <effect type="Data" amount="0.05"
-                subtype="TacticArmor" tactic="StandGround"
-                armortype="Hand" relativity="Absolute">
-                <target type="ProtoUnit">AbstractMusketeer</target>
-            </effect>
-
-
-            <effect type="Data" amount="0.15"
-                subtype="TacticArmor" tactic="StandGround"
-                armortype="Ranged" relativity="Absolute">
-                <target type="ProtoUnit">AbstractMusketeer</target>
-            </effect> -->
-
             <effect type="Data" amount="1.00"
                 subtype="ProtoUnitFlag"
                 flagid="194"
@@ -741,13 +732,12 @@
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
 
-
             <effect type="Data" tactic="StandGround" amount="-0.25"
                 subtype="SpeedModifier" relativity="Absolute">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
 
-
+            <!-- Removing to clean back up UI for its slot be used again -->
             <effect type="CommandRemove" tech="ModHoldTheLine">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
