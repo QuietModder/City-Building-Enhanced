@@ -40,6 +40,16 @@
 
             <string _locid="9902012">Architect</string>
 
+            <!-- Mounted Infantry Rider -->
+            <string _locid="9902015">Mounted Infantry</string>
+            <string _locid="9902016">Mobile mounted ranged infantry that can dismount to fight on foot.</string>
+            <string _locid="9902017">Mounted ranged infantry.</string>
+
+            <!-- Mounted Infantry Dismounted -->
+            <string _locid="9902018">Dismounted Infantry</string>
+            <string _locid="9902019">Dismounted ranged infantry effective against heavy infantry and light cavalry.</string>
+            <string _locid="9902020">Dismounted ranged infantry.</string>
+
 
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
@@ -152,7 +162,6 @@
             <!-- 9911000s - ABILITIES & SPECIAL ACTIONS                    -->
             <!-- Range: 9911000 - 9911999                                  -->
             <!-- ========================================================= -->
-
 
         </language>
     </stringtable>

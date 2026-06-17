@@ -262,6 +262,7 @@
             </effect>
         </effects>
     </tech>
+
     <tech mergeMode="add" name="ModAustrianMilitaryAdvisoryMission" type="Normal">
         <dbid>90111</dbid>
         <displaynameid>9905004</displaynameid>
@@ -282,12 +283,31 @@
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModLineInfantry</target>
             </effect>
+            <effect type="CommandAdd" proto="ModLineInfantry" page="0" column="4">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+
+            <!-- Mounted Infantry -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ModMountedInfantryRider</target>
+            </effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModMountedInfantry</target>
             </effect>
+
+            <effect type="CommandAdd" proto="ModMountedInfantryRider" page="0" column="5">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
             <!--  Infantry training XP reward +15%  -->
             <effect type="Data" amount="0.15" subtype="BuildBounty" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractInfantry</target>
+            </effect>
+
+            <!--  Remove 'this' tech to reuse its slot in the UI with incoming unlocks  -->
+            <effect type="CommandRemove" tech="ModAustrianMilitaryAdvisoryMission">
+                <target type="ProtoUnit">ModCommandPost</target>
             </effect>
         </effects>
     </tech>
