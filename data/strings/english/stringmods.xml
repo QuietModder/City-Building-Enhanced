@@ -2,61 +2,158 @@
     <stringtable>
         <language name="English">
 
-            <!-- New Buildings  -->
-            <string _locid="876543">Military Encampment</string>
-            <string _locid="876544">A military camp to help train and improve your army and
-                doctrine.</string>
-            <string _locid="876545">Military Encampment</string>
+            <!-- ========================================================= -->
+            <!-- 9900000s - NEW BUILDINGS                                  -->
+            <!-- Range: 9900000 - 9900999                                  -->
+            <!-- ========================================================= -->
 
-            <!-- Military Units  -->
+            <!-- Military Encampment -->
+            <string _locid="9900000">Military Encampment</string>
+            <string _locid="9900001">A military camp to help train and improve your army and doctrine.</string>
+            <string _locid="9900002">Military Encampment</string>
 
-            <!-- Conscripts  -->
-            <string _locid="990020">Conscript</string>
-            <string _locid="990021">Cheap infantry fresh new recruits</string>
-            <string _locid="990022">Conscript</string>
+
+            <!-- ========================================================= -->
+            <!-- 9902000s - NEW UNITS                                      -->
+            <!-- Range: 9902000 - 9902999                                  -->
+            <!-- ========================================================= -->
+
+            <!-- Conscript -->
+            <string _locid="9902000">Conscript</string>
+            <string _locid="9902001">Cheap infantry fresh new recruits.</string>
+            <string _locid="9902002">Conscript</string>
+
+            <!-- Crossbowman -->
+            <string _locid="9902003">Crossbowman</string>
+            <string _locid="9902004">Archaic ranged infantry effective against heavy infantry and light cavalry.</string>
+            <string _locid="9902005">Archaic ranged infantry.</string>
+
+            <!-- Boneguard -->
+            <string _locid="9902006">Boneguard</string>
+            <string _locid="9902007">Heavy hand infantry effective against cavalry and light infantry.</string>
+            <string _locid="9902008">Heavy hand infantry.</string>
+
+            <!-- Line Infantry -->
+            <string _locid="9902009">Line Infantry</string>
+            <string _locid="9902010">Professional heavy ranged infantry effective against cavalry and light infantry.</string>
+            <string _locid="9902011">Professional heavy infantry.</string>
+
+            <string _locid="9902012">Architect</string>
+
+
+            <!-- ========================================================= -->
+            <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
+            <!-- Range: 9903000 - 9903999                                  -->
+            <!-- Veteran, Guard, Imperial                                  -->
+            <!-- ========================================================= -->
+
+            <!-- Conscript Upgrades -->
+            <string _locid="9903000">Veteran Conscripts</string>
+            <string _locid="9903001">Upgrades Conscripts to Veteran status.</string>
+
+            <string _locid="9903002">Guard Conscripts</string>
+            <string _locid="9903003">Upgrades Conscripts to Guard status.</string>
+
+            <string _locid="9903004">Imperial Conscripts</string>
+            <string _locid="9903005">Upgrades Conscripts to Imperial status.</string>
+
+            <!-- Volunteer Upgrades -->
+            <string _locid="9903006">Imperial Volunteers</string>
+            <string _locid="9903007">Upgrades Volunteers to Imperial status.</string>
+
+
+            <!-- ========================================================= -->
+            <!-- 9904000s - MILITARY UPGRADES                              -->
+            <!-- Range: 9904000 - 9904999                                  -->
+            <!-- Focuses, military-wide doctrines, general military techs   -->
+            <!-- ========================================================= -->
 
             <!-- Military Focus -->
-            <string _locid="990030">Infantry Focus</string>
-            <string _locid="990031">Specialize your army around infantry warfare.</string>
+            <string _locid="9904000">Infantry Focus</string>
+            <string _locid="9904001">Specialize your army around infantry warfare.</string>
 
-            <string _locid="990032">Cavalry Focus</string>
-            <string _locid="990033">Specialize your army around cavalry warfare.</string>
+            <string _locid="9904002">Cavalry Focus</string>
+            <string _locid="9904003">Specialize your army around cavalry warfare.</string>
 
-            <string _locid="990034">Artillery Focus</string>
-            <string _locid="990035">Specialize your army around artillery warfare.</string>
+            <string _locid="9904004">Artillery Focus</string>
+            <string _locid="9904005">Specialize your army around artillery warfare.</string>
 
-            <!-- Infantry Focus Technologies  -->
-            <string _locid="990040">Conscription</string>
-            <string _locid="990041">Unlocks Conscripts and Volunteers. Infantry train 15% faster and cost 10% less.</string>
 
-            <string _locid="990050">Weapons Training</string>
-            <string _locid="990051">Conscripts and Volunteers attack 15% faster.</string>
+            <!-- ========================================================= -->
+            <!-- 9905000s - INFANTRY UPGRADES                              -->
+            <!-- Range: 9905000 - 9905999                                  -->
+            <!-- ========================================================= -->
 
-            <string _locid="990060">Close Quarters</string>
-            <string _locid="990061">Ranged Infantry gain +4 Hand Attack. Hand Infantry gain +8 Hand Attack.</string>
+            <!-- Infantry Unlock Technologies -->
+            <string _locid="9905000">Back to Basics</string>
+            <string _locid="9905001">Unlocks Crossbowmen and Boneguard. Archaic Infantry train 10% faster.</string>
 
-            <string _locid="990120">Veteran Conscripts</string>
-            <string _locid="990121">Upgrades Conscripts to Veteran status.</string>
+            <string _locid="9905002">Conscription</string>
+            <string _locid="9905003">Unlocks Conscripts and Volunteers. Infantry train 15% faster and cost 10% less.</string>
 
-            <string _locid="990122">Guard Conscripts</string>
-            <string _locid="990123">Upgrades Conscripts to Guard status.</string>
+            <string _locid="9905004">Austrian Military Advisory Mission</string>
+            <string _locid="9905005">Unlocks Line Infantry and Mounted Infantry. Infantry training XP reward increased by 15%.</string>
 
-            <string _locid="990124">Imperial Conscripts</string>
-            <string _locid="990125">Upgrades Conscripts to Imperial status.</string>
+            <!-- Infantry Doctrine / Combat Technologies -->
+            <string _locid="9905020">Weapons Training</string>
+            <string _locid="9905021">Conscripts and Volunteers attack 15% faster.</string>
 
-            <string _locid="990130">National Guard</string>
+            <string _locid="9905022">Close Quarters</string>
+            <string _locid="9905023">Ranged Infantry gain +4 Hand Attack. Hand Infantry gain +8 Hand Attack.</string>
 
-            <string _locid="990126">Imperial Volunteers</string>
-            <string _locid="990127">Upgrades Volunteers to Imperial status.</string>
+            <string _locid="9905024">Crack Shots</string>
+            <string _locid="9905025">Musketeer-type infantry gain +1.0 ranged damage multiplier against cavalry. Ranged infantry gain +2 range.</string>
 
-            <string _locid="990070">Crack Shots</string>
-            <string _locid="990071">Musketeer-type infantry gain +1.0 ranged damage multiplier against cavalry. Ranged infantry gain +2 range.</string>
+            <string _locid="9905026">Sword to a Gun Fight</string>
+            <string _locid="9905027">Hand Infantry move 1.0 faster and gain +1.0 damage multiplier against Light Infantry.</string>
 
-            <string _locid="990080">Sword to a Gun Fight</string>
-            <string _locid="990081">Hand Infantry move 1.0 faster and gain +1.0 damage multiplier against Light Infantry.</string>
+            <string _locid="9905028">Hold the Line</string>
+            <string _locid="9905029">Musket Infantry greatly increase combat prowess when in Stand Ground stance.</string>
 
-            <string _locid="990090">Hold the Line</string>
-            <string _locid="990091">Musket infantry gain +4 range while in Stand Ground stance.</string>
+            <string _locid="9905030">Professional Officer Corps</string>
+            <string _locid="9905031">Infantry line of sight increased by 4. Infantry XP bounty increased by 10%.</string>
+
+            <string _locid="9905032">Flexible Formations</string>
+            <string _locid="9905033">Infantry movement speed increased by 10% and melee attacks apply stronger snare.</string>
+
+
+            <!-- ========================================================= -->
+            <!-- 9906000s - CAVALRY UPGRADES                               -->
+            <!-- Range: 9906000 - 9906999                                  -->
+            <!-- ========================================================= -->
+
+
+            <!-- ========================================================= -->
+            <!-- 9907000s - ARTILLERY UPGRADES                             -->
+            <!-- Range: 9907000 - 9907999                                  -->
+            <!-- ========================================================= -->
+
+
+            <!-- ========================================================= -->
+            <!-- 9908000s - NAVY UPGRADES                                  -->
+            <!-- Range: 9908000 - 9908999                                  -->
+            <!-- ========================================================= -->
+
+
+            <!-- ========================================================= -->
+            <!-- 9909000s - ECONOMIC UPGRADES                              -->
+            <!-- Range: 9909000 - 9909999                                  -->
+            <!-- ========================================================= -->
+
+
+            <!-- ========================================================= -->
+            <!-- 9910000s - DEFENSE UPGRADES                               -->
+            <!-- Range: 9910000 - 9910999                                  -->
+            <!-- Walls, Forts, Outposts, and defense-adjacent techs         -->
+            <!-- ========================================================= -->
+
+
+            <!-- ========================================================= -->
+            <!-- 9911000s - ABILITIES & SPECIAL ACTIONS                    -->
+            <!-- Range: 9911000 - 9911999                                  -->
+            <!-- ========================================================= -->
+
+
         </language>
     </stringtable>
 </stringmods>
