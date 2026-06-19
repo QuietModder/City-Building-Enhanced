@@ -4,12 +4,38 @@
         <status>UNOBTAINABLE</status>
         <flag>Shadow</flag>
         <effects>
+
+            <!-- Add a flat construction surcharge to all units tagged Building -->
+            <effect type="Data" amount="100" subtype="Cost" resource="Wood" relativity="Absolute">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <effect type="Data" amount="25" subtype="Cost" resource="Gold" relativity="Absolute">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+
+            <!-- Default Unit to Start Using Mod-->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
+
+            <!-- New Buildings-->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
+            <effect type="CommandAdd" proto="ModCommandPost" page="0" column="0">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+            <effect type="CommandAdd" proto="ModBunkerMills" page="1" column="0">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+
             <!--  Focus Technology Trees   -->
             <effect type="TechStatus" status="obtainable">ModInfantryFocus</effect>
             <effect type="CommandAdd" tech="ModInfantryFocus" page="0" column="0">
@@ -23,8 +49,48 @@
             <effect type="CommandAdd" tech="ModArtilleryFocus" page="0" column="2">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
+
+            <!-- Make both route choices researchable -->
+            <effect type="TechStatus" status="obtainable">
+                ModCitadelCityPlanning
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModSprawlingCityPlanning
+            </effect>
+
+            <!-- Put both route choices onto the Bunker Mill command panel -->
+            <effect type="CommandAdd" tech="ModCitadelCityPlanning" page="0" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="CommandAdd" tech="ModSprawlingCityPlanning" page="0" column="2">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+
+            <!-- Make both route choices researchable -->
+            <effect type="TechStatus" status="obtainable">
+                ModCitadelCityPlanning
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModSprawlingCityPlanning
+            </effect>
+
+            <!-- Put both route choices onto the Bunker Mill command panel -->
+            <effect type="CommandAdd" tech="ModCitadelCityPlanning" page="0" column="0">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+            <effect type="CommandAdd" tech="ModSprawlingCityPlanning" page="0" column="2">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+
         </effects>
     </tech>
+
     <tech mergeMode="add" name="ModInfantryFocus" type="Normal">
         <dbid>90101</dbid>
         <displaynameid>9904000</displaynameid>
@@ -162,6 +228,7 @@
             </effect>
         </effects>
     </tech>
+
     <!--  Infantry Focus Unlocks  -->
     <!--  Infantry Unlock Tech -->
     <tech mergeMode="add" name="ModBackToBasics" type="Normal">
@@ -375,7 +442,7 @@
             </effect>
         </effects>
     </tech>
-    <tech mergeMode="add" name="ModImperialConscript" type="Normal">     
+    <tech mergeMode="add" name="ModImperialConscript" type="Normal">
         <dbid>90122</dbid>
         <displaynameid>9903004</displaynameid>
         <rollovertextid>9903005</rollovertextid>
@@ -802,6 +869,84 @@
             </effect>
         </effects>
     </tech>
+
+
+    <!-- ========================================= -->
+    <!-- City Planning Route Selection Buttons     -->
+    <!-- ========================================= -->
+
+    <tech mergeMode="add" name="ModCitadelCityPlanning" type="Normal">
+        <dbid>90130</dbid>
+        <displaynameid>9909000</displaynameid>
+        <rollovertextid>9909001</rollovertextid>
+
+        <!-- Hidden until the startup tech enables it -->
+        <status>UNOBTAINABLE</status>
+
+        <!-- Free route-selection test for now -->
+        <researchpoints>1.0000</researchpoints>
+
+        <!-- Temporary existing icon; replace later with Citadel artwork -->
+        <icon>resources\images\icons\techs\Tall Icons\Citadel_City_Planning.png</icon>
+
+        <!-- First large DE button slot -->
+        <flag>YPUseBigButton2</flag>
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+            <!-- Permanently deny the opposite city route -->
+            <effect type="TechStatus" status="unobtainable">
+                ModSprawlingCityPlanning
+            </effect>
+
+            <!-- Remove both selection buttons after a route is chosen -->
+            <effect type="CommandRemove" tech="ModCitadelCityPlanning">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+            <effect type="CommandRemove" tech="ModSprawlingCityPlanning">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+
+    <tech mergeMode="add" name="ModSprawlingCityPlanning" type="Normal">
+        <dbid>90131</dbid>
+        <displaynameid>9909002</displaynameid>
+        <rollovertextid>9909003</rollovertextid>
+
+        <!-- Hidden until the startup tech enables it -->
+        <status>UNOBTAINABLE</status>
+
+        <!-- Free route-selection test for now -->
+        <researchpoints>1.0000</researchpoints>
+
+        <!-- Temporary existing icon; replace later with Sprawling artwork -->
+        <icon>resources\images\icons\techs\Tall Icons\Sprawling_City_Planning.png</icon>
+
+        <!-- Second large DE button slot -->
+        <flag>YPUseBigButton3</flag>
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+            <!-- Permanently deny the opposite city route -->
+            <effect type="TechStatus" status="unobtainable">
+                ModCitadelCityPlanning
+            </effect>
+
+            <!-- Remove both selection buttons after a route is chosen -->
+            <effect type="CommandRemove" tech="ModCitadelCityPlanning">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="ModSprawlingCityPlanning">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+        </effects>
+    </tech>
+
+
     <!--  =========================  -->
     <!--  Universal Mod Activation   -->
     <!--  =========================  -->

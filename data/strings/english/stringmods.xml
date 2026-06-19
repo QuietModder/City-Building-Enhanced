@@ -12,6 +12,11 @@
             <string _locid="9900001">A military camp to help train and improve your army and doctrine.</string>
             <string _locid="9900002">Military Encampment</string>
 
+            <!-- Bunker Mills -->
+            <string _locid="9900003">Bunker Mills</string>
+            <string _locid="9900004">A fortified mill that to help enhance economy and defend your colony</string>
+            <string _locid="9900005">Bunker Mills</string>
+
 
             <!-- ========================================================= -->
             <!-- 9902000s - NEW UNITS                                      -->
@@ -149,7 +154,11 @@
             <!-- 9909000s - ECONOMIC UPGRADES                              -->
             <!-- Range: 9909000 - 9909999                                  -->
             <!-- ========================================================= -->
+            <string _locid="9909000">Citadel City Planning</string>
+            <string _locid="9909001">Commit to a compact, fortified city. Unlocks Citadel City Planning improvements and permanently prevents Sprawling City Planning.</string>
 
+            <string _locid="9909002">Sprawling City Planning</string>
+            <string _locid="9909003">Commit to a broad, fast-growing settlement. Unlocks Sprawling City Planning improvements and permanently prevents Citadel City Planning.</string>
 
             <!-- ========================================================= -->
             <!-- 9910000s - DEFENSE UPGRADES                               -->
