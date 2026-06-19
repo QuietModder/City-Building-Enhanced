@@ -17,7 +17,7 @@
     <!-- France -->
     <Unit mergeMode="modify" name="Coureur">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.15</CostEscalation>
+        <CostEscalation>1.12</CostEscalation>
     </Unit>
 
     <!-- Germany: Settler Wagons from shipments / special sources -->
@@ -56,10 +56,6 @@
         <CostEscalation>1.20</CostEscalation>
     </Unit>
 
-
-    <unit id="294" name="TownCenter">
-        <train row="0" page="0" column="7">ModArchitect</train>
-    </unit>
     <!--  New Units   -->
     <!--  Economic Units   -->
     <!--  Architect Units   -->
@@ -87,8 +83,10 @@
         <trainpoints>10.0000</trainpoints>
         <buildlimit>5</buildlimit>
         <allowedage>0</allowedage>
+
         <cost resourcetype="Food">50.0000</cost>
         <armor type="Ranged" value="0.1000"> </armor>
+
         <unittype>Unit</unittype>
         <unittype>UnitClass</unittype>
         <unittype>Economic</unittype>
@@ -101,15 +99,18 @@
         <unittype>LogicalTypeAffectedByTownBell</unittype>
         <unittype>LogicalTypeLandEconomy</unittype>
         <unittype>AffectedByTownBell</unittype>
-        <unittype>CountsTowardBuildLimit</unittype>
         <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
         <unittype>LogicalTypeVillagersAttack</unittype>
         <unittype>LogicalTypeHandUnitsAttack</unittype>
+
         <carrycapacity resourcetype="Wood">1.0000</carrycapacity>
+
         <flag>CollidesWithProjectiles</flag>
         <flag>ApplyHandicapTraining</flag>
         <flag>CorpseDecays</flag>
         <flag>ShowGarrisonButton</flag>
+        <flag>Tracked</flag>
+
         <command page="10" column="0">Garrison</command>
         <command page="10" column="1">Stop</command>
         <command page="10" column="7">Delete</command>
@@ -125,7 +126,7 @@
             <damage>5.000000</damage>
             <damagetype>Siege</damagetype>
             <rof>3.000000</rof>
-        </protoaction>
+        </protoaction>  
         <protoaction>
             <name>ChopAttack</name>
             <damage>8.000000</damage>

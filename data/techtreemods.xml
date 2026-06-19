@@ -1,4 +1,132 @@
 <techtreemods>
+    <!-- ========================================================= -->
+    <!-- AGE I -> AGE II                                           -->
+    <!-- ========================================================= -->
+
+    <tech name="AAStandardStartingTechs" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+                resource="Food" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="10.00" subtype="ResearchPoints"
+                relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="AANativeStartingTechs" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+                resource="Food" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="10.00" subtype="ResearchPoints"
+                relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAAAfricanStandardStartingTechs" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+                resource="Food" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="10.00" subtype="ResearchPoints"
+                relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="YPAAAsianStartingTechs" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+                resource="Food" relativity="Absolute">
+                <target type="ProtoUnit">AbstractWonder</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="10.00" subtype="BuildPoints"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractWonder</target>
+            </effect>
+        </effects>
+    </tech>
+
+
+    <!-- ========================================================= -->
+    <!-- AGE II -> AGE III                                         -->
+    <!-- ========================================================= -->
+
+    <tech name="Colonialize" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="1000.00" subtype="Cost"
+                resource="Food" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="1000.00" subtype="Cost"
+                resource="Gold" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="45.00" subtype="ResearchPoints"
+                relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+        </effects>
+    </tech>
+
+
+    <!-- ========================================================= -->
+    <!-- AGE III -> AGE IV                                         -->
+    <!-- ========================================================= -->
+
+    <tech name="Fortressize" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="2800.00" subtype="Cost"
+                resource="Food" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="2800.00" subtype="Cost"
+                resource="Gold" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="35.00" subtype="ResearchPoints"
+                relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+        </effects>
+    </tech>
+
+
+    <!-- ========================================================= -->
+    <!-- AGE IV -> AGE V                                           -->
+    <!-- ========================================================= -->
+
+    <tech name="Industrialize" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="4000.00" subtype="Cost"
+                resource="Food" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+
+            <effect mergeMode="add" type="Data" amount="4000.00" subtype="Cost"
+                resource="Gold" relativity="Absolute">
+                <target type="techWithFlag">AgeUpgrade</target>
+            </effect>
+        </effects>
+    </tech>
+
+
     <tech mergeMode="add" name="CityBuildingEnhancedEnable" type="Normal">
         <dbid>90100</dbid>
         <status>UNOBTAINABLE</status>
@@ -19,6 +147,12 @@
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
+
+            <!-- Add Architect train button to Town Center -->
+            <effect type="CommandAdd" proto="ModArchitect" page="0" column="3">
+                <target type="ProtoUnit">TownCenter</target>
+            </effect>
+
 
             <!-- New Buildings-->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
@@ -77,16 +211,6 @@
             <effect type="TechStatus" status="obtainable">
                 ModSprawlingCityPlanning
             </effect>
-
-            <!-- Put both route choices onto the Bunker Mill command panel -->
-            <effect type="CommandAdd" tech="ModCitadelCityPlanning" page="0" column="0">
-                <target type="ProtoUnit">ModCommandPost</target>
-            </effect>
-
-            <effect type="CommandAdd" tech="ModSprawlingCityPlanning" page="0" column="2">
-                <target type="ProtoUnit">ModCommandPost</target>
-            </effect>
-
 
         </effects>
     </tech>
@@ -950,112 +1074,141 @@
     <!--  =========================  -->
     <!--  Universal Mod Activation   -->
     <!--  =========================  -->
+
+    <!-- European civilizations -->
     <tech name="Age0British" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
+
     <tech name="Age0French" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
+
     <tech name="Age0Spanish" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
+
     <tech name="Age0Portuguese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
+
     <tech name="Age0Dutch" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Germans" type="Normal">
+
+    <tech name="Age0German" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Russians" type="Normal">
+
+    <tech name="Age0Russian" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Ottomans" type="Normal">
+
+    <tech name="Age0Ottoman" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Chinese" type="Normal">
+
+
+    <!-- Asian civilizations -->
+    <tech name="YPAge0Chinese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Japanese" type="Normal">
+
+    <tech name="YPAge0Japanese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Indians" type="Normal">
+
+    <tech name="YPAge0Indians" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
+
+
+    <!-- Native American civilizations -->
     <tech name="Age0Lakota" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
+
     <tech name="Age0Haudenosaunee" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
+
     <tech name="Age0Aztecs" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Inca" type="Normal">
+
+
+    <!-- Definitive Edition civilizations -->
+    <tech name="DEAge0Inca" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Swedish" type="Normal">
+
+    <tech name="DEAge0Swedish" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0UnitedStates" type="Normal">
+
+    <tech name="DEAge0Americans" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Mexicans" type="Normal">
+
+    <tech name="DEAge0Mexicans" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Hausa" type="Normal">
+
+    <tech name="DEAge0Hausa" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Ethiopians" type="Normal">
+
+    <tech name="DEAge0Ethiopian" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Maltese" type="Normal">
+
+    <tech name="DEAge0Maltese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
     </tech>
-    <tech name="Age0Italians" type="Normal">
+
+    <tech name="DEAge0Italians" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
         </effects>
