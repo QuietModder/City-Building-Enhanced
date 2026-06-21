@@ -144,6 +144,15 @@
                 <target type="ProtoUnit">Building</target>
             </effect>
 
+            <!-- Global line-of-sight reduction -->
+            <effect type="Data" amount="0.25" subtype="LOS" relativity="BasePercent">
+                <target type="ProtoUnit">Unit</target>
+            </effect>
+
+            <effect type="Data" amount="0.25" subtype="LOS" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
 
             <!-- Default Unit to Start Using Mod-->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
@@ -1047,6 +1056,15 @@
                 ModSettledFrontier
             </effect>
 
+            <!-- Unlock Defensive Works root -->
+            <effect type="TechStatus" status="obtainable">
+                ModDefensiveWorks
+            </effect>
+
+            <effect type="CommandAdd" tech="ModDefensiveWorks" page="0" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
             <effect type="CommandAdd" tech="ModSettledFrontier" page="1" column="0">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -1137,7 +1155,7 @@
                 ModFortifiedSelectiveEntry
             </effect>
 
-            <effect type="CommandAdd" tech="ModFortifiedSelectiveEntry" page="0" column="0">
+            <effect type="CommandAdd" tech="ModFortifiedSelectiveEntry" page="1" column="0">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
@@ -1204,6 +1222,836 @@
             <effect type="CommandRemove" tech="ModFortifiedSelectiveEntry">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
+
+        </effects>
+    </tech>
+
+
+    <!-- ========================================= -->
+    <!-- Citadel City Planning - Age II             -->
+    <!-- ========================================= -->
+
+    <tech mergeMode="add" name="ModAnchoredColony" type="Normal">
+        <dbid>90142</dbid>
+
+        <displaynameid>9909014</displaynameid>
+        <rollovertextid>9909015</rollovertextid>
+
+        <status>UNOBTAINABLE</status>
+
+        <researchpoints>20.0000</researchpoints>
+
+        <prereqs>
+            <techstatus status="Active">ModFortifiedSelectiveEntry</techstatus>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Gold">125.0000</cost>
+
+        <icon>resources\images\icons\techs\Squared Icons\Anchored_Colony.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <!-- +4 shared worker cap -->
+            <effect type="Data" amount="4.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Coureur Cree: 5 → 7 total -->
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">CoureurCree</target>
+            </effect>
+
+            <!-- All buildings: +10% HP -->
+            <effect type="Data" amount="1.10" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <!-- All buildings: +2 line of sight -->
+            <effect type="Data" amount="2.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <!-- Reuse this tech button slot -->
+            <effect type="CommandRemove" tech="ModAnchoredColony">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Unlock the next tech -->
+            <effect type="TechStatus" status="obtainable">
+                ModBurgeoningColony
+            </effect>
+
+            <effect type="CommandAdd" tech="ModBurgeoningColony" page="1" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModBurgeoningColony" type="Normal">
+        <dbid>90143</dbid>
+
+        <displaynameid>9909016</displaynameid>
+        <rollovertextid>9909017</rollovertextid>
+
+        <status>UNOBTAINABLE</status>
+
+        <researchpoints>20.0000</researchpoints>
+
+        <prereqs>
+            <techstatus status="Active">ModAnchoredColony</techstatus>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Gold">125.0000</cost>
+
+        <icon>resources\images\icons\techs\Squared Icons\Burgeoning_Colony.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <!-- +5 shared civilian worker cap -->
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <effect type="Data" amount="3.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">CoureurCree</target>
+            </effect>
+
+            <!-- Replace this button with the next chain tech -->
+            <effect type="CommandRemove" tech="ModBurgeoningColony">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Unlock Age III continuation -->
+            <effect type="TechStatus" status="obtainable">
+                ModCitadelMetropolitan
+            </effect>
+
+            <effect type="CommandAdd" tech="ModCitadelMetropolitan" page="1" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- ========================================= -->
+    <!-- Citadel City Planning - Age III Capstone  -->
+    <!-- ========================================= -->
+
+    <tech mergeMode="add" name="ModCitadelMetropolitan" type="Normal">
+        <dbid>90144</dbid>
+
+        <displaynameid>9909018</displaynameid>
+        <rollovertextid>9909019</rollovertextid>
+
+        <status>UNOBTAINABLE</status>
+
+        <researchpoints>45.0000</researchpoints>
+
+        <prereqs>
+            <techstatus status="Active">ModBurgeoningColony</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <cost resourcetype="Food">500.0000</cost>
+        <cost resourcetype="Wood">500.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
+
+        <icon>resources\images\icons\techs\Squared Icons\Citadel_Metropolitan.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <!-- +25 shared worker cap -->
+            <effect type="Data" amount="25.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- +10 Coureur Cree worker cap -->
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">CoureurCree</target>
+            </effect>
+
+            <!-- Buildings +15% Health -->
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <!-- Buildings +2 LOS -->
+            <effect type="Data" amount="2.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <!-- Workers gather +15% from artificial resources -->
+            <effect type="Data" action="Gather" amount="1.15"
+                subtype="WorkRate" unittype="Farm"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data" action="Gather" amount="1.15"
+                subtype="WorkRate" unittype="Mill"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data" action="Gather" amount="1.15"
+                subtype="WorkRate" unittype="Plantation"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Settlers train 15% faster -->
+            <effect type="Data" amount="0.85" subtype="TrainPoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Settlers cost 40% less Food -->
+            <effect type="Data" amount="0.60" subtype="Cost"
+                resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="ModCitadelMetropolitan">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- ========================================================= -->
+            <!-- DEFENSIVE WORKS ROOT                                      -->
+            <!-- ========================================================= -->
+
+            <tech mergeMode="add" name="ModDefensiveWorks" type="Normal">
+                <dbid>90145</dbid>
+
+                <displaynameid>9910000</displaynameid>
+                <rollovertextid>9910001</rollovertextid>
+
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <effects>
+
+                    <!-- Replace root button with branch starters -->
+                    <effect type="CommandRemove" tech="ModDefensiveWorks">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <!-- Existing Settled Frontier branch -->
+                    <effect type="TechStatus" status="obtainable">
+                        ModSettledFrontier
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModSettledFrontier" page="1" column="0">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <!-- Secure the Waste branch -->
+                    <effect type="TechStatus" status="obtainable">
+                        ModSecureTheWaste
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModSecureTheWaste" page="1" column="1">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <!-- Perimeter Fortifications branch -->
+                    <effect type="TechStatus" status="obtainable">
+                        ModPerimeterFortifications
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModPerimeterFortifications" page="1" column="3">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <!-- Garrison Experience branch -->
+                    <effect type="TechStatus" status="obtainable">
+                        ModGarrisonExperience
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModGarrisonExperience" page="1" column="4">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <!-- Observation branch -->
+                    <effect type="TechStatus" status="obtainable">
+                        ModSurveyedApproaches
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModSurveyedApproaches" page="1" column="5">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+
+            <!-- ========================================================= -->
+            <!-- BRANCH 2: SECURE THE WASTE                                -->
+            <!-- Page 1 / Column 1                                         -->
+            <!-- ========================================================= -->
+
+            <tech mergeMode="add" name="ModSecureTheWaste" type="Normal">
+                <dbid>90146</dbid>
+                <displaynameid>9910002</displaynameid>
+                <rollovertextid>9910003</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModSecureTheWaste">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModColonialWorks
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModColonialWorks" page="1" column="1">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <!-- Allows the economic side branch to appear. -->
+                    <effect type="TechStatus" status="obtainable">
+                        ModClearingTheHinterlands
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModClearingTheHinterlands" page="1" column="2">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModColonialWorks" type="Normal">
+                <dbid>90147</dbid>
+                <displaynameid>9910004</displaynameid>
+                <rollovertextid>9910005</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModSecureTheWaste</techstatus>
+                    <techstatus status="Active">Colonialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModColonialWorks">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModFortifiedPlanning
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModFortifiedPlanning" page="1" column="1">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModFortifiedPlanning" type="Normal">
+                <dbid>90148</dbid>
+                <displaynameid>9910006</displaynameid>
+                <rollovertextid>9910007</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModColonialWorks</techstatus>
+                    <techstatus status="Active">Colonialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModFortifiedPlanning">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModDistrictDefenses
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModDistrictDefenses" page="1" column="1">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModDistrictDefenses" type="Normal">
+                <dbid>90149</dbid>
+                <displaynameid>9910008</displaynameid>
+                <rollovertextid>9910009</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModFortifiedPlanning</techstatus>
+                    <techstatus status="Active">Fortressize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModDistrictDefenses">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+
+            <!-- ========================================================= -->
+            <!-- BRANCH 3: HINTERLAND ECONOMY                              -->
+            <!-- Page 1 / Column 2                                         -->
+            <!-- ========================================================= -->
+
+            <tech mergeMode="add" name="ModClearingTheHinterlands" type="Normal">
+                <dbid>90150</dbid>
+                <displaynameid>9909024</displaynameid>
+                <rollovertextid>9909025</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModSecureTheWaste</techstatus>
+                    <techstatus status="Active">ModPerimeterFortifications</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModClearingTheHinterlands">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModWallWardClearance
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModWallWardClearance" page="1" column="2">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModWallWardClearance" type="Normal">
+                <dbid>90151</dbid>
+                <displaynameid>9909026</displaynameid>
+                <rollovertextid>9909027</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModClearingTheHinterlands</techstatus>
+                    <techstatus status="Active">Colonialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModWallWardClearance">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModTimberRequisition
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModTimberRequisition" page="1" column="2">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModTimberRequisition" type="Normal">
+                <dbid>90152</dbid>
+                <displaynameid>9909028</displaynameid>
+                <rollovertextid>9909029</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModWallWardClearance</techstatus>
+                    <techstatus status="Active">Fortressize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModTimberRequisition">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModTimberStockpiles
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModTimberStockpiles" page="1" column="2">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModTimberStockpiles" type="Normal">
+                <dbid>90153</dbid>
+                <displaynameid>9909030</displaynameid>
+                <rollovertextid>9909031</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModTimberRequisition</techstatus>
+                    <techstatus status="Active">Fortressize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModTimberStockpiles">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+
+            <!-- ========================================================= -->
+            <!-- BRANCH 4: PERIMETER FORTIFICATIONS                        -->
+            <!-- Page 1 / Column 3                                         -->
+            <!-- ========================================================= -->
+
+            <tech mergeMode="add" name="ModPerimeterFortifications" type="Normal">
+                <dbid>90154</dbid>
+                <displaynameid>9910010</displaynameid>
+                <rollovertextid>9910011</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModPerimeterFortifications">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModEarthBackedRampart
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModEarthBackedRampart" page="1" column="3">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModEarthBackedRampart" type="Normal">
+                <dbid>90155</dbid>
+                <displaynameid>9910012</displaynameid>
+                <rollovertextid>9910013</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModPerimeterFortifications</techstatus>
+                    <techstatus status="Active">Colonialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModEarthBackedRampart">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModBastionRampart
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModBastionRampart" page="1" column="3">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModBastionRampart" type="Normal">
+                <dbid>90156</dbid>
+                <displaynameid>9910014</displaynameid>
+                <rollovertextid>9910015</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModEarthBackedRampart</techstatus>
+                    <techstatus status="Active">Fortressize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModBastionRampart">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModArmoredShell
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModArmoredShell" page="1" column="3">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModArmoredShell" type="Normal">
+                <dbid>90157</dbid>
+                <displaynameid>9910016</displaynameid>
+                <rollovertextid>9910017</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModBastionRampart</techstatus>
+                    <techstatus status="Active">Industrialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModArmoredShell">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+
+            <!-- ========================================================= -->
+            <!-- BRANCH 5: GARRISON EXPERIENCE                             -->
+            <!-- Page 1 / Column 4                                         -->
+            <!-- ========================================================= -->
+
+            <tech mergeMode="add" name="ModGarrisonExperience" type="Normal">
+                <dbid>90158</dbid>
+                <displaynameid>9910018</displaynameid>
+                <rollovertextid>9910019</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModGarrisonExperience">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModDefensiveLessons
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModDefensiveLessons" page="1" column="4">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModDefensiveLessons" type="Normal">
+                <dbid>90159</dbid>
+                <displaynameid>9910020</displaynameid>
+                <rollovertextid>9910021</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModGarrisonExperience</techstatus>
+                    <techstatus status="Active">Colonialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModDefensiveLessons">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModEstablishedFortifications
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModEstablishedFortifications" page="1" column="4">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModEstablishedFortifications" type="Normal">
+                <dbid>90160</dbid>
+                <displaynameid>9910022</displaynameid>
+                <rollovertextid>9910023</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModDefensiveLessons</techstatus>
+                    <techstatus status="Active">Fortressize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModEstablishedFortifications">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModCitadelExpansion
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModCitadelExpansion" page="1" column="4">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModCitadelExpansion" type="Normal">
+                <dbid>90161</dbid>
+                <displaynameid>9910024</displaynameid>
+                <rollovertextid>9910025</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModEstablishedFortifications</techstatus>
+                    <techstatus status="Active">Industrialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModCitadelExpansion">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+
+            <!-- ========================================================= -->
+            <!-- BRANCH 6: OBSERVATION NETWORK                             -->
+            <!-- Page 1 / Column 5                                         -->
+            <!-- ========================================================= -->
+
+            <tech mergeMode="add" name="ModSurveyedApproaches" type="Normal">
+                <dbid>90162</dbid>
+                <displaynameid>9910026</displaynameid>
+                <rollovertextid>9910027</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModSurveyedApproaches">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModSignaledNetwork
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModSignaledNetwork" page="1" column="5">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModSignaledNetwork" type="Normal">
+                <dbid>90163</dbid>
+                <displaynameid>9910028</displaynameid>
+                <rollovertextid>9910029</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModSurveyedApproaches</techstatus>
+                    <techstatus status="Active">Colonialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModSignaledNetwork">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModCharteredObservationPosts
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModCharteredObservationPosts" page="1" column="5">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModCharteredObservationPosts" type="Normal">
+                <dbid>90164</dbid>
+                <displaynameid>9910030</displaynameid>
+                <rollovertextid>9910031</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModSignaledNetwork</techstatus>
+                    <techstatus status="Active">Fortressize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModCharteredObservationPosts">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                    <effect type="TechStatus" status="obtainable">
+                        ModCitadelWatchNetwork
+                    </effect>
+
+                    <effect type="CommandAdd" tech="ModCitadelWatchNetwork" page="1" column="5">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
+
+            <tech mergeMode="add" name="ModCitadelWatchNetwork" type="Normal">
+                <dbid>90165</dbid>
+                <displaynameid>9910032</displaynameid>
+                <rollovertextid>9910033</rollovertextid>
+                <status>UNOBTAINABLE</status>
+                <researchpoints>1.0000</researchpoints>
+
+                <prereqs>
+                    <techstatus status="Active">ModCharteredObservationPosts</techstatus>
+                    <techstatus status="Active">Industrialize</techstatus>
+                </prereqs>
+
+                <effects>
+
+                    <effect type="CommandRemove" tech="ModCitadelWatchNetwork">
+                        <target type="ProtoUnit">ModBunkerMills</target>
+                    </effect>
+
+                </effects>
+            </tech>
 
         </effects>
     </tech>

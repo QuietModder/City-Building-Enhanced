@@ -166,34 +166,95 @@
 
 
             <string _locid="9909010">Settled Frontier</string>
-            <string _locid="9909011">Transitioning from a temporary expedition camp to a permanent settlement layout by mapping out foundational grid systems. Increases the Settler limit by 3.</string>
+            <string _locid="9909011">Increases the Settler limit by 3.</string>
 
             <string _locid="9909012">Fortified Selective Entry</string>
-            <string _locid="9909013">Establishing heavily guarded checkpoints and background screenings. Increases the Settler limit by 3, increases the Coureur des Bois limit by 3, and improves Settler combat damage by 10%.</string>
+            <string _locid="9909013">Increases the Settler limit by 3, Unlock Coureur Cree, and +10% Settler Damage.</string>
 
             <string _locid="9909014">Anchored Colony</string>
-            <string _locid="9909015">Having weathered the initial trials of the wilderness, the settlement secures permanent foundations. Increases the Settler limit by 4 and the Coureur des Bois limit by 2.</string>
+            <string _locid="9909015">Increases the Settler limit by 4 and the Coureur Cree limit by 3.</string>
 
             <string _locid="9909016">Burgeoning Colony</string>
-            <string _locid="9909017">Word of the colony's structural integrity spreads. A steady influx of families arrives. Increases the Settler limit by 5.</string>
+            <string _locid="9909017">Increases the Settler limit by 5 and the Coureur Cree limit by 3.</string>
 
-            <string _locid="9909018">Ascendant Outpost</string>
-            <string _locid="9909019">News of the colony's absolute safety spreads across the frontier. Increases Settler capacity, improves Settler training time, reduces Settler Food cost, and increases the Coureur des Bois limit.</string>
+            <string _locid="9909018">Citadel Metropolitan</string>
+            <string _locid="9909019">Increases Settler capacity, building health, civilian ranged resistance, and artificial-resource gather speed.</string>
 
-            <string _locid="9909020">Citadel Metropolitan</string>
-            <string _locid="9909021">Massive secure populations thrive within the safety of giant bastions. Increases Settler capacity, building health, civilian ranged resistance, and artificial-resource gather speed.</string>
+            <string _locid="9909020">Bastion Redoubt</string>
+            <string _locid="9909021"></string>
 
-            <string _locid="9909022">Bastion Redoubt</string>
-            <string _locid="9909023">Heavy underground bunkers and fallback positions expand the city's defensive capacity. Increases Population Cap and Coureur des Bois capacity while improving Outpost and Tower defenses.</string>
+            <string _locid="9909022">Intramural Sovereignty</string>
+            <string _locid="9909023"></string>
 
-            <string _locid="9909024">Intramural Sovereignty</string>
-            <string _locid="9909025">Every citizen becomes a trained auxiliary defender under total structural safety. Increases Population Cap, removes civilian population cost, and improves Town Center and Fort attack speed.</string>
+            <string _locid="9909024">Clearing the Hinterlands</string>
+            <string _locid="9909025"></string>
+
+            <string _locid="9909026">Wall Ward Clearance</string>
+            <string _locid="9909027"></string>
+
+            <string _locid="9909028">Timber Requisition</string>
+            <string _locid="9909029"></string>
+
+            <string _locid="9909030">Timber Stockpiles</string>
+            <string _locid="9909031"></string>
+
+
             <!-- ========================================================= -->
             <!-- 9910000s - DEFENSE UPGRADES                               -->
             <!-- Range: 9910000 - 9910999                                  -->
             <!-- Walls, Forts, Outposts, and defense-adjacent techs         -->
             <!-- ========================================================= -->
 
+            <string _locid="9910000">Defensive Works</string>
+            <string _locid="9910001"></string>
+
+            <string _locid="9910002">Secure the Waste</string>
+            <string _locid="9910003"></string>
+
+            <string _locid="9910004">Colonial Works</string>
+            <string _locid="9910005"></string>
+
+            <string _locid="9910006">Fortified Planning</string>
+            <string _locid="9910007"></string>
+
+            <string _locid="9910008">District Defenses</string>
+            <string _locid="9910009"></string>
+
+            <string _locid="9910010">Perimeter Fortifications</string>
+            <string _locid="9910011"></string>
+
+            <string _locid="9910012">Earth-Backed Rampart</string>
+            <string _locid="9910013"></string>
+
+            <string _locid="9910014">Bastion Rampart</string>
+            <string _locid="9910015"></string>
+
+            <string _locid="9910016">Armored Shell</string>
+            <string _locid="9910017"></string>
+
+            <string _locid="9910018">Garrison Experience</string>
+            <string _locid="9910019"></string>
+
+            <string _locid="9910020">Defensive Lessons</string>
+            <string _locid="9910021"></string>
+
+            <string _locid="9910022">Established Fortifications</string>
+            <string _locid="9910023"></string>
+
+            <string _locid="9910024">Citadel Expansion</string>
+            <string _locid="9910025"></string>
+
+            <string _locid="9910026">Surveyed Approaches</string>
+            <string _locid="9910027"></string>
+
+            <string _locid="9910028">Signaled Network</string>
+            <string _locid="9910029"></string>
+
+            <string _locid="9910030">Chartered Observation Posts</string>
+            <string _locid="9910031"></string>
+
+            <string _locid="9910032">Citadel Watch Network</string>
+            <string _locid="9910033"></string>
 
             <!-- ========================================================= -->
             <!-- 9911000s - ABILITIES & SPECIAL ACTIONS                    -->

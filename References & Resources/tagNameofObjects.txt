@@ -193,3 +193,12 @@ This progression is intended to complement:
 * Conscription upgrades
 * Expanded unit rosters
 * Longer, more strategic matches
+
+
+| Tech                                                      | Age requirement                       |                   Cost | Main effect                                                                                                                   |
+| --------------------------------------------------------- | ------------------------------------- | ---------------------: | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Wooden Fortified Walls** (`woodenfortifiedwalls`)       | Colonial Age                          |     400 Wood, 250 Gold | Wall HP ×1.34, wall segments cost 8 Wood, walls build ×1.30 slower, enables Wall Connector ranged attack and gives it 19 LOS. |
+| **Stone Walls** (`stonewall`)                             | Fortress Age + Wooden Fortified Walls |     400 Wood, 600 Gold | Wall HP ×1.66, wall segments cost 10 Wood, disables the Wall Connector ranged attack, walls build ×1.50 slower.               |
+| **Stone Fortified Walls** (`StoneFortifiedWalls`)         | Industrial Age + Stone Walls          |   900 Wood, 1,400 Gold | Wall HP ×2.00, wall segments cost 14 Wood, walls build ×1.45 slower.                                                          |
+| **Strengthen Fortifications** (`Strengthenfortification`) | Requires Stone Fortified Walls        | 1,400 Wood, 1,600 Gold | Wall HP ×3.00, walls build ×1.50 slower.                                                                                      |
+
