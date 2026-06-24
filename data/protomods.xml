@@ -11,53 +11,53 @@
      Sweden, United States, Mexico, Italy, Malta, and similar civs -->
     <Unit mergeMode="modify" name="Settler">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.20</CostEscalation>
+        <CostEscalation>1.10</CostEscalation>
     </Unit>
 
     <!-- France -->
     <Unit mergeMode="modify" name="Coureur">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.12</CostEscalation>
+        <CostEscalation>1.06</CostEscalation>
     </Unit>
     <Unit mergeMode="modify" name="CoureurCree">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.12</CostEscalation>
+        <CostEscalation>1.06</CostEscalation>
     </Unit>
 
     <!-- Germany: Settler Wagons from shipments / special sources -->
     <Unit mergeMode="modify" name="SettlerWagon">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.20</CostEscalation>
+        <CostEscalation>1.10</CostEscalation>
     </Unit>
 
     <!-- Haudenosaunee, Lakota, Aztecs, Inca -->
     <Unit mergeMode="modify" name="SettlerNative">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.20</CostEscalation>
+        <CostEscalation>1.10</CostEscalation>
     </Unit>
 
     <!-- China -->
     <Unit mergeMode="modify" name="ypSettlerAsian">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.20</CostEscalation>
+        <CostEscalation>1.10</CostEscalation>
     </Unit>
 
     <!-- India -->
     <Unit mergeMode="modify" name="ypSettlerIndian">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.20</CostEscalation>
+        <CostEscalation>1.10</CostEscalation>
     </Unit>
 
     <!-- Japan -->
     <Unit mergeMode="modify" name="ypSettlerJapanese">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.20</CostEscalation>
+        <CostEscalation>1.10</CostEscalation>
     </Unit>
 
     <!-- Ethiopia and Hausa -->
     <Unit mergeMode="modify" name="deSettlerAfrican">
         <BuildLimit>10</BuildLimit>
-        <CostEscalation>1.20</CostEscalation>
+        <CostEscalation>1.10</CostEscalation>
     </Unit>
 
     <!--  New Units   -->
@@ -85,11 +85,13 @@
         <los>14.0000</los>
         <unitaitype>Civilian</unitaitype>
         <trainpoints>10.0000</trainpoints>
-        <buildlimit>5</buildlimit>
+        <buildlimit>1</buildlimit>
         <allowedage>0</allowedage>
+        
 
         <cost resourcetype="Food">50.0000</cost>
         <armor type="Ranged" value="0.1000"> </armor>
+        <CostEscalation>1.20</CostEscalation>
 
         <unittype>Unit</unittype>
         <unittype>UnitClass</unittype>
@@ -1192,7 +1194,7 @@
         <cost resourcetype="Wood">250.0000</cost>
         <cost resourcetype="Gold">400.0000</cost>
 
-        <allowedage>1</allowedage>
+        <allowedage>0</allowedage>
 
         <unittype>CountsTowardEconomicScore</unittype>
         <unittype>LogicalTypeMinimapFilterEconomic</unittype>

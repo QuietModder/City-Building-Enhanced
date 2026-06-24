@@ -168,7 +168,7 @@
             <string _locid="9909010">Settled Frontier</string>
             <string _locid="9909011">Increases the Settler limit by 3.</string>
 
-            <string _locid="9909012">Fortified Selective Entry</string>
+            <string _locid="9909012">Fortified Town</string>
             <string _locid="9909013">Increases the Settler limit by 3, Unlock Coureur Cree, and +10% Settler Damage.</string>
 
             <string _locid="9909014">Anchored Colony</string>
@@ -180,10 +180,10 @@
             <string _locid="9909018">Citadel Metropolitan</string>
             <string _locid="9909019">Increases Settler capacity, building health, civilian ranged resistance, and artificial-resource gather speed.</string>
 
-            <string _locid="9909020">Bastion Redoubt</string>
+            <string _locid="9909020">The Ironbound City</string>
             <string _locid="9909021"></string>
 
-            <string _locid="9909022">Intramural Sovereignty</string>
+            <string _locid="9909022">Infalible Sovereignty</string>
             <string _locid="9909023"></string>
 
             <string _locid="9909024">Clearing the Hinterlands</string>

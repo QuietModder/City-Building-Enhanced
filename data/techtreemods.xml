@@ -5,7 +5,7 @@
 
     <tech name="AAStandardStartingTechs" type="Normal">
         <effects>
-            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="800.00" subtype="Cost"
                 resource="Food" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
@@ -19,7 +19,7 @@
 
     <tech name="AANativeStartingTechs" type="Normal">
         <effects>
-            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="800.00" subtype="Cost"
                 resource="Food" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
@@ -33,7 +33,7 @@
 
     <tech name="DEAAAfricanStandardStartingTechs" type="Normal">
         <effects>
-            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="800.00" subtype="Cost"
                 resource="Food" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
@@ -47,7 +47,7 @@
 
     <tech name="YPAAAsianStartingTechs" type="Normal">
         <effects>
-            <effect mergeMode="add" type="Data" amount="200.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="800.00" subtype="Cost"
                 resource="Food" relativity="Absolute">
                 <target type="ProtoUnit">AbstractWonder</target>
             </effect>
@@ -66,12 +66,12 @@
 
     <tech name="Colonialize" type="Normal">
         <effects>
-            <effect mergeMode="add" type="Data" amount="1000.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="1800.00" subtype="Cost"
                 resource="Food" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
 
-            <effect mergeMode="add" type="Data" amount="1000.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="1800.00" subtype="Cost"
                 resource="Gold" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
@@ -90,12 +90,12 @@
 
     <tech name="Fortressize" type="Normal">
         <effects>
-            <effect mergeMode="add" type="Data" amount="2800.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="3800.00" subtype="Cost"
                 resource="Food" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
 
-            <effect mergeMode="add" type="Data" amount="2800.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="3800.00" subtype="Cost"
                 resource="Gold" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
@@ -114,12 +114,12 @@
 
     <tech name="Industrialize" type="Normal">
         <effects>
-            <effect mergeMode="add" type="Data" amount="4000.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="5000.00" subtype="Cost"
                 resource="Food" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
 
-            <effect mergeMode="add" type="Data" amount="4000.00" subtype="Cost"
+            <effect mergeMode="add" type="Data" amount="5000.00" subtype="Cost"
                 resource="Gold" relativity="Absolute">
                 <target type="techWithFlag">AgeUpgrade</target>
             </effect>
@@ -135,21 +135,35 @@
         <flag>Shadow</flag>
         <effects>
 
+            <effect type="Data" amount="0.75" subtype="GatherRate" relativity="BasePercent">
+                <target type="UnitType">AbstractVillager</target>
+            </effect>
+
             <!-- Add a flat construction surcharge to all units tagged Building -->
-            <effect type="Data" amount="100" subtype="Cost" resource="Wood" relativity="Absolute">
+            <effect type="Data" amount="150" subtype="Cost" resource="Wood" relativity="Absolute">
                 <target type="ProtoUnit">Building</target>
             </effect>
 
-            <effect type="Data" amount="25" subtype="Cost" resource="Gold" relativity="Absolute">
+            <effect type="Data" amount="50" subtype="Cost" resource="Gold" relativity="Absolute">
                 <target type="ProtoUnit">Building</target>
+            </effect>
+
+
+            <!-- All buildings take 100% longer to build -->
+            <effect type="Data" amount="2.00" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <!-- Cancel the doubled build time for Asian Wonders -->
+            <effect type="Data" amount="0.50" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWonder</target>
             </effect>
 
             <!-- Global line-of-sight reduction -->
-            <effect type="Data" amount="0.25" subtype="LOS" relativity="BasePercent">
+            <effect type="Data" amount="0.35" subtype="LOS" relativity="BasePercent">
                 <target type="ProtoUnit">Unit</target>
             </effect>
 
-            <effect type="Data" amount="0.25" subtype="LOS" relativity="BasePercent">
+            <effect type="Data" amount="0.35" subtype="LOS" relativity="BasePercent">
                 <target type="ProtoUnit">Building</target>
             </effect>
 
@@ -1046,6 +1060,19 @@
         <flag>CountsTowardEconomicScore</flag>
 
         <effects>
+
+            <effect type="Data" amount="0.50" subtype="Cost"
+                resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- All wall structures gain 25% HP -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+
             <!-- Permanently deny the opposite city route -->
             <effect type="TechStatus" status="unobtainable">
                 ModSprawlingCityPlanning
@@ -1054,6 +1081,13 @@
             <!-- Unlock Citadel chain technology -->
             <effect type="TechStatus" status="obtainable">
                 ModSettledFrontier
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+            <effect type="CommandAdd" proto="ModArchitect" page="0" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
             <!-- Unlock Defensive Works root -->
@@ -1145,6 +1179,17 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
+            <!-- Unlock Miner and Unit Cap -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deMiner</target>
+            </effect>
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">deMiner</target>
+            </effect>
+            <effect type="CommandAdd" proto="deMiner" page="0" column="1">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
             <!-- Remove this researched tech so its Bunker Mill slot is reused -->
             <effect type="CommandRemove" tech="ModSettledFrontier">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -1191,23 +1236,38 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
+            <!-- +1 Architect / worker cap -->
+            <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
             <!-- Unlock native Coureur des Bois -->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">CoureurCree</target>
             </effect>
-
-            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Assign">
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Assign">
                 <target type="ProtoUnit">CoureurCree</target>
             </effect>
 
             <!-- Add it to the Bunker Mills -->
-            <effect type="CommandAdd" proto="CoureurCree" page="0" column="0">
+            <effect type="CommandAdd" proto="CoureurCree" page="0" column="2">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
             <!-- +10% damage for all civilian worker types -->
             <effect type="Data" amount="1.10" subtype="Damage" allactions="1" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Increase gather rate of settlers -->
+            <effect type="Data" amount="1.10" subtype="GatherRate" relativity="BasePercent">
+                <target type="UnitType">AbstractVillager</target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="GatherRate" relativity="BasePercent">
+                <target type="UnitType">CoureurCree</target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="GatherRate" relativity="BasePercent">
+                <target type="UnitType">deMiner</target>
             </effect>
 
             <!-- Unlock Age II continuation -->
@@ -1260,7 +1320,12 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
-            <!-- Coureur Cree: 5 → 7 total -->
+            <!-- Miner: +2 limit build -->
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">deMiner</target>
+            </effect>
+
+            <!-- Coureur Cree: +2 limit build -->
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
                 <target type="ProtoUnit">CoureurCree</target>
             </effect>
@@ -1321,13 +1386,51 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
-            <effect type="Data" amount="3.00" subtype="BuildLimit" relativity="Absolute">
+            <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">deMiner</target>
+            </effect>
+
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
                 <target type="ProtoUnit">CoureurCree</target>
             </effect>
 
             <!-- Replace this button with the next chain tech -->
             <effect type="CommandRemove" tech="ModBurgeoningColony">
                 <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Standard Settlers -->
+            <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+
+            <!-- French Coureurs -->
+            <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
+                <target type="ProtoUnit">Coureur</target>
+            </effect>
+
+            <!-- Cree Coureurs -->
+            <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
+                <target type="ProtoUnit">CoureurCree</target>
+            </effect>
+
+            <!-- Japanese Settlers -->
+            <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
+                <target type="ProtoUnit">ypSettlerJapanese</target>
+            </effect>
+
+            <!-- Native  Settlers -->
+            <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
+                <target type="ProtoUnit">SettlerNative</target>
+            </effect>
+
+            <!-- Settler Wagons -->
+            <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
+                <target type="ProtoUnit">SettlerWagon</target>
             </effect>
 
             <!-- Unlock Age III continuation -->
@@ -1345,7 +1448,6 @@
     <!-- ========================================= -->
     <!-- Citadel City Planning - Age III Capstone  -->
     <!-- ========================================= -->
-
     <tech mergeMode="add" name="ModCitadelMetropolitan" type="Normal">
         <dbid>90144</dbid>
 
@@ -1371,13 +1473,13 @@
 
         <effects>
 
-            <!-- +25 shared worker cap -->
-            <effect type="Data" amount="25.00" subtype="BuildLimit" relativity="Absolute">
+            <!-- +5 shared worker cap -->
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
-            <!-- +10 Coureur Cree worker cap -->
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Absolute">
+            <!-- +4 Coureur Cree worker cap -->
+            <effect type="Data" amount="4.00" subtype="BuildLimit" relativity="Absolute">
                 <target type="ProtoUnit">CoureurCree</target>
             </effect>
 
@@ -1392,12 +1494,42 @@
             </effect>
 
             <!-- Workers gather +15% from artificial resources -->
+            <!-- Standard Plantations / Estates -->
             <effect type="Data" action="Gather" amount="1.15"
-                subtype="WorkRate" unittype="Farm"
+                subtype="WorkRate" unittype="Plantation"
                 relativity="BasePercent">
                 <target type="ProtoUnit">AbstractVillager</target>
             </effect>
 
+            <!-- Rice Paddies in Coin mode -->
+            <effect type="Data2" action="Gather" amount="1.15"
+                subtype="WorkRateSpecific" resource="Gold" unittype="ypRicePaddy"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- African Fields in Coin mode -->
+            <effect type="Data2" action="Gather" amount="1.15"
+                subtype="WorkRateSpecific" resource="Gold" unittype="deField"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Haciendas in Coin mode -->
+            <effect type="Data2" action="Gather" amount="1.15"
+                subtype="WorkRateSpecific" resource="Gold" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Hacienda automatic Coin gathering -->
+            <effect type="Data" action="AutoGatherCoin" amount="1.15"
+                subtype="WorkRate" unittype="Gold"
+                relativity="BasePercent">
+                <target type="ProtoUnit">deHacienda</target>
+            </effect>
+
+            <!-- Standard Mills and Farms -->
             <effect type="Data" action="Gather" amount="1.15"
                 subtype="WorkRate" unittype="Mill"
                 relativity="BasePercent">
@@ -1405,10 +1537,36 @@
             </effect>
 
             <effect type="Data" action="Gather" amount="1.15"
-                subtype="WorkRate" unittype="Plantation"
+                subtype="WorkRate" unittype="Farm"
                 relativity="BasePercent">
                 <target type="ProtoUnit">AbstractVillager</target>
             </effect>
+
+            <!-- Rice Paddies, Fields, and Haciendas in Food mode -->
+            <effect type="Data2" action="Gather" amount="1.15"
+                subtype="WorkRateSpecific" resource="Food" unittype="ypRicePaddy"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data2" action="Gather" amount="1.15"
+                subtype="WorkRateSpecific" resource="Food" unittype="deField"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data2" action="Gather" amount="1.15"
+                subtype="WorkRateSpecific" resource="Food" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data" action="AutoGatherFood" amount="1.15"
+                subtype="WorkRate" unittype="Food"
+                relativity="BasePercent">
+                <target type="ProtoUnit">deHacienda</target>
+            </effect>
+
 
             <!-- Settlers train 15% faster -->
             <effect type="Data" amount="0.85" subtype="TrainPoints"
@@ -1416,7 +1574,7 @@
                 <target type="ProtoUnit">AbstractVillager</target>
             </effect>
 
-            <!-- Settlers cost 40% less Food -->
+            <!-- Settlers cost 50% less Food -->
             <effect type="Data" amount="0.60" subtype="Cost"
                 resource="Food" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractVillager</target>
@@ -1426,13 +1584,69 @@
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
+            <effect type="TechStatus" status="obtainable">
+                ModIronboundCity
+            </effect>
+
+            <effect type="CommandAdd" tech="ModIronboundCity" page="1" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+
+    <!-- ========================================= -->
+    <!-- Citadel City Planning - Age IV Enhancement-->
+    <!-- ========================================= -->
+    <tech mergeMode="add" name="ModIronboundCity" type="Normal">
+        <dbid>90145</dbid>
+
+        <displaynameid>9909020</displaynameid>
+        <rollovertextid>9909021</rollovertextid>
+
+        <status>UNOBTAINABLE</status>
+
+        <researchpoints>60.0000</researchpoints>
+
+        <prereqs>
+            <techstatus status="Active">ModCitadelMetropolitan</techstatus>
+            <techstatus status="Active">Industrialize</techstatus>
+        </prereqs>
+
+        <cost resourcetype="Food">750.0000</cost>
+        <cost resourcetype="Wood">750.0000</cost>
+        <cost resourcetype="Gold">750.0000</cost>
+
+        <icon>resources\images\icons\techs\Squared Icons\Iron_Bound_City.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <!-- +10 Coureur Cree worker cap -->
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">CoureurCree</target>
+            </effect>
+
+            <effect type="Data" amount="500.00" subtype="Hitpoints" relativity="Absolute">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <effect type="Data" amount="1.10" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="ModIronboundCity">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
         </effects>
     </tech>
 
     <!-- ========================================================= -->
     <!-- DEFENSIVE WORKS ROOT                                      -->
     <!-- ========================================================= -->
-
     <tech mergeMode="add" name="ModDefensiveWorks" type="Normal">
         <dbid>90145</dbid>
 
@@ -1442,22 +1656,12 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <!-- Temporary existing icon; replace later with Citadel artwork -->
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Defensive_Works.png</icon>
 
         <effects>
 
             <!-- Replace root button with branch starters -->
             <effect type="CommandRemove" tech="ModDefensiveWorks">
-                <target type="ProtoUnit">ModBunkerMills</target>
-            </effect>
-
-            <!-- Existing Settled Frontier branch -->
-            <effect type="TechStatus" status="obtainable">
-                ModSettledFrontier
-            </effect>
-
-            <effect type="CommandAdd" tech="ModSettledFrontier" page="1" column="0">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
@@ -1467,6 +1671,15 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModSecureTheWaste" page="1" column="1">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Clearing The Hinterlands branch -->
+            <effect type="TechStatus" status="obtainable">
+                ModClearingTheHinterlands
+            </effect>
+
+            <effect type="CommandAdd" tech="ModClearingTheHinterlands" page="1" column="2">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
@@ -1513,10 +1726,27 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
-
+        <icon>resources\images\icons\techs\Squared Icons\Secure_The_Waste.png</icon>
 
         <effects>
+            <!-- Outposts cost 10% less Wood -->
+            <effect type="Data" amount="0.90" subtype="Cost"
+                resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+
+            <!-- Outposts build 15% faster -->
+            <effect type="Data" amount="0.85" subtype="BuildPoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+
+            <!-- Settlers gain +1 Line of Sight -->
+            <effect type="Data" amount="1.00" subtype="LOS"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModSecureTheWaste">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -1529,16 +1759,6 @@
             <effect type="CommandAdd" tech="ModColonialWorks" page="1" column="1">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
-
-            <!-- Allows the economic side branch to appear. -->
-            <effect type="TechStatus" status="obtainable">
-                ModClearingTheHinterlands
-            </effect>
-
-            <effect type="CommandAdd" tech="ModClearingTheHinterlands" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
-            </effect>
-
         </effects>
     </tech>
 
@@ -1549,8 +1769,26 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Colonial_Works.png</icon>
 
+        <!-- Villagers build buildings 10% faster -->
+        <effect type="Data" action="Build" amount="1.10"
+            subtype="WorkRate" unittype="Building"
+            relativity="BasePercent">
+            <target type="ProtoUnit">AbstractVillager</target>
+        </effect>
+
+        <!-- Artificial food sites gain +300 HP -->
+        <effect type="Data" amount="300.00" subtype="Hitpoints"
+            relativity="Absolute">
+            <target type="ProtoUnit">AbstractFarm</target>
+        </effect>
+
+        <!-- Standard Plantations gain +300 HP -->
+        <effect type="Data" amount="300.00" subtype="Hitpoints"
+            relativity="Absolute">
+            <target type="ProtoUnit">Plantation</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModSecureTheWaste</techstatus>
@@ -1581,8 +1819,19 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Fortified_Planning.png</icon>
 
+        <!-- Houses contribute more vision -->
+        <effect type="Data" amount="2.00" subtype="LOS"
+            relativity="Absolute">
+            <target type="ProtoUnit">House</target>
+        </effect>
+
+        <!-- Walls construct 25% faster -->
+        <effect type="Data" amount="0.75" subtype="BuildPoints"
+            relativity="BasePercent">
+            <target type="ProtoUnit">AbstractWall</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModColonialWorks</techstatus>
@@ -1613,8 +1862,19 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\District_Defenses.png</icon>
 
+        <!-- Economic buildings resist ranged damage -->
+        <effect type="Data" amount="0.15" subtype="RangedArmor"
+            relativity="Absolute">
+            <target type="ProtoUnit">Economic</target>
+        </effect>
+
+        <!-- Economic buildings resist siege damage -->
+        <effect type="Data" amount="0.20" subtype="SiegeArmor"
+            relativity="Absolute">
+            <target type="ProtoUnit">Economic</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModFortifiedPlanning</techstatus>
@@ -1643,8 +1903,26 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Clearing_The_Hinterlands.png</icon>
 
+        <!-- Villagers gather Wood from Trees 10% faster -->
+        <effect type="Data" action="Gather" amount="1.10"
+            subtype="WorkRate" unittype="Tree"
+            relativity="BasePercent">
+            <target type="ProtoUnit">AbstractVillager</target>
+        </effect>
+
+        <!-- Bunker Mills begin generating stored timber -->
+        <effect type="Data" amount="0.10" subtype="ResourceTrickle"
+            resource="Wood" relativity="Absolute">
+            <target type="ProtoUnit">ModBunkerMills</target>
+        </effect>
+
+        <!-- Settlers gain +1 LOS while expanding outward -->
+        <effect type="Data" amount="4.00" subtype="LOS"
+            relativity="Absolute">
+            <target type="ProtoUnit">AbstractVillager</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModSecureTheWaste</techstatus>
@@ -1675,7 +1953,26 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Wall_Ward_Clearance.png</icon>
+
+        <!-- Villagers gather Wood from Trees 10% faster -->
+        <effect type="Data" action="Gather" amount="1.10"
+            subtype="WorkRate" unittype="Tree"
+            relativity="BasePercent">
+            <target type="ProtoUnit">AbstractVillager</target>
+        </effect>
+
+        <!-- Wall structures cost 25% less Wood -->
+        <effect type="Data" amount="0.75" subtype="Cost"
+            resource="Wood" relativity="BasePercent">
+            <target type="ProtoUnit">AbstractWall</target>
+        </effect>
+
+        <!-- Walls build 20% faster -->
+        <effect type="Data" amount="0.80" subtype="BuildPoints"
+            relativity="BasePercent">
+            <target type="ProtoUnit">AbstractWall</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModClearingTheHinterlands</techstatus>
@@ -1706,7 +2003,13 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Timber_Requisition.png</icon>
+
+        <!-- Bunker Mills begin generating stored timber -->
+        <effect type="Data" amount="1.25" subtype="ResourceTrickle"
+            resource="Wood" relativity="Absolute">
+            <target type="ProtoUnit">ModBunkerMills</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModWallWardClearance</techstatus>
@@ -1737,7 +2040,25 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Timber_Stockpiles.png</icon>
+
+        <!-- Villagers gather Wood from Trees 15% faster -->
+        <effect type="Data" action="Gather" amount="1.15"
+            subtype="WorkRate" unittype="Tree"
+            relativity="BasePercent">
+            <target type="ProtoUnit">AbstractVillager</target>
+        </effect>
+
+        <!-- Bunker Mills timber reserves -->
+        <effect type="Data" amount="0.25" subtype="ResourceTrickle"
+            resource="Wood" relativity="Absolute">
+            <target type="ProtoUnit">ModBunkerMills</target>
+        </effect>
+
+        <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+            <target type="ProtoUnit">ModBunkerMills</target>
+        </effect>
+
 
         <prereqs>
             <techstatus status="Active">ModTimberRequisition</techstatus>
@@ -1770,6 +2091,27 @@
 
         <effects>
 
+            <!-- Walls gain another +50% Health -->
+            <effect type="Data" amount="1.50" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Walls gain +10 Line of Sight -->
+            <effect type="Data" amount="10.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Wall structures cost 15% less Wood -->
+            <effect type="Data" amount="0.75" subtype="Cost"
+                resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Walls construct 50% faster -->
+            <effect type="Data" amount="0.75" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPerimeterFortifications">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -1798,6 +2140,17 @@
             <techstatus status="Active">ModPerimeterFortifications</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
+        <!-- Walls gain another +100% Health -->
+        <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="BasePercent">
+            <target type="ProtoUnit">AbstractWall</target>
+        </effect>
+
+        <!-- Outpost-class defenses gain +1 attack range -->
+        <effect type="Data" action="BuildingAttack" amount="2.00"
+            subtype="MaximumRange" relativity="Absolute">
+            <target type="ProtoUnit">AbstractOutpost</target>
+        </effect>
 
         <effects>
 
@@ -1882,6 +2235,8 @@
         <rollovertextid>9910019</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <effects>
 
@@ -1977,6 +2332,9 @@
         </prereqs>
 
         <effects>
+            <effect type="CommandRemove" tech="ModCitadelExpansion">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModCitadelExpansion">
                 <target type="ProtoUnit">ModBunkerMills</target>
