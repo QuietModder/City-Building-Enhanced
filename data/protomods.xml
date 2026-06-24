@@ -1190,6 +1190,7 @@
         <buildpoints>45.0000</buildpoints>
         <bounty>25.0000</bounty>
         <buildbounty>25.0000</buildbounty>
+        <buildlimit>1</buildlimit>
 
         <cost resourcetype="Wood">250.0000</cost>
         <cost resourcetype="Gold">400.0000</cost>

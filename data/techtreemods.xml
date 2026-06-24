@@ -2087,11 +2087,11 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Perimeter_Fortifications.png</icon>
 
         <effects>
 
-            <!-- Walls gain another +50% Health -->
+            <!-- Walls gain +50% Health -->
             <effect type="Data" amount="1.50" subtype="Hitpoints" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
@@ -2134,22 +2134,20 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Earth_Backed_Rampart.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModPerimeterFortifications</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
 
-        <!-- Walls gain another +100% Health -->
-        <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="BasePercent">
+        <!-- Walls gain +50% Health -->
+        <effect type="Data" amount="1.50" subtype="Hitpoints" relativity="BasePercent">
             <target type="ProtoUnit">AbstractWall</target>
         </effect>
 
-        <!-- Outpost-class defenses gain +1 attack range -->
-        <effect type="Data" action="BuildingAttack" amount="2.00"
-            subtype="MaximumRange" relativity="Absolute">
-            <target type="ProtoUnit">AbstractOutpost</target>
+        <effect type="Data" amount="1000" subtype="Hitpoints" relativity="Absolute">
+            <target type="ProtoUnit">AbstractWall</target>
         </effect>
 
         <effects>
@@ -2176,7 +2174,18 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Bastion_Rampart.png</icon>
+
+        <!-- Walls gain another +100% Health -->
+        <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="BasePercent">
+            <target type="ProtoUnit">AbstractWall</target>
+        </effect>
+
+        <!-- Outpost-class defenses gain +2 attack range -->
+        <effect type="Data" action="BuildingAttack" amount="2.00"
+            subtype="MaximumRange" relativity="Absolute">
+            <target type="ProtoUnit">AbstractOutpost</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModEarthBackedRampart</techstatus>
@@ -2207,7 +2216,12 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Armored_Shell.png</icon>
+
+        <effect type="Data" amount="0.20" subtype="SiegeArmor"
+            relativity="Absolute">
+            <target type="ProtoUnit">AbstractWall</target>
+        </effect>
 
         <prereqs>
             <techstatus status="Active">ModBastionRampart</techstatus>
