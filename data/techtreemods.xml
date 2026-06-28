@@ -159,7 +159,7 @@
             </effect>
 
             <!-- Global line-of-sight reduction -->
-            <effect type="Data" amount="0.35" subtype="LOS" relativity="BasePercent">
+            <effect type="Data" amount="0.40" subtype="LOS" relativity="BasePercent">
                 <target type="ProtoUnit">Unit</target>
             </effect>
 
@@ -1061,8 +1061,9 @@
 
         <effects>
 
+            <!-- All wall structures cost 50% less -->
             <effect type="Data" amount="0.50" subtype="Cost"
-                resource="Wood" relativity="BasePercent">
+                resource="Wood" relativity="Percent">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
@@ -1398,10 +1399,6 @@
                 <target type="ProtoUnit">CoureurCree</target>
             </effect>
 
-            <!-- Replace this button with the next chain tech -->
-            <effect type="CommandRemove" tech="ModBurgeoningColony">
-                <target type="ProtoUnit">ModBunkerMills</target>
-            </effect>
 
             <!-- Standard Settlers -->
             <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
@@ -1431,6 +1428,11 @@
             <!-- Settler Wagons -->
             <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
                 <target type="ProtoUnit">SettlerWagon</target>
+            </effect>
+
+            <!-- Replace this button with the next chain tech -->
+            <effect type="CommandRemove" tech="ModBurgeoningColony">
+                <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
             <!-- Unlock Age III continuation -->
@@ -1654,11 +1656,19 @@
         <rollovertextid>9910001</rollovertextid>
 
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
+
+        <cost resourcetype="Food">50.0000</cost>
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">50.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\Defensive_Works.png</icon>
 
         <effects>
+
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
 
             <!-- Replace root button with branch starters -->
             <effect type="CommandRemove" tech="ModDefensiveWorks">
@@ -1731,13 +1741,13 @@
         <effects>
             <!-- Outposts cost 10% less Wood -->
             <effect type="Data" amount="0.90" subtype="Cost"
-                resource="Wood" relativity="BasePercent">
+                resource="Wood" relativity="Percent">
                 <target type="ProtoUnit">Outpost</target>
             </effect>
 
             <!-- Outposts build 15% faster -->
             <effect type="Data" amount="0.85" subtype="BuildPoints"
-                relativity="BasePercent">
+                relativity="Percent">
                 <target type="ProtoUnit">Outpost</target>
             </effect>
 
@@ -1771,31 +1781,31 @@
 
         <icon>resources\images\icons\techs\Squared Icons\Colonial_Works.png</icon>
 
-        <!-- Villagers build buildings 10% faster -->
-        <effect type="Data" action="Build" amount="1.10"
-            subtype="WorkRate" unittype="Building"
-            relativity="BasePercent">
-            <target type="ProtoUnit">AbstractVillager</target>
-        </effect>
-
-        <!-- Artificial food sites gain +300 HP -->
-        <effect type="Data" amount="300.00" subtype="Hitpoints"
-            relativity="Absolute">
-            <target type="ProtoUnit">AbstractFarm</target>
-        </effect>
-
-        <!-- Standard Plantations gain +300 HP -->
-        <effect type="Data" amount="300.00" subtype="Hitpoints"
-            relativity="Absolute">
-            <target type="ProtoUnit">Plantation</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModSecureTheWaste</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
 
         <effects>
+
+            <!-- Villagers build buildings 10% faster -->
+            <effect type="Data" action="Build" amount="1.10"
+                subtype="WorkRate" unittype="Building"
+                relativity="Percent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Artificial food sites gain +300 HP -->
+            <effect type="Data" amount="300.00" subtype="Hitpoints"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractFarm</target>
+            </effect>
+
+            <!-- Standard Plantations gain +300 HP -->
+            <effect type="Data" amount="300.00" subtype="Hitpoints"
+                relativity="Absolute">
+                <target type="ProtoUnit">Plantation</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModColonialWorks">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -1821,24 +1831,24 @@
 
         <icon>resources\images\icons\techs\Squared Icons\Fortified_Planning.png</icon>
 
-        <!-- Houses contribute more vision -->
-        <effect type="Data" amount="2.00" subtype="LOS"
-            relativity="Absolute">
-            <target type="ProtoUnit">House</target>
-        </effect>
-
-        <!-- Walls construct 25% faster -->
-        <effect type="Data" amount="0.75" subtype="BuildPoints"
-            relativity="BasePercent">
-            <target type="ProtoUnit">AbstractWall</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModColonialWorks</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
 
         <effects>
+
+            <!-- Houses contribute more vision -->
+            <effect type="Data" amount="2.00" subtype="LOS"
+                relativity="Absolute">
+                <target type="ProtoUnit">House</target>
+            </effect>
+
+            <!-- Walls construct 25% faster -->
+            <effect type="Data" amount="0.75" subtype="BuildPoints"
+                relativity="Percent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModFortifiedPlanning">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -1864,24 +1874,66 @@
 
         <icon>resources\images\icons\techs\Squared Icons\District_Defenses.png</icon>
 
-        <!-- Economic buildings resist ranged damage -->
-        <effect type="Data" amount="0.15" subtype="RangedArmor"
-            relativity="Absolute">
-            <target type="ProtoUnit">Economic</target>
-        </effect>
-
-        <!-- Economic buildings resist siege damage -->
-        <effect type="Data" amount="0.20" subtype="SiegeArmor"
-            relativity="Absolute">
-            <target type="ProtoUnit">Economic</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModFortifiedPlanning</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
 
         <effects>
+
+            <!-- Economic buildings gain +20% base HP -->
+            <effect type="Data" amount="1.20" subtype="Hitpoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Economic</target>
+            </effect>
+
+            <!-- Economic buildings gain +3 Line of Sight -->
+            <effect type="Data" amount="3.00" subtype="LOS"
+                relativity="Absolute">
+                <target type="ProtoUnit">Economic</target>
+            </effect>
+
+            <effect type="Data" amount="1000.00" subtype="Hitpoints"
+                relativity="Absolute">
+                <target type="ProtoUnit">TownCenter</target>
+            </effect>
+
+            <!-- Town Centers gain an autonomous cannon attack -->
+            <effect type="Data"
+                action="CannonAttack"
+                amount="1.00"
+                subtype="ActionEnable"
+                relativity="Absolute">
+                <target type="ProtoUnit">TownCenter</target>
+            </effect>
+
+            <!-- Disable the normal garrison-dependent TC attack -->
+            <effect type="Data"
+                action="RangedAttack"
+                amount="0.00"
+                subtype="ActionEnable"
+                relativity="Absolute">
+                <target type="ProtoUnit">TownCenter</target>
+            </effect>
+
+            <!-- Town Centers gain +25% autonomous cannon damage -->
+            <effect type="Data"
+                action="CannonAttack"
+                amount="1.25"
+                subtype="Damage"
+                relativity="BasePercent">
+                <target type="ProtoUnit">TownCenter</target>
+            </effect>
+
+            <!-- Town Centers gain +4 autonomous cannon range -->
+            <effect type="Data"
+                action="CannonAttack"
+                amount="4.00"
+                subtype="MaximumRange"
+                relativity="Absolute">
+                <target type="ProtoUnit">TownCenter</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModDistrictDefenses">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -1905,31 +1957,38 @@
 
         <icon>resources\images\icons\techs\Squared Icons\Clearing_The_Hinterlands.png</icon>
 
-        <!-- Villagers gather Wood from Trees 10% faster -->
-        <effect type="Data" action="Gather" amount="1.10"
-            subtype="WorkRate" unittype="Tree"
-            relativity="BasePercent">
-            <target type="ProtoUnit">AbstractVillager</target>
-        </effect>
-
-        <!-- Bunker Mills begin generating stored timber -->
-        <effect type="Data" amount="0.10" subtype="ResourceTrickle"
-            resource="Wood" relativity="Absolute">
-            <target type="ProtoUnit">ModBunkerMills</target>
-        </effect>
-
-        <!-- Settlers gain +1 LOS while expanding outward -->
-        <effect type="Data" amount="4.00" subtype="LOS"
-            relativity="Absolute">
-            <target type="ProtoUnit">AbstractVillager</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModSecureTheWaste</techstatus>
             <techstatus status="Active">ModPerimeterFortifications</techstatus>
         </prereqs>
 
         <effects>
+
+            <!-- Add Factory-style Wood production to Bunker Mills -->
+            <effect type="Data"
+                protoaction="AutoGatherWood"
+                amount="1.00"
+                subtype="ProtoActionAdd"
+                unittype="Factory"
+                relativity="Assign">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Set the new Wood production rate -->
+            <effect type="Data"
+                action="AutoGatherWood"
+                amount="1.25"
+                subtype="WorkRate"
+                unittype="Wood"
+                relativity="Override">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Settlers gain +4 LOS while expanding outward -->
+            <effect type="Data" amount="4.00" subtype="LOS"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModClearingTheHinterlands">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -1964,13 +2023,13 @@
 
         <!-- Wall structures cost 25% less Wood -->
         <effect type="Data" amount="0.75" subtype="Cost"
-            resource="Wood" relativity="BasePercent">
+            resource="Wood" relativity="Percent">
             <target type="ProtoUnit">AbstractWall</target>
         </effect>
 
-        <!-- Walls build 20% faster -->
-        <effect type="Data" amount="0.80" subtype="BuildPoints"
-            relativity="BasePercent">
+        <!-- Walls build 50% faster -->
+        <effect type="Data" amount="0.50" subtype="BuildPoints"
+            relativity="Percent">
             <target type="ProtoUnit">AbstractWall</target>
         </effect>
 
@@ -2005,18 +2064,21 @@
 
         <icon>resources\images\icons\techs\Squared Icons\Timber_Requisition.png</icon>
 
-        <!-- Bunker Mills begin generating stored timber -->
-        <effect type="Data" amount="1.25" subtype="ResourceTrickle"
-            resource="Wood" relativity="Absolute">
-            <target type="ProtoUnit">ModBunkerMills</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModWallWardClearance</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
 
         <effects>
+            <!-- Add +0.25 Wood/sec to the existing Bunker Mills Wood trickle -->
+            <effect type="Data"
+                action="AutoGatherOldenburg"
+                amount="0.25"
+                subtype="WorkRate"
+                unittype="Wood"
+                relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModTimberRequisition">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2042,23 +2104,6 @@
 
         <icon>resources\images\icons\techs\Squared Icons\Timber_Stockpiles.png</icon>
 
-        <!-- Villagers gather Wood from Trees 15% faster -->
-        <effect type="Data" action="Gather" amount="1.15"
-            subtype="WorkRate" unittype="Tree"
-            relativity="BasePercent">
-            <target type="ProtoUnit">AbstractVillager</target>
-        </effect>
-
-        <!-- Bunker Mills timber reserves -->
-        <effect type="Data" amount="0.25" subtype="ResourceTrickle"
-            resource="Wood" relativity="Absolute">
-            <target type="ProtoUnit">ModBunkerMills</target>
-        </effect>
-
-        <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
-            <target type="ProtoUnit">ModBunkerMills</target>
-        </effect>
-
 
         <prereqs>
             <techstatus status="Active">ModTimberRequisition</techstatus>
@@ -2066,6 +2111,24 @@
         </prereqs>
 
         <effects>
+
+            <!-- Villagers gather Wood from Trees 15% faster -->
+            <effect type="Data" action="Gather" amount="1.15"
+                subtype="WorkRate" unittype="Tree"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Add +0.25 Wood/sec to the existing Bunker Mills Wood trickle -->
+            <effect type="Data"
+                action="AutoGatherOldenburg"
+                amount="0.25"
+                subtype="WorkRate"
+                unittype="Wood"
+                relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModTimberStockpiles">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2091,8 +2154,8 @@
 
         <effects>
 
-            <!-- Walls gain +50% Health -->
-            <effect type="Data" amount="1.50" subtype="Hitpoints" relativity="BasePercent">
+            <!-- Walls gain +100% Health -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
@@ -2103,12 +2166,12 @@
 
             <!-- Wall structures cost 15% less Wood -->
             <effect type="Data" amount="0.75" subtype="Cost"
-                resource="Wood" relativity="BasePercent">
+                resource="Wood" relativity="Percent">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
-            <!-- Walls construct 50% faster -->
-            <effect type="Data" amount="0.75" subtype="BuildPoints" relativity="BasePercent">
+            <!-- Walls construct 10% slower -->
+            <effect type="Data" amount="1.10" subtype="BuildPoints" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
@@ -2141,16 +2204,25 @@
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
 
-        <!-- Walls gain +50% Health -->
-        <effect type="Data" amount="1.50" subtype="Hitpoints" relativity="BasePercent">
-            <target type="ProtoUnit">AbstractWall</target>
-        </effect>
-
-        <effect type="Data" amount="1000" subtype="Hitpoints" relativity="Absolute">
-            <target type="ProtoUnit">AbstractWall</target>
-        </effect>
-
         <effects>
+
+            <!-- Walls gain +1000 Health  -->
+            <effect type="Data" amount="1000" subtype="Hitpoints" relativity="Absolute">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Walls gain +100% Total Health -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="Percent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Walls gain +20% resistance to Siege damage -->
+            <effects>
+                <effect type="Data" amount="0.20" subtype="ArmorSpecific"
+                    newtype="Siege" relativity="Absolute">
+                    <target type="ProtoUnit">AbstractWall</target>
+                </effect>
+            </effects>
 
             <effect type="CommandRemove" tech="ModEarthBackedRampart">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2176,23 +2248,24 @@
 
         <icon>resources\images\icons\techs\Squared Icons\Bastion_Rampart.png</icon>
 
-        <!-- Walls gain another +100% Health -->
-        <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="BasePercent">
-            <target type="ProtoUnit">AbstractWall</target>
-        </effect>
-
-        <!-- Outpost-class defenses gain +2 attack range -->
-        <effect type="Data" action="BuildingAttack" amount="2.00"
-            subtype="MaximumRange" relativity="Absolute">
-            <target type="ProtoUnit">AbstractOutpost</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModEarthBackedRampart</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
 
         <effects>
+
+            <!-- Walls gain another +100% Health -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Outpost-class defenses gain +2 attack range -->
+            <effect type="Data" action="RangedAttack" amount="2.00"
+                subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModBastionRampart">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2218,17 +2291,16 @@
 
         <icon>resources\images\icons\techs\Squared Icons\Armored_Shell.png</icon>
 
-        <effect type="Data" amount="0.20" subtype="SiegeArmor"
-            relativity="Absolute">
-            <target type="ProtoUnit">AbstractWall</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModBastionRampart</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
         </prereqs>
 
         <effects>
+            <!-- Walls gain +10000 Health  -->
+            <effect type="Data" amount="10000" subtype="Hitpoints" relativity="Absolute">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModArmoredShell">
                 <target type="ProtoUnit">ModBunkerMills</target>
