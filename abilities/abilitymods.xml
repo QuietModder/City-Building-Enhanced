@@ -1,11 +1,7 @@
 <abilitymods>
-  <ModMountedInfantryRider>
-    <ability>dePowerDismount<rof>1</rof><castonself>true</castonself><forceshowrollover>true</forceshowrollover></ability>
-    <ability>dePromotionRangeSPD<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-  </ModMountedInfantryRider>
-
-  <ModMountedInfantry>
-    <ability>dePowerMount<rof>1</rof><castonself>true</castonself><forceshowrollover>true</forceshowrollover></ability>
-    <ability>dePromotionRangeSPD<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-  </ModMountedInfantry>
+  <deminuteman>
+    <ability> deUnitHealthRegen <alwaysdisabledingrid>true</alwaysdisabledingrid>
+<forceshowrollover>true</forceshowrollover>
+    </ability>
+  </deminuteman>
 </abilitymods>

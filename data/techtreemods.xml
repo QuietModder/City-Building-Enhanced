@@ -2322,9 +2322,22 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Garrison_Experience.png</icon>
+
+        <cost resourcetype="Wood">200.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <effects>
+            <!-- Defensive buildings can gain veterancy from kills -->
+            <effect type="Data" amount="1.00" subtype="ProtoUnitFlag"
+                flagid="125" relativity="Assign">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="ProtoUnitFlag"
+                flagid="125" relativity="Assign">
+                <target type="ProtoUnit">AbstractFort</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModGarrisonExperience">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2350,12 +2363,40 @@
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
+        <cost resourcetype="Wood">200.0000</cost>
+        <cost resourcetype="Gold">200.0000</cost>
+
         <prereqs>
             <techstatus status="Active">ModGarrisonExperience</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
 
         <effects>
+            <!-- Defensive structures Build limit -->
+            <effect type="Data" amount="6.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <!-- Outpost-class defenses gain +1 attack range -->
+            <effect type="Data" action="RangedAttack" amount="1.00"
+                subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <!-- Defensive structures deal +10% damage -->
+            <effect type="Data" amount="1.10" subtype="Damage"
+                allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <!-- Defensive structures have health increase -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+            <effect type="Data" amount="2.00" subtype="Hitpoints" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModDefensiveLessons">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2387,9 +2428,105 @@
         </prereqs>
 
         <effects>
+            <!-- Allow Architects to construct Frontier Forts -->
+            <effect type="CommandAdd" unit="FortFrontier">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+            <effect type="CommandAdd" proto="FortFrontier" page="0" column="1">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
 
-            <effect type="CommandRemove" tech="ModEstablishedFortifications">
-                <target type="ProtoUnit">ModBunkerMills</target>
+            <!-- Allow Architects to construct Fort Towers -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+
+            <effect type="CommandAdd" proto="SPCFortTower" page="0" column="2">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <!-- Allow Architects to construct Maltese Fixed Guns -->
+            <effect type="CommandAdd" unit="deMalteseGun">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+            <effect type="CommandAdd" proto="deMalteseGun" page="0" column="3">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+
+            <!-- Defensive structures Build limit -->
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <effect type="Data" amount="12.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+
+            <!-- Outpost-class defenses gain +1 attack range -->
+            <effect type="Data" action="RangedAttack" amount="1.00"
+                subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <!-- Fort: +4 range to CannonAttack, BuildingAttack, and AntiShipAttack -->
+            <effect type="Data" amount="4.00" subtype="MaximumRange"
+                allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- Fort Tower: +4 range to all of its attacks -->
+            <effect type="Data" amount="4.00" subtype="MaximumRange"
+                allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+
+            <!-- Maltese Fixed Gun: +4 range to all of its firing modes -->
+            <effect type="Data" amount="4.00" subtype="MaximumRange"
+                allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">deMalteseGun</target>
+            </effect>
+
+
+            <!-- Defensive structures deal +10% damage -->
+            <effect type="Data" amount="1.10" subtype="Damage"
+                allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <!-- Fort Tower: +10% damage -->
+            <effect type="Data" amount="1.10" subtype="Damage"
+                allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+
+            <!-- Fort gain +10% damage -->
+            <effect type="Data" amount="1.10" subtype="Damage"
+                allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- Defensive structures have health increase -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+            <effect type="Data" amount="2.00" subtype="Hitpoints" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+            <effect type="Data" amount="2.00" subtype="Hitpoints" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" amount="2.00" subtype="Hitpoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+            <effect type="Data" amount="2.00" subtype="Hitpoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">deMalteseGun</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">

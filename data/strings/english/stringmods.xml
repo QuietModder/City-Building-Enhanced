@@ -2,6 +2,22 @@
     <stringtable>
         <language name="English">
 
+            <stringmods>
+                <StringTable>
+                    <Language name="English">
+                        <string _locID="122198">Bronze I</string>
+                        <string _locID="1221981">Bronze II</string>
+                        <string _locID="1221982">Bronze III</string>
+                        <string _locID="1221991">Silver I</string>
+                        <string _locID="122199">Silver II</string>
+                        <string _locID="1221992">Silver III</string>
+                        <string _locID="1222001">Gold I</string>
+                        <string _locID="1222002">Gold II</string>
+                        <string _locID="122200">Elite</string>
+                    </Language>
+                </StringTable>
+            </stringmods>
+
             <!-- ========================================================= -->
             <!-- 9900000s - NEW BUILDINGS                                  -->
             <!-- Range: 9900000 - 9900999                                  -->
