@@ -148,7 +148,6 @@
                 <target type="ProtoUnit">Building</target>
             </effect>
 
-
             <!-- All buildings take 100% longer to build -->
             <effect type="Data" amount="2.00" subtype="BuildPoints" relativity="BasePercent">
                 <target type="ProtoUnit">Building</target>
@@ -198,6 +197,15 @@
                 <target type="ProtoUnit">ModOliveOrchard</target>
             </effect>
             <effect type="CommandAdd" proto="ModOliveOrchard" page="1" column="1">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <!-- Main wall and gate buttons on the Architect. -->
+            <effect type="CommandAdd" proto="ModFortWallConnector" page="2" column="0">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <effect type="CommandAdd" proto="ModFortWallGate" page="2" column="0">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
@@ -251,7 +259,7 @@
         <dbid>90101</dbid>
         <displaynameid>9904000</displaynameid>
         <rollovertextid>9904001</rollovertextid>
-        <icon>resources\images\icons\techs\Squared Icons\Infantry_Focus.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModInfantryFocus.png</icon>
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <cost resourcetype="Food">300.0000</cost>
@@ -328,7 +336,7 @@
         <dbid>90102</dbid>
         <displaynameid>9904002</displaynameid>
         <rollovertextid>9904003</rollovertextid>
-        <icon>resources\images\icons\techs\Squared Icons\Cavalry_Focus.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModCavalryFocus.png</icon>
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <cost resourcetype="Food">300.0000</cost>
@@ -358,7 +366,7 @@
         <dbid>90103</dbid>
         <displaynameid>9904004</displaynameid>
         <rollovertextid>9904005</rollovertextid>
-        <icon>resources\images\icons\techs\Squared Icons\Artillery_Focus.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModArtilleryFocus.png</icon>
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <cost resourcetype="Food">300.0000</cost>
@@ -396,7 +404,7 @@
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">100.0000</cost>
-        <icon>resources\images\icons\techs\Squared Icons\Back_to_Basics.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModBackToBasics.png</icon>
         <flag>UpgradeTech</flag>
         <flag>CountsTowardMilitaryScore</flag>
         <effects>
@@ -432,7 +440,7 @@
         <rollovertextid>9905003</rollovertextid>
         <researchpoints>40.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Conscripts_Companies.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModConscription.png</icon>
         <Prereqs>
             <techstatus status="Active">Fortressize</techstatus>
         </Prereqs>
@@ -492,7 +500,7 @@
         <displaynameid>9905004</displaynameid>
         <rollovertextid>9905005</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Austrian_Military_Advisory_Mission.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModAustrianMilitaryAdvisoryMission.png</icon>
         <flag>UpgradeTech</flag>
         <flag>CountsTowardMilitaryScore</flag>
         <prereqs>
@@ -545,7 +553,7 @@
         <rollovertextid>9903001</rollovertextid>
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Conscript_Upgrade_1.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Unit Upgrade Chain\ModVeteranConscript.png</icon>
         <Prereqs>
             <techstatus status="Active">Fortressize</techstatus>
         </Prereqs>
@@ -575,7 +583,7 @@
         <rollovertextid>9903003</rollovertextid>
         <researchpoints>40.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Conscript_Upgrade_2.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Unit Upgrade Chain\ModGuardConscript.png</icon>
         <prereqs>
             <techstatus status="Active">ModVeteranConscript</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
@@ -606,7 +614,7 @@
         <rollovertextid>9903005</rollovertextid>
         <researchpoints>60.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Conscript_Upgrade_3.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Unit Upgrade Chain\ModImperialConscript.png</icon>
         <prereqs>
             <techstatus status="Active">ModGuardConscript</techstatus>
             <techstatus status="Active">Imperialize</techstatus>
@@ -636,7 +644,7 @@
         <rollovertextid>9903007</rollovertextid>
         <researchpoints>60.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Volunteer_Upgrade_3.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\Unit Upgrade Chain\ModImperialVolunteer.png</icon>
         <prereqs>
             <techstatus status="Active">Imperialize</techstatus>
         </prereqs>
@@ -667,7 +675,7 @@
         <rollovertextid>9905023</rollovertextid>
         <researchpoints>45.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Close_Quarters.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModCloseQuarters.png</icon>
         <cost resourcetype="Food">300.0000</cost>
         <cost resourcetype="Wood">100.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
@@ -726,7 +734,7 @@
         <rollovertextid>9905021</rollovertextid>
         <researchpoints>45.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Weapons_Training.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModWeaponsTraining.png</icon>
         <Prereqs>
             <techstatus status="Active">Fortressize</techstatus>
         </Prereqs>
@@ -821,7 +829,7 @@
         <rollovertextid>9905025</rollovertextid>
         <researchpoints>45.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Crack_Shots.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModCrackShots.png</icon>
         <Prereqs>
             <techstatus status="Active">Fortressize</techstatus>
         </Prereqs>
@@ -874,7 +882,7 @@
         <rollovertextid>9905027</rollovertextid>
         <researchpoints>45.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Sword_To_A_Gun_Fight.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModSwordToAGunFight.png</icon>
         <Prereqs>
             <techstatus status="Active">Fortressize</techstatus>
         </Prereqs>
@@ -919,7 +927,7 @@
         <rollovertextid>9905029</rollovertextid>
         <researchpoints>45.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Hold_The_Line.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModHoldTheLine.png</icon>
         <Prereqs>
             <techstatus status="Active">Industrialize</techstatus>
         </Prereqs>
@@ -969,7 +977,7 @@
         <displaynameid>9905030</displaynameid>
         <rollovertextid>9905031</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Professional_Officer_Corps.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModProfessionalOfficerCorps.png</icon>
         <flag>UpgradeTech</flag>
         <flag>CountsTowardMilitaryScore</flag>
         <Prereqs>
@@ -997,7 +1005,7 @@
         <displaynameid>9905032</displaynameid>
         <rollovertextid>9905033</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\Squared Icons\Flexible_Formations.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModFlexibleFormations.png</icon>
         <flag>UpgradeTech</flag>
         <flag>CountsTowardMilitaryScore</flag>
         <Prereqs>
@@ -1067,9 +1075,8 @@
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
-            <!-- All wall structures gain 25% HP -->
-            <effect type="Data" amount="2.00" subtype="Hitpoints"
-                relativity="BasePercent">
+            <!-- Increase base wall health -->
+            <effect type="Data" amount="3000.00" subtype="Hitpoints" relativity="Assign">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
@@ -1169,7 +1176,7 @@
         <cost resourcetype="Food">25.0000</cost>
         <cost resourcetype="Gold">25.0000</cost>
 
-        <icon>resources\images\icons\techs\Squared Icons\Settled_Frontier.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModSettledFrontier.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
@@ -1226,7 +1233,7 @@
         <cost resourcetype="Wood">50.0000</cost>
         <cost resourcetype="Gold">50.0000</cost>
 
-        <icon>resources\images\icons\techs\Squared Icons\Fortified_Selective_Entry.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModFortifiedSelectiveEntry.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
@@ -1310,7 +1317,7 @@
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Gold">125.0000</cost>
 
-        <icon>resources\images\icons\techs\Squared Icons\Anchored_Colony.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModAnchoredColony.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
@@ -1376,7 +1383,7 @@
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Gold">125.0000</cost>
 
-        <icon>resources\images\icons\techs\Squared Icons\Burgeoning_Colony.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModBurgeoningColony.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
@@ -1469,7 +1476,7 @@
         <cost resourcetype="Wood">500.0000</cost>
         <cost resourcetype="Gold">500.0000</cost>
 
-        <icon>resources\images\icons\techs\Squared Icons\Citadel_Metropolitan.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModCitadelMetropolitan.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
@@ -1620,7 +1627,7 @@
         <cost resourcetype="Wood">750.0000</cost>
         <cost resourcetype="Gold">750.0000</cost>
 
-        <icon>resources\images\icons\techs\Squared Icons\Iron_Bound_City.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModIronboundCity.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
@@ -1662,7 +1669,7 @@
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">50.0000</cost>
 
-        <icon>resources\images\icons\techs\Squared Icons\Defensive_Works.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModDefensiveWorks.png</icon>
 
         <effects>
 
@@ -1736,7 +1743,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Secure_The_Waste.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModSecureTheWaste.png</icon>
 
         <effects>
             <!-- Outposts cost 10% less Wood -->
@@ -1779,7 +1786,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Colonial_Works.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModColonialWorks.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModSecureTheWaste</techstatus>
@@ -1829,7 +1836,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Fortified_Planning.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModFortifiedPlanning.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModColonialWorks</techstatus>
@@ -1872,7 +1879,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\District_Defenses.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModDistrictDefenses.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModFortifiedPlanning</techstatus>
@@ -1955,7 +1962,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Clearing_The_Hinterlands.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModClearingTheHinterlands.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModSecureTheWaste</techstatus>
@@ -2012,7 +2019,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Wall_Ward_Clearance.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModWallWardClearance.png</icon>
 
         <!-- Villagers gather Wood from Trees 10% faster -->
         <effect type="Data" action="Gather" amount="1.10"
@@ -2062,7 +2069,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Timber_Requisition.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModTimberRequisition.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModWallWardClearance</techstatus>
@@ -2102,7 +2109,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Timber_Stockpiles.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModTimberStockpiles.png</icon>
 
 
         <prereqs>
@@ -2150,7 +2157,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Perimeter_Fortifications.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModPerimeterFortifications.png</icon>
 
         <effects>
 
@@ -2197,7 +2204,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Earth_Backed_Rampart.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModEarthBackedRampart.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModPerimeterFortifications</techstatus>
@@ -2215,14 +2222,6 @@
             <effect type="Data" amount="2.00" subtype="Hitpoints" relativity="Percent">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
-
-            <!-- Walls gain +20% resistance to Siege damage -->
-            <effects>
-                <effect type="Data" amount="0.20" subtype="ArmorSpecific"
-                    newtype="Siege" relativity="Absolute">
-                    <target type="ProtoUnit">AbstractWall</target>
-                </effect>
-            </effects>
 
             <effect type="CommandRemove" tech="ModEarthBackedRampart">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2246,7 +2245,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Bastion_Rampart.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModBastionRampart.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModEarthBackedRampart</techstatus>
@@ -2289,7 +2288,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Armored_Shell.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModArmoredShell.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModBastionRampart</techstatus>
@@ -2297,6 +2296,15 @@
         </prereqs>
 
         <effects>
+
+            <!-- Walls gain +40% resistance to Siege damage -->
+            <effects>
+                <effect type="Data" amount="0.40" subtype="ArmorSpecific"
+                    newtype="Siege" relativity="Absolute">
+                    <target type="ProtoUnit">AbstractWall</target>
+                </effect>
+            </effects>
+
             <!-- Walls gain +10000 Health  -->
             <effect type="Data" amount="10000" subtype="Hitpoints" relativity="Absolute">
                 <target type="ProtoUnit">AbstractWall</target>
@@ -2322,7 +2330,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\Garrison_Experience.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModGarrisonExperience.png</icon>
 
         <cost resourcetype="Wood">200.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
@@ -2361,7 +2369,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModDefensiveLessons.png</icon>
 
         <cost resourcetype="Wood">200.0000</cost>
         <cost resourcetype="Gold">200.0000</cost>
@@ -2420,7 +2428,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModEstablishedFortifications.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModDefensiveLessons</techstatus>
@@ -2529,6 +2537,11 @@
                 <target type="ProtoUnit">deMalteseGun</target>
             </effect>
 
+
+            <effect type="CommandRemove" tech="ModEstablishedFortifications">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">
                 ModCitadelExpansion
             </effect>
@@ -2547,7 +2560,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModCitadelExpansion.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModEstablishedFortifications</techstatus>
@@ -2555,6 +2568,54 @@
         </prereqs>
 
         <effects>
+
+            <!-- Walls provide 50% more vision -->
+            <effect type="Data" amount="1.50" subtype="LOS"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- +6 range -->
+            <effect type="Data" amount="6.00" subtype="MaxRange"
+                relativity="Absolute">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+
+            <!-- +50% damage -->
+            <effect type="Data" amount="1.50" subtype="Damage"
+                relativity="BasePercent">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+
+            <!-- 50% faster firing -->
+            <effect type="Data" amount="0.50" subtype="ROF"
+                relativity="BasePercent">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
+
+            <!-- Forts gain +100% HP -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- Forts give 10 Population -->
+            <effect type="Data" amount="10.00" subtype="PopulationCount"
+                relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- Forts require 50% more build time -->
+            <effect type="Data" amount="1.50" subtype="BuildPoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+
             <effect type="CommandRemove" tech="ModCitadelExpansion">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -2579,7 +2640,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModSurveyedApproaches.png</icon>
 
         <effects>
 
@@ -2605,7 +2666,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModSignaledNetwork.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModSurveyedApproaches</techstatus>
@@ -2636,7 +2697,7 @@
         <status>UNOBTAINABLE</status>
         <researchpoints>1.0000</researchpoints>
 
-        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <icon>resources\images\icons\techs\Squared Icons\ModCharteredObservationPosts.png</icon>
 
         <prereqs>
             <techstatus status="Active">ModSignaledNetwork</techstatus>
