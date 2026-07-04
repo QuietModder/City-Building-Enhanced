@@ -890,7 +890,7 @@
         <cost resourcetype="Gold">400.0000</cost>
         <effects>
             <!--  Hand Infantry +1 movement speed  -->
-            <effect type="Data" amount="1.00" subtype="Speed" relativity="Absolute">
+            <effect type="Data" amount="1.00" subtype="MaximumVelocity" relativity="Absolute">
                 <target type="ProtoUnit">AbstractHandInfantry</target>
             </effect>
             <!--  Hand Infantry hand damage bonus vs Light Infantry  -->
@@ -940,16 +940,16 @@
             </effect>
             <effect type="Data" amount="1.00" subtype="ProtoUnitFlag" flagid="194"
                 relativity="Assign">
-                <target type="ProtoUnit">Musketeer</target>
+                <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
             <effect type="Data" amount="1.00" subtype="ProtoUnitFlag" flagid="251"
                 relativity="Assign">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
             <!--  Keep normal melee resist in Stand Ground  -->
-            <effect type="Data" amount="0.20" subtype="TacticArmor" tactic="StandGround"
+            <effect type="Data" amount="0.25" subtype="TacticArmor" tactic="StandGround"
                 armortype="Hand" relativity="Absolute">
-                <target type="ProtoUnit">Musketeer</target>
+                <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
             <!--  Add ranged resist while standing ground -->
             <effect type="Data" amount="0.15" subtype="TacticArmor" tactic="StandGround"
@@ -1087,10 +1087,8 @@
             </effect>
 
             <!-- Unlock Citadel chain technology -->
-            <effect type="TechStatus" status="obtainable">
-                ModSettledFrontier
-            </effect>
 
+            <!-- FIRST ROW -->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
@@ -1098,16 +1096,52 @@
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
-            <!-- Unlock Defensive Works root -->
+            <!-- SECOND ROW -->
             <effect type="TechStatus" status="obtainable">
-                ModDefensiveWorks
+                ModSettledFrontier
             </effect>
-
             <effect type="CommandAdd" tech="ModSettledFrontier" page="1" column="0">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
+            <effect type="TechStatus" status="obtainable">
+                ModDefensiveWorks
+            </effect>
             <effect type="CommandAdd" tech="ModDefensiveWorks" page="1" column="1">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- THIRD ROW -->
+
+            <!-- Winter Stores chain -->
+            <effect type="TechStatus" status="obtainable">
+                ModWinterStores
+            </effect>
+            <effect type="CommandAdd" tech="ModWinterStores" page="2" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Branch 2: Coin -->
+            <effect type="TechStatus" status="obtainable">
+                ModRecoveredTreasures
+            </effect>
+            <effect type="CommandAdd" tech="ModRecoveredTreasures" page="2" column="1">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Branch 3: Waystations -->
+            <effect type="TechStatus" status="obtainable">
+                ModWaystationCenters
+            </effect>
+            <effect type="CommandAdd" tech="ModWaystationCenters" page="2" column="2">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Branch 4: Native Settlement agreements -->
+            <effect type="TechStatus" status="obtainable">
+                ModFrontierCompacts
+            </effect>
+            <effect type="CommandAdd" tech="ModFrontierCompacts" page="2" column="3">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
@@ -1741,7 +1775,10 @@
         <displaynameid>9910002</displaynameid>
         <rollovertextid>9910003</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModSecureTheWaste.png</icon>
 
@@ -1784,7 +1821,10 @@
         <displaynameid>9910004</displaynameid>
         <rollovertextid>9910005</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
+
+        <cost resourcetype="Food">250.0000</cost>
+        <cost resourcetype="Gold">250.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModColonialWorks.png</icon>
 
@@ -1834,7 +1874,7 @@
         <displaynameid>9910006</displaynameid>
         <rollovertextid>9910007</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModFortifiedPlanning.png</icon>
 
@@ -1877,7 +1917,7 @@
         <displaynameid>9910008</displaynameid>
         <rollovertextid>9910009</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModDistrictDefenses.png</icon>
 
@@ -1960,7 +2000,10 @@
         <displaynameid>9909024</displaynameid>
         <rollovertextid>9909025</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>50.0000</researchpoints>
+
+        <cost resourcetype="Food">75.0000</cost>
+        <cost resourcetype="Gold">75.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModClearingTheHinterlands.png</icon>
 
@@ -2017,7 +2060,10 @@
         <displaynameid>9909026</displaynameid>
         <rollovertextid>9909027</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>50.0000</researchpoints>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModWallWardClearance.png</icon>
 
@@ -2067,7 +2113,9 @@
         <displaynameid>9909028</displaynameid>
         <rollovertextid>9909029</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>70.0000</researchpoints>
+
+        <cost resourcetype="Gold">500.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModTimberRequisition.png</icon>
 
@@ -2079,7 +2127,7 @@
         <effects>
             <!-- Add +0.25 Wood/sec to the existing Bunker Mills Wood trickle -->
             <effect type="Data"
-                action="AutoGatherOldenburg"
+                action="AutoGatherWood"
                 amount="0.25"
                 subtype="WorkRate"
                 unittype="Wood"
@@ -2107,7 +2155,10 @@
         <displaynameid>9909030</displaynameid>
         <rollovertextid>9909031</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>70.0000</researchpoints>
+
+        <cost resourcetype="Food">550.0000</cost>
+        <cost resourcetype="Gold">550.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModTimberStockpiles.png</icon>
 
@@ -2128,7 +2179,7 @@
 
             <!-- Add +0.25 Wood/sec to the existing Bunker Mills Wood trickle -->
             <effect type="Data"
-                action="AutoGatherOldenburg"
+                action="AutoGatherWood"
                 amount="0.25"
                 subtype="WorkRate"
                 unittype="Wood"
@@ -2155,7 +2206,10 @@
         <displaynameid>9910010</displaynameid>
         <rollovertextid>9910011</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
+
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModPerimeterFortifications.png</icon>
 
@@ -2202,7 +2256,12 @@
         <displaynameid>9910012</displaynameid>
         <rollovertextid>9910013</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
+
+
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">350.0000</cost>
+        <cost resourcetype="Gold">350.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModEarthBackedRampart.png</icon>
 
@@ -2243,7 +2302,11 @@
         <displaynameid>9910014</displaynameid>
         <rollovertextid>9910015</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>70.0000</researchpoints>
+
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">600.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModBastionRampart.png</icon>
 
@@ -2286,7 +2349,10 @@
         <displaynameid>9910016</displaynameid>
         <rollovertextid>9910017</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>75.0000</researchpoints>
+
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
 
         <icon>resources\images\icons\techs\Squared Icons\ModArmoredShell.png</icon>
 
@@ -2296,17 +2362,34 @@
         </prereqs>
 
         <effects>
-
-            <!-- Walls gain +40% resistance to Siege damage -->
+            <!-- Walls gain +50% resistance to Siege damage -->
             <effects>
-                <effect type="Data" amount="0.40" subtype="ArmorSpecific"
+                <effect type="Data" amount="0.50" subtype="ArmorSpecific"
                     newtype="Siege" relativity="Absolute">
                     <target type="ProtoUnit">AbstractWall</target>
                 </effect>
             </effects>
 
-            <!-- Walls gain +10000 Health  -->
-            <effect type="Data" amount="10000" subtype="Hitpoints" relativity="Absolute">
+            <!-- Walls gain +20000 Health  -->
+            <effect type="Data" amount="20000" subtype="Hitpoints" relativity="Absolute">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Add +50 Wood to each wall segment -->
+            <effect type="Data"
+                amount="50.00"
+                subtype="Cost"
+                resource="Wood"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Add +50 Gold to each wall segment -->
+            <effect type="Data"
+                amount="50.00"
+                subtype="Cost"
+                resource="Gold"
+                relativity="Absolute">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
@@ -2367,7 +2450,7 @@
         <displaynameid>9910020</displaynameid>
         <rollovertextid>9910021</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModDefensiveLessons.png</icon>
 
@@ -2426,7 +2509,7 @@
         <displaynameid>9910022</displaynameid>
         <rollovertextid>9910023</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModEstablishedFortifications.png</icon>
 
@@ -2643,6 +2726,20 @@
         <icon>resources\images\icons\techs\Squared Icons\ModSurveyedApproaches.png</icon>
 
         <effects>
+            <!-- +4 LOS to infantry -->
+            <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">AbstractInfantry</target>
+            </effect>
+
+            <!-- +4 LOS to cavalry -->
+            <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+
+            <!-- +4 LOS to Trade Posts -->
+            <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">TradingPost</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModSurveyedApproaches">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2674,6 +2771,28 @@
         </prereqs>
 
         <effects>
+            <!-- +25% Auto Gather XP to Trade Posts -->
+            <effect type="Data"
+                protoaction="AutoGatherXP"
+                amount="0.25"
+                subtype="ProtoActionAdd"
+                unittype="Factory"
+                relativity="Absolute">
+                <target type="ProtoUnit">TradingPost</target>
+            </effect>
+
+            <!-- +500 Hitpoints to Trade Posts -->
+            <effect type="Data"
+                amount="500.00"
+                subtype="Hitpoints"
+                relativity="Absolute">
+                <target type="ProtoUnit">TradingPost</target>
+            </effect>
+
+            <!-- +4 LOS to Trade Posts -->
+            <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">TradingPost</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModSignaledNetwork">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2686,7 +2805,6 @@
             <effect type="CommandAdd" tech="ModCharteredObservationPosts" page="1" column="5">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
-
         </effects>
     </tech>
 
@@ -2705,6 +2823,15 @@
         </prereqs>
 
         <effects>
+            <!-- +4 LOS to all outpost buildings -->
+            <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <!-- +4 LOS to fort towers -->
+            <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">SPCFortTower</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModCharteredObservationPosts">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2737,7 +2864,569 @@
 
         <effects>
 
+            <!-- Add call levy infantry action -->
+            <effect type="CommandAdd" command="deSPCLevyCityGuards" page="1" column="3">
+                <target type="ProtoUnit">TradingPost</target>
+            </effect>
+
+            <!-- Enables the levy behind that command -->
+            <effect type="TechStatus" status="active">
+                DESPCLevyCityGuards
+            </effect>
+
             <effect type="CommandRemove" tech="ModCitadelWatchNetwork">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
+    <!-- BRANCH 1: Bunker Mill Food                                -->
+    <!-- Page 2 / Column 0                                         -->
+    <!-- ========================================================= -->
+
+    <tech mergeMode="add" name="ModWinterStores" type="Normal">
+        <dbid>90166</dbid>
+        <displaynameid>9909032</displaynameid>
+        <rollovertextid>9909033</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModWinterStores">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModExpandedGranaries
+            </effect>
+
+            <effect type="CommandAdd" tech="ModExpandedGranaries" page="2" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModExpandedGranaries" type="Normal">
+        <dbid>90167</dbid>
+        <displaynameid>9909034</displaynameid>
+        <rollovertextid>9909035</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModWinterStores</techstatus>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModExpandedGranaries">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModSiegeGranaries
+            </effect>
+
+            <effect type="CommandAdd" tech="ModSiegeGranaries" page="2" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModSiegeGranaries" type="Normal">
+        <dbid>90168</dbid>
+        <displaynameid>9909036</displaynameid>
+        <rollovertextid>9909037</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModExpandedGranaries</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+            <effect type="CommandRemove" tech="ModSiegeGranaries">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
+    <!-- BRANCH 2: Bunker Mill Coin                                -->
+    <!-- Page 2 / Column 1                                         -->
+    <!-- ========================================================= -->
+
+    <tech mergeMode="add" name="ModRecoveredTreasures" type="Normal">
+        <dbid>90169</dbid>
+        <displaynameid>9909038</displaynameid>
+        <rollovertextid>9909039</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModRecoveredTreasures">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModCoinReserves
+            </effect>
+
+            <effect type="CommandAdd" tech="ModCoinReserves" page="2" column="1">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModCoinReserves" type="Normal">
+        <dbid>90170</dbid>
+        <displaynameid>9909040</displaynameid>
+        <rollovertextid>9909041</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModRecoveredTreasures</techstatus>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModCoinReserves">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModCitadelTreasury
+            </effect>
+
+            <effect type="CommandAdd" tech="ModCitadelTreasury" page="2" column="1">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModCitadelTreasury" type="Normal">
+        <dbid>90171</dbid>
+        <displaynameid>9909042</displaynameid>
+        <rollovertextid>9909043</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModCoinReserves</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModCitadelTreasury">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
+    <!-- BRANCH 3: Waystation Network                              -->
+    <!-- Page 2 / Column 2                                         -->
+    <!-- ========================================================= -->
+
+    <tech mergeMode="add" name="ModWaystationCenters" type="Normal">
+        <dbid>90172</dbid>
+        <displaynameid>9909044</displaynameid>
+        <rollovertextid>9909045</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModWaystationCenters">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModProtectedMarkets
+            </effect>
+
+            <effect type="CommandAdd" tech="ModProtectedMarkets" page="2" column="2">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModProtectedMarkets" type="Normal">
+        <dbid>90173</dbid>
+        <displaynameid>9909046</displaynameid>
+        <rollovertextid>9909047</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModWaystationCenters</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModProtectedMarkets">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModRoadwardForts
+            </effect>
+
+            <effect type="CommandAdd" tech="ModRoadwardForts" page="2" column="2">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModRoadwardForts" type="Normal">
+        <dbid>90174</dbid>
+        <displaynameid>9909048</displaynameid>
+        <rollovertextid>9909049</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModProtectedMarkets</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModRoadwardForts">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
+    <!-- BRANCH 4: Native Settlement Agreements                    -->
+    <!-- Page 2 / Column 3                                         -->
+    <!-- ========================================================= -->
+
+    <tech mergeMode="add" name="ModFrontierCompacts" type="Normal">
+        <dbid>90175</dbid>
+        <displaynameid>9909050</displaynameid>
+        <rollovertextid>9909051</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModFrontierCompacts">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModBorderPacts
+            </effect>
+
+            <effect type="CommandAdd" tech="ModBorderPacts" page="2" column="3">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModBorderPacts" type="Normal">
+        <dbid>90176</dbid>
+        <displaynameid>9909052</displaynameid>
+        <rollovertextid>9909053</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModFrontierCompacts</techstatus>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModBorderPacts">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModCouncilOfTheFrontier
+            </effect>
+
+            <effect type="CommandAdd" tech="ModCouncilOfTheFrontier" page="2" column="3">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModCouncilOfTheFrontier" type="Normal">
+        <dbid>90177</dbid>
+        <displaynameid>9909054</displaynameid>
+        <rollovertextid>9909055</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModBorderPacts</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModCouncilOfTheFrontier">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModBorderlandConcord
+            </effect>
+
+            <effect type="CommandAdd" tech="ModBorderlandConcord" page="2" column="3">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModBorderlandConcord" type="Normal">
+        <dbid>90178</dbid>
+        <displaynameid>9909056</displaynameid>
+        <rollovertextid>9909057</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModCouncilOfTheFrontier</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModBorderlandConcord">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModGuardianOfTheAccords
+            </effect>
+
+            <effect type="CommandAdd" tech="ModGuardianOfTheAccords" page="2" column="3">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModGuardianOfTheAccords" type="Normal">
+        <dbid>90179</dbid>
+        <displaynameid>9909058</displaynameid>
+        <rollovertextid>9909059</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModBorderlandConcord</techstatus>
+            <techstatus status="Active">Imperialize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModGuardianOfTheAccords">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
+    <!-- STANDALONE: Civic Workshop — Age III                      -->
+    <!-- Page 2 / Column 4                                         -->
+    <!-- ========================================================= -->
+
+    <tech mergeMode="add" name="ModCivicWorkshop" type="Normal">
+        <dbid>90180</dbid>
+        <displaynameid>9909060</displaynameid>
+        <rollovertextid>9909061</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModCivicWorkshop">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
+    <!-- BRANCH 5: Frontier Expeditions                            -->
+    <!-- Page 2 / Column 5                                         -->
+    <!-- ========================================================= -->
+
+    <tech mergeMode="add" name="ModNewWorldSpoils" type="Normal">
+        <dbid>90181</dbid>
+        <displaynameid>9909062</displaynameid>
+        <rollovertextid>9909063</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModNewWorldSpoils">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModSettlersResolve
+            </effect>
+
+            <effect type="CommandAdd" tech="ModSettlersResolve" page="2" column="5">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModSettlersResolve" type="Normal">
+        <dbid>90182</dbid>
+        <displaynameid>9909064</displaynameid>
+        <rollovertextid>9909065</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModNewWorldSpoils</techstatus>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModSettlersResolve">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="TechStatus" status="obtainable">
+                ModExpeditionaryCorps
+            </effect>
+
+            <effect type="CommandAdd" tech="ModExpeditionaryCorps" page="2" column="5">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="ModExpeditionaryCorps" type="Normal">
+        <dbid>90183</dbid>
+        <displaynameid>9909066</displaynameid>
+        <rollovertextid>9909067</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>1.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+        <flag>CountsTowardEconomicScore</flag>
+
+        <prereqs>
+            <techstatus status="Active">ModSettlersResolve</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+
+        <effects>
+
+            <effect type="CommandRemove" tech="ModExpeditionaryCorps">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
