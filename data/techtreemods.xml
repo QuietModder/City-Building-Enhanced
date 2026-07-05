@@ -1145,6 +1145,24 @@
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
+            <!-- Standalone: Civic Workshop -->
+            <effect type="TechStatus" status="obtainable">
+                ModCivicWorkshop
+            </effect>
+
+            <effect type="CommandAdd" tech="ModCivicWorkshop" page="2" column="4">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Branch 5: Frontier Expeditions -->
+            <effect type="TechStatus" status="obtainable">
+                ModNewWorldSpoils
+            </effect>
+
+            <effect type="CommandAdd" tech="ModNewWorldSpoils" page="2" column="5">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
             <!-- Remove both selection buttons after a route is chosen -->
             <effect type="CommandRemove" tech="ModCitadelCityPlanning">
                 <target type="ProtoUnit">ModBunkerMills</target>
