@@ -1089,8 +1089,11 @@
         <!-- Hidden until the startup tech enables it -->
         <status>UNOBTAINABLE</status>
 
-        <!-- Free route-selection test for now -->
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
+
+        <cost resourcetype="Food">100.0000</cost>
+        <cost resourcetype="Wood">100.0000</cost>
+        <cost resourcetype="Gold">100.0000</cost>
 
         <!-- Temporary existing icon; replace later with Citadel artwork -->
         <icon>resources\images\icons\techs\Tall Icons\Citadel_City_Planning.png</icon>
@@ -1214,8 +1217,11 @@
         <!-- Hidden until the startup tech enables it -->
         <status>UNOBTAINABLE</status>
 
-        <!-- Free route-selection test for now -->
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
+
+        <cost resourcetype="Food">100.0000</cost>
+        <cost resourcetype="Wood">100.0000</cost>
+        <cost resourcetype="Gold">100.0000</cost>
 
         <!-- Temporary existing icon; replace later with Sprawling artwork -->
         <icon>resources\images\icons\techs\Tall Icons\Sprawling_City_Planning.png</icon>
@@ -2116,31 +2122,30 @@
 
         <icon>resources\images\icons\techs\Squared Icons\ModWallWardClearance.png</icon>
 
-        <!-- Villagers gather Wood from Trees 10% faster -->
-        <effect type="Data" action="Gather" amount="1.10"
-            subtype="WorkRate" unittype="Tree"
-            relativity="BasePercent">
-            <target type="ProtoUnit">AbstractVillager</target>
-        </effect>
-
-        <!-- Wall structures cost 25% less Wood -->
-        <effect type="Data" amount="0.75" subtype="Cost"
-            resource="Wood" relativity="Percent">
-            <target type="ProtoUnit">AbstractWall</target>
-        </effect>
-
-        <!-- Walls build 50% faster -->
-        <effect type="Data" amount="0.50" subtype="BuildPoints"
-            relativity="Percent">
-            <target type="ProtoUnit">AbstractWall</target>
-        </effect>
-
         <prereqs>
             <techstatus status="Active">ModClearingTheHinterlands</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
 
         <effects>
+            <!-- Villagers gather Wood from Trees 10% faster -->
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="Tree"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Wall structures cost 25% less Wood -->
+            <effect type="Data" amount="0.75" subtype="Cost"
+                resource="Wood" relativity="Percent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Walls build 50% faster -->
+            <effect type="Data" amount="0.50" subtype="BuildPoints"
+                relativity="Percent">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModWallWardClearance">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2412,12 +2417,10 @@
 
         <effects>
             <!-- Walls gain +50% resistance to Siege damage -->
-            <effects>
-                <effect type="Data" amount="0.50" subtype="ArmorSpecific"
-                    newtype="Siege" relativity="Absolute">
-                    <target type="ProtoUnit">AbstractWall</target>
-                </effect>
-            </effects>
+            <effect type="Data" amount="0.50" subtype="ArmorSpecific"
+                newtype="Siege" relativity="Absolute">
+                <target type="ProtoUnit">AbstractWall</target>
+            </effect>
 
             <!-- Walls gain +20000 Health  -->
             <effect type="Data" amount="20000" subtype="Hitpoints" relativity="Absolute">
@@ -3123,7 +3126,7 @@
         <cost resourcetype="Gold">150.0000</cost>
 
         <effects>
-            <!-- Add Factory-style coin production to Bunker Mills -->
+            <!-- Add Factory-style Coin production to Bunker Mills -->
             <effect type="Data"
                 protoaction="AutoGatherCoin"
                 amount="1.00"
@@ -3136,9 +3139,9 @@
             <!-- Set the new Coin production rate -->
             <effect type="Data"
                 action="AutoGatherCoin"
-                amount="0.25"
+                amount="0.15"
                 subtype="WorkRate"
-                unittype="Coin"
+                unittype="Gold"
                 relativity="Override">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -3182,10 +3185,10 @@
 
             <!-- Add +0.10 coin/sec to the existing Bunker Mill coin trickle -->
             <effect type="Data"
-                action="AutoGather"
+                action="AutoGatherCoin"
                 amount="0.10"
                 subtype="WorkRate"
-                unittype="Coin"
+                unittype="Gold"
                 relativity="Absolute">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -3228,10 +3231,10 @@
         <effects>
             <!-- Add +0.25 coin/sec to the existing Bunker Mill coin trickle -->
             <effect type="Data"
-                action="AutoGather"
+                action="AutoGatherCoin"
                 amount="0.25"
                 subtype="WorkRate"
-                unittype="Coin"
+                unittype="Gold"
                 relativity="Absolute">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -3361,10 +3364,6 @@
         </prereqs>
 
         <effects>
-            <!-- 5% better Food purchase rate -->
-            <effect type="ResourceExchange" multiplier="0.95" toresource="Food" fromresource="Gold">
-            </effect>
-
             <!-- Markets gain +500 hitpoints -->
             <effect type="Data" amount="500.00" subtype="Hitpoints" relativity="Absolute">
                 <target type="ProtoUnit">AbstractMarket</target>
@@ -3700,16 +3699,14 @@
         <cost resourcetype="Gold">75.0000</cost>
 
         <effects>
-            <!-- Settlers deal bonus damage to treasure guardians -->
-            <effect type="Data" amount=".50" subtype="Damage" relativity="Absolute">
+            <!-- Settlers deal +50% bonus damage to treasure guardians -->
+            <effect type="Data" amount="0.50" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
                 <target type="ProtoUnit">AbstractVillager</target>
-                <target type="ProtoUnit">Guardian</target>
             </effect>
 
-            <!-- Explorers deal bonus damage to treasure guardians -->
-            <effect type="Data" amount=".50" subtype="Damage" relativity="Absolute">
+            <!-- Explorers deal +50% bonus damage to treasure guardians -->
+            <effect type="Data" amount="0.50" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
                 <target type="ProtoUnit">Explorer</target>
-                <target type="ProtoUnit">Guardian</target>
             </effect>
 
 
@@ -3827,22 +3824,20 @@
 
         <effects>
             <!-- Increase Filibuster stats-->
-            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent">
+            <effect type="Data" amount="1.35" subtype="Damage" allactions="1" relativity="BasePercent">
                 <target type="ProtoUnit">deREVFilibuster</target>
             </effect>
-            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent">
                 <target type="ProtoUnit">deREVFilibuster</target>
             </effect>
 
             <!-- Filibusters deal +200% damage against all pet units -->
-            <effect type="Data" amount="3.00" subtype="DamageBonus"
-                unittype="AbstractPet" relativity="Absolute">
+            <effect type="Data" amount="3.00" subtype="DamageBonus" unittype="AbstractPet" allactions="1" relativity="Absolute">
                 <target type="ProtoUnit">deREVFilibuster</target>
             </effect>
 
             <!-- Filibusters deal +200% damage against all guardian units -->
-            <effect type="Data" amount="3.00" subtype="DamageBonus"
-                unittype="Guardian" relativity="Absolute">
+            <effect type="Data" amount="3.00" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
                 <target type="ProtoUnit">deREVFilibuster</target>
             </effect>
 
@@ -3910,12 +3905,12 @@
     <tech name="Age0Ottoman" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
 
-        <effect mergeMode="add" type="Data" amount="10.00"
-            subtype="BuildLimit" relativity="Assign">
-            <target type="ProtoUnit">Settler</target>
-        </effect>
+            <effect mergeMode="add" type="Data" amount="10.00"
+                subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
     </tech>
 
 
@@ -3963,37 +3958,41 @@
     <tech name="DEAge0Inca" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">SettlerNative</target>
+            </effect>
         </effects>
-        <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-            <target type="ProtoUnit">SettlerNative</target>
-        </effect>
     </tech>
 
     <tech name="DEAge0Swedish" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
         </effects>
-        <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-            <target type="ProtoUnit">Settler</target>
-        </effect>
     </tech>
 
     <tech name="DEAge0Americans" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
         </effects>
-        <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-            <target type="ProtoUnit">Settler</target>
-        </effect>
     </tech>
 
     <tech name="DEAge0Mexicans" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
         </effects>
-        <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-            <target type="ProtoUnit">Settler</target>
-        </effect>
     </tech>
 
     <tech name="DEAge0Hausa" type="Normal">
