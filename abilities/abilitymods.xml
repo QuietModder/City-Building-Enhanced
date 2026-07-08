@@ -1,7 +1,12 @@
 <abilitymods>
   <deminuteman>
-    <ability> deUnitHealthRegen <alwaysdisabledingrid>true</alwaysdisabledingrid>
-<forceshowrollover>true</forceshowrollover>
+    <ability> deUnitHealthRegen<alwaysdisabledingrid>true</alwaysdisabledingrid>
+      <forceshowrollover>true</forceshowrollover>
     </ability>
   </deminuteman>
+  <TradingPost>
+    <ability>deSPCLevyCityGuards <nevershowingrid>false</nevershowingrid>
+            <forceshowrollover>true</forceshowrollover>
+    </ability>
+  </TradingPost>
 </abilitymods>

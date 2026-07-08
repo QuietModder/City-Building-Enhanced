@@ -135,7 +135,7 @@
         <flag>Shadow</flag>
         <effects>
 
-            <effect type="Data" amount="0.75" subtype="GatherRate" relativity="BasePercent">
+            <effect type="Data" amount="0.50" subtype="GatherRate" relativity="BasePercent">
                 <target type="UnitType">AbstractVillager</target>
             </effect>
 
@@ -164,6 +164,14 @@
 
             <effect type="Data" amount="0.35" subtype="LOS" relativity="BasePercent">
                 <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <!-- All artillery movement speed -50% -->
+            <effect type="Data"
+                amount="0.50"
+                subtype="MaximumVelocity"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractArtillery</target>
             </effect>
 
 
@@ -461,6 +469,7 @@
                 relativity="BasePercent">
                 <target type="ProtoUnit">AbstractInfantry</target>
             </effect>
+
             <!--  Unlock units  -->
             <!--  Add train buttons to Military Encampment  -->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
@@ -475,10 +484,12 @@
             <effect type="CommandAdd" proto="deSPCUSVolunteer" page="0" column="3">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
+
             <!--  Remove 'this' tech to reuse its slot in the UI with incoming unlocks  -->
             <effect type="CommandRemove" tech="ModConscription">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
+
             <!--  Add new techs  -->
             <effect type="TechStatus" status="obtainable">ModVeteranConscript</effect>
             <effect type="CommandAdd" tech="ModVeteranConscript" page="1" column="0">
@@ -553,12 +564,16 @@
         <rollovertextid>9903001</rollovertextid>
         <researchpoints>30.0000</researchpoints>
         <status>UNOBTAINABLE</status>
+
         <icon>resources\images\icons\techs\Squared Icons\Unit Upgrade Chain\ModVeteranConscript.png</icon>
         <Prereqs>
+
             <techstatus status="Active">Fortressize</techstatus>
         </Prereqs>
+
         <cost resourcetype="Wood">250.0000</cost>
         <cost resourcetype="Gold">250.0000</cost>
+
         <effects>
             <effect type="Data" amount="1.20" subtype="Hitpoints" relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
@@ -567,6 +582,7 @@
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
+
             <!--  Removing to clean back up UI for its slot be used again  -->
             <effect type="CommandRemove" tech="ModVeteranConscript">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -598,6 +614,7 @@
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
+
             <!--  Removing to clean back up UI for its slot be used again  -->
             <effect type="CommandRemove" tech="ModGuardConscript">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -701,6 +718,7 @@
                 relativity="Absolute">
                 <target type="ProtoUnit">AbstractRangedInfantry</target>
             </effect>
+
             <!--  Hand Infantry hand attacks  -->
             <effect type="Data" amount="8.00" subtype="Damage" action="MeleeHandAttack"
                 relativity="Absolute">
@@ -758,44 +776,47 @@
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
+
             <!--  Conscript hand attack speed  -->
-            <effect type="Data" action="DefendHandAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="DefendHandAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
-            <effect type="Data" action="StaggerHandAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="StaggerHandAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
-            <effect type="Data" action="VolleyHandAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="VolleyHandAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
-            <effect type="Data" action="MeleeHandAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="MeleeHandAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
-            <effect type="Data" action="StandGroundHandAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="StandGroundHandAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">ModConscript</target>
             </effect>
+
             <!--  Volunteer ranged attack speed  -->
-            <effect type="Data" action="DefendRangedAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="DefendRangedAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">deSPCUSVolunteer</target>
             </effect>
-            <effect type="Data" action="StaggerRangedAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="StaggerRangedAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">deSPCUSVolunteer</target>
             </effect>
-            <effect type="Data" action="VolleyRangedAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="VolleyRangedAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">deSPCUSVolunteer</target>
             </effect>
-            <effect type="Data" action="StandGroundRangedAttack" amount="0.85" subtype="RateOfFire"
+            <effect type="Data" action="StandGroundRangedAttack" amount="0.80" subtype="RateOfFire"
                 relativity="BasePercent">
                 <target type="ProtoUnit">deSPCUSVolunteer</target>
             </effect>
+
             <!--  Volunteer hand attack speed  -->
             <effect type="Data" action="DefendHandAttack" amount="0.85" subtype="RateOfFire"
                 relativity="BasePercent">
@@ -853,6 +874,7 @@
                 unittype="AbstractCavalry" relativity="Absolute">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
+
             <!--  All ranged infantry gain +2 range generally, not only vs cavalry  -->
             <effect type="Data" action="DefendRangedAttack" amount="2.00" subtype="MaximumRange"
                 relativity="Absolute">
@@ -893,6 +915,7 @@
             <effect type="Data" amount="1.00" subtype="MaximumVelocity" relativity="Absolute">
                 <target type="ProtoUnit">AbstractHandInfantry</target>
             </effect>
+
             <!--  Hand Infantry hand damage bonus vs Light Infantry  -->
             <effect type="Data" action="MeleeHandAttack" amount="1.00" subtype="DamageBonus"
                 unittype="AbstractLightInfantry" relativity="Absolute">
@@ -934,6 +957,7 @@
         <cost resourcetype="Wood">1500.0000</cost>
         <cost resourcetype="Gold">1500.0000</cost>
         <effects>
+            <!--  Musketeer-type ranged attack range +4  -->
             <effect type="Data" action="DefendRangedAttack" amount="4.00" subtype="MaximumRange"
                 relativity="Absolute">
                 <target type="ProtoUnit">AbstractMusketeer</target>
@@ -946,25 +970,31 @@
                 relativity="Assign">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
-            <!--  Keep normal melee resist in Stand Ground  -->
+
+            <!--  Keep normal melee resist in Stand Ground(For some units increases if lower than 25%)  -->
             <effect type="Data" amount="0.25" subtype="TacticArmor" tactic="StandGround"
                 armortype="Hand" relativity="Absolute">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
+
             <!--  Add ranged resist while standing ground -->
             <effect type="Data" amount="0.15" subtype="TacticArmor" tactic="StandGround"
                 armortype="Ranged" relativity="Absolute">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
+
             <!--  Add siege resist while standing ground  -->
             <effect type="Data" amount="0.10" subtype="TacticArmor" tactic="StandGround"
                 armortype="Siege" relativity="Absolute">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
+
+            <!--  Reduce speed while standing ground  -->
             <effect type="Data" tactic="StandGround" amount="-0.50" subtype="SpeedModifier"
                 relativity="Absolute">
                 <target type="ProtoUnit">AbstractMusketeer</target>
             </effect>
+
             <!--  Removing to clean back up UI for its slot be used again  -->
             <effect type="CommandRemove" tech="ModHoldTheLine">
                 <target type="ProtoUnit">ModCommandPost</target>
@@ -1020,6 +1050,7 @@
             <effect type="Data" amount="1.10" subtype="Speed" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractInfantry</target>
             </effect>
+
             <!--  Infantry apply stronger melee snare  -->
             <effect type="Data" action="MeleeHandAttack" amount="1.25" subtype="Snare"
                 relativity="Assign">
@@ -1041,6 +1072,7 @@
                 relativity="Assign">
                 <target type="ProtoUnit">AbstractInfantry</target>
             </effect>
+
         </effects>
     </tech>
 
@@ -1079,7 +1111,6 @@
             <effect type="Data" amount="3000.00" subtype="Hitpoints" relativity="Assign">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
-
 
             <!-- Permanently deny the opposite city route -->
             <effect type="TechStatus" status="unobtainable">
@@ -1953,7 +1984,7 @@
             </effect>
 
             <!-- Economic buildings gain +3 Line of Sight -->
-            <effect type="Data" amount="3.00" subtype="LOS"
+            <effect type="Data" amount="5.00" subtype="LOS"
                 relativity="Absolute">
                 <target type="ProtoUnit">Economic</target>
             </effect>
@@ -2045,7 +2076,7 @@
             <!-- Set the new Wood production rate -->
             <effect type="Data"
                 action="AutoGatherWood"
-                amount="1.25"
+                amount="0.25"
                 subtype="WorkRate"
                 unittype="Wood"
                 relativity="Override">
@@ -2143,10 +2174,10 @@
         </prereqs>
 
         <effects>
-            <!-- Add +0.25 Wood/sec to the existing Bunker Mills Wood trickle -->
+            <!-- Add +1.25 Wood/sec to the existing Bunker Mills Wood trickle -->
             <effect type="Data"
                 action="AutoGatherWood"
-                amount="0.25"
+                amount="1.25"
                 subtype="WorkRate"
                 unittype="Wood"
                 relativity="Absolute">
@@ -2531,6 +2562,10 @@
 
         <icon>resources\images\icons\techs\Squared Icons\ModEstablishedFortifications.png</icon>
 
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">600.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+
         <prereqs>
             <techstatus status="Active">ModDefensiveLessons</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
@@ -2659,9 +2694,13 @@
         <displaynameid>9910024</displaynameid>
         <rollovertextid>9910025</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>80.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModCitadelExpansion.png</icon>
+
+        <cost resourcetype="Food">600.0000</cost>
+        <cost resourcetype="Wood">1000.0000</cost>
+        <cost resourcetype="Gold">600.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModEstablishedFortifications</techstatus>
@@ -2671,8 +2710,8 @@
         <effects>
 
             <!-- Walls provide 50% more vision -->
-            <effect type="Data" amount="1.50" subtype="LOS"
-                relativity="BasePercent">
+            <effect type="Data" amount="10.00" subtype="LOS"
+                relativity="Absolute">
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
@@ -2739,9 +2778,13 @@
         <displaynameid>9910026</displaynameid>
         <rollovertextid>9910027</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>30.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModSurveyedApproaches.png</icon>
+
+        <cost resourcetype="Food">75.0000</cost>
+        <cost resourcetype="Wood">100.0000</cost>
+        <cost resourcetype="Gold">75.0000</cost>
 
         <effects>
             <!-- +4 LOS to infantry -->
@@ -2779,9 +2822,13 @@
         <displaynameid>9910028</displaynameid>
         <rollovertextid>9910029</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModSignaledNetwork.png</icon>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModSurveyedApproaches</techstatus>
@@ -2820,6 +2867,12 @@
                 ModCharteredObservationPosts
             </effect>
 
+            <!-- Outpost Build Limit -->
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+
             <effect type="CommandAdd" tech="ModCharteredObservationPosts" page="1" column="5">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -2831,9 +2884,13 @@
         <displaynameid>9910030</displaynameid>
         <rollovertextid>9910031</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\ModCharteredObservationPosts.png</icon>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModSignaledNetwork</techstatus>
@@ -2871,9 +2928,13 @@
         <displaynameid>9910032</displaynameid>
         <rollovertextid>9910033</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+
+
+        <cost resourcetype="Wood">500.0000</cost>
+        <cost resourcetype="Gold">250.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModCharteredObservationPosts</techstatus>
@@ -2881,15 +2942,9 @@
         </prereqs>
 
         <effects>
-
-            <!-- Add call levy infantry action -->
-            <effect type="CommandAdd" command="deSPCLevyCityGuards" page="1" column="3">
-                <target type="ProtoUnit">TradingPost</target>
-            </effect>
-
-            <!-- Enables the levy behind that command -->
-            <effect type="TechStatus" status="active">
-                DESPCLevyCityGuards
+            <!-- Outpost Build Limit -->
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModCitadelWatchNetwork">
@@ -2909,13 +2964,26 @@
         <displaynameid>9909032</displaynameid>
         <rollovertextid>9909033</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
+
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
+
         <effects>
+            <!-- Add +0.15 Food/sec to the existing Bunker Mill food trickle -->
+            <effect type="Data"
+                action="AutoGather"
+                amount="0.15"
+                subtype="WorkRate"
+                unittype="Food"
+                relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModWinterStores">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2937,11 +3005,12 @@
         <displaynameid>9909034</displaynameid>
         <rollovertextid>9909035</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
-        <flag>CountsTowardEconomicScore</flag>
+        <cost resourcetype="Wood">250.0000</cost>
+        <cost resourcetype="Gold">250.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModWinterStores</techstatus>
@@ -2949,6 +3018,20 @@
         </prereqs>
 
         <effects>
+            <!-- Add +0.25 Food/sec to the existing Bunker Mill food trickle -->
+            <effect type="Data"
+                action="AutoGather"
+                amount="0.25"
+                subtype="WorkRate"
+                unittype="Food"
+                relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- +1 Build limit to Bunker Mill-->
+            <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModExpandedGranaries">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -2970,11 +3053,15 @@
         <displaynameid>9909036</displaynameid>
         <rollovertextid>9909037</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>90.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">500.0000</cost>
+        <cost resourcetype="Wood">500.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModExpandedGranaries</techstatus>
@@ -2982,6 +3069,33 @@
         </prereqs>
 
         <effects>
+            <!-- Add +0.25 Food/sec to the existing Bunker Mill food trickle -->
+            <effect type="Data"
+                action="AutoGather"
+                amount="0.25"
+                subtype="WorkRate"
+                unittype="Food"
+                relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Forts gain +100% HP -->
+            <effect type="Data" amount="2.00" subtype="Hitpoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- Add food bounty when destroyed-->
+            <effect type="Data" amount="1500.00" subtype="Bounty" resource="Food" relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Bunker Mills require 50% more build time -->
+            <effect type="Data" amount="1.50" subtype="BuildPoints"
+                relativity="BasePercent">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModSiegeGranaries">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -2998,13 +3112,36 @@
         <displaynameid>9909038</displaynameid>
         <rollovertextid>9909039</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
+
         <effects>
+            <!-- Add Factory-style coin production to Bunker Mills -->
+            <effect type="Data"
+                protoaction="AutoGatherCoin"
+                amount="1.00"
+                subtype="ProtoActionAdd"
+                unittype="Factory"
+                relativity="Assign">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- Set the new Coin production rate -->
+            <effect type="Data"
+                action="AutoGatherCoin"
+                amount="0.25"
+                subtype="WorkRate"
+                unittype="Coin"
+                relativity="Override">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModRecoveredTreasures">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3026,11 +3163,15 @@
         <displaynameid>9909040</displaynameid>
         <rollovertextid>9909041</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModRecoveredTreasures</techstatus>
@@ -3038,6 +3179,16 @@
         </prereqs>
 
         <effects>
+
+            <!-- Add +0.10 coin/sec to the existing Bunker Mill coin trickle -->
+            <effect type="Data"
+                action="AutoGather"
+                amount="0.10"
+                subtype="WorkRate"
+                unittype="Coin"
+                relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModCoinReserves">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3065,12 +3216,30 @@
 
         <flag>CountsTowardEconomicScore</flag>
 
+        <cost resourcetype="Food">500.0000</cost>
+        <cost resourcetype="Wood">500.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
+
         <prereqs>
             <techstatus status="Active">ModCoinReserves</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
 
         <effects>
+            <!-- Add +0.25 coin/sec to the existing Bunker Mill coin trickle -->
+            <effect type="Data"
+                action="AutoGather"
+                amount="0.25"
+                subtype="WorkRate"
+                unittype="Coin"
+                relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <!-- +1 Build limit to Bunker Mill-->
+            <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModCitadelTreasury">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3089,17 +3258,24 @@
         <displaynameid>9909044</displaynameid>
         <rollovertextid>9909045</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Gold">75.0000</cost>
 
         <prereqs>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
 
         <effects>
+            <!-- Markets provide +5 population -->
+            <effect type="Data" amount="5.00" subtype="PopulationCapAddition"
+                relativity="Absolute">
+                <target type="ProtoUnit">AbstractMarket</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModWaystationCenters">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3121,11 +3297,14 @@
         <displaynameid>9909046</displaynameid>
         <rollovertextid>9909047</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Wood">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModWaystationCenters</techstatus>
@@ -3133,6 +3312,18 @@
         </prereqs>
 
         <effects>
+            <!-- Markets gain 10% better purchase and sale rates -->
+            <effect type="Data" amount="0.90" subtype="Market" component="BuyFactor" relativity="Percent">
+                <target type="Player"> </target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Market" component="SellFactor" relativity="Percent">
+                <target type="Player"> </target>
+            </effect>
+
+            <!-- Markets gain +500 hitpoints -->
+            <effect type="Data" amount="500.00" subtype="Hitpoints" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMarket</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModProtectedMarkets">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3154,11 +3345,15 @@
         <displaynameid>9909048</displaynameid>
         <rollovertextid>9909049</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>90.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">500.0000</cost>
+        <cost resourcetype="Wood">500.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModProtectedMarkets</techstatus>
@@ -3166,6 +3361,24 @@
         </prereqs>
 
         <effects>
+            <!-- 5% better Food purchase rate -->
+            <effect type="ResourceExchange" multiplier="0.95" toresource="Food" fromresource="Gold">
+            </effect>
+
+            <!-- Markets gain +500 hitpoints -->
+            <effect type="Data" amount="500.00" subtype="Hitpoints" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMarket</target>
+            </effect>
+
+            <!-- Increase build limit by 2-->
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractMarket</target>
+            </effect>
+
+            <!-- Increase build limit by 2-->
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModRoadwardForts">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3184,13 +3397,21 @@
         <displaynameid>9909050</displaynameid>
         <rollovertextid>9909051</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>30.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
+        <cost resourcetype="Wood">50.0000</cost>
+        <cost resourcetype="Gold">50.0000</cost>
+
         <effects>
+            <!-- Trade Posts cost 10% less Wood -->
+            <effect type="Data" amount="0.90" subtype="Cost"
+                resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">TradePost</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModFrontierCompacts">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3212,11 +3433,15 @@
         <displaynameid>9909052</displaynameid>
         <rollovertextid>9909053</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">125.0000</cost>
+        <cost resourcetype="Wood">125.0000</cost>
+        <cost resourcetype="Gold">125.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModFrontierCompacts</techstatus>
@@ -3224,6 +3449,15 @@
         </prereqs>
 
         <effects>
+            <!-- Native Settlement warriors gain +15% Hitpoints -->
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Native Settlement warriors gain +15% Damage -->
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModBorderPacts">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3245,7 +3479,7 @@
         <displaynameid>9909054</displaynameid>
         <rollovertextid>9909055</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
@@ -3256,7 +3490,14 @@
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
 
+        <cost resourcetype="Food">500.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
+
         <effects>
+            <!-- Native Settlement warrior build limits +50% -->
+            <effect type="Data" amount="1.50" subtype="BuildLimit" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModCouncilOfTheFrontier">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3278,11 +3519,14 @@
         <displaynameid>9909056</displaynameid>
         <rollovertextid>9909057</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>75.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">500.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModCouncilOfTheFrontier</techstatus>
@@ -3290,6 +3534,26 @@
         </prereqs>
 
         <effects>
+            <!-- Native Settlement warrior build limits +25% -->
+            <effect type="Data" amount="1.25" subtype="BuildLimit" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Native Settlement warriors move 15% faster -->
+            <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Native units are cheaper -->
+            <effect type="Data" amount="0.75" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+            <effect type="Data" amount="0.75" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+            <effect type="Data" amount="0.75" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModBorderlandConcord">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3311,11 +3575,14 @@
         <displaynameid>9909058</displaynameid>
         <rollovertextid>9909059</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>90.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModBorderlandConcord</techstatus>
@@ -3323,6 +3590,32 @@
         </prereqs>
 
         <effects>
+            <!-- Native Settlement warriors move 15% faster -->
+            <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Native ranged warriors attack 25% faster -->
+            <effect type="Data" amount="0.75" subtype="RateOfFire"
+                action="RangedAttack" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Native melee warriors attack 25% faster -->
+            <effect type="Data" amount="0.75" subtype="RateOfFire"
+                action="HandAttack" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Native Settlement warrior build limits +125% -->
+            <effect type="Data" amount="2.25" subtype="BuildLimit" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Native units train faster -->
+            <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModGuardianOfTheAccords">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3341,17 +3634,44 @@
         <displaynameid>9909060</displaynameid>
         <rollovertextid>9909061</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
 
         <prereqs>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
 
         <effects>
+            <!-- Buildings complete 20% faster -->
+            <effect type="Data" amount="0.80" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
+            <!-- Artillery trains 15% faster -->
+            <effect type="Data" amount="0.85" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractArtillery</target>
+            </effect>
+
+            <!-- Artillery costs 10% less Food -->
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractArtillery</target>
+            </effect>
+
+            <!-- Artillery costs 10% less Wood -->
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractArtillery</target>
+            </effect>
+
+            <!-- Artillery costs 10% less Coin -->
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractArtillery</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModCivicWorkshop">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3370,13 +3690,28 @@
         <displaynameid>9909062</displaynameid>
         <rollovertextid>9909063</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>30.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
 
+        <cost resourcetype="Food">75.0000</cost>
+        <cost resourcetype="Gold">75.0000</cost>
+
         <effects>
+            <!-- Settlers deal bonus damage to treasure guardians -->
+            <effect type="Data" amount=".50" subtype="Damage" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+                <target type="ProtoUnit">Guardian</target>
+            </effect>
+
+            <!-- Explorers deal bonus damage to treasure guardians -->
+            <effect type="Data" amount=".50" subtype="Damage" relativity="Absolute">
+                <target type="ProtoUnit">Explorer</target>
+                <target type="ProtoUnit">Guardian</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModNewWorldSpoils">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3389,7 +3724,6 @@
             <effect type="CommandAdd" tech="ModSettlersResolve" page="2" column="5">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
-
         </effects>
     </tech>
 
@@ -3398,11 +3732,14 @@
         <displaynameid>9909064</displaynameid>
         <rollovertextid>9909065</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>45.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">175.0000</cost>
+        <cost resourcetype="Gold">175.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModNewWorldSpoils</techstatus>
@@ -3410,6 +3747,49 @@
         </prereqs>
 
         <effects>
+            <!-- Settlers move 15% faster-->
+            <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Settler become alot stronger and stand and fight-->
+            <effect type="Data" amount="15.00" subtype="DamageForAllRangedLogicActions" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" amount="15.00" subtype="DamageForAllHandLogicActions" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" amount="3.00" subtype="DamageForAllRangedLogicActions" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeAffectedByVillagerUpgrades</target>
+            </effect>
+            <effect type="Data" amount="3.00" subtype="DamageForAllHandLogicActions" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeAffectedByVillagerUpgrades</target>
+            </effect>
+            <effect type="Data" amount="1.00" tactic="Normal" subtype="AutoAttackType" unittype="LogicalTypeRangedUnitsAutoAttack" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Fallen Settlers become Filibusters -->
+            <effect type="Data" amount="1.00" subtype="DeadTransform"
+                unittype="deREVFilibuster" relativity="Assign">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data" amount="0.00" subtype="UpdateVisual"
+                unittype="deREVFilibuster" relativity="Absolute">
+                <target type="Player">
+                </target>
+            </effect>
+
+            <!-- Filibusters use 1 population instead of 3 -->
+            <effect type="Data" amount="1.00" subtype="PopulationCount" relativity="Assign">
+                <target type="ProtoUnit">deREVFilibuster</target>
+            </effect>
+
+            <!-- Allow Bunker Mills to train Filibusters -->
+            <effect type="CommandAdd" proto="deREVFilibuster" page="0" column="3">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModSettlersResolve">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -3431,11 +3811,14 @@
         <displaynameid>9909066</displaynameid>
         <rollovertextid>9909067</rollovertextid>
         <status>UNOBTAINABLE</status>
-        <researchpoints>1.0000</researchpoints>
+        <researchpoints>60.0000</researchpoints>
 
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
 
         <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">500.0000</cost>
+        <cost resourcetype="Gold">500.0000</cost>
 
         <prereqs>
             <techstatus status="Active">ModSettlersResolve</techstatus>
@@ -3443,6 +3826,25 @@
         </prereqs>
 
         <effects>
+            <!-- Increase Filibuster stats-->
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">deREVFilibuster</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">deREVFilibuster</target>
+            </effect>
+
+            <!-- Filibusters deal +200% damage against all pet units -->
+            <effect type="Data" amount="3.00" subtype="DamageBonus"
+                unittype="AbstractPet" relativity="Absolute">
+                <target type="ProtoUnit">deREVFilibuster</target>
+            </effect>
+
+            <!-- Filibusters deal +200% damage against all guardian units -->
+            <effect type="Data" amount="3.00" subtype="DamageBonus"
+                unittype="Guardian" relativity="Absolute">
+                <target type="ProtoUnit">deREVFilibuster</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModExpeditionaryCorps">
                 <target type="ProtoUnit">ModBunkerMills</target>

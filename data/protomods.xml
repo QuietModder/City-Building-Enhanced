@@ -1131,8 +1131,8 @@
         <portraiticon>resources\art\buildings\mill\mill_portrait.png</portraiticon>
         <civflagoverride>objects\flags\none</civflagoverride>
 
-        <initialhitpoints>5000.0000</initialhitpoints>
-        <maxhitpoints>5000.0000</maxhitpoints>
+        <initialhitpoints>10000.0000</initialhitpoints>
+        <maxhitpoints>10000.0000</maxhitpoints>
         <los>24.0000</los>
         <armor type="Siege" value="0.2500"></armor>
 
