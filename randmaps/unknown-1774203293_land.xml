@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<mapinfo
+detailsText =  "Unknown: a mysterious uncharted wilderness.\n
+\n
+Natives: variable\n
+Outlaws: variable\n
+Map by vividlyplain\n
+"
+imagepath = "ui\random_map\vividlyunknown\vividlyunknown_mini" 
+displayName = "Unknown - Large Land Map"
+cannotReplace = ""
+loadDetailsText = "The mysterious Unknown! Snow or desert, land or water, Trade Routes or Natives or both - you never quite know what you're going to get. Expect the unexpected!\n
+\n
+Natives: variable\n
+Outlaws: variable\n
+Map by vividlyplain\n
+"
+    loadBackground="ui\random_map\vividlyunknown\vividlyunknown_loading">
+   <loadss>ui\random_map\vividlyunknown\screen11</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen16</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen1</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen2</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen3</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen4</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen5</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen6</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen7</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen8</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen9</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen10</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen12</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen13</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen14</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen15</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen17</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen18</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen19</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen20</loadss>
+   <loadss>ui\random_map\eu_hm_30yw\hm_30yw_ss_02</loadss>
+   <loadss>ui\random_map\unknown\unknown_ss_01</loadss>
+   <loadss>ui\random_map\unknown\unknown_ss_02</loadss>
+</mapinfo>
