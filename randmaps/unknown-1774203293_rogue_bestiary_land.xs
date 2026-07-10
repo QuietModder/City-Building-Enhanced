@@ -6458,11 +6458,114 @@ void main(void)
 	int counterYoru = -1;
 	int counterZapo = -1;
 	int counterZen = -1;
+	string cbeNativeThemeName = "mixed minor civilizations";
+	if (africanMap == 1)
+		cbeNativeThemeName = "African minor civilizations";
+	else if (asianMap == 1 || himalMap == 1 || dekkanMap == 1 || yellowRiverMap == 1 || japanMap == 1 || indonesiaMap == 1)
+		cbeNativeThemeName = "Asian minor civilizations";
+	else if (euMap == 1 || europeanMerc == 1)
+		cbeNativeThemeName = "European minor civilizations";
+	else if (amazonMap == 1 || andesMap == 1 || araucMap == 1 || saMap == 1)
+		cbeNativeThemeName = "Central and South American minor civilizations";
+	else if (californiaMap == 1 || sonoraMap == 1 || rockiesMap == 1 || nwtMap == 1 || naMap == 1)
+		cbeNativeThemeName = "North American frontier minor civilizations";
+	else if (caribbeanMap == 1 || bayouMap == 1)
+		cbeNativeThemeName = "Caribbean and wetland minor civilizations";
+	rmEchoInfo("CBE native theme = "+cbeNativeThemeName);
 
 	for(i = 0; <nativeNumber)
 	{
 		nativeChance = rmRandFloat(0,0.41);
 //			nativeChance = 0.41;		// for testing
+		if (rmRandFloat(0,1) <= 0.80)
+		{
+			float cbeNativeThemeRoll = rmRandFloat(0,1);
+			if (africanMap == 1)
+			{
+				if (cbeNativeThemeRoll <= 0.20)
+					nativeChance = rmRandFloat(0.16, 0.17);
+				else if (cbeNativeThemeRoll <= 0.40)
+					nativeChance = rmRandFloat(0.17, 0.18);
+				else if (cbeNativeThemeRoll <= 0.60)
+					nativeChance = rmRandFloat(0.18, 0.19);
+				else if (cbeNativeThemeRoll <= 0.80)
+					nativeChance = rmRandFloat(0.19, 0.20);
+				else
+					nativeChance = rmRandFloat(0.20, 0.21);
+			}
+			else if (asianMap == 1 || himalMap == 1 || dekkanMap == 1 || yellowRiverMap == 1 || japanMap == 1 || indonesiaMap == 1)
+			{
+				if (cbeNativeThemeRoll <= 0.15)
+					nativeChance = rmRandFloat(0.09, 0.10);
+				else if (cbeNativeThemeRoll <= 0.32)
+					nativeChance = rmRandFloat(0.21, 0.22);
+				else if (cbeNativeThemeRoll <= 0.49)
+					nativeChance = rmRandFloat(0.22, 0.23);
+				else if (cbeNativeThemeRoll <= 0.66)
+					nativeChance = rmRandFloat(0.23, 0.24);
+				else if (cbeNativeThemeRoll <= 0.83)
+					nativeChance = rmRandFloat(0.25, 0.26);
+				else
+					nativeChance = rmRandFloat(0.26, 0.27);
+			}
+			else if (euMap == 1 || europeanMerc == 1)
+				nativeChance = rmRandFloat(0.00, 0.10);
+			else if (amazonMap == 1 || andesMap == 1 || araucMap == 1 || saMap == 1)
+			{
+				if (cbeNativeThemeRoll <= 0.15)
+					nativeChance = rmRandFloat(0.10, 0.11);
+				else if (cbeNativeThemeRoll <= 0.30)
+					nativeChance = rmRandFloat(0.13, 0.14);
+				else if (cbeNativeThemeRoll <= 0.45)
+					nativeChance = rmRandFloat(0.27, 0.28);
+				else if (cbeNativeThemeRoll <= 0.60)
+					nativeChance = rmRandFloat(0.32, 0.33);
+				else if (cbeNativeThemeRoll <= 0.75)
+					nativeChance = rmRandFloat(0.33, 0.34);
+				else if (cbeNativeThemeRoll <= 0.90)
+					nativeChance = rmRandFloat(0.36, 0.37);
+				else
+					nativeChance = rmRandFloat(0.40, 0.41);
+			}
+			else if (californiaMap == 1 || sonoraMap == 1 || rockiesMap == 1 || nwtMap == 1 || naMap == 1)
+			{
+				if (cbeNativeThemeRoll <= 0.08)
+					nativeChance = rmRandFloat(0.11, 0.12);
+				else if (cbeNativeThemeRoll <= 0.16)
+					nativeChance = rmRandFloat(0.12, 0.13);
+				else if (cbeNativeThemeRoll <= 0.24)
+					nativeChance = rmRandFloat(0.14, 0.15);
+				else if (cbeNativeThemeRoll <= 0.32)
+					nativeChance = rmRandFloat(0.15, 0.16);
+				else if (cbeNativeThemeRoll <= 0.40)
+					nativeChance = rmRandFloat(0.28, 0.29);
+				else if (cbeNativeThemeRoll <= 0.48)
+					nativeChance = rmRandFloat(0.29, 0.30);
+				else if (cbeNativeThemeRoll <= 0.56)
+					nativeChance = rmRandFloat(0.30, 0.31);
+				else if (cbeNativeThemeRoll <= 0.64)
+					nativeChance = rmRandFloat(0.31, 0.32);
+				else if (cbeNativeThemeRoll <= 0.72)
+					nativeChance = rmRandFloat(0.34, 0.35);
+				else if (cbeNativeThemeRoll <= 0.80)
+					nativeChance = rmRandFloat(0.35, 0.36);
+				else if (cbeNativeThemeRoll <= 0.90)
+					nativeChance = rmRandFloat(0.37, 0.38);
+				else
+					nativeChance = rmRandFloat(0.38, 0.39);
+			}
+			else if (caribbeanMap == 1 || bayouMap == 1)
+			{
+				if (cbeNativeThemeRoll <= 0.25)
+					nativeChance = rmRandFloat(0.27, 0.28);
+				else if (cbeNativeThemeRoll <= 0.50)
+					nativeChance = rmRandFloat(0.39, 0.40);
+				else if (cbeNativeThemeRoll <= 0.75)
+					nativeChance = rmRandFloat(0.40, 0.41);
+				else
+					nativeChance = rmRandFloat(0.28, 0.29);
+			}
+		}
 
 		natLocX = rmRandFloat(0.05,0.95);
 		natLocY = rmRandFloat(0.05,0.95);
@@ -7458,15 +7561,22 @@ void main(void)
 	}
 	else
 	{
-		if (cbeBestiaryMythicRoll <= 0.34)
-			cbeBestiaryMythicUnit = "MythicalGrimReaper";
-		else if (cbeBestiaryMythicRoll <= 0.67)
+		if (cbeBestiaryMythicRoll <= 0.50)
 			cbeBestiaryMythicUnit = "LegendaryWyvernLand";
 		else
 			cbeBestiaryMythicUnit = "MythicalChineseDragon";
 	}
 	rmEchoInfo("CBE Bestiary wildlife theme = "+cbeBestiaryThemeName);
 	rmEchoInfo("CBE Bestiary mythic center = "+cbeBestiaryMythicThemeName+" / "+cbeBestiaryMythicUnit);
+
+	int cbeBestiaryCenterClear = rmCreateArea("CBE bestiary center clearing");
+	rmSetAreaLocation(cbeBestiaryCenterClear, 0.50, 0.50);
+	rmSetAreaSize(cbeBestiaryCenterClear, rmAreaTilesToFraction(360), rmAreaTilesToFraction(440));
+	rmSetAreaCoherence(cbeBestiaryCenterClear, 1.0);
+	rmSetAreaSmoothDistance(cbeBestiaryCenterClear, 2);
+	rmSetAreaMix(cbeBestiaryCenterClear, landName);
+	rmSetAreaWarnFailure(cbeBestiaryCenterClear, false);
+	rmBuildArea(cbeBestiaryCenterClear);
 
 	int cbeBestiaryWildlife1ID = rmCreateObjectDef("CBE bestiary wildlife 1");
 	rmAddObjectDefItem(cbeBestiaryWildlife1ID, cbeBestiaryWildlife1, rmRandInt(4,7), 5.0);
@@ -7528,6 +7638,19 @@ void main(void)
 	rmAddObjectDefConstraint(cbeBestiaryLegendaryTreasureID, avoidEdge);
 	if (floodedLand != 1)
 		rmAddObjectDefConstraint(cbeBestiaryLegendaryTreasureID, shortAvoidImpassableLand);
+
+	int cbeBestiaryCenterWildlifeID = rmCreateObjectDef("CBE bestiary visible center wildlife");
+	rmAddObjectDefItem(cbeBestiaryCenterWildlifeID, cbeBestiaryWildlife1, 6, 7.0);
+	rmAddObjectDefItem(cbeBestiaryCenterWildlifeID, cbeBestiaryWildlife2, 6, 9.0);
+	rmAddObjectDefItem(cbeBestiaryCenterWildlifeID, cbeBestiaryGuardian, 2, 12.0);
+	rmSetObjectDefMinDistance(cbeBestiaryCenterWildlifeID, 0);
+	rmSetObjectDefMaxDistance(cbeBestiaryCenterWildlifeID, 18);
+	rmSetObjectDefCreateHerd(cbeBestiaryCenterWildlifeID, false);
+
+	int cbeBestiaryCenterMythicID = rmCreateObjectDef("CBE bestiary visible mythic center");
+	rmAddObjectDefItem(cbeBestiaryCenterMythicID, cbeBestiaryMythicUnit, 1, 0.0);
+	rmSetObjectDefMinDistance(cbeBestiaryCenterMythicID, 0);
+	rmSetObjectDefMaxDistance(cbeBestiaryCenterMythicID, 6);
 
 	int startSilver3ID = rmCreateObjectDef("player farther silver");
 	if (berriesGalore == 2)
@@ -9332,6 +9455,9 @@ void main(void)
 	}
 
 	rmClearClosestPointConstraints();
+
+	rmPlaceObjectDefAtLoc(cbeBestiaryCenterWildlifeID, 0, 0.50, 0.50, 1);
+	rmPlaceObjectDefAtLoc(cbeBestiaryCenterMythicID, 0, 0.50, 0.50, 1);
 
 	if (chaosBar == 1)
 		rmSetStatusText("", 0.20);
@@ -17727,11 +17853,23 @@ void main(void)
 	rmCreateTrigger("cbeRogueCamp2Destroyed");
 	rmCreateTrigger("cbeRogueCamp3Destroyed");
 	rmCreateTrigger("cbeRogueMaxCampSurge");
+	rmCreateTrigger("cbeBestiaryVariantNotice");
 	rmCreateTrigger("cbeBestiaryMythicSpawn");
 	rmCreateTrigger("cbeBestiaryMythicRoam1");
 	rmCreateTrigger("cbeBestiaryMythicRoam2");
 	rmCreateTrigger("cbeBestiaryMythicRoam3");
 	rmCreateTrigger("cbeBestiaryMythicRoam4");
+
+	rmSwitchToTrigger(rmTriggerID("cbeBestiaryVariantNotice"));
+	rmSetTriggerPriority(4);
+	rmSetTriggerActive(true);
+	rmSetTriggerRunImmediately(true);
+	rmSetTriggerLoop(false);
+	rmAddTriggerCondition("Timer");
+	rmSetTriggerConditionParamInt("Param1", 8, false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=0.4,1,0.45>Bestiary variant loaded: "+cbeBestiaryThemeName+" / "+cbeBestiaryMythicThemeName+" / "+cbeNativeThemeName+".", false);
 
 	rmSwitchToTrigger(rmTriggerID("cbeBestiaryMythicSpawn"));
 	rmSetTriggerPriority(4);
