@@ -1,9 +1,7 @@
 <protomods>
-    <unit id="294" name="TownCenter">
-        <train row="0" page="0" column="7">ModArchitect</train>
-    </unit>
-    <!--  New Units   -->
-    <!--  Economic Units   -->
+
+    <!--  New Units         -->
+    <!--  Economic Units    -->
     <!--  Architect Units   -->
     <unit id="9001" name="ModArchitect">
         <dbid>9001</dbid>
@@ -27,16 +25,19 @@
         <los>14.0000</los>
         <unitaitype>Civilian</unitaitype>
         <trainpoints>10.0000</trainpoints>
-        <buildlimit>5</buildlimit>
+        <buildlimit>1</buildlimit>
         <allowedage>0</allowedage>
+
+
         <cost resourcetype="Food">50.0000</cost>
         <armor type="Ranged" value="0.1000"> </armor>
+        <CostEscalation>1.20</CostEscalation>
+
         <unittype>Unit</unittype>
         <unittype>UnitClass</unittype>
         <unittype>Economic</unittype>
         <unittype>EconomicUnit</unittype>
         <unittype>AbstractVillager</unittype>
-        <unittype>AbstractFreeBuilder</unittype>
         <unittype>ValidIdleVillager</unittype>
         <unittype>HasBountyValue</unittype>
         <unittype>LogicalTypeEasySelectAvoid</unittype>
@@ -44,16 +45,18 @@
         <unittype>LogicalTypeAffectedByTownBell</unittype>
         <unittype>LogicalTypeLandEconomy</unittype>
         <unittype>AffectedByTownBell</unittype>
-        <unittype>CountsTowardBuildLimit</unittype>
         <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
         <unittype>LogicalTypeVillagersAttack</unittype>
         <unittype>LogicalTypeHandUnitsAttack</unittype>
+
         <carrycapacity resourcetype="Wood">1.0000</carrycapacity>
+
         <flag>CollidesWithProjectiles</flag>
         <flag>ApplyHandicapTraining</flag>
         <flag>CorpseDecays</flag>
         <flag>ShowGarrisonButton</flag>
-        <train row="0" page="6" column="0">ModCommandPost</train>
+        <flag>Tracked</flag>
+
         <command page="10" column="0">Garrison</command>
         <command page="10" column="1">Stop</command>
         <command page="10" column="7">Delete</command>
@@ -746,7 +749,6 @@
         <flag>DontRotateObstruction</flag>
         <flag>ObscuredByUnits</flag>
         <flag>Tracked</flag>
-        <flag>ExperienceUnit</flag>
         <flag>UseSharedBuildLimit</flag>
 
         <command page="10" column="7">Delete</command>
@@ -819,7 +821,6 @@
             <damagebonus type="AbstractInfantry">2.000000</damagebonus>
         </protoaction>
     </unit>
-
 
     <!-- Mounted Infantry - Dismounted Form -->
     <unit mergeMode="add" id="9034" name="ModMountedInfantry">
@@ -930,7 +931,6 @@
         <flag>ObscuredByUnits</flag>
         <flag>VisibleUnderFogIfGaia</flag>
         <flag>Tracked</flag>
-        <flag>ExperienceUnit</flag>
         <flag>UseSharedBuildLimit</flag>
 
         <command page="10" column="1">Stop</command>
@@ -1042,6 +1042,7 @@
         </protoaction>
     </unit>
 
+
     <!--  New Buildings   -->
     <unit id="10189" name="ModCommandPost">
         <dbid>10189</dbid>
@@ -1067,17 +1068,22 @@
         <unitaitype>Building</unitaitype>
         <buildpoints>30.0000</buildpoints>
         <buildlimit>4</buildlimit>
+
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.25"> </armor>
+        <builderlimit>8</builderlimit>
+
         <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">100.0000</cost>
-        <allowedage>1</allowedage>
-        <armor type="Siege" value="0.0000"> </armor>
-        <builderlimit>8</builderlimit>
+
         <unittype>Building</unittype>
         <unittype>BuildingClass</unittype>
         <unittype>ValidColonyBuilding</unittype>
         <unittype>LogicalTypeBuildingsNotWalls</unittype>
         <unittype>LogicalTypeMinimapFilterMilitary</unittype>
         <unittype>HasBountyValue</unittype>
+
+
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>
         <flag>Immoveable</flag>
@@ -1090,8 +1096,2207 @@
         <flag>FlattenGround</flag>
         <flag>HasGatherPoint</flag>
         <flag>Tracked</flag>
+        <flag>DisplayRange</flag>
+
         <command page="10" column="7">Delete</command>
         <command page="10" column="3">SetGatherPointMilitary</command>
         <tactics>barracks.tactics</tactics>
     </unit>
+
+    <!-- ========================================================= -->
+    <!-- Bunker Mills                                              -->
+    <!-- Custom food trickle building based on deRMFoodMill        -->
+    <!-- ========================================================= -->
+    <unit mergeMode="add" id="10190" name="ModBunkerMills">
+        <dbid>10190</dbid>
+
+        <displaynameid>9900003</displaynameid>
+        <editornameid>9900003</editornameid>
+        <rollovertextid>9900004</rollovertextid>
+        <shortrollovertextid>9900005</shortrollovertextid>
+
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+
+        <animfile>buildings\mod_bunker_mills\mod_bunkermills.xml</animfile>
+        <physicsinfo>mill</physicsinfo>
+        <impacttype>Stone</impacttype>
+        <deadreplacement>BuildingRubble2x2</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+
+        <icon>resources\art\buildings\mill\mill_icon.png</icon>
+        <minimapicon>ui\minimap\highlighted item</minimapicon>
+        <portraiticon>resources\art\buildings\mill\mill_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\none</civflagoverride>
+
+        <initialhitpoints>10000.0000</initialhitpoints>
+        <maxhitpoints>10000.0000</maxhitpoints>
+        <los>24.0000</los>
+        <armor type="Siege" value="0.2500"></armor>
+
+        <maxcontained>10</maxcontained>
+        <containedregenrate>0.1500</containedregenrate>
+
+        <buildpoints>45.0000</buildpoints>
+        <bounty>25.0000</bounty>
+        <buildbounty>25.0000</buildbounty>
+        <buildlimit>1</buildlimit>
+        <displayedrange>14</displayedrange>
+
+        <cost resourcetype="Wood">500.0000</cost>
+        <cost resourcetype="Gold">200.0000</cost>
+
+        <allowedage>0</allowedage>
+
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Building</unittype>
+        <unittype>Resource</unittype>
+        <unittype>Economic</unittype>
+        <unittype>AbstractBank</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Food</unittype>
+
+        <flag>ShowGarrisonButton</flag>
+        <flag>AllowAutoGarrison</flag>
+        <flag>DisplayRange</flag>
+        <flag>ColorTransformNonGaia</flag>
+        <flag>UnlimitedSupply</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>VisibleUnderFog</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+
+        <contain>AbstractVillager</contain>
+        <contain>AbstractHealer</contain>
+
+        <notcontain>AbstractMonk</notcontain>
+        <notcontain>ExcludeFromRansom</notcontain>
+        <notcontain>AbstractFishingBoat</notcontain>
+
+        <command page="10" column="1">Stop</command>
+        <command page="10" column="5">Eject</command>
+        <command page="10" column="7">Delete</command>
+
+        <tactics>millconvert.tactics</tactics>
+
+        <!-- Food trickle -->
+        <protoaction>
+            <name>AutoGather</name>
+            <rate type="Food">0.10</rate>
+        </protoaction>
+    </unit>
+
+    <unit id="10201" name="ModOliveOrchard">
+        <dbid>10201</dbid>
+
+        <displaynameid>9900006</displaynameid>
+        <editornameid>9900006</editornameid>
+        <rollovertextid>9900007</rollovertextid>
+        <shortrollovertextid>9900008</shortrollovertextid>
+
+        <obstructionradiusx>6.0000</obstructionradiusx>
+        <obstructionradiusz>6.0000</obstructionradiusz>
+
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+
+        <animfile>buildings\olive_orchard\olive_orchard.xml</animfile>
+
+        <deadreplacement>BuildingRubble7x7</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+
+        <impacttype>Wood</impacttype>
+        <placementfile>grove.xml</placementfile>
+
+        <icon>resources\images\icons\buildings\oliveorchard_icon.png</icon>
+        <portraiticon>resources\images\icons\buildings\oliveorchard_portrait.png</portraiticon>
+
+        <initialhitpoints>2500.0000</initialhitpoints>
+        <maxhitpoints>2500.0000</maxhitpoints>
+
+        <los>0.1000</los>
+        <buildpoints>20.0000</buildpoints>
+
+        <bounty>160.0000</bounty>
+        <buildbounty>80.0000</buildbounty>
+
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Wood">400.0000</cost>
+
+        <!-- Wood stored inside the orchard -->
+        <initialresource resourcetype="Wood">5000.0000</initialresource>
+        <resourcesubtype>Wood</resourcesubtype>
+        <gathererlimit>10</gathererlimit>
+
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+
+        <minimapcolor red="0.1900" blue="0.1800" green="0.2500" />
+
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeVillagersRespondToAttack</unittype>
+
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+
+        <unittype>CountsTowardEconomicScore</unittype>
+
+        <unittype>AbstractFruit</unittype>
+        <unittype>Building</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+
+        <unittype>Resource</unittype>
+        <unittype>Wood</unittype>
+        <unittype>Tree</unittype>
+        <unittype>Nature</unittype>
+
+        <unittype>AbstractFindOtherEconomicBuilding</unittype>
+
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>UnlimitedSupply</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+
+        <command page="10" column="2">SetGatherPointEconomy</command>
+        <command page="10" column="7">Delete</command>
+    </unit>
+
+
+    <!-- ========================================= -->
+    <!-- Global villager cost escalation           -->
+    <!-- About +20% cost every 5 same-type workers -->
+    <!-- ========================================= -->
+
+    <!-- Standard Settler proto -->
+    <!-- Spain, Britain, Portugal, Dutch, Russia, Germany, Ottomans,
+     Sweden, United States, Mexico, Italy, Malta, and similar civs -->
+    <Unit mergeMode="modify" name="Settler">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.10</CostEscalation>
+    </Unit>
+
+    <!-- France -->
+    <Unit mergeMode="modify" name="Coureur">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.06</CostEscalation>
+    </Unit>
+    <Unit mergeMode="modify" name="CoureurCree">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.06</CostEscalation>
+    </Unit>
+
+    <!-- Germany: Settler Wagons from shipments / special sources -->
+    <Unit mergeMode="modify" name="SettlerWagon">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.10</CostEscalation>
+    </Unit>
+
+    <!-- Haudenosaunee, Lakota, Aztecs, Inca -->
+    <Unit mergeMode="modify" name="SettlerNative">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.10</CostEscalation>
+    </Unit>
+
+    <!-- China -->
+    <Unit mergeMode="modify" name="ypSettlerAsian">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.10</CostEscalation>
+    </Unit>
+
+    <!-- India -->
+    <Unit mergeMode="modify" name="ypSettlerIndian">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.10</CostEscalation>
+    </Unit>
+
+    <!-- Japan -->
+    <Unit mergeMode="modify" name="ypSettlerJapanese">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.10</CostEscalation>
+    </Unit>
+
+    <!-- Ethiopia and Hausa -->
+    <Unit mergeMode="modify" name="deSettlerAfrican">
+        <BuildLimit>10</BuildLimit>
+        <CostEscalation>1.10</CostEscalation>
+    </Unit>
+
+    <!-- ========================================= -->
+    <!-- Allow Defensive Structure Veternacy       -->
+    <!--                                           -->
+    <!-- ========================================= -->
+
+
+    <Unit mergeMode="modify" name="deMalteseGun">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">6.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">10.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">12.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">14.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">18.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">20.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">22.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="Blockhouse">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="Outpost">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="WarHut">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="NoblesHut">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="YPOutpostAsian">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="ypCastle">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="ypCastleJapanese">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="ypCastleIndians">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deOutpostAfrican">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deTower">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deIncaStronghold">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="dePalace">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deUniqueTower">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deSPCEuroTower">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deSPCCityTower">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deSPCTowerCapturable">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deSPCWoodenTower">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deCommandery">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deBatteryTower">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="deMayaCastle">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="FortFrontier">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="YPOutpostAsian">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="TownCenter">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="ypWIAgraFort2">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="ypWIAgraFort3">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="ypWIAgraFort4">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="ypWIAgraFort5">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
+    <Unit mergeMode="modify" name="TradingPost">
+        <veterancybonus>
+            <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1500</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.9000</veterancymodify>
+            </rank>
+            <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.2000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.6000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.6000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.3000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.8000</veterancymodify>
+            </rank>
+            <rank id="3">
+                <veterancymodify modifytype="MaxHP">2.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.4000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7500</veterancymodify>
+            </rank>
+            <rank id="4">
+                <veterancymodify modifytype="MaxHP">2.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.5000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="5">
+                <veterancymodify modifytype="MaxHP">2.4000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.4000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.6000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.7000</veterancymodify>
+            </rank>
+            <rank id="6">
+                <veterancymodify modifytype="MaxHP">2.8000</veterancymodify>
+                <veterancymodify modifytype="Damage">2.8000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.7000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.6000</veterancymodify>
+            </rank>
+            <rank id="7">
+                <veterancymodify modifytype="MaxHP">3.0000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.0000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.5000</veterancymodify>
+            </rank>
+            <rank id="8">
+                <veterancymodify modifytype="MaxHP">3.2000</veterancymodify>
+                <veterancymodify modifytype="Damage">3.2000</veterancymodify>
+                <veterancymodify modifytype="Speed">2.000</veterancymodify>
+                <veterancymodify modifytype="RangeAbsolute">4.0000</veterancymodify>
+                <veterancymodify modifytype="ROF">0.3500</veterancymodify>
+            </rank>
+        </veterancybonus>
+    </Unit>
 </protomods>

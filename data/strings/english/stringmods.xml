@@ -2,6 +2,22 @@
     <stringtable>
         <language name="English">
 
+            <stringmods>
+                <StringTable>
+                    <Language name="English">
+                        <string _locID="122198">Bronze I</string>
+                        <string _locID="1221981">Bronze II</string>
+                        <string _locID="1221982">Bronze III</string>
+                        <string _locID="1221991">Silver I</string>
+                        <string _locID="122199">Silver II</string>
+                        <string _locID="1221992">Silver III</string>
+                        <string _locID="1222001">Gold I</string>
+                        <string _locID="1222002">Gold II</string>
+                        <string _locID="122200">Elite</string>
+                    </Language>
+                </StringTable>
+            </stringmods>
+
             <!-- ========================================================= -->
             <!-- 9900000s - NEW BUILDINGS                                  -->
             <!-- Range: 9900000 - 9900999                                  -->
@@ -11,6 +27,15 @@
             <string _locid="9900000">Military Encampment</string>
             <string _locid="9900001">A military camp to help train and improve your army and doctrine.</string>
             <string _locid="9900002">Military Encampment</string>
+
+            <!-- Bunker Mills -->
+            <string _locid="9900003">Bunker Mills</string>
+            <string _locid="9900004">A fortified mill that to help enhance economy and defend your colony</string>
+            <string _locid="9900005">Bunker Mills</string>
+
+            <string _locid="9900006">Olive Orchard</string>
+            <string _locid="9900007">A large cultivated olive orchard. Villagers gather Wood from its mature trees.</string>
+            <string _locid="9900008">Olive Orchard</string>
 
 
             <!-- ========================================================= -->
@@ -149,6 +174,225 @@
             <!-- 9909000s - ECONOMIC UPGRADES                              -->
             <!-- Range: 9909000 - 9909999                                  -->
             <!-- ========================================================= -->
+            <string _locid="9909000">Citadel City Planning</string>
+            <string _locid="9909001">Commit to a compact, fortified city. Unlocks Citadel City Planning improvements and permanently prevents Sprawling City Planning.</string>
+
+            <string _locid="9909002">Sprawling City Planning</string>
+            <string _locid="9909003">Commit to a broad, fast-growing settlement. Unlocks Sprawling City Planning improvements and permanently prevents Citadel City Planning.</string>
+
+
+            <string _locid="9909010">Settled Frontier</string>
+            <string _locid="9909011">Increases the Settler limit by 3.</string>
+
+            <string _locid="9909012">Fortified Town</string>
+            <string _locid="9909013">Increases the Settler limit by 3, Unlock Coureur Cree, and +10% Settler Damage.</string>
+
+            <string _locid="9909014">Anchored Colony</string>
+            <string _locid="9909015">Increases the Settler limit by 4 and the Coureur Cree limit by 3.</string>
+
+            <string _locid="9909016">Burgeoning Colony</string>
+            <string _locid="9909017">Increases the Settler limit by 5 and the Coureur Cree limit by 3.</string>
+
+            <string _locid="9909018">Citadel Metropolitan</string>
+            <string _locid="9909019">Increases Settler capacity, building health, civilian ranged resistance, and artificial-resource gather speed.</string>
+
+            <string _locid="9909020">The Ironbound City</string>
+            <string _locid="9909021"></string>
+
+            <string _locid="9909022">Infalible Sovereignty</string>
+            <string _locid="9909023"></string>
+
+            <string _locid="9909024">Clearing the Hinterlands</string>
+            <string _locid="9909025"></string>
+
+            <string _locid="9909026">Wall Ward Clearance</string>
+            <string _locid="9909027"></string>
+
+            <string _locid="9909028">Timber Requisition</string>
+            <string _locid="9909029"></string>
+
+            <string _locid="9909030">Timber Stockpiles</string>
+            <string _locid="9909031"></string>
+
+            <string _locid="9909032">Winter Stores</string>
+            <string _locid="9909033"></string>
+
+            <string _locid="9909034">Expanded Granaries</string>
+            <string _locid="9909035"></string>
+
+            <string _locid="9909036">Siege Granaries</string>
+            <string _locid="9909037"></string>
+
+            <string _locid="9909038">Recovered Treasures</string>
+            <string _locid="9909039"></string>
+
+            <string _locid="9909040">Coin Reserves</string>
+            <string _locid="9909041"></string>
+
+            <string _locid="9909042">Citadel Treasury</string>
+            <string _locid="9909043"></string>
+
+            <string _locid="9909044">Waystation Centers</string>
+            <string _locid="9909045">Markets become housing for travelers providing protection and services +5 population</string>
+
+            <string _locid="9909046">Protected Markets</string>
+            <string _locid="9909047">Your colony being the only safe place secure and safe trade you reap the rewards.Markets gain 10% better purchase and sale rates and +500 hitpoints</string>
+
+            <string _locid="9909048">Roadward Forts</string>
+            <string _locid="9909049">Market build limit increased by 2</string>
+
+            <string _locid="9909050">Frontier Compacts</string>
+            <string _locid="9909051"></string>
+
+            <string _locid="9909052">Border Pacts</string>
+            <string _locid="9909053"></string>
+
+            <string _locid="9909054">Council of the Frontier</string>
+            <string _locid="9909055"></string>
+
+            <string _locid="9909056">Borderland Concord</string>
+            <string _locid="9909057"></string>
+
+            <string _locid="9909058">Guardian of the Accords</string>
+            <string _locid="9909059"></string>
+
+            <string _locid="9909060">Civic Workshop</string>
+            <string _locid="9909061"></string>
+
+            <string _locid="9909062">New World Spoils</string>
+            <string _locid="9909063"></string>
+
+            <string _locid="9909064">Settlers' Resolve</string>
+            <string _locid="9909065">The settlement must survive. Each settler when defeated comes back as a filibuster</string>
+
+            <string _locid="9909066">Expeditionary Corps</string>
+            <string _locid="9909067"></string>
+
+            <string _locid="9909068">New World Prospects</string>
+            <string _locid="9909069"></string>
+
+            <string _locid="9909070">Pioneer Arrivals</string>
+            <string _locid="9909071"></string>
+
+            <string _locid="9909072">Homestead Migration</string>
+            <string _locid="9909073"></string>
+
+            <string _locid="9909074">Township Immigration</string>
+            <string _locid="9909075"></string>
+
+            <string _locid="9909076">Settler Recruitment</string>
+            <string _locid="9909077"></string>
+
+            <string _locid="9909078">A Second Chance</string>
+            <string _locid="9909079"></string>
+
+            <string _locid="9909080">Pioneering Settlement</string>
+            <string _locid="9909081"></string>
+
+            <string _locid="9909082">Expanding Homestead</string>
+            <string _locid="9909083"></string>
+
+            <string _locid="9909084">Growing Township</string>
+            <string _locid="9909085"></string>
+
+            <string _locid="9909086">Incorporated Township</string>
+            <string _locid="9909087"></string>
+
+            <string _locid="9909088">Property Tax</string>
+            <string _locid="9909089"></string>
+
+            <string _locid="9909090">Living off the Land</string>
+            <string _locid="9909091"></string>
+
+            <string _locid="9909092">Hunting Grounds</string>
+            <string _locid="9909093"></string>
+
+            <string _locid="9909094">Game Trails</string>
+            <string _locid="9909095"></string>
+
+            <string _locid="9909096">Frontier Hunting</string>
+            <string _locid="9909097"></string>
+
+            <string _locid="9909098">Seasonal Camps</string>
+            <string _locid="9909099"></string>
+
+            <string _locid="9909100">Abundant Game</string>
+            <string _locid="9909101"></string>
+
+            <string _locid="9909102">Plows and Pastures</string>
+            <string _locid="9909103"></string>
+
+            <string _locid="9909104">Homestead Plots</string>
+            <string _locid="9909105"></string>
+
+            <string _locid="9909106">Open Pastures</string>
+            <string _locid="9909107"></string>
+
+            <string _locid="9909108">Harvest Estates</string>
+            <string _locid="9909109"></string>
+
+            <string _locid="9909110">Breadbasket Colony</string>
+            <string _locid="9909111"></string>
+
+            <string _locid="9909112">Lifeline to the Old World</string>
+            <string _locid="9909113"></string>
+
+            <string _locid="9909114">Colonial Dispatches</string>
+            <string _locid="9909115"></string>
+
+            <string _locid="9909116">Waystation Markets</string>
+            <string _locid="9909117"></string>
+
+            <string _locid="9909118">Established Trade Routes</string>
+            <string _locid="9909119"></string>
+
+            <string _locid="9909120">Licensed Traders</string>
+            <string _locid="9909121"></string>
+
+            <string _locid="9909122">Merchant Convoys</string>
+            <string _locid="9909123"></string>
+
+            <string _locid="9909124">Clearing the Frontier</string>
+            <string _locid="9909125"></string>
+
+            <string _locid="9909126">Settlers' Roads</string>
+            <string _locid="9909127"></string>
+
+            <string _locid="9909128">Clearing Crews</string>
+            <string _locid="9909129"></string>
+
+            <string _locid="9909130">Surveyed Lots</string>
+            <string _locid="9909131"></string>
+
+            <string _locid="9909132">Open Country</string>
+            <string _locid="9909133"></string>
+
+            <string _locid="9909134">Voyageurs</string>
+            <string _locid="9909135"></string>
+
+            <string _locid="9909136">Colonial Markets</string>
+            <string _locid="9909137"></string>
+
+            <string _locid="9909138">Caravans</string>
+            <string _locid="9909139"></string>
+
+            <string _locid="9909140">Loose Standards</string>
+            <string _locid="9909141"></string>
+
+            <string _locid="9909142">Quick Construction</string>
+            <string _locid="9909143"></string>
+
+            <string _locid="9909144">Cheap Materials</string>
+            <string _locid="9909145"></string>
+
+            <string _locid="9909146">Boomtown Building</string>
+            <string _locid="9909147"></string>
+
+            <string _locid="9909148">Frontier Companies</string>
+            <string _locid="9909149"></string>
+
+            <string _locid="9909150">Contracted Guards</string>
+            <string _locid="9909151"></string>
 
 
             <!-- ========================================================= -->
@@ -157,6 +401,56 @@
             <!-- Walls, Forts, Outposts, and defense-adjacent techs         -->
             <!-- ========================================================= -->
 
+            <string _locid="9910000">Defensive Works</string>
+            <string _locid="9910001"></string>
+
+            <string _locid="9910002">Secure the Waste</string>
+            <string _locid="9910003"></string>
+
+            <string _locid="9910004">Colonial Works</string>
+            <string _locid="9910005"></string>
+
+            <string _locid="9910006">Fortified Planning</string>
+            <string _locid="9910007"></string>
+
+            <string _locid="9910008">District Defenses</string>
+            <string _locid="9910009"></string>
+
+            <string _locid="9910010">Perimeter Fortifications</string>
+            <string _locid="9910011"></string>
+
+            <string _locid="9910012">Earth-Backed Rampart</string>
+            <string _locid="9910013"></string>
+
+            <string _locid="9910014">Bastion Rampart</string>
+            <string _locid="9910015"></string>
+
+            <string _locid="9910016">Armored Shell</string>
+            <string _locid="9910017"></string>
+
+            <string _locid="9910018">Garrison Experience</string>
+            <string _locid="9910019"></string>
+
+            <string _locid="9910020">Defensive Lessons</string>
+            <string _locid="9910021"></string>
+
+            <string _locid="9910022">Established Fortifications</string>
+            <string _locid="9910023"></string>
+
+            <string _locid="9910024">Citadel Expansion</string>
+            <string _locid="9910025"></string>
+
+            <string _locid="9910026">Surveyed Approaches</string>
+            <string _locid="9910027"></string>
+
+            <string _locid="9910028">Signaled Network</string>
+            <string _locid="9910029"></string>
+
+            <string _locid="9910030">Chartered Observation Posts</string>
+            <string _locid="9910031"></string>
+
+            <string _locid="9910032">Citadel Watch Network</string>
+            <string _locid="9910033"></string>
 
             <!-- ========================================================= -->
             <!-- 9911000s - ABILITIES & SPECIAL ACTIONS                    -->
