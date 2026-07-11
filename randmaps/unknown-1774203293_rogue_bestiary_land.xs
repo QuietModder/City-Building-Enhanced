@@ -205,9 +205,7 @@ void main(void)
 
 	int townDestroyer = 0;	// disabled for CBE wilderness survival flow
 	if (aprilFools == 20)
-	{
 		townDestroyer = 0;
-	}
 	if (rmGetIsTreaty() == true)
 		townDestroyer = 0;
 //		townDestroyer = 1;	// for testing
@@ -6743,13 +6741,43 @@ void main(void)
 			cbeRogueHeavyUnit = "MercGreatCannon";
 		}
 	}
+	cbeBestiaryMythicThemeName = "legendary pet fallback";
+	cbeBestiaryMythicUnit = "LegendaryKomodoDragon";
+
+	// Diagnostic fallback: keep the new systems wired, but use known-safe base map protos.
+	// If this loads, re-enable themed Bestiary/Foliage names in small batches.
+	cbeAweFoliageThemeName = "diagnostic vanilla foliage";
+	cbeAweTallTree1 = treeName;
+	cbeAweTallTree2 = treeName;
+	cbeAweAccentTree = treeName;
+	cbeBestiaryThemeName = "diagnostic vanilla wildlife";
+	cbeBestiaryWildlife1 = critterOneName;
+	cbeBestiaryWildlife2 = critterTwoName;
+	cbeBestiaryGuardian = "Musketeer";
+	cbeBestiaryLegendaryGuardian = "Musketeer";
+	cbeBestiaryMythicThemeName = "diagnostic vanilla mythic placeholder";
+	cbeBestiaryMythicUnit = "Musketeer";
 	rmEchoInfo("CBE awe foliage theme = "+cbeAweFoliageThemeName);
 
 	for(i = 0; <nativeNumber)
 	{
 		nativeChance = rmRandFloat(0,0.41);
 //			nativeChance = 0.41;		// for testing
-		if (rmRandFloat(0,1) <= 0.80)
+		bool cbeUseThemedNative = (rmRandFloat(0,1) <= 0.80);
+		if (cbeWorldTheme == cbeWorldThemeAfrica && counterSoma >= 1 && counterBerb >= 1 && counterSuda >= 1 && counterYoru >= 1 && counterAkan >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeAsia && counterTeng >= 1 && counterShao >= 1 && counterSufi >= 1 && counterZen >= 1 && counterUdas >= 1 && counterBhak >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeEurope && counterBour >= 1 && counterHabs >= 1 && counterHano >= 1 && counterJagi >= 1 && counterOlde >= 1 && counterPhan >= 1 && counterVasa >= 1 && counterWett >= 1 && counterWitt >= 1 && counterTeng >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeSouthAmerica && counterAzte >= 1 && counterZapo >= 1 && counterCari >= 1 && counterInca >= 1 && counterMapu >= 1 && counterMaya >= 1 && counterTupi >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeFrontier && counterLako >= 1 && counterIroq >= 1 && counterApac >= 1 && counterLena >= 1 && counterHuro >= 1 && counterCher >= 1 && counterComa >= 1 && counterCree >= 1 && counterKlam >= 1 && counterChey >= 1 && counterNoot >= 1 && counterNava >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeWetland && counterCari >= 1 && counterHuro >= 1 && counterSemi >= 1 && counterTupi >= 1)
+			cbeUseThemedNative = false;
+
+		if (cbeUseThemedNative == true)
 		{
 			float cbeNativeThemeRoll = rmRandFloat(0,1);
 			if (cbeWorldTheme == cbeWorldThemeAfrica)
@@ -13026,7 +13054,7 @@ void main(void)
 			}
 		}
 
-		if (0 == 1 && safetyIsAnIllusion == 1)		// aprilFools = 16 disabled for CBE wilderness survival flow
+		if (safetyIsAnIllusion == 1)		// aprilFools = 16 disabled for CBE wilderness survival flow
 		{
 			rmCreateTrigger("youthoughtyouweresafe"+i);
 			rmSwitchToTrigger(rmTriggerID("youthoughtyouweresafe"+i));
@@ -13058,7 +13086,7 @@ void main(void)
 			rmSetTriggerEffectParamInt("Status", 2);	
 		}
 
-		if (0 == 1 && destroyerOfWalls == 1)		// aprilFools = 18 disabled for CBE wilderness survival flow
+		if (destroyerOfWalls == 1)		// aprilFools = 18 disabled for CBE wilderness survival flow
 		{
 			rmCreateTrigger("idestroywalls"+i);
 			rmSwitchToTrigger(rmTriggerID("idestroywalls"+i));
@@ -13115,7 +13143,7 @@ void main(void)
 			rmSetTriggerEffectParamInt("Dist", convertDist);
 		}
 		
-		if (0 == 1 && townDestroyer == 1)		// aprilFools = 20 disabled for CBE wilderness survival flow
+		if (townDestroyer == 1)		// aprilFools = 20 disabled for CBE wilderness survival flow
 		{
 			rmCreateTrigger("dudewheresmytc"+i);
 			rmSwitchToTrigger(rmTriggerID("dudewheresmytc"+i));
@@ -18089,7 +18117,6 @@ void main(void)
 		rmCreateTrigger("cbeRogueCamp"+i+"Raid");
 		rmCreateTrigger("cbeRogueCamp"+i+"Destroyed");
 	}
-	rmCreateTrigger("cbeRogueCampMarkers");
 	rmCreateTrigger("cbeRogueMaxCampSurge");
 	rmCreateTrigger("cbeBestiaryVariantNotice");
 	rmCreateTrigger("cbeBestiaryMythicSpawn");
@@ -18097,27 +18124,6 @@ void main(void)
 	rmCreateTrigger("cbeBestiaryMythicRoam2");
 	rmCreateTrigger("cbeBestiaryMythicRoam3");
 	rmCreateTrigger("cbeBestiaryMythicRoam4");
-
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCampMarkers"));
-	rmSetTriggerPriority(5);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Always");
-	for (i = 1; <= 3)
-	{
-		string cbeRogueMarkerLoc = cbeRogueCamp1Loc;
-		if (i == 2)
-			cbeRogueMarkerLoc = cbeRogueCamp2Loc;
-		else if (i == 3)
-			cbeRogueMarkerLoc = cbeRogueCamp3Loc;
-		rmAddTriggerEffect("Unit Create");
-		rmSetTriggerEffectParamInt("PlayerID", 0, false);
-		rmSetTriggerEffectParam("ProtoName", "CinematicRevealer", false);
-		rmSetTriggerEffectParam("ScenName", "cbeRogueCamp"+i+"Marker", false);
-		rmSetTriggerEffectParam("Location", cbeRogueMarkerLoc, false);
-		rmSetTriggerEffectParamInt("Heading", 0, false);
-	}
 
 	rmSwitchToTrigger(rmTriggerID("cbeBestiaryVariantNotice"));
 	rmSetTriggerPriority(4);
@@ -18270,16 +18276,6 @@ void main(void)
 		rmSetTriggerLoop(false);
 		rmAddTriggerCondition("Timer");
 		rmSetTriggerConditionParamInt("Param1", cbeRogueSpawnTimer, false);
-		for (j = 1; <= cNumberNonGaiaPlayers)
-		{
-			rmAddTriggerCondition("Units in Area");
-			rmSetTriggerConditionParam("DstObject", "cbeRogueCamp"+i+"Marker", false);
-			rmSetTriggerConditionParamInt("Player", j, false);
-			rmSetTriggerConditionParam("UnitType", "LogicalTypeBuildingsNotWalls", false);
-			rmSetTriggerConditionParamFloat("Dist", 45.0, false);
-			rmSetTriggerConditionParam("Op", "==", false);
-			rmSetTriggerConditionParamFloat("Count", 0.0, false);
-		}
 		rmAddTriggerEffect("Unit Create");
 		rmSetTriggerEffectParamInt("PlayerID", 0, false);
 		rmSetTriggerEffectParam("ProtoName", "deSPCCommandPost", false);
@@ -18350,9 +18346,9 @@ void main(void)
 		rmSetTriggerEffectParamInt("Count", cbeRogueRaidCount, false);
 		rmSetTriggerEffectParamInt("Heading", 0, false);
 		rmSetTriggerEffectParam("Clear", "false", false);
-		rmAddTriggerEffect("Army Move to Unit");
+		rmAddTriggerEffect("Army Move");
 		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-		rmSetTriggerEffectParamInt("DstObject", rmGetUnitPlaced(socketID, i - 1), false);
+		rmSetTriggerEffectParam("DstPoint", cbeBestiaryMythicSpawnLoc, false);
 		rmSetTriggerEffectParamInt("EventID", -1, false);
 		rmSetTriggerEffectParam("AttackMove", "true", false);
 		rmSetTriggerEffectParam("Run", "true", false);
@@ -18435,16 +18431,6 @@ void main(void)
 		rmSetTriggerConditionParamInt("Param1", 180, false);
 		rmAddTriggerCondition("Is Dead");
 		rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp"+i, false);
-		for (j = 1; <= cNumberNonGaiaPlayers)
-		{
-			rmAddTriggerCondition("Units in Area");
-			rmSetTriggerConditionParam("DstObject", "cbeRogueCamp"+i+"Marker", false);
-			rmSetTriggerConditionParamInt("Player", j, false);
-			rmSetTriggerConditionParam("UnitType", "LogicalTypeBuildingsNotWalls", false);
-			rmSetTriggerConditionParamFloat("Dist", 45.0, false);
-			rmSetTriggerConditionParam("Op", "==", false);
-			rmSetTriggerConditionParamFloat("Count", 0.0, false);
-		}
 		rmAddTriggerEffect("Send Chat As String");
 		rmSetTriggerEffectParamInt("PlayerID", 0, false);
 		rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.7,0.2>A destroyed rogue camp has been reoccupied ("+cbeRoguePresetName+"). Surviving raiders are rallying to the new command post.", false);
