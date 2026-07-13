@@ -832,7 +832,7 @@ void main(void)
 	rmSetGroupingMinDistance(cbeFeatureRedoubt7, 0.0);
 	rmSetGroupingMaxDistance(cbeFeatureRedoubt7, 0.0);
 
-	int cbeFeatureFortressInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureFortress1, 0.12, 0.16, 0);
+	int cbeFeatureFortressInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureFortress1, 0.72, 0.76, 0);
 	int cbeFeatureRedoubtInstance5 = rmPlaceGroupingInstanceAtLoc(cbeFeatureRedoubt5, 0.27, 0.16, 0);
 	int cbeFeatureRedoubtInstance7 = rmPlaceGroupingInstanceAtLoc(cbeFeatureRedoubt7, 0.42, 0.16, 0);
 	int cbeFeatureDistrictInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureDistrict1, 0.57, 0.16, 0);

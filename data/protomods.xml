@@ -3357,18 +3357,6 @@
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
         <tactics>villagehouse.tactics</tactics>
-        <protoaction>
-            <name>AutoGatherFood</name>
-            <rate type="Food">0.300000</rate>
-        </protoaction>
-        <protoaction>
-            <name>AutoGatherWood</name>
-            <rate type="Wood">0.300000</rate>
-        </protoaction>
-        <protoaction>
-            <name>AutoGatherCoin</name>
-            <rate type="Gold">0.300000</rate>
-        </protoaction>
     </unit>
     <unit mergeMode="add" id="9101" name="CBEMiningCamp">
         <dbid>99101</dbid>
@@ -3489,10 +3477,6 @@
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
         <tactics>villagehouse.tactics</tactics>
-        <protoaction>
-            <name>AutoGatherWood</name>
-            <rate type="Wood">0.600000</rate>
-        </protoaction>
     </unit>
 
     <!-- CBE Capturable Feature Props -->
@@ -3517,147 +3501,176 @@
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="ypSMJesuitAccessory">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaArtilleryDepotProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaBarracksProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaChurchProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaHouseProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaMarketProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCWaterlooChurchProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCWaterlooHouseProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCWaterlooLivestockPenProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageHouse">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageMarket">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageMill">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageMiningCamp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageTent">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCRockMineProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCHeadquarters">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCCommandPost">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCSupplyCache">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCAmmoStorehouseProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCFortCornerProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCFortWallLargeProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCFortWallMediumProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCFortGate">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCXPRedoubtCenter">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCXPRedoubtLeft">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCXPRedoubtRight">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCTent">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCCityStateHouseProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCCityStateMarketProp">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
@@ -3687,12 +3700,14 @@
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCGreatBank">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deTavern">
-        <unittype>Unattackable</unittype>
+                <unittype>AbstractSPCVillageBuilding</unittype>
+<unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
