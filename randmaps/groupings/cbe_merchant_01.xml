@@ -18,7 +18,7 @@
 		<unit variation="9" posx="-9.0031" posz="-7.5912" orientx="0.3827" orienty="0.0000" orientz="-0.9239">PropsColony</unit>
 		<unit variation="0" posx="0.4483" posz="-3.3333" orientx="0.7046" orienty="0.0000" orientz="0.7096">deSPCCapturableFlag</unit>
 		<unit variation="0" posx="-1.2016" posz="-3.8817" orientx="0.0000" orienty="0.0000" orientz="-1.0000">CinematicBlock</unit>
-		<unit variation="41" posx="-8.5798" posz="0.3618" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCBatteryTowerSocket</unit>
+		<unit variation="41" posx="-8.5798" posz="0.3618" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCapturableSocketTower</unit>
 		<unit variation="41" posx="5.8590" posz="4.7423" orientx="0.9239" orienty="0.0000" orientz="-0.3827">deSPCVillageMarket</unit>
 		<unit variation="7" posx="13.1763" posz="0.8579" orientx="-0.3827" orienty="0.0000" orientz="-0.9239">PropsColony</unit>
 		<unit variation="4" posx="13.5770" posz="2.7624" orientx="-0.9239" orienty="0.0000" orientz="0.3827">PropsColony</unit>

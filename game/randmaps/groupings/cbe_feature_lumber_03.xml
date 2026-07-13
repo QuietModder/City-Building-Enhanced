@@ -11,8 +11,8 @@
 		<unit variation="98" posx="-0.0801" posz="-14.9887" orientx="0.3827" orienty="0.0000" orientz="-0.9239">FenceRock</unit>
 		<unit variation="231" posx="-2.9335" posz="-14.8805" orientx="-0.3827" orienty="0.0000" orientz="-0.9239">FenceRock</unit>
 		<unit variation="14" posx="-8.8420" posz="-13.9701" orientx="0.7077" orienty="0.0000" orientz="-0.7065">SPCRailwayProps</unit>
-		<unit variation="7" posx="-5.7864" posz="-12.7061" orientx="-0.7077" orienty="0.0000" orientz="0.7065">deSPCVillageTent</unit>
-		<unit variation="2" posx="11.9594" posz="-11.9021" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deSPCVillageHouse</unit>
+		<unit variation="7" posx="-5.7864" posz="-12.7061" orientx="-0.7077" orienty="0.0000" orientz="0.7065">CBEVillageTent</unit>
+		<unit variation="2" posx="11.9594" posz="-11.9021" orientx="0.7071" orienty="0.0000" orientz="-0.7071">CBEVillageHouse</unit>
 		<unit variation="253" posx="-0.9558" posz="-13.8203" orientx="-0.9492" orienty="0.0000" orientz="-0.3146">deSPCTreeOakProp</unit>
 		<unit variation="15" posx="-11.6472" posz="-12.3965" orientx="-0.9235" orienty="0.0000" orientz="-0.3835">SPCRailwayProps</unit>
 		<unit variation="13" posx="-3.1134" posz="-11.7523" orientx="1.0000" orienty="0.0000" orientz="0.0009">SPCRailwayProps</unit>
@@ -22,22 +22,22 @@
 		<unit variation="2" posx="10.8764" posz="-9.0357" orientx="0.7071" orienty="0.0000" orientz="0.7071">PropsColony</unit>
 		<unit variation="14" posx="9.1640" posz="-10.3301" orientx="-0.7078" orienty="0.0000" orientz="0.7064">SPCRailwayProps</unit>
 		<unit variation="42" posx="-14.0397" posz="-9.2958" orientx="-0.8575" orienty="-0.0000" orientz="0.5145">deSPCTreeOakProp</unit>
-		<unit variation="116" posx="-10.3540" posz="-10.0246" orientx="-0.9239" orienty="0.0000" orientz="0.3827">deSPCVillageTent</unit>
+		<unit variation="116" posx="-10.3540" posz="-10.0246" orientx="-0.9239" orienty="0.0000" orientz="0.3827">CBEVillageTent</unit>
 		<unit variation="15" posx="-12.6239" posz="-8.2582" orientx="0.3835" orienty="0.0000" orientz="-0.9235">SPCRailwayProps</unit>
-		<unit variation="41" posx="5.6771" posz="-4.7544" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCBatteryTowerSocket</unit>
+		<unit variation="41" posx="5.6771" posz="-4.7544" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCapturableSocketTower</unit>
 		<unit variation="2" posx="-15.4072" posz="-2.8253" orientx="-0.3827" orienty="0.0000" orientz="0.9239">PropsColony</unit>
 		<unit variation="2" posx="-3.8259" posz="-5.7335" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CinematicBlock</unit>
 		<unit variation="0" posx="-2.6212" posz="-3.0898" orientx="0.3835" orienty="0.0000" orientz="-0.9235">deSPCCapturableFlag</unit>
-		<unit variation="214" posx="-12.7243" posz="-3.2142" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageHouse</unit>
+		<unit variation="214" posx="-12.7243" posz="-3.2142" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEVillageHouse</unit>
 		<unit variation="12" posx="9.6717" posz="1.4185" orientx="0.9243" orienty="0.0000" orientz="-0.3817">SPCRailwayProps</unit>
 		<unit variation="1" posx="9.0576" posz="2.1899" orientx="0.7071" orienty="0.0000" orientz="0.7071">PropsColony</unit>
 		<unit variation="13" posx="7.4083" posz="1.4197" orientx="-0.0010" orienty="0.0000" orientz="1.0000">SPCRailwayProps</unit>
 		<unit variation="7" posx="-6.3031" posz="1.9948" orientx="0.7071" orienty="0.0000" orientz="0.7071">PropsColony</unit>
 		<unit variation="15" posx="-5.0101" posz="1.5646" orientx="-0.0010" orienty="0.0000" orientz="1.0000">SPCRailwayProps</unit>
 		<unit variation="12" posx="4.6348" posz="3.2231" orientx="-0.7063" orienty="0.0000" orientz="-0.7079">SPCRailwayProps</unit>
-		<unit variation="75" posx="-4.6598" posz="4.4086" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageHouse</unit>
-		<unit variation="246" posx="-10.7309" posz="5.6414" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageHouse</unit>
-		<unit variation="167" posx="6.6257" posz="4.6423" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageHouse</unit>
+		<unit variation="75" posx="-4.6598" posz="4.4086" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEVillageHouse</unit>
+		<unit variation="246" posx="-10.7309" posz="5.6414" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEVillageHouse</unit>
+		<unit variation="167" posx="6.6257" posz="4.6423" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEVillageHouse</unit>
 		<unit variation="2" posx="4.6975" posz="6.2724" orientx="0.0000" orienty="0.0000" orientz="1.0000">PropsColony</unit>
 		<unit variation="147" posx="-13.8977" posz="8.4532" orientx="-0.8221" orienty="0.0000" orientz="-0.5693">deSPCTreeOakProp</unit>
 		<unit variation="249" posx="7.2455" posz="10.0938" orientx="-0.3348" orienty="0.0000" orientz="0.9423">deSPCTreeOakProp</unit>

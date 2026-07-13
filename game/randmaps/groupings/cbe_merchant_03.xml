@@ -28,7 +28,7 @@
 		<unit variation="97" posx="-15.9530" posz="-1.2238" orientx="0.7089" orienty="0.0000" orientz="-0.7053">FenceRock</unit>
 		<unit variation="9" posx="2.4846" posz="-1.3754" orientx="0.9239" orienty="0.0000" orientz="-0.3827">PropsColony</unit>
 		<unit variation="6" posx="7.5962" posz="1.3758" orientx="-1.0000" orienty="0.0000" orientz="0.0000">PropsColony</unit>
-		<unit variation="41" posx="-7.5518" posz="4.6152" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCBatteryTowerSocket</unit>
+		<unit variation="41" posx="-7.5518" posz="4.6152" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCapturableSocketTower</unit>
 		<unit variation="177" posx="5.2166" posz="4.5079" orientx="-0.9239" orienty="0.0000" orientz="-0.3827">deSPCVillageHouse</unit>
 		<unit variation="2" posx="4.2089" posz="7.3516" orientx="1.0000" orienty="0.0000" orientz="0.0000">PropsColony</unit>
 		<unit variation="97" posx="7.7363" posz="7.1152" orientx="-0.7053" orienty="0.0000" orientz="-0.7089">FenceRock</unit>

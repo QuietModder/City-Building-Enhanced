@@ -7,6 +7,7 @@
 	<selectassingleunit>0</selectassingleunit>
 	<workonassingleunit>0</workonassingleunit>
 	<units>
+		<unit variation="0" posx="0.0000" posz="0.0000" orientx="0.0000" orienty="0.0000" orientz="-1.0000">deSPCCapturableFlag</unit>
 		<unit variation="90" posx="8.7947" posz="-22.1150" orientx="-1.0000" orienty="0.0000" orientz="0.0002">deSPCCityStateWallConnectorProp</unit>
 		<unit variation="184" posx="-6.7061" posz="-20.9166" orientx="0.7071" orienty="0.0000" orientz="0.7071">deSPCCityStateWall2Prop</unit>
 		<unit variation="90" posx="-5.6877" posz="-21.8173" orientx="-1.0000" orienty="0.0000" orientz="0.0002">deSPCCityStateWallConnectorProp</unit>

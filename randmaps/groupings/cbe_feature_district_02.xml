@@ -7,6 +7,7 @@
 	<selectassingleunit>0</selectassingleunit>
 	<workonassingleunit>0</workonassingleunit>
 	<units>
+		<unit variation="0" posx="0.0000" posz="0.0000" orientx="0.0000" orienty="0.0000" orientz="-1.0000">deSPCCapturableFlag</unit>
 		<unit variation="88" posx="-4.2259" posz="-18.3725" orientx="0.3818" orienty="0.0000" orientz="0.9242">FenceRock</unit>
 		<unit variation="88" posx="4.1774" posz="-18.1954" orientx="-0.3828" orienty="0.0000" orientz="0.9238">FenceRock</unit>
 		<unit variation="88" posx="1.4755" posz="-18.8438" orientx="0.0001" orienty="0.0000" orientz="-1.0000">FenceRock</unit>

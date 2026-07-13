@@ -28,7 +28,7 @@
 		<unit variation="0" posx="-0.5155" posz="-0.7394" orientx="0.9239" orienty="0.0000" orientz="-0.3825">deSPCCapturableFlag</unit>
 		<unit variation="3" posx="6.4836" posz="2.3726" orientx="0.0000" orienty="0.0000" orientz="-1.0000">PropsColony</unit>
 		<unit variation="3" posx="8.7467" posz="3.7288" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageHouse</unit>
-		<unit variation="41" posx="-4.7745" posz="6.6300" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCBatteryTowerSocket</unit>
+		<unit variation="41" posx="-4.7745" posz="6.6300" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCapturableSocketTower</unit>
 		<unit variation="25" posx="-13.5233" posz="6.7788" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageHouse</unit>
 		<unit variation="4" posx="-9.7323" posz="7.0430" orientx="-1.0000" orienty="0.0000" orientz="0.0000">PropsColony</unit>
 		<unit variation="212" posx="8.3896" posz="9.6896" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageHouse</unit>

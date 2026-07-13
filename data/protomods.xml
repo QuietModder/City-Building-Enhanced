@@ -3299,6 +3299,202 @@
             </rank>
         </veterancybonus>
     </Unit>
+    <!-- CBE Capturable Feature Buildings -->
+    <unit mergeMode="add" id="9100" name="CBEVillageHouse">
+        <dbid>99100</dbid>
+        <displaynameid>22839</displaynameid>
+        <editornameid>123082</editornameid>
+        <panelnameid>123103</panelnameid>
+        <panelrolloverid>123104</panelrolloverid>
+        <populationcapaddition>10</populationcapaddition>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
+        <placementobstructionradiusx>0.1000</placementobstructionradiusx>
+        <placementobstructionradiusz>0.1000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\hb_villages\house.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\house\house_icon.png</icon>
+        <portraiticon>resources\art\buildings\house\house_portrait.png</portraiticon>
+        <rollovertextid>22838</rollovertextid>
+        <shortrollovertextid>25701</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>NonCollideable</flag>
+        <flag>OptionalSocketPlacement</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagehouse.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherFood</name>
+            <rate type="Food">0.300000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <rate type="Wood">0.300000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoin</name>
+            <rate type="Gold">0.300000</rate>
+        </protoaction>
+    </unit>
+    <unit mergeMode="add" id="9101" name="CBEMiningCamp">
+        <dbid>99101</dbid>
+        <displaynameid>46781</displaynameid>
+        <editornameid>123084</editornameid>
+        <panelnameid>123105</panelnameid>
+        <panelrolloverid>123106</panelrolloverid>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
+        <placementobstructionradiusx>0.1000</placementobstructionradiusx>
+        <placementobstructionradiusz>0.1000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\mining_camp\miningcamp.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\spc\tents\largetent_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\tents\largetent_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>46780</rollovertextid>
+        <shortrollovertextid>46779</shortrollovertextid>
+        <initialhitpoints>3000.0000</initialhitpoints>
+        <maxhitpoints>3000.0000</maxhitpoints>
+        <los>15.0000</los>
+        <buildpoints>20.0000</buildpoints>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Tracked</flag>
+        <flag>NonCollideable</flag>
+        <flag>OptionalSocketPlacement</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagebuilding.tactics</tactics>
+        <protoaction>
+            <name>AutoGather</name>
+            <rate type="Gold">2.250000</rate>
+        </protoaction>
+    </unit>
+    <unit mergeMode="add" id="9102" name="CBEVillageTent">
+        <dbid>99102</dbid>
+        <displaynameid>22839</displaynameid>
+        <editornameid>123082</editornameid>
+        <panelnameid>123103</panelnameid>
+        <panelrolloverid>123104</panelrolloverid>
+        <populationcapaddition>10</populationcapaddition>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
+        <placementobstructionradiusx>0.1000</placementobstructionradiusx>
+        <placementobstructionradiusz>0.1000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\tents\tents_large.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\spc\tents\largetent_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\tents\largetent_portrait.png</portraiticon>
+        <rollovertextid>22838</rollovertextid>
+        <shortrollovertextid>25701</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>NonCollideable</flag>
+        <flag>OptionalSocketPlacement</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagehouse.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <rate type="Wood">0.600000</rate>
+        </protoaction>
+    </unit>
+
     <!-- CBE Capturable Feature Props -->
     <Unit mergeMode="modify" name="ypSPCSaltpeterSite">
         <unittype>Unattackable</unittype>
