@@ -4,113 +4,8 @@
 include "mercenaries.xs";
 include "ypAsianInclude.xs";
 include "ypKOTHInclude.xs";
-
-void cbeRequireCityStateTradingPost(int socketUnitID = -1, int playerID = 0)
-{
-	rmAddTriggerCondition("Units in Area");
-	rmSetTriggerConditionParam("DstObject", ""+socketUnitID);
-	rmSetTriggerConditionParamInt("Player", playerID);
-	rmSetTriggerConditionParamInt("Dist", 16);
-	rmSetTriggerConditionParam("UnitType", "TradingPost");
-	rmSetTriggerConditionParam("Op", ">=");
-	rmSetTriggerConditionParamFloat("Count", 1);
-}
-
-void cbeRequireNoCityStateTradingPost(int socketUnitID = -1, int playerID = 0)
-{
-	rmAddTriggerCondition("Units in Area");
-	rmSetTriggerConditionParam("DstObject", ""+socketUnitID);
-	rmSetTriggerConditionParamInt("Player", playerID);
-	rmSetTriggerConditionParamInt("Dist", 16);
-	rmSetTriggerConditionParam("UnitType", "TradingPost");
-	rmSetTriggerConditionParam("Op", "==");
-	rmSetTriggerConditionParamFloat("Count", 0);
-}
-
-void cbeConvertCityStateGrouping(int groupingInstanceID = -1, int playerID = 0)
-{
-	rmAddTriggerEffect("Grouping Convert Unit Type");
-	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
-	rmSetTriggerEffectParamInt("PlayerID", playerID);
-	rmSetTriggerEffectParam("UnitType", "Building");
-	rmAddTriggerEffect("Grouping Convert Unit Type");
-	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
-	rmSetTriggerEffectParamInt("PlayerID", playerID);
-	rmSetTriggerEffectParam("UnitType", "NativeBuilding");
-	rmAddTriggerEffect("Grouping Convert Unit Type");
-	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
-	rmSetTriggerEffectParamInt("PlayerID", playerID);
-	rmSetTriggerEffectParam("UnitType", "LogicalTypeBuildingsNotWalls");
-	rmAddTriggerEffect("Grouping Convert Unit Type");
-	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
-	rmSetTriggerEffectParamInt("PlayerID", playerID);
-	rmSetTriggerEffectParam("UnitType", "EmbellishmentClass");
-}
-
-void cbeConvertFeatureRewardBuildings(int groupingInstanceID = -1, int playerID = 0)
-{
-	rmAddTriggerEffect("Grouping Convert Unit Type");
-	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
-	rmSetTriggerEffectParamInt("PlayerID", playerID);
-	rmSetTriggerEffectParam("UnitType", "AbstractSPCVillageBuilding");
-}
-
-void cbeCreateCityStateOwnership(int cityStateIndex = 0, int groupingInstanceID = -1, int socketUnitID = -1)
-{
-	int cityStatePlayerID = 0;
-	int cityStateCheckPlayerID = 0;
-	for (cityStatePlayerID = 1; <= cNumberNonGaiaPlayers)
-	{
-		rmCreateTrigger("CBE_CityState_"+cityStateIndex+"_ON_Plr"+cityStatePlayerID);
-		rmCreateTrigger("CBE_CityState_"+cityStateIndex+"_OFF_Plr"+cityStatePlayerID);
-
-		rmSwitchToTrigger(rmTriggerID("CBE_CityState_"+cityStateIndex+"_ON_Plr"+cityStatePlayerID));
-		cbeRequireCityStateTradingPost(socketUnitID, cityStatePlayerID);
-		cbeConvertCityStateGrouping(groupingInstanceID, cityStatePlayerID);
-		rmAddTriggerEffect("Fire Event");
-		rmSetTriggerEffectParamInt("EventID", rmTriggerID("CBE_CityState_"+cityStateIndex+"_OFF_Plr"+cityStatePlayerID));
-		rmSetTriggerPriority(4);
-		rmSetTriggerActive(true);
-		rmSetTriggerRunImmediately(true);
-		rmSetTriggerLoop(false);
-
-		rmSwitchToTrigger(rmTriggerID("CBE_CityState_"+cityStateIndex+"_OFF_Plr"+cityStatePlayerID));
-		for (cityStateCheckPlayerID = 1; <= cNumberNonGaiaPlayers)
-		{
-			cbeRequireNoCityStateTradingPost(socketUnitID, cityStateCheckPlayerID);
-		}
-		cbeConvertCityStateGrouping(groupingInstanceID, 0);
-		rmAddTriggerEffect("Fire Event");
-		rmSetTriggerEffectParamInt("EventID", rmTriggerID("CBE_CityState_"+cityStateIndex+"_ON_Plr"+cityStatePlayerID));
-		rmSetTriggerPriority(4);
-		rmSetTriggerActive(false);
-		rmSetTriggerRunImmediately(true);
-		rmSetTriggerLoop(false);
-	}
-}
-
-void cbeRequireFlagOwned(int flagUnitID = -1, int playerID = 0)
-{
-	rmAddTriggerCondition("Units Owned");
-	rmSetTriggerConditionParamInt("Player", playerID);
-	rmSetTriggerConditionParam("SrcObject", ""+flagUnitID);
-}
-
-void cbeCreateFlagGroupingOwnership(int featureIndex = 0, int groupingInstanceID = -1, int flagUnitID = -1)
-{
-	int featurePlayerID = 0;
-	for (featurePlayerID = 1; <= cNumberNonGaiaPlayers)
-	{
-		rmCreateTrigger("CBE_FlagFeature_"+featureIndex+"_Plr"+featurePlayerID);
-		rmSwitchToTrigger(rmTriggerID("CBE_FlagFeature_"+featureIndex+"_Plr"+featurePlayerID));
-		cbeRequireFlagOwned(flagUnitID, featurePlayerID);
-		cbeConvertFeatureRewardBuildings(groupingInstanceID, featurePlayerID);
-		rmSetTriggerPriority(4);
-		rmSetTriggerActive(true);
-		rmSetTriggerRunImmediately(true);
-		rmSetTriggerLoop(true);
-	}
-}
+include "cbeThemeModel.xs";
+include "cbeFeatureGroupings.xs";
 
 void main(void)
 {
@@ -134,125 +29,10 @@ void main(void)
 	// Theme Model
 	// ================================================================
 
-	// Biome IDs.
-	int cbeBiomeForest = 1;
-	int cbeBiomeJungle = 2;
-	int cbeBiomeDesert = 3;
-	int cbeBiomePlains = 4;
-	int cbeBiomeMountain = 5;
-	int cbeBiomeWetlandIsland = 6;
-	int cbeBiomeColdNorth = 7;
-
-	// Region flavor IDs.
-	int cbeRegionNorthAmerica = 1;
-	int cbeRegionEurope = 2;
-	int cbeRegionAsia = 3;
-	int cbeRegionSouthAmerica = 4;
-	int cbeRegionAfrica = 5;
-	int cbeRegionIsland = 6;
-
-	int cbeBiomeTheme = rmRandInt(1, 7);
-	int cbeRegionFlavor = cbeRegionNorthAmerica;
-	int cbeThemeRoll = -1;
-	string cbeBiomeName = "Forest";
-	string cbeRegionName = "North America";
-
-	// Pick compatible region pool.
-	if (cbeBiomeTheme == cbeBiomeForest)
-	{
-		cbeBiomeName = "Forest";
-		cbeThemeRoll = rmRandInt(1, 3);
-		if (cbeThemeRoll == 1)
-			cbeRegionFlavor = cbeRegionNorthAmerica;
-		else if (cbeThemeRoll == 2)
-			cbeRegionFlavor = cbeRegionEurope;
-		else
-			cbeRegionFlavor = cbeRegionAsia;
-	}
-	else if (cbeBiomeTheme == cbeBiomeJungle)
-	{
-		cbeBiomeName = "Jungle";
-		cbeThemeRoll = rmRandInt(1, 3);
-		if (cbeThemeRoll == 1)
-			cbeRegionFlavor = cbeRegionSouthAmerica;
-		else if (cbeThemeRoll == 2)
-			cbeRegionFlavor = cbeRegionAfrica;
-		else
-			cbeRegionFlavor = cbeRegionAsia;
-	}
-	else if (cbeBiomeTheme == cbeBiomeDesert)
-	{
-		cbeBiomeName = "Desert";
-		cbeThemeRoll = rmRandInt(1, 3);
-		if (cbeThemeRoll == 1)
-			cbeRegionFlavor = cbeRegionAfrica;
-		else if (cbeThemeRoll == 2)
-			cbeRegionFlavor = cbeRegionAsia;
-		else
-			cbeRegionFlavor = cbeRegionNorthAmerica;
-	}
-	else if (cbeBiomeTheme == cbeBiomePlains)
-	{
-		cbeBiomeName = "Plains";
-		cbeThemeRoll = rmRandInt(1, 4);
-		if (cbeThemeRoll == 1)
-			cbeRegionFlavor = cbeRegionNorthAmerica;
-		else if (cbeThemeRoll == 2)
-			cbeRegionFlavor = cbeRegionEurope;
-		else if (cbeThemeRoll == 3)
-			cbeRegionFlavor = cbeRegionAfrica;
-		else
-			cbeRegionFlavor = cbeRegionAsia;
-	}
-	else if (cbeBiomeTheme == cbeBiomeMountain)
-	{
-		cbeBiomeName = "Mountain";
-		cbeThemeRoll = rmRandInt(1, 4);
-		if (cbeThemeRoll == 1)
-			cbeRegionFlavor = cbeRegionNorthAmerica;
-		else if (cbeThemeRoll == 2)
-			cbeRegionFlavor = cbeRegionEurope;
-		else if (cbeThemeRoll == 3)
-			cbeRegionFlavor = cbeRegionSouthAmerica;
-		else
-			cbeRegionFlavor = cbeRegionAsia;
-	}
-	else if (cbeBiomeTheme == cbeBiomeWetlandIsland)
-	{
-		cbeBiomeName = "Wetland / Island";
-		cbeThemeRoll = rmRandInt(1, 4);
-		if (cbeThemeRoll == 1)
-			cbeRegionFlavor = cbeRegionSouthAmerica;
-		else if (cbeThemeRoll == 2)
-			cbeRegionFlavor = cbeRegionNorthAmerica;
-		else if (cbeThemeRoll == 3)
-			cbeRegionFlavor = cbeRegionAsia;
-		else
-			cbeRegionFlavor = cbeRegionIsland;
-	}
-	else
-	{
-		cbeBiomeName = "Cold North";
-		cbeThemeRoll = rmRandInt(1, 3);
-		if (cbeThemeRoll == 1)
-			cbeRegionFlavor = cbeRegionNorthAmerica;
-		else if (cbeThemeRoll == 2)
-			cbeRegionFlavor = cbeRegionEurope;
-		else
-			cbeRegionFlavor = cbeRegionAsia;
-	}
-
-	// Region label.
-	if (cbeRegionFlavor == cbeRegionEurope)
-		cbeRegionName = "Europe";
-	else if (cbeRegionFlavor == cbeRegionAsia)
-		cbeRegionName = "Asia";
-	else if (cbeRegionFlavor == cbeRegionSouthAmerica)
-		cbeRegionName = "Central / South America";
-	else if (cbeRegionFlavor == cbeRegionAfrica)
-		cbeRegionName = "Africa";
-	else if (cbeRegionFlavor == cbeRegionIsland)
-		cbeRegionName = "Island";
+	int cbeBiomeTheme = cbeChooseBiomeTheme();
+	int cbeRegionFlavor = cbeChooseRegionFlavor(cbeBiomeTheme);
+	string cbeBiomeName = cbeGetBiomeName(cbeBiomeTheme);
+	string cbeRegionName = cbeGetRegionName(cbeRegionFlavor);
 
 	// ================================================================
 	// Land Feature Flags
@@ -270,111 +50,21 @@ void main(void)
 	int cbeHasDenseWilds = 0;
 	int cbeHasAncientRuins = 0;
 
-	int cbeRiverWeight = 45;
-	int cbeCliffWeight = 40;
-	int cbeMountainWeight = 30;
-	int cbeCaveWeight = 25;
-	int cbeCoastWeight = 25;
-	int cbeDenseWildWeight = 45;
-	int cbeRuinsWeight = 35;
-
-	if (cbeBiomeTheme == cbeBiomeForest)
-	{
-		cbeRiverWeight = cbeRiverWeight + 10;
-		cbeDenseWildWeight = cbeDenseWildWeight + 20;
-		cbeRuinsWeight = cbeRuinsWeight + 10;
-	}
-	else if (cbeBiomeTheme == cbeBiomeJungle)
-	{
-		cbeRiverWeight = cbeRiverWeight + 20;
-		cbeDenseWildWeight = cbeDenseWildWeight + 30;
-		cbeRuinsWeight = cbeRuinsWeight + 15;
-	}
-	else if (cbeBiomeTheme == cbeBiomeDesert)
-	{
-		cbeCliffWeight = cbeCliffWeight + 20;
-		cbeCaveWeight = cbeCaveWeight + 20;
-		cbeDenseWildWeight = cbeDenseWildWeight - 25;
-	}
-	else if (cbeBiomeTheme == cbeBiomeMountain)
-	{
-		cbeCliffWeight = cbeCliffWeight + 20;
-		cbeMountainWeight = cbeMountainWeight + 30;
-		cbeCaveWeight = cbeCaveWeight + 15;
-	}
-	else if (cbeBiomeTheme == cbeBiomeWetlandIsland)
-	{
-		cbeRiverWeight = cbeRiverWeight + 20;
-		cbeCoastWeight = cbeCoastWeight + 35;
-		cbeDenseWildWeight = cbeDenseWildWeight + 10;
-	}
-	else if (cbeBiomeTheme == cbeBiomeColdNorth)
-	{
-		cbeMountainWeight = cbeMountainWeight + 15;
-		cbeCliffWeight = cbeCliffWeight + 10;
-		cbeDenseWildWeight = cbeDenseWildWeight + 5;
-	}
-
-	if (rmRandInt(1, 100) <= cbeRiverWeight)
-		cbeHasRiver = 1;
-	if (rmRandInt(1, 100) <= cbeCliffWeight)
-		cbeHasCliffs = 1;
-	if (rmRandInt(1, 100) <= cbeMountainWeight)
-		cbeHasMountains = 1;
-	if (rmRandInt(1, 100) <= cbeCaveWeight)
-		cbeHasCaves = 1;
-	if (rmRandInt(1, 100) <= cbeCoastWeight)
-		cbeHasCoast = 1;
-	if (rmRandInt(1, 100) <= cbeDenseWildWeight)
-		cbeHasDenseWilds = 1;
-	if (rmRandInt(1, 100) <= cbeRuinsWeight)
-		cbeHasAncientRuins = 1;
+	cbeHasRiver = cbeRollFeatureEnabled(cbeFeatureWeightRiver(cbeBiomeTheme));
+	cbeHasCliffs = cbeRollFeatureEnabled(cbeFeatureWeightCliffs(cbeBiomeTheme));
+	cbeHasMountains = cbeRollFeatureEnabled(cbeFeatureWeightMountains(cbeBiomeTheme));
+	cbeHasCaves = cbeRollFeatureEnabled(cbeFeatureWeightCaves(cbeBiomeTheme));
+	cbeHasCoast = cbeRollFeatureEnabled(cbeFeatureWeightCoast(cbeBiomeTheme));
+	cbeHasDenseWilds = cbeRollFeatureEnabled(cbeFeatureWeightDenseWilds(cbeBiomeTheme));
+	cbeHasAncientRuins = cbeRollFeatureEnabled(cbeFeatureWeightRuins(cbeBiomeTheme));
 
 	// ================================================================
 	// Feature Relationships
 	// ================================================================
 
-	int cbeRouteRiverNone = 0;
-	int cbeRouteRiverPerpendicular = 1;
-	int cbeRouteRiverParallelOffset = 2;
-	int cbeRouteRiverSeparateParallel = 3;
-	int cbeRouteRiverRelationship = cbeRouteRiverNone;
-	if (cbeHasTradeRoute == 1 && cbeHasRiver == 1)
-		cbeRouteRiverRelationship = rmRandInt(1, 3);
-
-	int cbeRouteMesaNone = 0;
-	int cbeRouteMesaCutsPass = 1;
-	int cbeRouteMesaSkirts = 2;
-	int cbeRouteMesaAvoids = 3;
-	int cbeRouteMesaRelationship = cbeRouteMesaNone;
-	int cbeRouteMesaRoll = 0;
-	if (cbeHasTradeRoute == 1 && (cbeHasCliffs == 1 || cbeHasMountains == 1))
-	{
-		cbeRouteMesaRoll = rmRandInt(1, 100);
-		if (cbeRouteMesaRoll <= 35)
-			cbeRouteMesaRelationship = cbeRouteMesaCutsPass;
-		else if (cbeRouteMesaRoll <= 70)
-			cbeRouteMesaRelationship = cbeRouteMesaSkirts;
-		else
-			cbeRouteMesaRelationship = cbeRouteMesaAvoids;
-	}
-
-	int cbeRouteDenseWildsNone = 0;
-	int cbeRouteDenseWildsBorders = 1;
-	int cbeRouteDenseWildsCutsPath = 2;
-	int cbeRouteDenseWildsAvoids = 3;
-	int cbeRouteDenseWildsRelationship = cbeRouteDenseWildsNone;
-	int cbeRouteDenseWildsRoll = 0;
-	if (cbeHasTradeRoute == 1 && cbeHasDenseWilds == 1)
-	{
-		cbeRouteDenseWildsRoll = rmRandInt(1, 100);
-		if (cbeRouteDenseWildsRoll <= 45)
-			cbeRouteDenseWildsRelationship = cbeRouteDenseWildsBorders;
-		else if (cbeRouteDenseWildsRoll <= 65)
-			cbeRouteDenseWildsRelationship = cbeRouteDenseWildsCutsPath;
-		else
-			cbeRouteDenseWildsRelationship = cbeRouteDenseWildsAvoids;
-	}
+	int cbeRouteRiverRelationship = cbeRollRouteRiverRelationship(cbeHasTradeRoute, cbeHasRiver);
+	int cbeRouteMesaRelationship = cbeRollRouteMesaRelationship(cbeHasTradeRoute, cbeHasCliffs, cbeHasMountains);
+	int cbeRouteDenseWildsRelationship = cbeRollRouteDenseWildsRelationship(cbeHasTradeRoute, cbeHasDenseWilds);
 
 	rmEchoInfo("CBE Feature TradeRoute = "+cbeHasTradeRoute);
 	rmEchoInfo("CBE Feature River = "+cbeHasRiver);
@@ -438,6 +128,32 @@ void main(void)
 
 	chooseMercs();
 
+	string cbeDebugThemeMessage = "CBE Wilderness: "+cbeBiomeName+" biome ("+cbeRegionName+" region)";
+	string cbeDebugFeaturesAMessage = "Features (1=yes): trade route "+cbeHasTradeRoute+", river "+cbeHasRiver+", cliffs "+cbeHasCliffs+", mountains "+cbeHasMountains;
+	string cbeDebugFeaturesBMessage = "Features (1=yes): caves "+cbeHasCaves+", coast "+cbeHasCoast+", dense wilds "+cbeHasDenseWilds+", ruins "+cbeHasAncientRuins;
+	string cbeDebugRouteMessage = "Route logic: river "+cbeGetRouteRiverRelationshipName(cbeRouteRiverRelationship)+", mesa "+cbeGetRouteMesaRelationshipName(cbeRouteMesaRelationship)+", wilds "+cbeGetRouteDenseWildsRelationshipName(cbeRouteDenseWildsRelationship);
+
+	rmCreateTrigger("cbeMapDecisionSummary");
+	rmSwitchToTrigger(rmTriggerID("cbeMapDecisionSummary"));
+	rmSetTriggerPriority(4);
+	rmSetTriggerActive(true);
+	rmSetTriggerRunImmediately(true);
+	rmSetTriggerLoop(false);
+	rmAddTriggerCondition("Timer");
+	rmSetTriggerConditionParamInt("Param1", 2, false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", cbeDebugThemeMessage, false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", cbeDebugFeaturesAMessage, false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", cbeDebugFeaturesBMessage, false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", cbeDebugRouteMessage, false);
+
 	// ================================================================
 	// Classes
 	// ================================================================
@@ -486,18 +202,18 @@ void main(void)
 
 	int cbeTradeRouteShape = rmRandInt(1, 4);
 	float cbeRouteOffset = 0.38;
-	if (cbeRouteRiverRelationship == cbeRouteRiverParallelOffset)
+	if (cbeRouteRiverRelationship == cbeRouteRiverParallelOffset())
 	{
 		if (rmRandInt(1, 2) == 1)
 			cbeTradeRouteShape = cbeTradeRouteHorizontal;
 		else
 			cbeTradeRouteShape = cbeTradeRouteVertical;
 	}
-	else if (cbeRouteMesaRelationship == cbeRouteMesaCutsPass)
+	else if (cbeRouteMesaRelationship == cbeRouteMesaCutsPass())
 	{
 		cbeTradeRouteShape = rmRandInt(1, 4);
 	}
-	else if (cbeRouteMesaRelationship == cbeRouteMesaSkirts)
+	else if (cbeRouteMesaRelationship == cbeRouteMesaSkirts())
 	{
 		if (rmRandInt(1, 2) == 1)
 			cbeTradeRouteShape = cbeTradeRouteDiagonalUp;
@@ -507,7 +223,7 @@ void main(void)
 
 	rmEchoInfo("CBE Trade Route Shape = "+cbeTradeRouteShape);
 
-	if (cbeRouteMesaRelationship == cbeRouteMesaCutsPass)
+	if (cbeRouteMesaRelationship == cbeRouteMesaCutsPass())
 	{
 		if (cbeTradeRouteShape == cbeTradeRouteHorizontal)
 		{
@@ -542,7 +258,7 @@ void main(void)
 			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.95);
 		}
 	}
-	else if (cbeRouteRiverRelationship == cbeRouteRiverParallelOffset)
+	else if (cbeRouteRiverRelationship == cbeRouteRiverParallelOffset())
 	{
 		cbeRouteOffset = 0.38;
 		if (rmRandInt(1, 2) == 1)
@@ -563,7 +279,7 @@ void main(void)
 			rmAddTradeRouteWaypoint(cbeTradeRouteID, cbeRouteOffset, 0.95);
 		}
 	}
-	else if (cbeRouteMesaRelationship == cbeRouteMesaSkirts)
+	else if (cbeRouteMesaRelationship == cbeRouteMesaSkirts())
 	{
 		if (cbeTradeRouteShape == cbeTradeRouteDiagonalUp)
 		{
@@ -762,145 +478,12 @@ void main(void)
 
 	rmEchoInfo("CBE showcase groupings placed");
 	*/
-
 	// ================================================================
 	// Feature Groupings
 	// ================================================================
 
-	int cbeFeatureFarming1 = rmCreateGrouping("cbe feature farming 1", "cbe_feature_farming_01");
-	int cbeFeatureFarming2 = rmCreateGrouping("cbe feature farming 2", "cbe_feature_farming_02");
-	int cbeFeatureFarming3 = rmCreateGrouping("cbe feature farming 3", "cbe_feature_farming_03");
-	int cbeFeatureLumber1 = rmCreateGrouping("cbe feature lumber 1", "cbe_feature_lumber_01");
-	int cbeFeatureLumber2 = rmCreateGrouping("cbe feature lumber 2", "cbe_feature_lumber_02");
-	int cbeFeatureLumber3 = rmCreateGrouping("cbe feature lumber 3", "cbe_feature_lumber_03");
-	int cbeFeatureMining1 = rmCreateGrouping("cbe feature mining 1", "cbe_feature_mining_01");
-	int cbeFeatureMining2 = rmCreateGrouping("cbe feature mining 2", "cbe_feature_mining_02");
-	int cbeFeatureMining3 = rmCreateGrouping("cbe feature mining 3", "cbe_feature_mining_03");
-	int cbeFeatureDistrict1 = rmCreateGrouping("cbe feature district 1", "cbe_feature_district_01");
-	int cbeFeatureDistrict2 = rmCreateGrouping("cbe feature district 2", "cbe_feature_district_02");
-	int cbeFeatureDistrict3 = rmCreateGrouping("cbe feature district 3", "cbe_feature_district_03");
-	int cbeFeatureDistrict4 = rmCreateGrouping("cbe feature district 4", "cbe_feature_district_04");
-	int cbeFeatureCapture1 = rmCreateGrouping("cbe feature capture 1", "cbe_feature_capture_point_01");
-	int cbeFeatureCapture2 = rmCreateGrouping("cbe feature capture 2", "cbe_feature_capture_point_02");
-	int cbeFeatureCapture3 = rmCreateGrouping("cbe feature capture 3", "cbe_feature_capture_point_03");
-	int cbeFeatureCapture4 = rmCreateGrouping("cbe feature capture 4", "cbe_feature_capture_point_04");
-	int cbeFeatureCapture5 = rmCreateGrouping("cbe feature capture 5", "cbe_feature_capture_point_05");
-	int cbeFeatureFortress1 = rmCreateGrouping("cbe feature fortress 1", "cbe_feature_fortress_01");
-	int cbeFeatureRedoubt5 = rmCreateGrouping("cbe feature redoubt 5", "cbe_feature_redoubt_05");
-	int cbeFeatureRedoubt7 = rmCreateGrouping("cbe feature redoubt 7", "cbe_feature_redoubt_07");
+	cbePlaceFeatureGroupings();
 
-	rmSetGroupingMinDistance(cbeFeatureFarming1, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureFarming1, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureFarming2, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureFarming2, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureFarming3, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureFarming3, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureLumber1, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureLumber1, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureLumber2, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureLumber2, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureLumber3, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureLumber3, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureMining1, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureMining1, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureMining2, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureMining2, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureMining3, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureMining3, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureDistrict1, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureDistrict1, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureDistrict2, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureDistrict2, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureDistrict3, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureDistrict3, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureDistrict4, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureDistrict4, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureCapture1, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureCapture1, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureCapture2, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureCapture2, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureCapture3, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureCapture3, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureCapture4, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureCapture4, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureCapture5, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureCapture5, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureFortress1, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureFortress1, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureRedoubt5, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureRedoubt5, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureRedoubt7, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureRedoubt7, 0.0);
-
-	int cbeFeatureFortressInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureFortress1, 0.72, 0.76, 0);
-	int cbeFeatureRedoubtInstance5 = rmPlaceGroupingInstanceAtLoc(cbeFeatureRedoubt5, 0.27, 0.16, 0);
-	int cbeFeatureRedoubtInstance7 = rmPlaceGroupingInstanceAtLoc(cbeFeatureRedoubt7, 0.42, 0.16, 0);
-	int cbeFeatureDistrictInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureDistrict1, 0.57, 0.16, 0);
-	int cbeFeatureDistrictInstance2 = rmPlaceGroupingInstanceAtLoc(cbeFeatureDistrict2, 0.72, 0.16, 0);
-	int cbeFeatureDistrictInstance3 = rmPlaceGroupingInstanceAtLoc(cbeFeatureDistrict3, 0.87, 0.16, 0);
-
-	int cbeFeatureDistrictInstance4 = rmPlaceGroupingInstanceAtLoc(cbeFeatureDistrict4, 0.12, 0.36, 0);
-	int cbeFeatureCaptureInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureCapture1, 0.27, 0.36, 0);
-	int cbeFeatureCaptureInstance2 = rmPlaceGroupingInstanceAtLoc(cbeFeatureCapture2, 0.42, 0.36, 0);
-	int cbeFeatureCaptureInstance3 = rmPlaceGroupingInstanceAtLoc(cbeFeatureCapture3, 0.57, 0.36, 0);
-	int cbeFeatureCaptureInstance4 = rmPlaceGroupingInstanceAtLoc(cbeFeatureCapture4, 0.72, 0.36, 0);
-	int cbeFeatureCaptureInstance5 = rmPlaceGroupingInstanceAtLoc(cbeFeatureCapture5, 0.87, 0.36, 0);
-
-	int cbeFeatureFarmingInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureFarming1, 0.12, 0.56, 0);
-	int cbeFeatureFarmingInstance2 = rmPlaceGroupingInstanceAtLoc(cbeFeatureFarming2, 0.27, 0.56, 0);
-	int cbeFeatureFarmingInstance3 = rmPlaceGroupingInstanceAtLoc(cbeFeatureFarming3, 0.42, 0.56, 0);
-	int cbeFeatureLumberInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureLumber1, 0.57, 0.56, 0);
-	int cbeFeatureLumberInstance2 = rmPlaceGroupingInstanceAtLoc(cbeFeatureLumber2, 0.72, 0.56, 0);
-	int cbeFeatureLumberInstance3 = rmPlaceGroupingInstanceAtLoc(cbeFeatureLumber3, 0.87, 0.56, 0);
-
-	int cbeFeatureMiningInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureMining1, 0.12, 0.76, 0);
-	int cbeFeatureMiningInstance2 = rmPlaceGroupingInstanceAtLoc(cbeFeatureMining2, 0.27, 0.76, 0);
-	int cbeFeatureMiningInstance3 = rmPlaceGroupingInstanceAtLoc(cbeFeatureMining3, 0.42, 0.76, 0);
-
-	int cbeFeatureFortressFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureFortressInstance1, "deSPCCapturableFlag");
-	int cbeFeatureRedoubtFlag5 = rmGetGroupingInstanceUnitByType(cbeFeatureRedoubtInstance5, "deSPCCapturableFlag");
-	int cbeFeatureRedoubtFlag7 = rmGetGroupingInstanceUnitByType(cbeFeatureRedoubtInstance7, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance1, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance2, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance3, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag4 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance4, "deSPCCapturableFlag");
-	int cbeFeatureCaptureFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance1, "deSPCCapturableFlag");
-	int cbeFeatureCaptureFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance2, "deSPCCapturableFlag");
-	int cbeFeatureCaptureFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance3, "deSPCCapturableFlag");
-	int cbeFeatureCaptureFlag4 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance4, "deSPCCapturableFlag");
-	int cbeFeatureCaptureFlag5 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance5, "deSPCCapturableFlag");
-	int cbeFeatureFarmingFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureFarmingInstance1, "deSPCCapturableFlag");
-	int cbeFeatureFarmingFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureFarmingInstance2, "deSPCCapturableFlag");
-	int cbeFeatureFarmingFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureFarmingInstance3, "deSPCCapturableFlag");
-	int cbeFeatureLumberFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureLumberInstance1, "deSPCCapturableFlag");
-	int cbeFeatureLumberFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureLumberInstance2, "deSPCCapturableFlag");
-	int cbeFeatureLumberFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureLumberInstance3, "deSPCCapturableFlag");
-	int cbeFeatureMiningFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureMiningInstance1, "deSPCCapturableFlag");
-	int cbeFeatureMiningFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureMiningInstance2, "deSPCCapturableFlag");
-	int cbeFeatureMiningFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureMiningInstance3, "deSPCCapturableFlag");
-
-	cbeCreateFlagGroupingOwnership(201, cbeFeatureFortressInstance1, cbeFeatureFortressFlag1);
-	cbeCreateFlagGroupingOwnership(202, cbeFeatureRedoubtInstance5, cbeFeatureRedoubtFlag5);
-	cbeCreateFlagGroupingOwnership(203, cbeFeatureRedoubtInstance7, cbeFeatureRedoubtFlag7);
-	cbeCreateFlagGroupingOwnership(304, cbeFeatureDistrictInstance1, cbeFeatureDistrictFlag1);
-	cbeCreateFlagGroupingOwnership(305, cbeFeatureDistrictInstance2, cbeFeatureDistrictFlag2);
-	cbeCreateFlagGroupingOwnership(306, cbeFeatureDistrictInstance3, cbeFeatureDistrictFlag3);
-	cbeCreateFlagGroupingOwnership(307, cbeFeatureDistrictInstance4, cbeFeatureDistrictFlag4);
-	cbeCreateFlagGroupingOwnership(208, cbeFeatureCaptureInstance1, cbeFeatureCaptureFlag1);
-	cbeCreateFlagGroupingOwnership(209, cbeFeatureCaptureInstance2, cbeFeatureCaptureFlag2);
-	cbeCreateFlagGroupingOwnership(210, cbeFeatureCaptureInstance3, cbeFeatureCaptureFlag3);
-	cbeCreateFlagGroupingOwnership(211, cbeFeatureCaptureInstance4, cbeFeatureCaptureFlag4);
-	cbeCreateFlagGroupingOwnership(212, cbeFeatureCaptureInstance5, cbeFeatureCaptureFlag5);
-	cbeCreateFlagGroupingOwnership(213, cbeFeatureFarmingInstance1, cbeFeatureFarmingFlag1);
-	cbeCreateFlagGroupingOwnership(214, cbeFeatureFarmingInstance2, cbeFeatureFarmingFlag2);
-	cbeCreateFlagGroupingOwnership(215, cbeFeatureFarmingInstance3, cbeFeatureFarmingFlag3);
-	cbeCreateFlagGroupingOwnership(216, cbeFeatureLumberInstance1, cbeFeatureLumberFlag1);
-	cbeCreateFlagGroupingOwnership(217, cbeFeatureLumberInstance2, cbeFeatureLumberFlag2);
-	cbeCreateFlagGroupingOwnership(218, cbeFeatureLumberInstance3, cbeFeatureLumberFlag3);
-	cbeCreateFlagGroupingOwnership(219, cbeFeatureMiningInstance1, cbeFeatureMiningFlag1);
-	cbeCreateFlagGroupingOwnership(220, cbeFeatureMiningInstance2, cbeFeatureMiningFlag2);
-	cbeCreateFlagGroupingOwnership(221, cbeFeatureMiningInstance3, cbeFeatureMiningFlag3);
-	rmEchoInfo("CBE Feature Groupings placed");
 
 	// ================================================================
 	// Player Placement
