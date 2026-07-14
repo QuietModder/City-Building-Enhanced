@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <grouping>
 	<width>38</width>
@@ -7,36 +7,36 @@
 	<selectassingleunit>0</selectassingleunit>
 	<workonassingleunit>0</workonassingleunit>
 	<units>
-		<unit variation="200" posx="-5.5725" posz="-32.0384" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="205" posx="-0.3873" posz="-30.2861" orientx="0.3827" orienty="0.0000" orientz="-0.9239">deSPCCityStateWall5Prop</unit>
-		<unit variation="119" posx="-10.1524" posz="-28.0046" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWall5Prop</unit>
-		<unit variation="84" posx="4.8969" posz="-27.9500" orientx="0.3827" orienty="-0.0000" orientz="-0.9239">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="200" posx="-5.5725" posz="-32.0384" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="205" posx="-0.3873" posz="-30.2861" orientx="0.3827" orienty="0.0000" orientz="-0.9239">cbe_Grouping_deSPCCityStateWall5Prop</unit>
+		<unit variation="119" posx="-10.1524" posz="-28.0046" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
+		<unit variation="84" posx="4.8969" posz="-27.9500" orientx="0.3827" orienty="-0.0000" orientz="-0.9239">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="119" posx="-6.7089" posz="-25.0390" orientx="0.7071" orienty="0.0000" orientz="0.7071">deSPCSocketCityTower</unit>
-		<unit variation="63" posx="9.0828" posz="-24.1553" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWall5Prop</unit>
+		<unit variation="63" posx="9.0828" posz="-24.1553" orientx="0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="241" posx="5.2005" posz="-20.6743" orientx="-0.7071" orienty="0.0000" orientz="0.7071">deSPCCityStateBarracksProp</unit>
-		<unit variation="110" posx="-14.3380" posz="-23.8941" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="34" posx="13.1155" posz="-19.9922" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="118" posx="-24.0683" posz="-14.5025" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="110" posx="-14.3380" posz="-23.8941" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="34" posx="13.1155" posz="-19.9922" orientx="0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="118" posx="-24.0683" posz="-14.5025" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="48" posx="-7.0671" posz="-6.4534" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropPalaceC</unit>
-		<unit variation="61" posx="-28.3280" posz="-10.4278" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWall5Prop</unit>
+		<unit variation="61" posx="-28.3280" posz="-10.4278" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="253" posx="-23.1266" posz="-8.3740" orientx="0.7071" orienty="0.0000" orientz="0.7071">deSPCSocketCityTower</unit>
 		<unit variation="170" posx="-6.5027" posz="-11.1963" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deNatEUPropVilGuards</unit>
-		<unit variation="213" posx="21.6260" posz="-11.2736" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="129" posx="25.6998" posz="-7.3118" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWall5Prop</unit>
+		<unit variation="213" posx="21.6260" posz="-11.2736" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="129" posx="25.6998" posz="-7.3118" orientx="0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="41" posx="21.8408" posz="-6.0869" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deSPCSocketCityTower</unit>
 		<unit variation="134" posx="2.5954" posz="-3.7083" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropWingC</unit>
-		<unit variation="201" posx="-32.4486" posz="-6.2176" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="201" posx="-32.4486" posz="-6.2176" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="126" posx="-11.7387" posz="-5.7805" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deNatEUPropVilGuards</unit>
 		<unit variation="36" posx="-2.2658" posz="-5.3293" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsPottedPlants</unit>
 		<unit variation="1" posx="-3.1030" posz="-4.5054" orientx="0.7071" orienty="0.0000" orientz="0.7071">deNatEUPropVilGuards</unit>
-		<unit variation="194" posx="-32.5723" posz="-0.7244" orientx="-1.0000" orienty="0.0000" orientz="0.0000">deSPCCityStateWall5Prop</unit>
+		<unit variation="194" posx="-32.5723" posz="-0.7244" orientx="-1.0000" orienty="0.0000" orientz="0.0000">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="221" posx="-5.2221" posz="-2.6416" orientx="0.7071" orienty="0.0000" orientz="0.7071">deNatEUPropVilGuards</unit>
 		<unit variation="18" posx="-4.3358" posz="3.1815" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropWingC</unit>
-		<unit variation="231" posx="29.9044" posz="-3.1270" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="231" posx="29.9044" posz="-3.1270" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="77" posx="25.8644" posz="-3.0576" orientx="0.6134" orienty="0.0000" orientz="-0.7898">SMNWFence</unit>
 		<unit variation="39" posx="-1.1076" posz="-0.8116" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deNatEUPropStatue</unit>
 		<unit variation="180" posx="-6.1221" posz="-1.5589" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsPottedPlants</unit>
-		<unit variation="49" posx="29.9953" posz="2.5020" orientx="-1.0000" orienty="0.0000" orientz="0.0000">deSPCCityStateWall5Prop</unit>
+		<unit variation="49" posx="29.9953" posz="2.5020" orientx="-1.0000" orienty="0.0000" orientz="0.0000">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="249" posx="1.7249" posz="-0.1384" orientx="-0.9239" orienty="0.0000" orientz="-0.3827">deNatEUPropVilMale</unit>
 		<unit variation="203" posx="22.2210" posz="1.5258" orientx="0.7071" orienty="0.0000" orientz="0.7071">deNatEUPropVilMale</unit>
 		<unit variation="139" posx="25.8355" posz="1.0398" orientx="0.7071" orienty="0.0000" orientz="0.7071">deNatEUPropCannon</unit>
@@ -48,34 +48,34 @@
 		<unit variation="163" posx="24.2560" posz="2.6464" orientx="0.7071" orienty="0.0000" orientz="0.7071">deNatEUPropCannon</unit>
 		<unit variation="29" posx="-21.0792" posz="5.2907" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropVilFemale</unit>
 		<unit variation="212" posx="-22.1615" posz="4.2841" orientx="0.3827" orienty="0.0000" orientz="0.9239">deNatEUPropVilFemale</unit>
-		<unit variation="248" posx="-32.4402" posz="5.4774" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="248" posx="-32.4402" posz="5.4774" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="163" posx="21.5506" posz="8.6898" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deSPCSocketArtilleryDistrict</unit>
 		<unit variation="128" posx="6.9188" posz="5.8426" orientx="-0.7071" orienty="0.0000" orientz="0.7071">deNatEUPropStagecoach</unit>
 		<unit variation="204" posx="9.6985" posz="7.4382" orientx="-0.7071" orienty="0.0000" orientz="0.7071">deNatEUPropVilMale</unit>
 		<unit variation="13" posx="8.5346" posz="8.4956" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropVilFemale</unit>
 		<unit variation="161" posx="1.2004" posz="8.7603" orientx="0.4554" orienty="-0.0000" orientz="0.8903">deSPCTreeCypressProp</unit>
-		<unit variation="95" posx="29.8201" posz="8.6464" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="81" posx="25.6027" posz="12.4705" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWall5Prop</unit>
+		<unit variation="95" posx="29.8201" posz="8.6464" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="81" posx="25.6027" posz="12.4705" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="163" posx="-5.2728" posz="10.4607" orientx="-0.9239" orienty="0.0000" orientz="0.3827">deNatEUPropVilMale</unit>
 		<unit variation="176" posx="-17.7530" posz="15.2016" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropWingCshort</unit>
 		<unit variation="242" posx="-17.7690" posz="12.4919" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsPottedPlants</unit>
 		<unit variation="76" posx="16.2132" posz="15.0227" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deDepot</unit>
-		<unit variation="177" posx="-25.3368" posz="13.5325" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="177" posx="-25.3368" posz="13.5325" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="127" posx="-15.1405" posz="14.9580" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropVilLeaders</unit>
 		<unit variation="62" posx="-13.5787" posz="14.9763" orientx="-1.0000" orienty="0.0000" orientz="0.0000">deNatEUPropVilMale</unit>
-		<unit variation="98" posx="-21.0475" posz="17.7937" orientx="-0.7071" orienty="0.0000" orientz="0.7071">deSPCCityStateWall5Prop</unit>
+		<unit variation="98" posx="-21.0475" posz="17.7937" orientx="-0.7071" orienty="0.0000" orientz="0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="133" posx="-11.5703" posz="21.2780" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deNatEUPropWingCshort</unit>
-		<unit variation="88" posx="21.4113" posz="16.7091" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="47" posx="17.1062" posz="20.9032" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWall5Prop</unit>
+		<unit variation="88" posx="21.4113" posz="16.7091" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="47" posx="17.1062" posz="20.9032" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
 		<unit variation="0" posx="-11.5338" posz="18.4073" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsPottedPlants</unit>
 		<unit variation="252" posx="12.8941" posz="18.0025" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">SPCMineProps</unit>
-		<unit variation="46" posx="-16.9543" posz="21.7226" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="46" posx="-16.9543" posz="21.7226" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="184" posx="-0.6160" posz="23.6650" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCSocketCityTower</unit>
-		<unit variation="57" posx="-12.8273" posz="25.7763" orientx="-0.7071" orienty="0.0000" orientz="0.7071">deSPCCityStateWall5Prop</unit>
-		<unit variation="205" posx="12.5968" posz="25.4386" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="93" posx="3.2689" posz="29.9053" orientx="0.0000" orienty="0.0000" orientz="-1.0000">deSPCCityStateWallConnectorProp</unit>
-		<unit variation="250" posx="-2.5999" posz="29.9154" orientx="0.0000" orienty="0.0000" orientz="-1.0000">deSPCCityStateWall5Prop</unit>
-		<unit variation="238" posx="-8.6826" posz="29.8257" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deSPCCityStateWallConnectorProp</unit>
+		<unit variation="57" posx="-12.8273" posz="25.7763" orientx="-0.7071" orienty="0.0000" orientz="0.7071">cbe_Grouping_deSPCCityStateWall5Prop</unit>
+		<unit variation="205" posx="12.5968" posz="25.4386" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="93" posx="3.2689" posz="29.9053" orientx="0.0000" orienty="0.0000" orientz="-1.0000">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
+		<unit variation="250" posx="-2.5999" posz="29.9154" orientx="0.0000" orienty="0.0000" orientz="-1.0000">cbe_Grouping_deSPCCityStateWall5Prop</unit>
+		<unit variation="238" posx="-8.6826" posz="29.8257" orientx="0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 	</units>
 	<tiles>
 		<tilegroup type="PassableLand" subtype="great_plains\default">
@@ -289,10 +289,3 @@
 		</tilegroup>
 	</tiles>
 </grouping>
-
-
-
-
-
-
-

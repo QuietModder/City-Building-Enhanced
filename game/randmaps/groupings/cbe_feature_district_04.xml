@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <grouping>
 	<width>24</width>
@@ -20,12 +20,12 @@
 		<unit variation="88" posx="5.5189" posz="-18.9291" orientx="0.7074" orienty="0.0000" orientz="-0.7068">FenceRock</unit>
 		<unit variation="0" posx="-4.8422" posz="-16.8727" orientx="-0.7070" orienty="0.0000" orientz="-0.7072">SPCPathBlock3</unit>
 		<unit variation="0" posx="5.3280" posz="-18.1731" orientx="-0.7072" orienty="0.0000" orientz="0.7070">SPCPathBlock3</unit>
-		<unit variation="98" posx="0.2339" posz="-18.5048" orientx="-0.7080" orienty="0.0000" orientz="0.7062">deSPCViennaHouseProp</unit>
+		<unit variation="98" posx="0.2339" posz="-18.5048" orientx="-0.7080" orienty="0.0000" orientz="0.7062">cbe_Grouping_deSPCViennaHouseProp</unit>
 		<unit variation="88" posx="-5.5826" posz="-17.3781" orientx="0.7057" orienty="0.0000" orientz="0.7085">FenceRock</unit>
 		<unit variation="37" posx="7.4969" posz="-16.9018" orientx="0.7074" orienty="0.0000" orientz="-0.7068">FenceRock</unit>
-		<unit variation="201" posx="-3.9141" posz="-15.4904" orientx="0.7071" orienty="0.0000" orientz="0.7071">deSPCViennaHouseProp</unit>
+		<unit variation="201" posx="-3.9141" posz="-15.4904" orientx="0.7071" orienty="0.0000" orientz="0.7071">cbe_Grouping_deSPCViennaHouseProp</unit>
 		<unit variation="37" posx="-7.1277" posz="-15.7977" orientx="0.7060" orienty="0.0000" orientz="0.7082">FenceRock</unit>
-		<unit variation="98" posx="4.4839" posz="-14.7717" orientx="0.7068" orienty="0.0000" orientz="0.7074">deSPCViennaHouseProp</unit>
+		<unit variation="98" posx="4.4839" posz="-14.7717" orientx="0.7068" orienty="0.0000" orientz="0.7074">cbe_Grouping_deSPCViennaHouseProp</unit>
 		<unit variation="10" posx="-7.1493" posz="-14.0113" orientx="1.0000" orienty="0.0000" orientz="0.0012">PropsPottedPlants</unit>
 		<unit variation="10" posx="12.6730" posz="-9.1598" orientx="1.0000" orienty="0.0000" orientz="0.0012">PropsPottedPlants</unit>
 		<unit variation="37" posx="14.4092" posz="-9.6383" orientx="-0.7079" orienty="0.0000" orientz="0.7064">FenceRock</unit>
@@ -42,8 +42,8 @@
 		<unit variation="150" posx="10.8263" posz="-5.8914" orientx="0.9240" orienty="0.0000" orientz="-0.3823">SPCMineProps</unit>
 		<unit variation="0" posx="13.9795" posz="-5.1345" orientx="-0.0001" orienty="0.0000" orientz="1.0000">SPCPathBlock3</unit>
 		<unit variation="0" posx="12.1646" posz="-2.2754" orientx="-0.9239" orienty="0.0000" orientz="0.3826">SPCPathBlock3</unit>
-		<unit variation="77" posx="-14.4470" posz="-4.2519" orientx="0.7071" orienty="0.0000" orientz="0.7071">deSPCViennaHouseProp</unit>
-		<unit variation="36" posx="15.5041" posz="-0.4934" orientx="-0.7071" orienty="0.0000" orientz="0.7071">deSPCViennaBarracksProp</unit>
+		<unit variation="77" posx="-14.4470" posz="-4.2519" orientx="0.7071" orienty="0.0000" orientz="0.7071">cbe_Grouping_deSPCViennaHouseProp</unit>
+		<unit variation="36" posx="15.5041" posz="-0.4934" orientx="-0.7071" orienty="0.0000" orientz="0.7071">cbe_Grouping_deSPCViennaBarracksProp</unit>
 		<unit variation="149" posx="-1.6810" posz="-2.1125" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deSPCSocketMilitaryDistrict</unit>
 		<unit variation="3" posx="11.8143" posz="-4.2308" orientx="-0.7068" orienty="-0.0000" orientz="-0.7074">SPCDamagedProps</unit>
 		<unit variation="88" posx="-19.5977" posz="-3.1742" orientx="0.7062" orienty="0.0000" orientz="0.7080">FenceRock</unit>
@@ -56,7 +56,7 @@
 		<unit variation="0" posx="-1.6557" posz="-2.2917" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CinematicBlock</unit>
 		<unit variation="88" posx="-21.7281" posz="-1.2577" orientx="-0.7067" orienty="0.0000" orientz="-0.7075">FenceRock</unit>
 		<unit variation="88" posx="22.6773" posz="-1.0659" orientx="0.7074" orienty="0.0000" orientz="-0.7068">FenceRock</unit>
-		<unit variation="98" posx="-18.7072" posz="-0.4862" orientx="0.7080" orienty="0.0000" orientz="-0.7062">deSPCViennaHouseProp</unit>
+		<unit variation="98" posx="-18.7072" posz="-0.4862" orientx="0.7080" orienty="0.0000" orientz="-0.7062">cbe_Grouping_deSPCViennaHouseProp</unit>
 		<unit variation="0" posx="19.2955" posz="0.4252" orientx="-0.7072" orienty="0.0000" orientz="0.7070">SPCPathBlock3</unit>
 		<unit variation="8" posx="22.1814" posz="0.4529" orientx="0.3823" orienty="0.0000" orientz="0.9240">PropsColony</unit>
 		<unit variation="88" posx="23.6274" posz="-0.0303" orientx="0.7074" orienty="0.0000" orientz="-0.7068">FenceRock</unit>
@@ -92,7 +92,7 @@
 		<unit variation="0" posx="-3.8854" posz="12.8735" orientx="0.7071" orienty="0.0000" orientz="0.7071">SPCPathBlock3</unit>
 		<unit variation="0" posx="-5.2060" posz="12.6413" orientx="0.9239" orienty="0.0000" orientz="0.3827">SPCPathBlock3</unit>
 		<unit variation="0" posx="-0.8358" posz="11.6114" orientx="-0.7072" orienty="0.0000" orientz="0.7071">SPCPathBlock3</unit>
-		<unit variation="155" posx="-0.4106" posz="15.1562" orientx="0.7071" orienty="0.0000" orientz="-0.7071">deSPCViennaBarracksProp</unit>
+		<unit variation="155" posx="-0.4106" posz="15.1562" orientx="0.7071" orienty="0.0000" orientz="-0.7071">cbe_Grouping_deSPCViennaBarracksProp</unit>
 		<unit variation="10" posx="-9.0992" posz="11.2091" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsPottedPlants</unit>
 		<unit variation="37" posx="-9.6945" posz="13.2055" orientx="-0.7077" orienty="0.0000" orientz="0.7065">FenceRock</unit>
 		<unit variation="0" posx="-7.5226" posz="14.6195" orientx="0.7071" orienty="0.0000" orientz="-0.7071">SPCPathBlock3</unit>
@@ -318,9 +318,3 @@
 		</tilegroup>
 	</tiles>
 </grouping>
-
-
-
-
-
-

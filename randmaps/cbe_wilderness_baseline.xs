@@ -486,7 +486,7 @@ void main(void)
 	// Feature Groupings
 	// ================================================================
 
-	// cbePlaceFeatureGroupings();
+	cbePlaceFeatureGroupings();
 
 
 	// ================================================================

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <grouping>
 	<width>19</width>
@@ -24,7 +24,7 @@
 		<unit variation="188" posx="-10.9667" posz="0.9182" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEVillageHouse</unit>
 		<unit variation="1" posx="-0.9211" posz="0.4992" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsColony</unit>
 		<unit variation="180" posx="9.9172" posz="0.3772" orientx="0.9239" orienty="0.0000" orientz="-0.3827">SPCMineProps</unit>
-		<unit variation="22" posx="2.3880" posz="0.2136" orientx="-0.3399" orienty="0.0000" orientz="-0.9405">deSPCRockMineProp</unit>
+		<unit variation="22" posx="2.3880" posz="0.2136" orientx="-0.3399" orienty="0.0000" orientz="-0.9405">cbe_Grouping_deSPCRockMineProp</unit>
 		<unit variation="95" posx="13.9109" posz="2.6685" orientx="1.0000" orienty="0.0000" orientz="0.0006">FenceRock</unit>
 		<unit variation="66" posx="8.1262" posz="5.4053" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEMiningCamp</unit>
 		<unit variation="4" posx="-2.2818" posz="7.0452" orientx="-1.0000" orienty="0.0000" orientz="0.0000">PropsColony</unit>
@@ -145,8 +145,3 @@
 		</tilegroup>
 	</tiles>
 </grouping>
-
-
-
-
-

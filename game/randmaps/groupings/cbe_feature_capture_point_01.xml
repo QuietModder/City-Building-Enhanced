@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <grouping>
 	<width>23</width>
@@ -10,10 +10,10 @@
 		<unit variation="164" posx="-5.7092" posz="-16.4612" orientx="0.9709" orienty="-0.0000" orientz="-0.2394">FenceRock</unit>
 		<unit variation="154" posx="-6.7053" posz="-16.3868" orientx="0.7071" orienty="-0.0000" orientz="0.7071">UnderbrushCarolinasForest</unit>
 		<unit variation="35" posx="-6.9276" posz="-16.9509" orientx="0.7071" orienty="-0.0000" orientz="0.7071">FenceRock</unit>
-		<unit variation="1" posx="-0.5136" posz="-15.5480" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCSupplyCache</unit>
+		<unit variation="1" posx="-0.5136" posz="-15.5480" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">cbe_Grouping_deSPCSupplyCache</unit>
 		<unit variation="42" posx="-6.4464" posz="-15.3706" orientx="0.3827" orienty="0.0000" orientz="-0.9239">FenceRock</unit>
 		<unit variation="18" posx="-17.8604" posz="-13.7044" orientx="-0.4788" orienty="0.0000" orientz="-0.8779">deSPCTreeOakProp</unit>
-		<unit variation="232" posx="11.1183" posz="-10.4195" orientx="-0.7069" orienty="0.0000" orientz="-0.7073">deSPCWaterlooHouseProp</unit>
+		<unit variation="232" posx="11.1183" posz="-10.4195" orientx="-0.7069" orienty="0.0000" orientz="-0.7073">cbe_Grouping_deSPCWaterlooHouseProp</unit>
 		<unit variation="42" posx="-12.2090" posz="-10.5248" orientx="0.7070" orienty="0.0000" orientz="0.7072">FenceRock</unit>
 		<unit variation="35" posx="-10.5648" posz="-10.3644" orientx="-0.9239" orienty="0.0000" orientz="0.3826">FenceRock</unit>
 		<unit variation="154" posx="-11.2093" posz="-10.3244" orientx="-0.9239" orienty="0.0000" orientz="0.3826">UnderbrushCarolinasForest</unit>
@@ -22,8 +22,8 @@
 		<unit variation="30" posx="9.0860" posz="-8.5952" orientx="0.7071" orienty="0.0000" orientz="-0.7071">FenceRock</unit>
 		<unit variation="0" posx="4.2662" posz="-7.6897" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCColourFlagMedium</unit>
 		<unit variation="93" posx="-0.3975" posz="-6.0807" orientx="-1.0000" orienty="0.0000" orientz="0.0000">LakeRocksNe</unit>
-		<unit variation="134" posx="12.4928" posz="-5.9054" orientx="-0.3824" orienty="-0.0000" orientz="-0.9240">deSPCWaterlooHouseProp</unit>
-		<unit variation="45" posx="-12.4281" posz="-6.1163" orientx="-0.9239" orienty="0.0000" orientz="-0.3827">deSPCWaterlooHouseProp</unit>
+		<unit variation="134" posx="12.4928" posz="-5.9054" orientx="-0.3824" orienty="-0.0000" orientz="-0.9240">cbe_Grouping_deSPCWaterlooHouseProp</unit>
+		<unit variation="45" posx="-12.4281" posz="-6.1163" orientx="-0.9239" orienty="0.0000" orientz="-0.3827">cbe_Grouping_deSPCWaterlooHouseProp</unit>
 		<unit variation="49" posx="8.2538" posz="-6.8135" orientx="0.5949" orienty="-0.0000" orientz="0.8038">deSPCTreeOakProp</unit>
 		<unit variation="107" posx="-5.3649" posz="-2.8303" orientx="-0.9239" orienty="0.0000" orientz="-0.3827">LakeRocksNe</unit>
 		<unit variation="116" posx="-5.3215" posz="-2.0209" orientx="-0.3827" orienty="0.0000" orientz="-0.9239">LakeRocksNe</unit>
@@ -31,7 +31,7 @@
 		<unit variation="195" posx="13.5220" posz="-2.8100" orientx="0.3827" orienty="0.0000" orientz="0.9239">FenceRock</unit>
 		<unit variation="209" posx="10.6108" posz="-2.3292" orientx="-0.0000" orienty="0.0000" orientz="1.0000">FenceRock</unit>
 		<unit variation="204" posx="1.8099" posz="-3.8826" orientx="0.7071" orienty="0.0000" orientz="-0.7071">LakeRocksNe</unit>
-		<unit variation="232" posx="-14.9885" posz="-1.4718" orientx="-0.9239" orienty="0.0000" orientz="-0.3827">deSPCWaterlooHouseProp</unit>
+		<unit variation="232" posx="-14.9885" posz="-1.4718" orientx="-0.9239" orienty="0.0000" orientz="-0.3827">cbe_Grouping_deSPCWaterlooHouseProp</unit>
 		<unit variation="0" posx="-0.6871" posz="-2.8331" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CinematicBlock</unit>
 		<unit variation="0" posx="-7.9488" posz="-1.7020" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCColourFlagMedium</unit>
 		<unit variation="6" posx="-6.2141" posz="-1.7614" orientx="-0.3827" orienty="0.0000" orientz="-0.9239">LakeRocksNe</unit>
@@ -40,8 +40,8 @@
 		<unit variation="155" posx="1.9088" posz="3.9185" orientx="0.7071" orienty="0.0000" orientz="-0.7071">LakeRocksNe</unit>
 		<unit variation="115" posx="1.7861" posz="3.3591" orientx="0.0000" orienty="0.0000" orientz="-1.0000">LakeRocksNe</unit>
 		<unit variation="0" posx="0.7173" posz="5.6492" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCColourFlagMedium</unit>
-		<unit variation="82" posx="-2.0345" posz="11.9065" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCWaterlooChurchProp</unit>
-		<unit variation="134" posx="7.9596" posz="7.1548" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCWaterlooHouseProp</unit>
+		<unit variation="82" posx="-2.0345" posz="11.9065" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">cbe_Grouping_deSPCWaterlooChurchProp</unit>
+		<unit variation="134" posx="7.9596" posz="7.1548" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">cbe_Grouping_deSPCWaterlooHouseProp</unit>
 		<unit variation="164" posx="6.9631" posz="9.8093" orientx="0.1504" orienty="-0.0000" orientz="-0.9886">FenceRock</unit>
 		<unit variation="211" posx="12.9477" posz="8.7491" orientx="-0.9229" orienty="0.0000" orientz="-0.3851">deSPCTreeOakProp</unit>
 		<unit variation="247" posx="-8.3287" posz="10.5110" orientx="-1.0000" orienty="0.0000" orientz="0.0000">FenceRock</unit>
@@ -289,8 +289,3 @@
 		</heights>
 	</tiles>
 </grouping>
-
-
-
-
-
