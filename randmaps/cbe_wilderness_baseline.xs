@@ -4,7 +4,11 @@
 include "mercenaries.xs";
 include "ypAsianInclude.xs";
 include "ypKOTHInclude.xs";
+
+//File in charge doing the biome theme and region flavor selection (Does not generate the map, just sets the theme and flavor for the map generation)
 include "cbeThemeModel.xs";
+
+// File in charge of placing the feature groupings on the map (Does not generate the map, just places the groupings)
 include "cbeFeatureGroupings.xs";
 
 void main(void)
@@ -482,7 +486,7 @@ void main(void)
 	// Feature Groupings
 	// ================================================================
 
-	cbePlaceFeatureGroupings();
+	// cbePlaceFeatureGroupings();
 
 
 	// ================================================================
