@@ -48,12 +48,23 @@ void cbeConvertFeatureRewardBuildings(int groupingInstanceID = -1, int playerID 
 	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
 	rmSetTriggerEffectParamInt("PlayerID", playerID);
 	rmSetTriggerEffectParam("UnitType", "AbstractSPCVillageBuilding");
+	rmAddTriggerEffect("Grouping Convert Unit Type");
+	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
+	rmSetTriggerEffectParamInt("PlayerID", playerID);
+	rmSetTriggerEffectParam("UnitType", "AbstractFarm");
+	rmAddTriggerEffect("Grouping Convert Unit Type");
+	rmSetTriggerEffectParamInt("InstanceID", groupingInstanceID);
+	rmSetTriggerEffectParamInt("PlayerID", playerID);
+	rmSetTriggerEffectParam("UnitType", "CBEVillageMill");
 }
 
 void cbeCreateCityStateOwnership(int cityStateIndex = 0, int groupingInstanceID = -1, int socketUnitID = -1)
 {
 	int cityStatePlayerID = 0;
 	int cityStateCheckPlayerID = 0;
+	if (socketUnitID < 0)
+		return;
+
 	for (cityStatePlayerID = 1; <= cNumberNonGaiaPlayers)
 	{
 		rmCreateTrigger("CBE_CityState_"+cityStateIndex+"_ON_Plr"+cityStatePlayerID);
@@ -91,9 +102,46 @@ void cbeRequireFlagOwned(int flagUnitID = -1, int playerID = 0)
 	rmSetTriggerConditionParam("SrcObject", ""+flagUnitID);
 }
 
+void cbeRequirePlayerCaptureUnitsNearFlag(int flagUnitID = -1, int playerID = 0)
+{
+	rmAddTriggerCondition("Units in Area");
+	rmSetTriggerConditionParam("DstObject", ""+flagUnitID);
+	rmSetTriggerConditionParamInt("Player", playerID);
+	rmSetTriggerConditionParamInt("Dist", 18);
+	rmSetTriggerConditionParam("UnitType", "LogicalTypeLandMilitary");
+	rmSetTriggerConditionParam("Op", ">=");
+	rmSetTriggerConditionParamFloat("Count", 1);
+}
+
+void cbeRequireNoPlayerCaptureUnitsNearFlag(int flagUnitID = -1, int playerID = 0)
+{
+	rmAddTriggerCondition("Units in Area");
+	rmSetTriggerConditionParam("DstObject", ""+flagUnitID);
+	rmSetTriggerConditionParamInt("Player", playerID);
+	rmSetTriggerConditionParamInt("Dist", 18);
+	rmSetTriggerConditionParam("UnitType", "LogicalTypeLandMilitary");
+	rmSetTriggerConditionParam("Op", "==");
+	rmSetTriggerConditionParamFloat("Count", 0);
+}
+
+void cbeConvertFlagToPlayer(int flagUnitID = -1, int sourcePlayerID = 0, int targetPlayerID = 0)
+{
+	rmAddTriggerEffect("Convert Units in Area");
+	rmSetTriggerEffectParamInt("SrcObject", flagUnitID, false);
+	rmSetTriggerEffectParamInt("SrcPlayer", sourcePlayerID, false);
+	rmSetTriggerEffectParamInt("TrgPlayer", targetPlayerID, false);
+	rmSetTriggerEffectParam("UnitType", "deSPCCapturableFlag", false);
+	rmSetTriggerEffectParamInt("Dist", 4, false);
+}
+
 void cbeCreateFlagGroupingOwnership(int featureIndex = 0, int groupingInstanceID = -1, int flagUnitID = -1)
 {
 	int featurePlayerID = 0;
+	int currentOwnerPlayerID = 0;
+	int challengerPlayerID = 0;
+	if (flagUnitID < 0)
+		return;
+
 	for (featurePlayerID = 1; <= cNumberNonGaiaPlayers)
 	{
 		rmCreateTrigger("CBE_FlagFeature_"+featureIndex+"_Plr"+featurePlayerID);
@@ -104,6 +152,27 @@ void cbeCreateFlagGroupingOwnership(int featureIndex = 0, int groupingInstanceID
 		rmSetTriggerActive(true);
 		rmSetTriggerRunImmediately(true);
 		rmSetTriggerLoop(true);
+	}
+
+	for (currentOwnerPlayerID = 1; <= cNumberNonGaiaPlayers)
+	{
+		for (challengerPlayerID = 1; <= cNumberNonGaiaPlayers)
+		{
+			if (challengerPlayerID != currentOwnerPlayerID)
+			{
+				rmCreateTrigger("CBE_FlagFeature_"+featureIndex+"_P"+currentOwnerPlayerID+"_To_P"+challengerPlayerID);
+				rmSwitchToTrigger(rmTriggerID("CBE_FlagFeature_"+featureIndex+"_P"+currentOwnerPlayerID+"_To_P"+challengerPlayerID));
+				cbeRequireFlagOwned(flagUnitID, currentOwnerPlayerID);
+				cbeRequirePlayerCaptureUnitsNearFlag(flagUnitID, challengerPlayerID);
+				cbeRequireNoPlayerCaptureUnitsNearFlag(flagUnitID, currentOwnerPlayerID);
+				cbeConvertFlagToPlayer(flagUnitID, currentOwnerPlayerID, challengerPlayerID);
+				cbeConvertFeatureRewardBuildings(groupingInstanceID, challengerPlayerID);
+				rmSetTriggerPriority(4);
+				rmSetTriggerActive(true);
+				rmSetTriggerRunImmediately(true);
+				rmSetTriggerLoop(true);
+			}
+		}
 	}
 }
 
@@ -132,7 +201,6 @@ void cbePlaceFeatureGroupings(void)
 	int cbeFeatureCapture3 = rmCreateGrouping("cbe feature capture 3", "cbe_feature_capture_point_03");
 	int cbeFeatureCapture4 = rmCreateGrouping("cbe feature capture 4", "cbe_feature_capture_point_04");
 	int cbeFeatureCapture5 = rmCreateGrouping("cbe feature capture 5", "cbe_feature_capture_point_05");
-	int cbeFeatureFortress1 = rmCreateGrouping("cbe feature fortress 1", "cbe_feature_fortress_01");
 	int cbeFeatureRedoubt5 = rmCreateGrouping("cbe feature redoubt 5", "cbe_feature_redoubt_05");
 	int cbeFeatureRedoubt7 = rmCreateGrouping("cbe feature redoubt 7", "cbe_feature_redoubt_07");
 
@@ -172,14 +240,11 @@ void cbePlaceFeatureGroupings(void)
 	rmSetGroupingMaxDistance(cbeFeatureCapture4, 0.0);
 	rmSetGroupingMinDistance(cbeFeatureCapture5, 0.0);
 	rmSetGroupingMaxDistance(cbeFeatureCapture5, 0.0);
-	rmSetGroupingMinDistance(cbeFeatureFortress1, 0.0);
-	rmSetGroupingMaxDistance(cbeFeatureFortress1, 0.0);
 	rmSetGroupingMinDistance(cbeFeatureRedoubt5, 0.0);
 	rmSetGroupingMaxDistance(cbeFeatureRedoubt5, 0.0);
 	rmSetGroupingMinDistance(cbeFeatureRedoubt7, 0.0);
 	rmSetGroupingMaxDistance(cbeFeatureRedoubt7, 0.0);
 
-	int cbeFeatureFortressInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureFortress1, 0.72, 0.76, 0);
 	int cbeFeatureRedoubtInstance5 = rmPlaceGroupingInstanceAtLoc(cbeFeatureRedoubt5, 0.27, 0.16, 0);
 	int cbeFeatureRedoubtInstance7 = rmPlaceGroupingInstanceAtLoc(cbeFeatureRedoubt7, 0.42, 0.16, 0);
 	int cbeFeatureDistrictInstance1 = rmPlaceGroupingInstanceAtLoc(cbeFeatureDistrict1, 0.57, 0.16, 0);
@@ -204,13 +269,12 @@ void cbePlaceFeatureGroupings(void)
 	int cbeFeatureMiningInstance2 = rmPlaceGroupingInstanceAtLoc(cbeFeatureMining2, 0.27, 0.76, 0);
 	int cbeFeatureMiningInstance3 = rmPlaceGroupingInstanceAtLoc(cbeFeatureMining3, 0.42, 0.76, 0);
 
-	int cbeFeatureFortressFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureFortressInstance1, "deSPCCapturableFlag");
 	int cbeFeatureRedoubtFlag5 = rmGetGroupingInstanceUnitByType(cbeFeatureRedoubtInstance5, "deSPCCapturableFlag");
 	int cbeFeatureRedoubtFlag7 = rmGetGroupingInstanceUnitByType(cbeFeatureRedoubtInstance7, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance1, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance2, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance3, "deSPCCapturableFlag");
-	int cbeFeatureDistrictFlag4 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance4, "deSPCCapturableFlag");
+	int cbeFeatureDistrictSocket1 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance1, "deSPCSocketArtilleryDistrict");
+	int cbeFeatureDistrictSocket2 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance2, "deSPCSocketMarketDistrict");
+	int cbeFeatureDistrictSocket3 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance3, "deSPCSocketReligiousDistrict");
+	int cbeFeatureDistrictSocket4 = rmGetGroupingInstanceUnitByType(cbeFeatureDistrictInstance4, "deSPCSocketMilitaryDistrict");
 	int cbeFeatureCaptureFlag1 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance1, "deSPCCapturableFlag");
 	int cbeFeatureCaptureFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance2, "deSPCCapturableFlag");
 	int cbeFeatureCaptureFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureCaptureInstance3, "deSPCCapturableFlag");
@@ -226,13 +290,12 @@ void cbePlaceFeatureGroupings(void)
 	int cbeFeatureMiningFlag2 = rmGetGroupingInstanceUnitByType(cbeFeatureMiningInstance2, "deSPCCapturableFlag");
 	int cbeFeatureMiningFlag3 = rmGetGroupingInstanceUnitByType(cbeFeatureMiningInstance3, "deSPCCapturableFlag");
 
-	cbeCreateFlagGroupingOwnership(201, cbeFeatureFortressInstance1, cbeFeatureFortressFlag1);
 	cbeCreateFlagGroupingOwnership(202, cbeFeatureRedoubtInstance5, cbeFeatureRedoubtFlag5);
 	cbeCreateFlagGroupingOwnership(203, cbeFeatureRedoubtInstance7, cbeFeatureRedoubtFlag7);
-	cbeCreateFlagGroupingOwnership(304, cbeFeatureDistrictInstance1, cbeFeatureDistrictFlag1);
-	cbeCreateFlagGroupingOwnership(305, cbeFeatureDistrictInstance2, cbeFeatureDistrictFlag2);
-	cbeCreateFlagGroupingOwnership(306, cbeFeatureDistrictInstance3, cbeFeatureDistrictFlag3);
-	cbeCreateFlagGroupingOwnership(307, cbeFeatureDistrictInstance4, cbeFeatureDistrictFlag4);
+	cbeCreateCityStateOwnership(304, cbeFeatureDistrictInstance1, cbeFeatureDistrictSocket1);
+	cbeCreateCityStateOwnership(305, cbeFeatureDistrictInstance2, cbeFeatureDistrictSocket2);
+	cbeCreateCityStateOwnership(306, cbeFeatureDistrictInstance3, cbeFeatureDistrictSocket3);
+	cbeCreateCityStateOwnership(307, cbeFeatureDistrictInstance4, cbeFeatureDistrictSocket4);
 	cbeCreateFlagGroupingOwnership(208, cbeFeatureCaptureInstance1, cbeFeatureCaptureFlag1);
 	cbeCreateFlagGroupingOwnership(209, cbeFeatureCaptureInstance2, cbeFeatureCaptureFlag2);
 	cbeCreateFlagGroupingOwnership(210, cbeFeatureCaptureInstance3, cbeFeatureCaptureFlag3);

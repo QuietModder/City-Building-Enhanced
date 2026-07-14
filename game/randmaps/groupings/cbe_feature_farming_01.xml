@@ -27,7 +27,7 @@
 		<unit variation="3" posx="-0.3319" posz="5.8845" orientx="-0.3827" orienty="0.0000" orientz="-0.9239">PropsColony</unit>
 		<unit variation="2" posx="-0.3835" posz="4.7614" orientx="0.3827" orienty="0.0000" orientz="-0.9239">PropsColony</unit>
 		<unit variation="176" posx="14.8344" posz="4.3437" orientx="1.0000" orienty="0.0000" orientz="0.0000">FenceRock</unit>
-		<unit variation="225" posx="8.4266" posz="6.6892" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">deSPCVillageMill</unit>
+		<unit variation="225" posx="8.4266" posz="6.6892" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEVillageMill</unit>
 		<unit variation="119" posx="-1.3839" posz="9.1824" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">CBEVillageHouse</unit>
 		<unit variation="2" posx="-3.2912" posz="11.5054" orientx="0.3827" orienty="0.0000" orientz="-0.9239">PropsColony</unit>
 		<unit variation="235" posx="-5.4710" posz="10.7149" orientx="0.6737" orienty="-0.0000" orientz="-0.7390">deSPCTreeOakProp</unit>

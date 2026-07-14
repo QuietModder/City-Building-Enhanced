@@ -3422,11 +3422,8 @@
     </unit>
     <unit mergeMode="add" id="9102" name="CBEVillageTent">
         <dbid>99102</dbid>
-        <displaynameid>22839</displaynameid>
-        <editornameid>123082</editornameid>
-        <panelnameid>123103</panelnameid>
-        <panelrolloverid>123104</panelrolloverid>
-        <populationcapaddition>10</populationcapaddition>
+        <displaynameid>46795</displaynameid>
+        <editornameid>46796</editornameid>
         <obstructionradiusx>0.1000</obstructionradiusx>
         <obstructionradiusz>0.1000</obstructionradiusz>
         <placementobstructionradiusx>0.1000</placementobstructionradiusx>
@@ -3439,8 +3436,8 @@
         <placementfile>villagebuildingsmall.xml</placementfile>
         <icon>resources\art\buildings\spc\tents\largetent_icon_64x64.png</icon>
         <portraiticon>resources\art\buildings\spc\tents\largetent_portrait.png</portraiticon>
-        <rollovertextid>22838</rollovertextid>
-        <shortrollovertextid>25701</shortrollovertextid>
+        <rollovertextid>46794</rollovertextid>
+        <shortrollovertextid>46793</shortrollovertextid>
         <initialhitpoints>1200.0000</initialhitpoints>
         <maxhitpoints>1200.0000</maxhitpoints>
         <los>12.0000</los>
@@ -3451,7 +3448,6 @@
         <unittype>LogicalTypeShipsAndBuildings</unittype>
         <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
         <unittype>AbstractSPCVillageBuilding</unittype>
-        <unittype>AbstractHouse</unittype>
         <unittype>BuildingClass</unittype>
         <unittype>Economic</unittype>
         <unittype>Building</unittype>
@@ -3477,200 +3473,271 @@
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
         <tactics>villagehouse.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <rate type="Wood">0.300000</rate>
+        </protoaction>
+    </unit>
+    <unit mergeMode="add" id="9104" name="CBEVillageMill">
+        <dbid>99104</dbid>
+        <displaynameid>22804</displaynameid>
+        <editornameid>123086</editornameid>
+        <panelnameid>123107</panelnameid>
+        <panelrolloverid>123108</panelrolloverid>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
+        <placementobstructionradiusx>0.1000</placementobstructionradiusx>
+        <placementobstructionradiusz>0.1000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\hb_villages\mill.xml</animfile>
+        <deadreplacement>BuildingRubble3x3</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>mill</physicsinfo>
+        <placementfile>villagemill.xml</placementfile>
+        <icon>resources\art\buildings\mill\mill_icon.png</icon>
+        <portraiticon>resources\art\buildings\mill\mill_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>22811</rollovertextid>
+        <shortrollovertextid>25665</shortrollovertextid>
+        <initialhitpoints>3000.0000</initialhitpoints>
+        <maxhitpoints>3000.0000</maxhitpoints>
+        <unitregen damagetimeout="6.0">0.0000</unitregen>
+        <los>12.0000</los>
+        <buildpoints>20.0000</buildpoints>
+        <freebuildpoints>200.0000</freebuildpoints>
+        <bounty resourcetype="Food">450.0000</bounty>
+        <resourcesubtype>grain</resourcesubtype>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>AbstractFarm</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Food</unittype>
+        <unittype>Economic</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>AllowPlacementOnIce</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagebuilding.tactics</tactics>
+        <protoaction>
+            <name>AutoGather</name>
+            <rate type="Food">2.250000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherTeam</name>
+            <rate type="Food">1.237500</rate>
+        </protoaction>
     </unit>
 
     <!-- CBE Capturable Feature Props -->
-    <Unit mergeMode="modify" name="ypSPCSaltpeterSite">
-        <unittype>Unattackable</unittype>
-        <flag>Invulnerable</flag>
-        <flag>NoHPBar</flag>
-    </Unit>
-    <Unit mergeMode="modify" name="ypSPCSaltpeterAccessory">
-        <unittype>Unattackable</unittype>
-        <flag>Invulnerable</flag>
-        <flag>NoHPBar</flag>
-    </Unit>
-    <Unit mergeMode="modify" name="ypSMSaltpeterElephant">
-        <unittype>Unattackable</unittype>
-        <flag>Invulnerable</flag>
-        <flag>NoHPBar</flag>
-    </Unit>
-    <Unit mergeMode="modify" name="ypSMSaltpeterMan">
-        <unittype>Unattackable</unittype>
-        <flag>Invulnerable</flag>
-        <flag>NoHPBar</flag>
-    </Unit>
     <Unit mergeMode="modify" name="ypSMJesuitAccessory">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaArtilleryDepotProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaBarracksProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaChurchProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaHouseProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCViennaMarketProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCWaterlooChurchProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCWaterlooHouseProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCWaterlooLivestockPenProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageHouse">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageMarket">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageMill">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageMiningCamp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCVillageTent">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCRockMineProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCHeadquarters">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCCommandPost">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCSupplyCache">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCAmmoStorehouseProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCFortCornerProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCFortWallLargeProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCFortWallMediumProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCFortGate">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCXPRedoubtCenter">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCXPRedoubtLeft">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCXPRedoubtRight">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="SPCTent">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCCityStateHouseProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCCityStateMarketProp">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
@@ -3700,16 +3767,158 @@
         <flag>NoHPBar</flag>
     </Unit>
     <Unit mergeMode="modify" name="deSPCGreatBank">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
     </Unit>
-    <Unit mergeMode="modify" name="deTavern">
-                <unittype>AbstractSPCVillageBuilding</unittype>
-<unittype>Unattackable</unittype>
+    <unit mergeMode="add" id="9103" name="cbeSPCTavern">
+        <dbid>9103</dbid>
+        <displaynameid>110120</displaynameid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\tavern\tavern.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>barracks</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\tavern_icon.png</icon>
+        <portraiticon>resources\art\buildings\tavern_portrait.png</portraiticon>
+        <rollovertextid>46096</rollovertextid>
+        <shortrollovertextid>46095</shortrollovertextid>
+        <unithelpoverride>Saloon</unithelpoverride>
+        <legacyhotkeycontext>SaloonAccel</legacyhotkeycontext>
+        <initialhitpoints>2500.0000</initialhitpoints>
+        <maxhitpoints>2500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <freebuildpoints>119.7600</freebuildpoints>
+        <bounty>40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>LogicalTypeValidSPCBuildingsDeadCondition</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>MilitaryProductionBuilding</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>AbstractMercenaryBuilding</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <train row="0" page="0" column="0">SaloonOutlawPistol</train>
+        <train row="0" page="0" column="1">SaloonOutlawRider</train>
+        <train row="0" page="0" column="2">SaloonOutlawRifleman</train>
+        <train row="0" page="0" column="3">SaloonPirate</train>
+        <train row="0" page="0" column="0">deOutlawDesertWarrior</train>
+        <train row="0" page="0" column="1">deOutlawDesertArcher</train>
+        <train row="0" page="0" column="1">deAllegianceBarbaryMarksman</train>
+        <train row="0" page="0" column="2">deOutlawDesertRaider</train>
+        <train row="0" page="2" column="0">deSaloonDesperado</train>
+        <train row="0" page="2" column="1">deSaloonVaquero</train>
+        <train row="0" page="2" column="2">deSaloonBandido</train>
+        <train row="0" page="0" column="0">deSaloonGunslinger</train>
+        <train row="0" page="0" column="1">deSaloonOwlhoot</train>
+        <train row="0" page="0" column="2">deSaloonCowboy</train>
+        <train row="0" page="0" column="3">deSaloonOutlawBuccaneer</train>
+        <train row="0" page="0" column="4">deSaloonOutlawBlowgunner</train>
+        <train row="0" page="0" column="3">deSaloonOutlawArsonist</train>
+        <train row="0" page="0" column="0">deSaloonHajduk</train>
+        <train row="0" page="0" column="0">deSaloonInquisitor</train>
+        <train row="0" page="0" column="1">deSaloonHighwaymanRider</train>
+        <train row="0" page="0" column="2">deSaloonCrabat</train>
+        <train row="0" page="0" column="2">deSaloonOutlawCossackRider</train>
+        <train row="0" page="0" column="3">deSaloonOutlawAfricanSpearman</train>
+        <train row="0" page="0" column="4">deSaloonOutlawKnifeThrower</train>
+        <train row="0" page="0" column="5">deSaloonOutlawColoRifle</train>
+        <train row="0" page="0" column="23">MercBarbaryCorsair</train>
+        <train row="0" page="0" column="22">MercBlackRider</train>
+        <train row="0" page="0" column="21">MercElmeti</train>
+        <train row="0" page="0" column="10">MercFusilier</train>
+        <train row="0" page="0" column="24">MercGreatCannon</train>
+        <train row="0" page="0" column="17">MercHackapell</train>
+        <train row="0" page="0" column="17">deMercHarquebusier</train>
+        <train row="0" page="0" column="16">MercHighlander</train>
+        <train row="0" page="0" column="13">MercJaeger</train>
+        <train row="0" page="0" column="15">MercLandsknecht</train>
+        <train row="0" page="0" column="19">MercMameluke</train>
+        <train row="0" page="0" column="20">MercManchu</train>
+        <train row="0" page="0" column="18">MercNinja</train>
+        <train row="0" page="0" column="12">MercRonin</train>
+        <train row="0" page="0" column="14">MercStradiot</train>
+        <train row="0" page="0" column="11">MercSwissPikeman</train>
+        <train row="0" page="0" column="4">ypDacoit</train>
+        <train row="0" page="0" column="24">ypMercIronTroop</train>
+        <train row="0" page="0" column="27">ypMercArsonist</train>
+        <train row="0" page="0" column="26">ypMercJatLancer</train>
+        <train row="0" page="0" column="25">ypMercYojimbo</train>
+        <train row="0" page="0" column="5">ypThuggee</train>
+        <train row="0" page="0" column="9">ypWokouBlindMonk</train>
+        <train row="0" page="0" column="6">ypWokouPirate</train>
+        <train row="0" page="0" column="7">ypWokouWanderingHorseman</train>
+        <train row="0" page="0" column="8">ypWokouWaywardRonin</train>
+        <train row="0" page="0" column="28">deMercNapoleonGun</train>
+        <train row="0" page="0" column="29">deMercZouave</train>
+        <train row="0" page="0" column="30">deMercSudaneseRider</train>
+        <train row="0" page="0" column="31">deMercCannoneer</train>
+        <train row="0" page="0" column="32">deMercAskari</train>
+        <train row="0" page="0" column="33">deMercAmazon</train>
+        <train row="0" page="0" column="34">deMercZenata</train>
+        <train row="0" page="0" column="35">deMercGatlingCamel</train>
+        <train row="0" page="0" column="36">deMercKanuri</train>
+        <train row="0" page="0" column="37">deMercGrenadier</train>
+        <train row="0" page="0" column="38">deMercPandour</train>
+        <train row="0" page="0" column="39">deMercRoyalHorseman</train>
+        <train row="0" page="0" column="40">deMercPistoleer</train>
+        <train row="0" page="0" column="41">deMercBrigadier</train>
+        <train row="0" page="0" column="42">deMercMountedRifleman</train>
+        <train row="0" page="0" column="42">deMercBosniak</train>
+        <tech row="0" page="1" column="1">DETavernFolkHeroes</tech>
+        <flag>HeroName2</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>Tracked</flag>
         <flag>Invulnerable</flag>
         <flag>NoHPBar</flag>
-    </Unit>
+        <command page="10" column="7">Delete</command>
+        <command page="10" column="3">SetGatherPointMilitary</command>
+        <tactics>barracks.tactics</tactics>
+        <protoaction>
+            <name>Autogather</name>
+            <active>1</active>
+            <rate type="Gold">0.600000</rate>
+        </protoaction>
+    </unit>
 
 </protomods>

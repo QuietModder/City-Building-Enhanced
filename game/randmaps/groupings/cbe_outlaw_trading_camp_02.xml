@@ -21,7 +21,7 @@
 		<unit variation="151" posx="-5.2278" posz="-16.0673" orientx="-1.0000" orienty="0.0000" orientz="0.0006">SPCPathBlock3</unit>
 		<unit variation="192" posx="5.2571" posz="-18.2486" orientx="0.3829" orienty="0.0000" orientz="0.9238">deSPCTentProp</unit>
 		<unit variation="151" posx="9.1864" posz="-15.5181" orientx="1.0000" orienty="0.0000" orientz="-0.0005">SPCPathBlock3</unit>
-		<unit variation="140" posx="-1.5546" posz="-16.1513" orientx="0.0001" orienty="-0.0000" orientz="1.0000">deTavern</unit>
+		<unit variation="140" posx="-1.5546" posz="-16.1513" orientx="0.0001" orienty="-0.0000" orientz="1.0000">cbeSPCTavern</unit>
 		<unit variation="115" posx="9.6080" posz="-16.7105" orientx="1.0000" orienty="0.0000" orientz="-0.0004">PropsNative</unit>
 		<unit variation="241" posx="8.5376" posz="-16.7796" orientx="0.9239" orienty="0.0000" orientz="-0.3827">PropsColony</unit>
 		<unit variation="115" posx="-5.9966" posz="-14.6635" orientx="-1.0000" orienty="0.0000" orientz="0.0003">PropsNative</unit>

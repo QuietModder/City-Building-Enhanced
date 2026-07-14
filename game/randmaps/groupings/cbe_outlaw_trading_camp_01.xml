@@ -32,7 +32,7 @@
 		<unit variation="82" posx="4.9121" posz="-1.6331" orientx="0.7071" orienty="0.0000" orientz="-0.7071">PropsColony</unit>
 		<unit variation="215" posx="1.7022" posz="-2.5805" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">PropsColony</unit>
 		<unit variation="82" posx="8.0744" posz="-1.7968" orientx="0.7071" orienty="0.0000" orientz="0.7071">PropsColony</unit>
-		<unit variation="140" posx="0.8114" posz="1.5899" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">deTavern</unit>
+		<unit variation="140" posx="0.8114" posz="1.5899" orientx="-0.7071" orienty="-0.0000" orientz="-0.7071">cbeSPCTavern</unit>
 		<unit variation="5" posx="-0.8100" posz="0.1964" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">SPCPathBlock3</unit>
 		<unit variation="129" posx="7.1500" posz="0.4025" orientx="0.7072" orienty="0.0000" orientz="0.7071">SPCPathBlock3</unit>
 		<unit variation="154" posx="3.4291" posz="-1.9264" orientx="-1.0000" orienty="-0.0000" orientz="0.0000">PropsColony</unit>
