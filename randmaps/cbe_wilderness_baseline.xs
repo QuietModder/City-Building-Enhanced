@@ -23,7 +23,7 @@ void main(void)
 	// Minor Civ Setup
 	// ================================================================
 
-	rmSetSubCiv(0, "SPCCityState", true);
+	rmSetSubCiv(0, "CBELatinCityState", true);
 	rmSetSubCiv(1, "SPCArtilleryDistrict", true);
 	rmSetSubCiv(2, "SPCMarketDistrict", true);
 	rmSetSubCiv(3, "SPCReligiousDistrict", true);

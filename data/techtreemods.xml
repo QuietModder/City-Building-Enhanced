@@ -208,6 +208,26 @@
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
+            <!-- CBE City-State Building Unlocks -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">MercElmeti</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">MercSwissPikeman</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deMercPistoleer</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">MercLandsknecht</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deMercCannoneer</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">MercGreatCannon</target>
+            </effect>
+
             <!-- Main wall and gate buttons on the Architect. -->
             <effect type="CommandAdd" proto="ModFortWallConnector" page="2" column="0">
                 <target type="ProtoUnit">ModArchitect</target>
@@ -5129,6 +5149,26 @@
     <tech name="DEAge0Italians" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+
+    <!-- ========================================================= -->
+    <!-- CBE City-State Subcivs                                    -->
+    <!-- ========================================================= -->
+
+    <tech name="CBENativeLatinCityState" type="Normal">
+        <dbid>991200</dbid>
+        <status>UNOBTAINABLE</status>
+        <flag>Shadow</flag>
+        <effects>
+            <effect civ="CBELatinCityState" type="Data" amount="1.00"
+                subtype="UpgradeSubCivAlliance" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <effect type="TechStatus" status="active">DENativeSPCCityState</effect>
+            <effect type="TechStatus" status="active">DEEnableSPCCityStateTechs</effect>
         </effects>
     </tech>
 </techtreemods>

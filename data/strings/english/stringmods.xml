@@ -457,6 +457,26 @@
             <!-- Range: 9911000 - 9911999                                  -->
             <!-- ========================================================= -->
 
+            <!-- ========================================================= -->
+            <!-- 9912000s - CBE SUBCIVS                                    -->
+            <!-- Range: 9912000 - 9912999                                  -->
+            <!-- ========================================================= -->
+
+            <string _locid="9912000">Latin City-State</string>
+
+            <!-- ========================================================= -->
+            <!-- 9913000s - CBE GROUPING BUILDINGS                         -->
+            <!-- Range: 9913000 - 9913999                                  -->
+            <!-- ========================================================= -->
+
+            <string _locid="9913000">City-State Residence</string>
+            <string _locid="9913001">A residence within an independent city-state.</string>
+            <string _locid="9913002">Provides population space while the city-state is under your control.</string>
+
+            <string _locid="9913003">Village Residence</string>
+            <string _locid="9913004">A residence within a local village.</string>
+            <string _locid="9913005">Provides population space while the village is under your control.</string>
+
 
         </language>
     </stringtable>

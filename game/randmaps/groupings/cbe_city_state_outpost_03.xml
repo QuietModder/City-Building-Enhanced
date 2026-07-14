@@ -7,7 +7,6 @@
 	<selectassingleunit>0</selectassingleunit>
 	<workonassingleunit>0</workonassingleunit>
 	<units>
-		<unit variation="0" posx="0.0000" posz="0.0000" orientx="0.0000" orienty="0.0000" orientz="-1.0000">deSPCCapturableFlag</unit>
 		<unit variation="185" posx="-16.6733" posz="-19.5829" orientx="-0.7074" orienty="-0.0000" orientz="-0.7069">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="185" posx="-8.5569" posz="-19.7227" orientx="-0.7074" orienty="-0.0000" orientz="-0.7069">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="184" posx="-18.5953" posz="-18.0630" orientx="-0.7073" orienty="0.0000" orientz="-0.7069">cbe_Grouping_deSPCCityStateWall2Prop</unit>
@@ -36,7 +35,7 @@
 		<unit variation="0" posx="-17.8613" posz="-12.1466" orientx="1.0000" orienty="0.0000" orientz="-0.0013">SPCPathBlock3</unit>
 		<unit variation="185" posx="20.9717" posz="-15.2496" orientx="-0.7074" orienty="-0.0000" orientz="-0.7069">cbe_Grouping_deSPCCityStateWallConnectorProp</unit>
 		<unit variation="1" posx="-17.0227" posz="-12.0605" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsColony</unit>
-		<unit variation="218" posx="4.6600" posz="-10.1043" orientx="0.0004" orienty="0.0000" orientz="1.0000">deSPCSocketCityState</unit>
+		<unit variation="218" posx="4.6600" posz="-10.1043" orientx="0.0004" orienty="0.0000" orientz="1.0000">cbe_Grouping_deSPCSocketCityState</unit>
 		<unit variation="182" posx="14.1887" posz="-9.9640" orientx="1.0000" orienty="0.0000" orientz="-0.0004">deSPCSocketCityTower</unit>
 		<unit variation="184" posx="21.1861" posz="-12.9756" orientx="-1.0000" orienty="0.0000" orientz="0.0006">cbe_Grouping_deSPCCityStateWall2Prop</unit>
 		<unit variation="182" posx="-12.0408" posz="-9.7444" orientx="1.0000" orienty="0.0000" orientz="-0.0004">deSPCSocketCityTower</unit>
