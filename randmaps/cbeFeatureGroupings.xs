@@ -183,6 +183,8 @@ void cbePlaceFeatureGroupings(void)
 	// Feature Groupings
 	// ================================================================
 
+	return;
+
 	int cbeCityStateOutpost1 = rmCreateGrouping("cbe city state outpost 1", "cbe_city_state_outpost_01");
 	int cbeCityStateOutpost2 = rmCreateGrouping("cbe city state outpost 2", "cbe_city_state_outpost_02");
 	int cbeCityStateOutpost3 = rmCreateGrouping("cbe city state outpost 3", "cbe_city_state_outpost_03");
