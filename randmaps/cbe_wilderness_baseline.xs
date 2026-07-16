@@ -4,8 +4,15 @@
 include "mercenaries.xs";
 include "ypAsianInclude.xs";
 include "ypKOTHInclude.xs";
-include "cbeThemeModel.xs";
-include "cbeFeatureGroupings.xs";
+
+//File in charge doing the biome theme and region flavor selection (Does not generate the map, just sets the theme and flavor for the map generation)
+include "extensions/cbeThemeModel.xs";
+
+// File in charge of placing trade routes and trade route sockets
+include "extensions/cbeTradeRoutes.xs";
+
+// File in charge of placing the feature groupings on the map (Does not generate the map, just places the groupings)
+include "extensions/cbeFeatureGroupings.xs";
 
 void main(void)
 {
@@ -19,7 +26,7 @@ void main(void)
 	// Minor Civ Setup
 	// ================================================================
 
-	rmSetSubCiv(0, "SPCCityState", true);
+	rmSetSubCiv(0, "CBELatinCityState", true);
 	rmSetSubCiv(1, "SPCArtilleryDistrict", true);
 	rmSetSubCiv(2, "SPCMarketDistrict", true);
 	rmSetSubCiv(3, "SPCReligiousDistrict", true);
@@ -39,7 +46,7 @@ void main(void)
 	// ================================================================
 
 	// Always-on features.
-	int cbeHasTradeRoute = 1;
+	int cbeHasTradeRoute = 0;
 
 	// Weighted features.
 	int cbeHasRiver = 0;
@@ -182,160 +189,123 @@ void main(void)
 	rmSetStatusText("", 0.20);
 
 	// ================================================================
-	// Trade Routes
+	// Player Placement
 	// ================================================================
 
-	/*
-	int cbeTradeRouteID = rmCreateTradeRoute();
-	int cbeSocketID = rmCreateObjectDef("cbe trade route sockets");
-	rmAddObjectDefItem(cbeSocketID, "SocketTradeRoute", 1, 0.0);
-	rmSetObjectDefAllowOverlap(cbeSocketID, true);
-	rmAddObjectDefToClass(cbeSocketID, classSocket);
-	rmSetObjectDefMinDistance(cbeSocketID, 2.0);
-	rmSetObjectDefMaxDistance(cbeSocketID, 8.0);
-	rmSetObjectDefTradeRouteID(cbeSocketID, cbeTradeRouteID);
+	int teamID = 0;
+	float cbePlayerRingInner = 0.45;
+	float cbePlayerRingOuter = 0.45;
+	float cbeTeamSpacing = 0.20;
+	if (PlayerNum <= 2)
+	{
+		cbePlayerRingInner = 0.46;
+		cbePlayerRingOuter = 0.46;
+		cbeTeamSpacing = 0.15;
+	}
+	if (TeamNum == 2)
+	{
+		rmSetTeamSpacingModifier(cbeTeamSpacing);
 
-	int cbeTradeRouteHorizontal = 1;
-	int cbeTradeRouteDiagonalUp = 2;
-	int cbeTradeRouteDiagonalDown = 3;
-	int cbeTradeRouteVertical = 4;
+		rmSetPlacementTeam(0);
+		if (PlayerNum <= 2)
+			rmSetPlacementSection(0.12, 0.14);
+		else
+			rmSetPlacementSection(0.10, 0.16);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
 
-	int cbeTradeRouteShape = rmRandInt(1, 4);
-	float cbeRouteOffset = 0.38;
-	if (cbeRouteRiverRelationship == cbeRouteRiverParallelOffset())
-	{
-		if (rmRandInt(1, 2) == 1)
-			cbeTradeRouteShape = cbeTradeRouteHorizontal;
+		rmSetPlacementTeam(1);
+		if (PlayerNum <= 2)
+			rmSetPlacementSection(0.62, 0.64);
 		else
-			cbeTradeRouteShape = cbeTradeRouteVertical;
+			rmSetPlacementSection(0.60, 0.66);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
 	}
-	else if (cbeRouteMesaRelationship == cbeRouteMesaCutsPass())
+	else if (TeamNum == 3)
 	{
-		cbeTradeRouteShape = rmRandInt(1, 4);
-	}
-	else if (cbeRouteMesaRelationship == cbeRouteMesaSkirts())
-	{
-		if (rmRandInt(1, 2) == 1)
-			cbeTradeRouteShape = cbeTradeRouteDiagonalUp;
-		else
-			cbeTradeRouteShape = cbeTradeRouteDiagonalDown;
-	}
+		rmSetTeamSpacingModifier(cbeTeamSpacing);
 
-	rmEchoInfo("CBE Trade Route Shape = "+cbeTradeRouteShape);
+		rmSetPlacementTeam(0);
+		rmSetPlacementSection(0.08, 0.16);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
 
-	if (cbeRouteMesaRelationship == cbeRouteMesaCutsPass())
-	{
-		if (cbeTradeRouteShape == cbeTradeRouteHorizontal)
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.05, 0.50);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.30, 0.47, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.50);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.70, 0.53, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.95, 0.50);
-		}
-		else if (cbeTradeRouteShape == cbeTradeRouteDiagonalUp)
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.12, 0.18);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.34, 0.36, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.50);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.66, 0.64, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.88, 0.82);
-		}
-		else if (cbeTradeRouteShape == cbeTradeRouteDiagonalDown)
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.12, 0.82);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.34, 0.64, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.50);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.66, 0.36, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.88, 0.18);
-		}
-		else
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.05);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.47, 0.30, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.50);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.53, 0.70, 3, 4);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.95);
-		}
-	}
-	else if (cbeRouteRiverRelationship == cbeRouteRiverParallelOffset())
-	{
-		cbeRouteOffset = 0.38;
-		if (rmRandInt(1, 2) == 1)
-			cbeRouteOffset = 0.62;
+		rmSetPlacementTeam(1);
+		rmSetPlacementSection(0.41, 0.49);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
 
-		if (cbeTradeRouteShape == cbeTradeRouteHorizontal)
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.05, cbeRouteOffset);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.35, cbeRouteOffset, 4, 6);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.65, cbeRouteOffset, 4, 6);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.95, cbeRouteOffset);
-		}
-		else
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, cbeRouteOffset, 0.05);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, cbeRouteOffset, 0.35, 4, 6);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, cbeRouteOffset, 0.65, 4, 6);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, cbeRouteOffset, 0.95);
-		}
+		rmSetPlacementTeam(2);
+		rmSetPlacementSection(0.74, 0.82);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
 	}
-	else if (cbeRouteMesaRelationship == cbeRouteMesaSkirts())
+	else if (TeamNum == 4)
 	{
-		if (cbeTradeRouteShape == cbeTradeRouteDiagonalUp)
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.12, 0.18);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.35, 0.30, 4, 6);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.65, 0.70, 4, 6);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.88, 0.82);
-		}
-		else
-		{
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.12, 0.82);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.35, 0.70, 4, 6);
-			rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.65, 0.30, 4, 6);
-			rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.88, 0.18);
-		}
-	}
-	else if (cbeTradeRouteShape == cbeTradeRouteHorizontal)
-	{
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.05, 0.50);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.35, 0.48, 4, 6);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.65, 0.52, 4, 6);
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.95, 0.50);
-	}
-	else if (cbeTradeRouteShape == cbeTradeRouteDiagonalUp)
-	{
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.12, 0.18);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.38, 0.38, 4, 6);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.62, 0.62, 4, 6);
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.88, 0.82);
-	}
-	else if (cbeTradeRouteShape == cbeTradeRouteDiagonalDown)
-	{
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.12, 0.82);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.38, 0.62, 4, 6);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.62, 0.38, 4, 6);
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.88, 0.18);
+		rmSetTeamSpacingModifier(cbeTeamSpacing);
+
+		rmSetPlacementTeam(0);
+		rmSetPlacementSection(0.975, 0.025);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
+
+		rmSetPlacementTeam(1);
+		rmSetPlacementSection(0.225, 0.275);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
+
+		rmSetPlacementTeam(2);
+		rmSetPlacementSection(0.475, 0.525);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
+
+		rmSetPlacementTeam(3);
+		rmSetPlacementSection(0.725, 0.775);
+		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
 	}
 	else
 	{
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.05);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.48, 0.35, 4, 6);
-		rmAddRandomTradeRouteWaypoints(cbeTradeRouteID, 0.52, 0.65, 4, 6);
-		rmAddTradeRouteWaypoint(cbeTradeRouteID, 0.50, 0.95);
+		rmSetTeamSpacingModifier(cbeTeamSpacing);
+
+		if (TeamNum > 2)
+		{
+			float cbeTeamArc = 0.35 / TeamNum;
+			for (teamID = 0; < TeamNum)
+			{
+				float cbeTeamCenter = 0.05 + (teamID * (1.0 / TeamNum));
+				float cbeTeamStart = cbeTeamCenter - (cbeTeamArc * 0.50);
+				float cbeTeamEnd = cbeTeamCenter + (cbeTeamArc * 0.50);
+				if (cbeTeamStart < 0.0)
+					cbeTeamStart = cbeTeamStart + 1.0;
+				if (cbeTeamEnd > 1.0)
+					cbeTeamEnd = cbeTeamEnd - 1.0;
+
+				rmSetPlacementTeam(teamID);
+				rmSetPlacementSection(cbeTeamStart, cbeTeamEnd);
+				rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
+			}
+		}
+		else
+		{
+			rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
+		}
 	}
 
-	bool cbeTradeRoutePlaced = rmBuildTradeRoute(cbeTradeRouteID, "dirt_trail");
-	if (cbeTradeRoutePlaced == false)
-		rmEchoError("CBE failed to place trade route");
+	for (i = 1; < numPlayer)
+	{
+		int playerAreaID = rmCreateArea("player area "+i);
+		rmSetPlayerArea(i, playerAreaID);
+		rmSetAreaSize(playerAreaID, 0.03, 0.03);
+		rmSetAreaCoherence(playerAreaID, 1.0);
+		rmSetAreaWarnFailure(playerAreaID, false);
+		rmSetAreaLocPlayer(playerAreaID, i);
+		rmSetAreaObeyWorldCircleConstraint(playerAreaID, false);
+		rmBuildArea(playerAreaID);
+	}
 
-	vector cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.18);
-	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
-	cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.50);
-	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
-	cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.82);
-	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
-	*/
+	rmSetStatusText("", 0.40);
+
+	// ================================================================
+	// Trade Routes
+	// ================================================================
+
+	if (cbeHasTradeRoute == 1)
+	{
+		cbePlaceTradeRoute(cbeRouteRiverRelationship, cbeRouteMesaRelationship, classSocket);
+	}
 
 	// ================================================================
 	// City-State Landmarks
@@ -479,123 +449,6 @@ void main(void)
 	rmEchoInfo("CBE showcase groupings placed");
 	*/
 	// ================================================================
-	// Feature Groupings
-	// ================================================================
-
-	cbePlaceFeatureGroupings();
-
-
-	// ================================================================
-	// Player Placement
-	// ================================================================
-
-	int teamID = 0;
-	float cbePlayerRingInner = 0.45;
-	float cbePlayerRingOuter = 0.45;
-	float cbeTeamSpacing = 0.20;
-	if (PlayerNum <= 2)
-	{
-		cbePlayerRingInner = 0.46;
-		cbePlayerRingOuter = 0.46;
-		cbeTeamSpacing = 0.15;
-	}
-	if (TeamNum == 2)
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		rmSetPlacementTeam(0);
-		if (PlayerNum <= 2)
-			rmSetPlacementSection(0.12, 0.14);
-		else
-			rmSetPlacementSection(0.10, 0.16);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(1);
-		if (PlayerNum <= 2)
-			rmSetPlacementSection(0.62, 0.64);
-		else
-			rmSetPlacementSection(0.60, 0.66);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-	}
-	else if (TeamNum == 3)
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		rmSetPlacementTeam(0);
-		rmSetPlacementSection(0.08, 0.16);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(1);
-		rmSetPlacementSection(0.41, 0.49);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(2);
-		rmSetPlacementSection(0.74, 0.82);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-	}
-	else if (TeamNum == 4)
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		rmSetPlacementTeam(0);
-		rmSetPlacementSection(0.975, 0.025);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(1);
-		rmSetPlacementSection(0.225, 0.275);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(2);
-		rmSetPlacementSection(0.475, 0.525);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(3);
-		rmSetPlacementSection(0.725, 0.775);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-	}
-	else
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		if (TeamNum > 2)
-		{
-			float cbeTeamArc = 0.35 / TeamNum;
-			for (teamID = 0; < TeamNum)
-			{
-				float cbeTeamCenter = 0.05 + (teamID * (1.0 / TeamNum));
-				float cbeTeamStart = cbeTeamCenter - (cbeTeamArc * 0.50);
-				float cbeTeamEnd = cbeTeamCenter + (cbeTeamArc * 0.50);
-				if (cbeTeamStart < 0.0)
-					cbeTeamStart = cbeTeamStart + 1.0;
-				if (cbeTeamEnd > 1.0)
-					cbeTeamEnd = cbeTeamEnd - 1.0;
-
-				rmSetPlacementTeam(teamID);
-				rmSetPlacementSection(cbeTeamStart, cbeTeamEnd);
-				rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-			}
-		}
-		else
-		{
-			rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-		}
-	}
-
-	for (i = 1; < numPlayer)
-	{
-		int playerAreaID = rmCreateArea("player area "+i);
-		rmSetPlayerArea(i, playerAreaID);
-		rmSetAreaSize(playerAreaID, 0.03, 0.03);
-		rmSetAreaCoherence(playerAreaID, 1.0);
-		rmSetAreaWarnFailure(playerAreaID, false);
-		rmSetAreaLocPlayer(playerAreaID, i);
-		rmSetAreaObeyWorldCircleConstraint(playerAreaID, false);
-		rmBuildArea(playerAreaID);
-	}
-
-	rmSetStatusText("", 0.40);
-
-	// ================================================================
 	// Starting Object Definitions
 	// ================================================================
 
@@ -617,43 +470,6 @@ void main(void)
 	rmAddObjectDefConstraint(startingUnitsID, avoidImpassableLandShort);
 	rmAddObjectDefConstraint(startingUnitsID, avoidCityStateShort);
 
-	// Starting resources.
-	int playerMineID = rmCreateObjectDef("player mine");
-	rmAddObjectDefItem(playerMineID, "mine", 1, 0.0);
-	rmSetObjectDefMinDistance(playerMineID, 12.0);
-	rmSetObjectDefMaxDistance(playerMineID, 14.0);
-	rmAddObjectDefToClass(playerMineID, classStartingResource);
-	rmAddObjectDefConstraint(playerMineID, avoidStartingResourcesShort);
-	rmAddObjectDefConstraint(playerMineID, avoidImpassableLandShort);
-	rmAddObjectDefConstraint(playerMineID, avoidCityState);
-	rmAddObjectDefConstraint(playerMineID, avoidTradeRoute);
-	rmAddObjectDefConstraint(playerMineID, avoidTradeRouteSocket);
-
-	int playerHerdID = rmCreateObjectDef("starting herd");
-	rmAddObjectDefItem(playerHerdID, "deer", 8, 3.0);
-	rmSetObjectDefMinDistance(playerHerdID, 12.0);
-	rmSetObjectDefMaxDistance(playerHerdID, 12.0);
-	rmSetObjectDefCreateHerd(playerHerdID, true);
-	rmAddObjectDefToClass(playerHerdID, classStartingResource);
-	rmAddObjectDefConstraint(playerHerdID, avoidStartingResourcesShort);
-	rmAddObjectDefConstraint(playerHerdID, avoidImpassableLandShort);
-	rmAddObjectDefConstraint(playerHerdID, avoidCityState);
-	rmAddObjectDefConstraint(playerHerdID, avoidTradeRoute);
-	rmAddObjectDefConstraint(playerHerdID, avoidTradeRouteSocket);
-
-	int playerTreeID = rmCreateObjectDef("player trees");
-	rmAddObjectDefItem(playerTreeID, "TreeCarolinaGrass", 6, 5.0);
-	rmSetObjectDefMinDistance(playerTreeID, 16.0);
-	rmSetObjectDefMaxDistance(playerTreeID, 20.0);
-	rmAddObjectDefToClass(playerTreeID, classStartingResource);
-	rmAddObjectDefToClass(playerTreeID, classForest);
-	rmAddObjectDefConstraint(playerTreeID, avoidForestShort);
-	rmAddObjectDefConstraint(playerTreeID, avoidStartingResources);
-	rmAddObjectDefConstraint(playerTreeID, avoidImpassableLandShort);
-	rmAddObjectDefConstraint(playerTreeID, avoidCityState);
-	rmAddObjectDefConstraint(playerTreeID, avoidTradeRoute);
-	rmAddObjectDefConstraint(playerTreeID, avoidTradeRouteSocket);
-
 	// ================================================================
 	// Starting Object Placement
 	// ================================================================
@@ -666,10 +482,8 @@ void main(void)
 		float tcZ = rmZMetersToFraction(xsVectorGetZ(tcLoc));
 
 		rmPlaceObjectDefAtLoc(startingUnitsID, i, tcX, tcZ);
-		rmPlaceObjectDefAtLoc(playerMineID, 0, tcX, tcZ);
-		rmPlaceObjectDefAtLoc(playerHerdID, 0, tcX, tcZ);
-		rmPlaceObjectDefAtLoc(playerTreeID, 0, tcX, tcZ);
 	}
 
 	rmSetStatusText("", 1.00);
 }
+

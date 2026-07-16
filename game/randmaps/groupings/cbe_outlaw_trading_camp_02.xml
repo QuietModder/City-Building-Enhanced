@@ -19,7 +19,7 @@
 		<unit variation="151" posx="0.8776" posz="-17.0285" orientx="-1.0000" orienty="0.0000" orientz="0.0006">SPCPathBlock3</unit>
 		<unit variation="191" posx="7.8879" posz="-18.7639" orientx="0.7071" orienty="0.0000" orientz="-0.7071">PropsColony</unit>
 		<unit variation="151" posx="-5.2278" posz="-16.0673" orientx="-1.0000" orienty="0.0000" orientz="0.0006">SPCPathBlock3</unit>
-		<unit variation="192" posx="5.2571" posz="-18.2486" orientx="0.3829" orienty="0.0000" orientz="0.9238">deSPCTentProp</unit>
+		<unit variation="192" posx="5.2571" posz="-18.2486" orientx="0.3829" orienty="0.0000" orientz="0.9238">cbe_Grouping_deSPCTentProp</unit>
 		<unit variation="151" posx="9.1864" posz="-15.5181" orientx="1.0000" orienty="0.0000" orientz="-0.0005">SPCPathBlock3</unit>
 		<unit variation="140" posx="-1.5546" posz="-16.1513" orientx="0.0001" orienty="-0.0000" orientz="1.0000">cbeSPCTavern</unit>
 		<unit variation="115" posx="9.6080" posz="-16.7105" orientx="1.0000" orienty="0.0000" orientz="-0.0004">PropsNative</unit>
@@ -27,7 +27,7 @@
 		<unit variation="115" posx="-5.9966" posz="-14.6635" orientx="-1.0000" orienty="0.0000" orientz="0.0003">PropsNative</unit>
 		<unit variation="150" posx="-4.1566" posz="-14.1157" orientx="0.0017" orienty="-0.0000" orientz="1.0000">CinematicRevealer</unit>
 		<unit variation="150" posx="3.8993" posz="-14.4254" orientx="0.0017" orienty="-0.0000" orientz="1.0000">CinematicRevealer</unit>
-		<unit variation="241" posx="7.2266" posz="-13.2543" orientx="-0.7074" orienty="0.0000" orientz="-0.7068">deSPCTentProp</unit>
+		<unit variation="241" posx="7.2266" posz="-13.2543" orientx="-0.7074" orienty="0.0000" orientz="-0.7068">cbe_Grouping_deSPCTentProp</unit>
 		<unit variation="226" posx="7.1064" posz="-10.1510" orientx="-0.7071" orienty="0.0000" orientz="-0.7071">SPCPathBlock3</unit>
 		<unit variation="151" posx="2.3337" posz="-10.1426" orientx="-0.9239" orienty="0.0000" orientz="0.3827">SPCPathBlock3</unit>
 		<unit variation="151" posx="-2.1666" posz="-12.7710" orientx="0.0007" orienty="0.0000" orientz="1.0000">SPCPathBlock3</unit>
@@ -51,7 +51,7 @@
 		<unit variation="115" posx="-5.7993" posz="6.3718" orientx="1.0000" orienty="0.0000" orientz="-0.0004">PropsNative</unit>
 		<unit variation="117" posx="0.0950" posz="6.0247" orientx="-0.0000" orienty="-0.0000" orientz="-1.0000">PropsColony</unit>
 		<unit variation="71" posx="0.1473" posz="8.3104" orientx="0.3827" orienty="0.0000" orientz="-0.9239">PropsColony</unit>
-		<unit variation="241" posx="-3.4047" posz="7.6065" orientx="0.7070" orienty="0.0000" orientz="-0.7072">deSPCTentProp</unit>
+		<unit variation="241" posx="-3.4047" posz="7.6065" orientx="0.7070" orienty="0.0000" orientz="-0.7072">cbe_Grouping_deSPCTentProp</unit>
 		<unit variation="150" posx="-5.8174" posz="7.8111" orientx="0.0017" orienty="-0.0000" orientz="1.0000">CinematicRevealer</unit>
 		<unit variation="115" posx="1.1599" posz="8.7442" orientx="-1.0000" orienty="0.0000" orientz="0.0004">PropsNative</unit>
 		<unit variation="150" posx="5.3474" posz="8.2369" orientx="0.0017" orienty="-0.0000" orientz="1.0000">CinematicRevealer</unit>
