@@ -5169,6 +5169,57 @@
 
             <effect type="TechStatus" status="active">DENativeSPCCityState</effect>
             <effect type="TechStatus" status="active">DEEnableSPCCityStateTechs</effect>
+            <effect type="TechStatus" status="obtainable">CBELatinBankShipFood</effect>
+            <effect type="TechStatus" status="obtainable">CBELatinBankShipWood</effect>
+            <effect type="TechStatus" status="obtainable">CBELatinBankShipCoin</effect>
+        </effects>
+    </tech>
+
+    <tech name="CBELatinBankShipFood" type="Normal">
+        <dbid>991201</dbid>
+        <displaynameid>9913006</displaynameid>
+        <rollovertextid>9913007</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>40.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\hc_food_crate\hc_food_crate_128.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="CrateofFood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBELatinBankShipWood" type="Normal">
+        <dbid>991202</dbid>
+        <displaynameid>9913009</displaynameid>
+        <rollovertextid>9913010</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>40.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\hc_wood_crate\hc_wood_crate_128.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="CrateofWood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBELatinBankShipCoin" type="Normal">
+        <dbid>991203</dbid>
+        <displaynameid>9913012</displaynameid>
+        <rollovertextid>9913013</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>40.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\hc_coin_crate\hc_coin_crate.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="CrateofCoin" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
         </effects>
     </tech>
 </techtreemods>

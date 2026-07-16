@@ -477,6 +477,18 @@
             <string _locid="9913004">A residence within a local village.</string>
             <string _locid="9913005">Provides population space while the village is under your control.</string>
 
+            <string _locid="9913006">Request Food Shipment</string>
+            <string _locid="9913007">Spends a Home City shipment to send food crates to your gather point.</string>
+            <string _locid="9913008">Send food crates.</string>
+
+            <string _locid="9913009">Request Wood Shipment</string>
+            <string _locid="9913010">Spends a Home City shipment to send wood crates to your gather point.</string>
+            <string _locid="9913011">Send wood crates.</string>
+
+            <string _locid="9913012">Request Coin Shipment</string>
+            <string _locid="9913013">Spends a Home City shipment to send coin crates to your gather point.</string>
+            <string _locid="9913014">Send coin crates.</string>
+
 
         </language>
     </stringtable>

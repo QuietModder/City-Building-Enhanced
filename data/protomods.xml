@@ -4391,6 +4391,9 @@
         <command page="0" column="0">deInvestFood</command>
         <command page="0" column="1">deInvestWood</command>
         <command page="0" column="2">deInvestCoin</command>
+        <tech page="0" column="3">CBELatinBankShipFood</tech>
+        <tech page="0" column="4">CBELatinBankShipWood</tech>
+        <tech page="0" column="5">CBELatinBankShipCoin</tech>
 
         <train page="1" column="0">MercLandsknecht</train>
         <train page="1" column="1">deMercCannoneer</train>
@@ -4400,6 +4403,7 @@
         <tech page="2" column="1">DESPCMediciPatronage</tech>
         <tech page="2" column="2">DESPCBankLoan</tech>
         <tech page="2" column="3">DESPCMercenaryBounties</tech>
+        
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>
         <flag>Immoveable</flag>
@@ -6062,7 +6066,6 @@
         <tactics>villagehouse.tactics</tactics>
     </unit>
     <unit mergeMode="add" id="9101" name="CBEMiningCamp">
-            <panelrolloverid>123106</panelrolloverid>
         <dbid>99101</dbid>
         <displaynameid>46781</displaynameid>
         <editornameid>123084</editornameid>
