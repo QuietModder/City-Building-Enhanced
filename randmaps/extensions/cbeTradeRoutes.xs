@@ -143,10 +143,14 @@ void cbePlaceTradeRoute(int cbeRouteRiverRelationship = 0, int cbeRouteMesaRelat
 	if (cbeTradeRoutePlaced == false)
 		rmEchoError("CBE failed to place trade route");
 
-	vector cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.18);
+	vector cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.10);
+	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
+	cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.30);
 	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
 	cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.50);
 	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
-	cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.82);
+	cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.70);
+	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
+	cbeSocketLoc = rmGetTradeRouteWayPoint(cbeTradeRouteID, 0.90);
 	rmPlaceObjectDefAtPoint(cbeSocketID, 0, cbeSocketLoc);
 }
