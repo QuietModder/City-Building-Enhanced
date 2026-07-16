@@ -4399,7 +4399,7 @@
         <train page="1" column="1">deMercCannoneer</train>
         <train page="1" column="2">MercGreatCannon</train>
 
-        <tech page="2" column="0">DESPCTaulaDeCanvi</tech>
+        <tech page="2" column="0">CBEDESPCTaulaDeCanvi</tech>
         <tech page="2" column="1">DESPCMediciPatronage</tech>
         <tech page="2" column="2">DESPCBankLoan</tech>
         <tech page="2" column="3">DESPCMercenaryBounties</tech>
@@ -5967,22 +5967,21 @@
         <unittype>AbstractChurch</unittype>
         <unittype>HCGatherPointPri2</unittype>
         <flag>AllowAutoGarrison</flag>
+        <flag>DanceActionNoWorkers</flag>
         
-        <train page="0" column="0">MercElmeti</train>
-        <train page="0" column="1">MercSwissPikeman</train>
-        <train page="0" column="2">deMercPistoleer</train>
+        <train page="0" column="0">Priest</train>
+        <train page="0" column="1">Missionary</train>
+        <train page="0" column="2">deSaloonInquisitor</train>
 
-        <fakecard page="1" column="0">DEBasilicaShipCardinal1</fakecard>
-        <fakecard page="1" column="1">DEBasilicaShipSpy1</fakecard>
-        <fakecard page="1" column="2">DEBasilicaShipPapalGuards2</fakecard>
-        <fakecard page="1" column="3">DEBasilicaShipPandours2</fakecard>
-        <fakecard page="1" column="4">DEBasilicaShipPapalElmeti1</fakecard>
-        <fakecard page="1" column="5">DEBasilicaShipPapalZouave1</fakecard>
+        <train page="1" column="0">MercElmeti</train>
+        <train page="1" column="1">MercSwissPikeman</train>
+        <train page="1" column="2">deMercPistoleer</train>
 
-        <tech page="2" column="0">DESPCArtPatron</tech>
+        <tech page="2" column="0">CBEDESPCArtPatron</tech>
         <tech page="2" column="1">DESPCPapalLegate</tech>
         <tech page="2" column="2">DESPCPapalBlessing</tech>
         <tech page="2" column="3">DESPCExcommunication</tech>
+        <tech page="2" column="4">CBEEnablePapalEmbassyLocalTrain</tech>
 
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>
@@ -6001,11 +6000,14 @@
         <flag>Tracked</flag>
         <flag>Invulnerable</flag>
         <flag>NotDeleteable</flag>
+        <flag>EnterHotkeyContext</flag>
         <flag>DisplayRange</flag>
+        <flag>UISkipActiveTechs</flag>
         <command page="10" column="3">SetGatherPointMilitary</command>
         <command page="10" column="8">CancelAllQueued</command>
         <command page="10" column="5">Eject</command>
-        <tactics>papalembassy.tactics</tactics>
+        <command page="9" column="1">TacticPapalCompany</command>
+        <tactics>cbe_papalembassy_auto.tactics</tactics>
         <protoaction>
             <name>Autogather</name>
             <rate type="XP">2.000000</rate>

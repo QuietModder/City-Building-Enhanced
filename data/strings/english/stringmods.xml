@@ -489,6 +489,13 @@
             <string _locid="9913013">Spends a Home City shipment to send coin crates to your gather point.</string>
             <string _locid="9913014">Send coin crates.</string>
 
+            <string _locid="9913015">Papal Company</string>
+            <string _locid="9913016">Slowly musters Papal Guards, Papal Zouaves, and Schiavones while the city-state is under your control.</string>
+            <string _locid="9913017">Auto-train a Papal Company.</string>
+            <string _locid="9913018">Clerical Envoys</string>
+            <string _locid="9913019">Allows this Papal Embassy to train Priests, Missionaries, and Inquisitors.</string>
+            <string _locid="9913020">Unlock Embassy healers.</string>
+
 
         </language>
     </stringtable>

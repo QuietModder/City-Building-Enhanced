@@ -5172,6 +5172,82 @@
             <effect type="TechStatus" status="obtainable">CBELatinBankShipFood</effect>
             <effect type="TechStatus" status="obtainable">CBELatinBankShipWood</effect>
             <effect type="TechStatus" status="obtainable">CBELatinBankShipCoin</effect>
+            <effect type="TechStatus" status="obtainable">CBEDESPCArtPatron</effect>
+            <effect type="TechStatus" status="obtainable">CBEDESPCTaulaDeCanvi</effect>
+            <effect type="TechStatus" status="obtainable">CBEEnablePapalEmbassyLocalTrain</effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEEnablePapalEmbassyLocalTrain" type="Normal">
+        <dbid>991206</dbid>
+        <displaynameid>9913018</displaynameid>
+        <rollovertextid>9913019</rollovertextid>
+        <cost resourcetype="Food">150.0000</cost>
+        <cost resourcetype="Gold">150.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\art\buildings\basilica\basilica_icon.png</icon>
+        <flag>CountsTowardEconomicScore</flag>
+        <effects>
+            <effect type="Data" amount="1.00" subtype="AddTrain" unittype="Priest" relativity="Absolute">
+                <target type="ProtoUnit">cbe_Grouping_deSPCPapalEmbassy</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="AddTrain" unittype="Missionary" relativity="Absolute">
+                <target type="ProtoUnit">cbe_Grouping_deSPCPapalEmbassy</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="AddTrain" unittype="deSaloonInquisitor" relativity="Absolute">
+                <target type="ProtoUnit">cbe_Grouping_deSPCPapalEmbassy</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">Priest</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">Missionary</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deSaloonInquisitor</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEDESPCArtPatron" type="Normal">
+        <dbid>991204</dbid>
+        <displaynameid>123050</displaynameid>
+        <cost resourcetype="Food">100.0000</cost>
+        <cost resourcetype="Gold">100.0000</cost>
+        <cost resourcetype="Wood">100.0000</cost>
+        <researchpoints>40.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\spc\historical_battles\team_patron_of_the_arts.png</icon>
+        <rollovertextid>123049</rollovertextid>
+        <flag>YPNativeImprovement</flag>
+        <flag>CountsTowardEconomicScore</flag>
+        <flag>TeamTech</flag>
+        <effects>
+            <effect type="Data" action="AutoGather" amount="2.00" subtype="WorkRate" unittype="XP" relativity="BasePercent">
+                <target type="ProtoUnit">cbe_Grouping_deSPCPapalEmbassy</target>
+            </effect>
+            <effect type="TextOutputTechName">123070</effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEDESPCTaulaDeCanvi" type="Normal">
+        <dbid>991205</dbid>
+        <displaynameid>123054</displaynameid>
+        <cost resourcetype="Food">200.0000</cost>
+        <cost resourcetype="Wood">200.0000</cost>
+        <researchpoints>40.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\spc\historical_battles\team_taula_de_canvi.png</icon>
+        <rollovertextid>123053</rollovertextid>
+        <flag>YPNativeImprovement</flag>
+        <flag>CountsTowardEconomicScore</flag>
+        <flag>TeamTech</flag>
+        <effects>
+            <effect type="Data" action="AutoGather" amount="2.00" subtype="WorkRate" unittype="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">cbe_Grouping_deSPCGreatBank</target>
+            </effect>
+            <effect type="TextOutputTechName">123070</effect>
         </effects>
     </tech>
 
