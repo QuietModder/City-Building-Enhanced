@@ -3729,9 +3729,9 @@
         <unittype>ColonyBuilding</unittype>
         <unittype>Building</unittype>
         <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
-        <tech row="0" page="1" column="0">Bastion</tech>
-        <tech row="0" page="1" column="0">DERedoubts</tech>
-        <tech row="0" page="1" column="0">DECityFortifications</tech>
+        <tech page="1" column="0">Bastion</tech>
+        <tech page="1" column="0">DERedoubts</tech>
+        <tech page="1" column="0">DECityFortifications</tech>
         <flag>Doppled</flag>
         <flag>CollidesWithProjectiles</flag>
         <flag>Immoveable</flag>
@@ -3797,9 +3797,9 @@
         <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
         <unittype>CountsTowardMilitaryScore</unittype>
         <unittype>HasBountyValue</unittype>
-        <tech row="0" page="1" column="0">Bastion</tech>
-        <tech row="0" page="1" column="0">DERedoubts</tech>
-        <tech row="0" page="1" column="0">DECityFortifications</tech>
+        <tech page="1" column="0">Bastion</tech>
+        <tech page="1" column="0">DERedoubts</tech>
+        <tech page="1" column="0">DECityFortifications</tech>
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>
         <flag>Immoveable</flag>
@@ -3888,339 +3888,339 @@
         <unittype>AbstractMapControlBuilding</unittype>
         <unittype>AgeUpBuilding</unittype>
         <unittype>ValidColonyBuilding</unittype>
-        <train row="0" page="0" column="2">deTrainCommandPostWagon</train>
-        <train row="0" page="0" column="2">deTrainDepotWagon</train>
-        <train row="0" page="0" column="0">ypSettlerIndian</train>
-        <train row="0" page="0" column="0">ypSettlerJapanese</train>
-        <train row="0" page="0" column="0">ypSettlerAsian</train>
-        <train row="0" page="0" column="0">deSettlerAfrican</train>
-        <train row="0" page="0" column="0">Settler</train>
-        <train row="0" page="0" column="0">Coureur</train>
-        <train row="0" page="0" column="2">deChasqui</train>
-        <train row="0" page="0" column="2">deArchitect</train>
-        <train row="0" page="0" column="0">SettlerNative</train>
-        <train row="0" page="0" column="5">ypMonkChinese</train>
-        <train row="0" page="0" column="6">ypMonkChinese2</train>
-        <train row="0" page="0" column="6">ypMonkIndian2</train>
-        <train row="0" page="0" column="5">ypMonkIndian</train>
-        <train row="0" page="0" column="5">ypMonkJapanese</train>
-        <train row="0" page="0" column="6">ypMonkJapanese2</train>
-        <train row="0" page="0" column="5">PetCougar</train>
-        <train row="0" page="0" column="1">xpColonialMilitia</train>
-        <train row="0" page="0" column="1">deREVPolishLancer</train>
-        <train row="0" page="0" column="2">deREVScytheman</train>
-        <train row="0" page="0" column="3">HotAirBalloon</train>
-        <train row="0" page="0" column="3">deMiner</train>
-        <tech row="0" page="1" column="0">TribalIroquoisWarrior5</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisWisewoman4</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisYouth2</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisYouth3</tech>
-        <tech row="0" page="1" column="0">TribalAztecWarrior2</tech>
-        <tech row="0" page="1" column="0">TribalAztecYouth5</tech>
-        <tech row="0" page="1" column="0">PoliticianAdmiralOttoman</tech>
-        <tech row="0" page="1" column="0">PoliticianViceroyGerman</tech>
-        <tech row="0" page="1" column="0">PoliticianViceroyPortuguese</tech>
-        <tech row="0" page="1" column="0">PoliticianCavalierDutch</tech>
-        <tech row="0" page="1" column="0">PoliticianMusketeerDutch</tech>
-        <tech row="0" page="1" column="0">PoliticianGeneralOttoman</tech>
-        <tech row="0" page="1" column="0">PoliticianViceroyDutch</tech>
-        <tech row="0" page="1" column="0">PoliticianGeneralBritish</tech>
-        <tech row="0" page="1" column="0">PoliticianMarksmanOttoman</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisWisewoman3</tech>
-        <tech row="0" page="1" column="0">PoliticianAdventurerBritish</tech>
-        <tech row="0" page="1" column="0">PoliticianMusketeerBritish</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisChief4</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisShaman2</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisWisewoman2</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisChief5</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisShaman5</tech>
-        <tech row="0" page="1" column="0">TribalSiouxYouth5</tech>
-        <tech row="0" page="1" column="0">TribalSiouxShaman4</tech>
-        <tech row="0" page="1" column="0">TribalSiouxShaman3</tech>
-        <tech row="0" page="1" column="0">TribalAztecChief4</tech>
-        <tech row="0" page="1" column="0">TribalAztecShaman3</tech>
-        <tech row="0" page="1" column="0">PoliticianCavalierFrench</tech>
-        <tech row="0" page="1" column="0">PoliticianGeneralSkirmisher</tech>
-        <tech row="0" page="1" column="0">PoliticianBishopGerman</tech>
-        <tech row="0" page="1" column="0">PoliticianWarMinisterAct3</tech>
-        <tech row="0" page="1" column="0">PoliticianMusketeerFrench</tech>
-        <tech row="0" page="1" column="0">PoliticianSergeantGerman</tech>
-        <tech row="0" page="1" column="0">PoliticianSergeantDutch</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisWisewoman5</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisYouth4</tech>
-        <tech row="0" page="1" column="0">PoliticianAdventurerRussian</tech>
-        <tech row="0" page="1" column="0">PoliticianMusketeerRussian</tech>
-        <tech row="0" page="1" column="0">PoliticianPhilosopherPrince</tech>
-        <tech row="0" page="1" column="0">PoliticianEngineerPortuguese</tech>
-        <tech row="0" page="1" column="0">TribalSiouxYouth2</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWarrior5</tech>
-        <tech row="0" page="1" column="0">TribalSiouxChief3</tech>
-        <tech row="0" page="1" column="0">TribalAztecWarrior4</tech>
-        <tech row="0" page="1" column="0">PoliticianTycoonAct3</tech>
-        <tech row="0" page="1" column="0">PoliticianCavalierGerman</tech>
-        <tech row="0" page="1" column="0">PoliticianCavalierRussian</tech>
-        <tech row="0" page="1" column="0">PoliticianScout</tech>
-        <tech row="0" page="1" column="0">PoliticianScoutOttoman</tech>
-        <tech row="0" page="1" column="0">PoliticianMarksmanPortuguese</tech>
-        <tech row="0" page="1" column="0">PoliticianCavalierOttoman</tech>
-        <tech row="0" page="1" column="0">PoliticianMusketeerPortuguese</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisChief2</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisShaman4</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisWarrior4</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisWarrior2</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisWarrior3</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisChief3</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisShaman3</tech>
-        <tech row="0" page="1" column="0">TribalIroquoisYouth5</tech>
-        <tech row="0" page="1" column="0">PoliticianScoutRussian</tech>
-        <tech row="0" page="1" column="0">PoliticianViceroyBritish</tech>
-        <tech row="0" page="1" column="0">PoliticianWarMinisterRussian</tech>
-        <tech row="0" page="1" column="0">PoliticianAdmiral</tech>
-        <tech row="0" page="1" column="0">PoliticianBishop</tech>
-        <tech row="0" page="1" column="0">PoliticianBishopFortress</tech>
-        <tech row="0" page="1" column="0">PoliticianGeneral</tech>
-        <tech row="0" page="1" column="0">PoliticianGeneralMaltese</tech>
-        <tech row="0" page="1" column="0">PoliticianMusketeerSpanish</tech>
-        <tech row="0" page="1" column="0">PoliticianQuartermaster</tech>
-        <tech row="0" page="1" column="0">PoliticianEngineer</tech>
-        <tech row="0" page="1" column="0">PoliticianSergeantSpanish</tech>
-        <tech row="0" page="1" column="0">PoliticianPirate</tech>
-        <tech row="0" page="1" column="0">PoliticianPresidente</tech>
-        <tech row="0" page="1" column="0">PoliticianNaturalist</tech>
-        <tech row="0" page="1" column="0">PoliticianNaturalistGerman</tech>
-        <tech row="0" page="1" column="0">PoliticianTycoon</tech>
-        <tech row="0" page="1" column="0">PoliticianWarMinisterSpanish</tech>
-        <tech row="0" page="1" column="0">PoliticianExiledPrince</tech>
-        <tech row="0" page="1" column="0">PoliticianCavalierSpanish</tech>
-        <tech row="0" page="1" column="0">PoliticianGrandVizier</tech>
-        <tech row="0" page="1" column="0">TribalSiouxYouth3</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWisewoman3</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWisewoman2</tech>
-        <tech row="0" page="1" column="0">TribalAztecWisewoman4</tech>
-        <tech row="0" page="1" column="0">TribalAztecYouth2</tech>
-        <tech row="0" page="1" column="0">TribalSiouxChief5</tech>
-        <tech row="0" page="1" column="0">TribalSiouxChief2</tech>
-        <tech row="0" page="1" column="0">TribalSiouxChief4</tech>
-        <tech row="0" page="1" column="0">TribalAztecChief2</tech>
-        <tech row="0" page="1" column="0">TribalAztecShaman4</tech>
-        <tech row="0" page="1" column="0">TribalAztecWarrior5</tech>
-        <tech row="0" page="1" column="0">TribalAztecWisewoman2</tech>
-        <tech row="0" page="1" column="0">TribalAztecWisewoman3</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWisewoman4</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWisewoman5</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWarrior4</tech>
-        <tech row="0" page="1" column="0">TribalAztecChief3</tech>
-        <tech row="0" page="1" column="0">TribalAztecChief5</tech>
-        <tech row="0" page="1" column="0">TribalAztecShaman2</tech>
-        <tech row="0" page="1" column="0">TribalAztecShaman5</tech>
-        <tech row="0" page="1" column="0">TribalAztecYouth3</tech>
-        <tech row="0" page="1" column="0">ypFakeColonialAge</tech>
-        <tech row="0" page="1" column="0">ypFakeFortressAge</tech>
-        <tech row="0" page="1" column="0">ypFakeImperialAge</tech>
-        <tech row="0" page="1" column="0">ypFakeIndustrialAge</tech>
-        <tech row="0" page="1" column="0">PoliticianAdventurerSpanish</tech>
-        <tech row="0" page="1" column="0">PoliticianGovernor</tech>
-        <tech row="0" page="1" column="0">DEPoliticianImam</tech>
-        <tech row="0" page="1" column="0">PoliticianMohawk</tech>
-        <tech row="0" page="1" column="0">PoliticianMarksman</tech>
-        <tech row="0" page="1" column="0">TribalSiouxYouth4</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWarrior3</tech>
-        <tech row="0" page="1" column="0">TribalSiouxWarrior2</tech>
-        <tech row="0" page="1" column="0">TribalSiouxShaman5</tech>
-        <tech row="0" page="1" column="0">TribalSiouxShaman2</tech>
-        <tech row="0" page="1" column="0">TribalAztecWarrior3</tech>
-        <tech row="0" page="1" column="0">TribalAztecWisewoman5</tech>
-        <tech row="0" page="1" column="0">TribalAztecYouth4</tech>
-        <tech row="0" page="1" column="0">TribalIncaChief2</tech>
-        <tech row="0" page="1" column="0">TribalIncaChief3</tech>
-        <tech row="0" page="1" column="0">TribalIncaChief4</tech>
-        <tech row="0" page="1" column="0">TribalIncaChief5</tech>
-        <tech row="0" page="1" column="0">TribalIncaShaman2</tech>
-        <tech row="0" page="1" column="0">TribalIncaShaman3</tech>
-        <tech row="0" page="1" column="0">TribalIncaShaman4</tech>
-        <tech row="0" page="1" column="0">TribalIncaShaman5</tech>
-        <tech row="0" page="1" column="0">TribalIncaWarrior2</tech>
-        <tech row="0" page="1" column="0">TribalIncaWarrior3</tech>
-        <tech row="0" page="1" column="0">TribalIncaWarrior4</tech>
-        <tech row="0" page="1" column="0">TribalIncaWarrior5</tech>
-        <tech row="0" page="1" column="0">TribalIncaWisewoman2</tech>
-        <tech row="0" page="1" column="0">TribalIncaWisewoman3</tech>
-        <tech row="0" page="1" column="0">TribalIncaWisewoman4</tech>
-        <tech row="0" page="1" column="0">TribalIncaWisewoman5</tech>
-        <tech row="0" page="1" column="0">TribalIncaYouth2</tech>
-        <tech row="0" page="1" column="0">TribalIncaYouth3</tech>
-        <tech row="0" page="1" column="0">TribalIncaYouth4</tech>
-        <tech row="0" page="1" column="0">TribalIncaYouth5</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMarksmanSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianSergeantSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianCavalierSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianEthiopianQueen</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMusketeerSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianGeneralSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianPapalGuard</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMercContractorFortressBritish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianPapalGuardSpanish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianPapalGuardPortuguese</tech>
-        <tech row="0" page="1" column="0">DEPoliticianPapalGuardSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMercContractor</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMercContractorFortress</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMercContractorFortressDutch</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMercContractorFortressOttoman</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMercContractorFortressPortuguese</tech>
-        <tech row="0" page="1" column="0">DEPoliticianMercContractorFortressSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianKnightColonial</tech>
-        <tech row="0" page="1" column="0">DEPoliticianKnight</tech>
-        <tech row="0" page="1" column="0">DEPoliticianKnightAlt</tech>
-        <tech row="0" page="1" column="0">DEPoliticianInventor</tech>
-        <tech row="0" page="1" column="0">DEPoliticianInventorColonial</tech>
-        <tech row="0" page="1" column="0">DEPoliticianBlackDukeBritish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianBlackDukeGerman</tech>
-        <tech row="0" page="1" column="0">DEPoliticianRoyalistDutch</tech>
-        <tech row="0" page="1" column="0">DEPoliticianRoyalistSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianRoyalistRussian</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianFrench</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianSwedish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianColonialBritish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianColonialDutch</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianGerman</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianPortuguese</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianColonialRussian</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianOttoman</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianSpanish</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogisticianRussian</tech>
-        <tech row="0" page="1" column="0">DEPoliticianLogistician</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalDelaware</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalPennsylvania</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalConnecticut</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMassachusetts</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalNewJersey</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMaryland</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalTennessee</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalSouthCarolina</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalVirginia</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalNewYork</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalVermont</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalNorthCarolina</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalRhodeIsland</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalKentucky</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalNewHampshire</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalLouisiana</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalTexas</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalCalifornia</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMaine</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalFlorida</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalIndiana</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalIllinois</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalOhio</tech>
-        <tech row="0" page="1" column="0">DEAllegianceOromo2</tech>
-        <tech row="0" page="1" column="0">DEAllegiancePortuguese2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHabesha2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSomali2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSudanese2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceIndian2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceJesuit2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceArab2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceOromo3</tech>
-        <tech row="0" page="1" column="0">DEAllegiancePortuguese3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHabesha3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSomali3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSudanese3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceIndian3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceJesuit3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceArab3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceOromo4</tech>
-        <tech row="0" page="1" column="0">DEAllegiancePortuguese4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHabesha4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSomali4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSudanese4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceIndian4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceJesuit4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceArab4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceOromo5</tech>
-        <tech row="0" page="1" column="0">DEAllegiancePortuguese5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHabesha5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSomali5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSudanese5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceIndian5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceJesuit5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceArab5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceFulani2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceBerber2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHausa2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSonghai2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceYoruba2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceAkan2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceMoroccan2</tech>
-        <tech row="0" page="1" column="0">DEAllegianceFulani3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceBerber3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHausa3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSonghai3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceYoruba3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceAkan3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceMoroccan3</tech>
-        <tech row="0" page="1" column="0">DEAllegianceFulani4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceBerber4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHausa4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSonghai4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceYoruba4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceAkan4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceMoroccan4</tech>
-        <tech row="0" page="1" column="0">DEAllegianceFulani5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceBerber5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceHausa5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceSonghai5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceYoruba5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceAkan5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceMoroccan5</tech>
-        <tech row="0" page="1" column="0">DEAllegianceBritish5</tech>
-        <tech row="0" page="1" column="0">DEFortifiedCitiesHausa</tech>
-        <tech row="0" page="1" column="0">DEFortifiedCitiesEthiopians</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXDurango</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXMichoacan</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXTlaxcala</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXChiapas</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXQueretaro</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXTabasco</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXSonora</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXSinaloa</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXCoahuila</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXSanLuisPotosi</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXZacatecas</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXTamaulipas</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXChihuahua</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXGuanajuato</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXGuerrero</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXJalisco</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXMexico</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXVeracruz</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXPuebla</tech>
-        <tech row="0" page="1" column="0">DEPoliticianFederalMXOaxaca</tech>
-        <tech row="0" page="1" column="2">DEPoliticianMediciItalian</tech>
-        <tech row="0" page="1" column="2">DEPoliticianLogisticianItalian</tech>
-        <tech row="0" page="1" column="2">PoliticianAdventurerItalian</tech>
-        <tech row="0" page="1" column="2">PoliticianMarksmanItalian</tech>
-        <tech row="0" page="1" column="2">DEPoliticianMercContractorFortressItalian</tech>
-        <tech row="0" page="1" column="2">PoliticianCavalierItalian</tech>
-        <tech row="0" page="1" column="2">DEPoliticianPope</tech>
-        <tech row="0" page="1" column="2">DEPoliticianPapalGuardItalian</tech>
-        <tech row="0" page="1" column="2">DEPoliticianRoyalistItalian</tech>
-        <tech row="0" page="1" column="2">DEPoliticianGeneralItalian</tech>
-        <tech row="0" page="1" column="2">PoliticianAdmiralMaltese</tech>
-        <tech row="0" page="1" column="2">PoliticianWarMinisterMaltese</tech>
-        <tech row="0" page="1" column="2">PoliticianSergeantMaltese</tech>
-        <tech row="0" page="1" column="2">DEPoliticianMercContractorFortressMaltese</tech>
-        <tech row="0" page="1" column="2">DEPoliticianMorganBlack</tech>
-        <tech row="0" page="1" column="2">DEPoliticianPapalGuardMaltese</tech>
-        <tech row="0" page="2" column="0">BigIroquoisWarParty</tech>
-        <tech row="0" page="2" column="0">BigIroquoisRaidingParty</tech>
-        <tech row="0" page="2" column="0">BigAztecScoutingParty</tech>
-        <tech row="0" page="2" column="0">BigAztecWarParty</tech>
-        <tech row="0" page="2" column="0">BigAztecRaidingParty</tech>
-        <tech row="0" page="2" column="0">BigSiouxDogSoldiers</tech>
-        <tech row="0" page="2" column="0">BigIroquoisScoutingParty</tech>
-        <tech row="0" page="2" column="0">deBigIncaScoutingParty</tech>
-        <tech row="0" page="2" column="0">deBigIncaRaidingParty</tech>
-        <tech row="0" page="2" column="0">deBigIncaWarParty</tech>
+        <train page="0" column="2">deTrainCommandPostWagon</train>
+        <train page="0" column="2">deTrainDepotWagon</train>
+        <train page="0" column="0">ypSettlerIndian</train>
+        <train page="0" column="0">ypSettlerJapanese</train>
+        <train page="0" column="0">ypSettlerAsian</train>
+        <train page="0" column="0">deSettlerAfrican</train>
+        <train page="0" column="0">Settler</train>
+        <train page="0" column="0">Coureur</train>
+        <train page="0" column="2">deChasqui</train>
+        <train page="0" column="2">deArchitect</train>
+        <train page="0" column="0">SettlerNative</train>
+        <train page="0" column="5">ypMonkChinese</train>
+        <train page="0" column="6">ypMonkChinese2</train>
+        <train page="0" column="6">ypMonkIndian2</train>
+        <train page="0" column="5">ypMonkIndian</train>
+        <train page="0" column="5">ypMonkJapanese</train>
+        <train page="0" column="6">ypMonkJapanese2</train>
+        <train page="0" column="5">PetCougar</train>
+        <train page="0" column="1">xpColonialMilitia</train>
+        <train page="0" column="1">deREVPolishLancer</train>
+        <train page="0" column="2">deREVScytheman</train>
+        <train page="0" column="3">HotAirBalloon</train>
+        <train page="0" column="3">deMiner</train>
+        <tech page="1" column="0">TribalIroquoisWarrior5</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman4</tech>
+        <tech page="1" column="0">TribalIroquoisYouth2</tech>
+        <tech page="1" column="0">TribalIroquoisYouth3</tech>
+        <tech page="1" column="0">TribalAztecWarrior2</tech>
+        <tech page="1" column="0">TribalAztecYouth5</tech>
+        <tech page="1" column="0">PoliticianAdmiralOttoman</tech>
+        <tech page="1" column="0">PoliticianViceroyGerman</tech>
+        <tech page="1" column="0">PoliticianViceroyPortuguese</tech>
+        <tech page="1" column="0">PoliticianCavalierDutch</tech>
+        <tech page="1" column="0">PoliticianMusketeerDutch</tech>
+        <tech page="1" column="0">PoliticianGeneralOttoman</tech>
+        <tech page="1" column="0">PoliticianViceroyDutch</tech>
+        <tech page="1" column="0">PoliticianGeneralBritish</tech>
+        <tech page="1" column="0">PoliticianMarksmanOttoman</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman3</tech>
+        <tech page="1" column="0">PoliticianAdventurerBritish</tech>
+        <tech page="1" column="0">PoliticianMusketeerBritish</tech>
+        <tech page="1" column="0">TribalIroquoisChief4</tech>
+        <tech page="1" column="0">TribalIroquoisShaman2</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman2</tech>
+        <tech page="1" column="0">TribalIroquoisChief5</tech>
+        <tech page="1" column="0">TribalIroquoisShaman5</tech>
+        <tech page="1" column="0">TribalSiouxYouth5</tech>
+        <tech page="1" column="0">TribalSiouxShaman4</tech>
+        <tech page="1" column="0">TribalSiouxShaman3</tech>
+        <tech page="1" column="0">TribalAztecChief4</tech>
+        <tech page="1" column="0">TribalAztecShaman3</tech>
+        <tech page="1" column="0">PoliticianCavalierFrench</tech>
+        <tech page="1" column="0">PoliticianGeneralSkirmisher</tech>
+        <tech page="1" column="0">PoliticianBishopGerman</tech>
+        <tech page="1" column="0">PoliticianWarMinisterAct3</tech>
+        <tech page="1" column="0">PoliticianMusketeerFrench</tech>
+        <tech page="1" column="0">PoliticianSergeantGerman</tech>
+        <tech page="1" column="0">PoliticianSergeantDutch</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman5</tech>
+        <tech page="1" column="0">TribalIroquoisYouth4</tech>
+        <tech page="1" column="0">PoliticianAdventurerRussian</tech>
+        <tech page="1" column="0">PoliticianMusketeerRussian</tech>
+        <tech page="1" column="0">PoliticianPhilosopherPrince</tech>
+        <tech page="1" column="0">PoliticianEngineerPortuguese</tech>
+        <tech page="1" column="0">TribalSiouxYouth2</tech>
+        <tech page="1" column="0">TribalSiouxWarrior5</tech>
+        <tech page="1" column="0">TribalSiouxChief3</tech>
+        <tech page="1" column="0">TribalAztecWarrior4</tech>
+        <tech page="1" column="0">PoliticianTycoonAct3</tech>
+        <tech page="1" column="0">PoliticianCavalierGerman</tech>
+        <tech page="1" column="0">PoliticianCavalierRussian</tech>
+        <tech page="1" column="0">PoliticianScout</tech>
+        <tech page="1" column="0">PoliticianScoutOttoman</tech>
+        <tech page="1" column="0">PoliticianMarksmanPortuguese</tech>
+        <tech page="1" column="0">PoliticianCavalierOttoman</tech>
+        <tech page="1" column="0">PoliticianMusketeerPortuguese</tech>
+        <tech page="1" column="0">TribalIroquoisChief2</tech>
+        <tech page="1" column="0">TribalIroquoisShaman4</tech>
+        <tech page="1" column="0">TribalIroquoisWarrior4</tech>
+        <tech page="1" column="0">TribalIroquoisWarrior2</tech>
+        <tech page="1" column="0">TribalIroquoisWarrior3</tech>
+        <tech page="1" column="0">TribalIroquoisChief3</tech>
+        <tech page="1" column="0">TribalIroquoisShaman3</tech>
+        <tech page="1" column="0">TribalIroquoisYouth5</tech>
+        <tech page="1" column="0">PoliticianScoutRussian</tech>
+        <tech page="1" column="0">PoliticianViceroyBritish</tech>
+        <tech page="1" column="0">PoliticianWarMinisterRussian</tech>
+        <tech page="1" column="0">PoliticianAdmiral</tech>
+        <tech page="1" column="0">PoliticianBishop</tech>
+        <tech page="1" column="0">PoliticianBishopFortress</tech>
+        <tech page="1" column="0">PoliticianGeneral</tech>
+        <tech page="1" column="0">PoliticianGeneralMaltese</tech>
+        <tech page="1" column="0">PoliticianMusketeerSpanish</tech>
+        <tech page="1" column="0">PoliticianQuartermaster</tech>
+        <tech page="1" column="0">PoliticianEngineer</tech>
+        <tech page="1" column="0">PoliticianSergeantSpanish</tech>
+        <tech page="1" column="0">PoliticianPirate</tech>
+        <tech page="1" column="0">PoliticianPresidente</tech>
+        <tech page="1" column="0">PoliticianNaturalist</tech>
+        <tech page="1" column="0">PoliticianNaturalistGerman</tech>
+        <tech page="1" column="0">PoliticianTycoon</tech>
+        <tech page="1" column="0">PoliticianWarMinisterSpanish</tech>
+        <tech page="1" column="0">PoliticianExiledPrince</tech>
+        <tech page="1" column="0">PoliticianCavalierSpanish</tech>
+        <tech page="1" column="0">PoliticianGrandVizier</tech>
+        <tech page="1" column="0">TribalSiouxYouth3</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman3</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman2</tech>
+        <tech page="1" column="0">TribalAztecWisewoman4</tech>
+        <tech page="1" column="0">TribalAztecYouth2</tech>
+        <tech page="1" column="0">TribalSiouxChief5</tech>
+        <tech page="1" column="0">TribalSiouxChief2</tech>
+        <tech page="1" column="0">TribalSiouxChief4</tech>
+        <tech page="1" column="0">TribalAztecChief2</tech>
+        <tech page="1" column="0">TribalAztecShaman4</tech>
+        <tech page="1" column="0">TribalAztecWarrior5</tech>
+        <tech page="1" column="0">TribalAztecWisewoman2</tech>
+        <tech page="1" column="0">TribalAztecWisewoman3</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman4</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman5</tech>
+        <tech page="1" column="0">TribalSiouxWarrior4</tech>
+        <tech page="1" column="0">TribalAztecChief3</tech>
+        <tech page="1" column="0">TribalAztecChief5</tech>
+        <tech page="1" column="0">TribalAztecShaman2</tech>
+        <tech page="1" column="0">TribalAztecShaman5</tech>
+        <tech page="1" column="0">TribalAztecYouth3</tech>
+        <tech page="1" column="0">ypFakeColonialAge</tech>
+        <tech page="1" column="0">ypFakeFortressAge</tech>
+        <tech page="1" column="0">ypFakeImperialAge</tech>
+        <tech page="1" column="0">ypFakeIndustrialAge</tech>
+        <tech page="1" column="0">PoliticianAdventurerSpanish</tech>
+        <tech page="1" column="0">PoliticianGovernor</tech>
+        <tech page="1" column="0">DEPoliticianImam</tech>
+        <tech page="1" column="0">PoliticianMohawk</tech>
+        <tech page="1" column="0">PoliticianMarksman</tech>
+        <tech page="1" column="0">TribalSiouxYouth4</tech>
+        <tech page="1" column="0">TribalSiouxWarrior3</tech>
+        <tech page="1" column="0">TribalSiouxWarrior2</tech>
+        <tech page="1" column="0">TribalSiouxShaman5</tech>
+        <tech page="1" column="0">TribalSiouxShaman2</tech>
+        <tech page="1" column="0">TribalAztecWarrior3</tech>
+        <tech page="1" column="0">TribalAztecWisewoman5</tech>
+        <tech page="1" column="0">TribalAztecYouth4</tech>
+        <tech page="1" column="0">TribalIncaChief2</tech>
+        <tech page="1" column="0">TribalIncaChief3</tech>
+        <tech page="1" column="0">TribalIncaChief4</tech>
+        <tech page="1" column="0">TribalIncaChief5</tech>
+        <tech page="1" column="0">TribalIncaShaman2</tech>
+        <tech page="1" column="0">TribalIncaShaman3</tech>
+        <tech page="1" column="0">TribalIncaShaman4</tech>
+        <tech page="1" column="0">TribalIncaShaman5</tech>
+        <tech page="1" column="0">TribalIncaWarrior2</tech>
+        <tech page="1" column="0">TribalIncaWarrior3</tech>
+        <tech page="1" column="0">TribalIncaWarrior4</tech>
+        <tech page="1" column="0">TribalIncaWarrior5</tech>
+        <tech page="1" column="0">TribalIncaWisewoman2</tech>
+        <tech page="1" column="0">TribalIncaWisewoman3</tech>
+        <tech page="1" column="0">TribalIncaWisewoman4</tech>
+        <tech page="1" column="0">TribalIncaWisewoman5</tech>
+        <tech page="1" column="0">TribalIncaYouth2</tech>
+        <tech page="1" column="0">TribalIncaYouth3</tech>
+        <tech page="1" column="0">TribalIncaYouth4</tech>
+        <tech page="1" column="0">TribalIncaYouth5</tech>
+        <tech page="1" column="0">DEPoliticianMarksmanSwedish</tech>
+        <tech page="1" column="0">DEPoliticianSergeantSwedish</tech>
+        <tech page="1" column="0">DEPoliticianCavalierSwedish</tech>
+        <tech page="1" column="0">DEPoliticianEthiopianQueen</tech>
+        <tech page="1" column="0">DEPoliticianMusketeerSwedish</tech>
+        <tech page="1" column="0">DEPoliticianGeneralSwedish</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuard</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressBritish</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuardSpanish</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuardPortuguese</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuardSwedish</tech>
+        <tech page="1" column="0">DEPoliticianMercContractor</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortress</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressDutch</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressOttoman</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressPortuguese</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressSwedish</tech>
+        <tech page="1" column="0">DEPoliticianKnightColonial</tech>
+        <tech page="1" column="0">DEPoliticianKnight</tech>
+        <tech page="1" column="0">DEPoliticianKnightAlt</tech>
+        <tech page="1" column="0">DEPoliticianInventor</tech>
+        <tech page="1" column="0">DEPoliticianInventorColonial</tech>
+        <tech page="1" column="0">DEPoliticianBlackDukeBritish</tech>
+        <tech page="1" column="0">DEPoliticianBlackDukeGerman</tech>
+        <tech page="1" column="0">DEPoliticianRoyalistDutch</tech>
+        <tech page="1" column="0">DEPoliticianRoyalistSwedish</tech>
+        <tech page="1" column="0">DEPoliticianRoyalistRussian</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianFrench</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianSwedish</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianColonialBritish</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianColonialDutch</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianGerman</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianPortuguese</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianColonialRussian</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianOttoman</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianSpanish</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianRussian</tech>
+        <tech page="1" column="0">DEPoliticianLogistician</tech>
+        <tech page="1" column="0">DEPoliticianFederalDelaware</tech>
+        <tech page="1" column="0">DEPoliticianFederalPennsylvania</tech>
+        <tech page="1" column="0">DEPoliticianFederalConnecticut</tech>
+        <tech page="1" column="0">DEPoliticianFederalMassachusetts</tech>
+        <tech page="1" column="0">DEPoliticianFederalNewJersey</tech>
+        <tech page="1" column="0">DEPoliticianFederalMaryland</tech>
+        <tech page="1" column="0">DEPoliticianFederalTennessee</tech>
+        <tech page="1" column="0">DEPoliticianFederalSouthCarolina</tech>
+        <tech page="1" column="0">DEPoliticianFederalVirginia</tech>
+        <tech page="1" column="0">DEPoliticianFederalNewYork</tech>
+        <tech page="1" column="0">DEPoliticianFederalVermont</tech>
+        <tech page="1" column="0">DEPoliticianFederalNorthCarolina</tech>
+        <tech page="1" column="0">DEPoliticianFederalRhodeIsland</tech>
+        <tech page="1" column="0">DEPoliticianFederalKentucky</tech>
+        <tech page="1" column="0">DEPoliticianFederalNewHampshire</tech>
+        <tech page="1" column="0">DEPoliticianFederalLouisiana</tech>
+        <tech page="1" column="0">DEPoliticianFederalTexas</tech>
+        <tech page="1" column="0">DEPoliticianFederalCalifornia</tech>
+        <tech page="1" column="0">DEPoliticianFederalMaine</tech>
+        <tech page="1" column="0">DEPoliticianFederalFlorida</tech>
+        <tech page="1" column="0">DEPoliticianFederalIndiana</tech>
+        <tech page="1" column="0">DEPoliticianFederalIllinois</tech>
+        <tech page="1" column="0">DEPoliticianFederalOhio</tech>
+        <tech page="1" column="0">DEAllegianceOromo2</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese2</tech>
+        <tech page="1" column="0">DEAllegianceHabesha2</tech>
+        <tech page="1" column="0">DEAllegianceSomali2</tech>
+        <tech page="1" column="0">DEAllegianceSudanese2</tech>
+        <tech page="1" column="0">DEAllegianceIndian2</tech>
+        <tech page="1" column="0">DEAllegianceJesuit2</tech>
+        <tech page="1" column="0">DEAllegianceArab2</tech>
+        <tech page="1" column="0">DEAllegianceOromo3</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese3</tech>
+        <tech page="1" column="0">DEAllegianceHabesha3</tech>
+        <tech page="1" column="0">DEAllegianceSomali3</tech>
+        <tech page="1" column="0">DEAllegianceSudanese3</tech>
+        <tech page="1" column="0">DEAllegianceIndian3</tech>
+        <tech page="1" column="0">DEAllegianceJesuit3</tech>
+        <tech page="1" column="0">DEAllegianceArab3</tech>
+        <tech page="1" column="0">DEAllegianceOromo4</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese4</tech>
+        <tech page="1" column="0">DEAllegianceHabesha4</tech>
+        <tech page="1" column="0">DEAllegianceSomali4</tech>
+        <tech page="1" column="0">DEAllegianceSudanese4</tech>
+        <tech page="1" column="0">DEAllegianceIndian4</tech>
+        <tech page="1" column="0">DEAllegianceJesuit4</tech>
+        <tech page="1" column="0">DEAllegianceArab4</tech>
+        <tech page="1" column="0">DEAllegianceOromo5</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese5</tech>
+        <tech page="1" column="0">DEAllegianceHabesha5</tech>
+        <tech page="1" column="0">DEAllegianceSomali5</tech>
+        <tech page="1" column="0">DEAllegianceSudanese5</tech>
+        <tech page="1" column="0">DEAllegianceIndian5</tech>
+        <tech page="1" column="0">DEAllegianceJesuit5</tech>
+        <tech page="1" column="0">DEAllegianceArab5</tech>
+        <tech page="1" column="0">DEAllegianceFulani2</tech>
+        <tech page="1" column="0">DEAllegianceBerber2</tech>
+        <tech page="1" column="0">DEAllegianceHausa2</tech>
+        <tech page="1" column="0">DEAllegianceSonghai2</tech>
+        <tech page="1" column="0">DEAllegianceYoruba2</tech>
+        <tech page="1" column="0">DEAllegianceAkan2</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan2</tech>
+        <tech page="1" column="0">DEAllegianceFulani3</tech>
+        <tech page="1" column="0">DEAllegianceBerber3</tech>
+        <tech page="1" column="0">DEAllegianceHausa3</tech>
+        <tech page="1" column="0">DEAllegianceSonghai3</tech>
+        <tech page="1" column="0">DEAllegianceYoruba3</tech>
+        <tech page="1" column="0">DEAllegianceAkan3</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan3</tech>
+        <tech page="1" column="0">DEAllegianceFulani4</tech>
+        <tech page="1" column="0">DEAllegianceBerber4</tech>
+        <tech page="1" column="0">DEAllegianceHausa4</tech>
+        <tech page="1" column="0">DEAllegianceSonghai4</tech>
+        <tech page="1" column="0">DEAllegianceYoruba4</tech>
+        <tech page="1" column="0">DEAllegianceAkan4</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan4</tech>
+        <tech page="1" column="0">DEAllegianceFulani5</tech>
+        <tech page="1" column="0">DEAllegianceBerber5</tech>
+        <tech page="1" column="0">DEAllegianceHausa5</tech>
+        <tech page="1" column="0">DEAllegianceSonghai5</tech>
+        <tech page="1" column="0">DEAllegianceYoruba5</tech>
+        <tech page="1" column="0">DEAllegianceAkan5</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan5</tech>
+        <tech page="1" column="0">DEAllegianceBritish5</tech>
+        <tech page="1" column="0">DEFortifiedCitiesHausa</tech>
+        <tech page="1" column="0">DEFortifiedCitiesEthiopians</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXDurango</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXMichoacan</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXTlaxcala</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXChiapas</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXQueretaro</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXTabasco</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXSonora</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXSinaloa</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXCoahuila</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXSanLuisPotosi</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXZacatecas</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXTamaulipas</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXChihuahua</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXGuanajuato</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXGuerrero</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXJalisco</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXMexico</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXVeracruz</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXPuebla</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXOaxaca</tech>
+        <tech page="1" column="2">DEPoliticianMediciItalian</tech>
+        <tech page="1" column="2">DEPoliticianLogisticianItalian</tech>
+        <tech page="1" column="2">PoliticianAdventurerItalian</tech>
+        <tech page="1" column="2">PoliticianMarksmanItalian</tech>
+        <tech page="1" column="2">DEPoliticianMercContractorFortressItalian</tech>
+        <tech page="1" column="2">PoliticianCavalierItalian</tech>
+        <tech page="1" column="2">DEPoliticianPope</tech>
+        <tech page="1" column="2">DEPoliticianPapalGuardItalian</tech>
+        <tech page="1" column="2">DEPoliticianRoyalistItalian</tech>
+        <tech page="1" column="2">DEPoliticianGeneralItalian</tech>
+        <tech page="1" column="2">PoliticianAdmiralMaltese</tech>
+        <tech page="1" column="2">PoliticianWarMinisterMaltese</tech>
+        <tech page="1" column="2">PoliticianSergeantMaltese</tech>
+        <tech page="1" column="2">DEPoliticianMercContractorFortressMaltese</tech>
+        <tech page="1" column="2">DEPoliticianMorganBlack</tech>
+        <tech page="1" column="2">DEPoliticianPapalGuardMaltese</tech>
+        <tech page="2" column="0">BigIroquoisWarParty</tech>
+        <tech page="2" column="0">BigIroquoisRaidingParty</tech>
+        <tech page="2" column="0">BigAztecScoutingParty</tech>
+        <tech page="2" column="0">BigAztecWarParty</tech>
+        <tech page="2" column="0">BigAztecRaidingParty</tech>
+        <tech page="2" column="0">BigSiouxDogSoldiers</tech>
+        <tech page="2" column="0">BigIroquoisScoutingParty</tech>
+        <tech page="2" column="0">deBigIncaScoutingParty</tech>
+        <tech page="2" column="0">deBigIncaRaidingParty</tech>
+        <tech page="2" column="0">deBigIncaWarParty</tech>
         <flag>ShowGarrisonButton</flag>
         <flag>AllowAutoGarrison</flag>
         <flag>StartingColonyBuilding</flag>
@@ -5965,14 +5965,25 @@
         <unittype>CountsTowardEconomicScore</unittype>
         <unittype>ConvertsHerds</unittype>
         <unittype>AbstractChurch</unittype>
+        <unittype>HCGatherPointPri2</unittype>
         <flag>AllowAutoGarrison</flag>
-        <train row="0" page="0" column="0">MercElmeti</train>
-        <train row="0" page="0" column="1">MercSwissPikeman</train>
-        <train row="0" page="0" column="2">deMercPistoleer</train>
-        <tech row="0" page="1" column="0">DESPCArtPatron</tech>
-        <tech row="0" page="1" column="1">DESPCPapalLegate</tech>
-        <tech row="0" page="1" column="2">DESPCPapalBlessing</tech>
-        <tech row="0" page="1" column="3">DESPCExcommunication</tech>
+        
+        <train page="0" column="0">MercElmeti</train>
+        <train page="0" column="1">MercSwissPikeman</train>
+        <train page="0" column="2">deMercPistoleer</train>
+
+        <fakecard page="1" column="0">DEBasilicaShipCardinal1</fakecard>
+        <fakecard page="1" column="1">DEBasilicaShipSpy1</fakecard>
+        <fakecard page="1" column="2">DEBasilicaShipPapalGuards2</fakecard>
+        <fakecard page="1" column="3">DEBasilicaShipPandours2</fakecard>
+        <fakecard page="1" column="4">DEBasilicaShipPapalElmeti1</fakecard>
+        <fakecard page="1" column="5">DEBasilicaShipPapalZouave1</fakecard>
+
+        <tech page="2" column="0">DESPCArtPatron</tech>
+        <tech page="2" column="1">DESPCPapalLegate</tech>
+        <tech page="2" column="2">DESPCPapalBlessing</tech>
+        <tech page="2" column="3">DESPCExcommunication</tech>
+
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>
         <flag>Immoveable</flag>
@@ -5990,6 +6001,7 @@
         <flag>Tracked</flag>
         <flag>Invulnerable</flag>
         <flag>NotDeleteable</flag>
+        <flag>DisplayRange</flag>
         <command page="10" column="3">SetGatherPointMilitary</command>
         <command page="10" column="8">CancelAllQueued</command>
         <command page="10" column="5">Eject</command>
@@ -6324,40 +6336,40 @@
         <unittype>AbstractMercenaryBuilding</unittype>
         <unittype>AbstractSPCVillageBuilding</unittype>
         <unittype>Unattackable</unittype>
-        <train row="0" page="0" column="0">SaloonOutlawPistol</train>
-        <train row="0" page="0" column="1">SaloonOutlawRider</train>
-        <train row="0" page="0" column="2">SaloonOutlawRifleman</train>
-        <train row="0" page="0" column="3">SaloonPirate</train>
-        <train row="0" page="0" column="4">deOutlawDesertWarrior</train>
-        <train row="0" page="0" column="5">deOutlawDesertArcher</train>
-        <train row="0" page="0" column="6">deOutlawDesertRaider</train>
-        <train row="0" page="0" column="7">deSaloonDesperado</train>
-        <train row="0" page="0" column="8">deSaloonVaquero</train>
-        <train row="0" page="0" column="9">deSaloonBandido</train>
-        <train row="0" page="0" column="10">deSaloonGunslinger</train>
-        <train row="0" page="0" column="11">deSaloonOwlhoot</train>
-        <train row="0" page="0" column="12">deSaloonCowboy</train>
-        <train row="0" page="0" column="13">deSaloonOutlawBuccaneer</train>
-        <train row="0" page="0" column="14">deSaloonOutlawBlowgunner</train>
-        <train row="0" page="0" column="15">deSaloonOutlawArsonist</train>
-        <train row="0" page="0" column="16">deSaloonHajduk</train>
-        <train row="0" page="0" column="17">deSaloonInquisitor</train>
-        <train row="0" page="0" column="18">deSaloonHighwaymanRider</train>
-        <train row="0" page="0" column="19">deSaloonCrabat</train>
-        <train row="0" page="0" column="20">deSaloonOutlawCossack</train>
-        <train row="0" page="0" column="21">deSaloonOutlawCossackRider</train>
-        <train row="0" page="0" column="22">deSaloonOutlawAfricanSpearman</train>
-        <train row="0" page="0" column="23">deSaloonOutlawKnifeThrower</train>
-        <train row="0" page="0" column="24">deSaloonOutlawColoRifle</train>
-        <train row="0" page="0" column="25">MercBarbaryCorsair</train>
-        <train row="0" page="0" column="26">ypDacoit</train>
-        <train row="0" page="0" column="27">ypThuggee</train>
-        <train row="0" page="0" column="28">ypMercArsonist</train>
-        <train row="0" page="1" column="0">ypWokouBlindMonk</train>
-        <train row="0" page="1" column="1">ypWokouPirate</train>
-        <train row="0" page="1" column="2">ypWokouWanderingHorseman</train>
-        <train row="0" page="1" column="3">ypWokouWaywardRonin</train>
-        <tech row="0" page="1" column="1">DETavernFolkHeroes</tech>
+        <train page="0" column="0">SaloonOutlawPistol</train>
+        <train page="0" column="1">SaloonOutlawRider</train>
+        <train page="0" column="2">SaloonOutlawRifleman</train>
+        <train page="0" column="3">SaloonPirate</train>
+        <train page="0" column="4">deOutlawDesertWarrior</train>
+        <train page="0" column="5">deOutlawDesertArcher</train>
+        <train page="0" column="6">deOutlawDesertRaider</train>
+        <train page="0" column="7">deSaloonDesperado</train>
+        <train page="0" column="8">deSaloonVaquero</train>
+        <train page="0" column="9">deSaloonBandido</train>
+        <train page="0" column="10">deSaloonGunslinger</train>
+        <train page="0" column="11">deSaloonOwlhoot</train>
+        <train page="0" column="12">deSaloonCowboy</train>
+        <train page="0" column="13">deSaloonOutlawBuccaneer</train>
+        <train page="0" column="14">deSaloonOutlawBlowgunner</train>
+        <train page="0" column="15">deSaloonOutlawArsonist</train>
+        <train page="0" column="16">deSaloonHajduk</train>
+        <train page="0" column="17">deSaloonInquisitor</train>
+        <train page="0" column="18">deSaloonHighwaymanRider</train>
+        <train page="0" column="19">deSaloonCrabat</train>
+        <train page="0" column="20">deSaloonOutlawCossack</train>
+        <train page="0" column="21">deSaloonOutlawCossackRider</train>
+        <train page="0" column="22">deSaloonOutlawAfricanSpearman</train>
+        <train page="0" column="23">deSaloonOutlawKnifeThrower</train>
+        <train page="0" column="24">deSaloonOutlawColoRifle</train>
+        <train page="0" column="25">MercBarbaryCorsair</train>
+        <train page="0" column="26">ypDacoit</train>
+        <train page="0" column="27">ypThuggee</train>
+        <train page="0" column="28">ypMercArsonist</train>
+        <train page="1" column="0">ypWokouBlindMonk</train>
+        <train page="1" column="1">ypWokouPirate</train>
+        <train page="1" column="2">ypWokouWanderingHorseman</train>
+        <train page="1" column="3">ypWokouWaywardRonin</train>
+        <tech page="1" column="1">DETavernFolkHeroes</tech>
         <flag>HeroName2</flag>
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>

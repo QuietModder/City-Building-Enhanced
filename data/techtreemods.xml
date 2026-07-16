@@ -5182,7 +5182,7 @@
         <cost resourcetype="Ships">1.0000</cost>
         <researchpoints>40.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\hc_food_crate\hc_food_crate_128.png</icon>
+        <icon>resources\images\icons\techs\infinite_food.png</icon>
         <flag>YPInfiniteTech</flag>
         <effects>
             <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="CrateofFood" relativity="Absolute">
@@ -5198,7 +5198,7 @@
         <cost resourcetype="Ships">1.0000</cost>
         <researchpoints>40.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\hc_wood_crate\hc_wood_crate_128.png</icon>
+        <icon>resources\images\icons\techs\infinite_wood.png</icon>
         <flag>YPInfiniteTech</flag>
         <effects>
             <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="CrateofWood" relativity="Absolute">
@@ -5214,7 +5214,7 @@
         <cost resourcetype="Ships">1.0000</cost>
         <researchpoints>40.0000</researchpoints>
         <status>UNOBTAINABLE</status>
-        <icon>resources\images\icons\techs\hc_coin_crate\hc_coin_crate.png</icon>
+        <icon>resources\images\icons\techs\infinite_gold.png</icon>
         <flag>YPInfiniteTech</flag>
         <effects>
             <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="CrateofCoin" relativity="Absolute">
