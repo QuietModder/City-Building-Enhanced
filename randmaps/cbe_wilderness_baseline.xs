@@ -5,13 +5,9 @@ include "mercenaries.xs";
 include "ypAsianInclude.xs";
 include "ypKOTHInclude.xs";
 
-//File in charge doing the biome theme and region flavor selection (Does not generate the map, just sets the theme and flavor for the map generation)
-include "extensions/cbeThemeModel.xs";
-
-// File in charge of placing trade routes and trade route sockets
+// CBE Extensions
+include "extensions/cbeMapValueSetter.xs";
 include "extensions/cbeTradeRoutes.xs";
-
-// File in charge of placing the feature groupings on the map (Does not generate the map, just places the groupings)
 include "extensions/cbeFeatureGroupings.xs";
 
 void main(void)
@@ -42,6 +38,15 @@ void main(void)
 	string cbeRegionName = cbeGetRegionName(cbeRegionFlavor);
 
 	// ================================================================
+	// Geography Model
+	// ================================================================
+
+	int cbeGeographyLandform = cbeChooseGeographyLandform(cbeBiomeTheme, cbeRegionFlavor);
+	int cbeGeographyModifier = cbeChooseGeographyModifier(cbeGeographyLandform, cbeBiomeTheme, cbeRegionFlavor);
+	string cbeGeographyLandformName = cbeGetGeographyLandformName(cbeGeographyLandform);
+	string cbeGeographyModifierName = cbeGetGeographyModifierName(cbeGeographyModifier);
+
+	// ================================================================
 	// Land Feature Flags
 	// ================================================================
 
@@ -57,22 +62,22 @@ void main(void)
 	int cbeHasDenseWilds = 0;
 	int cbeHasAncientRuins = 0;
 
-	cbeHasRiver = cbeRollFeatureEnabled(cbeFeatureWeightRiver(cbeBiomeTheme));
-	cbeHasCliffs = cbeRollFeatureEnabled(cbeFeatureWeightCliffs(cbeBiomeTheme));
-	cbeHasMountains = cbeRollFeatureEnabled(cbeFeatureWeightMountains(cbeBiomeTheme));
+	cbeHasRiver = cbeRollFeatureEnabled(cbeFeatureWeightRiver(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
+	cbeHasCliffs = cbeRollFeatureEnabled(cbeFeatureWeightCliffs(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
+	cbeHasMountains = cbeRollFeatureEnabled(cbeFeatureWeightMountains(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
 	cbeHasCaves = cbeRollFeatureEnabled(cbeFeatureWeightCaves(cbeBiomeTheme));
-	cbeHasCoast = cbeRollFeatureEnabled(cbeFeatureWeightCoast(cbeBiomeTheme));
+	cbeHasCoast = cbeRollFeatureEnabled(cbeFeatureWeightCoast(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
 	cbeHasDenseWilds = cbeRollFeatureEnabled(cbeFeatureWeightDenseWilds(cbeBiomeTheme));
 	cbeHasAncientRuins = cbeRollFeatureEnabled(cbeFeatureWeightRuins(cbeBiomeTheme));
 
-	// ================================================================
-	// Feature Relationships
-	// ================================================================
-
-	int cbeRouteRiverRelationship = cbeRollRouteRiverRelationship(cbeHasTradeRoute, cbeHasRiver);
-	int cbeRouteMesaRelationship = cbeRollRouteMesaRelationship(cbeHasTradeRoute, cbeHasCliffs, cbeHasMountains);
-	int cbeRouteDenseWildsRelationship = cbeRollRouteDenseWildsRelationship(cbeHasTradeRoute, cbeHasDenseWilds);
-
+	if (cbeGeographyRequiresRiver(cbeGeographyLandform, cbeGeographyModifier) == 1)
+		cbeHasRiver = 1;
+	if (cbeGeographyRequiresCoast(cbeGeographyLandform, cbeGeographyModifier) == 1)
+		cbeHasCoast = 1;
+	if (cbeGeographyRequiresCliffs(cbeGeographyLandform, cbeGeographyModifier) == 1)
+		cbeHasCliffs = 1;
+	if (cbeGeographyRequiresMountains(cbeGeographyLandform, cbeGeographyModifier) == 1)
+		cbeHasMountains = 1;
 	rmEchoInfo("CBE Feature TradeRoute = "+cbeHasTradeRoute);
 	rmEchoInfo("CBE Feature River = "+cbeHasRiver);
 	rmEchoInfo("CBE Feature Cliffs = "+cbeHasCliffs);
@@ -81,9 +86,6 @@ void main(void)
 	rmEchoInfo("CBE Feature Coast = "+cbeHasCoast);
 	rmEchoInfo("CBE Feature DenseWilds = "+cbeHasDenseWilds);
 	rmEchoInfo("CBE Feature AncientRuins = "+cbeHasAncientRuins);
-	rmEchoInfo("CBE Route/River Relationship = "+cbeRouteRiverRelationship);
-	rmEchoInfo("CBE Route/Mesa Relationship = "+cbeRouteMesaRelationship);
-	rmEchoInfo("CBE Route/DenseWilds Relationship = "+cbeRouteDenseWildsRelationship);
 
 	// ================================================================
 	// Map Setup
@@ -122,6 +124,8 @@ void main(void)
 	rmEchoInfo("CBE Wilderness Baseline size = "+size+"m x "+size+"m");
 	rmEchoInfo("CBE Biome Theme = "+cbeBiomeName);
 	rmEchoInfo("CBE Region Flavor = "+cbeRegionName);
+	rmEchoInfo("CBE Geography Landform = "+cbeGeographyLandformName);
+	rmEchoInfo("CBE Geography Modifier = "+cbeGeographyModifierName);
 	rmSetMapSize(size, size);
 
 	rmSetWorldCircleConstraint(false);
@@ -135,10 +139,72 @@ void main(void)
 
 	chooseMercs();
 
-	string cbeDebugThemeMessage = "CBE Wilderness: "+cbeBiomeName+" biome ("+cbeRegionName+" region)";
-	string cbeDebugFeaturesAMessage = "Features (1=yes): trade route "+cbeHasTradeRoute+", river "+cbeHasRiver+", cliffs "+cbeHasCliffs+", mountains "+cbeHasMountains;
-	string cbeDebugFeaturesBMessage = "Features (1=yes): caves "+cbeHasCaves+", coast "+cbeHasCoast+", dense wilds "+cbeHasDenseWilds+", ruins "+cbeHasAncientRuins;
-	string cbeDebugRouteMessage = "Route logic: river "+cbeGetRouteRiverRelationshipName(cbeRouteRiverRelationship)+", mesa "+cbeGetRouteMesaRelationshipName(cbeRouteMesaRelationship)+", wilds "+cbeGetRouteDenseWildsRelationshipName(cbeRouteDenseWildsRelationship);
+	string cbeDenseWildsName = "Dense Wilds";
+	if (cbeBiomeTheme == cbeBiomeForest())
+		cbeDenseWildsName = "Dense Forest";
+	else if (cbeBiomeTheme == cbeBiomeJungle())
+		cbeDenseWildsName = "Dense Jungle";
+
+	string cbeFeatureList = "";
+	int cbeFeatureCount = 0;
+	if (cbeHasTradeRoute == 1)
+	{
+		cbeFeatureList = "Trade Route";
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeHasRiver == 1)
+	{
+		if (cbeFeatureCount > 0)
+			cbeFeatureList = cbeFeatureList + ", ";
+		cbeFeatureList = cbeFeatureList + "River";
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeHasCliffs == 1)
+	{
+		if (cbeFeatureCount > 0)
+			cbeFeatureList = cbeFeatureList + ", ";
+		cbeFeatureList = cbeFeatureList + "Cliffs";
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeHasMountains == 1)
+	{
+		if (cbeFeatureCount > 0)
+			cbeFeatureList = cbeFeatureList + ", ";
+		cbeFeatureList = cbeFeatureList + "Mountains";
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeHasCaves == 1)
+	{
+		if (cbeFeatureCount > 0)
+			cbeFeatureList = cbeFeatureList + ", ";
+		cbeFeatureList = cbeFeatureList + "Caves";
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeHasCoast == 1)
+	{
+		if (cbeFeatureCount > 0)
+			cbeFeatureList = cbeFeatureList + ", ";
+		cbeFeatureList = cbeFeatureList + "Coast";
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeHasDenseWilds == 1)
+	{
+		if (cbeFeatureCount > 0)
+			cbeFeatureList = cbeFeatureList + ", ";
+		cbeFeatureList = cbeFeatureList + cbeDenseWildsName;
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeHasAncientRuins == 1)
+	{
+		if (cbeFeatureCount > 0)
+			cbeFeatureList = cbeFeatureList + ", ";
+		cbeFeatureList = cbeFeatureList + "Ancient Ruins";
+		cbeFeatureCount = cbeFeatureCount + 1;
+	}
+	if (cbeFeatureCount == 0)
+		cbeFeatureList = "Open Wilderness";
+
+	string cbeDebugSummaryMessage = "<font=largeingame 24><color=0.4,1,0.45>CBE Wilderness: "+cbeBiomeName+" / "+cbeRegionName+" / "+cbeGeographyLandformName+" ("+cbeGeographyModifierName+") / Features: "+cbeFeatureList;
 
 	rmCreateTrigger("cbeMapDecisionSummary");
 	rmSwitchToTrigger(rmTriggerID("cbeMapDecisionSummary"));
@@ -150,16 +216,7 @@ void main(void)
 	rmSetTriggerConditionParamInt("Param1", 2, false);
 	rmAddTriggerEffect("Send Chat As String");
 	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", cbeDebugThemeMessage, false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", cbeDebugFeaturesAMessage, false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", cbeDebugFeaturesBMessage, false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", cbeDebugRouteMessage, false);
+	rmSetTriggerEffectParam("Message", cbeDebugSummaryMessage, false);
 
 	// ================================================================
 	// Classes
@@ -304,7 +361,7 @@ void main(void)
 
 	if (cbeHasTradeRoute == 1)
 	{
-		cbePlaceTradeRoute(cbeRouteRiverRelationship, cbeRouteMesaRelationship, classSocket);
+		cbePlaceTradeRoute(0, 0, classSocket);
 	}
 
 	// ================================================================

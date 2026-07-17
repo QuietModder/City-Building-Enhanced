@@ -1,3 +1,32 @@
+// ================================================================
+// Route Relationship Values
+// ================================================================
+
+int cbeRouteRiverNone(void)
+{
+	return(0);
+}
+
+int cbeRouteRiverParallelOffset(void)
+{
+	return(2);
+}
+
+int cbeRouteMesaNone(void)
+{
+	return(0);
+}
+
+int cbeRouteMesaCutsPass(void)
+{
+	return(1);
+}
+
+int cbeRouteMesaSkirts(void)
+{
+	return(2);
+}
+
 void cbePlaceTradeRoute(int cbeRouteRiverRelationship = 0, int cbeRouteMesaRelationship = 0, int classSocket = -1)
 {
 	int cbeTradeRouteID = rmCreateTradeRoute();
