@@ -7,6 +7,7 @@ include "ypKOTHInclude.xs";
 
 // CBE Extensions
 include "extensions/cbeMapValueSetter.xs";
+include "extensions/cbeMapSizeSetter.xs";
 include "extensions/cbeTradeRoutes.xs";
 include "extensions/cbeFeatureGroupings.xs";
 
@@ -91,33 +92,8 @@ void main(void)
 	// Map Setup
 	// ================================================================
 
-	// Wilderness player-tile curve.
-	int playerTiles = 12500;
-	if (rmGetIsTreaty() == true)
-	{
-		if (PlayerNum == 2)
-			playerTiles = 16000;
-		if (PlayerNum > 2)
-			playerTiles = 13000;
-		if (PlayerNum > 4)
-			playerTiles = 10500;
-		if (PlayerNum > 6)
-			playerTiles = 8500;
-	}
-	else
-	{
-		if (PlayerNum == 2)
-			playerTiles = 14000;
-		if (PlayerNum > 2)
-			playerTiles = 11000;
-		if (PlayerNum > 4)
-			playerTiles = 9000;
-		if (PlayerNum > 6)
-			playerTiles = 7200;
-	}
-
-	// Global map footprint multiplier.
-	float cbeMapScale = 6.0;
+	int playerTiles = cbeGetPlayerTiles(PlayerNum);
+	float cbeMapScale = cbeGetMapScale();
 	playerTiles = playerTiles * cbeMapScale;
 
 	int size = 2.0 * sqrt(PlayerNum * playerTiles);
