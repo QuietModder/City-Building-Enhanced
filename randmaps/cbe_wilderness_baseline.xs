@@ -8,6 +8,7 @@ include "ypKOTHInclude.xs";
 // CBE Extensions
 include "extensions/cbeMapValueSetter.xs";
 include "extensions/cbeMapSizeSetter.xs";
+include "extensions/cbeMapMessages.xs";
 include "extensions/cbeTradeRoutes.xs";
 include "extensions/cbeFeatureGroupings.xs";
 
@@ -51,25 +52,14 @@ void main(void)
 	// Land Feature Flags
 	// ================================================================
 
-	// Always-on features.
 	int cbeHasTradeRoute = 0;
-
-	// Weighted features.
-	int cbeHasRiver = 0;
-	int cbeHasCliffs = 0;
-	int cbeHasMountains = 0;
-	int cbeHasCaves = 0;
-	int cbeHasCoast = 0;
-	int cbeHasDenseWilds = 0;
-	int cbeHasAncientRuins = 0;
-
-	cbeHasRiver = cbeRollFeatureEnabled(cbeFeatureWeightRiver(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	cbeHasCliffs = cbeRollFeatureEnabled(cbeFeatureWeightCliffs(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	cbeHasMountains = cbeRollFeatureEnabled(cbeFeatureWeightMountains(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	cbeHasCaves = cbeRollFeatureEnabled(cbeFeatureWeightCaves(cbeBiomeTheme));
-	cbeHasCoast = cbeRollFeatureEnabled(cbeFeatureWeightCoast(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	cbeHasDenseWilds = cbeRollFeatureEnabled(cbeFeatureWeightDenseWilds(cbeBiomeTheme));
-	cbeHasAncientRuins = cbeRollFeatureEnabled(cbeFeatureWeightRuins(cbeBiomeTheme));
+	int cbeHasRiver = cbeRollFeatureEnabled(cbeFeatureWeightRiver(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
+	int cbeHasCliffs = cbeRollFeatureEnabled(cbeFeatureWeightCliffs(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
+	int cbeHasMountains = cbeRollFeatureEnabled(cbeFeatureWeightMountains(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
+	int cbeHasCaves = cbeRollFeatureEnabled(cbeFeatureWeightCaves(cbeBiomeTheme));
+	int cbeHasCoast = cbeRollFeatureEnabled(cbeFeatureWeightCoast(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
+	int cbeHasDenseWilds = cbeRollFeatureEnabled(cbeFeatureWeightDenseWilds(cbeBiomeTheme));
+	int cbeHasAncientRuins = cbeRollFeatureEnabled(cbeFeatureWeightRuins(cbeBiomeTheme));
 
 	if (cbeGeographyRequiresRiver(cbeGeographyLandform, cbeGeographyModifier) == 1)
 		cbeHasRiver = 1;
@@ -79,6 +69,11 @@ void main(void)
 		cbeHasCliffs = 1;
 	if (cbeGeographyRequiresMountains(cbeGeographyLandform, cbeGeographyModifier) == 1)
 		cbeHasMountains = 1;
+
+	// ================================================================
+	// Map Decision Logging
+	// ================================================================
+
 	rmEchoInfo("CBE Feature TradeRoute = "+cbeHasTradeRoute);
 	rmEchoInfo("CBE Feature River = "+cbeHasRiver);
 	rmEchoInfo("CBE Feature Cliffs = "+cbeHasCliffs);
@@ -115,84 +110,12 @@ void main(void)
 
 	chooseMercs();
 
-	string cbeDenseWildsName = "Dense Wilds";
-	if (cbeBiomeTheme == cbeBiomeForest())
-		cbeDenseWildsName = "Dense Forest";
-	else if (cbeBiomeTheme == cbeBiomeJungle())
-		cbeDenseWildsName = "Dense Jungle";
-
-	string cbeFeatureList = "";
-	int cbeFeatureCount = 0;
-	if (cbeHasTradeRoute == 1)
-	{
-		cbeFeatureList = "Trade Route";
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeHasRiver == 1)
-	{
-		if (cbeFeatureCount > 0)
-			cbeFeatureList = cbeFeatureList + ", ";
-		cbeFeatureList = cbeFeatureList + "River";
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeHasCliffs == 1)
-	{
-		if (cbeFeatureCount > 0)
-			cbeFeatureList = cbeFeatureList + ", ";
-		cbeFeatureList = cbeFeatureList + "Cliffs";
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeHasMountains == 1)
-	{
-		if (cbeFeatureCount > 0)
-			cbeFeatureList = cbeFeatureList + ", ";
-		cbeFeatureList = cbeFeatureList + "Mountains";
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeHasCaves == 1)
-	{
-		if (cbeFeatureCount > 0)
-			cbeFeatureList = cbeFeatureList + ", ";
-		cbeFeatureList = cbeFeatureList + "Caves";
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeHasCoast == 1)
-	{
-		if (cbeFeatureCount > 0)
-			cbeFeatureList = cbeFeatureList + ", ";
-		cbeFeatureList = cbeFeatureList + "Coast";
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeHasDenseWilds == 1)
-	{
-		if (cbeFeatureCount > 0)
-			cbeFeatureList = cbeFeatureList + ", ";
-		cbeFeatureList = cbeFeatureList + cbeDenseWildsName;
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeHasAncientRuins == 1)
-	{
-		if (cbeFeatureCount > 0)
-			cbeFeatureList = cbeFeatureList + ", ";
-		cbeFeatureList = cbeFeatureList + "Ancient Ruins";
-		cbeFeatureCount = cbeFeatureCount + 1;
-	}
-	if (cbeFeatureCount == 0)
-		cbeFeatureList = "Open Wilderness";
-
-	string cbeDebugSummaryMessage = "<font=largeingame 24><color=0.4,1,0.45>CBE Wilderness: "+cbeBiomeName+" / "+cbeRegionName+" / "+cbeGeographyLandformName+" ("+cbeGeographyModifierName+") / Features: "+cbeFeatureList;
-
-	rmCreateTrigger("cbeMapDecisionSummary");
-	rmSwitchToTrigger(rmTriggerID("cbeMapDecisionSummary"));
-	rmSetTriggerPriority(4);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Timer");
-	rmSetTriggerConditionParamInt("Param1", 2, false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", cbeDebugSummaryMessage, false);
+	cbeShowMapSummaryMessage(
+		cbeBiomeTheme, cbeRegionFlavor,
+		cbeGeographyLandform, cbeGeographyModifier,
+		cbeHasTradeRoute, cbeHasRiver, cbeHasCliffs, cbeHasMountains,
+		cbeHasCaves, cbeHasCoast, cbeHasDenseWilds, cbeHasAncientRuins
+	);
 
 	// ================================================================
 	// Classes
