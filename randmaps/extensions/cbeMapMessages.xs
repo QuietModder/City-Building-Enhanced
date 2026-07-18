@@ -1,8 +1,80 @@
 // CBE Map Messages
 
 // ================================================================
-// Feature Names
+// Display Names
 // ================================================================
+
+string cbeGetBiomeName(int biomeTheme = 1)
+{
+	if (biomeTheme == cbeBiomeJungle())
+		return("Jungle");
+	if (biomeTheme == cbeBiomeDesert())
+		return("Desert");
+	if (biomeTheme == cbeBiomePlains())
+		return("Plains");
+	if (biomeTheme == cbeBiomeMountain())
+		return("Mountain");
+	if (biomeTheme == cbeBiomeWetlandIsland())
+		return("Wetland / Island");
+	if (biomeTheme == cbeBiomeColdNorth())
+		return("Cold North");
+	if (biomeTheme == cbeBiomeCave())
+		return("Cave");
+	return("Forest");
+}
+
+string cbeGetRegionName(int regionFlavor = 1)
+{
+	if (regionFlavor == cbeRegionEurope())
+		return("Europe");
+	if (regionFlavor == cbeRegionAsia())
+		return("Asia");
+	if (regionFlavor == cbeRegionSouthAmerica())
+		return("Central / South America");
+	if (regionFlavor == cbeRegionAfrica())
+		return("Africa");
+	if (regionFlavor == cbeRegionIsland())
+		return("Island");
+	if (regionFlavor == cbeRegionUnderground())
+		return("Underground");
+	return("North America");
+}
+
+string cbeGetGeographyLandformName(int geographyLandform = 1)
+{
+	if (geographyLandform == cbeGeoRiverBasin())
+		return("River Basin");
+	if (geographyLandform == cbeGeoDelta())
+		return("Delta");
+	if (geographyLandform == cbeGeoHarbor())
+		return("Harbor");
+	if (geographyLandform == cbeGeoPeninsula())
+		return("Peninsula");
+	if (geographyLandform == cbeGeoFjord())
+		return("Fjord");
+	if (geographyLandform == cbeGeoCanyonlands())
+		return("Canyonlands");
+	if (geographyLandform == cbeGeoHighlandValley())
+		return("Highland Valley");
+	if (geographyLandform == cbeGeoIslandCoast())
+		return("Island Coast");
+	return("Inland");
+}
+
+string cbeGetGeographyModifierName(int geographyModifier = 0)
+{
+	if (geographyModifier == cbeGeoModCliffCoast())
+		return("Cliff Coast");
+	if (geographyModifier == cbeGeoModRiverCutValley())
+		return("River-Cut Valley");
+	if (geographyModifier == cbeGeoModMarshLowlands())
+		return("Marsh Lowlands");
+	if (geographyModifier == cbeGeoModBrokenHighlands())
+		return("Broken Highlands");
+	if (geographyModifier == cbeGeoModShelteredBay())
+		return("Sheltered Bay");
+	return("None");
+}
 
 string cbeGetDenseWildsName(int biomeTheme = 1)
 {

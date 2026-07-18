@@ -39,6 +39,11 @@ int cbeBiomeColdNorth(void)
 	return(7);
 }
 
+int cbeBiomeCave(void)
+{
+	return(8);
+}
+
 // ================================================================
 // Region Values
 // ================================================================
@@ -71,6 +76,11 @@ int cbeRegionAfrica(void)
 int cbeRegionIsland(void)
 {
 	return(6);
+}
+
+int cbeRegionUnderground(void)
+{
+	return(7);
 }
 
 // ================================================================
@@ -163,8 +173,12 @@ int cbeRollMapFeature(int weight = 0)
 	return(0);
 }
 
+// Rolls if city-state groupings can spawn: cbe_city_state_outpost_01-04, cbe_city_state_venetian_01-04.
 int cbeRollCityStates(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 30;
 	if (regionFlavor == cbeRegionEurope())
 		weight = weight + 20;
@@ -179,8 +193,12 @@ int cbeRollCityStates(int biomeTheme = 1, int regionFlavor = 1, int geographyLan
 	return(cbeRollMapFeature(weight));
 }
 
+// Rolls if district groupings can spawn: cbe_feature_district_01-04.
 int cbeRollDistricts(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 20;
 	if (regionFlavor == cbeRegionEurope())
 		weight = weight + 15;
@@ -191,8 +209,12 @@ int cbeRollDistricts(int biomeTheme = 1, int regionFlavor = 1, int geographyLand
 	return(cbeRollMapFeature(weight));
 }
 
+// Rolls if village feature groupings can spawn: cbe_feature_farming_01-03, cbe_feature_lumber_01-03, cbe_feature_mining_01-03.
 int cbeRollFeatureVillages(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 45;
 	if (biomeTheme == cbeBiomeForest())
 		weight = weight + 10;
@@ -203,8 +225,12 @@ int cbeRollFeatureVillages(int biomeTheme = 1, int regionFlavor = 1, int geograp
 	return(cbeRollMapFeature(weight));
 }
 
+// Rolls if outlaw camp groupings can spawn: cbe_outlaw_trading_camp_01-04.
 int cbeRollOutlawCamps(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(cbeRollMapFeature(25));
+
 	int weight = 35;
 	if (biomeTheme == cbeBiomeDesert())
 		weight = weight + 15;
@@ -215,8 +241,12 @@ int cbeRollOutlawCamps(int biomeTheme = 1, int regionFlavor = 1, int geographyLa
 	return(cbeRollMapFeature(weight));
 }
 
+// Rolls if merchant outpost groupings can spawn: cbe_merchant_01-03.
 int cbeRollMerchantOutposts(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 30;
 	if (geographyLandform == cbeGeoHarbor())
 		weight = weight + 20;
@@ -233,14 +263,18 @@ int cbeRollMerchantOutposts(int biomeTheme = 1, int regionFlavor = 1, int geogra
 
 int cbeChooseBiomeTheme(void)
 {
-	return(rmRandInt(1, 7));
+	return(rmRandInt(1, 8));
 }
 
 int cbeChooseRegionFlavor(int biomeTheme = 1)
 {
 	int themeRoll = -1;
 
-	if (biomeTheme == cbeBiomeForest())
+	if (biomeTheme == cbeBiomeCave())
+	{
+		return(cbeRegionUnderground());
+	}
+	else if (biomeTheme == cbeBiomeForest())
 	{
 		themeRoll = rmRandInt(1, 3);
 		if (themeRoll == 1)
@@ -313,7 +347,13 @@ int cbeChooseGeographyLandform(int biomeTheme = 1, int regionFlavor = 1)
 {
 	int roll = rmRandInt(1, 100);
 
-	if (biomeTheme == cbeBiomeWetlandIsland())
+	if (biomeTheme == cbeBiomeCave())
+	{
+		if (roll <= 55)
+			return(cbeGeoRiverBasin());
+		return(cbeGeoCanyonlands());
+	}
+	else if (biomeTheme == cbeBiomeWetlandIsland())
 	{
 		if (roll <= 25)
 			return(cbeGeoDelta());
@@ -379,7 +419,25 @@ int cbeChooseGeographyModifier(int geographyLandform = 1, int biomeTheme = 1, in
 {
 	int roll = rmRandInt(1, 100);
 
-	if (geographyLandform == cbeGeoDelta())
+	if (biomeTheme == cbeBiomeCave())
+	{
+		if (geographyLandform == cbeGeoRiverBasin())
+		{
+			if (roll <= 60)
+				return(cbeGeoModRiverCutValley());
+			return(cbeGeoModNone());
+		}
+		if (geographyLandform == cbeGeoCanyonlands())
+		{
+			if (roll <= 45)
+				return(cbeGeoModRiverCutValley());
+			if (roll <= 80)
+				return(cbeGeoModBrokenHighlands());
+			return(cbeGeoModNone());
+		}
+		return(cbeGeoModNone());
+	}
+	else if (geographyLandform == cbeGeoDelta())
 	{
 		if (roll <= 65)
 			return(cbeGeoModMarshLowlands());
@@ -440,83 +498,14 @@ int cbeChooseGeographyModifier(int geographyLandform = 1, int biomeTheme = 1, in
 }
 
 // ================================================================
-// Display Names
-// ================================================================
-
-string cbeGetBiomeName(int biomeTheme = 1)
-{
-	if (biomeTheme == cbeBiomeJungle())
-		return("Jungle");
-	if (biomeTheme == cbeBiomeDesert())
-		return("Desert");
-	if (biomeTheme == cbeBiomePlains())
-		return("Plains");
-	if (biomeTheme == cbeBiomeMountain())
-		return("Mountain");
-	if (biomeTheme == cbeBiomeWetlandIsland())
-		return("Wetland / Island");
-	if (biomeTheme == cbeBiomeColdNorth())
-		return("Cold North");
-	return("Forest");
-}
-
-string cbeGetRegionName(int regionFlavor = 1)
-{
-	if (regionFlavor == cbeRegionEurope())
-		return("Europe");
-	if (regionFlavor == cbeRegionAsia())
-		return("Asia");
-	if (regionFlavor == cbeRegionSouthAmerica())
-		return("Central / South America");
-	if (regionFlavor == cbeRegionAfrica())
-		return("Africa");
-	if (regionFlavor == cbeRegionIsland())
-		return("Island");
-	return("North America");
-}
-
-string cbeGetGeographyLandformName(int geographyLandform = 1)
-{
-	if (geographyLandform == cbeGeoRiverBasin())
-		return("River Basin");
-	if (geographyLandform == cbeGeoDelta())
-		return("Delta");
-	if (geographyLandform == cbeGeoHarbor())
-		return("Harbor");
-	if (geographyLandform == cbeGeoPeninsula())
-		return("Peninsula");
-	if (geographyLandform == cbeGeoFjord())
-		return("Fjord");
-	if (geographyLandform == cbeGeoCanyonlands())
-		return("Canyonlands");
-	if (geographyLandform == cbeGeoHighlandValley())
-		return("Highland Valley");
-	if (geographyLandform == cbeGeoIslandCoast())
-		return("Island Coast");
-	return("Inland");
-}
-
-string cbeGetGeographyModifierName(int geographyModifier = 0)
-{
-	if (geographyModifier == cbeGeoModCliffCoast())
-		return("Cliff Coast");
-	if (geographyModifier == cbeGeoModRiverCutValley())
-		return("River-Cut Valley");
-	if (geographyModifier == cbeGeoModMarshLowlands())
-		return("Marsh Lowlands");
-	if (geographyModifier == cbeGeoModBrokenHighlands())
-		return("Broken Highlands");
-	if (geographyModifier == cbeGeoModShelteredBay())
-		return("Sheltered Bay");
-	return("None");
-}
-
-// ================================================================
 // Feature Weights
 // ================================================================
 
 int cbeFeatureWeightRiver(int biomeTheme = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(70);
+
 	int weight = 45;
 	if (biomeTheme == cbeBiomeForest())
 		weight = weight + 10;
@@ -535,6 +524,9 @@ int cbeFeatureWeightRiver(int biomeTheme = 1, int geographyLandform = 1, int geo
 
 int cbeFeatureWeightCliffs(int biomeTheme = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(70);
+
 	int weight = 40;
 	if (biomeTheme == cbeBiomeDesert())
 		weight = weight + 20;
@@ -551,6 +543,9 @@ int cbeFeatureWeightCliffs(int biomeTheme = 1, int geographyLandform = 1, int ge
 
 int cbeFeatureWeightMountains(int biomeTheme = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 30;
 	if (biomeTheme == cbeBiomeMountain())
 		weight = weight + 30;
@@ -563,6 +558,9 @@ int cbeFeatureWeightMountains(int biomeTheme = 1, int geographyLandform = 1, int
 
 int cbeFeatureWeightCaves(int biomeTheme = 1)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 25;
 	if (biomeTheme == cbeBiomeDesert())
 		weight = weight + 20;
@@ -573,6 +571,9 @@ int cbeFeatureWeightCaves(int biomeTheme = 1)
 
 int cbeFeatureWeightCoast(int biomeTheme = 1, int geographyLandform = 1, int geographyModifier = 0)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 25;
 	if (biomeTheme == cbeBiomeWetlandIsland())
 		weight = weight + 35;
@@ -583,6 +584,9 @@ int cbeFeatureWeightCoast(int biomeTheme = 1, int geographyLandform = 1, int geo
 
 int cbeFeatureWeightDenseWilds(int biomeTheme = 1)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(0);
+
 	int weight = 45;
 	if (biomeTheme == cbeBiomeForest())
 		weight = weight + 20;
@@ -599,6 +603,9 @@ int cbeFeatureWeightDenseWilds(int biomeTheme = 1)
 
 int cbeFeatureWeightRuins(int biomeTheme = 1)
 {
+	if (biomeTheme == cbeBiomeCave())
+		return(45);
+
 	int weight = 35;
 	if (biomeTheme == cbeBiomeForest())
 		weight = weight + 10;
