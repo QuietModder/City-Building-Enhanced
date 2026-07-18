@@ -434,6 +434,123 @@ int cbeRollMapFeature(int weight = 0)
 	return(0);
 }
 
+/*
+	Description: Rogue preset for frontier/outlaw raid forces.
+
+	Unit Theme: Bandits, outlaws, raiders, and tavern-style irregulars.
+	Map Bias: North America, plains, desert, and outlaw camp maps.
+*/
+int cbeRoguePresetOutlaws(void)
+{
+	return(1);
+}
+
+/*
+	Description: Rogue preset for organized rogue military forces.
+
+	Unit Theme: Professional soldiers, specialized units, and possible artillery.
+	Map Bias: Europe, inland maps, harbor maps, and general fallback use.
+*/
+int cbeRoguePresetProfessionalArmy(void)
+{
+	return(2);
+}
+
+/*
+	Description: Rogue preset for expensive high-danger mercenary forces.
+
+	Unit Theme: Mercenaries and elite hired troops.
+	Map Bias: Can appear on any surface map as a high-threat variant.
+*/
+int cbeRoguePresetMercenaries(void)
+{
+	return(3);
+}
+
+/*
+	Description: Rogue preset for desert and dry-region raider forces.
+
+	Unit Theme: Desert raiders, fast attackers, and arid-region irregulars.
+	Map Bias: Desert, Africa, Asia, and canyonland maps.
+*/
+int cbeRoguePresetDesertRaiders(void)
+{
+	return(4);
+}
+
+/*
+	Description: Rogue preset for expedition/conquistador-style forces.
+
+	Unit Theme: Conquistadors, expedition soldiers, and colonial adventurers.
+	Map Bias: Central/South America, jungle, ruins, and river/coastal exploration maps.
+*/
+int cbeRoguePresetConquistadors(void)
+{
+	return(5);
+}
+
+int cbeChooseRogueArmyPreset(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
+{
+	int outlawsWeight = 20;
+	int professionalWeight = 20;
+	int mercenaryWeight = 15;
+	int desertWeight = 15;
+	int conquistadorWeight = 15;
+	int totalWeight = 0;
+	int roll = 0;
+
+	if (regionFlavor == cbeRegionNorthAmerica())
+		outlawsWeight = outlawsWeight + 25;
+	if (biomeTheme == cbeBiomePlains())
+		outlawsWeight = outlawsWeight + 10;
+	if (biomeTheme == cbeBiomeDesert())
+		outlawsWeight = outlawsWeight + 10;
+
+	if (regionFlavor == cbeRegionEurope())
+		professionalWeight = professionalWeight + 25;
+	if (geographyLandform == cbeGeoInland() || geographyLandform == cbeGeoHarbor())
+		professionalWeight = professionalWeight + 10;
+
+	if (biomeTheme == cbeBiomeDesert())
+		desertWeight = desertWeight + 25;
+	if (regionFlavor == cbeRegionAfrica() || regionFlavor == cbeRegionAsia())
+		desertWeight = desertWeight + 15;
+	if (geographyLandform == cbeGeoCanyonlands())
+		desertWeight = desertWeight + 10;
+
+	if (regionFlavor == cbeRegionSouthAmerica())
+		conquistadorWeight = conquistadorWeight + 30;
+	if (biomeTheme == cbeBiomeJungle())
+		conquistadorWeight = conquistadorWeight + 10;
+	if (geographyLandform == cbeGeoRiverBasin() || geographyLandform == cbeGeoDelta())
+		conquistadorWeight = conquistadorWeight + 5;
+
+	if (biomeTheme == cbeBiomeCave())
+	{
+		outlawsWeight = 30;
+		professionalWeight = 15;
+		mercenaryWeight = 20;
+		desertWeight = 10;
+		conquistadorWeight = 5;
+	}
+
+	totalWeight = outlawsWeight + professionalWeight + mercenaryWeight + desertWeight + conquistadorWeight;
+	roll = rmRandInt(1, totalWeight);
+
+	if (roll <= outlawsWeight)
+		return(cbeRoguePresetOutlaws());
+	roll = roll - outlawsWeight;
+	if (roll <= professionalWeight)
+		return(cbeRoguePresetProfessionalArmy());
+	roll = roll - professionalWeight;
+	if (roll <= mercenaryWeight)
+		return(cbeRoguePresetMercenaries());
+	roll = roll - mercenaryWeight;
+	if (roll <= desertWeight)
+		return(cbeRoguePresetDesertRaiders());
+	return(cbeRoguePresetConquistadors());
+}
+
 // Rolls if city-state groupings can spawn: cbe_city_state_outpost_01-04, cbe_city_state_venetian_01-04.
 int cbeRollCityStates(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
 {

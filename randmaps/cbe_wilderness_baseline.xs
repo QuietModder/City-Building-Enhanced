@@ -65,6 +65,7 @@ void main(void)
 	int cbeHasFeatureVillages = cbeRollFeatureVillages(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
 	int cbeHasOutlawCamps = cbeRollOutlawCamps(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
 	int cbeHasMerchantOutposts = cbeRollMerchantOutposts(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
+	int cbeRogueArmyPreset = cbeChooseRogueArmyPreset(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
 
 	cbeSetupFeatureGroupingSubCivs(cbeHasCityStates, cbeHasDistricts);
 
