@@ -169,7 +169,7 @@ void cbeShowMapSummaryMessage(int biomeTheme = 1, int regionFlavor = 1, int geog
 		hasTradeRoute, hasRiver, hasCliffs, hasMountains,
 		hasCaves, hasCoast, hasDenseWilds, hasAncientRuins
 	);
-	string summaryMessage = "<font=largeingame 24><color=0.4,1,0.45>CBE Wilderness: "+biomeName+" / "+regionName+" / "+geographyLandformName+" ("+geographyModifierName+") / Features: "+featureList;
+	string summaryMessage = "<font=largeingame 24><color=0.4,1,0.45>CBE Map: "+biomeName+" | "+regionName+" | "+geographyLandformName+" ("+geographyModifierName+") | "+featureList;
 
 	rmCreateTrigger("cbeMapDecisionSummary");
 	rmSwitchToTrigger(rmTriggerID("cbeMapDecisionSummary"));
@@ -182,4 +182,34 @@ void cbeShowMapSummaryMessage(int biomeTheme = 1, int regionFlavor = 1, int geog
 	rmAddTriggerEffect("Send Chat As String");
 	rmSetTriggerEffectParamInt("PlayerID", 0, false);
 	rmSetTriggerEffectParam("Message", summaryMessage, false);
+}
+
+void cbeShowWorldSetterMessage(string terrainMix = "None", string baseTerrain = "grass", string primaryMapType = "land", string secondaryMapType = "grass", string coastMapType = "land", string seaType = "None", string lightingSet = "Carolina_Skirmish")
+{
+	string terrainMessage = "<font=largeingame 24><color=0.45,0.85,1>World Terrain: "+baseTerrain+" | Mix: "+terrainMix;
+	string setupMessage = "<font=largeingame 24><color=0.45,0.85,1>World Setup: "+primaryMapType+" / "+secondaryMapType+" / "+coastMapType+" | "+seaType+" | "+lightingSet;
+
+	rmCreateTrigger("cbeWorldSetterSummaryTerrain");
+	rmSwitchToTrigger(rmTriggerID("cbeWorldSetterSummaryTerrain"));
+	rmSetTriggerPriority(4);
+	rmSetTriggerActive(true);
+	rmSetTriggerRunImmediately(true);
+	rmSetTriggerLoop(false);
+	rmAddTriggerCondition("Timer");
+	rmSetTriggerConditionParamInt("Param1", 3, false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", terrainMessage, false);
+
+	rmCreateTrigger("cbeWorldSetterSummarySetup");
+	rmSwitchToTrigger(rmTriggerID("cbeWorldSetterSummarySetup"));
+	rmSetTriggerPriority(4);
+	rmSetTriggerActive(true);
+	rmSetTriggerRunImmediately(true);
+	rmSetTriggerLoop(false);
+	rmAddTriggerCondition("Timer");
+	rmSetTriggerConditionParamInt("Param1", 4, false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", setupMessage, false);
 }

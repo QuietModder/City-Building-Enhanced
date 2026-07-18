@@ -1,17 +1,51 @@
 // CBE Wilderness Baseline
 // Stable baseline with Biome Theme + Region Flavor selection.
 
+// ================================================================
+// Global Map Values
+// ================================================================
+
+int cbeGeneratedBiomeTheme = 1;
+int cbeGeneratedRegionFlavor = 1;
+
+int cbeGeneratedGeographyLandform = 1;
+int cbeGeneratedGeographyModifier = 0;
+
+int cbeGeneratedHasTradeRoute = 0;
+int cbeGeneratedHasRiver = 0;
+int cbeGeneratedHasCliffs = 0;
+int cbeGeneratedHasMountains = 0;
+int cbeGeneratedHasCaves = 0;
+int cbeGeneratedHasCoast = 0;
+int cbeGeneratedHasDenseWilds = 0;
+int cbeGeneratedHasAncientRuins = 0;
+
+int cbeGeneratedHasCityStates = 0;
+int cbeGeneratedHasDistricts = 0;
+int cbeGeneratedHasFeatureVillages = 0;
+int cbeGeneratedHasOutlawCamps = 0;
+int cbeGeneratedHasMerchantOutposts = 0;
+int cbeGeneratedRogueArmyPreset = 0;
+
+int cbeGeneratedPlayerTiles = 0;
+float cbeGeneratedMapScale = 1.0;
+int cbeGeneratedMapSize = 0;
+
 include "mercenaries.xs";
 include "ypAsianInclude.xs";
 include "ypKOTHInclude.xs";
 
-// CBE Extensions
-include "extensions/cbeMapValueSetter.xs";
-include "extensions/cbeMapSizeSetter.xs";
-include "extensions/cbeMapMessages.xs";
-include "extensions/cbeWorldSetter.xs";
-include "extensions/cbePlayerPlacement.xs";
-include "extensions/cbeStartingUnits.xs";
+// Value Setter Extensions (Does nothing except roll values to dictate map generation)
+include "extensions/cbeMapValueSetter.xs"; // Sets values for map generation features and geography
+
+// CBE Map Generation
+include "extensions/cbeMapSizeSetter.xs";	// Map Size
+include "extensions/cbeMapMessages.xs";		// Displays map generation summary messages
+include "extensions/cbePlayerPlacement.xs"; // Player Placement
+include "extensions/cbeStartingUnits.xs";	// Starting Units
+include "extensions/cbeWorldSetter.xs";		// Implements Terrain, Lighting, and Water
+
+// ================================================================
 
 void main(void)
 {
@@ -25,68 +59,68 @@ void main(void)
 	// Theme Model
 	// ================================================================
 
-	int cbeBiomeTheme = cbeChooseBiomeTheme();
-	int cbeRegionFlavor = cbeChooseRegionFlavor(cbeBiomeTheme);
+	cbeGeneratedBiomeTheme = cbeChooseBiomeTheme();
+	cbeGeneratedRegionFlavor = cbeChooseRegionFlavor(cbeGeneratedBiomeTheme);
 
 	// ================================================================
 	// Geography Model
 	// ================================================================
 
-	int cbeGeographyLandform = cbeChooseGeographyLandform(cbeBiomeTheme, cbeRegionFlavor);
-	int cbeGeographyModifier = cbeChooseGeographyModifier(cbeGeographyLandform, cbeBiomeTheme, cbeRegionFlavor);
+	cbeGeneratedGeographyLandform = cbeChooseGeographyLandform(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor);
+	cbeGeneratedGeographyModifier = cbeChooseGeographyModifier(cbeGeneratedGeographyLandform, cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor);
 
 	// ================================================================
 	// Land Feature Flags
 	// ================================================================
 
-	int cbeHasTradeRoute = 0;
-	int cbeHasRiver = cbeRollFeatureEnabled(cbeFeatureWeightRiver(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	int cbeHasCliffs = cbeRollFeatureEnabled(cbeFeatureWeightCliffs(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	int cbeHasMountains = cbeRollFeatureEnabled(cbeFeatureWeightMountains(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	int cbeHasCaves = cbeRollFeatureEnabled(cbeFeatureWeightCaves(cbeBiomeTheme));
-	int cbeHasCoast = cbeRollFeatureEnabled(cbeFeatureWeightCoast(cbeBiomeTheme, cbeGeographyLandform, cbeGeographyModifier));
-	int cbeHasDenseWilds = cbeRollFeatureEnabled(cbeFeatureWeightDenseWilds(cbeBiomeTheme));
-	int cbeHasAncientRuins = cbeRollFeatureEnabled(cbeFeatureWeightRuins(cbeBiomeTheme));
+	cbeGeneratedHasTradeRoute = 0;
+	cbeGeneratedHasRiver = cbeRollFeatureEnabled(cbeFeatureWeightRiver(cbeGeneratedBiomeTheme, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier));
+	cbeGeneratedHasCliffs = cbeRollFeatureEnabled(cbeFeatureWeightCliffs(cbeGeneratedBiomeTheme, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier));
+	cbeGeneratedHasMountains = cbeRollFeatureEnabled(cbeFeatureWeightMountains(cbeGeneratedBiomeTheme, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier));
+	cbeGeneratedHasCaves = cbeRollFeatureEnabled(cbeFeatureWeightCaves(cbeGeneratedBiomeTheme));
+	cbeGeneratedHasCoast = cbeRollFeatureEnabled(cbeFeatureWeightCoast(cbeGeneratedBiomeTheme, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier));
+	cbeGeneratedHasDenseWilds = cbeRollFeatureEnabled(cbeFeatureWeightDenseWilds(cbeGeneratedBiomeTheme));
+	cbeGeneratedHasAncientRuins = cbeRollFeatureEnabled(cbeFeatureWeightRuins(cbeGeneratedBiomeTheme));
 
-	if (cbeGeographyRequiresRiver(cbeGeographyLandform, cbeGeographyModifier) == 1)
-		cbeHasRiver = 1;
-	if (cbeGeographyRequiresCoast(cbeGeographyLandform, cbeGeographyModifier) == 1)
-		cbeHasCoast = 1;
-	if (cbeGeographyRequiresCliffs(cbeGeographyLandform, cbeGeographyModifier) == 1)
-		cbeHasCliffs = 1;
-	if (cbeGeographyRequiresMountains(cbeGeographyLandform, cbeGeographyModifier) == 1)
-		cbeHasMountains = 1;
+	if (cbeGeographyRequiresRiver(cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier) == 1)
+		cbeGeneratedHasRiver = 1;
+	if (cbeGeographyRequiresCoast(cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier) == 1)
+		cbeGeneratedHasCoast = 1;
+	if (cbeGeographyRequiresCliffs(cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier) == 1)
+		cbeGeneratedHasCliffs = 1;
+	if (cbeGeographyRequiresMountains(cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier) == 1)
+		cbeGeneratedHasMountains = 1;
 
 	// ================================================================
 	// Map Feature Flags
 	// ================================================================
 
-	int cbeHasCityStates = cbeRollCityStates(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
-	int cbeHasDistricts = cbeRollDistricts(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
-	int cbeHasFeatureVillages = cbeRollFeatureVillages(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
-	int cbeHasOutlawCamps = cbeRollOutlawCamps(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
-	int cbeHasMerchantOutposts = cbeRollMerchantOutposts(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
-	int cbeRogueArmyPreset = cbeChooseRogueArmyPreset(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
+	cbeGeneratedHasCityStates = cbeRollCityStates(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier);
+	cbeGeneratedHasDistricts = cbeRollDistricts(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier);
+	cbeGeneratedHasFeatureVillages = cbeRollFeatureVillages(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier);
+	cbeGeneratedHasOutlawCamps = cbeRollOutlawCamps(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier);
+	cbeGeneratedHasMerchantOutposts = cbeRollMerchantOutposts(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier);
+	cbeGeneratedRogueArmyPreset = cbeChooseRogueArmyPreset(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor, cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier);
 
 	// ================================================================
 	// Map Size
 	// ================================================================
 
-	int playerTiles = cbeGetPlayerTiles(PlayerNum);
-	float cbeMapScale = cbeGetMapScale();
-	playerTiles = playerTiles * cbeMapScale;
+	cbeGeneratedPlayerTiles = cbeGetPlayerTiles(PlayerNum);
+	cbeGeneratedMapScale = cbeGetMapScale();
+	cbeGeneratedPlayerTiles = cbeGeneratedPlayerTiles * cbeGeneratedMapScale;
 
-	int size = 2.0 * sqrt(PlayerNum * playerTiles);
-	rmSetMapSize(size, size);
+	cbeGeneratedMapSize = 2.0 * sqrt(PlayerNum * cbeGeneratedPlayerTiles);
+	rmSetMapSize(cbeGeneratedMapSize, cbeGeneratedMapSize);
 
 	// ================================================================
 	// Base World Setup
 	// ================================================================
 
 	cbeSetBaseWorld(
-		cbeBiomeTheme, cbeRegionFlavor,
-		cbeGeographyLandform, cbeGeographyModifier,
-		cbeHasCoast, cbeHasTradeRoute
+		cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor,
+		cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier,
+		cbeGeneratedHasCoast, cbeGeneratedHasTradeRoute
 	);
 
 	// ================================================================
@@ -101,10 +135,10 @@ void main(void)
 	// ================================================================
 
 	cbeShowMapSummaryMessage(
-		cbeBiomeTheme, cbeRegionFlavor,
-		cbeGeographyLandform, cbeGeographyModifier,
-		cbeHasTradeRoute, cbeHasRiver, cbeHasCliffs, cbeHasMountains,
-		cbeHasCaves, cbeHasCoast, cbeHasDenseWilds, cbeHasAncientRuins
+		cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor,
+		cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier,
+		cbeGeneratedHasTradeRoute, cbeGeneratedHasRiver, cbeGeneratedHasCliffs, cbeGeneratedHasMountains,
+		cbeGeneratedHasCaves, cbeGeneratedHasCoast, cbeGeneratedHasDenseWilds, cbeGeneratedHasAncientRuins
 	);
 
 	rmSetStatusText("", 0.20);
@@ -119,4 +153,3 @@ void main(void)
 
 	rmSetStatusText("", 1.00);
 }
-

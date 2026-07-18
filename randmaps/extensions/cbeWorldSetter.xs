@@ -31,8 +31,27 @@ float cbeGetBaseSeaLevel(int biomeTheme = 1, int geographyLandform = 1)
 
 void cbeSetBaseWorld(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0, int hasCoast = 0, int hasTradeRoute = 0)
 {
+	float seaLevel = cbeGetBaseSeaLevel(biomeTheme, geographyLandform);
+	int usesTerrainMix = cbeShouldSetBaseTerrainMix(biomeTheme);
+	string terrainMix = "None";
+	string baseTerrain = cbeGetBaseTerrain(biomeTheme, regionFlavor);
+	float terrainInitHeight = cbeGetTerrainInitHeight(biomeTheme, geographyLandform);
+	string primaryMapType = cbeGetPrimaryMapType(biomeTheme, regionFlavor, geographyLandform);
+	string secondaryMapType = cbeGetSecondaryMapType(biomeTheme);
+	string coastMapType = "land";
+	string seaType = "None";
+	string lightingSet = cbeGetLightingSet(biomeTheme, regionFlavor);
+
+	if (usesTerrainMix == 1)
+		terrainMix = cbeGetBaseTerrainMix(biomeTheme, regionFlavor, geographyLandform);
+	if (hasCoast == 1)
+	{
+		coastMapType = "water";
+		seaType = cbeGetSeaType(biomeTheme, regionFlavor, geographyLandform);
+	}
+
 	rmSetWorldCircleConstraint(false);
-	rmSetSeaLevel(cbeGetBaseSeaLevel(biomeTheme, geographyLandform));
+	rmSetSeaLevel(seaLevel);
 
 	if (biomeTheme == cbeBiomeCave())
 		rmSetMapElevationParameters(cElevTurbulence, 0.04, 2, 0.3, 4.0);
@@ -43,23 +62,24 @@ void cbeSetBaseWorld(int biomeTheme = 1, int regionFlavor = 1, int geographyLand
 	else
 		rmSetMapElevationParameters(cElevTurbulence, 0.02, 2, 0.4, 4.0);
 
-	if (cbeShouldSetBaseTerrainMix(biomeTheme) == 1)
-		rmSetBaseTerrainMix(cbeGetBaseTerrainMix(biomeTheme, regionFlavor, geographyLandform));
-	rmTerrainInitialize(cbeGetBaseTerrain(biomeTheme, regionFlavor), cbeGetTerrainInitHeight(biomeTheme, geographyLandform));
-	rmSetMapType(cbeGetPrimaryMapType(biomeTheme, regionFlavor, geographyLandform));
-	rmSetMapType(cbeGetSecondaryMapType(biomeTheme));
+	if (usesTerrainMix == 1)
+		rmSetBaseTerrainMix(terrainMix);
+	rmTerrainInitialize(baseTerrain, terrainInitHeight);
+	rmSetMapType(primaryMapType);
+	rmSetMapType(secondaryMapType);
 
 	if (hasCoast == 1)
 	{
-		rmSetSeaType(cbeGetSeaType(biomeTheme, regionFlavor, geographyLandform));
-		rmSetMapType("water");
+		rmSetSeaType(seaType);
+		rmSetMapType(coastMapType);
 	}
 	else
-		rmSetMapType("land");
+		rmSetMapType(coastMapType);
 
 	if (hasTradeRoute == 1)
 		rmSetMapType("euroTradeRouteCapture");
 
-	rmSetLightingSet(cbeGetLightingSet(biomeTheme, regionFlavor));
+	rmSetLightingSet(lightingSet);
+	cbeShowWorldSetterMessage(terrainMix, baseTerrain, primaryMapType, secondaryMapType, coastMapType, seaType, lightingSet);
 }
 
