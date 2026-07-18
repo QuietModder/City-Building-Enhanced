@@ -9,8 +9,8 @@ include "ypKOTHInclude.xs";
 include "extensions/cbeMapValueSetter.xs";
 include "extensions/cbeMapSizeSetter.xs";
 include "extensions/cbeMapMessages.xs";
-include "extensions/cbeTradeRoutes.xs";
-include "extensions/cbeFeatureGroupings.xs";
+include "extensions/cbePlayerPlacement.xs";
+include "extensions/cbeStartingUnits.xs";
 
 void main(void)
 {
@@ -67,8 +67,6 @@ void main(void)
 	int cbeHasMerchantOutposts = cbeRollMerchantOutposts(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
 	int cbeRogueArmyPreset = cbeChooseRogueArmyPreset(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
 
-	cbeSetupFeatureGroupingSubCivs(cbeHasCityStates, cbeHasDistricts);
-
 	// ================================================================
 	// Map Setup
 	// ================================================================
@@ -98,187 +96,11 @@ void main(void)
 		cbeHasCaves, cbeHasCoast, cbeHasDenseWilds, cbeHasAncientRuins
 	);
 
-	// ================================================================
-	// Classes
-	// ================================================================
-
-	int classPlayer = rmDefineClass("player");
-	int classStartingResource = rmDefineClass("startingResource");
-	int classForest = rmDefineClass("Forest");
-	int classSocket = rmDefineClass("socketClass");
-	int classCityState = rmDefineClass("cityState");
-	rmDefineClass("starting settlement");
-	rmDefineClass("startingUnit");
-
-	// ================================================================
-	// Constraints
-	// ================================================================
-
-	int avoidStartingResources = rmCreateClassDistanceConstraint("avoid starting resources", classStartingResource, 8.0);
-	int avoidStartingResourcesShort = rmCreateClassDistanceConstraint("avoid starting resources short", classStartingResource, 4.0);
-	int avoidImpassableLandShort = rmCreateTerrainDistanceConstraint("avoid impassable land short", "Land", false, 4.0);
-	int avoidForestShort = rmCreateClassDistanceConstraint("avoid forest short", classForest, 8.0);
-	int avoidCityState = rmCreateClassDistanceConstraint("avoid city state", classCityState, 36.0);
-	int avoidCityStateShort = rmCreateClassDistanceConstraint("avoid city state short", classCityState, 18.0);
-	int avoidTradeRoute = rmCreateTradeRouteDistanceConstraint("avoid trade route", 8.0);
-	int avoidTradeRouteSocket = rmCreateTypeDistanceConstraint("avoid trade route socket", "sockettraderoute", 10.0);
-
 	rmSetStatusText("", 0.20);
 
-	// ================================================================
-	// Player Placement
-	// ================================================================
-
-	int teamID = 0;
-	float cbePlayerRingInner = 0.45;
-	float cbePlayerRingOuter = 0.45;
-	float cbeTeamSpacing = 0.20;
-	if (PlayerNum <= 2)
-	{
-		cbePlayerRingInner = 0.46;
-		cbePlayerRingOuter = 0.46;
-		cbeTeamSpacing = 0.15;
-	}
-	if (TeamNum == 2)
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		rmSetPlacementTeam(0);
-		if (PlayerNum <= 2)
-			rmSetPlacementSection(0.12, 0.14);
-		else
-			rmSetPlacementSection(0.10, 0.16);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(1);
-		if (PlayerNum <= 2)
-			rmSetPlacementSection(0.62, 0.64);
-		else
-			rmSetPlacementSection(0.60, 0.66);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-	}
-	else if (TeamNum == 3)
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		rmSetPlacementTeam(0);
-		rmSetPlacementSection(0.08, 0.16);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(1);
-		rmSetPlacementSection(0.41, 0.49);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(2);
-		rmSetPlacementSection(0.74, 0.82);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-	}
-	else if (TeamNum == 4)
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		rmSetPlacementTeam(0);
-		rmSetPlacementSection(0.975, 0.025);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(1);
-		rmSetPlacementSection(0.225, 0.275);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(2);
-		rmSetPlacementSection(0.475, 0.525);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-
-		rmSetPlacementTeam(3);
-		rmSetPlacementSection(0.725, 0.775);
-		rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-	}
-	else
-	{
-		rmSetTeamSpacingModifier(cbeTeamSpacing);
-
-		if (TeamNum > 2)
-		{
-			float cbeTeamArc = 0.35 / TeamNum;
-			for (teamID = 0; < TeamNum)
-			{
-				float cbeTeamCenter = 0.05 + (teamID * (1.0 / TeamNum));
-				float cbeTeamStart = cbeTeamCenter - (cbeTeamArc * 0.50);
-				float cbeTeamEnd = cbeTeamCenter + (cbeTeamArc * 0.50);
-				if (cbeTeamStart < 0.0)
-					cbeTeamStart = cbeTeamStart + 1.0;
-				if (cbeTeamEnd > 1.0)
-					cbeTeamEnd = cbeTeamEnd - 1.0;
-
-				rmSetPlacementTeam(teamID);
-				rmSetPlacementSection(cbeTeamStart, cbeTeamEnd);
-				rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-			}
-		}
-		else
-		{
-			rmPlacePlayersCircular(cbePlayerRingInner, cbePlayerRingOuter, 0.0);
-		}
-	}
-
-	for (i = 1; < numPlayer)
-	{
-		int playerAreaID = rmCreateArea("player area "+i);
-		rmSetPlayerArea(i, playerAreaID);
-		rmSetAreaSize(playerAreaID, 0.03, 0.03);
-		rmSetAreaCoherence(playerAreaID, 1.0);
-		rmSetAreaWarnFailure(playerAreaID, false);
-		rmSetAreaLocPlayer(playerAreaID, i);
-		rmSetAreaObeyWorldCircleConstraint(playerAreaID, false);
-		rmBuildArea(playerAreaID);
-	}
-
-	rmSetStatusText("", 0.40);
-
-	// ================================================================
-	// Trade Routes
-	// ================================================================
-
-	if (cbeHasTradeRoute == 1)
-	{
-		cbePlaceTradeRoute(0, 0, classSocket);
-	}
-
-	// ================================================================
-	// Starting Object Definitions
-	// ================================================================
-
-	// TC or nomad wagon.
-	int tcID = rmCreateObjectDef("player TC");
-	if (rmGetNomadStart())
-		rmAddObjectDefItem(tcID, "CoveredWagon", 1, 0.0);
-	else
-		rmAddObjectDefItem(tcID, "TownCenter", 1, 0.0);
-	rmAddObjectDefToClass(tcID, classStartingResource);
-	rmSetObjectDefMinDistance(tcID, 0.0);
-	rmSetObjectDefMaxDistance(tcID, 0.0);
-
-	// Starting units.
-	int startingUnitsID = rmCreateStartingUnitsObjectDef(5.0);
-	rmSetObjectDefMinDistance(startingUnitsID, 5.0);
-	rmSetObjectDefMaxDistance(startingUnitsID, 12.0);
-	rmAddObjectDefToClass(startingUnitsID, rmClassID("startingUnit"));
-	rmAddObjectDefConstraint(startingUnitsID, avoidImpassableLandShort);
-	rmAddObjectDefConstraint(startingUnitsID, avoidCityStateShort);
-
-	// ================================================================
-	// Starting Object Placement
-	// ================================================================
-
-	for (i = 1; < numPlayer)
-	{
-		rmPlaceObjectDefAtLoc(tcID, i, rmPlayerLocXFraction(i), rmPlayerLocZFraction(i));
-		vector tcLoc = rmGetUnitPosition(rmGetUnitPlacedOfPlayer(tcID, i));
-		float tcX = rmXMetersToFraction(xsVectorGetX(tcLoc));
-		float tcZ = rmZMetersToFraction(xsVectorGetZ(tcLoc));
-
-		rmPlaceObjectDefAtLoc(startingUnitsID, i, tcX, tcZ);
-	}
+	cbePlacePlayers(TeamNum, PlayerNum);
+	cbeCreatePlayerAreas(numPlayer);
+	cbePlaceStartingUnits(numPlayer);
 
 	rmSetStatusText("", 1.00);
 }
