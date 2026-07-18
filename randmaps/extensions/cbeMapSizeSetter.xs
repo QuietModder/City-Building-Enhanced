@@ -6,6 +6,8 @@
 
 float cbeGetMapScale(void)
 {
+	if (cMapSize == 1)
+		return(9.0);
 	return(6.0);
 }
 
