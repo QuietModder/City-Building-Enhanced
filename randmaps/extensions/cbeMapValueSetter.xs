@@ -153,6 +153,81 @@ int cbeGeoModShelteredBay(void)
 }
 
 // ================================================================
+// Map Feature Values
+// ================================================================
+
+int cbeRollMapFeature(int weight = 0)
+{
+	if (rmRandInt(1, 100) <= weight)
+		return(1);
+	return(0);
+}
+
+int cbeRollCityStates(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
+{
+	int weight = 30;
+	if (regionFlavor == cbeRegionEurope())
+		weight = weight + 20;
+	else if (regionFlavor == cbeRegionSouthAmerica())
+		weight = weight + 10;
+	else if (regionFlavor == cbeRegionAfrica())
+		weight = weight + 10;
+	if (geographyLandform == cbeGeoInland())
+		weight = weight + 10;
+	else if (geographyLandform == cbeGeoHarbor())
+		weight = weight + 10;
+	return(cbeRollMapFeature(weight));
+}
+
+int cbeRollDistricts(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
+{
+	int weight = 20;
+	if (regionFlavor == cbeRegionEurope())
+		weight = weight + 15;
+	if (geographyLandform == cbeGeoHarbor())
+		weight = weight + 10;
+	else if (geographyLandform == cbeGeoInland())
+		weight = weight + 10;
+	return(cbeRollMapFeature(weight));
+}
+
+int cbeRollFeatureVillages(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
+{
+	int weight = 45;
+	if (biomeTheme == cbeBiomeForest())
+		weight = weight + 10;
+	else if (biomeTheme == cbeBiomePlains())
+		weight = weight + 10;
+	else if (biomeTheme == cbeBiomeJungle())
+		weight = weight + 5;
+	return(cbeRollMapFeature(weight));
+}
+
+int cbeRollOutlawCamps(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
+{
+	int weight = 35;
+	if (biomeTheme == cbeBiomeDesert())
+		weight = weight + 15;
+	else if (biomeTheme == cbeBiomePlains())
+		weight = weight + 10;
+	if (regionFlavor == cbeRegionNorthAmerica())
+		weight = weight + 10;
+	return(cbeRollMapFeature(weight));
+}
+
+int cbeRollMerchantOutposts(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0)
+{
+	int weight = 30;
+	if (geographyLandform == cbeGeoHarbor())
+		weight = weight + 20;
+	else if (geographyLandform == cbeGeoPeninsula())
+		weight = weight + 10;
+	else if (geographyLandform == cbeGeoRiverBasin())
+		weight = weight + 10;
+	return(cbeRollMapFeature(weight));
+}
+
+// ================================================================
 // Theme Selection
 // ================================================================
 

@@ -1,5 +1,35 @@
 // CBE Feature Groupings
 
+// ================================================================
+// Minor Civ Setup
+// ================================================================
+
+void cbeSetupFeatureGroupingSubCivs(int hasCityStates = 0, int hasDistricts = 0)
+{
+	int subCivSlot = 0;
+
+	if (hasCityStates == 1)
+	{
+		rmSetSubCiv(subCivSlot, "CBELatinCityState", true);
+		subCivSlot = subCivSlot + 1;
+	}
+
+	if (hasDistricts == 1)
+	{
+		rmSetSubCiv(subCivSlot, "SPCArtilleryDistrict", true);
+		subCivSlot = subCivSlot + 1;
+		rmSetSubCiv(subCivSlot, "SPCMarketDistrict", true);
+		subCivSlot = subCivSlot + 1;
+		rmSetSubCiv(subCivSlot, "SPCReligiousDistrict", true);
+		subCivSlot = subCivSlot + 1;
+		rmSetSubCiv(subCivSlot, "SPCMilitaryDistrict", true);
+	}
+}
+
+// ================================================================
+// City State Ownership
+// ================================================================
+
 void cbeRequireCityStateTradingPost(int socketUnitID = -1, int playerID = 0)
 {
 	rmAddTriggerCondition("Units in Area");

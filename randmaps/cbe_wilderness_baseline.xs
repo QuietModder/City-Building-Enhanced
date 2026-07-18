@@ -21,23 +21,11 @@ void main(void)
 	int numPlayer = cNumberPlayers;
 
 	// ================================================================
-	// Minor Civ Setup
-	// ================================================================
-
-	rmSetSubCiv(0, "CBELatinCityState", true);
-	rmSetSubCiv(1, "SPCArtilleryDistrict", true);
-	rmSetSubCiv(2, "SPCMarketDistrict", true);
-	rmSetSubCiv(3, "SPCReligiousDistrict", true);
-	rmSetSubCiv(4, "SPCMilitaryDistrict", true);
-
-	// ================================================================
 	// Theme Model
 	// ================================================================
 
 	int cbeBiomeTheme = cbeChooseBiomeTheme();
 	int cbeRegionFlavor = cbeChooseRegionFlavor(cbeBiomeTheme);
-	string cbeBiomeName = cbeGetBiomeName(cbeBiomeTheme);
-	string cbeRegionName = cbeGetRegionName(cbeRegionFlavor);
 
 	// ================================================================
 	// Geography Model
@@ -45,8 +33,6 @@ void main(void)
 
 	int cbeGeographyLandform = cbeChooseGeographyLandform(cbeBiomeTheme, cbeRegionFlavor);
 	int cbeGeographyModifier = cbeChooseGeographyModifier(cbeGeographyLandform, cbeBiomeTheme, cbeRegionFlavor);
-	string cbeGeographyLandformName = cbeGetGeographyLandformName(cbeGeographyLandform);
-	string cbeGeographyModifierName = cbeGetGeographyModifierName(cbeGeographyModifier);
 
 	// ================================================================
 	// Land Feature Flags
@@ -71,17 +57,16 @@ void main(void)
 		cbeHasMountains = 1;
 
 	// ================================================================
-	// Map Decision Logging
+	// Map Feature Flags
 	// ================================================================
 
-	rmEchoInfo("CBE Feature TradeRoute = "+cbeHasTradeRoute);
-	rmEchoInfo("CBE Feature River = "+cbeHasRiver);
-	rmEchoInfo("CBE Feature Cliffs = "+cbeHasCliffs);
-	rmEchoInfo("CBE Feature Mountains = "+cbeHasMountains);
-	rmEchoInfo("CBE Feature Caves = "+cbeHasCaves);
-	rmEchoInfo("CBE Feature Coast = "+cbeHasCoast);
-	rmEchoInfo("CBE Feature DenseWilds = "+cbeHasDenseWilds);
-	rmEchoInfo("CBE Feature AncientRuins = "+cbeHasAncientRuins);
+	int cbeHasCityStates = cbeRollCityStates(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
+	int cbeHasDistricts = cbeRollDistricts(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
+	int cbeHasFeatureVillages = cbeRollFeatureVillages(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
+	int cbeHasOutlawCamps = cbeRollOutlawCamps(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
+	int cbeHasMerchantOutposts = cbeRollMerchantOutposts(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
+
+	cbeSetupFeatureGroupingSubCivs(cbeHasCityStates, cbeHasDistricts);
 
 	// ================================================================
 	// Map Setup
@@ -92,11 +77,6 @@ void main(void)
 	playerTiles = playerTiles * cbeMapScale;
 
 	int size = 2.0 * sqrt(PlayerNum * playerTiles);
-	rmEchoInfo("CBE Wilderness Baseline size = "+size+"m x "+size+"m");
-	rmEchoInfo("CBE Biome Theme = "+cbeBiomeName);
-	rmEchoInfo("CBE Region Flavor = "+cbeRegionName);
-	rmEchoInfo("CBE Geography Landform = "+cbeGeographyLandformName);
-	rmEchoInfo("CBE Geography Modifier = "+cbeGeographyModifierName);
 	rmSetMapSize(size, size);
 
 	rmSetWorldCircleConstraint(false);
