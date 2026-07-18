@@ -9,6 +9,7 @@ include "ypKOTHInclude.xs";
 include "extensions/cbeMapValueSetter.xs";
 include "extensions/cbeMapSizeSetter.xs";
 include "extensions/cbeMapMessages.xs";
+include "extensions/cbeWorldSetter.xs";
 include "extensions/cbePlayerPlacement.xs";
 include "extensions/cbeStartingUnits.xs";
 
@@ -68,7 +69,7 @@ void main(void)
 	int cbeRogueArmyPreset = cbeChooseRogueArmyPreset(cbeBiomeTheme, cbeRegionFlavor, cbeGeographyLandform, cbeGeographyModifier);
 
 	// ================================================================
-	// Map Setup
+	// Map Size
 	// ================================================================
 
 	int playerTiles = cbeGetPlayerTiles(PlayerNum);
@@ -78,16 +79,26 @@ void main(void)
 	int size = 2.0 * sqrt(PlayerNum * playerTiles);
 	rmSetMapSize(size, size);
 
-	rmSetWorldCircleConstraint(false);
-	rmSetSeaLevel(0.0);
-	rmSetMapElevationParameters(cElevTurbulence, 0.1, 1, 0.0, 0.5);
-	rmTerrainInitialize("grass", 0.0);
-	rmSetMapType("carolina");
-	rmSetMapType("grass");
-	rmSetMapType("euroTradeRouteCapture");
-	rmSetLightingSet("Carolina_Skirmish");
+	// ================================================================
+	// Base World Setup
+	// ================================================================
 
+	cbeSetBaseWorld(
+		cbeBiomeTheme, cbeRegionFlavor,
+		cbeGeographyLandform, cbeGeographyModifier,
+		cbeHasCoast, cbeHasTradeRoute
+	);
+
+	// ================================================================
+	// Global Systems
+	// ================================================================
+
+	// Vanilla helper that selects the map's random mercenary pool.
 	chooseMercs();
+
+	// ================================================================
+	// Map Summary Message
+	// ================================================================
 
 	cbeShowMapSummaryMessage(
 		cbeBiomeTheme, cbeRegionFlavor,
@@ -97,6 +108,10 @@ void main(void)
 	);
 
 	rmSetStatusText("", 0.20);
+
+	// ================================================================
+	// Player Starts
+	// ================================================================
 
 	cbePlacePlayers(TeamNum, PlayerNum);
 	cbeCreatePlayerAreas(numPlayer);
