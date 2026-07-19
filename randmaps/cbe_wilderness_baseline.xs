@@ -11,6 +11,13 @@ int cbeGeneratedRegionFlavor = 1;
 int cbeGeneratedGeographyLandform = 1;
 int cbeGeneratedGeographyModifier = 0;
 
+int cbeGeneratedBaseTerrainRoll = 0;
+int cbeGeneratedTerrainMixRoll = 0;
+int cbeGeneratedPrimaryMapTypeRoll = 0;
+int cbeGeneratedSecondaryMapTypeRoll = 0;
+int cbeGeneratedSeaTypeRoll = 0;
+int cbeGeneratedLightingSetRoll = 0;
+
 int cbeGeneratedHasTradeRoute = 0;
 int cbeGeneratedHasRiver = 0;
 int cbeGeneratedHasCliffs = 0;
@@ -30,6 +37,8 @@ int cbeGeneratedRogueArmyPreset = 0;
 int cbeGeneratedPlayerTiles = 0;
 float cbeGeneratedMapScale = 1.0;
 int cbeGeneratedMapSize = 0;
+
+int cbeDebugForceDelta = 1;
 
 include "mercenaries.xs";
 include "ypAsianInclude.xs";
@@ -68,6 +77,13 @@ void main(void)
 
 	cbeGeneratedGeographyLandform = cbeChooseGeographyLandform(cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor);
 	cbeGeneratedGeographyModifier = cbeChooseGeographyModifier(cbeGeneratedGeographyLandform, cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor);
+	if (cbeDebugForceDelta == 1)
+	{
+		cbeGeneratedBiomeTheme = cbeBiomeWetlandIsland();
+		cbeGeneratedRegionFlavor = cbeRegionSouthAmerica();
+		cbeGeneratedGeographyLandform = cbeGeoDelta();
+		cbeGeneratedGeographyModifier = cbeGeoModMarshLowlands();
+	}
 
 	// ================================================================
 	// Land Feature Flags
@@ -117,10 +133,20 @@ void main(void)
 	// Base World Setup
 	// ================================================================
 
+	cbeGeneratedBaseTerrainRoll = rmRandInt(1, 10000);
+	cbeGeneratedTerrainMixRoll = rmRandInt(1, 10000);
+	cbeGeneratedPrimaryMapTypeRoll = rmRandInt(1, 10000);
+	cbeGeneratedSecondaryMapTypeRoll = rmRandInt(1, 10000);
+	cbeGeneratedSeaTypeRoll = rmRandInt(1, 10000);
+	cbeGeneratedLightingSetRoll = rmRandInt(1, 10000);
+
 	cbeSetBaseWorld(
 		cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor,
 		cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier,
-		cbeGeneratedHasCoast, cbeGeneratedHasTradeRoute
+		cbeGeneratedHasCoast, cbeGeneratedHasTradeRoute,
+		cbeGeneratedBaseTerrainRoll, cbeGeneratedTerrainMixRoll,
+		cbeGeneratedPrimaryMapTypeRoll, cbeGeneratedSecondaryMapTypeRoll,
+		cbeGeneratedSeaTypeRoll, cbeGeneratedLightingSetRoll
 	);
 
 	// ================================================================

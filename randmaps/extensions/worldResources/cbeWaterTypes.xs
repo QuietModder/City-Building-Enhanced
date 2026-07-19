@@ -1,30 +1,30 @@
 // CBE Water Types
 
-string cbeGetSeaType(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1)
+string cbeGetSeaType(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int selectionRoll = 0)
 {
-	int jungleAfricaRoll = rmRandInt(1, 5);
-	int jungleAsiaRoll = rmRandInt(1, 14);
-	int jungleSouthAmericaRoll = rmRandInt(1, 11);
-	int desertAfricaRoll = rmRandInt(1, 6);
-	int desertAsiaRoll = rmRandInt(1, 10);
-	int desertNorthAmericaRoll = rmRandInt(1, 11);
-	int forestEuropeRoll = rmRandInt(1, 16);
-	int forestAsiaRoll = rmRandInt(1, 10);
-	int forestNorthAmericaRoll = rmRandInt(1, 14);
-	int plainsAfricaRoll = rmRandInt(1, 6);
-	int plainsAsiaRoll = rmRandInt(1, 9);
-	int plainsEuropeRoll = rmRandInt(1, 14);
-	int plainsNorthAmericaRoll = rmRandInt(1, 11);
-	int mountainSouthAmericaRoll = rmRandInt(1, 10);
-	int mountainAsiaRoll = rmRandInt(1, 11);
-	int mountainEuropeRoll = rmRandInt(1, 12);
-	int mountainNorthAmericaRoll = rmRandInt(1, 12);
-	int wetlandSouthAmericaRoll = rmRandInt(1, 12);
-	int wetlandAsiaRoll = rmRandInt(1, 15);
-	int wetlandIslandRoll = rmRandInt(1, 18);
-	int coldEuropeRoll = rmRandInt(1, 10);
-	int coldAsiaRoll = rmRandInt(1, 7);
-	int coldNorthAmericaRoll = rmRandInt(1, 13);
+	int jungleAfricaRoll = cbeResolveWorldResourceRoll(selectionRoll, 5);
+	int jungleAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 14);
+	int jungleSouthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 11);
+	int desertAfricaRoll = cbeResolveWorldResourceRoll(selectionRoll, 6);
+	int desertAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 10);
+	int desertNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 11);
+	int forestEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 16);
+	int forestAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 10);
+	int forestNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 14);
+	int plainsAfricaRoll = cbeResolveWorldResourceRoll(selectionRoll, 6);
+	int plainsAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 9);
+	int plainsEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 14);
+	int plainsNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 11);
+	int mountainSouthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 10);
+	int mountainAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 11);
+	int mountainEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 12);
+	int mountainNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 12);
+	int wetlandSouthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 8);
+	int wetlandAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 15);
+	int wetlandIslandRoll = cbeResolveWorldResourceRoll(selectionRoll, 18);
+	int coldEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 10);
+	int coldAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 7);
+	int coldNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 13);
 
 	if (biomeTheme == cbeBiomeJungle())
 	{
@@ -457,14 +457,6 @@ string cbeGetSeaType(int biomeTheme = 1, int regionFlavor = 1, int geographyLand
 				return("yucatan Coast");
 			if (wetlandSouthAmericaRoll == 7)
 				return("Yucatan Coast Alt");
-			if (wetlandSouthAmericaRoll == 8)
-				return("ZP Aztec Lake");
-			if (wetlandSouthAmericaRoll == 9)
-				return("ZP Mexico River");
-			if (wetlandSouthAmericaRoll == 10)
-				return("ZP Mississippi River");
-			if (wetlandSouthAmericaRoll == 11)
-				return("ZP Riverina Waterfalls");
 			return("caribbean coast");
 		}
 		if (regionFlavor == cbeRegionAsia())

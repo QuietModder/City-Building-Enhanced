@@ -1,31 +1,31 @@
 // CBE Ground Textures
 
-string cbeGetBaseTerrain(int biomeTheme = 1, int regionFlavor = 1)
+string cbeGetBaseTerrain(int biomeTheme = 1, int regionFlavor = 1, int selectionRoll = 0)
 {
-	int caveRoll = rmRandInt(1, 6);
-	int forestEuropeRoll = rmRandInt(1, 6);
-	int forestAsiaRoll = rmRandInt(1, 13);
-	int forestNorthAmericaRoll = rmRandInt(1, 17);
-	int jungleAfricaRoll = rmRandInt(1, 6);
-	int jungleAsiaRoll = rmRandInt(1, 26);
-	int jungleSouthAmericaRoll = rmRandInt(1, 8);
-	int desertAfricaRoll = rmRandInt(1, 16);
-	int desertAsiaRoll = rmRandInt(1, 13);
-	int desertNorthAmericaRoll = rmRandInt(1, 28);
-	int plainsAfricaRoll = rmRandInt(1, 12);
-	int plainsAsiaRoll = rmRandInt(1, 14);
-	int plainsEuropeRoll = rmRandInt(1, 10);
-	int plainsNorthAmericaRoll = rmRandInt(1, 18);
-	int mountainSouthAmericaRoll = rmRandInt(1, 31);
-	int mountainAsiaRoll = rmRandInt(1, 13);
-	int mountainEuropeRoll = rmRandInt(1, 10);
-	int mountainNorthAmericaRoll = rmRandInt(1, 24);
-	int wetlandSouthAmericaRoll = rmRandInt(1, 15);
-	int wetlandAsiaRoll = rmRandInt(1, 21);
-	int wetlandIslandRoll = rmRandInt(1, 11);
-	int coldEuropeRoll = rmRandInt(1, 12);
-	int coldAsiaRoll = rmRandInt(1, 12);
-	int coldNorthAmericaRoll = rmRandInt(1, 26);
+	int caveRoll = cbeResolveWorldResourceRoll(selectionRoll, 6);
+	int forestEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 6);
+	int forestAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 13);
+	int forestNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 17);
+	int jungleAfricaRoll = cbeResolveWorldResourceRoll(selectionRoll, 6);
+	int jungleAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 26);
+	int jungleSouthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 8);
+	int desertAfricaRoll = cbeResolveWorldResourceRoll(selectionRoll, 16);
+	int desertAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 13);
+	int desertNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 28);
+	int plainsAfricaRoll = cbeResolveWorldResourceRoll(selectionRoll, 12);
+	int plainsAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 14);
+	int plainsEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 10);
+	int plainsNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 18);
+	int mountainSouthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 31);
+	int mountainAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 13);
+	int mountainEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 10);
+	int mountainNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 24);
+	int wetlandSouthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 15);
+	int wetlandAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 21);
+	int wetlandIslandRoll = cbeResolveWorldResourceRoll(selectionRoll, 11);
+	int coldEuropeRoll = cbeResolveWorldResourceRoll(selectionRoll, 12);
+	int coldAsiaRoll = cbeResolveWorldResourceRoll(selectionRoll, 12);
+	int coldNorthAmericaRoll = cbeResolveWorldResourceRoll(selectionRoll, 26);
 
 	if (biomeTheme == cbeBiomeCave())
 	{

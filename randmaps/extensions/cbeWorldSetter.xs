@@ -1,5 +1,6 @@
 // CBE World Setter
 
+include "extensions/worldResources/cbeWorldResourceRolls.xs";
 include "extensions/worldResources/cbeTerrainMixes.xs";
 include "extensions/worldResources/cbeGroundTextures.xs";
 include "extensions/worldResources/cbeMapTypes.xs";
@@ -29,25 +30,31 @@ float cbeGetBaseSeaLevel(int biomeTheme = 1, int geographyLandform = 1)
 // World Setup
 // ================================================================
 
-void cbeSetBaseWorld(int biomeTheme = 1, int regionFlavor = 1, int geographyLandform = 1, int geographyModifier = 0, int hasCoast = 0, int hasTradeRoute = 0)
+void cbeSetBaseWorld(
+	int biomeTheme = 1, int regionFlavor = 1,
+	int geographyLandform = 1, int geographyModifier = 0,
+	int hasCoast = 0, int hasTradeRoute = 0,
+	int baseTerrainRoll = 0, int terrainMixRoll = 0,
+	int primaryMapTypeRoll = 0, int secondaryMapTypeRoll = 0,
+	int seaTypeRoll = 0, int lightingSetRoll = 0)
 {
 	float seaLevel = cbeGetBaseSeaLevel(biomeTheme, geographyLandform);
 	int usesTerrainMix = cbeShouldSetBaseTerrainMix(biomeTheme);
 	string terrainMix = "None";
-	string baseTerrain = cbeGetBaseTerrain(biomeTheme, regionFlavor);
+	string baseTerrain = cbeGetBaseTerrain(biomeTheme, regionFlavor, baseTerrainRoll);
 	float terrainInitHeight = cbeGetTerrainInitHeight(biomeTheme, geographyLandform);
-	string primaryMapType = cbeGetPrimaryMapType(biomeTheme, regionFlavor, geographyLandform);
-	string secondaryMapType = cbeGetSecondaryMapType(biomeTheme);
+	string primaryMapType = cbeGetPrimaryMapType(biomeTheme, regionFlavor, geographyLandform, primaryMapTypeRoll);
+	string secondaryMapType = cbeGetSecondaryMapType(biomeTheme, secondaryMapTypeRoll);
 	string coastMapType = "land";
 	string seaType = "None";
-	string lightingSet = cbeGetLightingSet(biomeTheme, regionFlavor);
+	string lightingSet = cbeGetLightingSet(biomeTheme, regionFlavor, lightingSetRoll);
 
 	if (usesTerrainMix == 1)
-		terrainMix = cbeGetBaseTerrainMix(biomeTheme, regionFlavor, geographyLandform);
+		terrainMix = cbeGetBaseTerrainMix(biomeTheme, regionFlavor, geographyLandform, terrainMixRoll);
 	if (hasCoast == 1)
 	{
 		coastMapType = "water";
-		seaType = cbeGetSeaType(biomeTheme, regionFlavor, geographyLandform);
+		seaType = cbeGetSeaType(biomeTheme, regionFlavor, geographyLandform, seaTypeRoll);
 	}
 
 	rmSetWorldCircleConstraint(false);
