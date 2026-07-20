@@ -53,6 +53,7 @@ include "extensions/cbeMapMessages.xs";		// Displays map generation summary mess
 include "extensions/cbePlayerPlacement.xs"; // Player Placement
 include "extensions/cbeStartingUnits.xs";	// Starting Units
 include "extensions/cbeWorldSetter.xs";		// Implements Terrain, Lighting, and Water
+include "extensions/geographyBuilders/cbeDeltaBuilder.xs";
 
 // ================================================================
 
@@ -148,6 +149,12 @@ void main(void)
 		cbeGeneratedPrimaryMapTypeRoll, cbeGeneratedSecondaryMapTypeRoll,
 		cbeGeneratedSeaTypeRoll, cbeGeneratedLightingSetRoll
 	);
+
+	if (cbeGeneratedGeographyLandform == cbeGeoDelta())
+		cbeBuildDelta(
+			cbeGeneratedBiomeTheme, cbeGeneratedRegionFlavor,
+			PlayerNum, cbeGeneratedSeaTypeRoll
+		);
 
 	// ================================================================
 	// Global Systems

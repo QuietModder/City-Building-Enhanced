@@ -23,9 +23,9 @@ void cbeBuildDeltaCoast(string waterType = "caribbean coast", int playerNum = 2)
 	rmBuildArea(coastalWaterID);
 }
 
-void cbeBuildDelta(int biomeTheme = 1, int regionFlavor = 1, int playerNum = 2)
+void cbeBuildDelta(int biomeTheme = 1, int regionFlavor = 1, int playerNum = 2, int seaTypeRoll = 0)
 {
-	string coastType = cbeGeneratedSeaType;
+	string waterType = cbeGetSeaType(biomeTheme, regionFlavor, cbeGeoDelta(), seaTypeRoll);
 	int riverWidth = 7 + playerNum / 2;
 	int riverBankWidth = 6 + playerNum / 2;
 	int branchWidth = 5 + playerNum / 2;
@@ -33,11 +33,11 @@ void cbeBuildDelta(int biomeTheme = 1, int regionFlavor = 1, int playerNum = 2)
 	// Low, blended riverbanks.
 	rmSetRiverFoundationParams(12, 0.10);
 
-	if (coastType == "None")
-		coastType = "caribbean coast";
-	cbeBuildDeltaCoast(coastType, playerNum);
+	if (waterType == "None")
+		waterType = "caribbean coast";
+	cbeBuildDeltaCoast(waterType, playerNum);
 
-	int mainRiverID = rmRiverCreate(-1, cbeGeneratedRiverType, 3, 5, riverWidth, riverBankWidth);
+	int mainRiverID = rmRiverCreate(-1, waterType, 3, 5, riverWidth, riverBankWidth);
 	rmRiverAddWaypoint(mainRiverID, 0.00, rmRandFloat(0.58, 0.66));
 	rmRiverAddWaypoint(mainRiverID, rmRandFloat(0.18, 0.24), rmRandFloat(0.54, 0.62));
 	rmRiverAddWaypoint(mainRiverID, rmRandFloat(0.30, 0.36), rmRandFloat(0.56, 0.64));
@@ -50,7 +50,7 @@ void cbeBuildDelta(int biomeTheme = 1, int regionFlavor = 1, int playerNum = 2)
 	rmRiverSetBankNoiseParams(mainRiverID, 0.06, 3, 1.5, 12.0, 0.667, 2.0);
 	rmRiverBuild(mainRiverID);
 
-	int northBranchID = rmRiverCreate(-1, cbeGeneratedRiverType, 2, 4, branchWidth, riverBankWidth);
+	int northBranchID = rmRiverCreate(-1, waterType, 2, 4, branchWidth, riverBankWidth);
 	rmRiverAddWaypoint(northBranchID, 0.58, 0.52);
 	rmRiverAddWaypoint(northBranchID, 0.68, 0.50);
 	rmRiverAddWaypoint(northBranchID, rmRandFloat(0.75, 0.79), rmRandFloat(0.54, 0.58));
@@ -59,7 +59,7 @@ void cbeBuildDelta(int biomeTheme = 1, int regionFlavor = 1, int playerNum = 2)
 	rmRiverSetBankNoiseParams(northBranchID, 0.06, 3, 1.5, 12.0, 0.667, 2.0);
 	rmRiverBuild(northBranchID);
 
-	int southBranchID = rmRiverCreate(-1, cbeGeneratedRiverType, 2, 4, branchWidth, riverBankWidth);
+	int southBranchID = rmRiverCreate(-1, waterType, 2, 4, branchWidth, riverBankWidth);
 	rmRiverAddWaypoint(southBranchID, 0.58, 0.52);
 	rmRiverAddWaypoint(southBranchID, 0.68, 0.50);
 	rmRiverAddWaypoint(southBranchID, rmRandFloat(0.75, 0.79), rmRandFloat(0.43, 0.47));
