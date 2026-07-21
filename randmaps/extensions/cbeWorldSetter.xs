@@ -1,12 +1,7 @@
 // CBE World Setter
 
 include "extensions/worldResources/cbeWorldResourceRolls.xs";
-include "extensions/worldResources/cbeTerrainMixes.xs";
-include "extensions/worldResources/cbeGroundTextures.xs";
-include "extensions/worldResources/cbeMapTypes.xs";
-include "extensions/worldResources/cbeLightingSets.xs";
-include "extensions/worldResources/cbeWaterTypes.xs";
-include "extensions/worldResources/cbeFeatureTerrainResources.xs";
+include "extensions/worldResources/cbeWorldTypes.xs";
 
 // ================================================================
 // Sea Level
