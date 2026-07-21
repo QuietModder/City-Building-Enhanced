@@ -25,7 +25,7 @@ void cbeBuildDeltaCoast(string waterType = "caribbean coast", int playerNum = 2)
 
 void cbeBuildDelta(int biomeTheme = 1, int regionFlavor = 1, int playerNum = 2, int seaTypeRoll = 0)
 {
-	string waterType = cbeGetSeaType(biomeTheme, regionFlavor, cbeGeoDelta(), seaTypeRoll);
+	string waterType = "Northwest Territory Water";
 	int riverWidth = 7 + playerNum / 2;
 	int riverBankWidth = 6 + playerNum / 2;
 	int branchWidth = 5 + playerNum / 2;
