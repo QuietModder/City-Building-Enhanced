@@ -8,6 +8,11 @@
 int cbeGeneratedBiomeTheme = 1;
 int cbeGeneratedRegionFlavor = 1;
 
+int cbeWaterCategoryCoastBeach = 1;
+int cbeWaterCategoryRiver = 2;
+int cbeWaterCategoryLake = 3;
+int cbeWaterCategoryGeneric = 4;
+
 int cbeGeneratedGeographyLandform = 1;
 int cbeGeneratedGeographyModifier = 0;
 
@@ -17,6 +22,10 @@ int cbeGeneratedPrimaryMapTypeRoll = 0;
 int cbeGeneratedSecondaryMapTypeRoll = 0;
 int cbeGeneratedSeaTypeRoll = 0;
 int cbeGeneratedWaterConnectionRoll = 0;
+int cbeGeneratedCoastWaterTypeRoll = 0;
+int cbeGeneratedRiverWaterTypeRoll = 0;
+int cbeGeneratedLakeWaterTypeRoll = 0;
+int cbeGeneratedGenericWaterTypeRoll = 0;
 int cbeGeneratedLightingSetRoll = 0;
 
 int cbeGeneratedHasTradeRoute = 0;
@@ -148,6 +157,10 @@ void main(void)
 	cbeGeneratedPrimaryMapTypeRoll = rmRandInt(1, 10000);
 	cbeGeneratedSecondaryMapTypeRoll = rmRandInt(1, 10000);
 	cbeGeneratedSeaTypeRoll = rmRandInt(1, 10000);
+	cbeGeneratedCoastWaterTypeRoll = rmRandInt(1, 10000);
+	cbeGeneratedRiverWaterTypeRoll = rmRandInt(1, 10000);
+	cbeGeneratedLakeWaterTypeRoll = rmRandInt(1, 10000);
+	cbeGeneratedGenericWaterTypeRoll = rmRandInt(1, 10000);
 	cbeGeneratedLightingSetRoll = rmRandInt(1, 10000);
 
 	cbeSetBaseWorld(
