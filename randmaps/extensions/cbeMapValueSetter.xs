@@ -1074,3 +1074,37 @@ int cbeGeographyRequiresMountains(int geographyLandform = 1, int geographyModifi
 		return(1);
 	return(0);
 }
+
+// ================================================================
+// Water Relationship Values
+// ================================================================
+
+// Determines whether generated rivers and coasts form one connected water system.
+int cbeShouldConnectWaterBodies(
+	int geographyLandform = 1, int geographyModifier = 0,
+	int hasRiver = 0, int hasCoast = 0, int connectionRoll = 100)
+{
+	int connectionWeight = 35;
+
+	if (hasRiver == 0 || hasCoast == 0)
+		return(0);
+	if (geographyLandform == cbeGeoDelta() || geographyLandform == cbeGeoFjord())
+		return(1);
+	if (geographyLandform == cbeGeoHarbor())
+		connectionWeight = 70;
+	else if (geographyLandform == cbeGeoRiverBasin())
+		connectionWeight = 60;
+	else if (geographyLandform == cbeGeoPeninsula())
+		connectionWeight = 50;
+	else if (geographyLandform == cbeGeoIslandCoast())
+		connectionWeight = 40;
+
+	if (geographyModifier == cbeGeoModRiverCutValley())
+		connectionWeight = connectionWeight + 20;
+	if (geographyModifier == cbeGeoModShelteredBay())
+		connectionWeight = connectionWeight + 15;
+
+	if (connectionRoll <= connectionWeight)
+		return(1);
+	return(0);
+}

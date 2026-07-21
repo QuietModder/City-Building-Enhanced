@@ -16,6 +16,7 @@ int cbeGeneratedTerrainMixRoll = 0;
 int cbeGeneratedPrimaryMapTypeRoll = 0;
 int cbeGeneratedSecondaryMapTypeRoll = 0;
 int cbeGeneratedSeaTypeRoll = 0;
+int cbeGeneratedWaterConnectionRoll = 0;
 int cbeGeneratedLightingSetRoll = 0;
 
 int cbeGeneratedHasTradeRoute = 0;
@@ -24,6 +25,7 @@ int cbeGeneratedHasCliffs = 0;
 int cbeGeneratedHasMountains = 0;
 int cbeGeneratedHasCaves = 0;
 int cbeGeneratedHasCoast = 0;
+int cbeGeneratedWaterBodiesConnected = 0;
 int cbeGeneratedHasDenseWilds = 0;
 int cbeGeneratedHasAncientRuins = 0;
 
@@ -107,6 +109,13 @@ void main(void)
 		cbeGeneratedHasCliffs = 1;
 	if (cbeGeographyRequiresMountains(cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier) == 1)
 		cbeGeneratedHasMountains = 1;
+
+	cbeGeneratedWaterConnectionRoll = rmRandInt(1, 100);
+	cbeGeneratedWaterBodiesConnected = cbeShouldConnectWaterBodies(
+		cbeGeneratedGeographyLandform, cbeGeneratedGeographyModifier,
+		cbeGeneratedHasRiver, cbeGeneratedHasCoast,
+		cbeGeneratedWaterConnectionRoll
+	);
 
 	// ================================================================
 	// Map Feature Flags
