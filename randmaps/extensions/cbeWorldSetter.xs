@@ -1,6 +1,5 @@
 // CBE World Setter
 
-include "extensions/worldResources/cbeWorldResourceRolls.xs";
 include "extensions/worldResources/cbeWorldTypes.xs";
 
 // ================================================================

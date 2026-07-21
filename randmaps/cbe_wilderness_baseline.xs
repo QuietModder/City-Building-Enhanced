@@ -56,7 +56,7 @@ include "ypAsianInclude.xs";
 include "ypKOTHInclude.xs";
 
 // Value Setter Extensions (Does nothing except roll values to dictate map generation)
-include "extensions/cbeMapValueSetter.xs"; // Sets values for map generation features and geography
+include "extensions/cbeRolls.xs"; // Sets values and rolls for map generation
 
 // CBE Map Generation
 include "extensions/cbeMapSizeSetter.xs";	// Map Size
