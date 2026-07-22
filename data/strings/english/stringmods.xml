@@ -75,6 +75,10 @@
             <string _locid="9902019">Dismounted ranged infantry effective against heavy infantry and light cavalry.</string>
             <string _locid="9902020">Dismounted ranged infantry.</string>
 
+            <string _locid="9902021">House Wagon</string>
+            <string _locid="9902022">Deploys into the appropriate population-supporting residence for your civilization.</string>
+            <string _locid="9902023">Builds a civilization-appropriate House.</string>
+
 
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
@@ -178,7 +182,7 @@
             <string _locid="9909001">Commit to a compact, fortified city. Unlocks Citadel City Planning improvements and permanently prevents Sprawling City Planning.</string>
 
             <string _locid="9909002">Sprawling City Planning</string>
-            <string _locid="9909003">Commit to a broad, fast-growing settlement. Unlocks Sprawling City Planning improvements and permanently prevents Citadel City Planning.</string>
+            <string _locid="9909003">Commit to a broad, fast-growing settlement. Buildings are constructed 25% faster, but have 10% fewer hitpoints. Unlocks Sprawling City Planning improvements and permanently prevents Citadel City Planning.</string>
 
 
             <string _locid="9909010">Settled Frontier</string>
@@ -269,10 +273,10 @@
             <string _locid="9909067"></string>
 
             <string _locid="9909068">New World Prospects</string>
-            <string _locid="9909069"></string>
+            <string _locid="9909069">Increases the shared Settler build limit by 2 and delivers a House Wagon that can construct your civilization's available housing.</string>
 
             <string _locid="9909070">Pioneer Arrivals</string>
-            <string _locid="9909071"></string>
+            <string _locid="9909071">Increases the shared Settler build limit by 2 and attracts 3 citizens. Each citizen is rolled independently, with Pilgrims common and exceptional workers appearing more rarely.</string>
 
             <string _locid="9909072">Homestead Migration</string>
             <string _locid="9909073"></string>
