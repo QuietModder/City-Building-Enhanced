@@ -1267,6 +1267,13 @@
             </effect>
 
             <!-- FIRST ROW -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+            <effect type="CommandAdd" proto="ModArchitect" page="0" column="0">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">
                 ModNewWorldProspects
             </effect>
@@ -3711,7 +3718,7 @@
     </tech>
 
     <!-- ========================================================= -->
-    <!-- STANDALONE: Civic Workshop — Age III                      -->
+    <!-- STANDALONE: Civic Workshop â€” Age III                      -->
     <!-- Page 2 / Column 4                                         -->
     <!-- ========================================================= -->
 
@@ -3950,14 +3957,18 @@
         <rollovertextid>9909069</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
+
         <cost resourcetype="Food">75.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSprawlingCityPlanning</techstatus>
         </prereqs>
+
         <effects>
             <!-- Expand the shared civilization Settler / worker cap -->
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
@@ -3989,17 +4000,21 @@
         <rollovertextid>9909071</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
-        <cost resourcetype="Food">75.0000</cost>
+
+        <cost resourcetype="Food">200.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModNewWorldProspects</techstatus>
         </prereqs>
+
         <effects>
             <!-- Expand the shared civilization Settler / worker cap -->
-            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+            <effect type="Data" amount="3.00" subtype="BuildLimit" relativity="Absolute">
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
@@ -4091,15 +4106,19 @@
         <rollovertextid>9909073</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
-        <cost resourcetype="Food">150.0000</cost>
+
+        <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModPioneerArrivals</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModHomesteadMigration">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4117,15 +4136,20 @@
         <rollovertextid>9909075</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModHomesteadMigration</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
+        
         <effects>
             <effect type="CommandRemove" tech="ModTownshipImmigration">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4143,15 +4167,19 @@
         <rollovertextid>9909077</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModTownshipImmigration</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModSettlerRecruitment">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4169,15 +4197,19 @@
         <rollovertextid>9909079</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>75.0000</researchpoints>
+
         <cost resourcetype="Food">1650.0000</cost>
         <cost resourcetype="Wood">1650.0000</cost>
         <cost resourcetype="Gold">1650.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSettlerRecruitment</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModASecondChance">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4191,14 +4223,18 @@
         <rollovertextid>9909081</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
+
         <cost resourcetype="Food">75.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModNewWorldProspects</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModPioneeringSettlement">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4216,15 +4252,19 @@
         <rollovertextid>9909083</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModPioneeringSettlement</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModExpandingHomestead">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4242,15 +4282,19 @@
         <rollovertextid>9909085</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModExpandingHomestead</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModGrowingTownship">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4268,15 +4312,19 @@
         <rollovertextid>9909087</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModGrowingTownship</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModIncorporatedTownship">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4294,15 +4342,19 @@
         <rollovertextid>9909089</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>75.0000</researchpoints>
+
         <cost resourcetype="Food">1650.0000</cost>
         <cost resourcetype="Wood">1650.0000</cost>
         <cost resourcetype="Gold">1650.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModIncorporatedTownship</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModPropertyTax">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4316,14 +4368,18 @@
         <rollovertextid>9909091</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
+
         <cost resourcetype="Food">75.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSprawlingCityPlanning</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModLivingOffTheLand">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4345,14 +4401,18 @@
         <rollovertextid>9909093</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
+
         <cost resourcetype="Food">75.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModLivingOffTheLand</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModHuntingGrounds">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4370,15 +4430,19 @@
         <rollovertextid>9909095</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModHuntingGrounds</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModGameTrails">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4396,15 +4460,19 @@
         <rollovertextid>9909097</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModGameTrails</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModFrontierHunting">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4422,15 +4490,19 @@
         <rollovertextid>9909099</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>75.0000</researchpoints>
+
         <cost resourcetype="Food">1500.0000</cost>
         <cost resourcetype="Wood">1500.0000</cost>
         <cost resourcetype="Gold">1500.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModFrontierHunting</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModSeasonalCamps">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4448,15 +4520,19 @@
         <rollovertextid>9909101</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>90.0000</researchpoints>
+
         <cost resourcetype="Food">2000.0000</cost>
         <cost resourcetype="Wood">2000.0000</cost>
         <cost resourcetype="Gold">2000.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSeasonalCamps</techstatus>
             <techstatus status="Active">Imperialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModAbundantGame">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4470,15 +4546,19 @@
         <rollovertextid>9909103</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModLivingOffTheLand</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModPlowsAndPastures">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4496,15 +4576,19 @@
         <rollovertextid>9909105</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModPlowsAndPastures</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModHomesteadPlots">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4522,15 +4606,19 @@
         <rollovertextid>9909107</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModHomesteadPlots</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModOpenPastures">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4548,15 +4636,19 @@
         <rollovertextid>9909109</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>75.0000</researchpoints>
+
         <cost resourcetype="Food">1500.0000</cost>
         <cost resourcetype="Wood">1500.0000</cost>
         <cost resourcetype="Gold">1500.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModOpenPastures</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModHarvestEstates">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4574,15 +4666,19 @@
         <rollovertextid>9909111</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>90.0000</researchpoints>
+
         <cost resourcetype="Food">2000.0000</cost>
         <cost resourcetype="Wood">2000.0000</cost>
         <cost resourcetype="Gold">2000.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModHarvestEstates</techstatus>
             <techstatus status="Active">Imperialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModBreadbasketColony">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4596,14 +4692,18 @@
         <rollovertextid>9909113</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
+
         <cost resourcetype="Food">75.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSprawlingCityPlanning</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModLifelineToTheOldWorld">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4621,15 +4721,19 @@
         <rollovertextid>9909115</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModLifelineToTheOldWorld</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModColonialDispatches">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4647,15 +4751,19 @@
         <rollovertextid>9909117</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModColonialDispatches</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModWaystationMarkets">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4673,15 +4781,19 @@
         <rollovertextid>9909119</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModWaystationMarkets</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModEstablishedTradeRoutes">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4699,15 +4811,19 @@
         <rollovertextid>9909121</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>75.0000</researchpoints>
+
         <cost resourcetype="Food">1500.0000</cost>
         <cost resourcetype="Wood">1500.0000</cost>
         <cost resourcetype="Gold">1500.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModEstablishedTradeRoutes</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModLicensedTraders">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4725,15 +4841,19 @@
         <rollovertextid>9909123</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>90.0000</researchpoints>
+
         <cost resourcetype="Food">2000.0000</cost>
         <cost resourcetype="Wood">2000.0000</cost>
         <cost resourcetype="Gold">2000.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModLicensedTraders</techstatus>
             <techstatus status="Active">Imperialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModMerchantConvoys">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4747,14 +4867,18 @@
         <rollovertextid>9909125</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
+
         <cost resourcetype="Food">75.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSprawlingCityPlanning</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModClearingTheFrontier">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4772,15 +4896,19 @@
         <rollovertextid>9909127</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModClearingTheFrontier</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModSettlersRoads">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4798,15 +4926,19 @@
         <rollovertextid>9909129</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSettlersRoads</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModClearingCrews">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4824,15 +4956,19 @@
         <rollovertextid>9909131</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>75.0000</researchpoints>
+
         <cost resourcetype="Food">1500.0000</cost>
         <cost resourcetype="Wood">1500.0000</cost>
         <cost resourcetype="Gold">1500.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModClearingCrews</techstatus>
             <techstatus status="Active">Industrialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModSurveyedLots">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4850,15 +4986,19 @@
         <rollovertextid>9909133</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>90.0000</researchpoints>
+
         <cost resourcetype="Food">2000.0000</cost>
         <cost resourcetype="Wood">2000.0000</cost>
         <cost resourcetype="Gold">2000.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSurveyedLots</techstatus>
             <techstatus status="Active">Imperialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModOpenCountry">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4872,15 +5012,19 @@
         <rollovertextid>9909135</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSprawlingCityPlanning</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModVoyageurs">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4898,15 +5042,19 @@
         <rollovertextid>9909137</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModVoyageurs</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModColonialMarkets">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4924,15 +5072,19 @@
         <rollovertextid>9909139</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">500.0000</cost>
         <cost resourcetype="Wood">500.0000</cost>
         <cost resourcetype="Gold">500.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModColonialMarkets</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModCaravans">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4946,14 +5098,18 @@
         <rollovertextid>9909141</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>30.0000</researchpoints>
+
         <cost resourcetype="Food">75.0000</cost>
         <cost resourcetype="Wood">75.0000</cost>
         <cost resourcetype="Gold">75.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSprawlingCityPlanning</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModLooseStandards">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4971,15 +5127,19 @@
         <rollovertextid>9909143</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModLooseStandards</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModQuickConstruction">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -4997,15 +5157,19 @@
         <rollovertextid>9909145</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModQuickConstruction</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModCheapMaterials">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -5023,15 +5187,19 @@
         <rollovertextid>9909147</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">500.0000</cost>
         <cost resourcetype="Wood">500.0000</cost>
         <cost resourcetype="Gold">500.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModCheapMaterials</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModBoomtownBuilding">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -5045,15 +5213,19 @@
         <rollovertextid>9909149</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>45.0000</researchpoints>
+
         <cost resourcetype="Food">150.0000</cost>
         <cost resourcetype="Wood">150.0000</cost>
         <cost resourcetype="Gold">150.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModSprawlingCityPlanning</techstatus>
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModFrontierCompanies">
                 <target type="ProtoUnit">ModBunkerMills</target>
@@ -5071,15 +5243,19 @@
         <rollovertextid>9909151</rollovertextid>
         <status>UNOBTAINABLE</status>
         <researchpoints>60.0000</researchpoints>
+
         <cost resourcetype="Food">350.0000</cost>
         <cost resourcetype="Wood">350.0000</cost>
         <cost resourcetype="Gold">350.0000</cost>
+
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <flag>CountsTowardEconomicScore</flag>
+
         <prereqs>
             <techstatus status="Active">ModFrontierCompanies</techstatus>
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
+
         <effects>
             <effect type="CommandRemove" tech="ModContractedGuards">
                 <target type="ProtoUnit">ModBunkerMills</target>
