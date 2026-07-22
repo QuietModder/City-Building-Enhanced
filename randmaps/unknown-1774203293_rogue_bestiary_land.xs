@@ -177,9 +177,9 @@ void main(void)
 	int soundTimer = -1;
 	string soundToPlay = "";
 
-	int safetyIsAnIllusion = rmRandInt(1,10000);
+	int safetyIsAnIllusion = 0;	// disabled for CBE wilderness survival flow
 	if (aprilFools == 16)
-		safetyIsAnIllusion = 1;
+		safetyIsAnIllusion = 0;
 //		safetyIsAnIllusion = 1;	// for testing
 	int safetyTimer = rmRandInt(240,300);
 
@@ -188,9 +188,9 @@ void main(void)
 		freeCrateShipments = 1;
 //		freeCrateShipments = 1;	// for testing
 
-	int destroyerOfWalls = rmRandInt(1,1000);
+	int destroyerOfWalls = 0;	// disabled for CBE wilderness survival flow
 	if (aprilFools == 18)
-		destroyerOfWalls = 1;
+		destroyerOfWalls = 0;
 //		destroyerOfWalls = 1;	// for testing
 	int wallTimer = rmRandInt(3,5);
 	int wallDist = 100+25*cNumberNonGaiaPlayers;
@@ -203,12 +203,9 @@ void main(void)
 	int convertDist = 28+cNumberNonGaiaPlayers;
 	int targetPlayer = 0;
 
-	int townDestroyer = rmRandInt(1,1000);
+	int townDestroyer = 0;	// disabled for CBE wilderness survival flow
 	if (aprilFools == 20)
-	{
-		townDestroyer = 1;
-    	rmSetNumberInitialColonies(2);
-	}
+		townDestroyer = 0;
 	if (rmGetIsTreaty() == true)
 		townDestroyer = 0;
 //		townDestroyer = 1;	// for testing
@@ -5536,16 +5533,16 @@ void main(void)
 
 			rmSetPlacementTeam(0);
 			rmSetPlacementSection(0.01, 0.00);
-			rmPlacePlayersCircular(0.30, 0.40, 0);
+			rmPlacePlayersCircular(0.34, 0.42, 0);
 
 			rmSetPlacementTeam(1);
 			rmSetPlacementSection(0.01+aValue, 0.00+aValue);
-			rmPlacePlayersCircular(0.30, 0.40, 0.0);
+			rmPlacePlayersCircular(0.34, 0.42, 0.0);
 		}
 		else
 		{
 			rmSetTeamSpacingModifier(0.50);
-			rmPlacePlayersCircular(0.25, 0.40, 0);
+			rmPlacePlayersCircular(0.32, 0.42, 0);
 		}
 	}
 	else
@@ -5599,9 +5596,9 @@ void main(void)
 					rmSetPlacementSection(0.685, 0.315);
 				rmSetTeamSpacingModifier(0.50);
 				if (cNumberNonGaiaPlayers <= 4)
-					rmPlacePlayersCircular(0.36, 0.36, 0);
+					rmPlacePlayersCircular(0.39, 0.39, 0);
 				else
-					rmPlacePlayersCircular(0.37, 0.37, 0);
+					rmPlacePlayersCircular(0.40, 0.40, 0);
 			}
 			else
 			{
@@ -5646,9 +5643,9 @@ void main(void)
 				}
 				rmSetTeamSpacingModifier(0.50);
 				if (cNumberNonGaiaPlayers <= 4)
-					rmPlacePlayersCircular(0.36, 0.36, 0);
+					rmPlacePlayersCircular(0.39, 0.39, 0);
 				else
-					rmPlacePlayersCircular(0.37, 0.37, 0);
+					rmPlacePlayersCircular(0.40, 0.40, 0);
 
 				rmSetPlacementTeam(teamOne);
 				if (bayPosition < 0.12)
@@ -5669,27 +5666,27 @@ void main(void)
 					rmSetPlacementSection(0.685, 0.685+0.022*cNumberNonGaiaPlayers);
 				rmSetTeamSpacingModifier(0.50);
 				if (cNumberNonGaiaPlayers <= 4)
-					rmPlacePlayersCircular(0.36, 0.36, 0);
+					rmPlacePlayersCircular(0.39, 0.39, 0);
 				else
-					rmPlacePlayersCircular(0.37, 0.37, 0);
+					rmPlacePlayersCircular(0.40, 0.40, 0);
 			}
 		}
 		else if (oceanMiddle == 1)
 		{
 			if (cNumberNonGaiaPlayers <= 4)
-				rmPlacePlayersCircular(0.36, 0.36, 0);
+				rmPlacePlayersCircular(0.39, 0.39, 0);
 			else
-				rmPlacePlayersCircular(0.37, 0.37, 0);
+				rmPlacePlayersCircular(0.40, 0.40, 0);
 			rmEchoInfo("players nearer edge because ocean in middle");
 		}
 		else if(oceanRing == 1)
 		{
-			rmPlacePlayersCircular(0.32, 0.34, 0);
+			rmPlacePlayersCircular(0.35, 0.37, 0);
 			rmEchoInfo("players very far from edge because of continent");
 		}
 		else
 		{
-			rmPlacePlayersCircular(0.32, 0.36, 0);
+			rmPlacePlayersCircular(0.36, 0.40, 0);
 			rmEchoInfo("players can be farther from edge");
 		}
 	}
@@ -6458,29 +6455,332 @@ void main(void)
 	int counterYoru = -1;
 	int counterZapo = -1;
 	int counterZen = -1;
+
+	int cbeWorldThemeMixed = 0;
+	int cbeWorldThemeAfrica = 1;
+	int cbeWorldThemeAsia = 2;
+	int cbeWorldThemeEurope = 3;
+	int cbeWorldThemeSouthAmerica = 4;
+	int cbeWorldThemeFrontier = 5;
+	int cbeWorldThemeWetland = 6;
+	int cbeWorldTheme = cbeWorldThemeMixed;
+	string cbeWorldThemeName = "mixed wilderness";
 	string cbeNativeThemeName = "mixed minor civilizations";
-	if (africanMap == 1)
+	if (africanMap == 1 || afrEast == 1 || afrSavanna == 1 || afrRainforest == 1 || afrDesert == 1)
+	{
+		cbeWorldTheme = cbeWorldThemeAfrica;
+		cbeWorldThemeName = "African wilderness";
 		cbeNativeThemeName = "African minor civilizations";
-	else if (asianMap == 1 || himalMap == 1 || dekkanMap == 1 || yellowRiverMap == 1 || japanMap == 1 || indonesiaMap == 1)
+	}
+	else if (yellowRiverMap == 1 || dekkanMap == 1 || himalMap == 1 || japanMap == 1 || mongolMap == 1 || asianMap == 1 || indonesiaMap == 1)
+	{
+		cbeWorldTheme = cbeWorldThemeAsia;
+		cbeWorldThemeName = "Asian wilderness";
 		cbeNativeThemeName = "Asian minor civilizations";
+	}
 	else if (euMap == 1 || europeanMerc == 1)
+	{
+		cbeWorldTheme = cbeWorldThemeEurope;
+		cbeWorldThemeName = "European wilderness";
 		cbeNativeThemeName = "European minor civilizations";
+	}
 	else if (amazonMap == 1 || andesMap == 1 || araucMap == 1 || saMap == 1)
+	{
+		cbeWorldTheme = cbeWorldThemeSouthAmerica;
+		cbeWorldThemeName = "South American wilderness";
 		cbeNativeThemeName = "Central and South American minor civilizations";
-	else if (californiaMap == 1 || sonoraMap == 1 || rockiesMap == 1 || nwtMap == 1 || naMap == 1)
+	}
+	else if (californiaMap == 1 || sonoraMap == 1 || rockiesMap == 1 || nwtMap == 1 || naMap == 1 || carolinaMap == 1)
+	{
+		cbeWorldTheme = cbeWorldThemeFrontier;
+		cbeWorldThemeName = "North American frontier";
 		cbeNativeThemeName = "North American frontier minor civilizations";
-	else if (caribbeanMap == 1 || bayouMap == 1)
+	}
+	else if (caribbeanMap == 1 || bayouMap == 1 || borneoMap == 1)
+	{
+		cbeWorldTheme = cbeWorldThemeWetland;
+		cbeWorldThemeName = "wetland wilderness";
 		cbeNativeThemeName = "Caribbean and wetland minor civilizations";
+	}
+	rmEchoInfo("CBE world theme = "+cbeWorldThemeName);
 	rmEchoInfo("CBE native theme = "+cbeNativeThemeName);
+
+	string cbeAweFoliageThemeName = "ancient mixed woodlands";
+	string cbeAweTallTree1 = "TreeRedwoodChonky";
+	string cbeAweTallTree2 = "TreeKapok";
+	string cbeAweAccentTree = treeName;
+	string cbeBestiaryThemeName = "temperate wildlife";
+	string cbeBestiaryWildlife1 = "WildRabbit";
+	string cbeBestiaryWildlife2 = "WildBoar";
+	string cbeBestiaryGuardian = "RedFox";
+	string cbeBestiaryLegendaryGuardian = "LegendaryRedFox";
+	string cbeBestiaryMythicThemeName = "wandering myth";
+	string cbeBestiaryMythicUnit = "MythicalGrimReaper";
+	float cbeBestiaryMythicRoll = rmRandFloat(0, 1);
+	string cbeRoguePresetName = "Outlaw Bandits";
+	string cbeRogueUnit1 = "deSaloonBandido";
+	string cbeRogueUnit2 = "deSaloonDesperado";
+	string cbeRogueUnit3 = "deSaloonHighwaymanRider";
+	string cbeRogueHeavyUnit = "deSaloonCowboy";
+	float cbeRoguePresetRoll = rmRandFloat(0, 1);
+	if (cbeWorldTheme == cbeWorldThemeSouthAmerica)
+	{
+		cbeAweFoliageThemeName = "towering rainforest canopy";
+		cbeAweTallTree1 = "TreeKapok";
+		cbeAweTallTree2 = "TreeAmazon";
+		cbeAweAccentTree = "TreePuya";
+		cbeBestiaryThemeName = "South American wildlife";
+		cbeBestiaryWildlife1 = "GiantAnteater";
+		cbeBestiaryWildlife2 = "NorthernTamandua";
+		cbeBestiaryGuardian = "GreenAnaconda";
+		cbeBestiaryLegendaryGuardian = "LegendaryGiantAnteater";
+		cbeRoguePresetName = "Conquistadors";
+		cbeRogueUnit1 = "deSaloonOutlawBuccaneer";
+		cbeRogueUnit2 = "deSaloonOutlawBlowgunner";
+		cbeRogueUnit3 = "deREVGranadero";
+		cbeRogueHeavyUnit = "MercHackapell";
+	}
+	else if (cbeWorldTheme == cbeWorldThemeFrontier && (californiaMap == 1 || rockiesMap == 1 || nwtMap == 1))
+	{
+		cbeAweFoliageThemeName = "giant redwood and mountain pine";
+		cbeAweTallTree1 = "TreeRedwoodChonky";
+		cbeAweTallTree2 = "TreeRedwood";
+		cbeAweAccentTree = "TreePonderosaPine";
+		cbeBestiaryThemeName = "frontier wildlife";
+		cbeBestiaryWildlife1 = "NineBandedArmadillo";
+		cbeBestiaryWildlife2 = "AmericanRedSquirrel";
+		cbeBestiaryGuardian = "WesternDiamondbackRattlesnake";
+		cbeBestiaryLegendaryGuardian = "LegendaryBaldEagle";
+		cbeRoguePresetName = "Outlaw Bandits";
+		cbeRogueUnit1 = "deSaloonGunslinger";
+		cbeRogueUnit2 = "deSaloonCowboy";
+		cbeRogueUnit3 = "deSaloonOwlhoot";
+		cbeRogueHeavyUnit = "deSaloonHighwaymanRider";
+	}
+	else if (sonoraMap == 1 || (cbeWorldTheme == cbeWorldThemeAfrica && (afrDesert == 1 || afrSavanna == 1)))
+	{
+		cbeAweFoliageThemeName = "baobab and desert acacia";
+		cbeAweTallTree1 = "deTreeBaobab";
+		cbeAweTallTree2 = "deTreeAcacia";
+		cbeAweAccentTree = "deTreeSenegaliaLaeta";
+		cbeBestiaryThemeName = "African wildlife";
+		cbeBestiaryWildlife1 = "Wildebeest";
+		cbeBestiaryWildlife2 = "Bongo";
+		cbeBestiaryGuardian = "Cheetah";
+		cbeBestiaryLegendaryGuardian = "LegendaryCheetah";
+		if (afrDesert == 1)
+		{
+			cbeBestiaryWildlife1 = "Gemsbok";
+			cbeBestiaryWildlife2 = "FennecFox";
+			cbeBestiaryGuardian = "DeathstalkerScorpion";
+			cbeBestiaryLegendaryGuardian = "LegendaryGemsbok";
+		}
+		cbeRoguePresetName = "Desert Raiders";
+		cbeRogueUnit1 = "deOutlawDesertArcher";
+		cbeRogueUnit2 = "deOutlawDesertWarrior";
+		cbeRogueUnit3 = "deOutlawDesertRaider";
+		cbeRogueHeavyUnit = "deAllegianceBarbaryMarksman";
+	}
+	else if (cbeWorldTheme == cbeWorldThemeAfrica)
+	{
+		cbeAweFoliageThemeName = "old African high canopy";
+		cbeAweTallTree1 = "deTreeFig";
+		cbeAweTallTree2 = "TreeKapok";
+		cbeAweAccentTree = "TreeAfrica";
+		cbeBestiaryThemeName = "African wildlife";
+		cbeBestiaryWildlife1 = "Wildebeest";
+		cbeBestiaryWildlife2 = "Bongo";
+		cbeBestiaryGuardian = "Cheetah";
+		cbeBestiaryLegendaryGuardian = "LegendaryCheetah";
+		if (afrRainforest == 1)
+		{
+			cbeBestiaryWildlife1 = "Okapi";
+			cbeBestiaryWildlife2 = "Mandrill";
+			cbeBestiaryGuardian = "Gorilla";
+			cbeBestiaryLegendaryGuardian = "LegendaryGorilla";
+		}
+		cbeRoguePresetName = "Desert Raiders";
+		cbeRogueUnit1 = "deOutlawDesertArcher";
+		cbeRogueUnit2 = "deOutlawDesertWarrior";
+		cbeRogueUnit3 = "deOutlawDesertRaider";
+		cbeRogueHeavyUnit = "deAllegianceBarbaryMarksman";
+	}
+	else if (cbeWorldTheme == cbeWorldThemeWetland)
+	{
+		cbeAweFoliageThemeName = "wetland and jungle canopy";
+		cbeAweTallTree1 = "ypTreeBorneoCanopy";
+		cbeAweTallTree2 = "deTreeMangrove";
+		cbeAweAccentTree = "TreeBayou";
+		cbeBestiaryThemeName = "wetland wildlife";
+		cbeBestiaryWildlife1 = "GreenIguana";
+		cbeBestiaryWildlife2 = "AlligatorSnappingTurtle";
+		cbeBestiaryGuardian = "SaltwaterCrocodile";
+		cbeBestiaryLegendaryGuardian = "LegendarySaltwaterCrocodile";
+	}
+	else if (cbeWorldTheme == cbeWorldThemeAsia)
+	{
+		cbeAweFoliageThemeName = "Asian highland groves";
+		cbeAweTallTree1 = "ypTreeHimalayas";
+		cbeAweTallTree2 = "ypTreeGinkgo";
+		cbeAweAccentTree = "ypTreeMongolianFir";
+		cbeBestiaryThemeName = "Asian wildlife";
+		cbeBestiaryWildlife1 = "IndianPeafowl";
+		cbeBestiaryWildlife2 = "Bharal";
+		cbeBestiaryGuardian = "KingCobra";
+		cbeBestiaryLegendaryGuardian = "LegendaryIndianLeopard";
+		cbeBestiaryMythicThemeName = "Asian myth";
+		if (cbeBestiaryMythicRoll <= 0.35)
+			cbeBestiaryMythicUnit = "MythicalChineseDragon";
+		else if (cbeBestiaryMythicRoll <= 0.55)
+			cbeBestiaryMythicUnit = "LegendaryPhoenixLand";
+		else if (cbeBestiaryMythicRoll <= 0.70)
+			cbeBestiaryMythicUnit = "WyvernLand";
+		else if (cbeBestiaryMythicRoll <= 0.85)
+			cbeBestiaryMythicUnit = "LegendaryGriffonLand";
+	}
+	else if (cbeWorldTheme == cbeWorldThemeEurope)
+	{
+		cbeAweFoliageThemeName = "old European woodland";
+		cbeAweTallTree1 = "deTreeCypress";
+		cbeAweTallTree2 = "deTreePoplar";
+		cbeAweAccentTree = "TreeNewEngland";
+		cbeBestiaryThemeName = "European wildlife";
+		cbeBestiaryWildlife1 = "WildBoar";
+		cbeBestiaryWildlife2 = "Chamois";
+		cbeBestiaryGuardian = "EurasianLynx";
+		cbeBestiaryLegendaryGuardian = "LegendaryEurasianLynx";
+		cbeBestiaryMythicThemeName = "European myth";
+		if (cbeBestiaryMythicRoll <= 0.22)
+			cbeBestiaryMythicUnit = "WyvernLand";
+		else if (cbeBestiaryMythicRoll <= 0.40)
+			cbeBestiaryMythicUnit = "MythicalBalrog";
+		else if (cbeBestiaryMythicRoll <= 0.58)
+			cbeBestiaryMythicUnit = "LegendaryGriffonLand";
+		else if (cbeBestiaryMythicRoll <= 0.74)
+			cbeBestiaryMythicUnit = "LegendaryCerberus";
+		else if (cbeBestiaryMythicRoll <= 0.88)
+			cbeBestiaryMythicUnit = "MythicalEnt";
+		cbeRoguePresetName = "Professional Rogue Army";
+		cbeRogueUnit1 = "Musketeer";
+		cbeRogueUnit2 = "Skirmisher";
+		cbeRogueUnit3 = "Hussar";
+		cbeRogueHeavyUnit = "Falconet";
+	}
+	else if (cbeWorldTheme == cbeWorldThemeFrontier)
+	{
+		cbeAweFoliageThemeName = "frontier mixed forest";
+		cbeAweTallTree1 = "TreeGreatLakes";
+		cbeAweTallTree2 = "TreeNewEngland";
+		cbeAweAccentTree = "TreeCarolinaGrass";
+		cbeBestiaryThemeName = "frontier wildlife";
+		cbeBestiaryWildlife1 = "NineBandedArmadillo";
+		cbeBestiaryWildlife2 = "AmericanRedSquirrel";
+		cbeBestiaryGuardian = "WesternDiamondbackRattlesnake";
+		cbeBestiaryLegendaryGuardian = "LegendaryBaldEagle";
+		cbeRoguePresetName = "Outlaw Bandits";
+		cbeRogueUnit1 = "deSaloonGunslinger";
+		cbeRogueUnit2 = "deSaloonCowboy";
+		cbeRogueUnit3 = "deSaloonOwlhoot";
+		cbeRogueHeavyUnit = "deSaloonHighwaymanRider";
+	}
+	if (cbeWorldTheme != cbeWorldThemeAsia && cbeWorldTheme != cbeWorldThemeEurope)
+	{
+		if (cbeBestiaryMythicRoll <= 0.10)
+			cbeBestiaryMythicUnit = "MythicalGrimReaper";
+		else if (cbeBestiaryMythicRoll <= 0.20)
+			cbeBestiaryMythicUnit = "Tyrannosaurus";
+		else if (cbeBestiaryMythicRoll <= 0.30)
+			cbeBestiaryMythicUnit = "WyvernLand";
+		else if (cbeBestiaryMythicRoll <= 0.40)
+			cbeBestiaryMythicUnit = "MythicalChineseDragon";
+		else if (cbeBestiaryMythicRoll <= 0.50)
+			cbeBestiaryMythicUnit = "LegendaryPhoenixLand";
+		else if (cbeBestiaryMythicRoll <= 0.60)
+			cbeBestiaryMythicUnit = "MythicalBalrog";
+		else if (cbeBestiaryMythicRoll <= 0.70)
+			cbeBestiaryMythicUnit = "LegendaryGriffonLand";
+		else if (cbeBestiaryMythicRoll <= 0.80)
+			cbeBestiaryMythicUnit = "MythicalEnt";
+		else if (cbeBestiaryMythicRoll <= 0.90)
+			cbeBestiaryMythicUnit = "LegendaryCerberus";
+		else
+			cbeBestiaryMythicUnit = "LegendaryGiantSpider";
+	}
+	if (africanDesertMerc == 1)
+	{
+		cbeRoguePresetName = "Desert Raiders";
+		cbeRogueUnit1 = "deOutlawDesertArcher";
+		cbeRogueUnit2 = "deOutlawDesertWarrior";
+		cbeRogueUnit3 = "deOutlawDesertRaider";
+		cbeRogueHeavyUnit = "deAllegianceBarbaryMarksman";
+	}
+	else if (mexicanMerc == 1 || southAmMerc == 1)
+	{
+		cbeRoguePresetName = "Conquistadors";
+		cbeRogueUnit1 = "deSaloonOutlawBuccaneer";
+		cbeRogueUnit2 = "deSaloonOutlawBlowgunner";
+		cbeRogueUnit3 = "deREVGranadero";
+		cbeRogueHeavyUnit = "MercHackapell";
+	}
+	else if (cbeWorldTheme != cbeWorldThemeAfrica && cbeWorldTheme != cbeWorldThemeSouthAmerica && cbeWorldTheme != cbeWorldThemeFrontier && cbeWorldTheme != cbeWorldThemeEurope)
+	{
+		if (europeanMerc == 1 || cbeRoguePresetRoll <= 0.20)
+		{
+			cbeRoguePresetName = "Professional Rogue Army";
+			cbeRogueUnit1 = "Musketeer";
+			cbeRogueUnit2 = "Skirmisher";
+			cbeRogueUnit3 = "Hussar";
+			cbeRogueHeavyUnit = "Falconet";
+		}
+		else if (cbeRoguePresetRoll <= 0.35)
+		{
+			cbeRoguePresetName = "Mercenary Army";
+			cbeRogueUnit1 = "MercFusilier";
+			cbeRogueUnit2 = "MercJaeger";
+			cbeRogueUnit3 = "MercHackapell";
+			cbeRogueHeavyUnit = "MercGreatCannon";
+		}
+	}
+	cbeBestiaryMythicThemeName = "legendary pet fallback";
+	cbeBestiaryMythicUnit = "LegendaryKomodoDragon";
+
+	// Diagnostic fallback: keep the new systems wired, but use known-safe base map protos.
+	// If this loads, re-enable themed Bestiary/Foliage names in small batches.
+	cbeAweFoliageThemeName = "diagnostic vanilla foliage";
+	cbeAweTallTree1 = treeName;
+	cbeAweTallTree2 = treeName;
+	cbeAweAccentTree = treeName;
+	cbeBestiaryThemeName = "diagnostic vanilla wildlife";
+	cbeBestiaryWildlife1 = critterOneName;
+	cbeBestiaryWildlife2 = critterTwoName;
+	cbeBestiaryGuardian = "Musketeer";
+	cbeBestiaryLegendaryGuardian = "Musketeer";
+	cbeBestiaryMythicThemeName = "diagnostic vanilla mythic placeholder";
+	cbeBestiaryMythicUnit = "Musketeer";
+	rmEchoInfo("CBE awe foliage theme = "+cbeAweFoliageThemeName);
 
 	for(i = 0; <nativeNumber)
 	{
 		nativeChance = rmRandFloat(0,0.41);
 //			nativeChance = 0.41;		// for testing
-		if (rmRandFloat(0,1) <= 0.80)
+		bool cbeUseThemedNative = (rmRandFloat(0,1) <= 0.80);
+		if (cbeWorldTheme == cbeWorldThemeAfrica && counterSoma >= 1 && counterBerb >= 1 && counterSuda >= 1 && counterYoru >= 1 && counterAkan >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeAsia && counterTeng >= 1 && counterShao >= 1 && counterSufi >= 1 && counterZen >= 1 && counterUdas >= 1 && counterBhak >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeEurope && counterBour >= 1 && counterHabs >= 1 && counterHano >= 1 && counterJagi >= 1 && counterOlde >= 1 && counterPhan >= 1 && counterVasa >= 1 && counterWett >= 1 && counterWitt >= 1 && counterTeng >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeSouthAmerica && counterAzte >= 1 && counterZapo >= 1 && counterCari >= 1 && counterInca >= 1 && counterMapu >= 1 && counterMaya >= 1 && counterTupi >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeFrontier && counterLako >= 1 && counterIroq >= 1 && counterApac >= 1 && counterLena >= 1 && counterHuro >= 1 && counterCher >= 1 && counterComa >= 1 && counterCree >= 1 && counterKlam >= 1 && counterChey >= 1 && counterNoot >= 1 && counterNava >= 1)
+			cbeUseThemedNative = false;
+		else if (cbeWorldTheme == cbeWorldThemeWetland && counterCari >= 1 && counterHuro >= 1 && counterSemi >= 1 && counterTupi >= 1)
+			cbeUseThemedNative = false;
+
+		if (cbeUseThemedNative == true)
 		{
 			float cbeNativeThemeRoll = rmRandFloat(0,1);
-			if (africanMap == 1)
+			if (cbeWorldTheme == cbeWorldThemeAfrica)
 			{
 				if (cbeNativeThemeRoll <= 0.20)
 					nativeChance = rmRandFloat(0.16, 0.17);
@@ -6493,7 +6793,7 @@ void main(void)
 				else
 					nativeChance = rmRandFloat(0.20, 0.21);
 			}
-			else if (asianMap == 1 || himalMap == 1 || dekkanMap == 1 || yellowRiverMap == 1 || japanMap == 1 || indonesiaMap == 1)
+			else if (cbeWorldTheme == cbeWorldThemeAsia)
 			{
 				if (cbeNativeThemeRoll <= 0.15)
 					nativeChance = rmRandFloat(0.09, 0.10);
@@ -6508,9 +6808,9 @@ void main(void)
 				else
 					nativeChance = rmRandFloat(0.26, 0.27);
 			}
-			else if (euMap == 1 || europeanMerc == 1)
+			else if (cbeWorldTheme == cbeWorldThemeEurope)
 				nativeChance = rmRandFloat(0.00, 0.10);
-			else if (amazonMap == 1 || andesMap == 1 || araucMap == 1 || saMap == 1)
+			else if (cbeWorldTheme == cbeWorldThemeSouthAmerica)
 			{
 				if (cbeNativeThemeRoll <= 0.15)
 					nativeChance = rmRandFloat(0.10, 0.11);
@@ -6527,7 +6827,7 @@ void main(void)
 				else
 					nativeChance = rmRandFloat(0.40, 0.41);
 			}
-			else if (californiaMap == 1 || sonoraMap == 1 || rockiesMap == 1 || nwtMap == 1 || naMap == 1)
+			else if (cbeWorldTheme == cbeWorldThemeFrontier)
 			{
 				if (cbeNativeThemeRoll <= 0.08)
 					nativeChance = rmRandFloat(0.11, 0.12);
@@ -6554,7 +6854,7 @@ void main(void)
 				else
 					nativeChance = rmRandFloat(0.38, 0.39);
 			}
-			else if (caribbeanMap == 1 || bayouMap == 1)
+			else if (cbeWorldTheme == cbeWorldThemeWetland)
 			{
 				if (cbeNativeThemeRoll <= 0.25)
 					nativeChance = rmRandFloat(0.27, 0.28);
@@ -7347,6 +7647,58 @@ void main(void)
 	if (floodedLand != 1)
 		rmAddObjectDefConstraint(playerTreeFarID, shortAvoidImpassableLand);
 
+	int cbeAweStartFoliageID = rmCreateObjectDef("CBE awe start foliage");
+	rmAddObjectDefItem(cbeAweStartFoliageID, cbeAweTallTree1, 1, 0.0);
+	rmAddObjectDefItem(cbeAweStartFoliageID, cbeAweTallTree2, 2, 8.0);
+	rmAddObjectDefItem(cbeAweStartFoliageID, treeName, 4, 11.0);
+	rmSetObjectDefMinDistance(cbeAweStartFoliageID, 28);
+	rmSetObjectDefMaxDistance(cbeAweStartFoliageID, 36);
+	rmAddObjectDefConstraint(cbeAweStartFoliageID, avoidAll);
+	rmAddObjectDefConstraint(cbeAweStartFoliageID, avoidSilver1Short);
+	rmAddObjectDefConstraint(cbeAweStartFoliageID, avoidTradeRouteSocketShort);
+	rmAddObjectDefConstraint(cbeAweStartFoliageID, avoidTradeRoute);
+	rmAddObjectDefConstraint(cbeAweStartFoliageID, avoidPond);
+	rmAddObjectDefConstraint(cbeAweStartFoliageID, avoidCliffsShort);
+	if (floodedLand != 1)
+		rmAddObjectDefConstraint(cbeAweStartFoliageID, shortAvoidImpassableLand);
+
+	int cbeAweFarGroveID = rmCreateObjectDef("CBE awe far grove");
+	rmAddObjectDefItem(cbeAweFarGroveID, cbeAweTallTree1, 2, 5.0);
+	rmAddObjectDefItem(cbeAweFarGroveID, cbeAweTallTree2, 3, 10.0);
+	rmAddObjectDefItem(cbeAweFarGroveID, cbeAweAccentTree, 4, 14.0);
+	rmSetObjectDefMinDistance(cbeAweFarGroveID, 52);
+	rmSetObjectDefMaxDistance(cbeAweFarGroveID, 82+cNumberNonGaiaPlayers);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidAll);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidPlayersShort);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidForestMin);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidGoldMin);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidPond);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidCliffsShort);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidTradeRouteSocketShort);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidTradeRoute);
+	rmAddObjectDefConstraint(cbeAweFarGroveID, avoidCommandPostFar);
+	if (floodedLand != 1)
+		rmAddObjectDefConstraint(cbeAweFarGroveID, shortAvoidImpassableLand);
+
+	int cbeAweWildwoodID = rmCreateObjectDef("CBE awe wildwood");
+	rmAddObjectDefItem(cbeAweWildwoodID, cbeAweTallTree1, 2, 6.0);
+	rmAddObjectDefItem(cbeAweWildwoodID, cbeAweTallTree2, 4, 13.0);
+	rmAddObjectDefItem(cbeAweWildwoodID, cbeAweAccentTree, 6, 18.0);
+	rmSetObjectDefMinDistance(cbeAweWildwoodID, rmXFractionToMeters(0.10));
+	rmSetObjectDefMaxDistance(cbeAweWildwoodID, rmXFractionToMeters(0.46));
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidAll);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidPlayers);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidForestMin);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidGoldMin);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidPond);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidCliffsShort);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidNativesShort);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidTradeRouteSocketShort);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidTradeRoute);
+	rmAddObjectDefConstraint(cbeAweWildwoodID, avoidCommandPostFar);
+	if (floodedLand != 1)
+		rmAddObjectDefConstraint(cbeAweWildwoodID, shortAvoidImpassableLand);
+
 	int nearDeerID = rmCreateObjectDef("herds near town");
 	if (dontGotBeef == 1)
 	{
@@ -7479,93 +7831,6 @@ void main(void)
 	else
 		rmSetObjectDefCreateHerd(farDeer2ID, true);
 
-	string cbeBestiaryThemeName = "temperate wildlife";
-	string cbeBestiaryWildlife1 = "WildRabbit";
-	string cbeBestiaryWildlife2 = "WildBoar";
-	string cbeBestiaryGuardian = "RedFox";
-	string cbeBestiaryLegendaryGuardian = "LegendaryRedFox";
-	if (africanMap == 1)
-	{
-		cbeBestiaryThemeName = "African wildlife";
-		cbeBestiaryWildlife1 = "Wildebeest";
-		cbeBestiaryWildlife2 = "Bongo";
-		cbeBestiaryGuardian = "Cheetah";
-		cbeBestiaryLegendaryGuardian = "LegendaryCheetah";
-		if (afrDesert == 1)
-		{
-			cbeBestiaryWildlife1 = "Gemsbok";
-			cbeBestiaryWildlife2 = "FennecFox";
-			cbeBestiaryGuardian = "DeathstalkerScorpion";
-			cbeBestiaryLegendaryGuardian = "LegendaryGemsbok";
-		}
-		else if (afrRainforest == 1)
-		{
-			cbeBestiaryWildlife1 = "Okapi";
-			cbeBestiaryWildlife2 = "Mandrill";
-			cbeBestiaryGuardian = "Gorilla";
-			cbeBestiaryLegendaryGuardian = "LegendaryGorilla";
-		}
-	}
-	else if (californiaMap == 1 || sonoraMap == 1 || rockiesMap == 1)
-	{
-		cbeBestiaryThemeName = "frontier wildlife";
-		cbeBestiaryWildlife1 = "NineBandedArmadillo";
-		cbeBestiaryWildlife2 = "AmericanRedSquirrel";
-		cbeBestiaryGuardian = "WesternDiamondbackRattlesnake";
-		cbeBestiaryLegendaryGuardian = "LegendaryBaldEagle";
-	}
-	else if (amazonMap == 1 || andesMap == 1 || araucMap == 1 || saMap == 1)
-	{
-		cbeBestiaryThemeName = "South American wildlife";
-		cbeBestiaryWildlife1 = "GiantAnteater";
-		cbeBestiaryWildlife2 = "NorthernTamandua";
-		cbeBestiaryGuardian = "GreenAnaconda";
-		cbeBestiaryLegendaryGuardian = "LegendaryGiantAnteater";
-	}
-	else if (euMap == 1 || europeanMerc == 1)
-	{
-		cbeBestiaryThemeName = "European wildlife";
-		cbeBestiaryWildlife1 = "WildBoar";
-		cbeBestiaryWildlife2 = "Chamois";
-		cbeBestiaryGuardian = "EurasianLynx";
-		cbeBestiaryLegendaryGuardian = "LegendaryEurasianLynx";
-	}
-	else if (asianMap == 1 || himalMap == 1 || dekkanMap == 1 || yellowRiverMap == 1 || japanMap == 1)
-	{
-		cbeBestiaryThemeName = "Asian wildlife";
-		cbeBestiaryWildlife1 = "IndianPeafowl";
-		cbeBestiaryWildlife2 = "Bharal";
-		cbeBestiaryGuardian = "KingCobra";
-		cbeBestiaryLegendaryGuardian = "LegendaryIndianLeopard";
-	}
-	else if (caribbeanMap == 1 || bayouMap == 1)
-	{
-		cbeBestiaryThemeName = "wetland wildlife";
-		cbeBestiaryWildlife1 = "GreenIguana";
-		cbeBestiaryWildlife2 = "AlligatorSnappingTurtle";
-		cbeBestiaryGuardian = "SaltwaterCrocodile";
-		cbeBestiaryLegendaryGuardian = "LegendarySaltwaterCrocodile";
-	}
-	string cbeBestiaryMythicThemeName = "wandering myth";
-	string cbeBestiaryMythicUnit = "MythicalGrimReaper";
-	float cbeBestiaryMythicRoll = rmRandFloat(0, 1);
-	if (asianMap == 1 || himalMap == 1 || dekkanMap == 1 || yellowRiverMap == 1 || japanMap == 1)
-	{
-		cbeBestiaryMythicThemeName = "Asian myth";
-		cbeBestiaryMythicUnit = "MythicalChineseDragon";
-	}
-	else if (euMap == 1 || europeanMerc == 1)
-	{
-		cbeBestiaryMythicThemeName = "European myth";
-		cbeBestiaryMythicUnit = "LegendaryWyvernLand";
-	}
-	else
-	{
-		if (cbeBestiaryMythicRoll <= 0.50)
-			cbeBestiaryMythicUnit = "LegendaryWyvernLand";
-		else
-			cbeBestiaryMythicUnit = "MythicalChineseDragon";
-	}
 	rmEchoInfo("CBE Bestiary wildlife theme = "+cbeBestiaryThemeName);
 	rmEchoInfo("CBE Bestiary mythic center = "+cbeBestiaryMythicThemeName+" / "+cbeBestiaryMythicUnit);
 
@@ -7651,6 +7916,44 @@ void main(void)
 	rmAddObjectDefItem(cbeBestiaryCenterMythicID, cbeBestiaryMythicUnit, 1, 0.0);
 	rmSetObjectDefMinDistance(cbeBestiaryCenterMythicID, 0);
 	rmSetObjectDefMaxDistance(cbeBestiaryCenterMythicID, 6);
+
+	int cbeBestiarySuperLegendaryTreasureID = rmCreateObjectDef("CBE bestiary super legendary guarded treasure");
+	rmAddObjectDefItem(cbeBestiarySuperLegendaryTreasureID, "Nugget", 1, 0.0);
+	rmAddObjectDefItem(cbeBestiarySuperLegendaryTreasureID, cbeBestiaryLegendaryGuardian, 2, 10.0);
+	rmAddObjectDefItem(cbeBestiarySuperLegendaryTreasureID, cbeBestiaryMythicUnit, 1, 16.0);
+	rmSetNuggetDifficulty(4, 5);
+	rmSetObjectDefMinDistance(cbeBestiarySuperLegendaryTreasureID, rmXFractionToMeters(0.30));
+	rmSetObjectDefMaxDistance(cbeBestiarySuperLegendaryTreasureID, rmXFractionToMeters(0.49));
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidNuggetFar);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidPlayersFar1);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidTradeRouteSocketShort);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidTradeRoute);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidGoldMin);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidCliffsShort);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidPond);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidNativesShort);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidPiratesShort);
+	rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, avoidAll);
+	if (floodedLand != 1)
+		rmAddObjectDefConstraint(cbeBestiarySuperLegendaryTreasureID, shortAvoidImpassableLand);
+
+	int cbeLegendaryPetTreasureID = rmCreateObjectDef("CBE legendary pet treasure friendly roll");
+	rmAddObjectDefItem(cbeLegendaryPetTreasureID, "Nugget", 1, 0.0);
+	rmSetNuggetDifficulty(3, 3);
+	rmSetObjectDefMinDistance(cbeLegendaryPetTreasureID, rmXFractionToMeters(0.25));
+	rmSetObjectDefMaxDistance(cbeLegendaryPetTreasureID, rmXFractionToMeters(0.49));
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidNuggetMed);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidPlayers);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidTradeRouteSocketShort);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidTradeRoute);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidGoldMin);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidCliffsShort);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidPond);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidNativesShort);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidPiratesShort);
+	rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, avoidAll);
+	if (floodedLand != 1)
+		rmAddObjectDefConstraint(cbeLegendaryPetTreasureID, shortAvoidImpassableLand);
 
 	int startSilver3ID = rmCreateObjectDef("player farther silver");
 	if (berriesGalore == 2)
@@ -9397,7 +9700,7 @@ void main(void)
 			rmPlaceObjectDefAtLoc(cbeBestiaryWildlife2ID, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
 			if (rmRandFloat(0,1) <= 0.90)
 				rmPlaceObjectDefAtLoc(cbeBestiaryGuardianID, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
-			if (rmRandFloat(0,1) <= 0.55)
+			if (rmRandFloat(0,1) <= 0.75)
 				rmPlaceObjectDefAtLoc(cbeBestiaryLegendaryTreasureID, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
 			// BERRIES - 50% of the time
 			if (berryChance >= 0.5)
@@ -9416,6 +9719,9 @@ void main(void)
 				rmPlaceObjectDefAtLoc(playerTreeID, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
 				rmPlaceObjectDefAtLoc(playerTreeFarID, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
 			}
+			rmPlaceObjectDefAtLoc(cbeAweStartFoliageID, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
+			if (rmRandFloat(0,1) <= 0.80)
+				rmPlaceObjectDefAtLoc(cbeAweFarGroveID, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
 			// NUGGETS
 			rmPlaceObjectDefAtLoc(nugget1, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
 			rmPlaceObjectDefAtLoc(nugget2, 0, rmXMetersToFraction(xsVectorGetX(TCLocation)), rmZMetersToFraction(xsVectorGetZ(TCLocation)));
@@ -9456,6 +9762,7 @@ void main(void)
 
 	rmClearClosestPointConstraints();
 
+	rmPlaceObjectDefAtLoc(cbeAweWildwoodID, 0, 0.50, 0.50, 4+cNumberNonGaiaPlayers*2);
 	rmPlaceObjectDefAtLoc(cbeBestiaryCenterWildlifeID, 0, 0.50, 0.50, 1);
 	rmPlaceObjectDefAtLoc(cbeBestiaryCenterMythicID, 0, 0.50, 0.50, 1);
 
@@ -10401,6 +10708,8 @@ void main(void)
 	rmAddObjectDefConstraint(cbeRareNugget4ID, avoidAll);
 	rmSetNuggetDifficulty(4,4);
 	rmPlaceObjectDefAtLoc(cbeRareNugget4ID, 0, 0.5, 0.5, cNumberNonGaiaPlayers*3);
+	rmPlaceObjectDefAtLoc(cbeLegendaryPetTreasureID, 0, 0.5, 0.5, 2+cNumberNonGaiaPlayers*2);
+	rmPlaceObjectDefAtLoc(cbeBestiarySuperLegendaryTreasureID, 0, 0.5, 0.5, 1+cNumberNonGaiaPlayers/2);
 
 	// add fish if flag
 	if (placeWaterFlag == 1)
@@ -12745,7 +13054,7 @@ void main(void)
 			}
 		}
 
-		if (safetyIsAnIllusion == 1)		// aprilFools = 16
+		if (safetyIsAnIllusion == 1)		// aprilFools = 16 disabled for CBE wilderness survival flow
 		{
 			rmCreateTrigger("youthoughtyouweresafe"+i);
 			rmSwitchToTrigger(rmTriggerID("youthoughtyouweresafe"+i));
@@ -12777,7 +13086,7 @@ void main(void)
 			rmSetTriggerEffectParamInt("Status", 2);	
 		}
 
-		if (destroyerOfWalls == 1)		// aprilFools = 18		
+		if (destroyerOfWalls == 1)		// aprilFools = 18 disabled for CBE wilderness survival flow
 		{
 			rmCreateTrigger("idestroywalls"+i);
 			rmSwitchToTrigger(rmTriggerID("idestroywalls"+i));
@@ -12834,7 +13143,7 @@ void main(void)
 			rmSetTriggerEffectParamInt("Dist", convertDist);
 		}
 		
-		if (townDestroyer == 1)		// aprilFools = 20
+		if (townDestroyer == 1)		// aprilFools = 20 disabled for CBE wilderness survival flow
 		{
 			rmCreateTrigger("dudewheresmytc"+i);
 			rmSwitchToTrigger(rmTriggerID("dudewheresmytc"+i));
@@ -17729,12 +18038,12 @@ void main(void)
 	// ============= CBE Rogue Camps Variant =============
 	int cbeRogueArmy = rmCreateArmy(0, "cbeRogueMainArmy");
 	int cbeBestiaryMythicArmy = rmCreateArmy(0, "cbeBestiaryMythicArmy");
-	float cbeRogueCamp1X = size * 0.25;
-	float cbeRogueCamp1Z = size * 0.75;
-	float cbeRogueCamp2X = size * 0.75;
-	float cbeRogueCamp2Z = size * 0.25;
-	float cbeRogueCamp3X = size * 0.75;
-	float cbeRogueCamp3Z = size * 0.75;
+	float cbeRogueCamp1X = size * 0.35;
+	float cbeRogueCamp1Z = size * 0.65;
+	float cbeRogueCamp2X = size * 0.65;
+	float cbeRogueCamp2Z = size * 0.35;
+	float cbeRogueCamp3X = size * 0.65;
+	float cbeRogueCamp3Z = size * 0.65;
 	string cbeRogueCamp1Loc = ""+cbeRogueCamp1X+",0,"+cbeRogueCamp1Z;
 	string cbeRogueCamp2Loc = ""+cbeRogueCamp2X+",0,"+cbeRogueCamp2Z;
 	string cbeRogueCamp3Loc = ""+cbeRogueCamp3X+",0,"+cbeRogueCamp3Z;
@@ -17750,79 +18059,38 @@ void main(void)
 	string cbeBestiaryMythicRoam3Loc = ""+(size * 0.57)+",0,"+(size * 0.50);
 	string cbeBestiaryMythicRoam4Loc = ""+(size * 0.50)+",0,"+(size * 0.43);
 
-	string cbeRoguePresetName = "Outlaw Bandits";
-	string cbeRogueUnit1 = "deSaloonBandido";
-	string cbeRogueUnit2 = "deSaloonDesperado";
-	string cbeRogueUnit3 = "deSaloonHighwaymanRider";
-	string cbeRogueHeavyUnit = "deSaloonCowboy";
-	float cbeRoguePresetRoll = rmRandFloat(0, 1);
-	if (africanMap == 1 || africanDesertMerc == 1)
+	for (i = 1; <= 3)
 	{
-		cbeRoguePresetName = "Desert Raiders";
-		cbeRogueUnit1 = "deOutlawDesertArcher";
-		cbeRogueUnit2 = "deOutlawDesertWarrior";
-		cbeRogueUnit3 = "deOutlawDesertRaider";
-		cbeRogueHeavyUnit = "deAllegianceBarbaryMarksman";
+		float cbeRogueClearX = 0.35;
+		float cbeRogueClearZ = 0.65;
+		if (i == 2)
+		{
+			cbeRogueClearX = 0.65;
+			cbeRogueClearZ = 0.35;
+		}
+		else if (i == 3)
+		{
+			cbeRogueClearX = 0.65;
+			cbeRogueClearZ = 0.65;
+		}
+		int cbeRogueCampClear = rmCreateArea("cbe rogue camp clearing "+i);
+		rmSetAreaLocation(cbeRogueCampClear, cbeRogueClearX, cbeRogueClearZ);
+		rmSetAreaSize(cbeRogueCampClear, rmAreaTilesToFraction(420), rmAreaTilesToFraction(520));
+		rmSetAreaCoherence(cbeRogueCampClear, 1.0);
+		rmSetAreaSmoothDistance(cbeRogueCampClear, 3);
+		rmSetAreaMix(cbeRogueCampClear, landName);
+		rmAddAreaConstraint(cbeRogueCampClear, avoidTCFar);
+		rmAddAreaConstraint(cbeRogueCampClear, avoidPlayersFar1);
+		rmAddAreaConstraint(cbeRogueCampClear, avoidTradeRouteSocketShort);
+		rmAddAreaConstraint(cbeRogueCampClear, avoidTradeRoute);
+		rmAddAreaConstraint(cbeRogueCampClear, avoidCliffsShort);
+		rmAddAreaConstraint(cbeRogueCampClear, avoidPond);
+		rmAddAreaConstraint(cbeRogueCampClear, avoidCommandPostFar);
+		if (floodedLand != 1)
+			rmAddAreaConstraint(cbeRogueCampClear, shortAvoidImpassableLand);
+		rmSetAreaWarnFailure(cbeRogueCampClear, false);
+		rmBuildArea(cbeRogueCampClear);
 	}
-	else if (amazonMap == 1 || andesMap == 1 || araucMap == 1 || mexicanMerc == 1 || southAmMerc == 1)
-	{
-		cbeRoguePresetName = "Conquistadors";
-		cbeRogueUnit1 = "deSaloonOutlawBuccaneer";
-		cbeRogueUnit2 = "deSaloonOutlawBlowgunner";
-		cbeRogueUnit3 = "deREVGranadero";
-		cbeRogueHeavyUnit = "MercHackapell";
-	}
-	else if (californiaMap == 1 || sonoraMap == 1 || rockiesMap == 1)
-	{
-		cbeRoguePresetName = "Outlaw Bandits";
-		cbeRogueUnit1 = "deSaloonGunslinger";
-		cbeRogueUnit2 = "deSaloonCowboy";
-		cbeRogueUnit3 = "deSaloonOwlhoot";
-		cbeRogueHeavyUnit = "deSaloonHighwaymanRider";
-	}
-	else if (euMap == 1 || europeanMerc == 1 || cbeRoguePresetRoll <= 0.20)
-	{
-		cbeRoguePresetName = "Professional Rogue Army";
-		cbeRogueUnit1 = "Musketeer";
-		cbeRogueUnit2 = "Skirmisher";
-		cbeRogueUnit3 = "Hussar";
-		cbeRogueHeavyUnit = "Falconet";
-	}
-	else if (cbeRoguePresetRoll <= 0.35)
-	{
-		cbeRoguePresetName = "Mercenary Army";
-		cbeRogueUnit1 = "MercFusilier";
-		cbeRogueUnit2 = "MercJaeger";
-		cbeRogueUnit3 = "MercHackapell";
-		cbeRogueHeavyUnit = "MercGreatCannon";
-	}
-
-	int cbeRogueCampClear1 = rmCreateArea("cbe rogue camp clearing 1");
-	rmSetAreaLocation(cbeRogueCampClear1, 0.25, 0.75);
-	rmSetAreaSize(cbeRogueCampClear1, rmAreaTilesToFraction(420), rmAreaTilesToFraction(520));
-	rmSetAreaCoherence(cbeRogueCampClear1, 1.0);
-	rmSetAreaSmoothDistance(cbeRogueCampClear1, 3);
-	rmSetAreaMix(cbeRogueCampClear1, landName);
-	rmSetAreaWarnFailure(cbeRogueCampClear1, false);
-	rmBuildArea(cbeRogueCampClear1);
-
-	int cbeRogueCampClear2 = rmCreateArea("cbe rogue camp clearing 2");
-	rmSetAreaLocation(cbeRogueCampClear2, 0.75, 0.25);
-	rmSetAreaSize(cbeRogueCampClear2, rmAreaTilesToFraction(420), rmAreaTilesToFraction(520));
-	rmSetAreaCoherence(cbeRogueCampClear2, 1.0);
-	rmSetAreaSmoothDistance(cbeRogueCampClear2, 3);
-	rmSetAreaMix(cbeRogueCampClear2, landName);
-	rmSetAreaWarnFailure(cbeRogueCampClear2, false);
-	rmBuildArea(cbeRogueCampClear2);
-
-	int cbeRogueCampClear3 = rmCreateArea("cbe rogue camp clearing 3");
-	rmSetAreaLocation(cbeRogueCampClear3, 0.75, 0.75);
-	rmSetAreaSize(cbeRogueCampClear3, rmAreaTilesToFraction(420), rmAreaTilesToFraction(520));
-	rmSetAreaCoherence(cbeRogueCampClear3, 1.0);
-	rmSetAreaSmoothDistance(cbeRogueCampClear3, 3);
-	rmSetAreaMix(cbeRogueCampClear3, landName);
-	rmSetAreaWarnFailure(cbeRogueCampClear3, false);
-	rmBuildArea(cbeRogueCampClear3);
 
 	for (i = 1; <= cNumberNonGaiaPlayers)
 	{
@@ -17843,15 +18111,12 @@ void main(void)
 		rmSetTriggerEffectParamInt("Player2", 0, false);
 	}
 
-	rmCreateTrigger("cbeRogueCamp1Spawn");
-	rmCreateTrigger("cbeRogueCamp2Spawn");
-	rmCreateTrigger("cbeRogueCamp3Spawn");
-	rmCreateTrigger("cbeRogueCamp1Raid");
-	rmCreateTrigger("cbeRogueCamp2Raid");
-	rmCreateTrigger("cbeRogueCamp3Raid");
-	rmCreateTrigger("cbeRogueCamp1Destroyed");
-	rmCreateTrigger("cbeRogueCamp2Destroyed");
-	rmCreateTrigger("cbeRogueCamp3Destroyed");
+	for (i = 1; <= 3)
+	{
+		rmCreateTrigger("cbeRogueCamp"+i+"Spawn");
+		rmCreateTrigger("cbeRogueCamp"+i+"Raid");
+		rmCreateTrigger("cbeRogueCamp"+i+"Destroyed");
+	}
 	rmCreateTrigger("cbeRogueMaxCampSurge");
 	rmCreateTrigger("cbeBestiaryVariantNotice");
 	rmCreateTrigger("cbeBestiaryMythicSpawn");
@@ -17869,7 +18134,10 @@ void main(void)
 	rmSetTriggerConditionParamInt("Param1", 8, false);
 	rmAddTriggerEffect("Send Chat As String");
 	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=0.4,1,0.45>Bestiary variant loaded: "+cbeBestiaryThemeName+" / "+cbeBestiaryMythicThemeName+" / "+cbeNativeThemeName+".", false);
+	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=0.4,1,0.45>Map danger settings: Rogue Camps ("+cbeRoguePresetName+"); Center Mythic ("+cbeBestiaryMythicUnit+"); Super Legendary Treasures enabled.", false);
+	rmAddTriggerEffect("Send Chat As String");
+	rmSetTriggerEffectParamInt("PlayerID", 0, false);
+	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=0.4,1,0.45>Map world settings: Theme ("+cbeWorldThemeName+"); Wildlife ("+cbeBestiaryThemeName+"); Natives ("+cbeNativeThemeName+"); Foliage ("+cbeAweFoliageThemeName+"); Terrain ("+landName+").", false);
 
 	rmSwitchToTrigger(rmTriggerID("cbeBestiaryMythicSpawn"));
 	rmSetTriggerPriority(4);
@@ -17880,7 +18148,7 @@ void main(void)
 	rmSetTriggerConditionParamInt("Param1", 90, false);
 	rmAddTriggerEffect("Send Chat As String");
 	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=0.85,0.2,1>A "+cbeBestiaryMythicThemeName+" creature now roams the middle of the map.", false);
+	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=0.85,0.2,1>A mythic creature ("+cbeBestiaryMythicUnit+") is roaming the center. Approach the middle with caution.", false);
 	rmAddTriggerEffect("Army Deploy");
 	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeBestiaryMythicArmy, false);
 	rmSetTriggerEffectParam("ProtoName", cbeBestiaryMythicUnit, false);
@@ -17967,193 +18235,125 @@ void main(void)
 	rmAddTriggerEffect("Activate Trigger");
 	rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeBestiaryMythicRoam1"), false);
 
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp1Spawn"));
-	rmSetTriggerPriority(4);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Timer");
-	rmSetTriggerConditionParamInt("Param1", 60, false);
-	rmAddTriggerEffect("Unit Create");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("ProtoName", "deSPCCommandPost", false);
-	rmSetTriggerEffectParam("ScenName", "cbeRogueCamp1", false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp1Loc, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmAddTriggerEffect("Delete Units in Area");
-	rmSetTriggerEffectParam("SrcObject", "cbeRogueCamp1", false);
-	rmSetTriggerEffectParamInt("Player", 0, false);
-	rmSetTriggerEffectParam("UnitType", "Tree", false);
-	rmSetTriggerEffectParamFloat("Dist", 28.0, false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.25,0.1>A "+cbeRoguePresetName+" command post has appeared. Destroy it to stop its raids.", false);
-	rmAddTriggerEffect("Army Move");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("DstPoint", cbeRogueCamp1Loc, false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "false", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit1, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp1SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 6, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Activate Trigger");
-	rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueCamp1Raid"), false);
+	int j = -1;
+	for (i = 1; <= 3)
+	{
+		string cbeRogueCampLoc = cbeRogueCamp1Loc;
+		string cbeRogueSpawnLoc = cbeRogueCamp1SpawnLoc;
+		string cbeRogueSpawnUnit = cbeRogueUnit1;
+		string cbeRogueCampMessage = "<font=largeingame 24><color=1,0.25,0.1>Rogue camp spotted ("+cbeRoguePresetName+"). A command post has appeared and will begin sending raids unless destroyed.";
+		int cbeRogueSpawnTimer = 60;
+		int cbeRogueSpawnCount = 6;
+		int cbeRogueRaidTimer = 180;
+		int cbeRogueRaidCount = 4;
+		if (i == 2)
+		{
+			cbeRogueCampLoc = cbeRogueCamp2Loc;
+			cbeRogueSpawnLoc = cbeRogueCamp2SpawnLoc;
+			cbeRogueSpawnUnit = cbeRogueUnit2;
+			cbeRogueCampMessage = "<font=largeingame 24><color=1,0.25,0.1>Second rogue camp detected ("+cbeRoguePresetName+"). Raids are spreading from another command post.";
+			cbeRogueSpawnTimer = 240;
+			cbeRogueSpawnCount = 8;
+			cbeRogueRaidTimer = 210;
+			cbeRogueRaidCount = 6;
+		}
+		else if (i == 3)
+		{
+			cbeRogueCampLoc = cbeRogueCamp3Loc;
+			cbeRogueSpawnLoc = cbeRogueCamp3SpawnLoc;
+			cbeRogueSpawnUnit = cbeRogueUnit3;
+			cbeRogueCampMessage = "<font=largeingame 24><color=1,0.25,0.1>Third rogue camp detected ("+cbeRoguePresetName+"). The command posts are nearing full strength.";
+			cbeRogueSpawnTimer = 420;
+			cbeRogueSpawnCount = 6;
+			cbeRogueRaidTimer = 240;
+			cbeRogueRaidCount = 5;
+		}
 
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp2Spawn"));
-	rmSetTriggerPriority(4);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Timer");
-	rmSetTriggerConditionParamInt("Param1", 240, false);
-	rmAddTriggerEffect("Unit Create");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("ProtoName", "deSPCCommandPost", false);
-	rmSetTriggerEffectParam("ScenName", "cbeRogueCamp2", false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp2Loc, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmAddTriggerEffect("Delete Units in Area");
-	rmSetTriggerEffectParam("SrcObject", "cbeRogueCamp2", false);
-	rmSetTriggerEffectParamInt("Player", 0, false);
-	rmSetTriggerEffectParam("UnitType", "Tree", false);
-	rmSetTriggerEffectParamFloat("Dist", 28.0, false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.25,0.1>A second "+cbeRoguePresetName+" command post has been raised.", false);
-	rmAddTriggerEffect("Army Move to Unit");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("DstObject", "cbeRogueCamp2", false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "false", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit2, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp2SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 8, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Activate Trigger");
-	rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueCamp2Raid"), false);
+		rmSwitchToTrigger(rmTriggerID("cbeRogueCamp"+i+"Spawn"));
+		rmSetTriggerPriority(4);
+		rmSetTriggerActive(true);
+		rmSetTriggerRunImmediately(true);
+		rmSetTriggerLoop(false);
+		rmAddTriggerCondition("Timer");
+		rmSetTriggerConditionParamInt("Param1", cbeRogueSpawnTimer, false);
+		rmAddTriggerEffect("Unit Create");
+		rmSetTriggerEffectParamInt("PlayerID", 0, false);
+		rmSetTriggerEffectParam("ProtoName", "deSPCCommandPost", false);
+		rmSetTriggerEffectParam("ScenName", "cbeRogueCamp"+i, false);
+		rmSetTriggerEffectParam("Location", cbeRogueCampLoc, false);
+		rmSetTriggerEffectParamInt("Heading", 0, false);
+		rmAddTriggerEffect("Delete Units in Area");
+		rmSetTriggerEffectParam("SrcObject", "cbeRogueCamp"+i, false);
+		rmSetTriggerEffectParamInt("Player", 0, false);
+		rmSetTriggerEffectParam("UnitType", "Tree", false);
+		rmSetTriggerEffectParamFloat("Dist", 28.0, false);
+		rmAddTriggerEffect("Send Chat As String");
+		rmSetTriggerEffectParamInt("PlayerID", 0, false);
+		rmSetTriggerEffectParam("Message", cbeRogueCampMessage, false);
+		for (j = 1; <= cNumberNonGaiaPlayers)
+		{
+			rmAddTriggerEffect("Flare Minimap");
+			rmSetTriggerEffectParamInt("PlayerID", j, false);
+			rmSetTriggerEffectParamFloat("Duration", 12.0, false);
+			rmSetTriggerEffectParam("Position", cbeRogueCampLoc, false);
+		}
+		if (i == 1)
+		{
+			rmAddTriggerEffect("Army Move");
+			rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+			rmSetTriggerEffectParam("DstPoint", cbeRogueCampLoc, false);
+		}
+		else
+		{
+			rmAddTriggerEffect("Army Move to Unit");
+			rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+			rmSetTriggerEffectParam("DstObject", "cbeRogueCamp"+i, false);
+		}
+		rmSetTriggerEffectParamInt("EventID", -1, false);
+		rmSetTriggerEffectParam("AttackMove", "false", false);
+		rmSetTriggerEffectParam("Run", "true", false);
+		rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
+		rmAddTriggerEffect("Army Deploy");
+		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+		rmSetTriggerEffectParam("ProtoName", cbeRogueSpawnUnit, false);
+		rmSetTriggerEffectParam("Location", cbeRogueSpawnLoc, false);
+		rmSetTriggerEffectParamInt("Count", cbeRogueSpawnCount, false);
+		rmSetTriggerEffectParamInt("Heading", 0, false);
+		rmSetTriggerEffectParam("Clear", "false", false);
+		rmAddTriggerEffect("Activate Trigger");
+		rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueCamp"+i+"Raid"), false);
+		rmAddTriggerEffect("Activate Trigger");
+		rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueCamp"+i+"Destroyed"), false);
+		if (i == 3)
+		{
+			rmAddTriggerEffect("Activate Trigger");
+			rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueMaxCampSurge"), false);
+		}
 
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp3Spawn"));
-	rmSetTriggerPriority(4);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Timer");
-	rmSetTriggerConditionParamInt("Param1", 420, false);
-	rmAddTriggerEffect("Unit Create");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("ProtoName", "deSPCCommandPost", false);
-	rmSetTriggerEffectParam("ScenName", "cbeRogueCamp3", false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp3Loc, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmAddTriggerEffect("Delete Units in Area");
-	rmSetTriggerEffectParam("SrcObject", "cbeRogueCamp3", false);
-	rmSetTriggerEffectParamInt("Player", 0, false);
-	rmSetTriggerEffectParam("UnitType", "Tree", false);
-	rmSetTriggerEffectParamFloat("Dist", 28.0, false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.25,0.1>A third "+cbeRoguePresetName+" command post has appeared. The raids will intensify.", false);
-	rmAddTriggerEffect("Army Move to Unit");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("DstObject", "cbeRogueCamp3", false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "false", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit3, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp3SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 6, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Activate Trigger");
-	rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueCamp3Raid"), false);
-	rmAddTriggerEffect("Activate Trigger");
-	rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueMaxCampSurge"), false);
-
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp1Raid"));
-	rmSetTriggerPriority(3);
-	rmSetTriggerActive(false);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(true);
-	rmAddTriggerCondition("Timer");
-	rmSetTriggerConditionParamInt("Param1", 180, false);
-	rmAddTriggerCondition("Is Alive");
-	rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp1", false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit1, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp1SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 4, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Army Move to Unit");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParamInt("DstObject", rmGetUnitPlaced(socketID, 0), false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "true", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
-
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp2Raid"));
-	rmSetTriggerPriority(3);
-	rmSetTriggerActive(false);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(true);
-	rmAddTriggerCondition("Timer");
-	rmSetTriggerConditionParamInt("Param1", 210, false);
-	rmAddTriggerCondition("Is Alive");
-	rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp2", false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit2, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp2SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 6, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Army Move to Unit");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParamInt("DstObject", rmGetUnitPlaced(socketID, 1), false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "true", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
-
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp3Raid"));
-	rmSetTriggerPriority(3);
-	rmSetTriggerActive(false);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(true);
-	rmAddTriggerCondition("Timer");
-	rmSetTriggerConditionParamInt("Param1", 240, false);
-	rmAddTriggerCondition("Is Alive");
-	rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp3", false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit3, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp3SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 5, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Army Move to Unit");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParamInt("DstObject", rmGetUnitPlaced(socketID, 2), false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "true", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
+		rmSwitchToTrigger(rmTriggerID("cbeRogueCamp"+i+"Raid"));
+		rmSetTriggerPriority(3);
+		rmSetTriggerActive(false);
+		rmSetTriggerRunImmediately(true);
+		rmSetTriggerLoop(true);
+		rmAddTriggerCondition("Timer");
+		rmSetTriggerConditionParamInt("Param1", cbeRogueRaidTimer, false);
+		rmAddTriggerCondition("Is Alive");
+		rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp"+i, false);
+		rmAddTriggerEffect("Army Deploy");
+		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+		rmSetTriggerEffectParam("ProtoName", cbeRogueSpawnUnit, false);
+		rmSetTriggerEffectParam("Location", cbeRogueSpawnLoc, false);
+		rmSetTriggerEffectParamInt("Count", cbeRogueRaidCount, false);
+		rmSetTriggerEffectParamInt("Heading", 0, false);
+		rmSetTriggerEffectParam("Clear", "false", false);
+		rmAddTriggerEffect("Army Move");
+		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+		rmSetTriggerEffectParam("DstPoint", cbeBestiaryMythicSpawnLoc, false);
+		rmSetTriggerEffectParamInt("EventID", -1, false);
+		rmSetTriggerEffectParam("AttackMove", "true", false);
+		rmSetTriggerEffectParam("Run", "true", false);
+		rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
+	}
 
 	rmSwitchToTrigger(rmTriggerID("cbeRogueMaxCampSurge"));
 	rmSetTriggerPriority(3);
@@ -18170,28 +18370,29 @@ void main(void)
 	rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp3", false);
 	rmAddTriggerEffect("Send Chat As String");
 	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.25,0.1>The "+cbeRoguePresetName+" camps are at full strength. Reinforcements are gathering at every camp.", false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit1, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp1SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 10, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit2, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp2SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 10, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
-	rmAddTriggerEffect("Army Deploy");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("ProtoName", cbeRogueUnit3, false);
-	rmSetTriggerEffectParam("Location", cbeRogueCamp3SpawnLoc, false);
-	rmSetTriggerEffectParamInt("Count", 10, false);
-	rmSetTriggerEffectParamInt("Heading", 0, false);
-	rmSetTriggerEffectParam("Clear", "false", false);
+	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.25,0.1>Rogue network at full strength ("+cbeRoguePresetName+"). Reinforcements are gathering at every active camp.", false);
+	for (i = 1; <= 3)
+	{
+		string cbeRogueSurgeUnit = cbeRogueUnit1;
+		string cbeRogueSurgeLoc = cbeRogueCamp1SpawnLoc;
+		if (i == 2)
+		{
+			cbeRogueSurgeUnit = cbeRogueUnit2;
+			cbeRogueSurgeLoc = cbeRogueCamp2SpawnLoc;
+		}
+		else if (i == 3)
+		{
+			cbeRogueSurgeUnit = cbeRogueUnit3;
+			cbeRogueSurgeLoc = cbeRogueCamp3SpawnLoc;
+		}
+		rmAddTriggerEffect("Army Deploy");
+		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+		rmSetTriggerEffectParam("ProtoName", cbeRogueSurgeUnit, false);
+		rmSetTriggerEffectParam("Location", cbeRogueSurgeLoc, false);
+		rmSetTriggerEffectParamInt("Count", 10, false);
+		rmSetTriggerEffectParamInt("Heading", 0, false);
+		rmSetTriggerEffectParam("Clear", "false", false);
+	}
 	rmAddTriggerEffect("Army Deploy");
 	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
 	rmSetTriggerEffectParam("ProtoName", cbeRogueHeavyUnit, false);
@@ -18200,59 +18401,86 @@ void main(void)
 	rmSetTriggerEffectParamInt("Heading", 0, false);
 	rmSetTriggerEffectParam("Clear", "false", false);
 
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp1Destroyed"));
-	rmSetTriggerPriority(3);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Is Dead");
-	rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp1", false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.7,0.2>A rogue command post has fallen. Survivors scatter across the map.", false);
-	rmAddTriggerEffect("Army Move");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("DstPoint", cbeRogueRoam1Loc, false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "true", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
+	for (i = 1; <= 3)
+	{
+		string cbeRogueCampLoc = cbeRogueCamp1Loc;
+		string cbeRogueSpawnLoc = cbeRogueCamp1SpawnLoc;
+		string cbeRogueSpawnUnit = cbeRogueUnit1;
+		string cbeRogueRoamLoc = cbeRogueRoam1Loc;
+		if (i == 2)
+		{
+			cbeRogueCampLoc = cbeRogueCamp2Loc;
+			cbeRogueSpawnLoc = cbeRogueCamp2SpawnLoc;
+			cbeRogueSpawnUnit = cbeRogueUnit2;
+			cbeRogueRoamLoc = cbeRogueRoam2Loc;
+		}
+		else if (i == 3)
+		{
+			cbeRogueCampLoc = cbeRogueCamp3Loc;
+			cbeRogueSpawnLoc = cbeRogueCamp3SpawnLoc;
+			cbeRogueSpawnUnit = cbeRogueUnit3;
+			cbeRogueRoamLoc = cbeRogueRoam3Loc;
+		}
 
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp2Destroyed"));
-	rmSetTriggerPriority(3);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Is Dead");
-	rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp2", false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.7,0.2>A rogue command post has fallen. Its raiders are still loose.", false);
-	rmAddTriggerEffect("Army Move");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("DstPoint", cbeRogueRoam2Loc, false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "true", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
-
-	rmSwitchToTrigger(rmTriggerID("cbeRogueCamp3Destroyed"));
-	rmSetTriggerPriority(3);
-	rmSetTriggerActive(true);
-	rmSetTriggerRunImmediately(true);
-	rmSetTriggerLoop(false);
-	rmAddTriggerCondition("Is Dead");
-	rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp3", false);
-	rmAddTriggerEffect("Send Chat As String");
-	rmSetTriggerEffectParamInt("PlayerID", 0, false);
-	rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.7,0.2>A rogue command post has fallen. Its survivors are roaming.", false);
-	rmAddTriggerEffect("Army Move");
-	rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
-	rmSetTriggerEffectParam("DstPoint", cbeRogueRoam3Loc, false);
-	rmSetTriggerEffectParamInt("EventID", -1, false);
-	rmSetTriggerEffectParam("AttackMove", "true", false);
-	rmSetTriggerEffectParam("Run", "true", false);
-	rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
+		rmSwitchToTrigger(rmTriggerID("cbeRogueCamp"+i+"Destroyed"));
+		rmSetTriggerPriority(3);
+		rmSetTriggerActive(false);
+		rmSetTriggerRunImmediately(true);
+		rmSetTriggerLoop(true);
+		rmAddTriggerCondition("Timer");
+		rmSetTriggerConditionParamInt("Param1", 180, false);
+		rmAddTriggerCondition("Is Dead");
+		rmSetTriggerConditionParam("SrcObject", "cbeRogueCamp"+i, false);
+		rmAddTriggerEffect("Send Chat As String");
+		rmSetTriggerEffectParamInt("PlayerID", 0, false);
+		rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.7,0.2>A destroyed rogue camp has been reoccupied ("+cbeRoguePresetName+"). Surviving raiders are rallying to the new command post.", false);
+		rmAddTriggerEffect("Army Move");
+		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+		rmSetTriggerEffectParam("DstPoint", cbeRogueRoamLoc, false);
+		rmSetTriggerEffectParamInt("EventID", -1, false);
+		rmSetTriggerEffectParam("AttackMove", "true", false);
+		rmSetTriggerEffectParam("Run", "true", false);
+		rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
+		rmAddTriggerEffect("Unit Create");
+		rmSetTriggerEffectParamInt("PlayerID", 0, false);
+		rmSetTriggerEffectParam("ProtoName", "deSPCCommandPost", false);
+		rmSetTriggerEffectParam("ScenName", "cbeRogueCamp"+i, false);
+		rmSetTriggerEffectParam("Location", cbeRogueCampLoc, false);
+		rmSetTriggerEffectParamInt("Heading", 0, false);
+		rmAddTriggerEffect("Delete Units in Area");
+		rmSetTriggerEffectParam("SrcObject", "cbeRogueCamp"+i, false);
+		rmSetTriggerEffectParamInt("Player", 0, false);
+		rmSetTriggerEffectParam("UnitType", "Tree", false);
+		rmSetTriggerEffectParamFloat("Dist", 28.0, false);
+		for (j = 1; <= cNumberNonGaiaPlayers)
+		{
+			rmAddTriggerEffect("Flare Minimap");
+			rmSetTriggerEffectParamInt("PlayerID", j, false);
+			rmSetTriggerEffectParamFloat("Duration", 12.0, false);
+			rmSetTriggerEffectParam("Position", cbeRogueCampLoc, false);
+		}
+		rmAddTriggerEffect("Army Move");
+		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+		rmSetTriggerEffectParam("DstPoint", cbeRogueCampLoc, false);
+		rmSetTriggerEffectParamInt("EventID", -1, false);
+		rmSetTriggerEffectParam("AttackMove", "false", false);
+		rmSetTriggerEffectParam("Run", "true", false);
+		rmSetTriggerEffectParamFloat("RunSpeed", 1.0, false);
+		rmAddTriggerEffect("Army Deploy");
+		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
+		rmSetTriggerEffectParam("ProtoName", cbeRogueSpawnUnit, false);
+		rmSetTriggerEffectParam("Location", cbeRogueSpawnLoc, false);
+		rmSetTriggerEffectParamInt("Count", 6, false);
+		rmSetTriggerEffectParamInt("Heading", 0, false);
+		rmSetTriggerEffectParam("Clear", "false", false);
+		rmAddTriggerEffect("Activate Trigger");
+		rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueCamp"+i+"Raid"), false);
+		if (i == 3)
+		{
+			rmAddTriggerEffect("Activate Trigger");
+			rmSetTriggerEffectParamInt("EventID", rmTriggerID("cbeRogueMaxCampSurge"), false);
+		}
+	}
 
 	for (i = 1; <= cNumberNonGaiaPlayers)
 	{
@@ -18273,7 +18501,7 @@ void main(void)
 		rmSetTriggerConditionParamArmy("SrcArmy", 0, cbeRogueArmy, false);
 		rmAddTriggerEffect("Send Chat As String");
 		rmSetTriggerEffectParamInt("PlayerID", 0, false);
-		rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.25,0.1>A rogue army is moving against a human settlement.", false);
+		rmSetTriggerEffectParam("Message", "<font=largeingame 24><color=1,0.25,0.1>A rogue force ("+cbeRoguePresetName+") is moving against a human settlement.", false);
 		rmAddTriggerEffect("Army Move");
 		rmSetTriggerEffectParamArmy("SrcArmy", 0, cbeRogueArmy, false);
 		rmSetTriggerEffectParam("DstPoint", cbeRoguePlayerTarget, false);

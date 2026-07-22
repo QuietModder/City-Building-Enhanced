@@ -1,0 +1,28 @@
+<civsmods>
+  <!-- ========================================================= -->
+  <!-- CBE City-State Subcivs                                    -->
+  <!-- ========================================================= -->
+
+  <civ>
+    <name>CBELatinCityState</name>
+    <main>0</main>
+    <subcivtype>4</subcivtype>
+    <portrait>buildings\native_settlement\native_berber_site_portrait</portrait>
+    <culture>Stone</culture>
+    <displaynameid>9912000</displaynameid>
+    <rollovernameid>9912000</rollovernameid>
+    <alliedid>26446</alliedid>
+    <alliedotherid>26445</alliedotherid>
+    <unalliedid>26444</unalliedid>
+    <agetech>
+      <age>Age0</age>
+      <tech>CBENativeLatinCityState</tech>
+    </agetech>
+    <allyunit>deSPCCityGuard</allyunit>
+    <allyunit>deSPCCityGuard</allyunit>
+    <allyunit>deSPCCityGuard</allyunit>
+    <allyunit>deSPCCityGuard</allyunit>
+    <visible>0</visible>
+    <visibleineditor>0</visibleineditor>
+  </civ>
+</civsmods>

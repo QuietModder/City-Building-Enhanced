@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<mapinfo
+detailsText = "CBE Wilderness Baseline: a clean test map for the Biome Theme + Region Flavor generation model.\n
+\n
+Baseline: vanilla-safe starts and resources only\n
+Rogue camps: disabled\n
+Bestiary: disabled\n
+"
+imagepath = "ui\random_map\vividlyunknown\vividlyunknown_mini"
+displayName = "CBE Wilderness Baseline"
+cannotReplace = ""
+loadDetailsText = "A clean CBE wilderness baseline. This version only proves the theme architecture: Biome Theme + Region Flavor. Extra systems will be layered in after this loads reliably.\n
+\n
+Baseline: vanilla-safe starts and resources only\n
+Rogue camps: disabled\n
+Bestiary: disabled\n
+"
+loadBackground = "ui\random_map\vividlyunknown\vividlyunknown_loading">
+   <loadss>ui\random_map\vividlyunknown\screen1</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen2</loadss>
+   <loadss>ui\random_map\vividlyunknown\screen3</loadss>
+</mapinfo>

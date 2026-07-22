@@ -457,6 +457,46 @@
             <!-- Range: 9911000 - 9911999                                  -->
             <!-- ========================================================= -->
 
+            <!-- ========================================================= -->
+            <!-- 9912000s - CBE SUBCIVS                                    -->
+            <!-- Range: 9912000 - 9912999                                  -->
+            <!-- ========================================================= -->
+
+            <string _locid="9912000">Latin City-State</string>
+
+            <!-- ========================================================= -->
+            <!-- 9913000s - CBE GROUPING BUILDINGS                         -->
+            <!-- Range: 9913000 - 9913999                                  -->
+            <!-- ========================================================= -->
+
+            <string _locid="9913000">City-State Residence</string>
+            <string _locid="9913001">A residence within an independent city-state.</string>
+            <string _locid="9913002">Provides population space while the city-state is under your control.</string>
+
+            <string _locid="9913003">Village Residence</string>
+            <string _locid="9913004">A residence within a local village.</string>
+            <string _locid="9913005">Provides population space while the village is under your control.</string>
+
+            <string _locid="9913006">Request Food Shipment</string>
+            <string _locid="9913007">Spends a Home City shipment to send food crates to your gather point.</string>
+            <string _locid="9913008">Send food crates.</string>
+
+            <string _locid="9913009">Request Wood Shipment</string>
+            <string _locid="9913010">Spends a Home City shipment to send wood crates to your gather point.</string>
+            <string _locid="9913011">Send wood crates.</string>
+
+            <string _locid="9913012">Request Coin Shipment</string>
+            <string _locid="9913013">Spends a Home City shipment to send coin crates to your gather point.</string>
+            <string _locid="9913014">Send coin crates.</string>
+
+            <string _locid="9913015">Papal Company</string>
+            <string _locid="9913016">Slowly musters Papal Guards, Papal Zouaves, and Schiavones while the city-state is under your control.</string>
+            <string _locid="9913017">Auto-train a Papal Company.</string>
+            <string _locid="9913018">Clerical Envoys</string>
+            <string _locid="9913019">Allows this Papal Embassy to train Priests, Missionaries, and Inquisitors.</string>
+            <string _locid="9913020">Unlock Embassy healers.</string>
+
+
         </language>
     </stringtable>
 </stringmods>

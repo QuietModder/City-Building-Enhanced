@@ -3299,4 +3299,3103 @@
             </rank>
         </veterancybonus>
     </Unit>
+    <!-- ========================================================= -->
+    <!-- CBE GROUPING PROP COPIES                                -->
+    <!-- Isolated vanilla prop copies for capturable map features -->
+    <!-- ========================================================= -->
+    <unit mergeMode="add" id="9200" name="cbe_Grouping_deSPCAmmoStorehouseProp">
+        <dbid>99200</dbid>
+        <displaynameid>45353</displaynameid>
+        <editornameid>123248</editornameid>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\weapons_cache\spc_weapons_cache.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <icon>resources\art\buildings\spc\weapons_cache\weapons_cache_portrait.png</icon>
+        <portraiticon>resources\art\buildings\spc\weapons_cache\weapons_cache_portrait.png</portraiticon>
+        <rollovertextid>45352</rollovertextid>
+        <shortrollovertextid>45351</shortrollovertextid>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>14.0000</los>
+        <bounty>70.0000</bounty>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>HasBountyValue</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>NotDeleteable</flag>
+        <flag>Invulnerable</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9201" name="cbe_Grouping_deSPCCityStateHouseProp">
+        <dbid>99201</dbid>
+        <displaynameid>9913000</displaynameid>
+        <populationcapaddition>10</populationcapaddition>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\house.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\house\house_icon.png</icon>
+        <portraiticon>resources\art\buildings\house\house_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\italian</civflagoverride>
+        <rollovertextid>9913001</rollovertextid>
+        <shortrollovertextid>9913002</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <buildlimit>20</buildlimit>
+        <bounty>40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Wood">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <buildingworkrate>0.5000</buildingworkrate>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Invulnerable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9202" name="cbe_Grouping_deSPCCityStateMarketProp">
+        <dbid>99202</dbid>
+        <displaynameid>123007</displaynameid>
+        <obstructionradiusx>5.0000</obstructionradiusx>
+        <obstructionradiusz>5.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\market.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\market\market_icon.png</icon>
+        <portraiticon>resources\art\buildings\market\market_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\italian</civflagoverride>
+        <rollovertextid>26748</rollovertextid>
+        <shortrollovertextid>26747</shortrollovertextid>
+        <initialhitpoints>2000.0000</initialhitpoints>
+        <maxhitpoints>2000.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>15.0000</buildpoints>
+        <bounty>40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Wood">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Economic</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>AbstractMarket</unittype>
+        <unittype>AbstractFindOtherEconomicBuilding</unittype>
+        <flag>EnterHotkeyContext</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9203" name="cbe_Grouping_deSPCCityStateWall2Prop">
+        <dbid>99203</dbid>
+        <displaynameid>123009</displaynameid>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\wall\wall_1x2.xml</animfile>
+        <minimapsize>1</minimapsize>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>wall.xml</placementfile>
+        <icon>resources\art\buildings\wall\wall_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\wall\wall_portrait.png</portraiticon>
+        <rollovertextid>25379</rollovertextid>
+        <shortrollovertextid>25742</shortrollovertextid>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>1.0000</los>
+        <buildpoints>5.0000</buildpoints>
+        <cost resourcetype="Wood">5.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <flag>FlattenGround</flag>
+        <flag>Doppled</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>wallBuild</flag>
+        <flag>NeverShowButton</flag>
+        <flag>UseAlignedObstructionOnMinimap</flag>
+        <flag>NoIdleActions</flag>
+        <flag>TileAlignPlacement</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotSelectable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9204" name="cbe_Grouping_deSPCCityStateWall3Prop">
+        <dbid>99204</dbid>
+        <displaynameid>123012</displaynameid>
+        <obstructionradiusx>3.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\wall\wall_1x3.xml</animfile>
+        <minimapsize>1</minimapsize>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>wall.xml</placementfile>
+        <icon>resources\art\buildings\wall\wall_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\wall\wall_portrait.png</portraiticon>
+        <rollovertextid>25382</rollovertextid>
+        <shortrollovertextid>25743</shortrollovertextid>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>1.0000</los>
+        <buildpoints>5.0000</buildpoints>
+        <cost resourcetype="Wood">5.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <flag>Doppled</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>wallBuild</flag>
+        <flag>NeverShowButton</flag>
+        <flag>UseAlignedObstructionOnMinimap</flag>
+        <flag>NoIdleActions</flag>
+        <flag>TileAlignPlacement</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotSelectable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9205" name="cbe_Grouping_deSPCCityStateWall4Prop">
+        <dbid>99205</dbid>
+        <displaynameid>123013</displaynameid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\wall\wall_1x4.xml</animfile>
+        <minimapsize>1</minimapsize>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>wall.xml</placementfile>
+        <icon>resources\art\buildings\wall\wall_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\wall\wall_portrait.png</portraiticon>
+        <rollovertextid>25385</rollovertextid>
+        <shortrollovertextid>25744</shortrollovertextid>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>1.0000</los>
+        <buildpoints>5.0000</buildpoints>
+        <cost resourcetype="Wood">5.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <flag>FlattenGround</flag>
+        <flag>Doppled</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>wallBuild</flag>
+        <flag>NeverShowButton</flag>
+        <flag>UseAlignedObstructionOnMinimap</flag>
+        <flag>NoIdleActions</flag>
+        <flag>TileAlignPlacement</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotSelectable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9206" name="cbe_Grouping_deSPCCityStateWall5Prop">
+        <dbid>99206</dbid>
+        <displaynameid>123010</displaynameid>
+        <obstructionradiusx>5.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\wall\wall_1x5.xml</animfile>
+        <minimapsize>1</minimapsize>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>wall.xml</placementfile>
+        <icon>resources\art\buildings\wall\wall_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\wall\wall_portrait.png</portraiticon>
+        <rollovertextid>24926</rollovertextid>
+        <shortrollovertextid>25745</shortrollovertextid>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>1.0000</los>
+        <buildpoints>5.0000</buildpoints>
+        <cost resourcetype="Wood">5.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <tech page="1" column="0">Bastion</tech>
+        <tech page="1" column="0">DERedoubts</tech>
+        <tech page="1" column="0">DECityFortifications</tech>
+        <flag>Doppled</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>wallBuild</flag>
+        <flag>NeverShowButton</flag>
+        <flag>UseAlignedObstructionOnMinimap</flag>
+        <flag>NoIdleActions</flag>
+        <flag>TileAlignPlacement</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotSelectable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9207" name="cbe_Grouping_deSPCCityStateWallConnectorProp">
+        <dbid>99207</dbid>
+        <displaynameid>123011</displaynameid>
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\wall\wall_tower.xml</animfile>
+        <minimapsize>1</minimapsize>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>wall.xml</placementfile>
+        <icon>resources\art\buildings\wall\wall_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\wall\wall_portrait.png</portraiticon>
+        <rollovertextid>34893</rollovertextid>
+        <shortrollovertextid>34892</shortrollovertextid>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>1.0000</los>
+        <projectileprotounit>Arrow</projectileprotounit>
+        <buildpoints>2.0000</buildpoints>
+        <cost resourcetype="Wood">5.0000</cost>
+        <cost resourcetype="Gold">0.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <tech page="1" column="0">Bastion</tech>
+        <tech page="1" column="0">DERedoubts</tech>
+        <tech page="1" column="0">DECityFortifications</tech>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>wallBuild</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotSelectable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9208" name="cbe_Grouping_deSPCCommandPost">
+        <dbid>99208</dbid>
+        <displaynameid>123076</displaynameid>
+        <editornameid>123077</editornameid>
+        <populationcapaddition>20</populationcapaddition>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\command_post\command_post.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\town_center\command_post_icon.png</icon>
+        <minimapicon>ui\minimap\towncenter</minimapicon>
+        <portraiticon>resources\art\buildings\town_center\command_post_portrait.png</portraiticon>
+        <rollovertextid>123079</rollovertextid>
+        <shortrollovertextid>123078</shortrollovertextid>
+        <legacyhotkeycontext>TownCenterAccel</legacyhotkeycontext>
+        <initialhitpoints>6500.0000</initialhitpoints>
+        <maxhitpoints>6500.0000</maxhitpoints>
+        <los>38.0000</los>
+        <projectileprotounit>Cannonball</projectileprotounit>
+        <unitaitype>RangedCombative</unitaitype>
+        <buildpoints>60.0000</buildpoints>
+        <freebuildpoints>250.0000</freebuildpoints>
+        <buildlimit>1</buildlimit>
+        <bounty>100.0000</bounty>
+        <buildbounty>50.0000</buildbounty>
+        <cost resourcetype="Wood">500.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <maxcontained>50</maxcontained>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <carrycapacity resourcetype="Food">100.0000</carrycapacity>
+        <carrycapacity resourcetype="Wood">100.0000</carrycapacity>
+        <carrycapacity resourcetype="Gold">100.0000</carrycapacity>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeNeededForVictory</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeTCBuildLimit</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeValidSPCBuildingsDeadCondition</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Economic</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>AbstractCanSeeStealth</unittype>
+        <unittype>AbstractGatherAfterBuild</unittype>
+        <unittype>AbstractCallMinutemen</unittype>
+        <unittype>AbstractMapControlBuilding</unittype>
+        <unittype>AgeUpBuilding</unittype>
+        <unittype>ValidColonyBuilding</unittype>
+        <train page="0" column="2">deTrainCommandPostWagon</train>
+        <train page="0" column="2">deTrainDepotWagon</train>
+        <train page="0" column="0">ypSettlerIndian</train>
+        <train page="0" column="0">ypSettlerJapanese</train>
+        <train page="0" column="0">ypSettlerAsian</train>
+        <train page="0" column="0">deSettlerAfrican</train>
+        <train page="0" column="0">Settler</train>
+        <train page="0" column="0">Coureur</train>
+        <train page="0" column="2">deChasqui</train>
+        <train page="0" column="2">deArchitect</train>
+        <train page="0" column="0">SettlerNative</train>
+        <train page="0" column="5">ypMonkChinese</train>
+        <train page="0" column="6">ypMonkChinese2</train>
+        <train page="0" column="6">ypMonkIndian2</train>
+        <train page="0" column="5">ypMonkIndian</train>
+        <train page="0" column="5">ypMonkJapanese</train>
+        <train page="0" column="6">ypMonkJapanese2</train>
+        <train page="0" column="5">PetCougar</train>
+        <train page="0" column="1">xpColonialMilitia</train>
+        <train page="0" column="1">deREVPolishLancer</train>
+        <train page="0" column="2">deREVScytheman</train>
+        <train page="0" column="3">HotAirBalloon</train>
+        <train page="0" column="3">deMiner</train>
+        <tech page="1" column="0">TribalIroquoisWarrior5</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman4</tech>
+        <tech page="1" column="0">TribalIroquoisYouth2</tech>
+        <tech page="1" column="0">TribalIroquoisYouth3</tech>
+        <tech page="1" column="0">TribalAztecWarrior2</tech>
+        <tech page="1" column="0">TribalAztecYouth5</tech>
+        <tech page="1" column="0">PoliticianAdmiralOttoman</tech>
+        <tech page="1" column="0">PoliticianViceroyGerman</tech>
+        <tech page="1" column="0">PoliticianViceroyPortuguese</tech>
+        <tech page="1" column="0">PoliticianCavalierDutch</tech>
+        <tech page="1" column="0">PoliticianMusketeerDutch</tech>
+        <tech page="1" column="0">PoliticianGeneralOttoman</tech>
+        <tech page="1" column="0">PoliticianViceroyDutch</tech>
+        <tech page="1" column="0">PoliticianGeneralBritish</tech>
+        <tech page="1" column="0">PoliticianMarksmanOttoman</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman3</tech>
+        <tech page="1" column="0">PoliticianAdventurerBritish</tech>
+        <tech page="1" column="0">PoliticianMusketeerBritish</tech>
+        <tech page="1" column="0">TribalIroquoisChief4</tech>
+        <tech page="1" column="0">TribalIroquoisShaman2</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman2</tech>
+        <tech page="1" column="0">TribalIroquoisChief5</tech>
+        <tech page="1" column="0">TribalIroquoisShaman5</tech>
+        <tech page="1" column="0">TribalSiouxYouth5</tech>
+        <tech page="1" column="0">TribalSiouxShaman4</tech>
+        <tech page="1" column="0">TribalSiouxShaman3</tech>
+        <tech page="1" column="0">TribalAztecChief4</tech>
+        <tech page="1" column="0">TribalAztecShaman3</tech>
+        <tech page="1" column="0">PoliticianCavalierFrench</tech>
+        <tech page="1" column="0">PoliticianGeneralSkirmisher</tech>
+        <tech page="1" column="0">PoliticianBishopGerman</tech>
+        <tech page="1" column="0">PoliticianWarMinisterAct3</tech>
+        <tech page="1" column="0">PoliticianMusketeerFrench</tech>
+        <tech page="1" column="0">PoliticianSergeantGerman</tech>
+        <tech page="1" column="0">PoliticianSergeantDutch</tech>
+        <tech page="1" column="0">TribalIroquoisWisewoman5</tech>
+        <tech page="1" column="0">TribalIroquoisYouth4</tech>
+        <tech page="1" column="0">PoliticianAdventurerRussian</tech>
+        <tech page="1" column="0">PoliticianMusketeerRussian</tech>
+        <tech page="1" column="0">PoliticianPhilosopherPrince</tech>
+        <tech page="1" column="0">PoliticianEngineerPortuguese</tech>
+        <tech page="1" column="0">TribalSiouxYouth2</tech>
+        <tech page="1" column="0">TribalSiouxWarrior5</tech>
+        <tech page="1" column="0">TribalSiouxChief3</tech>
+        <tech page="1" column="0">TribalAztecWarrior4</tech>
+        <tech page="1" column="0">PoliticianTycoonAct3</tech>
+        <tech page="1" column="0">PoliticianCavalierGerman</tech>
+        <tech page="1" column="0">PoliticianCavalierRussian</tech>
+        <tech page="1" column="0">PoliticianScout</tech>
+        <tech page="1" column="0">PoliticianScoutOttoman</tech>
+        <tech page="1" column="0">PoliticianMarksmanPortuguese</tech>
+        <tech page="1" column="0">PoliticianCavalierOttoman</tech>
+        <tech page="1" column="0">PoliticianMusketeerPortuguese</tech>
+        <tech page="1" column="0">TribalIroquoisChief2</tech>
+        <tech page="1" column="0">TribalIroquoisShaman4</tech>
+        <tech page="1" column="0">TribalIroquoisWarrior4</tech>
+        <tech page="1" column="0">TribalIroquoisWarrior2</tech>
+        <tech page="1" column="0">TribalIroquoisWarrior3</tech>
+        <tech page="1" column="0">TribalIroquoisChief3</tech>
+        <tech page="1" column="0">TribalIroquoisShaman3</tech>
+        <tech page="1" column="0">TribalIroquoisYouth5</tech>
+        <tech page="1" column="0">PoliticianScoutRussian</tech>
+        <tech page="1" column="0">PoliticianViceroyBritish</tech>
+        <tech page="1" column="0">PoliticianWarMinisterRussian</tech>
+        <tech page="1" column="0">PoliticianAdmiral</tech>
+        <tech page="1" column="0">PoliticianBishop</tech>
+        <tech page="1" column="0">PoliticianBishopFortress</tech>
+        <tech page="1" column="0">PoliticianGeneral</tech>
+        <tech page="1" column="0">PoliticianGeneralMaltese</tech>
+        <tech page="1" column="0">PoliticianMusketeerSpanish</tech>
+        <tech page="1" column="0">PoliticianQuartermaster</tech>
+        <tech page="1" column="0">PoliticianEngineer</tech>
+        <tech page="1" column="0">PoliticianSergeantSpanish</tech>
+        <tech page="1" column="0">PoliticianPirate</tech>
+        <tech page="1" column="0">PoliticianPresidente</tech>
+        <tech page="1" column="0">PoliticianNaturalist</tech>
+        <tech page="1" column="0">PoliticianNaturalistGerman</tech>
+        <tech page="1" column="0">PoliticianTycoon</tech>
+        <tech page="1" column="0">PoliticianWarMinisterSpanish</tech>
+        <tech page="1" column="0">PoliticianExiledPrince</tech>
+        <tech page="1" column="0">PoliticianCavalierSpanish</tech>
+        <tech page="1" column="0">PoliticianGrandVizier</tech>
+        <tech page="1" column="0">TribalSiouxYouth3</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman3</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman2</tech>
+        <tech page="1" column="0">TribalAztecWisewoman4</tech>
+        <tech page="1" column="0">TribalAztecYouth2</tech>
+        <tech page="1" column="0">TribalSiouxChief5</tech>
+        <tech page="1" column="0">TribalSiouxChief2</tech>
+        <tech page="1" column="0">TribalSiouxChief4</tech>
+        <tech page="1" column="0">TribalAztecChief2</tech>
+        <tech page="1" column="0">TribalAztecShaman4</tech>
+        <tech page="1" column="0">TribalAztecWarrior5</tech>
+        <tech page="1" column="0">TribalAztecWisewoman2</tech>
+        <tech page="1" column="0">TribalAztecWisewoman3</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman4</tech>
+        <tech page="1" column="0">TribalSiouxWisewoman5</tech>
+        <tech page="1" column="0">TribalSiouxWarrior4</tech>
+        <tech page="1" column="0">TribalAztecChief3</tech>
+        <tech page="1" column="0">TribalAztecChief5</tech>
+        <tech page="1" column="0">TribalAztecShaman2</tech>
+        <tech page="1" column="0">TribalAztecShaman5</tech>
+        <tech page="1" column="0">TribalAztecYouth3</tech>
+        <tech page="1" column="0">ypFakeColonialAge</tech>
+        <tech page="1" column="0">ypFakeFortressAge</tech>
+        <tech page="1" column="0">ypFakeImperialAge</tech>
+        <tech page="1" column="0">ypFakeIndustrialAge</tech>
+        <tech page="1" column="0">PoliticianAdventurerSpanish</tech>
+        <tech page="1" column="0">PoliticianGovernor</tech>
+        <tech page="1" column="0">DEPoliticianImam</tech>
+        <tech page="1" column="0">PoliticianMohawk</tech>
+        <tech page="1" column="0">PoliticianMarksman</tech>
+        <tech page="1" column="0">TribalSiouxYouth4</tech>
+        <tech page="1" column="0">TribalSiouxWarrior3</tech>
+        <tech page="1" column="0">TribalSiouxWarrior2</tech>
+        <tech page="1" column="0">TribalSiouxShaman5</tech>
+        <tech page="1" column="0">TribalSiouxShaman2</tech>
+        <tech page="1" column="0">TribalAztecWarrior3</tech>
+        <tech page="1" column="0">TribalAztecWisewoman5</tech>
+        <tech page="1" column="0">TribalAztecYouth4</tech>
+        <tech page="1" column="0">TribalIncaChief2</tech>
+        <tech page="1" column="0">TribalIncaChief3</tech>
+        <tech page="1" column="0">TribalIncaChief4</tech>
+        <tech page="1" column="0">TribalIncaChief5</tech>
+        <tech page="1" column="0">TribalIncaShaman2</tech>
+        <tech page="1" column="0">TribalIncaShaman3</tech>
+        <tech page="1" column="0">TribalIncaShaman4</tech>
+        <tech page="1" column="0">TribalIncaShaman5</tech>
+        <tech page="1" column="0">TribalIncaWarrior2</tech>
+        <tech page="1" column="0">TribalIncaWarrior3</tech>
+        <tech page="1" column="0">TribalIncaWarrior4</tech>
+        <tech page="1" column="0">TribalIncaWarrior5</tech>
+        <tech page="1" column="0">TribalIncaWisewoman2</tech>
+        <tech page="1" column="0">TribalIncaWisewoman3</tech>
+        <tech page="1" column="0">TribalIncaWisewoman4</tech>
+        <tech page="1" column="0">TribalIncaWisewoman5</tech>
+        <tech page="1" column="0">TribalIncaYouth2</tech>
+        <tech page="1" column="0">TribalIncaYouth3</tech>
+        <tech page="1" column="0">TribalIncaYouth4</tech>
+        <tech page="1" column="0">TribalIncaYouth5</tech>
+        <tech page="1" column="0">DEPoliticianMarksmanSwedish</tech>
+        <tech page="1" column="0">DEPoliticianSergeantSwedish</tech>
+        <tech page="1" column="0">DEPoliticianCavalierSwedish</tech>
+        <tech page="1" column="0">DEPoliticianEthiopianQueen</tech>
+        <tech page="1" column="0">DEPoliticianMusketeerSwedish</tech>
+        <tech page="1" column="0">DEPoliticianGeneralSwedish</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuard</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressBritish</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuardSpanish</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuardPortuguese</tech>
+        <tech page="1" column="0">DEPoliticianPapalGuardSwedish</tech>
+        <tech page="1" column="0">DEPoliticianMercContractor</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortress</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressDutch</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressOttoman</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressPortuguese</tech>
+        <tech page="1" column="0">DEPoliticianMercContractorFortressSwedish</tech>
+        <tech page="1" column="0">DEPoliticianKnightColonial</tech>
+        <tech page="1" column="0">DEPoliticianKnight</tech>
+        <tech page="1" column="0">DEPoliticianKnightAlt</tech>
+        <tech page="1" column="0">DEPoliticianInventor</tech>
+        <tech page="1" column="0">DEPoliticianInventorColonial</tech>
+        <tech page="1" column="0">DEPoliticianBlackDukeBritish</tech>
+        <tech page="1" column="0">DEPoliticianBlackDukeGerman</tech>
+        <tech page="1" column="0">DEPoliticianRoyalistDutch</tech>
+        <tech page="1" column="0">DEPoliticianRoyalistSwedish</tech>
+        <tech page="1" column="0">DEPoliticianRoyalistRussian</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianFrench</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianSwedish</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianColonialBritish</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianColonialDutch</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianGerman</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianPortuguese</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianColonialRussian</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianOttoman</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianSpanish</tech>
+        <tech page="1" column="0">DEPoliticianLogisticianRussian</tech>
+        <tech page="1" column="0">DEPoliticianLogistician</tech>
+        <tech page="1" column="0">DEPoliticianFederalDelaware</tech>
+        <tech page="1" column="0">DEPoliticianFederalPennsylvania</tech>
+        <tech page="1" column="0">DEPoliticianFederalConnecticut</tech>
+        <tech page="1" column="0">DEPoliticianFederalMassachusetts</tech>
+        <tech page="1" column="0">DEPoliticianFederalNewJersey</tech>
+        <tech page="1" column="0">DEPoliticianFederalMaryland</tech>
+        <tech page="1" column="0">DEPoliticianFederalTennessee</tech>
+        <tech page="1" column="0">DEPoliticianFederalSouthCarolina</tech>
+        <tech page="1" column="0">DEPoliticianFederalVirginia</tech>
+        <tech page="1" column="0">DEPoliticianFederalNewYork</tech>
+        <tech page="1" column="0">DEPoliticianFederalVermont</tech>
+        <tech page="1" column="0">DEPoliticianFederalNorthCarolina</tech>
+        <tech page="1" column="0">DEPoliticianFederalRhodeIsland</tech>
+        <tech page="1" column="0">DEPoliticianFederalKentucky</tech>
+        <tech page="1" column="0">DEPoliticianFederalNewHampshire</tech>
+        <tech page="1" column="0">DEPoliticianFederalLouisiana</tech>
+        <tech page="1" column="0">DEPoliticianFederalTexas</tech>
+        <tech page="1" column="0">DEPoliticianFederalCalifornia</tech>
+        <tech page="1" column="0">DEPoliticianFederalMaine</tech>
+        <tech page="1" column="0">DEPoliticianFederalFlorida</tech>
+        <tech page="1" column="0">DEPoliticianFederalIndiana</tech>
+        <tech page="1" column="0">DEPoliticianFederalIllinois</tech>
+        <tech page="1" column="0">DEPoliticianFederalOhio</tech>
+        <tech page="1" column="0">DEAllegianceOromo2</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese2</tech>
+        <tech page="1" column="0">DEAllegianceHabesha2</tech>
+        <tech page="1" column="0">DEAllegianceSomali2</tech>
+        <tech page="1" column="0">DEAllegianceSudanese2</tech>
+        <tech page="1" column="0">DEAllegianceIndian2</tech>
+        <tech page="1" column="0">DEAllegianceJesuit2</tech>
+        <tech page="1" column="0">DEAllegianceArab2</tech>
+        <tech page="1" column="0">DEAllegianceOromo3</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese3</tech>
+        <tech page="1" column="0">DEAllegianceHabesha3</tech>
+        <tech page="1" column="0">DEAllegianceSomali3</tech>
+        <tech page="1" column="0">DEAllegianceSudanese3</tech>
+        <tech page="1" column="0">DEAllegianceIndian3</tech>
+        <tech page="1" column="0">DEAllegianceJesuit3</tech>
+        <tech page="1" column="0">DEAllegianceArab3</tech>
+        <tech page="1" column="0">DEAllegianceOromo4</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese4</tech>
+        <tech page="1" column="0">DEAllegianceHabesha4</tech>
+        <tech page="1" column="0">DEAllegianceSomali4</tech>
+        <tech page="1" column="0">DEAllegianceSudanese4</tech>
+        <tech page="1" column="0">DEAllegianceIndian4</tech>
+        <tech page="1" column="0">DEAllegianceJesuit4</tech>
+        <tech page="1" column="0">DEAllegianceArab4</tech>
+        <tech page="1" column="0">DEAllegianceOromo5</tech>
+        <tech page="1" column="0">DEAllegiancePortuguese5</tech>
+        <tech page="1" column="0">DEAllegianceHabesha5</tech>
+        <tech page="1" column="0">DEAllegianceSomali5</tech>
+        <tech page="1" column="0">DEAllegianceSudanese5</tech>
+        <tech page="1" column="0">DEAllegianceIndian5</tech>
+        <tech page="1" column="0">DEAllegianceJesuit5</tech>
+        <tech page="1" column="0">DEAllegianceArab5</tech>
+        <tech page="1" column="0">DEAllegianceFulani2</tech>
+        <tech page="1" column="0">DEAllegianceBerber2</tech>
+        <tech page="1" column="0">DEAllegianceHausa2</tech>
+        <tech page="1" column="0">DEAllegianceSonghai2</tech>
+        <tech page="1" column="0">DEAllegianceYoruba2</tech>
+        <tech page="1" column="0">DEAllegianceAkan2</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan2</tech>
+        <tech page="1" column="0">DEAllegianceFulani3</tech>
+        <tech page="1" column="0">DEAllegianceBerber3</tech>
+        <tech page="1" column="0">DEAllegianceHausa3</tech>
+        <tech page="1" column="0">DEAllegianceSonghai3</tech>
+        <tech page="1" column="0">DEAllegianceYoruba3</tech>
+        <tech page="1" column="0">DEAllegianceAkan3</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan3</tech>
+        <tech page="1" column="0">DEAllegianceFulani4</tech>
+        <tech page="1" column="0">DEAllegianceBerber4</tech>
+        <tech page="1" column="0">DEAllegianceHausa4</tech>
+        <tech page="1" column="0">DEAllegianceSonghai4</tech>
+        <tech page="1" column="0">DEAllegianceYoruba4</tech>
+        <tech page="1" column="0">DEAllegianceAkan4</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan4</tech>
+        <tech page="1" column="0">DEAllegianceFulani5</tech>
+        <tech page="1" column="0">DEAllegianceBerber5</tech>
+        <tech page="1" column="0">DEAllegianceHausa5</tech>
+        <tech page="1" column="0">DEAllegianceSonghai5</tech>
+        <tech page="1" column="0">DEAllegianceYoruba5</tech>
+        <tech page="1" column="0">DEAllegianceAkan5</tech>
+        <tech page="1" column="0">DEAllegianceMoroccan5</tech>
+        <tech page="1" column="0">DEAllegianceBritish5</tech>
+        <tech page="1" column="0">DEFortifiedCitiesHausa</tech>
+        <tech page="1" column="0">DEFortifiedCitiesEthiopians</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXDurango</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXMichoacan</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXTlaxcala</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXChiapas</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXQueretaro</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXTabasco</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXSonora</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXSinaloa</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXCoahuila</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXSanLuisPotosi</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXZacatecas</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXTamaulipas</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXChihuahua</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXGuanajuato</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXGuerrero</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXJalisco</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXMexico</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXVeracruz</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXPuebla</tech>
+        <tech page="1" column="0">DEPoliticianFederalMXOaxaca</tech>
+        <tech page="1" column="2">DEPoliticianMediciItalian</tech>
+        <tech page="1" column="2">DEPoliticianLogisticianItalian</tech>
+        <tech page="1" column="2">PoliticianAdventurerItalian</tech>
+        <tech page="1" column="2">PoliticianMarksmanItalian</tech>
+        <tech page="1" column="2">DEPoliticianMercContractorFortressItalian</tech>
+        <tech page="1" column="2">PoliticianCavalierItalian</tech>
+        <tech page="1" column="2">DEPoliticianPope</tech>
+        <tech page="1" column="2">DEPoliticianPapalGuardItalian</tech>
+        <tech page="1" column="2">DEPoliticianRoyalistItalian</tech>
+        <tech page="1" column="2">DEPoliticianGeneralItalian</tech>
+        <tech page="1" column="2">PoliticianAdmiralMaltese</tech>
+        <tech page="1" column="2">PoliticianWarMinisterMaltese</tech>
+        <tech page="1" column="2">PoliticianSergeantMaltese</tech>
+        <tech page="1" column="2">DEPoliticianMercContractorFortressMaltese</tech>
+        <tech page="1" column="2">DEPoliticianMorganBlack</tech>
+        <tech page="1" column="2">DEPoliticianPapalGuardMaltese</tech>
+        <tech page="2" column="0">BigIroquoisWarParty</tech>
+        <tech page="2" column="0">BigIroquoisRaidingParty</tech>
+        <tech page="2" column="0">BigAztecScoutingParty</tech>
+        <tech page="2" column="0">BigAztecWarParty</tech>
+        <tech page="2" column="0">BigAztecRaidingParty</tech>
+        <tech page="2" column="0">BigSiouxDogSoldiers</tech>
+        <tech page="2" column="0">BigIroquoisScoutingParty</tech>
+        <tech page="2" column="0">deBigIncaScoutingParty</tech>
+        <tech page="2" column="0">deBigIncaRaidingParty</tech>
+        <tech page="2" column="0">deBigIncaWarParty</tech>
+        <flag>ShowGarrisonButton</flag>
+        <flag>AllowAutoGarrison</flag>
+        <flag>StartingColonyBuilding</flag>
+        <flag>ColonyPlacementCenter</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Tracked</flag>
+        <flag>DisplayRange</flag>
+        <flag>UISkipActiveTechs</flag>
+        <notcontain>AbstractMonk</notcontain>
+        <notcontain>ExcludeFromRansom</notcontain>
+        <notcontain>AbstractFishingBoat</notcontain>
+        <contain>AbstractVillager</contain>
+        <contain>deHomesteadWagon</contain>
+        <contain>AbstractHealer</contain>
+        <contain>ypDaimyoRegicide</contain>
+        <contain>deChasqui</contain>
+        <command page="0" column="3">Levy</command>
+        <command page="0" column="3">ypOttomanLevy</command>
+        <command page="0" column="3">deUSLevy</command>
+        <command page="0" column="3">deUSConscription</command>
+        <command page="0" column="4">deImmigrantsSpanishLevy</command>
+        <command page="10" column="6">TownBell</command>
+        <command page="10" column="7">Delete</command>
+        <command page="10" column="6">ReturnToWork</command>
+        <command page="0" column="4">Conscription</command>
+        <command page="0" column="4">deOttomanConscription</command>
+        <command page="10" column="2">SetGatherPointEconomy</command>
+        <command page="10" column="3">SetGatherPointMilitary</command>
+        <command page="10" column="5">Eject</command>
+        <command page="0" column="5">RansomExplorer</command>
+        <command page="1" column="10">SetBuildingAsHomeCityGatherPointEconomic</command>
+        <command page="1" column="11">SetBuildingAsHomeCityGatherPointMilitary</command>
+        <command page="11" column="0">Abilities</command>
+        <command page="0" column="1">ypAssemble</command>
+        <command page="0" column="2">ypMuster</command>
+        <command page="0" column="3">ypAmass</command>
+        <command page="0" column="4">ypMarshal</command>
+        <command page="0" column="3">ypAmassIndians</command>
+        <command page="0" column="1">ypAssembleIndians</command>
+        <command page="0" column="4">ypMarshalIndians</command>
+        <command page="0" column="2">ypMusterIndians</command>
+        <command page="0" column="1">deConscriptSpearmen</command>
+        <command page="0" column="2">deConscriptBowmen</command>
+        <command page="0" column="2">deAllegianceSonghaiRaid</command>
+        <tactics>commandpost.tactics</tactics>
+        <protoaction>
+            <name>AutoConvert</name>
+            <active>0</active>
+        </protoaction>
+        <protoaction>
+            <name>AntiShipAttack</name>
+            <damage>75.000000</damage>
+            <damagetype>Siege</damagetype>
+            <maxrange>40.000000</maxrange>
+            <rof>3.000000</rof>
+            <damagebonus type="AbstractSiegeTrooper">0.500000</damagebonus>
+            <active>1</active>
+        </protoaction>
+        <protoaction>
+            <name>RangedAttack</name>
+            <damagebonus type="AbstractVillager">2.000000</damagebonus>
+            <damagebonus type="AbstractArtillery">0.500000</damagebonus>
+            <damage>9.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <maxrange>32.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>CannonAttack</name>
+            <damage>30.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <minrange>0.000000</minrange>
+            <maxrange>32.000000</maxrange>
+            <rof>3.000000</rof>
+            <damagecap>60.000000</damagecap>
+            <damagearea>1.000000</damagearea>
+            <damageflags>GAIAEnemy</damageflags>
+            <damagebonus type="AbstractVillager">2.000000</damagebonus>
+            <damagebonus type="AbstractArtillery">0.500000</damagebonus>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherFood</name>
+            <type>AutoGather</type>
+            <rate type="Food">0.50000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <type>AutoGather</type>
+            <rate type="Wood">0.2400000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherGold</name>
+            <type>AutoGather</type>
+            <rate type="Gold">0.2400000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9209" name="cbe_Grouping_deSPCGreatBank">
+        <dbid>99209</dbid>
+        <displaynameid>123018</displaynameid>
+        <editornameid>123019</editornameid>
+        <obstructionradiusx>3.5000</obstructionradiusx>
+        <obstructionradiusz>3.5000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\great_bank.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\lombard\lombard_icon.png</icon>
+        <portraiticon>resources\art\buildings\lombard\lombard_portrait.png</portraiticon>
+        <rollovertextid>123021</rollovertextid>
+        <shortrollovertextid>123020</shortrollovertextid>
+        <initialhitpoints>3500.0000</initialhitpoints>
+        <maxhitpoints>3500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <buildlimit>5</buildlimit>
+        <bounty>280.0000</bounty>
+        <buildbounty>140.0000</buildbounty>
+        <cost resourcetype="Food">350.0000</cost>
+        <cost resourcetype="Wood">350.0000</cost>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeValidSPCBuildingsDeadCondition</unittype>
+        <unittype>Economic</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>AbstractBank</unittype>
+        <unittype>InvestmentBuilding</unittype>
+        <unittype>AbstractMercenaryBuilding</unittype>
+
+        <command page="0" column="0">deInvestFood</command>
+        <command page="0" column="1">deInvestWood</command>
+        <command page="0" column="2">deInvestCoin</command>
+        <tech page="0" column="3">CBELatinBankShipFood</tech>
+        <tech page="0" column="4">CBELatinBankShipWood</tech>
+        <tech page="0" column="5">CBELatinBankShipCoin</tech>
+
+        <train page="1" column="0">MercLandsknecht</train>
+        <train page="1" column="1">deMercCannoneer</train>
+        <train page="1" column="2">MercGreatCannon</train>
+
+        <tech page="2" column="0">CBEDESPCTaulaDeCanvi</tech>
+        <tech page="2" column="1">DESPCMediciPatronage</tech>
+        <tech page="2" column="2">DESPCBankLoan</tech>
+        <tech page="2" column="3">DESPCMercenaryBounties</tech>
+        
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>NotDeleteable</flag>
+        <flag>InvestmentBuilding</flag>
+        <flag>DoNotShowAutoGatherRate</flag>
+        <flag>EnterHotkeyContext</flag>
+        <command page="10" column="2">SetGatherPointEconomy</command>
+        <command page="10" column="3">SetGatherPointMilitary</command>
+        <command page="10" column="8">CancelAllQueued</command>
+        <command page="10" column="5">Eject</command>
+        <tactics>lombard.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherFoodInvestment</name>
+            <rate type="Wood">1.000000</rate>
+            <rate type="Gold">1.000000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWoodInvestment</name>
+            <rate type="Food" yield="1.500000">1.500000</rate>
+            <rate type="Gold">1.000000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinInvestment</name>
+            <rate type="Food" yield="1.500000">1.500000</rate>
+            <rate type="Wood">1.000000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9210" name="cbe_Grouping_deSPCRockMineProp">
+        <dbid>99210</dbid>
+        <editornameid>123080</editornameid>
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>units\asians\spc\rock_crate\spc_rock_crate.xml</animfile>
+        <impacttype>Stone</impacttype>
+        <icon>resources\art\units\asians\spc\rock_crate\spc_asian_rock_crate_icon_64.png</icon>
+        <portraiticon>resources\art\units\asians\spc\rock_crate\spc_asian_rock_crate_icon_portrait.png</portraiticon>
+        <rollovertextid>64919</rollovertextid>
+        <shortrollovertextid>64918</shortrollovertextid>
+        <initialhitpoints>6.0000</initialhitpoints>
+        <maxhitpoints>6.0000</maxhitpoints>
+        <los>18.0000</los>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>NatureClass</unittype>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>DoNotDieAtZeroHitpoints</flag>
+        <flag>DoNotValidateResourceInventory</flag>
+        <flag>NoHPBar</flag>
+        <flag>Invulnerable</flag>
+        <flag>DontRotateObstruction</flag>
+        <flag>FlattenGround</flag>
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>Tracked</flag>
+        <flag>NotDeleteable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9211" name="cbe_Grouping_deSPCSupplyCache">
+        <dbid>99211</dbid>
+        <displaynameid>123179</displaynameid>
+        <editornameid>123180</editornameid>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\weapons_cache\spc_weapons_cache.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <icon>resources\art\buildings\spc\weapons_cache\weapons_cache_portrait.png</icon>
+        <minimapicon>ui\minimap\minimap_cog</minimapicon>
+        <portraiticon>resources\art\buildings\spc\weapons_cache\weapons_cache_portrait.png</portraiticon>
+        <rollovertextid>123182</rollovertextid>
+        <shortrollovertextid>123181</shortrollovertextid>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>14.0000</los>
+        <bounty>70.0000</bounty>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotDeleteable</flag>
+        <flag>BuildingShowTactics</flag>
+        <command page="10" column="7">Delete</command>
+        <command page="10" column="3">SetGatherPointMilitary</command>
+        <command page="10" column="8">CancelAllQueued</command>
+        <command page="9" column="0">BuildingTrickleFood</command>
+        <command page="9" column="1">BuildingTrickleWood</command>
+        <command page="9" column="2">BuildingTrickleCoin</command>
+        <command page="9" column="3">BuildingTrickleVaried</command>
+        <tactics>spcsupplycache.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherCoin</name>
+            <rate type="Gold">10.000000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherFood</name>
+            <rate type="Food">10.000000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <rate type="Wood">10.000000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinSmall</name>
+            <rate type="Gold">3.500000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherFoodSmall</name>
+            <rate type="Food">3.500000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWoodSmall</name>
+            <rate type="Wood">3.500000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinSmaller</name>
+            <rate type="Gold">2.500000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherFoodSmaller</name>
+            <rate type="Food">2.500000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWoodSmaller</name>
+            <rate type="Wood">2.500000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherTrade</name>
+            <rate type="Trade">1.125000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherInfluence</name>
+            <rate type="Influence">2.500000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9212" name="cbe_Grouping_deSPCViennaArtilleryDepotProp">
+        <dbid>99212</dbid>
+        <displaynameid>22922</displaynameid>
+        <editornameid>123246</editornameid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\vienna\artillery_depot.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\artillery_depot\artillery_depot_icon.png</icon>
+        <portraiticon>resources\art\buildings\artillery_depot\artillery_depot_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>22920</rollovertextid>
+        <shortrollovertextid>25607</shortrollovertextid>
+        <initialhitpoints>2500.0000</initialhitpoints>
+        <maxhitpoints>2500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <freebuildpoints>149.7000</freebuildpoints>
+        <bounty resourcetype="Wood">50.0000</bounty>
+        <bounty resourcetype="Gold">50.0000</bounty>
+        <buildbounty>25.0000</buildbounty>
+        <cost resourcetype="Wood">250.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>2</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>NotRepairable</flag>
+        <flag>NotDeleteable</flag>
+        <flag>ApplyFlagOverrideIfGaia</flag>
+        <tactics>viennafoundry.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherWoodTeam</name>
+            <rate type="Food">0.350000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinTeam</name>
+            <rate type="Gold">0.350000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+    </unit>
+    <unit mergeMode="add" id="9213" name="cbe_Grouping_deSPCViennaBarracksProp">
+        <dbid>99213</dbid>
+        <displaynameid>60237</displaynameid>
+        <editornameid>123245</editornameid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\vienna\barracks.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>barracks</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\barracks\barracks_icon.png</icon>
+        <portraiticon>resources\art\buildings\barracks\barracks_portraits.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>22846</rollovertextid>
+        <shortrollovertextid>25610</shortrollovertextid>
+        <initialhitpoints>2500.0000</initialhitpoints>
+        <maxhitpoints>2500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <bounty resourcetype="Food">40.0000</bounty>
+        <bounty resourcetype="Gold">40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Food">0.0000</cost>
+        <cost resourcetype="Wood">200.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>Tracked</flag>
+        <flag>NotRepairable</flag>
+        <flag>NotDeleteable</flag>
+        <flag>ApplyFlagOverrideIfGaia</flag>
+        <tactics>viennabarracks.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherFoodTeam</name>
+            <rate type="Food">0.350000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinTeam</name>
+            <rate type="Gold">0.350000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+    </unit>
+    <unit mergeMode="add" id="9214" name="cbe_Grouping_deSPCViennaChurchProp">
+        <dbid>99214</dbid>
+        <displaynameid>22928</displaynameid>
+        <editornameid>123247</editornameid>
+        <obstructionradiusx>3.5000</obstructionradiusx>
+        <obstructionradiusz>5.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\vienna\church.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\church\church_icon.png</icon>
+        <portraiticon>resources\art\buildings\church\church_portrait.png</portraiticon>
+        <rollovertextid>22927</rollovertextid>
+        <shortrollovertextid>25620</shortrollovertextid>
+        <unithelpoverride>deChurchEntry</unithelpoverride>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>20.0000</buildpoints>
+        <buildlimit>1</buildlimit>
+        <bounty resourcetype="XP">60.0000</bounty>
+        <buildbounty>30.0000</buildbounty>
+        <cost resourcetype="Wood">150.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>NotRepairable</flag>
+        <flag>NotDeleteable</flag>
+        <flag>ApplyFlagOverrideIfGaia</flag>
+        <tactics>autogathererteam.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherTeam</name>
+            <rate type="XP">1.000000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+    </unit>
+    <unit mergeMode="add" id="9215" name="cbe_Grouping_deSPCViennaHouseProp">
+        <dbid>99215</dbid>
+        <displaynameid>9913000</displaynameid>
+        <editornameid>123243</editornameid>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\vienna\house.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\house\house_icon.png</icon>
+        <portraiticon>resources\art\buildings\house\house_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\italian</civflagoverride>
+        <rollovertextid>9913001</rollovertextid>
+        <shortrollovertextid>9913002</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <buildlimit>20</buildlimit>
+        <bounty resourcetype="Food">40.0000</bounty>
+        <bounty resourcetype="Wood">40.0000</bounty>
+        <bounty resourcetype="Gold">40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Wood">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <buildingworkrate>0.5000</buildingworkrate>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>NotRepairable</flag>
+        <flag>NotDeleteable</flag>
+        <tactics>viennamarket.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherFoodTeam</name>
+            <rate type="Food">0.100000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWoodTeam</name>
+            <rate type="Wood">0.100000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinTeam</name>
+            <rate type="Gold">0.100000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+    </unit>
+    <unit mergeMode="add" id="9216" name="cbe_Grouping_deSPCViennaMarketProp">
+        <dbid>99216</dbid>
+        <displaynameid>64624</displaynameid>
+        <editornameid>123244</editornameid>
+        <obstructionradiusx>5.0000</obstructionradiusx>
+        <obstructionradiusz>5.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\vienna\market.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\market\market_icon.png</icon>
+        <portraiticon>resources\art\buildings\market\market_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>26748</rollovertextid>
+        <shortrollovertextid>26747</shortrollovertextid>
+        <initialhitpoints>2000.0000</initialhitpoints>
+        <maxhitpoints>2000.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>15.0000</buildpoints>
+        <bounty resourcetype="Food">40.0000</bounty>
+        <bounty resourcetype="Wood">40.0000</bounty>
+        <bounty resourcetype="Gold">40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Wood">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Economic</unittype>
+        <unittype>BuildingClass</unittype>
+        <flag>EnterHotkeyContext</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>NotRepairable</flag>
+        <flag>NotDeleteable</flag>
+        <flag>ApplyFlagOverrideIfGaia</flag>
+        <tactics>viennamarket.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherFoodTeam</name>
+            <rate type="Food">0.250000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWoodTeam</name>
+            <rate type="Wood">0.250000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinTeam</name>
+            <rate type="Gold">0.250000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+    </unit>
+    <unit mergeMode="add" id="9217" name="cbe_Grouping_deSPCVillageHouse">
+        <dbid>99217</dbid>
+        <displaynameid>9913003</displaynameid>
+        <editornameid>123082</editornameid>
+        <panelnameid>123103</panelnameid>
+        <panelrolloverid>123104</panelrolloverid>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\hb_villages\house.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\house\house_icon.png</icon>
+        <portraiticon>resources\art\buildings\house\house_portrait.png</portraiticon>
+        <rollovertextid>9913004</rollovertextid>
+        <shortrollovertextid>9913005</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <unitregen damagetimeout="6.0">0.0000</unitregen>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <buildlimit>20</buildlimit>
+        <bounty resourcetype="Food">60.0000</bounty>
+        <bounty resourcetype="Wood">60.0000</bounty>
+        <bounty resourcetype="Gold">60.0000</bounty>
+        <cost resourcetype="Wood">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <buildingworkrate>0.5000</buildingworkrate>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>FakeConversion</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>AllowPlacementOnIce</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <tactics>villagehouse.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherFood</name>
+            <rate type="Food">0.300000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <rate type="Wood">0.300000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoin</name>
+            <rate type="Gold">0.300000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherFoodTeam</name>
+            <rate type="Food">0.165000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWoodTeam</name>
+            <rate type="Wood">0.165000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinTeam</name>
+            <rate type="Gold">0.165000</rate>
+        </protoaction>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+    </unit>
+    <unit mergeMode="add" id="9218" name="cbe_Grouping_deSPCVillageMarket">
+        <dbid>99218</dbid>
+        <displaynameid>26749</displaynameid>
+        <editornameid>123083</editornameid>
+        <panelnameid>123111</panelnameid>
+        <panelrolloverid>123112</panelrolloverid>
+        <obstructionradiusx>5.0000</obstructionradiusx>
+        <obstructionradiusz>5.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\hb_villages\market.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\market\market_icon.png</icon>
+        <portraiticon>resources\art\buildings\market\market_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>26748</rollovertextid>
+        <shortrollovertextid>26747</shortrollovertextid>
+        <initialhitpoints>3000.0000</initialhitpoints>
+        <maxhitpoints>3000.0000</maxhitpoints>
+        <unitregen damagetimeout="6.0">0.0000</unitregen>
+        <los>12.0000</los>
+        <buildpoints>15.0000</buildpoints>
+        <bounty resourcetype="XP">115.0000</bounty>
+        <bounty resourcetype="Food">115.0000</bounty>
+        <bounty resourcetype="Wood">115.0000</bounty>
+        <bounty resourcetype="Gold">115.0000</bounty>
+        <cost resourcetype="Wood">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>FakeConversion</flag>
+        <flag>ApplyFlagOverrideIfGaia</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>AllowPlacementOnIce</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <tactics>villagemarket.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherXP</name>
+            <rate type="XP">0.850000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherFood</name>
+            <rate type="Food">0.850000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <rate type="Wood">0.850000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoin</name>
+            <rate type="Gold">0.850000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherXPTeam</name>
+            <rate type="XP">0.467500</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherFoodTeam</name>
+            <rate type="Food">0.467500</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherWoodTeam</name>
+            <rate type="Wood">0.467500</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherCoinTeam</name>
+            <rate type="Gold">0.467500</rate>
+        </protoaction>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+    </unit>
+    <unit mergeMode="add" id="9219" name="cbe_Grouping_deSPCWaterlooChurchProp">
+        <dbid>99219</dbid>
+        <displaynameid>22928</displaynameid>
+        <editornameid>123148</editornameid>
+        <obstructionradiusx>3.5000</obstructionradiusx>
+        <obstructionradiusz>5.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\waterloo\church.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\church\church_icon.png</icon>
+        <portraiticon>resources\art\buildings\church\church_portrait.png</portraiticon>
+        <rollovertextid>22927</rollovertextid>
+        <shortrollovertextid>25620</shortrollovertextid>
+        <unithelpoverride>deChurchEntry</unithelpoverride>
+        <initialhitpoints>1500.0000</initialhitpoints>
+        <maxhitpoints>1500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>20.0000</buildpoints>
+        <buildlimit>1</buildlimit>
+        <bounty>60.0000</bounty>
+        <buildbounty>30.0000</buildbounty>
+        <cost resourcetype="Wood">150.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeValidSPCBuildingsDeadCondition</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>AbstractChurch</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Invulnerable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9220" name="cbe_Grouping_deSPCWaterlooHouseProp">
+        <dbid>99220</dbid>
+        <displaynameid>9913000</displaynameid>
+        <editornameid>123146</editornameid>
+        <populationcapaddition>10</populationcapaddition>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\waterloo\house.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\house\house_icon.png</icon>
+        <portraiticon>resources\art\buildings\house\house_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\italian</civflagoverride>
+        <rollovertextid>9913001</rollovertextid>
+        <shortrollovertextid>9913002</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <buildlimit>20</buildlimit>
+        <bounty>40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Wood">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <buildingworkrate>0.5000</buildingworkrate>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Invulnerable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9221" name="cbe_Grouping_deSPCWaterlooLivestockPenProp">
+        <dbid>99221</dbid>
+        <displaynameid>29032</displaynameid>
+        <editornameid>123147</editornameid>
+        <obstructionradiusx>3.0000</obstructionradiusx>
+        <obstructionradiusz>3.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\waterloo\livestock pen.xml</animfile>
+        <deadreplacement>BuildingRubble3x3</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>livestockpen</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\livestock pen\livestock_pen_icon.png</icon>
+        <portraiticon>resources\art\buildings\livestock pen\livestock_pen_portrait.png</portraiticon>
+        <rollovertextid>29031</rollovertextid>
+        <shortrollovertextid>29030</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>10.0000</los>
+        <buildpoints>20.0000</buildpoints>
+        <freebuildpoints>100.0000</freebuildpoints>
+        <bounty>100.0000</bounty>
+        <buildbounty>50.0000</buildbounty>
+        <cost resourcetype="Wood">200.0000</cost>
+        <carrycapacity resourcetype="Food">100.0000</carrycapacity>
+        <initialresource resourcetype="Food">999.0000</initialresource>
+        <resourcesubtype>grain</resourcesubtype>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <gathererlimit>10</gathererlimit>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeValidSPCBuildingsDeadCondition</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>AbstractFarm</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Food</unittype>
+        <unittype>Economic</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Resource</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Invulnerable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9222" name="cbe_Grouping_SPCTent">
+        <dbid>99222</dbid>
+        <displaynameid>46795</displaynameid>
+        <editornameid>46796</editornameid>
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <maxrunvelocity>0.0000</maxrunvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\tents\tents_large.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <icon>resources\art\buildings\spc\tents\largetent_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\tents\largetent_portrait.png</portraiticon>
+        <rollovertextid>46794</rollovertextid>
+        <shortrollovertextid>46793</shortrollovertextid>
+        <initialhitpoints>400.0000</initialhitpoints>
+        <maxhitpoints>400.0000</maxhitpoints>
+        <los>12.0000</los>
+        <bounty>115.0000</bounty>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>BuildingClass</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>Tracked</flag>
+        <command page="10" column="7">Delete</command>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9223" name="cbe_Grouping_SPCXPRedoubtCenter">
+        <dbid>99223</dbid>
+        <displaynameid>46700</displaynameid>
+        <editornameid>46701</editornameid>
+        <obstructionradiusx>3.0000</obstructionradiusx>
+        <obstructionradiusz>3.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\redoubt\redoubt_center.xml</animfile>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <icon>resources\art\buildings\spc\fort\spc_fort_wall_icon64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\fort\spc_fort_wall_portrait.png</portraiticon>
+        <rollovertextid>46699</rollovertextid>
+        <shortrollovertextid>46698</shortrollovertextid>
+        <initialhitpoints>4500.0000</initialhitpoints>
+        <maxhitpoints>4500.0000</maxhitpoints>
+        <los>6.0000</los>
+        <cost resourcetype="Wood">50.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>BuildingClass</unittype>
+        <flag>SelectWithObstruction</flag>
+        <flag>Doppled</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>wallBuild</flag>
+        <flag>DontFlattenGround</flag>
+        <flag>NeverShowButton</flag>
+        <flag>UseAlignedObstructionOnMinimap</flag>
+        <flag>NoIdleActions</flag>
+        <flag>TileAlignPlacement</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>Invulnerable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>Tracked</flag>
+        <command page="10" column="7">Delete</command>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9224" name="cbe_Grouping_SPCXPRedoubtLeft">
+        <dbid>99224</dbid>
+        <displaynameid>46704</displaynameid>
+        <editornameid>46705</editornameid>
+        <obstructionradiusx>3.0000</obstructionradiusx>
+        <obstructionradiusz>8.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\redoubt\redoubt_left.xml</animfile>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <icon>resources\art\buildings\spc\fort\spc_fort_wall_icon64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\fort\spc_fort_wall_portrait.png</portraiticon>
+        <rollovertextid>46703</rollovertextid>
+        <shortrollovertextid>46702</shortrollovertextid>
+        <initialhitpoints>4500.0000</initialhitpoints>
+        <maxhitpoints>4500.0000</maxhitpoints>
+        <los>6.0000</los>
+        <cost resourcetype="Wood">50.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>Invulnerable</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>Doppled</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>wallBuild</flag>
+        <flag>DontFlattenGround</flag>
+        <flag>NeverShowButton</flag>
+        <flag>UseAlignedObstructionOnMinimap</flag>
+        <flag>NoIdleActions</flag>
+        <flag>TileAlignPlacement</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>Tracked</flag>
+        <command page="10" column="7">Delete</command>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9225" name="cbe_Grouping_SPCXPRedoubtRight">
+        <dbid>99225</dbid>
+        <displaynameid>46708</displaynameid>
+        <editornameid>46709</editornameid>
+        <obstructionradiusx>3.0000</obstructionradiusx>
+        <obstructionradiusz>8.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\redoubt\redoubt_right.xml</animfile>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <icon>resources\art\buildings\spc\fort\spc_fort_wall_icon64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\fort\spc_fort_wall_portrait.png</portraiticon>
+        <rollovertextid>46707</rollovertextid>
+        <shortrollovertextid>46706</shortrollovertextid>
+        <initialhitpoints>4500.0000</initialhitpoints>
+        <maxhitpoints>4500.0000</maxhitpoints>
+        <los>6.0000</los>
+        <cost resourcetype="Wood">50.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>AbstractWall</unittype>
+        <unittype>BuildingClass</unittype>
+        <flag>SelectWithObstruction</flag>
+        <flag>Doppled</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>wallBuild</flag>
+        <flag>DontFlattenGround</flag>
+        <flag>NeverShowButton</flag>
+        <flag>UseAlignedObstructionOnMinimap</flag>
+        <flag>NoIdleActions</flag>
+        <flag>TileAlignPlacement</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>Invulnerable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>Tracked</flag>
+        <command page="10" column="7">Delete</command>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9226" name="cbe_Grouping_ypSMJesuitAccessory">
+        <dbid>99226</dbid>
+        <displaynameid>64540</displaynameid>
+        <editornameid>64541</editornameid>
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <idletimeout>5.0000</idletimeout>
+        <maxvelocity>3.0000</maxvelocity>
+        <maxrunvelocity>5.0000</maxrunvelocity>
+        <movementtype>water</movementtype>
+        <animfile>buildings\native_settlement\sm_jesuit_accessory.xml</animfile>
+        <animstatemachine>sm_nw_fence</animstatemachine>
+        <icon>resources\art\units\asians\natives\jesuit\unit_jesuit_icon_64.png</icon>
+        <portraiticon>resources\art\units\asians\natives\jesuit\unit_jesuit_icon_portrait.png</portraiticon>
+        <los>0.0000</los>
+        <unittype>LogicalTypeHealed</unittype>
+        <unittype>LogicalTypeGarrisonInShips</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeVillagersRespondToAttack</unittype>
+        <unittype>NatureClass</unittype>
+        <unittype>Nature</unittype>
+        <unittype>Unit</unittype>
+        <flag>DontRotateObstruction</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>DieAtZeroResources</flag>
+        <flag>NoHPBar</flag>
+        <flag>DoNotDieAtZeroHitpoints</flag>
+        <flag>DoNotValidateResourceInventory</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>DontSortAlphaPolys</flag>
+        <flag>PlaceAnywhere</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>VisibleUnderFog</flag>
+        <flag>InvulnerableIfGaia</flag>
+        <flag>Immoveable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>Invulnerable</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9227" name="cbe_Grouping_deSPCTentProp">
+        <dbid>99227</dbid>
+        <displaynameid>46795</displaynameid>
+        <editornameid>123102</editornameid>
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <maxrunvelocity>0.0000</maxrunvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\tents\tents_large.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <icon>resources\art\buildings\spc\tents\largetent_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\tents\largetent_portrait.png</portraiticon>
+        <rollovertextid>46794</rollovertextid>
+        <shortrollovertextid>46793</shortrollovertextid>
+        <initialhitpoints>400.0000</initialhitpoints>
+        <maxhitpoints>400.0000</maxhitpoints>
+        <los>12.0000</los>
+        <bounty>115.0000</bounty>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>BuildingClass</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotDeleteable</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9228" name="cbe_Grouping_deSPCCityStateBarracksProp">
+        <dbid>99228</dbid>
+        <displaynameid>123008</displaynameid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\barracks.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>barracks</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\barracks\barracks_icon.png</icon>
+        <portraiticon>resources\art\buildings\barracks\barracks_portraits.png</portraiticon>
+        <civflagoverride>objects\flags\italian</civflagoverride>
+        <rollovertextid>22846</rollovertextid>
+        <shortrollovertextid>25610</shortrollovertextid>
+        <initialhitpoints>2500.0000</initialhitpoints>
+        <maxhitpoints>2500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <bounty>40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Food">0.0000</cost>
+        <cost resourcetype="Wood">200.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>AbstractBarracks2</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+    <unit mergeMode="add" id="9230" name="cbe_Grouping_deSPCSocketCityState">
+        <dbid>99230</dbid>
+        <displaynameid>123000</displaynameid>
+        <editornameid>123001</editornameid>
+        <subciv>CBELatinCityState</subciv>
+        <socketbuildprotounit>TradingPost</socketbuildprotounit>
+        <socketbuildrate>3.0000</socketbuildrate>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\trading_post\jesuit_outpost_socket.xml</animfile>
+        <minimapicon>ui\minimap\t</minimapicon>
+        <portraiticon>resources\art\buildings\native_settlement\native_jesuit_site_icon_portrait.png</portraiticon>
+        <rollovertextid>123034</rollovertextid>
+        <shortrollovertextid>61104</shortrollovertextid>
+        <los>5.0000</los>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>Socket</unittype>
+        <unittype>NativeSocket</unittype>
+        <unittype>TradePostSocket</unittype>
+        <unittype>CapturableSocket</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <unittype>NativeBuilding</unittype>
+        <unittype>EmbellishmentClass</unittype>
+        <flag>MinimapDisplayOnTop</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NoHPBar</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>Invulnerable</flag>
+        <flag>ColorTransformNonGaia</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>Tracked</flag>
+        <flag>SocketFreeBuilding</flag>
+        <flag>NotDeleteable</flag>
+        <tactics>socketcapture.tactics</tactics>
+        <command page="1" column="0">deSocketBuild</command>
+    </unit>
+    <unit mergeMode="add" id="9229" name="cbe_Grouping_deSPCPapalEmbassy">
+        <dbid>99229</dbid>
+        <displaynameid>123014</displaynameid>
+        <editornameid>123015</editornameid>
+        <obstructionradiusx>7.8000</obstructionradiusx>
+        <obstructionradiusz>8.5000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\basilica\basilica.xml</animfile>
+        <deadreplacement>BuildingRubble6x6</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Stone</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\basilica\basilica_icon.png</icon>
+        <portraiticon>resources\art\buildings\basilica\basilica_portrait.png</portraiticon>
+        <rollovertextid>123017</rollovertextid>
+        <shortrollovertextid>123016</shortrollovertextid>
+        <initialhitpoints>5000.0000</initialhitpoints>
+        <maxhitpoints>5000.0000</maxhitpoints>
+        <los>12.0000</los>
+        <displayedrange>20.0000</displayedrange>
+        <buildpoints>40.0000</buildpoints>
+        <buildlimit>1</buildlimit>
+        <bounty>160.0000</bounty>
+        <buildbounty>80.0000</buildbounty>
+        <cost resourcetype="Wood">200.0000</cost>
+        <cost resourcetype="Gold">200.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>AbstractChurch</unittype>
+        <unittype>HCGatherPointPri2</unittype>
+        <flag>AllowAutoGarrison</flag>
+        <flag>DanceActionNoWorkers</flag>
+        
+        <train page="0" column="0">Priest</train>
+        <train page="0" column="1">Missionary</train>
+        <train page="0" column="2">deSaloonInquisitor</train>
+
+        <train page="1" column="0">MercElmeti</train>
+        <train page="1" column="1">MercSwissPikeman</train>
+        <train page="1" column="2">deMercPistoleer</train>
+
+        <tech page="2" column="0">CBEDESPCArtPatron</tech>
+        <tech page="2" column="1">DESPCPapalLegate</tech>
+        <tech page="2" column="2">DESPCPapalBlessing</tech>
+        <tech page="2" column="3">DESPCExcommunication</tech>
+        <tech page="2" column="4">CBEEnablePapalEmbassyLocalTrain</tech>
+
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>ColonyPlacementL</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotDeleteable</flag>
+        <flag>EnterHotkeyContext</flag>
+        <flag>DisplayRange</flag>
+        <flag>UISkipActiveTechs</flag>
+        <command page="10" column="3">SetGatherPointMilitary</command>
+        <command page="10" column="8">CancelAllQueued</command>
+        <command page="10" column="5">Eject</command>
+        <command page="9" column="1">TacticPapalCompany</command>
+        <tactics>cbe_papalembassy_auto.tactics</tactics>
+        <protoaction>
+            <name>Autogather</name>
+            <rate type="XP">2.000000</rate>
+        </protoaction>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>NoHPBar</flag>
+        <flag>NotRepairable</flag>
+    </unit>
+
+    <!-- ========================================================= -->
+    <!-- CBE GROUPING BUILDINGS                                  -->
+    <!-- Custom capturable props used only by CBE map groupings   -->
+    <!-- ========================================================= -->
+    <unit mergeMode="add" id="9100" name="CBEVillageHouse">
+        <dbid>99100</dbid>
+        <displaynameid>9913003</displaynameid>
+        <editornameid>123082</editornameid>
+        <panelnameid>123103</panelnameid>
+        <panelrolloverid>123104</panelrolloverid>
+        <populationcapaddition>10</populationcapaddition>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <placementobstructionradiusx>2.0000</placementobstructionradiusx>
+        <placementobstructionradiusz>2.0000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\hb_villages\house.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\house\house_icon.png</icon>
+        <portraiticon>resources\art\buildings\house\house_portrait.png</portraiticon>
+        <rollovertextid>9913004</rollovertextid>
+        <shortrollovertextid>9913005</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>AbstractHouse</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>OptionalSocketPlacement</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagehouse.tactics</tactics>
+    </unit>
+    <unit mergeMode="add" id="9101" name="CBEMiningCamp">
+        <dbid>99101</dbid>
+        <displaynameid>46781</displaynameid>
+        <editornameid>123084</editornameid>
+        <panelnameid>123105</panelnameid>
+        <panelrolloverid>123106</panelrolloverid>
+        <obstructionradiusx>3.0000</obstructionradiusx>
+        <obstructionradiusz>3.0000</obstructionradiusz>
+        <placementobstructionradiusx>3.0000</placementobstructionradiusx>
+        <placementobstructionradiusz>3.0000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\mining_camp\miningcamp.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\spc\tents\largetent_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\tents\largetent_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>46780</rollovertextid>
+        <shortrollovertextid>46779</shortrollovertextid>
+        <initialhitpoints>3000.0000</initialhitpoints>
+        <maxhitpoints>3000.0000</maxhitpoints>
+        <los>15.0000</los>
+        <buildpoints>20.0000</buildpoints>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>Tracked</flag>
+        <flag>OptionalSocketPlacement</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagebuilding.tactics</tactics>
+        <protoaction>
+            <name>AutoGather</name>
+            <rate type="Gold">2.250000</rate>
+        </protoaction>
+    </unit>
+    <unit mergeMode="add" id="9102" name="CBEVillageTent">
+        <dbid>99102</dbid>
+        <displaynameid>46795</displaynameid>
+        <editornameid>46796</editornameid>
+        <obstructionradiusx>2.0000</obstructionradiusx>
+        <obstructionradiusz>2.0000</obstructionradiusz>
+        <placementobstructionradiusx>2.0000</placementobstructionradiusx>
+        <placementobstructionradiusz>2.0000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\tents\tents_large.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>villagebuildingsmall.xml</placementfile>
+        <icon>resources\art\buildings\spc\tents\largetent_icon_64x64.png</icon>
+        <portraiticon>resources\art\buildings\spc\tents\largetent_portrait.png</portraiticon>
+        <rollovertextid>46794</rollovertextid>
+        <shortrollovertextid>46793</shortrollovertextid>
+        <initialhitpoints>1200.0000</initialhitpoints>
+        <maxhitpoints>1200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>10.0000</buildpoints>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <flag>OptionalSocketPlacement</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagehouse.tactics</tactics>
+        <protoaction>
+            <name>AutoGatherWood</name>
+            <rate type="Wood">0.300000</rate>
+        </protoaction>
+    </unit>
+    <unit mergeMode="add" id="9104" name="CBEVillageMill">
+        <dbid>99104</dbid>
+        <displaynameid>22804</displaynameid>
+        <editornameid>123086</editornameid>
+        <panelnameid>123107</panelnameid>
+        <panelrolloverid>123108</panelrolloverid>
+        <obstructionradiusx>3.0000</obstructionradiusx>
+        <obstructionradiusz>3.0000</obstructionradiusz>
+        <placementobstructionradiusx>3.0000</placementobstructionradiusx>
+        <placementobstructionradiusz>3.0000</placementobstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\hb_villages\mill.xml</animfile>
+        <deadreplacement>BuildingRubble3x3</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>mill</physicsinfo>
+        <placementfile>villagemill.xml</placementfile>
+        <icon>resources\art\buildings\mill\mill_icon.png</icon>
+        <portraiticon>resources\art\buildings\mill\mill_portrait.png</portraiticon>
+        <civflagoverride>objects\flags\teamcolor_flag</civflagoverride>
+        <rollovertextid>22811</rollovertextid>
+        <shortrollovertextid>25665</shortrollovertextid>
+        <initialhitpoints>3000.0000</initialhitpoints>
+        <maxhitpoints>3000.0000</maxhitpoints>
+        <unitregen damagetimeout="6.0">0.0000</unitregen>
+        <los>12.0000</los>
+        <buildpoints>20.0000</buildpoints>
+        <freebuildpoints>200.0000</freebuildpoints>
+        <bounty resourcetype="Food">450.0000</bounty>
+        <resourcesubtype>grain</resourcesubtype>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0000"></armor>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>AbstractFarm</unittype>
+        <unittype>ColonyBuilding</unittype>
+        <unittype>Food</unittype>
+        <unittype>Economic</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>ColonyBuilding</flag>
+        <flag>Tracked</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>AllowRebuildInGrouping</flag>
+        <flag>DisplaySocketPanel</flag>
+        <flag>AllowPlacementOnIce</flag>
+        <flag>NotDeleteable</flag>
+        <flag>NotRepairable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <tactics>villagebuilding.tactics</tactics>
+        <protoaction>
+            <name>AutoGather</name>
+            <rate type="Food">2.250000</rate>
+        </protoaction>
+        <protoaction>
+            <name>AutoGatherTeam</name>
+            <rate type="Food">1.237500</rate>
+        </protoaction>
+    </unit>
+    <unit mergeMode="add" id="9103" name="cbeSPCTavern">
+        <dbid>9103</dbid>
+        <displaynameid>110120</displaynameid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\tavern\tavern.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>barracks</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\tavern_icon.png</icon>
+        <portraiticon>resources\art\buildings\tavern_portrait.png</portraiticon>
+        <rollovertextid>46096</rollovertextid>
+        <shortrollovertextid>46095</shortrollovertextid>
+        <unithelpoverride>Saloon</unithelpoverride>
+        <legacyhotkeycontext>SaloonAccel</legacyhotkeycontext>
+        <initialhitpoints>2500.0000</initialhitpoints>
+        <maxhitpoints>2500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <freebuildpoints>119.7600</freebuildpoints>
+        <bounty>40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000">
+        </armor>
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>LogicalTypeValidSPCBuildingsDeadCondition</unittype>
+        <unittype>Building</unittype>
+        <unittype>LogicalTypeBuildingsNoRangedAttack</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>MilitaryProductionBuilding</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>AbstractMercenaryBuilding</unittype>
+        <unittype>AbstractSPCVillageBuilding</unittype>
+        <unittype>Unattackable</unittype>
+        <train page="0" column="0">SaloonOutlawPistol</train>
+        <train page="0" column="1">SaloonOutlawRider</train>
+        <train page="0" column="2">SaloonOutlawRifleman</train>
+        <train page="0" column="3">SaloonPirate</train>
+        <train page="0" column="4">deOutlawDesertWarrior</train>
+        <train page="0" column="5">deOutlawDesertArcher</train>
+        <train page="0" column="6">deOutlawDesertRaider</train>
+        <train page="0" column="7">deSaloonDesperado</train>
+        <train page="0" column="8">deSaloonVaquero</train>
+        <train page="0" column="9">deSaloonBandido</train>
+        <train page="0" column="10">deSaloonGunslinger</train>
+        <train page="0" column="11">deSaloonOwlhoot</train>
+        <train page="0" column="12">deSaloonCowboy</train>
+        <train page="0" column="13">deSaloonOutlawBuccaneer</train>
+        <train page="0" column="14">deSaloonOutlawBlowgunner</train>
+        <train page="0" column="15">deSaloonOutlawArsonist</train>
+        <train page="0" column="16">deSaloonHajduk</train>
+        <train page="0" column="17">deSaloonInquisitor</train>
+        <train page="0" column="18">deSaloonHighwaymanRider</train>
+        <train page="0" column="19">deSaloonCrabat</train>
+        <train page="0" column="20">deSaloonOutlawCossack</train>
+        <train page="0" column="21">deSaloonOutlawCossackRider</train>
+        <train page="0" column="22">deSaloonOutlawAfricanSpearman</train>
+        <train page="0" column="23">deSaloonOutlawKnifeThrower</train>
+        <train page="0" column="24">deSaloonOutlawColoRifle</train>
+        <train page="0" column="25">MercBarbaryCorsair</train>
+        <train page="0" column="26">ypDacoit</train>
+        <train page="0" column="27">ypThuggee</train>
+        <train page="0" column="28">ypMercArsonist</train>
+        <train page="1" column="0">ypWokouBlindMonk</train>
+        <train page="1" column="1">ypWokouPirate</train>
+        <train page="1" column="2">ypWokouWanderingHorseman</train>
+        <train page="1" column="3">ypWokouWaywardRonin</train>
+        <tech page="1" column="1">DETavernFolkHeroes</tech>
+        <flag>HeroName2</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NoIdleActions</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>Doppled</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>HasGatherPoint</flag>
+        <flag>InitialGarrisonOnly</flag>
+        <flag>Tracked</flag>
+        <flag>Invulnerable</flag>
+        <flag>NoHPBar</flag>
+        <command page="10" column="7">Delete</command>
+        <command page="10" column="3">SetGatherPointMilitary</command>
+        <tactics>barracks.tactics</tactics>
+        <protoaction>
+            <name>Autogather</name>
+            <active>1</active>
+            <rate type="Gold">0.600000</rate>
+        </protoaction>
+    </unit>
 </protomods>
