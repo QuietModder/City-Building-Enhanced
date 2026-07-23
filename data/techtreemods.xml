@@ -127,6 +127,40 @@
     </tech>
 
     <!-- ========================================================= -->
+    <!-- 950 Population Cap Overrides                              -->
+    <!-- ========================================================= -->
+
+    <!-- Lakota normally receive an explicit 200 population cap. -->
+    <tech name="Age0XPSioux" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="750.00"
+                subtype="PopulationCap" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Definitive Edition revolutions normally reset the cap to 200. -->
+    <tech name="DERevolutionSharedEffects" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="750.00"
+                subtype="PopulationCap" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- The legacy O'Higgins revolution has its own 200-cap effect. -->
+    <tech name="XPRevolutionOHiggins" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="750.00"
+                subtype="PopulationCap" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
     <!-- Main Mod Activation                                       -->
     <!-- ========================================================= -->
     <tech mergeMode="add" name="CityBuildingEnhancedEnable" type="Normal">
@@ -3718,7 +3752,7 @@
     </tech>
 
     <!-- ========================================================= -->
-    <!-- STANDALONE: Civic Workshop â€” Age III                      -->
+    <!-- STANDALONE: Civic Workshop Ã¢â‚¬â€ Age III                      -->
     <!-- Page 2 / Column 4                                         -->
     <!-- ========================================================= -->
 
@@ -4018,76 +4052,39 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
-            <!-- Citizen roll 1: arrival leader, strongly favors Pilgrims -->
-            <effect type="RandomTech" select="1" status="active">
-                <tech>ModNWPCitizenR1Ticket01</tech>
-                <tech>ModNWPCitizenR1Ticket02</tech>
-                <tech>ModNWPCitizenR1Ticket03</tech>
-                <tech>ModNWPCitizenR1Ticket04</tech>
-                <tech>ModNWPCitizenR1Ticket05</tech>
-                <tech>ModNWPCitizenR1Ticket06</tech>
-                <tech>ModNWPCitizenR1Ticket07</tech>
-                <tech>ModNWPCitizenR1Ticket08</tech>
-                <tech>ModNWPCitizenR1Ticket09</tech>
-                <tech>ModNWPCitizenR1Ticket10</tech>
-                <tech>ModNWPCitizenR1Ticket11</tech>
-                <tech>ModNWPCitizenR1Ticket12</tech>
-                <tech>ModNWPCitizenR1Ticket13</tech>
-                <tech>ModNWPCitizenR1Ticket14</tech>
-                <tech>ModNWPCitizenR1Ticket15</tech>
-                <tech>ModNWPCitizenR1Ticket16</tech>
-                <tech>ModNWPCitizenR1Ticket17</tech>
-                <tech>ModNWPCitizenR1Ticket18</tech>
-                <tech>ModNWPCitizenR1Ticket19</tech>
-                <tech>ModNWPCitizenR1Ticket20</tech>
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
             </effect>
 
-            <!-- Citizen roll 2: dependable settler with uncommon and rare possibilities -->
-            <effect type="RandomTech" select="1" status="active">
-                <tech>ModNWPCitizenR2Ticket01</tech>
-                <tech>ModNWPCitizenR2Ticket02</tech>
-                <tech>ModNWPCitizenR2Ticket03</tech>
-                <tech>ModNWPCitizenR2Ticket04</tech>
-                <tech>ModNWPCitizenR2Ticket05</tech>
-                <tech>ModNWPCitizenR2Ticket06</tech>
-                <tech>ModNWPCitizenR2Ticket07</tech>
-                <tech>ModNWPCitizenR2Ticket08</tech>
-                <tech>ModNWPCitizenR2Ticket09</tech>
-                <tech>ModNWPCitizenR2Ticket10</tech>
-                <tech>ModNWPCitizenR2Ticket11</tech>
-                <tech>ModNWPCitizenR2Ticket12</tech>
-                <tech>ModNWPCitizenR2Ticket13</tech>
-                <tech>ModNWPCitizenR2Ticket14</tech>
-                <tech>ModNWPCitizenR2Ticket15</tech>
-                <tech>ModNWPCitizenR2Ticket16</tech>
-                <tech>ModNWPCitizenR2Ticket17</tech>
-                <tech>ModNWPCitizenR2Ticket18</tech>
-                <tech>ModNWPCitizenR2Ticket19</tech>
-                <tech>ModNWPCitizenR2Ticket20</tech>
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
             </effect>
 
-            <!-- Citizen roll 3: opportunity roll with specialist and jackpot possibilities -->
-            <effect type="RandomTech" select="1" status="active">
-                <tech>ModNWPCitizenR3Ticket01</tech>
-                <tech>ModNWPCitizenR3Ticket02</tech>
-                <tech>ModNWPCitizenR3Ticket03</tech>
-                <tech>ModNWPCitizenR3Ticket04</tech>
-                <tech>ModNWPCitizenR3Ticket05</tech>
-                <tech>ModNWPCitizenR3Ticket06</tech>
-                <tech>ModNWPCitizenR3Ticket07</tech>
-                <tech>ModNWPCitizenR3Ticket08</tech>
-                <tech>ModNWPCitizenR3Ticket09</tech>
-                <tech>ModNWPCitizenR3Ticket10</tech>
-                <tech>ModNWPCitizenR3Ticket11</tech>
-                <tech>ModNWPCitizenR3Ticket12</tech>
-                <tech>ModNWPCitizenR3Ticket13</tech>
-                <tech>ModNWPCitizenR3Ticket14</tech>
-                <tech>ModNWPCitizenR3Ticket15</tech>
-                <tech>ModNWPCitizenR3Ticket16</tech>
-                <tech>ModNWPCitizenR3Ticket17</tech>
-                <tech>ModNWPCitizenR3Ticket18</tech>
-                <tech>ModNWPCitizenR3Ticket19</tech>
-                <tech>ModNWPCitizenR3Ticket20</tech>
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: common or uncommon arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
             </effect>
 
             <effect type="CommandRemove" tech="ModPioneerArrivals">
@@ -4120,6 +4117,46 @@
         </prereqs>
 
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: common or uncommon arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHomesteadMigration">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -4151,6 +4188,53 @@
 
         
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="15.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: all tiers available -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                    <unit>Coureur</unit>
+                    <unit>CoureurCree</unit>
+                    <unit>deNatRoyalHuntsman</unit>
+                    <unit>deMiner</unit>
+                    <unit>SettlerWagon</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModTownshipImmigration">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -4181,6 +4265,53 @@
         </prereqs>
 
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="15.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: all tiers available -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                    <unit>Coureur</unit>
+                    <unit>CoureurCree</unit>
+                    <unit>deNatRoyalHuntsman</unit>
+                    <unit>deMiner</unit>
+                    <unit>SettlerWagon</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModSettlerRecruitment">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -4211,6 +4342,53 @@
         </prereqs>
 
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="25.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: all tiers available -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                    <unit>Coureur</unit>
+                    <unit>CoureurCree</unit>
+                    <unit>deNatRoyalHuntsman</unit>
+                    <unit>deMiner</unit>
+                    <unit>SettlerWagon</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModASecondChance">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -5429,729 +5607,6 @@
         </effects>
     </tech>
 
-
-    <!-- New World Prospects citizen roll 1 weighted shipment tickets -->
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket01" type="Normal">
-        <dbid>991400</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket02" type="Normal">
-        <dbid>991401</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket03" type="Normal">
-        <dbid>991402</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket04" type="Normal">
-        <dbid>991403</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket05" type="Normal">
-        <dbid>991404</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket06" type="Normal">
-        <dbid>991405</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket07" type="Normal">
-        <dbid>991406</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket08" type="Normal">
-        <dbid>991407</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket09" type="Normal">
-        <dbid>991408</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket10" type="Normal">
-        <dbid>991409</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket11" type="Normal">
-        <dbid>991410</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket12" type="Normal">
-        <dbid>991411</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket13" type="Normal">
-        <dbid>991412</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket14" type="Normal">
-        <dbid>991413</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket15" type="Normal">
-        <dbid>991414</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket16" type="Normal">
-        <dbid>991415</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket17" type="Normal">
-        <dbid>991416</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket18" type="Normal">
-        <dbid>991417</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket19" type="Normal">
-        <dbid>991418</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Coureur" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket20" type="Normal">
-        <dbid>991419</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <!-- New World Prospects citizen roll 2 weighted shipment tickets -->
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket01" type="Normal">
-        <dbid>991420</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket02" type="Normal">
-        <dbid>991421</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket03" type="Normal">
-        <dbid>991422</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket04" type="Normal">
-        <dbid>991423</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket05" type="Normal">
-        <dbid>991424</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket06" type="Normal">
-        <dbid>991425</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket07" type="Normal">
-        <dbid>991426</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket08" type="Normal">
-        <dbid>991427</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket09" type="Normal">
-        <dbid>991428</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket10" type="Normal">
-        <dbid>991429</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket11" type="Normal">
-        <dbid>991430</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket12" type="Normal">
-        <dbid>991431</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket13" type="Normal">
-        <dbid>991432</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket14" type="Normal">
-        <dbid>991433</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket15" type="Normal">
-        <dbid>991434</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket16" type="Normal">
-        <dbid>991435</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket17" type="Normal">
-        <dbid>991436</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket18" type="Normal">
-        <dbid>991437</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatSPCLenapeVillager" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket19" type="Normal">
-        <dbid>991438</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Coureur" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket20" type="Normal">
-        <dbid>991439</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="CoureurCree" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <!-- New World Prospects citizen roll 3 weighted shipment tickets -->
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket01" type="Normal">
-        <dbid>991440</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket02" type="Normal">
-        <dbid>991441</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket03" type="Normal">
-        <dbid>991442</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket04" type="Normal">
-        <dbid>991443</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket05" type="Normal">
-        <dbid>991444</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket06" type="Normal">
-        <dbid>991445</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket07" type="Normal">
-        <dbid>991446</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket08" type="Normal">
-        <dbid>991447</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket09" type="Normal">
-        <dbid>991448</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket10" type="Normal">
-        <dbid>991449</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket11" type="Normal">
-        <dbid>991450</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket12" type="Normal">
-        <dbid>991451</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket13" type="Normal">
-        <dbid>991452</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatSPCLenapeVillager" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket14" type="Normal">
-        <dbid>991453</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatSPCLenapeVillager" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket15" type="Normal">
-        <dbid>991454</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Coureur" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket16" type="Normal">
-        <dbid>991455</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="CoureurCree" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket17" type="Normal">
-        <dbid>991456</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatRoyalHuntsman" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket18" type="Normal">
-        <dbid>991457</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deMiner" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket19" type="Normal">
-        <dbid>991458</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deMiner" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket20" type="Normal">
-        <dbid>991459</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="SettlerWagon" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
 
     <!-- ========================================================= -->
     <!-- CBE City-State Subcivs                                    -->

@@ -276,19 +276,19 @@
             <string _locid="9909069">Increases the shared Settler build limit by 2 and delivers a House Wagon that can construct your civilization's available housing.</string>
 
             <string _locid="9909070">Pioneer Arrivals</string>
-            <string _locid="9909071">Increases the shared Settler build limit by 2 and attracts 3 citizens. Each citizen is rolled independently, with Pilgrims common and exceptional workers appearing more rarely.</string>
+            <string _locid="9909071">Increases the shared Settler build limit by 3, delivers a House Wagon, and attracts 3 citizens drawn from the common and uncommon settler tiers.</string>
 
             <string _locid="9909072">Homestead Migration</string>
-            <string _locid="9909073"></string>
+            <string _locid="9909073">Increases the shared Settler build limit by 10, delivers a House Wagon, and attracts 3 citizens drawn from the common and uncommon settler tiers.</string>
 
             <string _locid="9909074">Township Immigration</string>
-            <string _locid="9909075"></string>
+            <string _locid="9909075">Increases the shared Settler build limit by 15, delivers a House Wagon, and attracts 3 citizens with all settler tiers available.</string>
 
             <string _locid="9909076">Settler Recruitment</string>
-            <string _locid="9909077"></string>
+            <string _locid="9909077">Increases the shared Settler build limit by 15, delivers a House Wagon, and attracts 3 citizens with all settler tiers available.</string>
 
             <string _locid="9909078">A Second Chance</string>
-            <string _locid="9909079"></string>
+            <string _locid="9909079">Increases the shared Settler build limit by 25, delivers a House Wagon, and attracts 3 citizens with all settler tiers available.</string>
 
             <string _locid="9909080">Pioneering Settlement</string>
             <string _locid="9909081"></string>

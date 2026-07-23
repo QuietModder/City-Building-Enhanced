@@ -1,4 +1,11 @@
 <civsmods>
+  <!-- Allow Home City decks to contain up to 40 cards. -->
+  <maxdecksize>40</maxdecksize>
+
+  <!-- Raise the standard and additional population ceilings to 950. -->
+  <defaultpoplimit>950</defaultpoplimit>
+  <defaultpopextralimit>950</defaultpopextralimit>
+
   <!-- ========================================================= -->
   <!-- CBE City-State Subcivs                                    -->
   <!-- ========================================================= -->
