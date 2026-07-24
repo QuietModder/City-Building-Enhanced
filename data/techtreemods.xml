@@ -173,6 +173,17 @@
                 <target type="UnitType">AbstractVillager</target>
             </effect>
 
+            <!-- Give Houses an inactive-income autogather base for later technologies. -->
+            <effect type="Data" protoaction="Autogather" amount="1.00" subtype="ProtoActionAdd" unittype="Bank" relativity="Assign">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+            <effect type="Data" action="Autogather" amount="0.00" subtype="WorkRate" unittype="Gold" relativity="Assign">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+            <effect type="Data" action="Autogather" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <!-- Add a flat construction surcharge to all units tagged Building -->
             <effect type="Data" amount="150" subtype="Cost" resource="Wood" relativity="Absolute">
                 <target type="ProtoUnit">Building</target>
@@ -239,6 +250,13 @@
                 <target type="ProtoUnit">ModOliveOrchard</target>
             </effect>
             <effect type="CommandAdd" proto="ModOliveOrchard" page="1" column="1">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+            <effect type="CommandAdd" proto="ModHuntingLodge" page="1" column="2">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
@@ -4414,6 +4432,10 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPioneeringSettlement">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -4444,6 +4466,10 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModExpandingHomestead">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -4474,6 +4500,31 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deHomesteadWagon" relativity="Absolute">
+                <target type="Player"/>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deMilitaryWagon" relativity="Absolute">
+                <target type="Player"/>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deHomesteadWagon</target>
+            </effect>
+            <effect type="CommandAdd" proto="deHomesteadWagon" page="0" column="1">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deMilitaryWagon</target>
+            </effect>
+            <effect type="CommandAdd" proto="deMilitaryWagon" page="0" column="2">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModGrowingTownship">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -4504,6 +4555,10 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModIncorporatedTownship">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
@@ -4534,6 +4589,14 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="Autogather" amount="0.10" subtype="WorkRate" unittype="Gold" relativity="Assign">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPropertyTax">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
