@@ -4622,6 +4622,16 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="Gather" amount="1.05" subtype="WorkRate" unittype="Huntable" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.05" subtype="WorkRate" unittype="AbstractBerryBush" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModLivingOffTheLand">
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>

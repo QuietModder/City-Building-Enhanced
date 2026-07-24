@@ -38,21 +38,46 @@
     <rate type="AbstractWarship">1.0</rate>
   </action>
 
-  <!-- Drains Food directly from up to two nearby Gaia huntable animals. -->
+  <!-- Torp-style targeted hunt action. -->
   <action>
-    <name>AreaGatherHuntable</name>
-    <type>AutoRangedModify</type>
-    <modifyabstracttype>Huntable</modifyabstracttype>
-    <includegaia>1</includegaia>
+    <name stringid="91594">HuntAttack</name>
+    <type>Attack</type>
     <active>1</active>
-    <maxrange>12</maxrange>
-    <persistent>1</persistent>
-    <donotignoredead>1</donotignoredead>
-    <singleunit>0</singleunit>
-    <modifytype>UnitResource</modifytype>
-    <modifyamount>2.0</modifyamount>
-    <modifytargetlimit>2</modifytargetlimit>
+    <attackaction>1</attackaction>
+    <rangedlogic>1</rangedlogic>
+    <anim>RangedAttack</anim>
+    <maxheight>0</maxheight>
+    <accuracy>1.0</accuracy>
+    <accuracyreductionfactor>0.01</accuracyreductionfactor>
+    <aimbonus>0</aimbonus>
+    <maxspread>5</maxspread>
+    <spreadfactor>0.25</spreadfactor>
+    <trackrating>12</trackrating>
+    <unintentionaldamagemultiplier>0.7</unintentionaldamagemultiplier>
+    <projectile>InvisibleProjectile</projectile>
+    <impacteffect>effects\impacts\gun</impacteffect>
+    <rate type="Huntable">1.0</rate>
+    <instantballistics>1</instantballistics>
+    <perfectaccuracy>1</perfectaccuracy>
   </action>
 
-  <tactic>Normal<attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><action priority="99">AntiShipAttack</action><action priority="25">RangedAttack</action><action>AreaGatherHuntable</action></tactic>
+  <!-- Harvests one nearby Gaia huntable corpse at a time. -->
+  <action>
+    <name stringid="91720">AreaGatherHuntable</name>
+    <type>AutoRangedModify</type>
+    <modifyabstracttype>Huntable</modifyabstracttype>
+    <targetgaia>1</targetgaia>
+    <active>1</active>
+    <maxrange>28</maxrange>
+    <persistent>1</persistent>
+    <donotignoredead>1</donotignoredead>
+    <deadexclusive>1</deadexclusive>
+    <singleunit>1</singleunit>
+    <modifytype>UnitResource</modifytype>
+    <modifyamount>8.0</modifyamount>
+    <modelattachment>effects\ypack_auras\torpgatherpower.xml</modelattachment>
+    <modelattachmentbone>bonethatdoesntexist</modelattachmentbone>
+  </action>
+
+  <tactic>Normal<attacktype>HuntedResource</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><action priority="100">HuntAttack</action><action priority="99">AntiShipAttack</action><action priority="25">RangedAttack</action><action>AreaGatherHuntable</action></tactic>
 </tactics>

@@ -1472,6 +1472,7 @@
         <flag>AllowAutoGarrison</flag>
         <flag>Tracked</flag>
         <flag>DisplayRange</flag>
+        <flag>ShowUnitResourceActionRates</flag>
 
         <notcontain>AbstractMonk</notcontain>
         <notcontain>ExcludeFromRansom</notcontain>
@@ -1518,13 +1519,14 @@
             <damagebonus type="AbstractSiegeTrooper">0.500000</damagebonus>
             <damagebonus type="AbstractLightInfantry">1.300000</damagebonus>
         </protoaction>
+        <!-- Torp-style attack used only to dispatch nearby huntable animals. -->
         <protoaction>
-            <name>WignacourtAuraRange</name>
-            <damage>0.000001</damage>
+            <name>HuntAttack</name>
+            <damage>15.000000</damage>
             <damagetype>Ranged</damagetype>
-            <minrange>99.000000</minrange>
-            <maxrange>36.000000</maxrange>
-            <rof>3.000000</rof>
+            <minrange>0.000000</minrange>
+            <maxrange>11.750000</maxrange>
+            <damagebonus type="Huntable">4.000000</damagebonus>
         </protoaction>
     </unit>
 
