@@ -1287,7 +1287,7 @@
         <command page="10" column="5">Eject</command>
         <command page="10" column="7">Delete</command>
 
-        <tactics>millconvert.tactics</tactics>
+        <tactics>mod_bunkermills.tactics</tactics>
 
         <!-- Food trickle -->
         <protoaction>

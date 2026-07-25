@@ -30,7 +30,7 @@
 
             <!-- Bunker Mills -->
             <string _locid="9900003">Bunker Mills</string>
-            <string _locid="9900004">A fortified mill that to help enhance economy and defend your colony</string>
+            <string _locid="9900004">A fortified Citadel mill that generates resources and supports nearby Settlers. Food, Wood, and Coin branch upgrades unlock matching local gathering auras.</string>
             <string _locid="9900005">Bunker Mills</string>
 
             <string _locid="9900006">Olive Orchard</string>
