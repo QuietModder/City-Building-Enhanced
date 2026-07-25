@@ -247,6 +247,19 @@
             </effect>
 
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEColonialSecretariat" page="3" column="1">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGovernmentHouse</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEGovernmentHouse" page="3" column="2">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModOliveOrchard</target>
             </effect>
             <effect type="CommandAdd" proto="ModOliveOrchard" page="1" column="1">
@@ -1970,8 +1983,6 @@
 
         </effects>
     </tech>
-
-
     <!-- ========================================================= -->
     <!-- BRANCH 2: SECURE THE WASTE                                -->
     <!-- Page 1 / Column 1                                         -->
@@ -4634,6 +4645,16 @@
             <effect type="Data" action="Gather" amount="1.05" subtype="WorkRate" unittype="AbstractBerryBush" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractVillager</target>
             </effect>
+            <!-- Gatherers receive 10% more from each natural resource source. -->
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Huntable" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Tree" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="AbstractMine" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
             <effect type="Data" amount="0.85" subtype="Cost" resource="Wood" relativity="BasePercent">
                 <target type="ProtoUnit">ModHuntingLodge</target>
             </effect>
@@ -4671,6 +4692,13 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="HuntingLodgeNaturalFoodAura" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+            <effect type="Data" action="AreaGatherHuntable" amount="9.00" subtype="WorkRate" unittype="Food" relativity="Override">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHuntingGrounds">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -4701,6 +4729,10 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="1.10" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModGameTrails">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -4731,6 +4763,13 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="RangedAttack" amount="5.00" subtype="Damage" relativity="Absolute">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="5.00" subtype="Damage" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModFrontierHunting">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -4761,6 +4800,17 @@
         </prereqs>
 
         <effects>
+            <!-- A second 10% resource-yield bonus; stacks with Living off the Land. -->
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Huntable" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Tree" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="AbstractMine" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModSeasonalCamps">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>

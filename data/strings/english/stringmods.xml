@@ -87,6 +87,14 @@
             <string _locid="9902028">A fortified administrative headquarters that manages city planning, civic programs, and frontier development.</string>
             <string _locid="9902029">Fortified administrative headquarters.</string>
 
+            <!-- Colonial administration buildings -->
+            <string _locid="9902030">Colonial Secretariat</string>
+            <string _locid="9902031">Manages persistent colony policies such as War Economy, Trade Charter, and Civil Defense.</string>
+            <string _locid="9902032">Manages colony policies.</string>
+
+            <string _locid="9902033">Government House</string>
+            <string _locid="9902034">The governor's headquarters, used to activate temporary emergency powers.</string>
+            <string _locid="9902035">Activates emergency powers.</string>
 
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
@@ -314,19 +322,19 @@
             <string _locid="9909089">Increases the build limit of Houses by 5. Each House automatically generates 0.10 Coin per second.</string>
 
             <string _locid="9909090">Living off the Land</string>
-            <string _locid="9909091">Settlers gather Food 5% faster from huntable animals and berry bushes. Hunting Lodges cost 15% less Wood.</string>
+            <string _locid="9909091">Settlers gather Food 5% faster from huntable animals and berry bushes. Huntables, Trees, and Mines yield 10% more resources. Hunting Lodges cost 15% less Wood.</string>
 
             <string _locid="9909092">Hunting Grounds</string>
-            <string _locid="9909093"></string>
+            <string _locid="9909093">Hunting Lodges increase nearby Settlers' natural Food gathering rate by 10%. Hunting Lodges harvest nearby huntable animals 12.5% faster.</string>
 
             <string _locid="9909094">Game Trails</string>
-            <string _locid="9909095"></string>
+            <string _locid="9909095">All Settlers move 10% faster.</string>
 
             <string _locid="9909096">Frontier Hunting</string>
-            <string _locid="9909097"></string>
+            <string _locid="9909097">Hunting Lodges and Settlers gain +5 ranged attack.</string>
 
             <string _locid="9909098">Seasonal Camps</string>
-            <string _locid="9909099"></string>
+            <string _locid="9909099">Huntables, Trees, and Mines yield 10% more resources.</string>
 
             <string _locid="9909100">Abundant Game</string>
             <string _locid="9909101"></string>

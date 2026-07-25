@@ -6779,4 +6779,142 @@
             <rate type="Gold">0.600000</rate>
         </protoaction>
     </unit>
+
+    <!-- ========================================================= -->
+    <!-- Colonial Secretariat                                      -->
+    <!-- Great Bank visual; reserved for colony policy controls.   -->
+    <!-- ========================================================= -->
+    <unit id="9036" name="CBEColonialSecretariat">
+        <dbid>9036</dbid>
+        <displaynameid>9902030</displaynameid>
+        <editornameid>9902030</editornameid>
+        <rollovertextid>9902031</rollovertextid>
+        <shortrollovertextid>9902032</shortrollovertextid>
+        <obstructionradiusx>3.5000</obstructionradiusx>
+        <obstructionradiusz>3.5000</obstructionradiusz>
+        
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\spc\city_state\great_bank.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\lombard\lombard_icon.png</icon>
+        <portraiticon>resources\art\buildings\lombard\lombard_portrait.png</portraiticon>
+        <initialhitpoints>3500.0000</initialhitpoints>
+        <maxhitpoints>3500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <buildlimit>1</buildlimit>
+        <bounty>280.0000</bounty>
+        <buildbounty>140.0000</buildbounty>
+        <cost resourcetype="Wood">250.0000</cost>
+        <cost resourcetype="Gold">100.0000</cost>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000" />
+        <builderlimit>1</builderlimit>
+
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>Building</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>Economic</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        
+        <!-- Policy-interface test buttons. Their tactics intentionally have no effects. -->
+        <command page="9" column="0">TacticRangedDamage</command>
+        <command page="9" column="1">TacticHandDamage</command>
+        <command page="9" column="2">TacticUnitHitpoints</command>
+        <command page="9" column="3">TacticUnitSpeed</command>
+
+        <command page="10" column="7">Delete</command>
+        <tactics>cbe_colonialsecretariat.tactics</tactics>
+    </unit>
+
+    <!-- ========================================================= -->
+    <!-- Government House                                          -->
+    <!-- Consulate visual; reserved for emergency powers.          -->
+    <!-- ========================================================= -->
+    <unit id="9037" name="CBEGovernmentHouse">
+        <dbid>9037</dbid>
+        <displaynameid>9902033</displaynameid>
+        <editornameid>9902033</editornameid>
+        <rollovertextid>9902034</rollovertextid>
+        <shortrollovertextid>9902035</shortrollovertextid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\asian_civs\consulate\consulate.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\asian_civs\consulate\consulate_icon_64.png</icon>
+        <portraiticon>resources\art\buildings\asian_civs\consulate\consulate_icon_portrait.png</portraiticon>
+        <initialhitpoints>3500.0000</initialhitpoints>
+        <maxhitpoints>3500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>50.0000</buildpoints>
+        <buildlimit>1</buildlimit>
+        <bounty>100.0000</bounty>
+        <buildbounty>50.0000</buildbounty>
+        <cost resourcetype="Wood">250.0000</cost>
+        <cost resourcetype="Gold">100.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000" />
+        <builderlimit>8</builderlimit>
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>Building</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+        <command page="10" column="7">Delete</command>
+    </unit>
 </protomods>

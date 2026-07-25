@@ -79,5 +79,21 @@
     <modelattachmentbone>bonethatdoesntexist</modelattachmentbone>
   </action>
 
-  <tactic>Normal<attacktype>HuntedResource</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><action priority="100">HuntAttack</action><action priority="99">AntiShipAttack</action><action priority="25">RangedAttack</action><action>AreaGatherHuntable</action></tactic>
+  <!-- Enabled by Hunting Grounds. Supports nearby settlers gathering natural Food. -->
+  <action>
+    <name stringid="68961">HuntingLodgeNaturalFoodAura</name>
+    <type>AutoRangedModify</type>
+    <active>0</active>
+    <maxrange>28</maxrange>
+    <modifyabstracttype>AbstractVillager</modifyabstracttype>
+    <persistent>1</persistent>
+    <nostack>1</nostack>
+    <nostackignorepuid>1</nostackignorepuid>
+    <modifytype>NaturalFoodGatherRate</modifytype>
+    <modifymultiplier>1.10</modifymultiplier>
+    <modelattachment>effects\ypack_auras\econpower.xml</modelattachment>
+    <modelattachmentbone>bonethatdoesntexist</modelattachmentbone>
+  </action>
+
+  <tactic>Normal<attacktype>HuntedResource</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><action priority="100">HuntAttack</action><action priority="99">AntiShipAttack</action><action priority="25">RangedAttack</action><action>AreaGatherHuntable</action><action>HuntingLodgeNaturalFoodAura</action></tactic>
 </tactics>
