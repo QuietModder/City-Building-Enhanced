@@ -83,6 +83,10 @@
             <string _locid="9902025">A defensive hunting post that automatically gathers Food from nearby huntable animals.</string>
             <string _locid="9902026">Defensive hunting post.</string>
 
+            <string _locid="9902027">The Presidio</string>
+            <string _locid="9902028">A fortified administrative headquarters that manages city planning, civic programs, and frontier development.</string>
+            <string _locid="9902029">Fortified administrative headquarters.</string>
+
 
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
@@ -301,7 +305,7 @@
             <string _locid="9909083">Increases the build limit of Houses by 5.</string>
 
             <string _locid="9909084">Growing Township</string>
-            <string _locid="9909085">Increases the build limit of Houses by 5. Ships 1 Homestead Wagon and 1 Military Wagon. Both wagons can also be trained at the Bunker Mill.</string>
+            <string _locid="9909085">Increases the build limit of Houses by 5. Ships 1 Homestead Wagon and 1 Military Wagon. Both wagons can also be trained at The Presidio.</string>
 
             <string _locid="9909086">Incorporated Township</string>
             <string _locid="9909087">Increases the build limit of Houses by 5.</string>
