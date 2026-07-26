@@ -477,6 +477,15 @@
             <!-- Range: 9911000 - 9911999                                  -->
             <!-- ========================================================= -->
 
+            <string _locid="9911000">Hands Off Policy</string>
+            <string _locid="9911001">Hands Off Policy is active.</string>
+            <string _locid="9911002">Trade Policy</string>
+            <string _locid="9911003">Trade Policy is active.</string>
+            <string _locid="9911004">War Economy</string>
+            <string _locid="9911005">War Economy is active: land military units move 10% faster.</string>
+            <string _locid="9911006">Research Policy</string>
+            <string _locid="9911007">Research Policy is active.</string>
+
             <!-- ========================================================= -->
             <!-- 9912000s - CBE SUBCIVS                                    -->
             <!-- Range: 9912000 - 9912999                                  -->
