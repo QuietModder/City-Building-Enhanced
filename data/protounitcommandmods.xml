@@ -2,36 +2,36 @@
     <!-- Colonial Secretariat policy commands. Vanilla Pavilion icons are temporary test art. -->
     <protounitcommand>
         <name>CBEPolicyHandsOff</name>
-        <icon>resources\images\icons\techs\asians\gold_unit_hp.png</icon>
-        <activeicon>resources\images\icons\techs\asians\gold_unit_hp_on.png</activeicon>
-        <disabledicon>resources\images\icons\techs\asians\gold_unit_hp.png</disabledicon>
+        <icon>resources\images\icons\commands\CBEPolicyHandsOff.png</icon>
+        <activeicon>resources\images\icons\commands\CBEPolicyHandsOff_on.png</activeicon>
+        <disabledicon>resources\images\icons\commands\CBEPolicyHandsOff.png</disabledicon>
         <rollovertextid>9911000</rollovertextid>
         <activerollovertextid>9911001</activerollovertextid>
         <command>unitSetTactic("CBEHandsOffPolicy")</command>
     </protounitcommand>
     <protounitcommand>
         <name>CBEPolicyTrade</name>
-        <icon>resources\images\icons\techs\asians\gold_unit_speed.png</icon>
-        <activeicon>resources\images\icons\techs\asians\gold_unit_speed_on.png</activeicon>
-        <disabledicon>resources\images\icons\techs\asians\gold_unit_speed.png</disabledicon>
+        <icon>resources\images\icons\commands\CBEPolicyTrade.png</icon>
+        <activeicon>resources\images\icons\commands\CBEPolicyTrade_on.png</activeicon>
+        <disabledicon>resources\images\icons\commands\CBEPolicyTrade.png</disabledicon>
         <rollovertextid>9911002</rollovertextid>
         <activerollovertextid>9911003</activerollovertextid>
         <command>unitSetTactic("CBETradePolicy")</command>
     </protounitcommand>
     <protounitcommand>
         <name>CBEPolicyWarEconomy</name>
-        <icon>resources\images\icons\techs\asians\gold_range_dmg.png</icon>
-        <activeicon>resources\images\icons\techs\asians\gold_range_dmg_on.png</activeicon>
-        <disabledicon>resources\images\icons\techs\asians\gold_range_dmg.png</disabledicon>
+        <icon>resources\images\icons\commands\CBEPolicyWarEconomy.png</icon>
+        <activeicon>resources\images\icons\commands\CBEPolicyWarEconomy_on.png</activeicon>
+        <disabledicon>resources\images\icons\commands\CBEPolicyWarEconomy.png</disabledicon>
         <rollovertextid>9911004</rollovertextid>
         <activerollovertextid>9911005</activerollovertextid>
         <command>unitSetTactic("CBEWarEconomyPolicy")</command>
     </protounitcommand>
     <protounitcommand>
         <name>CBEPolicyResearch</name>
-        <icon>resources\images\icons\techs\asians\gold_hand_dmg.png</icon>
-        <activeicon>resources\images\icons\techs\asians\gold_hand_dmg_on.png</activeicon>
-        <disabledicon>resources\images\icons\techs\asians\gold_hand_dmg.png</disabledicon>
+        <icon>resources\images\icons\commands\CBEPolicyResearch.png</icon>
+        <activeicon>resources\images\icons\commands\CBEPolicyResearch_on.png</activeicon>
+        <disabledicon>resources\images\icons\commands\CBEPolicyResearch.png</disabledicon>
         <rollovertextid>9911006</rollovertextid>
         <activerollovertextid>9911007</activerollovertextid>
         <command>unitSetTactic("CBEResearchPolicy")</command>

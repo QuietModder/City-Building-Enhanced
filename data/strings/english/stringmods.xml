@@ -482,7 +482,7 @@
             <string _locid="9911002">Trade Policy</string>
             <string _locid="9911003">Trade Policy is active.</string>
             <string _locid="9911004">War Economy</string>
-            <string _locid="9911005">War Economy is active: land military units move 10% faster.</string>
+            <string _locid="9911005">Enacts a War Economy: land military moves 10% faster, military buildings work 20% faster, and land military deals 5% more damage. Villagers gather 15% slower and have 10% less health.</string>
             <string _locid="9911006">Research Policy</string>
             <string _locid="9911007">Research Policy is active.</string>
 
