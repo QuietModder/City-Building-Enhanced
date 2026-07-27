@@ -477,14 +477,19 @@
             <!-- Range: 9911000 - 9911999                                  -->
             <!-- ========================================================= -->
 
+            <!-- ========================================================= -->
+            <!-- CBE VOLATILE SHADOW TECHNOLOGIES                           -->
+            <!-- Hidden systems: no player-facing string records.           -->
+            <!-- ========================================================= -->
+
             <string _locid="9911000">Hands Off Policy</string>
             <string _locid="9911001">Hands Off Policy is active.</string>
-            <string _locid="9911002">Trade Policy</string>
-            <string _locid="9911003">Trade Policy is active.</string>
+            <string _locid="9911002">Prosperity Charter</string>
+            <string _locid="9911003">Enacts the Prosperity Charter: villagers gather 15% faster and build 25% faster, unfinished buildings auto-build 25% faster, and the Colonial Secretariat generates 10 XP per second. Military buildings work 25% slower, while land military has 15% less damage and health.</string>
             <string _locid="9911004">War Economy</string>
-            <string _locid="9911005">Enacts a War Economy: land military moves 10% faster, military buildings work 20% faster, and land military deals 5% more damage. Villagers gather 15% slower and have 10% less health.</string>
-            <string _locid="9911006">Research Policy</string>
-            <string _locid="9911007">Research Policy is active.</string>
+            <string _locid="9911005">Enacts a War Economy: supports 75 additional population, land military moves 10% faster, military buildings work 20% faster, and land military deals 5% more damage. Villagers gather 15% slower and have 10% less health.</string>
+            <string _locid="9911006">Development Charter</string>
+            <string _locid="9911007">Enacts the Development Charter: Economic Buildings work 20% faster for research and advancement. Military Buildings work 20% slower and land military moves 10% slower.</string>
 
             <!-- ========================================================= -->
             <!-- 9912000s - CBE SUBCIVS                                    -->

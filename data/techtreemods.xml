@@ -345,6 +345,13 @@
                 ModSprawlingCityPlanning
             </effect>
 
+            <!-- Enable and re-evaluate volatile CBE shadow technologies. -->
+            <effect type="TechStatus" status="active">CBEShadowTechState</effect>
+            <effect type="TechStatus" status="obtainable">CBEWarEconomyPopCapShadowTest</effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+
         </effects>
     </tech>
 
@@ -5736,6 +5743,37 @@
         </effects>
     </tech>
 
+
+    <!-- ========================================================= -->
+    <!-- CBE Volatile Shadow Technologies                          -->
+    <!-- Hidden, reversible effects driven by live prerequisites.  -->
+    <!-- ========================================================= -->
+
+    <!-- Test harness: the Colonial Secretariat supplies +75 population
+         capacity while this volatile tech is active. This validates a
+         reversible PopulationCapAddition before policy-state bridging. -->
+    <tech name="CBEShadowTechState" type="Normal">
+        <dbid>991207</dbid>
+        <status>UNOBTAINABLE</status>
+        <flag>Shadow</flag>
+    </tech>
+
+    <tech name="CBEWarEconomyPopCapShadowTest" type="Normal">
+        <dbid>991208</dbid>
+        <status>UNOBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEColonialSecretariat" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="75.00" subtype="PopulationCapAddition" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+        </effects>
+    </tech>
 
     <!-- ========================================================= -->
     <!-- CBE City-State Subcivs                                    -->
