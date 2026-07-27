@@ -6858,6 +6858,43 @@
         </protoaction>
     </unit>
 
+    <!-- Visible policy-state marker for War Economy shadow tests. It uses a
+         small book/crate visual, but is a normal unit so Maintain creation
+         does not leave an unfinished building foundation. -->
+    <unit id="9042" name="CBEWarEconomyBookMarker">
+        <dbid>9042</dbid>
+        <displaynameid>9911004</displaynameid>
+        <editornameid>9911004</editornameid>
+        <rollovertextid>9911005</rollovertextid>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>nuggets\eu\books\books_small.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1.0000</initialhitpoints>
+        <maxhitpoints>1.0000</maxhitpoints>
+        <los>0.0000</los>
+        <trainpoints>1.0000</trainpoints>
+        <populationcount>0.0000</populationcount>
+        <allowedage>0</allowedage>
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>LogicalTypeEasySelectAvoid</unittype>
+        <unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NoHPBar</flag>
+        <flag>Immoveable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotPlayerPlaceable</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>Tracked</flag>
+        <flag>ForceFullTechUpdate</flag>
+    </unit>
+
     <!-- ========================================================= -->
     <!-- Government House                                          -->
     <!-- Consulate visual; reserved for emergency powers.          -->

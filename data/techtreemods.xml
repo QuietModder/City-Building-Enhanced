@@ -348,8 +348,14 @@
             <!-- Enable and re-evaluate volatile CBE shadow technologies. -->
             <effect type="TechStatus" status="active">CBEShadowTechState</effect>
             <effect type="TechStatus" status="obtainable">CBEWarEconomyPopCapShadowTest</effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEWarEconomyBookMarker</target>
+            </effect>
             <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
                 <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEWarEconomyBookMarker</target>
             </effect>
 
         </effects>
@@ -5766,7 +5772,7 @@
         <flag>DEUnobtainableAfterActive</flag>
         <prereqs>
             <techstatus status="Active">CBEShadowTechState</techstatus>
-            <typecount unit="CBEColonialSecretariat" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEWarEconomyBookMarker" count="1" operator="gte" state="aliveState" />
         </prereqs>
         <effects>
             <effect type="Data" amount="75.00" subtype="PopulationCapAddition" relativity="Absolute">
