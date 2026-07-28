@@ -490,6 +490,10 @@
             <string _locid="9911005">Enacts a War Economy: supports 75 additional population, land military moves 10% faster, military buildings work 20% faster, and land military deals 5% more damage. Villagers gather 15% slower and have 10% less health.</string>
             <string _locid="9911006">Development Charter</string>
             <string _locid="9911007">Enacts the Development Charter: Economic Buildings work 20% faster for research and advancement. Military Buildings work 20% slower and land military moves 10% slower.</string>
+            <string _locid="9911008">Trade Shipments</string>
+            <string _locid="9911009">Trade Shipments policy is active.</string>
+            <string _locid="9911010">Siege Earthworks</string>
+            <string _locid="9911011">Siege Earthworks policy is active.</string>
 
             <!-- ========================================================= -->
             <!-- 9912000s - CBE SUBCIVS                                    -->

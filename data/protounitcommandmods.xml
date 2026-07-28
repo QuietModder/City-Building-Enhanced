@@ -36,4 +36,22 @@
         <activerollovertextid>9911007</activerollovertextid>
         <command>unitSetTactic("CBEDevelopmentCharter")</command>
     </protounitcommand>
+    <protounitcommand>
+        <name>CBEPolicyTradeShipment</name>
+        <icon>resources\images\icons\commands\CBEPolicyTradeShipment.png</icon>
+        <activeicon>resources\images\icons\commands\CBEPolicyTradeShipment_on.png</activeicon>
+        <disabledicon>resources\images\icons\commands\CBEPolicyTradeShipment.png</disabledicon>
+        <rollovertextid>9911008</rollovertextid>
+        <activerollovertextid>9911009</activerollovertextid>
+        <command>unitSetTactic("CBETradeShipmentPolicy")</command>
+    </protounitcommand>
+    <protounitcommand>
+        <name>CBEPolicySiegeEarthworks</name>
+        <icon>resources\images\icons\commands\CBESiegeEarthworks.png</icon>
+        <activeicon>resources\images\icons\commands\CBESiegeEarthworks_on.png</activeicon>
+        <disabledicon>resources\images\icons\commands\CBESiegeEarthworks.png</disabledicon>
+        <rollovertextid>9911010</rollovertextid>
+        <activerollovertextid>9911011</activerollovertextid>
+        <command>unitSetTactic("CBESiegeEarthworksPolicy")</command>
+    </protounitcommand>
 </protounitcommandmods>
