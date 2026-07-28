@@ -6858,9 +6858,8 @@
         </protoaction>
     </unit>
 
-    <!-- Visible policy-state marker for War Economy shadow tests. It uses a
-         small book/crate visual, but is a normal unit so Maintain creation
-         does not leave an unfinished building foundation. -->
+    <!-- Invisible, non-collideable policy-state markers used by policy shadow
+         tech prerequisites. -->
     <unit id="9042" name="CBEWarEconomyBookMarker">
         <dbid>9042</dbid>
         <displaynameid>9911004</displaynameid>
@@ -6868,18 +6867,16 @@
         <rollovertextid>9911005</rollovertextid>
         <icon>resources\images\icons\commands\CBEPolicyWarEconomy.png</icon>
 
-        <obstructionradiusx>1.0000</obstructionradiusx>
-        <obstructionradiusz>1.0000</obstructionradiusz>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
 
         <maxvelocity>0.0000</maxvelocity>
         <movementtype>land</movementtype>
-        <lifespan>2.0000</lifespan>
+        <lifespan>3.0000</lifespan>
         <corpsedecaltime>0.0000</corpsedecaltime>
         <corpsedecaydelay>0.0000</corpsedecaydelay>
         <decay delay="0.0000" duration="0.0000">
         </decay>
-
-        <animfile>nuggets\eu\books\books_small.xml</animfile>
 
         <impacttype>Wood</impacttype>
         <physicsinfo>crate</physicsinfo>
@@ -6887,7 +6884,7 @@
         <maxhitpoints>1.0000</maxhitpoints>
         <los>0.0000</los>
         <trainpoints>1.0000</trainpoints>
-        <buildlimit>1</buildlimit>
+        <buildlimit>2</buildlimit>
         <populationcount>0.0000</populationcount>
         <allowedage>0</allowedage>
 
@@ -6905,6 +6902,7 @@
         <flag>NonAutoFormedUnit</flag>
         <flag>NotSelectable</flag>
         <flag>DoNotShowOnMiniMap</flag>
+        <flag>NonCollideable</flag>
         <flag>Tracked</flag>
         <flag>ForceFullTechUpdate</flag>
     </unit>
@@ -6916,18 +6914,16 @@
         <rollovertextid>9911001</rollovertextid>
         <icon>resources\images\icons\commands\CBEPolicyHandsOff.png</icon>
 
-        <obstructionradiusx>1.0000</obstructionradiusx>
-        <obstructionradiusz>1.0000</obstructionradiusz>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
 
         <maxvelocity>0.0000</maxvelocity>
         <movementtype>land</movementtype>
-        <lifespan>2.0000</lifespan>
+        <lifespan>3.0000</lifespan>
         <corpsedecaltime>0.0000</corpsedecaltime>
         <corpsedecaydelay>0.0000</corpsedecaydelay>
         <decay delay="0.0000" duration="0.0000">
         </decay>
-
-        <animfile>nuggets\eu\books\books_small.xml</animfile>
 
         <impacttype>Wood</impacttype>
         <physicsinfo>crate</physicsinfo>
@@ -6935,7 +6931,7 @@
         <maxhitpoints>1.0000</maxhitpoints>
         <los>0.0000</los>
         <trainpoints>1.0000</trainpoints>
-        <buildlimit>1</buildlimit>
+        <buildlimit>2</buildlimit>
         <populationcount>0.0000</populationcount>
         <allowedage>0</allowedage>
 
@@ -6953,6 +6949,7 @@
         <flag>NonAutoFormedUnit</flag>
         <flag>NotSelectable</flag>
         <flag>DoNotShowOnMiniMap</flag>
+        <flag>NonCollideable</flag>
         <flag>Tracked</flag>
         <flag>ForceFullTechUpdate</flag>
     </unit>
@@ -6964,18 +6961,16 @@
         <rollovertextid>9911003</rollovertextid>
         <icon>resources\images\icons\commands\CBEPolicyTrade.png</icon>
 
-        <obstructionradiusx>1.0000</obstructionradiusx>
-        <obstructionradiusz>1.0000</obstructionradiusz>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
 
         <maxvelocity>0.0000</maxvelocity>
         <movementtype>land</movementtype>
-        <lifespan>2.0000</lifespan>
+        <lifespan>3.0000</lifespan>
         <corpsedecaltime>0.0000</corpsedecaltime>
         <corpsedecaydelay>0.0000</corpsedecaydelay>
         <decay delay="0.0000" duration="0.0000">
         </decay>
-
-        <animfile>nuggets\eu\books\books_small.xml</animfile>
 
         <impacttype>Wood</impacttype>
         <physicsinfo>crate</physicsinfo>
@@ -6983,7 +6978,7 @@
         <maxhitpoints>1.0000</maxhitpoints>
         <los>0.0000</los>
         <trainpoints>1.0000</trainpoints>
-        <buildlimit>1</buildlimit>
+        <buildlimit>2</buildlimit>
         <populationcount>0.0000</populationcount>
         <allowedage>0</allowedage>
 
@@ -7001,6 +6996,7 @@
         <flag>NonAutoFormedUnit</flag>
         <flag>NotSelectable</flag>
         <flag>DoNotShowOnMiniMap</flag>
+        <flag>NonCollideable</flag>
         <flag>Tracked</flag>
         <flag>ForceFullTechUpdate</flag>
     </unit>
@@ -7012,18 +7008,16 @@
         <rollovertextid>9911007</rollovertextid>
         <icon>resources\images\icons\commands\CBEPolicyResearch.png</icon>
 
-        <obstructionradiusx>1.0000</obstructionradiusx>
-        <obstructionradiusz>1.0000</obstructionradiusz>
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
 
         <maxvelocity>0.0000</maxvelocity>
         <movementtype>land</movementtype>
-        <lifespan>2.0000</lifespan>
+        <lifespan>3.0000</lifespan>
         <corpsedecaltime>0.0000</corpsedecaltime>
         <corpsedecaydelay>0.0000</corpsedecaydelay>
         <decay delay="0.0000" duration="0.0000">
         </decay>
-
-        <animfile>nuggets\eu\books\books_small.xml</animfile>
 
         <impacttype>Wood</impacttype>
         <physicsinfo>crate</physicsinfo>
@@ -7031,7 +7025,7 @@
         <maxhitpoints>1.0000</maxhitpoints>
         <los>0.0000</los>
         <trainpoints>1.0000</trainpoints>
-        <buildlimit>1</buildlimit>
+        <buildlimit>2</buildlimit>
         <populationcount>0.0000</populationcount>
         <allowedage>0</allowedage>
 
@@ -7049,6 +7043,7 @@
         <flag>NonAutoFormedUnit</flag>
         <flag>NotSelectable</flag>
         <flag>DoNotShowOnMiniMap</flag>
+        <flag>NonCollideable</flag>
         <flag>Tracked</flag>
         <flag>ForceFullTechUpdate</flag>
     </unit>
