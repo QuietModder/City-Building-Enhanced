@@ -351,11 +351,29 @@
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">CBEWarEconomyBookMarker</target>
             </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEHandsOffPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEProsperityPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEDevelopmentPolicyBookMarker</target>
+            </effect>
             <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
                 <target type="ProtoUnit">CBEColonialSecretariat</target>
             </effect>
             <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
                 <target type="ProtoUnit">CBEWarEconomyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEHandsOffPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEProsperityPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEDevelopmentPolicyBookMarker</target>
             </effect>
 
         </effects>

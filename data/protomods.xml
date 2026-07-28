@@ -6866,23 +6866,36 @@
         <displaynameid>9911004</displaynameid>
         <editornameid>9911004</editornameid>
         <rollovertextid>9911005</rollovertextid>
-        <obstructionradiusx>0.1000</obstructionradiusx>
-        <obstructionradiusz>0.1000</obstructionradiusz>
+        <icon>resources\images\icons\commands\CBEPolicyWarEconomy.png</icon>
+
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+
         <maxvelocity>0.0000</maxvelocity>
         <movementtype>land</movementtype>
+        <lifespan>2.0000</lifespan>
+        <corpsedecaltime>0.0000</corpsedecaltime>
+        <corpsedecaydelay>0.0000</corpsedecaydelay>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+
         <animfile>nuggets\eu\books\books_small.xml</animfile>
+
         <impacttype>Wood</impacttype>
         <physicsinfo>crate</physicsinfo>
         <initialhitpoints>1.0000</initialhitpoints>
         <maxhitpoints>1.0000</maxhitpoints>
         <los>0.0000</los>
         <trainpoints>1.0000</trainpoints>
+        <buildlimit>1</buildlimit>
         <populationcount>0.0000</populationcount>
         <allowedage>0</allowedage>
+
         <unittype>Unit</unittype>
         <unittype>UnitClass</unittype>
         <unittype>LogicalTypeEasySelectAvoid</unittype>
         <unittype>Unattackable</unittype>
+
         <flag>DoNotCreateUnitGroupAutomatically</flag>
         <flag>NoBloodOnDeath</flag>
         <flag>NoHPBar</flag>
@@ -6890,7 +6903,152 @@
         <flag>Invulnerable</flag>
         <flag>NotPlayerPlaceable</flag>
         <flag>NonAutoFormedUnit</flag>
-        <flag>SelectWithObstruction</flag>
+        <flag>NotSelectable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>Tracked</flag>
+        <flag>ForceFullTechUpdate</flag>
+    </unit>
+
+    <unit id="9043" name="CBEHandsOffPolicyBookMarker">
+        <dbid>9043</dbid>
+        <displaynameid>9911000</displaynameid>
+        <editornameid>9911000</editornameid>
+        <rollovertextid>9911001</rollovertextid>
+        <icon>resources\images\icons\commands\CBEPolicyHandsOff.png</icon>
+
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <lifespan>2.0000</lifespan>
+        <corpsedecaltime>0.0000</corpsedecaltime>
+        <corpsedecaydelay>0.0000</corpsedecaydelay>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+
+        <animfile>nuggets\eu\books\books_small.xml</animfile>
+
+        <impacttype>Wood</impacttype>
+        <physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1.0000</initialhitpoints>
+        <maxhitpoints>1.0000</maxhitpoints>
+        <los>0.0000</los>
+        <trainpoints>1.0000</trainpoints>
+        <buildlimit>1</buildlimit>
+        <populationcount>0.0000</populationcount>
+        <allowedage>0</allowedage>
+
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>LogicalTypeEasySelectAvoid</unittype>
+        <unittype>Unattackable</unittype>
+
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NoHPBar</flag>
+        <flag>Immoveable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotPlayerPlaceable</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>NotSelectable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>Tracked</flag>
+        <flag>ForceFullTechUpdate</flag>
+    </unit>
+
+    <unit id="9044" name="CBEProsperityPolicyBookMarker">
+        <dbid>9044</dbid>
+        <displaynameid>9911002</displaynameid>
+        <editornameid>9911002</editornameid>
+        <rollovertextid>9911003</rollovertextid>
+        <icon>resources\images\icons\commands\CBEPolicyTrade.png</icon>
+
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <lifespan>2.0000</lifespan>
+        <corpsedecaltime>0.0000</corpsedecaltime>
+        <corpsedecaydelay>0.0000</corpsedecaydelay>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+
+        <animfile>nuggets\eu\books\books_small.xml</animfile>
+
+        <impacttype>Wood</impacttype>
+        <physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1.0000</initialhitpoints>
+        <maxhitpoints>1.0000</maxhitpoints>
+        <los>0.0000</los>
+        <trainpoints>1.0000</trainpoints>
+        <buildlimit>1</buildlimit>
+        <populationcount>0.0000</populationcount>
+        <allowedage>0</allowedage>
+
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>LogicalTypeEasySelectAvoid</unittype>
+        <unittype>Unattackable</unittype>
+
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NoHPBar</flag>
+        <flag>Immoveable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotPlayerPlaceable</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>NotSelectable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>Tracked</flag>
+        <flag>ForceFullTechUpdate</flag>
+    </unit>
+
+    <unit id="9045" name="CBEDevelopmentPolicyBookMarker">
+        <dbid>9045</dbid>
+        <displaynameid>9911006</displaynameid>
+        <editornameid>9911006</editornameid>
+        <rollovertextid>9911007</rollovertextid>
+        <icon>resources\images\icons\commands\CBEPolicyResearch.png</icon>
+
+        <obstructionradiusx>1.0000</obstructionradiusx>
+        <obstructionradiusz>1.0000</obstructionradiusz>
+
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <lifespan>2.0000</lifespan>
+        <corpsedecaltime>0.0000</corpsedecaltime>
+        <corpsedecaydelay>0.0000</corpsedecaydelay>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+
+        <animfile>nuggets\eu\books\books_small.xml</animfile>
+
+        <impacttype>Wood</impacttype>
+        <physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1.0000</initialhitpoints>
+        <maxhitpoints>1.0000</maxhitpoints>
+        <los>0.0000</los>
+        <trainpoints>1.0000</trainpoints>
+        <buildlimit>1</buildlimit>
+        <populationcount>0.0000</populationcount>
+        <allowedage>0</allowedage>
+
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>LogicalTypeEasySelectAvoid</unittype>
+        <unittype>Unattackable</unittype>
+
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NoHPBar</flag>
+        <flag>Immoveable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotPlayerPlaceable</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>NotSelectable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
         <flag>Tracked</flag>
         <flag>ForceFullTechUpdate</flag>
     </unit>
