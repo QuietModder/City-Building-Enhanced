@@ -354,6 +354,7 @@
             <!-- Enable and re-evaluate volatile CBE shadow technologies. -->
             <effect type="TechStatus" status="active">CBEShadowTechState</effect>
             <effect type="TechStatus" status="obtainable">CBEWarEconomyPopCapShadowTest</effect>
+            <effect type="TechStatus" status="obtainable">CBETradeShipmentEffectsShadow</effect>
             <effect type="TechStatus" status="obtainable">CBEStateOfSiegeEffectsShadow</effect>
             <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableSettlerShadow</effect>
             <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableCoureurShadow</effect>
@@ -2896,6 +2897,9 @@
                 <target type="ProtoUnit">deMalteseGun</target>
             </effect>
 
+            <effect type="Data" amount="1.00" tactic="CBEStateOfSiegePolicy" subtype="TacticEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModEstablishedFortifications">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5162,6 +5166,9 @@
             <effect type="CommandRemove" tech="ModEstablishedTradeRoutes">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+            <effect type="Data" amount="1.00" tactic="CBETradeShipmentPolicy" subtype="TacticEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
             <effect type="TechStatus" status="obtainable">ModLicensedTraders</effect>
             <effect type="CommandAdd" tech="ModLicensedTraders" page="1" column="4">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5821,6 +5828,47 @@
         <effects>
             <effect type="Data" amount="75.00" subtype="PopulationCapAddition" relativity="Absolute">
                 <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Reversible Trade Shipments effects. The Merchant Republics-style
+         one-time refund of previously collected trade income is intentionally
+         omitted because this policy can be selected repeatedly. -->
+    <tech name="CBETradeShipmentEffectsShadow" type="Normal">
+        <dbid>991218</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBETradeShipmentPolicyBookMarker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="XP" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Market" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Market" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.33" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandMilitary</target>
             </effect>
         </effects>
     </tech>

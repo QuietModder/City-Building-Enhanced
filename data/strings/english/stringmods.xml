@@ -364,7 +364,7 @@
             <string _locid="9909117"></string>
 
             <string _locid="9909118">Established Trade Routes</string>
-            <string _locid="9909119"></string>
+            <string _locid="9909119">Unlocks the Trade Shipments policy at the Colonial Secretariat.</string>
 
             <string _locid="9909120">Licensed Traders</string>
             <string _locid="9909121"></string>
@@ -455,7 +455,7 @@
             <string _locid="9910021"></string>
 
             <string _locid="9910022">Established Fortifications</string>
-            <string _locid="9910023"></string>
+            <string _locid="9910023">Unlocks Frontier Forts, Fort Towers, and Fixed Guns for Architects, strengthens defensive structures, and unlocks the State of Siege policy at the Colonial Secretariat.</string>
 
             <string _locid="9910024">Citadel Expansion</string>
             <string _locid="9910025"></string>
@@ -485,13 +485,13 @@
             <string _locid="9911000">Hands Off Policy</string>
             <string _locid="9911001">Hands Off Policy is active.</string>
             <string _locid="9911002">Prosperity Charter</string>
-            <string _locid="9911003">Enacts the Prosperity Charter: villagers gather 15% faster and build 25% faster, unfinished buildings auto-build 25% faster, and the Colonial Secretariat generates 10 XP per second. Military buildings work 25% slower, while land military has 15% less damage and health.</string>
+            <string _locid="9911003">Enacts the Prosperity Charter: villagers gather 15% faster and build 25% faster, while unfinished buildings auto-build 25% faster. Military buildings work 25% slower, while land military has 15% less damage and health.</string>
             <string _locid="9911004">War Economy</string>
             <string _locid="9911005">Enacts a War Economy: supports 75 additional population, land military moves 10% faster, military buildings work 20% faster, and land military deals 5% more damage. Villagers gather 15% slower and have 10% less health.</string>
             <string _locid="9911006">Development Charter</string>
             <string _locid="9911007">Enacts the Development Charter: Economic Buildings work 20% faster for research and advancement. Military Buildings work 20% slower and land military moves 10% slower.</string>
             <string _locid="9911008">Trade Shipments</string>
-            <string _locid="9911009">Trade Shipments policy is active.</string>
+            <string _locid="9911009">Enacts Trade Shipments: The Colonial Secretariat generates 1.25 XP per second, future Trade Route income is increased by 25%, and Market exchange rates are 10% more favorable. Villagers gather resources 10% slower, and land military units take 33% longer to train.</string>
             <string _locid="9911010">State of Siege</string>
             <string _locid="9911011">State of Siege policy is active.</string>
 

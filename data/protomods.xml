@@ -6855,8 +6855,8 @@
         <command page="10" column="7">Delete</command>
         <tactics>cbe_colonialsecretariat.tactics</tactics>
         <protoaction>
-            <name>CBEProsperityCharterXP</name>
-            <rate type="XP">10.000000</rate>
+            <name>CBETradeShipmentPolicyXP</name>
+            <rate type="XP">1.250000</rate>
         </protoaction>
     </unit>
 
