@@ -225,11 +225,17 @@
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
-            <!-- Add Architect train button to Town Center -->
-            <effect type="CommandAdd" proto="ModArchitect" page="0" column="3">
-                <target type="ProtoUnit">TownCenter</target>
+            <!-- Markets provide a universal recovery point if the starting Architect is lost. -->
+            <effect type="CommandAdd" proto="ModArchitect" page="1" column="5">
+                <target type="ProtoUnit">Market</target>
             </effect>
-
+            <effect type="CommandAdd" proto="ModArchitect" page="1" column="4">
+                <target type="ProtoUnit">ypTradeMarketAsian</target>
+            </effect>
+            <!-- Use the first free slot in the Livestock Market's existing second row. -->
+            <effect type="CommandAdd" proto="ModArchitect" page="2" column="-1">
+                <target type="ProtoUnit">deLivestockMarket</target>
+            </effect>
 
             <!-- New Buildings-->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">

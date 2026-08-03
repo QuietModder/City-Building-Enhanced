@@ -1,10 +1,100 @@
-<civsmods>
+<civmods>
   <!-- Allow Home City decks to contain up to 40 cards. -->
   <maxdecksize>40</maxdecksize>
 
   <!-- Raise the standard and additional population ceilings to 950. -->
   <defaultpoplimit>950</defaultpoplimit>
   <defaultpopextralimit>950</defaultpopextralimit>
+
+  <!-- Add one Architect to every playable civilization's random-map starting units. -->
+  <civ>
+    <name>British</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Dutch</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>French</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Germans</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Ottomans</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Portuguese</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Russians</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Spanish</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>XPAztec</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>XPIroquois</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>XPSioux</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Chinese</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Indians</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>Japanese</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DEInca</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DESwedish</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DEAmericans</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DEEthiopians</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DEHausa</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DEMexicans</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DEItalians</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
+  <civ>
+    <name>DEMaltese</name>
+    <startingunit mergeMode="add">ModArchitect</startingunit>
+  </civ>
 
   <!-- ========================================================= -->
   <!-- CBE City-State Subcivs                                    -->
@@ -32,4 +122,4 @@
     <visible>0</visible>
     <visibleineditor>0</visibleineditor>
   </civ>
-</civsmods>
+</civmods>
