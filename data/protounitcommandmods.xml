@@ -46,12 +46,12 @@
         <command>unitSetTactic("CBETradeShipmentPolicy")</command>
     </protounitcommand>
     <protounitcommand>
-        <name>CBEPolicySiegeEarthworks</name>
-        <icon>resources\images\icons\commands\CBESiegeEarthworks.png</icon>
-        <activeicon>resources\images\icons\commands\CBESiegeEarthworks_on.png</activeicon>
-        <disabledicon>resources\images\icons\commands\CBESiegeEarthworks.png</disabledicon>
+        <name>CBEPolicyStateOfSiege</name>
+        <icon>resources\images\icons\commands\CBEPolicyStateOfSiege.png</icon>
+        <activeicon>resources\images\icons\commands\CBEPolicyStateOfSiege_on.png</activeicon>
+        <disabledicon>resources\images\icons\commands\CBEPolicyStateOfSiege.png</disabledicon>
         <rollovertextid>9911010</rollovertextid>
         <activerollovertextid>9911011</activerollovertextid>
-        <command>unitSetTactic("CBESiegeEarthworksPolicy")</command>
+        <command>unitSetTactic("CBEStateOfSiegePolicy")</command>
     </protounitcommand>
 </protounitcommandmods>

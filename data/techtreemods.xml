@@ -348,6 +348,14 @@
             <!-- Enable and re-evaluate volatile CBE shadow technologies. -->
             <effect type="TechStatus" status="active">CBEShadowTechState</effect>
             <effect type="TechStatus" status="obtainable">CBEWarEconomyPopCapShadowTest</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeEffectsShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableSettlerShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableCoureurShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableNativeShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableChineseShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableJapaneseShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableIndianShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableAfricanShadow</effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">CBEWarEconomyBookMarker</target>
             </effect>
@@ -359,6 +367,12 @@
             </effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">CBEDevelopmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBETradeShipmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEStateOfSiegePolicyBookMarker</target>
             </effect>
             <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
                 <target type="ProtoUnit">CBEColonialSecretariat</target>
@@ -374,6 +388,12 @@
             </effect>
             <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
                 <target type="ProtoUnit">CBEDevelopmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBETradeShipmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEStateOfSiegePolicyBookMarker</target>
             </effect>
 
         </effects>
@@ -5795,6 +5815,238 @@
         <effects>
             <effect type="Data" amount="75.00" subtype="PopulationCapAddition" relativity="Absolute">
                 <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEStateOfSiegeEffectsShadow" type="Normal">
+        <dbid>991210</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <!-- Attack range bonuses are action-specific technology effects. -->
+            <effect type="Data" action="VolleyRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="DefendRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="RangedAttack2" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="BowAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="GuardianRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="RepeatingRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+
+            <effect type="Data" action="CannonAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+
+            <effect type="Data" action="CannonAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- A lower RateOfFire value means less delay between attacks. -->
+            <effect type="Data" action="CannonAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+
+            <effect type="Data" action="CannonAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- Each villager type is isolated so volatile reversal cannot enable foreign civilizations' villagers. -->
+    <tech name="CBEStateOfSiegeDisableSettlerShadow" type="Normal">
+        <dbid>991211</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="Settler" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEStateOfSiegeDisableCoureurShadow" type="Normal">
+        <dbid>991212</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="Coureur" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">Coureur</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEStateOfSiegeDisableNativeShadow" type="Normal">
+        <dbid>991213</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="SettlerNative" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">SettlerNative</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEStateOfSiegeDisableChineseShadow" type="Normal">
+        <dbid>991214</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="ypSettlerAsian" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ypSettlerAsian</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEStateOfSiegeDisableJapaneseShadow" type="Normal">
+        <dbid>991215</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="ypSettlerJapanese" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ypSettlerJapanese</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEStateOfSiegeDisableIndianShadow" type="Normal">
+        <dbid>991216</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="ypSettlerIndian" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ypSettlerIndian</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEStateOfSiegeDisableAfricanShadow" type="Normal">
+        <dbid>991217</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="deSettlerAfrican" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deSettlerAfrican</target>
             </effect>
         </effects>
     </tech>

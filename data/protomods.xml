@@ -6850,7 +6850,7 @@
         <command page="9" column="2">CBEPolicyWarEconomy</command>
         <command page="9" column="3">CBEPolicyDevelopment</command>
         <command page="9" column="4">CBEPolicyTradeShipment</command>
-        <command page="9" column="5">CBEPolicySiegeEarthworks</command>
+        <command page="9" column="5">CBEPolicyStateOfSiege</command>
 
         <command page="10" column="7">Delete</command>
         <tactics>cbe_colonialsecretariat.tactics</tactics>
@@ -7009,6 +7009,100 @@
         <editornameid>9911006</editornameid>
         <rollovertextid>9911007</rollovertextid>
         <icon>resources\images\icons\commands\CBEPolicyResearch.png</icon>
+
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
+
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <lifespan>3.0000</lifespan>
+        <corpsedecaltime>0.0000</corpsedecaltime>
+        <corpsedecaydelay>0.0000</corpsedecaydelay>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+
+        <impacttype>Wood</impacttype>
+        <physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1.0000</initialhitpoints>
+        <maxhitpoints>1.0000</maxhitpoints>
+        <los>0.0000</los>
+        <trainpoints>1.0000</trainpoints>
+        <buildlimit>2</buildlimit>
+        <populationcount>0.0000</populationcount>
+        <allowedage>0</allowedage>
+
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>LogicalTypeEasySelectAvoid</unittype>
+        <unittype>Unattackable</unittype>
+
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NoHPBar</flag>
+        <flag>Immoveable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotPlayerPlaceable</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>NotSelectable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>NonCollideable</flag>
+        <flag>Tracked</flag>
+        <flag>ForceFullTechUpdate</flag>
+    </unit>
+
+    <unit id="9046" name="CBETradeShipmentPolicyBookMarker">
+        <dbid>9046</dbid>
+        <displaynameid>9911008</displaynameid>
+        <editornameid>9911008</editornameid>
+        <rollovertextid>9911009</rollovertextid>
+        <icon>resources\images\icons\commands\CBEPolicyTradeShipment.png</icon>
+
+        <obstructionradiusx>0.1000</obstructionradiusx>
+        <obstructionradiusz>0.1000</obstructionradiusz>
+
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <lifespan>3.0000</lifespan>
+        <corpsedecaltime>0.0000</corpsedecaltime>
+        <corpsedecaydelay>0.0000</corpsedecaydelay>
+        <decay delay="0.0000" duration="0.0000">
+        </decay>
+
+        <impacttype>Wood</impacttype>
+        <physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1.0000</initialhitpoints>
+        <maxhitpoints>1.0000</maxhitpoints>
+        <los>0.0000</los>
+        <trainpoints>1.0000</trainpoints>
+        <buildlimit>2</buildlimit>
+        <populationcount>0.0000</populationcount>
+        <allowedage>0</allowedage>
+
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>LogicalTypeEasySelectAvoid</unittype>
+        <unittype>Unattackable</unittype>
+
+        <flag>DoNotCreateUnitGroupAutomatically</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>NoHPBar</flag>
+        <flag>Immoveable</flag>
+        <flag>Invulnerable</flag>
+        <flag>NotPlayerPlaceable</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>NotSelectable</flag>
+        <flag>DoNotShowOnMiniMap</flag>
+        <flag>NonCollideable</flag>
+        <flag>Tracked</flag>
+        <flag>ForceFullTechUpdate</flag>
+    </unit>
+
+    <unit id="9047" name="CBEStateOfSiegePolicyBookMarker">
+        <dbid>9047</dbid>
+        <displaynameid>9911010</displaynameid>
+        <editornameid>9911010</editornameid>
+        <rollovertextid>9911011</rollovertextid>
+        <icon>resources\images\icons\commands\CBEPolicyStateOfSiege.png</icon>
 
         <obstructionradiusx>0.1000</obstructionradiusx>
         <obstructionradiusz>0.1000</obstructionradiusz>
