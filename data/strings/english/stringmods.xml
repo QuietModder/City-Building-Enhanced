@@ -97,7 +97,7 @@
             <string _locid="9902035">Activates emergency powers.</string>
 
             <string _locid="9902036">Peltryman</string>
-            <string _locid="9902037">Versatile ranged infantry and economic unit. Gathers Food, regenerates while idle, performs Carbine and Eagle Eye attacks, and earns additional range through Hunting Promotions.</string>
+            <string _locid="9902037">Versatile ranged infantry and economic unit. Gathers Food and Wood, collects resource crates and treasures, regenerates while idle, performs Carbine and Eagle Eye attacks, and earns bonuses through Hunting Promotions.</string>
             <string _locid="9902038">Ranged villager limited to five units.</string>
 
             <!-- ========================================================= -->
@@ -290,7 +290,7 @@
             <string _locid="9909065">The settlement must survive. Each settler when defeated comes back as a filibuster</string>
 
             <string _locid="9909066">Expeditionary Corps</string>
-            <string _locid="9909067"></string>
+            <string _locid="9909067">Enables Filibuster training at The Presidio. Filibusters and Peltrymen gain +35% damage, +35% hit points, deal 3x damage against pets and treasure guardians, and gain +0.25 damage against heroes.</string>
 
             <string _locid="9909068">New World Prospects</string>
             <string _locid="9909069">Increases the shared Settler build limit by 2 and delivers a House Wagon that can construct your civilization's available housing.</string>

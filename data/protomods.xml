@@ -1384,7 +1384,7 @@
         <contain indelay="7.0" outdelay="0.0">AbstractArtillery</contain>
         <contain indelay="3.5" outdelay="0.0">Military</contain>
         <contain indelay="0.75" outdelay="0.0">AbstractVillager</contain>
-        
+
         <contain>LogicalTypeGarrisonInShips</contain>
         <notcontain>xpPetard</notcontain>
         <notcontain>xpPetardNitro</notcontain>
@@ -4784,7 +4784,7 @@
         <tech page="2" column="1">DESPCMediciPatronage</tech>
         <tech page="2" column="2">DESPCBankLoan</tech>
         <tech page="2" column="3">DESPCMercenaryBounties</tech>
-        
+
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>
         <flag>Immoveable</flag>
@@ -6349,7 +6349,7 @@
         <unittype>HCGatherPointPri2</unittype>
         <flag>AllowAutoGarrison</flag>
         <flag>DanceActionNoWorkers</flag>
-        
+
         <train page="0" column="0">Priest</train>
         <train page="0" column="1">Missionary</train>
         <train page="0" column="2">deSaloonInquisitor</train>
@@ -6792,7 +6792,7 @@
         <shortrollovertextid>9902032</shortrollovertextid>
         <obstructionradiusx>3.5000</obstructionradiusx>
         <obstructionradiusz>3.5000</obstructionradiusz>
-        
+
         <maxvelocity>0.0000</maxvelocity>
         <movementtype>land</movementtype>
         <animfile>buildings\spc\city_state\great_bank.xml</animfile>
@@ -6844,7 +6844,7 @@
         <flag>FlattenGround</flag>
         <flag>Tracked</flag>
         <flag>ShowTactics</flag>
-        
+
         <command page="9" column="0">CBEPolicyHandsOff</command>
         <command page="9" column="1">CBEPolicyProsperity</command>
         <command page="9" column="2">CBEPolicyWarEconomy</command>
@@ -7211,6 +7211,8 @@
         <dbid>9048</dbid>
         <displaynameid>9902036</displaynameid>
         <editornameid>9902036</editornameid>
+        <rollovertextid>9902037</rollovertextid>
+        <shortrollovertextid>9902038</shortrollovertextid>
 
         <populationcount>1</populationcount>
         <obstructionradiusx>0.4900</obstructionradiusx>
@@ -7223,14 +7225,14 @@
         <animfile>units\natives\europeans\royal_hunter\royal_hunter.xml</animfile>
         <impacttype>Flesh</impacttype>
         <physicsinfo>dude</physicsinfo>
+
         <icon>resources\art\units\natives\europeans\royal_hunter_icon.png</icon>
         <portraiticon>resources\art\units\natives\europeans\royal_hunter_portrait.png</portraiticon>
-        <rollovertextid>9902037</rollovertextid>
-        <shortrollovertextid>9902038</shortrollovertextid>
+
         <initialhitpoints>150.0000</initialhitpoints>
         <unitregen idletimeout="3.5">0.2500</unitregen>
         <maxhitpoints>150.0000</maxhitpoints>
-        <los>14.0000</los>
+        <los>28.0000</los>
         <rechargetime>45.0000</rechargetime>
         <chargeusagetime>0.2500</chargeusagetime>
         <auxrechargetime>30.0000</auxrechargetime>
@@ -7238,12 +7240,14 @@
         <projectileprotounit>InvisibleProjectile</projectileprotounit>
         <autoattackrange>16.0000</autoattackrange>
         <unitaitype>RangedCombative</unitaitype>
-        <trainpoints>30.0000</trainpoints>
+        <trainpoints>45.0000</trainpoints>
         <buildlimit>0</buildlimit>
         <bounty>14.0000</bounty>
         <buildbounty>14.0000</buildbounty>
 
-        <cost resourcetype="Food">140.0000</cost>
+        <cost resourcetype="Food">200.0000</cost>
+        <cost resourcetype="Gold">50.0000</cost>
+        <CostEscalation>1.10</CostEscalation>
         <carrycapacity resourcetype="Food">1.0000</carrycapacity>
         <allowedage>1</allowedage>
 
@@ -7252,12 +7256,21 @@
 
         <veterancybonus>
             <rank id="0">
+                <veterancymodify modifytype="MaxHP">1.0500</veterancymodify>
+                <veterancymodify modifytype="Damage">1.0500</veterancymodify>
+                <veterancymodify modifytype="Speed">1.0400</veterancymodify>
                 <veterancymodify modifytype="RangeAbsolute">1.0000</veterancymodify>
             </rank>
             <rank id="1">
+                <veterancymodify modifytype="MaxHP">1.1000</veterancymodify>
+                <veterancymodify modifytype="Damage">1.1000</veterancymodify>
+                <veterancymodify modifytype="Speed">1.0800</veterancymodify>
                 <veterancymodify modifytype="RangeAbsolute">2.0000</veterancymodify>
             </rank>
             <rank id="2">
+                <veterancymodify modifytype="MaxHP">1.1500</veterancymodify>
+                <veterancymodify modifytype="Damage">1.1500</veterancymodify>
+                <veterancymodify modifytype="Speed">1.1200</veterancymodify>
                 <veterancymodify modifytype="RangeAbsolute">3.0000</veterancymodify>
             </rank>
         </veterancybonus>
@@ -7319,12 +7332,23 @@
             <rof>3.000000</rof>
         </protoaction>
         <protoaction>
+            <name>ChopAttack</name>
+            <damage>8.000000</damage>
+            <damagetype>Hand</damagetype>
+        </protoaction>
+        <protoaction>
+            <name>CrateGather</name>
+            <rate type="AbstractResourceCrate">8.000000</rate>
+        </protoaction>
+        <protoaction>
+            <name>Discover</name>
+            <active>1</active>
+        </protoaction>
+        <protoaction>
             <name>DefendHandAttack</name>
             <damage>10.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>1.500000</rof>
-            <damagebonus type="AbstractHeavyCavalry">0.750000</damagebonus>
-            <damagebonus type="AbstractCoyoteMan">0.750000</damagebonus>
         </protoaction>
         <protoaction>
             <name>DefendRangedAttack</name>
@@ -7337,8 +7361,6 @@
             <rof>3.000000</rof>
             <damagebonus type="AbstractSkirmisher">1.5000</damagebonus>
             <damagebonus type="AbstractCounterSkirmisher">1.5000</damagebonus>
-            <damagebonus type="AbstractCoyoteMan">0.600000</damagebonus>
-            <damagebonus type="AbstractHeavyCavalry">0.600000</damagebonus>
             <damagebonus type="AbstractHeavyInfantry">1.000000</damagebonus>
             <damagebonus type="AbstractLightCavalry">1.000000</damagebonus>
             <damagebonus type="AbstractRangedShockInfantry">1.000000</damagebonus>
@@ -7348,16 +7370,12 @@
             <damage>10.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>1.500000</rof>
-            <damagebonus type="AbstractHeavyCavalry">0.750000</damagebonus>
-            <damagebonus type="AbstractCoyoteMan">0.750000</damagebonus>
         </protoaction>
         <protoaction>
             <name>StaggerHandAttack</name>
             <damage>10.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>1.500000</rof>
-            <damagebonus type="AbstractHeavyCavalry">0.750000</damagebonus>
-            <damagebonus type="AbstractCoyoteMan">0.750000</damagebonus>
         </protoaction>
         <protoaction>
             <name>StaggerRangedAttack</name>
@@ -7370,8 +7388,6 @@
             <rof>3.000000</rof>
             <damagebonus type="AbstractSkirmisher">1.5000</damagebonus>
             <damagebonus type="AbstractCounterSkirmisher">1.5000</damagebonus>
-            <damagebonus type="AbstractCoyoteMan">0.600000</damagebonus>
-            <damagebonus type="AbstractHeavyCavalry">0.600000</damagebonus>
             <damagebonus type="AbstractHeavyInfantry">1.000000</damagebonus>
             <damagebonus type="AbstractLightCavalry">1.000000</damagebonus>
             <damagebonus type="AbstractRangedShockInfantry">1.000000</damagebonus>
@@ -7381,8 +7397,6 @@
             <damage>10.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>1.500000</rof>
-            <damagebonus type="AbstractHeavyCavalry">0.750000</damagebonus>
-            <damagebonus type="AbstractCoyoteMan">0.750000</damagebonus>
         </protoaction>
         <protoaction>
             <name>VolleyRangedAttack</name>
@@ -7395,14 +7409,13 @@
             <rof>3.000000</rof>
             <damagebonus type="AbstractSkirmisher">1.5000</damagebonus>
             <damagebonus type="AbstractCounterSkirmisher">1.5000</damagebonus>
-            <damagebonus type="AbstractCoyoteMan">0.600000</damagebonus>
-            <damagebonus type="AbstractHeavyCavalry">0.600000</damagebonus>
             <damagebonus type="AbstractHeavyInfantry">1.000000</damagebonus>
             <damagebonus type="AbstractLightCavalry">1.000000</damagebonus>
             <damagebonus type="AbstractRangedShockInfantry">1.000000</damagebonus>
         </protoaction>
         <protoaction>
             <name>Gather</name>
+            <rate type="Tree">0.500000</rate>
             <rate type="Huntable">0.84000</rate>
             <rate type="AbstractBerryBush">0.67000</rate>
             <rate type="deTorpBush2">0.67000</rate>
@@ -7428,16 +7441,15 @@
             <minrange>0.000000</minrange>
             <rof>3.00000</rof>
             <damagebonus type="Guardian">3.000000</damagebonus>
-            <damagebonus type="AbstractVillager">0.250000</damagebonus>
             <active>1</active>
             <chargeaction>1</chargeaction>
         </protoaction>
         <protoaction>
             <name>EagleEyeChargeAttack</name>
-            <damage>13.000000</damage>
+            <damage>45.000000</damage>
             <damagetype>Ranged</damagetype>
             <minrange>2.000000</minrange>
-            <maxrange>25.000000</maxrange>
+            <maxrange>30.000000</maxrange>
             <rof>3.000000</rof>
             <damagecap>20.000000</damagecap>
             <damagearea>2.000000</damagearea>
@@ -7445,8 +7457,6 @@
             <damagebonus type="AbstractHeavyInfantry">2.000000</damagebonus>
             <damagebonus type="AbstractLightCavalry">2.500000</damagebonus>
             <damagebonus type="AbstractRangedShockInfantry">2.500000</damagebonus>
-            <damagebonus type="AbstractCavalry">0.600000</damagebonus>
-            <damagebonus type="AbstractLightInfantry">0.600000</damagebonus>
             <active>1</active>
             <auxchargeaction>1</auxchargeaction>
         </protoaction>
