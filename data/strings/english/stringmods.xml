@@ -96,6 +96,10 @@
             <string _locid="9902034">The governor's headquarters, used to activate temporary emergency powers.</string>
             <string _locid="9902035">Activates emergency powers.</string>
 
+            <string _locid="9902036">Peltryman</string>
+            <string _locid="9902037">Versatile ranged infantry and economic unit. Gathers Food, regenerates while idle, performs Carbine and Eagle Eye attacks, and earns additional range through Hunting Promotions.</string>
+            <string _locid="9902038">Ranged villager limited to five units.</string>
+
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
             <!-- Range: 9903000 - 9903999                                  -->
@@ -425,7 +429,7 @@
             <string _locid="9910001"></string>
 
             <string _locid="9910002">Secure the Waste</string>
-            <string _locid="9910003"></string>
+            <string _locid="9910003">Outposts cost 10% less Wood and build 15% faster. Settlers gain +1 line of sight. Unlocks Peltrymen at The Presidio with a build limit of 5.</string>
 
             <string _locid="9910004">Colonial Works</string>
             <string _locid="9910005"></string>

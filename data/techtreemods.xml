@@ -2077,6 +2077,17 @@
                 <target type="ProtoUnit">AbstractVillager</target>
             </effect>
 
+            <!-- Unlock up to five Peltrymen at The Presidio. -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEPeltryman" page="0" column="3">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModSecureTheWaste">
                 <target type="ProtoUnit">ModPresidio</target>
