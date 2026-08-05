@@ -1242,7 +1242,7 @@
         <bounty>25.0000</bounty>
         <buildbounty>25.0000</buildbounty>
         <buildlimit>1</buildlimit>
-        <displayedrange>14</displayedrange>
+        <displayedrange>30</displayedrange>
 
         <cost resourcetype="Wood">500.0000</cost>
         <cost resourcetype="Gold">200.0000</cost>

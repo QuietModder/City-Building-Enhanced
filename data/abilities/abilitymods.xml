@@ -15,4 +15,7 @@
     <ability>deChargeAbilityEagleEye<bindtoauxchargeaction>true</bindtoauxchargeaction><forceshowrollover>true</forceshowrollover></ability>
     <ability>dePromotionRange<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
   </cbepeltryman>
+  <natmerctracker>
+    <ability>deChargeAbilityEagleEye<tech>ModGuardianOfTheAccords</tech><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
+  </natmerctracker>
 </abilitymods>
