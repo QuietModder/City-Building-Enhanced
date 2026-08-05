@@ -264,6 +264,12 @@
             <effect type="CommandAdd" proto="CBEGovernmentHouse" page="3" column="2">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEDispatchOffice" page="3" column="3">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
 
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModOliveOrchard</target>
@@ -1561,16 +1567,16 @@
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
-            <!-- Unlock native Coureur des Bois -->
+            <!-- Unlock the Citadel's independent Cree Coureur -->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <!-- Add it to The Presidio -->
-            <effect type="CommandAdd" proto="CoureurCree" page="0" column="2">
+            <effect type="CommandAdd" proto="CBECoureurCree" page="0" column="2">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
@@ -1584,7 +1590,7 @@
                 <target type="UnitType">AbstractVillager</target>
             </effect>
             <effect type="Data" amount="1.05" subtype="GatherRate" relativity="BasePercent">
-                <target type="UnitType">CoureurCree</target>
+                <target type="UnitType">CBECoureurCree</target>
             </effect>
             <effect type="Data" amount="1.05" subtype="GatherRate" relativity="BasePercent">
                 <target type="UnitType">deMiner</target>
@@ -1645,9 +1651,9 @@
                 <target type="ProtoUnit">deMiner</target>
             </effect>
 
-            <!-- Coureur Cree: +2 limit build -->
+            <!-- Citadel Cree Coureur: +2 build limit -->
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <!-- All buildings: +10% HP -->
@@ -1715,7 +1721,7 @@
             </effect>
 
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
 
@@ -1729,9 +1735,9 @@
                 <target type="ProtoUnit">Coureur</target>
             </effect>
 
-            <!-- Cree Coureurs -->
+            <!-- Citadel Cree Coureurs -->
             <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <!-- Japanese Settlers -->
@@ -1799,9 +1805,9 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
-            <!-- +4 Coureur Cree worker cap -->
+            <!-- +4 Citadel Cree Coureur worker cap -->
             <effect type="Data" amount="4.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <!-- Buildings +15% Health -->
@@ -1945,9 +1951,9 @@
 
         <effects>
 
-            <!-- +10 Coureur Cree worker cap -->
+            <!-- +10 Citadel Cree Coureur worker cap -->
             <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <effect type="Data" amount="500.00" subtype="Hitpoints" relativity="Absolute">
@@ -2526,6 +2532,12 @@
             <!-- Walls construct 10% slower -->
             <effect type="Data" amount="1.10" subtype="BuildPoints" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractWall</target>
+            </effect>
+
+            <!-- Unlock a rapid defensive reinforcement shipment -->
+            <effect type="TechStatus" status="obtainable">CBECallInTheReserveShipment</effect>
+            <effect type="CommandAdd" tech="CBECallInTheReserveShipment" page="0" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModPerimeterFortifications">
@@ -3653,6 +3665,12 @@
                 <target type="ProtoUnit">TradePost</target>
             </effect>
 
+            <!-- Unlock the first Citadel Native-allied shipment -->
+            <effect type="TechStatus" status="obtainable">CBENativeScoutsShipment</effect>
+            <effect type="CommandAdd" tech="CBENativeScoutsShipment" page="0" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModFrontierCompacts">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -3855,6 +3873,27 @@
             <!-- Native units train faster -->
             <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractNativeWarrior</target>
+            </effect>
+
+            <!-- Apply the 1st Michigan Volunteer Sharpshooters Cree upgrades to mercenary Trackers only -->
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="1.35" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" action="EagleEyeChargeAttack" amount="1.00"
+                subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="9.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">NatMercTracker</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModGuardianOfTheAccords">
@@ -4455,8 +4494,8 @@
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">CBEColonialMigrantsShipment</effect>
-            <effect type="CommandAdd" tech="CBEColonialMigrantsShipment" page="1" column="3">
-                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            <effect type="CommandAdd" tech="CBEColonialMigrantsShipment" page="0" column="3">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModASecondChance</effect>
             <effect type="CommandAdd" tech="ModASecondChance" page="1" column="0">
@@ -5124,20 +5163,20 @@
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
-            <!-- Initial Sprawling-route shipment requests. Commands are added
-                 here instead of directly to the Secretariat so Citadel players
-                 cannot gain them through the Latin City State alliance. -->
-            <effect type="TechStatus" status="obtainable">CBELatinBankShipFood</effect>
-            <effect type="TechStatus" status="obtainable">CBELatinBankShipWood</effect>
-            <effect type="TechStatus" status="obtainable">CBELatinBankShipCoin</effect>
-            <effect type="CommandAdd" tech="CBELatinBankShipFood" page="1" column="0">
-                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            <!-- Initial Sprawling-route shipment requests. These Secretariat-only
+                 copies prevent the Latin City-State alliance from exposing the
+                 buttons to Citadel players. -->
+            <effect type="TechStatus" status="obtainable">CBESprawlingFoodShipment</effect>
+            <effect type="TechStatus" status="obtainable">CBESprawlingWoodShipment</effect>
+            <effect type="TechStatus" status="obtainable">CBESprawlingCoinShipment</effect>
+            <effect type="CommandAdd" tech="CBESprawlingFoodShipment" page="0" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
             </effect>
-            <effect type="CommandAdd" tech="CBELatinBankShipWood" page="1" column="1">
-                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            <effect type="CommandAdd" tech="CBESprawlingWoodShipment" page="0" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
             </effect>
-            <effect type="CommandAdd" tech="CBELatinBankShipCoin" page="1" column="2">
-                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            <effect type="CommandAdd" tech="CBESprawlingCoinShipment" page="0" column="2">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">ModColonialDispatches</effect>
@@ -6315,6 +6354,59 @@
         </effects>
     </tech>
 
+    <!-- Colonial Secretariat copies of the Great Bank resource shipments.
+         Separate technology statuses keep the mutually exclusive routes isolated. -->
+    <tech name="CBESprawlingFoodShipment" type="Normal">
+        <dbid>991222</dbid>
+        <displaynameid>9913006</displaynameid>
+        <rollovertextid>9913007</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_food.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofFood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBESprawlingWoodShipment" type="Normal">
+        <dbid>991223</dbid>
+        <displaynameid>9913009</displaynameid>
+        <rollovertextid>9913010</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_wood.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofWood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBESprawlingCoinShipment" type="Normal">
+        <dbid>991224</dbid>
+        <displaynameid>9913012</displaynameid>
+        <rollovertextid>9913013</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_gold.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofCoin" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
     <tech name="CBEColonialMigrantsShipment" type="Normal">
         <dbid>991219</dbid>
         <displaynameid>9913021</displaynameid>
@@ -6360,6 +6452,41 @@
                     <unit>deSettlerAfrican</unit>
                     <unit>SettlerWagon</unit>
                 </units>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBENativeScoutsShipment" type="Normal">
+        <dbid>991220</dbid>
+        <displaynameid>9913024</displaynameid>
+        <rollovertextid>9913025</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>45.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_cree.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="5.00" subtype="FreeHomeCityUnit"
+                unittype="NatMercTracker" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBECallInTheReserveShipment" type="Normal">
+        <dbid>991221</dbid>
+        <displaynameid>9913027</displaynameid>
+        <rollovertextid>9913028</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <cost resourcetype="Food">200.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_colonial_militia.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="12.00" subtype="FreeHomeCityUnit"
+                unittype="ModConscript" relativity="Absolute">
+                <target type="Player"></target>
             </effect>
         </effects>
     </tech>

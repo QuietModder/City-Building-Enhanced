@@ -37,6 +37,11 @@
             <string _locid="9900007">A large cultivated olive orchard. Villagers gather Wood from its mature trees.</string>
             <string _locid="9900008">Olive Orchard</string>
 
+            <!-- Caravanserai -->
+            <string _locid="9900009">Caravanserai</string>
+            <string _locid="9900010">A fortified caravan station that arranges special economic and military shipments unlocked through City Planning.</string>
+            <string _locid="9900011">Arranges City Planning shipments.</string>
+
 
             <!-- ========================================================= -->
             <!-- 9902000s - NEW UNITS                                      -->
@@ -99,6 +104,11 @@
             <string _locid="9902036">Peltryman</string>
             <string _locid="9902037">Versatile ranged infantry and economic unit. Gathers Food and Wood, collects resource crates and treasures, regenerates while idle, performs Carbine and Eagle Eye attacks, and earns bonuses through Hunting Promotions.</string>
             <string _locid="9902038">Ranged villager limited to five units.</string>
+
+            <!-- Citadel Cree Coureur -->
+            <string _locid="9902039">Cree Coureur</string>
+            <string _locid="9902040">Cree Coureur des Bois. Strong ranged villager with superior gathering rates and resistance to ranged attacks.</string>
+            <string _locid="9902041">Strong ranged villager.</string>
 
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
@@ -266,7 +276,7 @@
             <string _locid="9909049">Market build limit increased by 2</string>
 
             <string _locid="9909050">Frontier Compacts</string>
-            <string _locid="9909051"></string>
+            <string _locid="9909051">Trade Posts cost 10% less Wood. Unlocks the Native Scouts shipment at the Colonial Secretariat.</string>
 
             <string _locid="9909052">Border Pacts</string>
             <string _locid="9909053"></string>
@@ -278,7 +288,7 @@
             <string _locid="9909057"></string>
 
             <string _locid="9909058">Guardian of the Accords</string>
-            <string _locid="9909059"></string>
+            <string _locid="9909059">Native warriors move 15% faster, attack 25% faster, train 10% faster, and have 125% higher build limits. Mercenary Cree Trackers gain the upgrades from 1st Michigan Volunteer Sharpshooters: +60% base hit points and damage, Eagle Eye, and +9 line of sight.</string>
 
             <string _locid="9909060">Civic Workshop</string>
             <string _locid="9909061"></string>
@@ -441,7 +451,7 @@
             <string _locid="9910009"></string>
 
             <string _locid="9910010">Perimeter Fortifications</string>
-            <string _locid="9910011"></string>
+            <string _locid="9910011">Unlocks the Call in the Reserve shipment at the Colonial Secretariat.</string>
 
             <string _locid="9910012">Earth-Backed Rampart</string>
             <string _locid="9910013"></string>
@@ -541,6 +551,16 @@
             <string _locid="9913021">Request Colonial Migrants</string>
             <string _locid="9913022">Spends two Home City shipments and 500 Food to send three randomly selected workers, with a chance to receive uncommon or rare specialists. Arrives in 120 seconds.</string>
             <string _locid="9913023">Send three migrant workers.</string>
+
+            <!-- Native Scouts shipment -->
+            <string _locid="9913024">Native Scouts</string>
+            <string _locid="9913025">Spends two Home City shipments to call five Mercenary Cree Trackers to your gather point. Arrives in 45 seconds.</string>
+            <string _locid="9913026">Call five Mercenary Cree Trackers.</string>
+
+            <!-- Call in the Reserve shipment -->
+            <string _locid="9913027">Call in the Reserve</string>
+            <string _locid="9913028">Spends two Home City shipments and 200 Food to call twelve Conscripts to your gather point. Arrives in 30 seconds.</string>
+            <string _locid="9913029">Call in twelve Conscripts.</string>
 
 
         </language>
