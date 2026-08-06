@@ -1,4 +1,9 @@
 <techtreemods>
+    <!-- ################################################################# -->
+    <!-- SECTION 1: GLOBAL BALANCE AND MOD ACTIVATION                      -->
+    <!-- Always-on base-tech overrides, global balance, and startup hooks. -->
+    <!-- ################################################################# -->
+
     <!-- ========================================================= -->
     <!-- AGE I -> AGE II                                           -->
     <!-- ========================================================= -->
@@ -411,6 +416,176 @@
 
         </effects>
     </tech>
+
++    <!--  =========================  -->
+    <!--  Universal Mod Activation   -->
+    <!--  =========================  -->
+
+
+    <!-- European civilizations -->
+    <tech name="Age0British" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0French" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Spanish" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Portuguese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Dutch" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0German" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Russian" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Ottoman" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect mergeMode="add" type="Data" amount="10.00"
+                subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+
+    <!-- Asian civilizations -->
+    <tech name="YPAge0Chinese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="YPAge0Japanese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="YPAge0Indians" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+
+    <!-- Native American civilizations -->
+    <tech name="Age0Lakota" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Haudenosaunee" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Aztecs" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+
+    <!-- Definitive Edition civilizations -->
+    <tech name="DEAge0Inca" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">SettlerNative</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Swedish" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Americans" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Mexicans" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Hausa" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Ethiopian" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Maltese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Italians" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <!-- ################################################################# -->
+    <!-- SECTION 2: REGULAR RESEARCH TECHNOLOGIES                          -->
+    <!-- Player-researched focus trees and City Planning technologies.     -->
+    <!-- ################################################################# -->
 
     <tech mergeMode="add" name="ModInfantryFocus" type="Normal">
         <dbid>90101</dbid>
@@ -5738,171 +5913,12 @@
     </tech>
 
 
-    <!--  =========================  -->
-    <!--  Universal Mod Activation   -->
-    <!--  =========================  -->
 
 
-    <!-- European civilizations -->
-    <tech name="Age0British" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0French" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Spanish" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Portuguese" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Dutch" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0German" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Russian" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Ottoman" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect mergeMode="add" type="Data" amount="10.00"
-                subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">Settler</target>
-            </effect>
-        </effects>
-    </tech>
-
-
-    <!-- Asian civilizations -->
-    <tech name="YPAge0Chinese" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="YPAge0Japanese" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="YPAge0Indians" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-
-    <!-- Native American civilizations -->
-    <tech name="Age0Lakota" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Haudenosaunee" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Aztecs" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-
-    <!-- Definitive Edition civilizations -->
-    <tech name="DEAge0Inca" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">SettlerNative</target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Swedish" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">Settler</target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Americans" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">Settler</target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Mexicans" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">Settler</target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Hausa" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Ethiopian" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Maltese" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Italians" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
+    <!-- ################################################################# -->
+    <!-- SECTION 3: SPECIAL TECHNOLOGIES, COMMANDS, POWERS, AND SHIPMENTS  -->
+    <!-- Shadows, subciv support, special commands, and repeatable sends.  -->
+    <!-- ################################################################# -->
 
     <!-- ========================================================= -->
     <!-- CBE Volatile Shadow Technologies                          -->
