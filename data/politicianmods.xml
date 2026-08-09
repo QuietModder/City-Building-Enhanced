@@ -1,0 +1,30 @@
+<politicianmods>
+    <!-- Government House Foreign Missions added beyond the original
+         Asian Consulate partner roster. -->
+    <CBEForeignMissionBritish portraitfilename="ui\ingame\politicians\consulate_british" portraitfilenamewpf="resources\images\icons\politicians\consulate_british.png">
+    </CBEForeignMissionBritish>
+    <CBEForeignMissionFrench portraitfilename="ui\ingame\politicians\consulate_french" portraitfilenamewpf="resources\images\icons\politicians\consulate_french.png">
+    </CBEForeignMissionFrench>
+    <CBEForeignMissionSpanish portraitfilename="ui\ingame\politicians\consulate_spanish" portraitfilenamewpf="resources\images\icons\politicians\consulate_spanish.png">
+    </CBEForeignMissionSpanish>
+    <CBEForeignMissionPortuguese portraitfilename="ui\ingame\politicians\consulate_portuguese" portraitfilenamewpf="resources\images\icons\politicians\consulate_portuguese.png">
+    </CBEForeignMissionPortuguese>
+    <CBEForeignMissionDutch portraitfilename="ui\ingame\politicians\consulate_dutch" portraitfilenamewpf="resources\images\icons\politicians\consulate_dutch.png">
+    </CBEForeignMissionDutch>
+    <CBEForeignMissionGermans portraitfilename="ui\ingame\politicians\consulate_germans" portraitfilenamewpf="resources\images\icons\politicians\consulate_germans.png">
+    </CBEForeignMissionGermans>
+    <CBEForeignMissionRussians portraitfilename="ui\ingame\politicians\consulate_russians" portraitfilenamewpf="resources\images\icons\politicians\consulate_russians.png">
+    </CBEForeignMissionRussians>
+    <CBEForeignMissionOttomans portraitfilename="ui\ingame\politicians\consulate_ottomans" portraitfilenamewpf="resources\images\icons\politicians\consulate_ottomans.png">
+    </CBEForeignMissionOttomans>
+
+    <CBEForeignMissionItalians
+        portraitfilename="ui\ingame\politicians\consulate_DEItalians"
+        portraitfilenamewpf="resources\images\icons\politicians\pwao_allegiance_italians.png">
+    </CBEForeignMissionItalians>
+
+    <CBEForeignMissionSwedish
+        portraitfilename="ui\ingame\politicians\consulate_DESweden"
+        portraitfilenamewpf="resources\images\icons\politicians\pwao_allegiance_russians.png">
+    </CBEForeignMissionSwedish>
+</politicianmods>

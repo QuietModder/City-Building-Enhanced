@@ -4681,9 +4681,15 @@
         </protoaction>
     </unit>
 
+    <!-- ######################################################### -->
+    <!-- GOVERNMENT HOUSE FOREIGN MISSIONS SYSTEM                  -->
+    <!-- Keep the Government House and any future Foreign Mission  -->
+    <!-- support prototypes together in this subsection.           -->
+    <!-- ######################################################### -->
+
     <!-- ========================================================= -->
     <!-- Government House                                          -->
-    <!-- Consulate visual; reserved for emergency powers.          -->
+    <!-- Consulate visual; reserved for Foreign Missions.          -->
     <!-- ========================================================= -->
     <unit id="9037" name="CBEGovernmentHouse">
         <dbid>9037</dbid>
@@ -4732,6 +4738,114 @@
         <unittype>MilitaryBuilding</unittype>
         <unittype>CountsTowardMilitaryScore</unittype>
         <unittype>HasBountyValue</unittype>
+        <unittype>AbstractConsulate</unittype>
+
+        <!-- Foreign Mission units share command slots because only the
+             currently hosted mission enables its own roster. -->
+        <train row="0" page="0" column="0">ypConsulateRedcoat</train>
+        <train row="0" page="0" column="1">ypConsulateLifeGuard</train>
+        <train row="0" page="0" column="2">deRanger</train>
+        <train row="0" page="0" column="3">Rocket</train>
+        <train row="0" page="0" column="4">Privateer</train>
+
+        <train row="0" page="0" column="0">ypConsulateYoungGarde</train>
+        <train row="0" page="0" column="1">ypConsulateGendarmes</train>
+        <train row="0" page="0" column="2">deNatMercRoyalMusketeer</train>
+        <train row="0" page="0" column="3">deMercNapoleonGun</train>
+
+        <train row="0" page="0" column="0">ypConsulateEspadachins</train>
+        <train row="0" page="0" column="1">ypConsulateGarrochista</train>
+        <train row="0" page="0" column="2">Missionary</train>
+        <train row="0" page="0" column="3">ypNatConquistador</train>
+
+        <train row="0" page="0" column="0">ypConsulateGuerreiros</train>
+        <train row="0" page="0" column="1">ypConsulateJinete</train>
+        <train row="0" page="0" column="2">OrganGun</train>
+
+        <train row="0" page="0" column="0">ypConsulateStadhouders</train>
+        <train row="0" page="0" column="1">ypConsulateCarabineer</train>
+        <train row="0" page="0" column="2">Halberdier</train>
+        <train row="0" page="0" column="3">MercGreatCannon</train>
+
+        <train row="0" page="0" column="0">ypConsulateZweihander</train>
+        <train row="0" page="0" column="1">ypConsulateCzapakaUhlan</train>
+        <train row="0" page="0" column="2">SettlerWagon</train>
+        <train row="0" page="0" column="3">WarWagon</train>
+
+        <train row="0" page="0" column="0">ypConsulateSiberianCossack</train>
+        <train row="0" page="0" column="1">ypConsulateCannon</train>
+        <train row="0" page="0" column="2">deLegionMagyarHussar</train>
+        <train row="0" page="0" column="3">deNatMercLipkaTatar</train>
+
+        <train row="0" page="0" column="0">ypConsulateTufanciCorps</train>
+        <train row="0" page="0" column="1">AbusGun</train>
+        <train row="0" page="0" column="2">Spahi</train>
+        <train row="0" page="0" column="3">ypConsulateGreatBombard</train>
+        <train row="0" page="0" column="4">deHumbaraci</train>
+
+        <train row="0" page="0" column="0">dePapalGuard</train>
+        <train row="0" page="0" column="1">deNMPapalZouave</train>
+        <train row="0" page="0" column="2">deNMPapalElmetto</train>
+        <train row="0" page="0" column="3">deNMPapalBombard</train>
+
+        <train row="0" page="0" column="0">deCarolean</train>
+        <train row="0" page="0" column="1">deFinnishRider</train>
+        <train row="0" page="0" column="2">deLeatherCannon</train>
+
+        <!-- The Consulate picker opens the mission-selection panel. Each
+             mission exposes its own dismissal action on the relation page. -->
+        <tech row="0" page="18" column="0">ypPickConsulateTech</tech>
+        <tech row="0" page="20" column="2">CBEDismissBritishMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissFrenchMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissSpanishMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissPortugueseMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissDutchMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissGermanMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissRussianMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissOttomanMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissItalianMission</tech>
+        <tech row="0" page="20" column="2">CBEDismissSwedishMission</tech>
+
+        <!-- Mission research appears on the dedicated Consulate technology
+             page and is exposed only by the currently hosted mission. -->
+        <tech row="0" page="21" column="1">DERangerForce</tech>
+        <tech row="0" page="21" column="2">DEgreenwichForEU</tech>
+        <tech row="0" page="21" column="3">DEindustrialForEU</tech>
+        <tech row="0" page="21" column="4">DEHCImmigrantsBritishForEU</tech>
+        <tech row="0" page="21" column="1">HCXPTirailleursForEU</tech>
+        <tech row="0" page="21" column="2">DEHCBuffaloSoldiersForEU</tech>
+        <tech row="0" page="21" column="3">DEHCImmigrantsFrenchForEU</tech>
+        <tech row="0" page="21" column="1">HCXPSpanishGoldForEU</tech>
+        <tech row="0" page="21" column="2">HCExplorerSpanishForEU</tech>
+        <tech row="0" page="21" column="3">HCArchaicTrainingForEU</tech>
+        <tech row="0" page="21" column="4">DEHCNewSpainViceroyaltyForEU</tech>
+        <tech row="0" page="21" column="1">DEHCFeitoriasForEU</tech>
+        <tech row="0" page="21" column="2">HCXPRangefindingForEU</tech>
+        <tech row="0" page="21" column="3">HCDragoonCombatPortugueseForEU</tech>
+        <tech row="0" page="21" column="1">HCXPAdmiralTrompForEU</tech>
+        <tech row="0" page="21" column="2">HCBetterBanksForEU</tech>
+        <tech row="0" page="21" column="3">HCXPMilitaryReformsForEU</tech>
+        <tech row="0" page="21" column="1">DEHCCircleArmyForEU</tech>
+        <tech row="0" page="21" column="2">HCGermantownFarmersForEU</tech>
+        <tech row="0" page="21" column="3">HCXPSolingenSteelForEU</tech>
+        <tech row="0" page="21" column="4">DEHCGermanChevaulegersForEU</tech>
+        <tech row="0" page="21" column="1">HCRansackForEU</tech>
+        <tech row="0" page="21" column="2">HCXPSuvorovReformsForEU</tech>
+        <tech row="0" page="21" column="3">HCXPNationalRedoubtForEU</tech>
+        <tech row="0" page="21" column="4">HCUniqueCombatRussianForEU</tech>
+        <tech row="0" page="21" column="1">HCArtilleryCombatOttomanForEU</tech>
+        <tech row="0" page="21" column="2">HCJanissaryCostForEU</tech>
+        <tech row="0" page="21" column="3">HCExplorerOttomanForEU</tech>
+        <tech row="0" page="21" column="4">ChurchKapikuluCorpsForEU</tech>
+        <tech row="0" page="21" column="1">DEHCAdvancedLombardForEU</tech>
+        <tech row="0" page="21" column="2">DEHCRomanTacticsForEU</tech>
+        <tech row="0" page="21" column="3">DEHCUsuryForEU</tech>
+        <tech row="0" page="21" column="4">HCSilkRoadTeamForEU</tech>
+        <tech row="0" page="21" column="1">DEHCEngelsbergIronworksForEU</tech>
+        <tech row="0" page="21" column="2">DEHCNorthernForestsForEU</tech>
+        <tech row="0" page="21" column="3">DEHCTrampleTacticsForEU</tech>
+        <tech row="0" page="21" column="4">DEHCSveaLifeguardForEU</tech>
+
         <flag>CollidesWithProjectiles</flag>
         <flag>StartsAtFullEfficiency</flag>
         <flag>Immoveable</flag>
