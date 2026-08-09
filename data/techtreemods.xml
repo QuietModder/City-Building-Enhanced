@@ -1,4 +1,9 @@
 <techtreemods>
+    <!-- ################################################################# -->
+    <!-- SECTION 1: GLOBAL BALANCE AND MOD ACTIVATION                      -->
+    <!-- Always-on base-tech overrides, global balance, and startup hooks. -->
+    <!-- ################################################################# -->
+
     <!-- ========================================================= -->
     <!-- AGE I -> AGE II                                           -->
     <!-- ========================================================= -->
@@ -127,6 +132,40 @@
     </tech>
 
     <!-- ========================================================= -->
+    <!-- 950 Population Cap Overrides                              -->
+    <!-- ========================================================= -->
+
+    <!-- Lakota normally receive an explicit 200 population cap. -->
+    <tech name="Age0XPSioux" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="750.00"
+                subtype="PopulationCap" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Definitive Edition revolutions normally reset the cap to 200. -->
+    <tech name="DERevolutionSharedEffects" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="750.00"
+                subtype="PopulationCap" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- The legacy O'Higgins revolution has its own 200-cap effect. -->
+    <tech name="XPRevolutionOHiggins" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="750.00"
+                subtype="PopulationCap" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
     <!-- Main Mod Activation                                       -->
     <!-- ========================================================= -->
     <tech mergeMode="add" name="CityBuildingEnhancedEnable" type="Normal">
@@ -137,6 +176,17 @@
 
             <effect type="Data" amount="0.50" subtype="GatherRate" relativity="BasePercent">
                 <target type="UnitType">AbstractVillager</target>
+            </effect>
+
+            <!-- Give Houses an inactive-income autogather base for later technologies. -->
+            <effect type="Data" protoaction="Autogather" amount="1.00" subtype="ProtoActionAdd" unittype="Bank" relativity="Assign">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+            <effect type="Data" action="Autogather" amount="0.00" subtype="WorkRate" unittype="Gold" relativity="Assign">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+            <effect type="Data" action="Autogather" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
             </effect>
 
             <!-- Add a flat construction surcharge to all units tagged Building -->
@@ -180,11 +230,17 @@
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
-            <!-- Add Architect train button to Town Center -->
-            <effect type="CommandAdd" proto="ModArchitect" page="0" column="3">
-                <target type="ProtoUnit">TownCenter</target>
+            <!-- Markets provide a universal recovery point if the starting Architect is lost. -->
+            <effect type="CommandAdd" proto="ModArchitect" page="1" column="5">
+                <target type="ProtoUnit">Market</target>
             </effect>
-
+            <effect type="CommandAdd" proto="ModArchitect" page="1" column="4">
+                <target type="ProtoUnit">ypTradeMarketAsian</target>
+            </effect>
+            <!-- Use the first free slot in the Livestock Market's existing second row. -->
+            <effect type="CommandAdd" proto="ModArchitect" page="2" column="-1">
+                <target type="ProtoUnit">deLivestockMarket</target>
+            </effect>
 
             <!-- New Buildings-->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
@@ -195,9 +251,28 @@
             </effect>
 
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
-            <effect type="CommandAdd" proto="ModBunkerMills" page="1" column="0">
+            <effect type="CommandAdd" proto="ModPresidio" page="3" column="0">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEColonialSecretariat" page="3" column="1">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGovernmentHouse</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEGovernmentHouse" page="3" column="2">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEDispatchOffice" page="3" column="3">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
@@ -205,6 +280,13 @@
                 <target type="ProtoUnit">ModOliveOrchard</target>
             </effect>
             <effect type="CommandAdd" proto="ModOliveOrchard" page="1" column="1">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+            <effect type="CommandAdd" proto="ModHuntingLodge" page="1" column="2">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
@@ -261,13 +343,13 @@
                 ModSprawlingCityPlanning
             </effect>
 
-            <!-- Put both route choices onto the Bunker Mill command panel -->
+            <!-- Put both route choices onto The Presidio command panel -->
             <effect type="CommandAdd" tech="ModCitadelCityPlanning" page="0" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="CommandAdd" tech="ModSprawlingCityPlanning" page="0" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
 
@@ -280,8 +362,230 @@
                 ModSprawlingCityPlanning
             </effect>
 
+            <!-- Enable and re-evaluate volatile CBE shadow technologies. -->
+            <effect type="TechStatus" status="active">CBEShadowTechState</effect>
+            <effect type="TechStatus" status="obtainable">CBEWarEconomyPopCapShadowTest</effect>
+            <effect type="TechStatus" status="obtainable">CBETradeShipmentEffectsShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeEffectsShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableSettlerShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableCoureurShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableNativeShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableChineseShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableJapaneseShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableIndianShadow</effect>
+            <effect type="TechStatus" status="obtainable">CBEStateOfSiegeDisableAfricanShadow</effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEWarEconomyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEHandsOffPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEProsperityPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEDevelopmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBETradeShipmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEStateOfSiegePolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEWarEconomyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEHandsOffPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEProsperityPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEDevelopmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBETradeShipmentPolicyBookMarker</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetForceFullTechUpdate" relativity="Assign">
+                <target type="ProtoUnit">CBEStateOfSiegePolicyBookMarker</target>
+            </effect>
+
         </effects>
     </tech>
+
++    <!--  =========================  -->
+    <!--  Universal Mod Activation   -->
+    <!--  =========================  -->
+
+
+    <!-- European civilizations -->
+    <tech name="Age0British" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0French" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Spanish" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Portuguese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Dutch" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0German" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Russian" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Ottoman" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect mergeMode="add" type="Data" amount="10.00"
+                subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+
+    <!-- Asian civilizations -->
+    <tech name="YPAge0Chinese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="YPAge0Japanese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="YPAge0Indians" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+
+    <!-- Native American civilizations -->
+    <tech name="Age0Lakota" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Haudenosaunee" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="Age0Aztecs" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+
+    <!-- Definitive Edition civilizations -->
+    <tech name="DEAge0Inca" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">SettlerNative</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Swedish" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Americans" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Mexicans" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">Settler</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Hausa" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Ethiopian" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Maltese" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <tech name="DEAge0Italians" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+        </effects>
+    </tech>
+
+    <!-- ################################################################# -->
+    <!-- SECTION 2: REGULAR RESEARCH TECHNOLOGIES                          -->
+    <!-- Player-researched focus trees and City Planning technologies.     -->
+    <!-- ################################################################# -->
 
     <tech mergeMode="add" name="ModInfantryFocus" type="Normal">
         <dbid>90101</dbid>
@@ -1140,14 +1444,20 @@
                 ModSprawlingCityPlanning
             </effect>
 
-            <!-- Unlock Citadel chain technology -->
+            <!-- Citadel-exclusive economic building. -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ModBunkerMills</target>
+            </effect>
+            <effect type="CommandAdd" proto="ModBunkerMills" page="1" column="0">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
 
             <!-- FIRST ROW -->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
             <effect type="CommandAdd" proto="ModArchitect" page="0" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- SECOND ROW -->
@@ -1155,14 +1465,14 @@
                 ModSettledFrontier
             </effect>
             <effect type="CommandAdd" tech="ModSettledFrontier" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
                 ModDefensiveWorks
             </effect>
             <effect type="CommandAdd" tech="ModDefensiveWorks" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- THIRD ROW -->
@@ -1172,7 +1482,7 @@
                 ModWinterStores
             </effect>
             <effect type="CommandAdd" tech="ModWinterStores" page="2" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Branch 2: Coin -->
@@ -1180,7 +1490,7 @@
                 ModRecoveredTreasures
             </effect>
             <effect type="CommandAdd" tech="ModRecoveredTreasures" page="2" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Branch 3: Waystations -->
@@ -1188,7 +1498,7 @@
                 ModWaystationCenters
             </effect>
             <effect type="CommandAdd" tech="ModWaystationCenters" page="2" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Branch 4: Native Settlement agreements -->
@@ -1196,7 +1506,7 @@
                 ModFrontierCompacts
             </effect>
             <effect type="CommandAdd" tech="ModFrontierCompacts" page="2" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Standalone: Civic Workshop -->
@@ -1205,7 +1515,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModCivicWorkshop" page="2" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Branch 5: Frontier Expeditions -->
@@ -1214,15 +1524,15 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModNewWorldSpoils" page="2" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Remove both selection buttons after a route is chosen -->
             <effect type="CommandRemove" tech="ModCitadelCityPlanning">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="CommandRemove" tech="ModSprawlingCityPlanning">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -1271,41 +1581,41 @@
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
             <effect type="CommandAdd" proto="ModArchitect" page="0" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
                 ModNewWorldProspects
             </effect>
             <effect type="CommandAdd" tech="ModNewWorldProspects" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="CommandAdd" tech="ModNewWorldProspects" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
                 ModLivingOffTheLand
             </effect>
             <effect type="CommandAdd" tech="ModLivingOffTheLand" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="CommandAdd" tech="ModLivingOffTheLand" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
                 ModLifelineToTheOldWorld
             </effect>
             <effect type="CommandAdd" tech="ModLifelineToTheOldWorld" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
                 ModClearingTheFrontier
             </effect>
             <effect type="CommandAdd" tech="ModClearingTheFrontier" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- SECOND ROW -->
@@ -1313,30 +1623,30 @@
                 ModVoyageurs
             </effect>
             <effect type="CommandAdd" tech="ModVoyageurs" page="2" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
                 ModLooseStandards
             </effect>
             <effect type="CommandAdd" tech="ModLooseStandards" page="2" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
                 ModFrontierCompanies
             </effect>
             <effect type="CommandAdd" tech="ModFrontierCompanies" page="2" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Remove both selection buttons after a route is chosen -->
             <effect type="CommandRemove" tech="ModCitadelCityPlanning">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModSprawlingCityPlanning">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -1378,12 +1688,12 @@
                 <target type="ProtoUnit">deMiner</target>
             </effect>
             <effect type="CommandAdd" proto="deMiner" page="0" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
-            <!-- Remove this researched tech so its Bunker Mill slot is reused -->
+            <!-- Remove this researched tech so its Presidio slot is reused -->
             <effect type="CommandRemove" tech="ModSettledFrontier">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Unlock the next Citadel technology -->
@@ -1392,7 +1702,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModFortifiedSelectiveEntry" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -1432,17 +1742,17 @@
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
 
-            <!-- Unlock native Coureur des Bois -->
+            <!-- Unlock the Citadel's independent Cree Coureur -->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
-            <!-- Add it to the Bunker Mills -->
-            <effect type="CommandAdd" proto="CoureurCree" page="0" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+            <!-- Add it to The Presidio -->
+            <effect type="CommandAdd" proto="CBECoureurCree" page="0" column="2">
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- +10% damage for all civilian worker types -->
@@ -1455,7 +1765,7 @@
                 <target type="UnitType">AbstractVillager</target>
             </effect>
             <effect type="Data" amount="1.05" subtype="GatherRate" relativity="BasePercent">
-                <target type="UnitType">CoureurCree</target>
+                <target type="UnitType">CBECoureurCree</target>
             </effect>
             <effect type="Data" amount="1.05" subtype="GatherRate" relativity="BasePercent">
                 <target type="UnitType">deMiner</target>
@@ -1467,11 +1777,11 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModAnchoredColony" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModFortifiedSelectiveEntry">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -1516,9 +1826,9 @@
                 <target type="ProtoUnit">deMiner</target>
             </effect>
 
-            <!-- Coureur Cree: +2 limit build -->
+            <!-- Citadel Cree Coureur: +2 build limit -->
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <!-- All buildings: +10% HP -->
@@ -1533,7 +1843,7 @@
 
             <!-- Reuse this tech button slot -->
             <effect type="CommandRemove" tech="ModAnchoredColony">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Unlock the next tech -->
@@ -1542,7 +1852,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModBurgeoningColony" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -1586,7 +1896,7 @@
             </effect>
 
             <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
 
@@ -1600,9 +1910,9 @@
                 <target type="ProtoUnit">Coureur</target>
             </effect>
 
-            <!-- Cree Coureurs -->
+            <!-- Citadel Cree Coureurs -->
             <effect type="Data" amount="1.05" subtype="CostEscalation" relativity="Assign">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <!-- Japanese Settlers -->
@@ -1622,7 +1932,7 @@
 
             <!-- Replace this button with the next chain tech -->
             <effect type="CommandRemove" tech="ModBurgeoningColony">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Unlock Age III continuation -->
@@ -1631,7 +1941,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModCitadelMetropolitan" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -1670,9 +1980,9 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
-            <!-- +4 Coureur Cree worker cap -->
+            <!-- +4 Citadel Cree Coureur worker cap -->
             <effect type="Data" amount="4.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <!-- Buildings +15% Health -->
@@ -1773,7 +2083,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModCitadelMetropolitan">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -1781,7 +2091,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModIronboundCity" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -1816,9 +2126,9 @@
 
         <effects>
 
-            <!-- +10 Coureur Cree worker cap -->
+            <!-- +10 Citadel Cree Coureur worker cap -->
             <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">CoureurCree</target>
+                <target type="ProtoUnit">CBECoureurCree</target>
             </effect>
 
             <effect type="Data" amount="500.00" subtype="Hitpoints" relativity="Absolute">
@@ -1830,7 +2140,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModIronboundCity">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -1862,7 +2172,7 @@
 
             <!-- Replace root button with branch starters -->
             <effect type="CommandRemove" tech="ModDefensiveWorks">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Secure the Waste branch -->
@@ -1871,7 +2181,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModSecureTheWaste" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Clearing The Hinterlands branch -->
@@ -1880,7 +2190,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModClearingTheHinterlands" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Perimeter Fortifications branch -->
@@ -1889,7 +2199,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModPerimeterFortifications" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Garrison Experience branch -->
@@ -1898,7 +2208,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModGarrisonExperience" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <!-- Observation branch -->
@@ -1907,13 +2217,11 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModSurveyedApproaches" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
     </tech>
-
-
     <!-- ========================================================= -->
     <!-- BRANCH 2: SECURE THE WASTE                                -->
     <!-- Page 1 / Column 1                                         -->
@@ -1950,9 +2258,26 @@
                 <target type="ProtoUnit">AbstractVillager</target>
             </effect>
 
+            <!-- Peltrymen receive +1 above as villagers and +9 here, for +10 total. -->
+            <effect type="Data" amount="9.00" subtype="LOS"
+                relativity="Absolute">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+
+            <!-- Unlock up to five Peltrymen at The Presidio. -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Assign">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEPeltryman" page="0" column="3">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
 
             <effect type="CommandRemove" tech="ModSecureTheWaste">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -1960,7 +2285,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModColonialWorks" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -2004,7 +2329,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModColonialWorks">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2012,7 +2337,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModFortifiedPlanning" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2047,7 +2372,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModFortifiedPlanning">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2055,7 +2380,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModDistrictDefenses" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2132,7 +2457,7 @@
 
 
             <effect type="CommandRemove" tech="ModDistrictDefenses">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2190,7 +2515,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModClearingTheHinterlands">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2198,7 +2523,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModWallWardClearance" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2242,7 +2567,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModWallWardClearance">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2250,7 +2575,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModTimberRequisition" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2284,7 +2609,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModTimberRequisition">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2292,7 +2617,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModTimberStockpiles" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2337,7 +2662,7 @@
 
 
             <effect type="CommandRemove" tech="ModTimberStockpiles">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2384,8 +2709,14 @@
                 <target type="ProtoUnit">AbstractWall</target>
             </effect>
 
+            <!-- Unlock a rapid defensive reinforcement shipment -->
+            <effect type="TechStatus" status="obtainable">CBECallInTheReserveShipment</effect>
+            <effect type="CommandAdd" tech="CBECallInTheReserveShipment" page="0" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPerimeterFortifications">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2393,7 +2724,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModEarthBackedRampart" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2431,7 +2762,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModEarthBackedRampart">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2439,7 +2770,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModBastionRampart" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2478,7 +2809,7 @@
 
 
             <effect type="CommandRemove" tech="ModBastionRampart">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2486,7 +2817,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModArmoredShell" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2540,7 +2871,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModArmoredShell">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2577,7 +2908,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModGarrisonExperience">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2585,7 +2916,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModDefensiveLessons" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2636,7 +2967,7 @@
 
 
             <effect type="CommandRemove" tech="ModDefensiveLessons">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2644,7 +2975,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModEstablishedFortifications" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2770,9 +3101,12 @@
                 <target type="ProtoUnit">deMalteseGun</target>
             </effect>
 
+            <effect type="Data" amount="1.00" tactic="CBEStateOfSiegePolicy" subtype="TacticEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
 
             <effect type="CommandRemove" tech="ModEstablishedFortifications">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2780,7 +3114,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModCitadelExpansion" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2854,11 +3188,11 @@
 
 
             <effect type="CommandRemove" tech="ModCitadelExpansion">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModCitadelExpansion">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2900,7 +3234,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModSurveyedApproaches">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2908,7 +3242,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModSignaledNetwork" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -2957,7 +3291,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModSignaledNetwork">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -2971,7 +3305,7 @@
 
 
             <effect type="CommandAdd" tech="ModCharteredObservationPosts" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -3006,7 +3340,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModCharteredObservationPosts">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3014,7 +3348,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModCitadelWatchNetwork" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3045,7 +3379,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModCitadelWatchNetwork">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3083,7 +3417,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModWinterStores">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3091,7 +3425,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModExpandedGranaries" page="2" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3127,11 +3461,11 @@
 
             <!-- +1 Build limit to Bunker Mill-->
             <effect type="Data" amount="1.00" subtype="BuildLimit" relativity="Absolute">
-                <target type="ProtoUnit">AbstractOutpost</target>
+                <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModExpandedGranaries">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3139,7 +3473,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModSiegeGranaries" page="2" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3194,7 +3528,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModSiegeGranaries">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -3241,7 +3575,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModRecoveredTreasures">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3249,7 +3583,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModCoinReserves" page="2" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3288,7 +3622,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModCoinReserves">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3296,7 +3630,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModCitadelTreasury" page="2" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3338,10 +3672,88 @@
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
-            <effect type="CommandRemove" tech="ModCitadelTreasury">
-                <target type="ProtoUnit">ModBunkerMills</target>
+            <!-- Unlock the Citadel's repeatable mixed-resource shipment. -->
+            <effect type="TechStatus" status="obtainable">CBECitadelStockpileShipment</effect>
+            <effect type="CommandAdd" tech="CBECitadelStockpileShipment" page="0" column="2">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
             </effect>
 
+            <!-- Continue the Coin branch to its terminal exchange technology. -->
+            <effect type="TechStatus" status="obtainable">CBETreasuryExchange</effect>
+            <effect type="CommandAdd" tech="CBETreasuryExchange" page="2" column="1">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="ModCitadelTreasury">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+        </effects>
+    </tech>
+
+    <!-- Terminal technology for the Bunker Mill Coin branch. -->
+    <tech mergeMode="add" name="CBETreasuryExchange" type="Normal">
+        <dbid>991230</dbid>
+        <displaynameid>9909152</displaynameid>
+        <rollovertextid>9909153</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>75.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+
+        <prereqs>
+            <techstatus status="Active">ModCitadelTreasury</techstatus>
+            <techstatus status="Active">Industrialize</techstatus>
+        </prereqs>
+
+        <effects>
+            <!-- Workers gather Coin 25% faster from standard Plantations. -->
+            <effect type="Data" action="Gather" amount="1.25"
+                subtype="WorkRate" unittype="Plantation"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Civilization-specific Coin farm modes. -->
+            <effect type="Data2" action="Gather" amount="1.25"
+                subtype="WorkRateSpecific" resource="Gold" unittype="ypRicePaddy"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data2" action="Gather" amount="1.25"
+                subtype="WorkRateSpecific" resource="Gold" unittype="deField"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data2" action="Gather" amount="1.25"
+                subtype="WorkRateSpecific" resource="Gold" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" action="AutoGatherCoin" amount="1.25"
+                subtype="WorkRate" unittype="Gold"
+                relativity="BasePercent">
+                <target type="ProtoUnit">deHacienda</target>
+            </effect>
+
+            <!-- Unlock repeatable second-row Coin exchange options. -->
+            <effect type="TechStatus" status="obtainable">CBETreasuryCoinToWoodExchange</effect>
+            <effect type="TechStatus" status="obtainable">CBETreasuryCoinToFoodExchange</effect>
+            <effect type="CommandAdd" tech="CBETreasuryCoinToWoodExchange" page="1" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" tech="CBETreasuryCoinToFoodExchange" page="1" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="CBETreasuryExchange">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
         </effects>
     </tech>
 
@@ -3375,7 +3787,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModWaystationCenters">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3383,7 +3795,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModProtectedMarkets" page="2" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3423,7 +3835,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModProtectedMarkets">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3431,7 +3843,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModRoadwardForts" page="2" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3474,7 +3886,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModRoadwardForts">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3506,8 +3918,14 @@
                 <target type="ProtoUnit">TradePost</target>
             </effect>
 
+            <!-- Unlock the first Citadel Native-allied shipment -->
+            <effect type="TechStatus" status="obtainable">CBENativeScoutsShipment</effect>
+            <effect type="CommandAdd" tech="CBENativeScoutsShipment" page="0" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModFrontierCompacts">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3515,7 +3933,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModBorderPacts" page="2" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3553,7 +3971,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModBorderPacts">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3561,7 +3979,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModCouncilOfTheFrontier" page="2" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3593,7 +4011,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModCouncilOfTheFrontier">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3601,7 +4019,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModBorderlandConcord" page="2" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3649,7 +4067,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModBorderlandConcord">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3657,7 +4075,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModGuardianOfTheAccords" page="2" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3710,15 +4128,36 @@
                 <target type="ProtoUnit">AbstractNativeWarrior</target>
             </effect>
 
+            <!-- Apply the 1st Michigan Volunteer Sharpshooters Cree upgrades to mercenary Trackers only -->
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="1.35" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" action="EagleEyeChargeAttack" amount="1.00"
+                subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+            <effect type="Data" amount="9.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">NatMercTracker</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModGuardianOfTheAccords">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
     </tech>
 
     <!-- ========================================================= -->
-    <!-- STANDALONE: Civic Workshop â€” Age III                      -->
+    <!-- STANDALONE: Civic Workshop ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Age III                      -->
     <!-- Page 2 / Column 4                                         -->
     <!-- ========================================================= -->
 
@@ -3767,7 +4206,7 @@
             </effect>
 
             <effect type="CommandRemove" tech="ModCivicWorkshop">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3805,7 +4244,7 @@
 
 
             <effect type="CommandRemove" tech="ModNewWorldSpoils">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3813,7 +4252,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModSettlersResolve" page="2" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -3877,12 +4316,12 @@
                 <target type="ProtoUnit">deREVFilibuster</target>
             </effect>
 
-            <effect type="CommandAdd" proto="deREVFilibuster" page="0" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+            <effect type="CommandAdd" proto="deREVFilibuster" page="0" column="4">
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="CommandRemove" tech="ModSettlersResolve">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">
@@ -3890,7 +4329,7 @@
             </effect>
 
             <effect type="CommandAdd" tech="ModExpeditionaryCorps" page="2" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3916,7 +4355,7 @@
         </prereqs>
 
         <effects>
-            <!-- Allow Bunker Mills to train Filibusters -->
+            <!-- Allow The Presidio to train Filibusters -->
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">deREVFilibuster</target>
             </effect>
@@ -3939,8 +4378,34 @@
                 <target type="ProtoUnit">deREVFilibuster</target>
             </effect>
 
+            <!-- Filibusters gain +0.25 damage multiplier against heroes. -->
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="Hero" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">deREVFilibuster</target>
+            </effect>
+
+            <!-- Increase Peltryman stats. -->
+            <effect type="Data" amount="1.35" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+
+            <!-- Peltrymen deal +200% damage against pets and treasure guardians. -->
+            <effect type="Data" amount="3.00" subtype="DamageBonus" unittype="AbstractPet" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+            <effect type="Data" amount="3.00" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+
+            <!-- Peltrymen gain +0.25 damage multiplier against heroes. -->
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="Hero" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">CBEPeltryman</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModExpeditionaryCorps">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
         </effects>
@@ -3981,15 +4446,15 @@
                 <target type="Player"></target>
             </effect>
             <effect type="CommandRemove" tech="ModNewWorldProspects">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModPioneerArrivals</effect>
             <effect type="CommandAdd" tech="ModPioneerArrivals" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModPioneeringSettlement</effect>
             <effect type="CommandAdd" tech="ModPioneeringSettlement" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4018,84 +4483,47 @@
                 <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
             </effect>
 
-            <!-- Citizen roll 1: arrival leader, strongly favors Pilgrims -->
-            <effect type="RandomTech" select="1" status="active">
-                <tech>ModNWPCitizenR1Ticket01</tech>
-                <tech>ModNWPCitizenR1Ticket02</tech>
-                <tech>ModNWPCitizenR1Ticket03</tech>
-                <tech>ModNWPCitizenR1Ticket04</tech>
-                <tech>ModNWPCitizenR1Ticket05</tech>
-                <tech>ModNWPCitizenR1Ticket06</tech>
-                <tech>ModNWPCitizenR1Ticket07</tech>
-                <tech>ModNWPCitizenR1Ticket08</tech>
-                <tech>ModNWPCitizenR1Ticket09</tech>
-                <tech>ModNWPCitizenR1Ticket10</tech>
-                <tech>ModNWPCitizenR1Ticket11</tech>
-                <tech>ModNWPCitizenR1Ticket12</tech>
-                <tech>ModNWPCitizenR1Ticket13</tech>
-                <tech>ModNWPCitizenR1Ticket14</tech>
-                <tech>ModNWPCitizenR1Ticket15</tech>
-                <tech>ModNWPCitizenR1Ticket16</tech>
-                <tech>ModNWPCitizenR1Ticket17</tech>
-                <tech>ModNWPCitizenR1Ticket18</tech>
-                <tech>ModNWPCitizenR1Ticket19</tech>
-                <tech>ModNWPCitizenR1Ticket20</tech>
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
             </effect>
 
-            <!-- Citizen roll 2: dependable settler with uncommon and rare possibilities -->
-            <effect type="RandomTech" select="1" status="active">
-                <tech>ModNWPCitizenR2Ticket01</tech>
-                <tech>ModNWPCitizenR2Ticket02</tech>
-                <tech>ModNWPCitizenR2Ticket03</tech>
-                <tech>ModNWPCitizenR2Ticket04</tech>
-                <tech>ModNWPCitizenR2Ticket05</tech>
-                <tech>ModNWPCitizenR2Ticket06</tech>
-                <tech>ModNWPCitizenR2Ticket07</tech>
-                <tech>ModNWPCitizenR2Ticket08</tech>
-                <tech>ModNWPCitizenR2Ticket09</tech>
-                <tech>ModNWPCitizenR2Ticket10</tech>
-                <tech>ModNWPCitizenR2Ticket11</tech>
-                <tech>ModNWPCitizenR2Ticket12</tech>
-                <tech>ModNWPCitizenR2Ticket13</tech>
-                <tech>ModNWPCitizenR2Ticket14</tech>
-                <tech>ModNWPCitizenR2Ticket15</tech>
-                <tech>ModNWPCitizenR2Ticket16</tech>
-                <tech>ModNWPCitizenR2Ticket17</tech>
-                <tech>ModNWPCitizenR2Ticket18</tech>
-                <tech>ModNWPCitizenR2Ticket19</tech>
-                <tech>ModNWPCitizenR2Ticket20</tech>
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
             </effect>
 
-            <!-- Citizen roll 3: opportunity roll with specialist and jackpot possibilities -->
-            <effect type="RandomTech" select="1" status="active">
-                <tech>ModNWPCitizenR3Ticket01</tech>
-                <tech>ModNWPCitizenR3Ticket02</tech>
-                <tech>ModNWPCitizenR3Ticket03</tech>
-                <tech>ModNWPCitizenR3Ticket04</tech>
-                <tech>ModNWPCitizenR3Ticket05</tech>
-                <tech>ModNWPCitizenR3Ticket06</tech>
-                <tech>ModNWPCitizenR3Ticket07</tech>
-                <tech>ModNWPCitizenR3Ticket08</tech>
-                <tech>ModNWPCitizenR3Ticket09</tech>
-                <tech>ModNWPCitizenR3Ticket10</tech>
-                <tech>ModNWPCitizenR3Ticket11</tech>
-                <tech>ModNWPCitizenR3Ticket12</tech>
-                <tech>ModNWPCitizenR3Ticket13</tech>
-                <tech>ModNWPCitizenR3Ticket14</tech>
-                <tech>ModNWPCitizenR3Ticket15</tech>
-                <tech>ModNWPCitizenR3Ticket16</tech>
-                <tech>ModNWPCitizenR3Ticket17</tech>
-                <tech>ModNWPCitizenR3Ticket18</tech>
-                <tech>ModNWPCitizenR3Ticket19</tech>
-                <tech>ModNWPCitizenR3Ticket20</tech>
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: common or uncommon arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
             </effect>
 
             <effect type="CommandRemove" tech="ModPioneerArrivals">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModHomesteadMigration</effect>
             <effect type="CommandAdd" tech="ModHomesteadMigration" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4120,12 +4548,52 @@
         </prereqs>
 
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: common or uncommon arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHomesteadMigration">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModTownshipImmigration</effect>
             <effect type="CommandAdd" tech="ModTownshipImmigration" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4151,12 +4619,59 @@
 
         
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="15.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: all tiers available -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                    <unit>Coureur</unit>
+                    <unit>CoureurCree</unit>
+                    <unit>deNatRoyalHuntsman</unit>
+                    <unit>deMiner</unit>
+                    <unit>SettlerWagon</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModTownshipImmigration">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModSettlerRecruitment</effect>
             <effect type="CommandAdd" tech="ModSettlerRecruitment" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4181,12 +4696,63 @@
         </prereqs>
 
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="15.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: all tiers available -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                    <unit>Coureur</unit>
+                    <unit>CoureurCree</unit>
+                    <unit>deNatRoyalHuntsman</unit>
+                    <unit>deMiner</unit>
+                    <unit>SettlerWagon</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModSettlerRecruitment">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBEColonialMigrantsShipment</effect>
+            <effect type="CommandAdd" tech="CBEColonialMigrantsShipment" page="0" column="3">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModASecondChance</effect>
             <effect type="CommandAdd" tech="ModASecondChance" page="1" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4211,8 +4777,55 @@
         </prereqs>
 
         <effects>
+            <!-- Expand the shared civilization Settler / worker cap -->
+            <effect type="Data" amount="25.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">LogicalTypeSettlerBuildLimit</target>
+            </effect>
+
+            <!-- Deliver one civilization-appropriate House Wagon -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="ModHouseWagon" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Citizen roll 1: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 2: common arrival -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
+            <!-- Citizen roll 3: all tiers available -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                    <unit>Coureur</unit>
+                    <unit>CoureurCree</unit>
+                    <unit>deNatRoyalHuntsman</unit>
+                    <unit>deMiner</unit>
+                    <unit>SettlerWagon</unit>
+                </units>
+            </effect>
+
             <effect type="CommandRemove" tech="ModASecondChance">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4236,12 +4849,16 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPioneeringSettlement">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModExpandingHomestead</effect>
             <effect type="CommandAdd" tech="ModExpandingHomestead" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4266,12 +4883,16 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModExpandingHomestead">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModGrowingTownship</effect>
             <effect type="CommandAdd" tech="ModGrowingTownship" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4296,12 +4917,37 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deHomesteadWagon" relativity="Absolute">
+                <target type="Player"/>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deMilitaryWagon" relativity="Absolute">
+                <target type="Player"/>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deHomesteadWagon</target>
+            </effect>
+            <effect type="CommandAdd" proto="deHomesteadWagon" page="0" column="1">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deMilitaryWagon</target>
+            </effect>
+            <effect type="CommandAdd" proto="deMilitaryWagon" page="0" column="2">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModGrowingTownship">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModIncorporatedTownship</effect>
             <effect type="CommandAdd" tech="ModIncorporatedTownship" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4326,12 +4972,16 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModIncorporatedTownship">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModPropertyTax</effect>
             <effect type="CommandAdd" tech="ModPropertyTax" page="1" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4356,8 +5006,16 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="Autogather" amount="0.10" subtype="WorkRate" unittype="Gold" relativity="Assign">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
+            <effect type="Data" amount="5.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractHouse</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPropertyTax">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4381,16 +5039,36 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="Gather" amount="1.05" subtype="WorkRate" unittype="Huntable" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.05" subtype="WorkRate" unittype="AbstractBerryBush" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <!-- Gatherers receive 10% more from each natural resource source. -->
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Huntable" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Tree" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="AbstractMine" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModLivingOffTheLand">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModHuntingGrounds</effect>
             <effect type="CommandAdd" tech="ModHuntingGrounds" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModPlowsAndPastures</effect>
             <effect type="CommandAdd" tech="ModPlowsAndPastures" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4414,12 +5092,19 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="HuntingLodgeNaturalFoodAura" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+            <effect type="Data" action="AreaGatherHuntable" amount="9.00" subtype="WorkRate" unittype="Food" relativity="Override">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHuntingGrounds">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModGameTrails</effect>
             <effect type="CommandAdd" tech="ModGameTrails" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4444,12 +5129,16 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" amount="1.10" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModGameTrails">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModFrontierHunting</effect>
             <effect type="CommandAdd" tech="ModFrontierHunting" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4474,12 +5163,19 @@
         </prereqs>
 
         <effects>
+            <effect type="Data" action="RangedAttack" amount="5.00" subtype="Damage" relativity="Absolute">
+                <target type="ProtoUnit">ModHuntingLodge</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="5.00" subtype="Damage" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModFrontierHunting">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModSeasonalCamps</effect>
             <effect type="CommandAdd" tech="ModSeasonalCamps" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4504,12 +5200,23 @@
         </prereqs>
 
         <effects>
+            <!-- A second 10% resource-yield bonus; stacks with Living off the Land. -->
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Huntable" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="Tree" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10" subtype="Yield" unittype="AbstractMine" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandEconomy</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModSeasonalCamps">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModAbundantGame</effect>
             <effect type="CommandAdd" tech="ModAbundantGame" page="1" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4534,8 +5241,14 @@
         </prereqs>
 
         <effects>
+            <!-- Unlock the repeatable Buffalo Herds shipment. -->
+            <effect type="TechStatus" status="obtainable">CBEAbundantGameShipment</effect>
+            <effect type="CommandAdd" tech="CBEAbundantGameShipment" page="0" column="4">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModAbundantGame">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4560,12 +5273,52 @@
         </prereqs>
 
         <effects>
+            <!-- Villagers gather Food 15% faster from all farm-type buildings. -->
+            <effect type="Data" action="Gather" amount="1.15"
+                subtype="WorkRate" unittype="AbstractFarmBuilding"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Herdables fatten 10% faster while passive or assigned to the
+                 civilization-specific livestock buildings. -->
+            <effect type="Data" action="AutoGather" amount="1.10"
+                subtype="WorkRate" unittype="Herdable"
+                relativity="BasePercent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="ypVillage"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="LivestockPen"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="GatherHacienda" amount="1.10"
+                subtype="InventoryRate" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="Farm"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="deLivestockMarket"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPlowsAndPastures">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModHomesteadPlots</effect>
             <effect type="CommandAdd" tech="ModHomesteadPlots" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4590,12 +5343,50 @@
         </prereqs>
 
         <effects>
+            <!-- Apply double the Plows and Pastures bonuses. -->
+            <effect type="Data" action="Gather" amount="1.30"
+                subtype="WorkRate" unittype="AbstractFarmBuilding"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data" action="AutoGather" amount="1.20"
+                subtype="WorkRate" unittype="Herdable"
+                relativity="BasePercent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="ypVillage"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="LivestockPen"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="GatherHacienda" amount="1.20"
+                subtype="InventoryRate" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="Farm"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="deLivestockMarket"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHomesteadPlots">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModOpenPastures</effect>
             <effect type="CommandAdd" tech="ModOpenPastures" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4620,12 +5411,17 @@
         </prereqs>
 
         <effects>
+            <!-- Increase the build limit of all herdable animal types by 15%. -->
+            <effect type="Data" amount="1.15" subtype="BuildLimit" relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModOpenPastures">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModHarvestEstates</effect>
             <effect type="CommandAdd" tech="ModHarvestEstates" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4650,12 +5446,31 @@
         </prereqs>
 
         <effects>
+            <!-- Every farm-type building provides five additional population.
+                 Absolute addition stacks with existing Hacienda and homestead housing. -->
+            <effect type="Data" amount="5.00"
+                subtype="PopulationCapAddition" relativity="Absolute">
+                <target type="ProtoUnit">AbstractFarmBuilding</target>
+            </effect>
+
+            <!-- Farm-type buildings cost 10% less Wood. -->
+            <effect type="Data" amount="0.90" subtype="Cost"
+                resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractFarmBuilding</target>
+            </effect>
+
+            <!-- Farm-type buildings require 10% fewer build points. -->
+            <effect type="Data" amount="0.90"
+                subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractFarmBuilding</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHarvestEstates">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModBreadbasketColony</effect>
             <effect type="CommandAdd" tech="ModBreadbasketColony" page="1" column="3">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4680,8 +5495,18 @@
         </prereqs>
 
         <effects>
+            <!-- Unlock repeatable second-row Food exchange options. -->
+            <effect type="TechStatus" status="obtainable">CBEBreadbasketFoodToWoodExchange</effect>
+            <effect type="TechStatus" status="obtainable">CBEBreadbasketFoodToCoinExchange</effect>
+            <effect type="CommandAdd" tech="CBEBreadbasketFoodToWoodExchange" page="1" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" tech="CBEBreadbasketFoodToCoinExchange" page="1" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModBreadbasketColony">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4706,11 +5531,28 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModLifelineToTheOldWorld">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <!-- Initial Sprawling-route shipment requests. These Secretariat-only
+                 copies prevent the Latin City-State alliance from exposing the
+                 buttons to Citadel players. -->
+            <effect type="TechStatus" status="obtainable">CBESprawlingFoodShipment</effect>
+            <effect type="TechStatus" status="obtainable">CBESprawlingWoodShipment</effect>
+            <effect type="TechStatus" status="obtainable">CBESprawlingCoinShipment</effect>
+            <effect type="CommandAdd" tech="CBESprawlingFoodShipment" page="0" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" tech="CBESprawlingWoodShipment" page="0" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" tech="CBESprawlingCoinShipment" page="0" column="2">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModColonialDispatches</effect>
             <effect type="CommandAdd" tech="ModColonialDispatches" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4736,11 +5578,29 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModColonialDispatches">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="1.00" subtype="Resource" resource="Ships" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="ResourceTrickleRate" resource="XP" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <effect type="CommandAdd" command="SetBuildingAsHomeCityGatherPointEconomic" page="2" column="4">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" command="SetBuildingAsHomeCityGatherPointMilitary" page="2" column="5">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetUnitType" unittype="HCGatherPointPri3" relativity="Assign">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModWaystationMarkets</effect>
             <effect type="CommandAdd" tech="ModWaystationMarkets" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4766,11 +5626,25 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModWaystationMarkets">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.95" subtype="Market" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="Market" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.95" subtype="deLivestockMarket" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="deLivestockMarket" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModEstablishedTradeRoutes</effect>
             <effect type="CommandAdd" tech="ModEstablishedTradeRoutes" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4796,11 +5670,14 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModEstablishedTradeRoutes">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+            <effect type="Data" amount="1.00" tactic="CBETradeShipmentPolicy" subtype="TacticEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModLicensedTraders</effect>
             <effect type="CommandAdd" tech="ModLicensedTraders" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4826,11 +5703,41 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModLicensedTraders">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.90" subtype="Market" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Market" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="deLivestockMarket" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="deLivestockMarket" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="XP" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModMerchantConvoys</effect>
             <effect type="CommandAdd" tech="ModMerchantConvoys" page="1" column="4">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4856,7 +5763,23 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModMerchantConvoys">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="XP" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
             </effect>
         </effects>
     </tech>
@@ -4881,11 +5804,19 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModClearingTheFrontier">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="5.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModSettlersRoads</effect>
             <effect type="CommandAdd" tech="ModSettlersRoads" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4911,11 +5842,16 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModSettlersRoads">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="1.10" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModClearingCrews</effect>
             <effect type="CommandAdd" tech="ModClearingCrews" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4941,11 +5877,19 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModClearingCrews">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" action="Gather" amount="1.15" subtype="WorkRate" unittype="Tree" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.15" subtype="WorkRate" unittype="ypGroveBuilding" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModSurveyedLots</effect>
             <effect type="CommandAdd" tech="ModSurveyedLots" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -4971,11 +5915,23 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModSurveyedLots">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="7.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="ProtoUnitFlag" flagid="125" relativity="Assign">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="ProtoUnitFlag" flagid="125" relativity="Assign">
+                <target type="ProtoUnit">AbstractFort</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModOpenCountry</effect>
             <effect type="CommandAdd" tech="ModOpenCountry" page="1" column="5">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -5001,7 +5957,11 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModOpenCountry">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractFort</target>
             </effect>
         </effects>
     </tech>
@@ -5027,11 +5987,19 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModVoyageurs">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWagon</target>
+            </effect>
+            <effect type="Data" action="Build" amount="1.20" subtype="WorkRate" unittype="Building" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWagon</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModColonialMarkets</effect>
             <effect type="CommandAdd" tech="ModColonialMarkets" page="2" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -5057,11 +6025,16 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModColonialMarkets">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.75" subtype="ResearchPoints" relativity="Percent">
+                <target type="techWithFlag">DEMarketTechnology</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModCaravans</effect>
             <effect type="CommandAdd" tech="ModCaravans" page="2" column="0">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -5087,7 +6060,17 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModCaravans">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="Data" amount="0.75" subtype="ResourceTrickleRate" resource="Food" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.75" subtype="ResourceTrickleRate" resource="Wood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.75" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute">
+                <target type="Player"></target>
             </effect>
         </effects>
     </tech>
@@ -5112,11 +6095,28 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModLooseStandards">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModQuickConstruction</effect>
             <effect type="CommandAdd" tech="ModQuickConstruction" page="2" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -5142,11 +6142,16 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModQuickConstruction">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.80" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModCheapMaterials</effect>
             <effect type="CommandAdd" tech="ModCheapMaterials" page="2" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -5172,11 +6177,28 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModCheapMaterials">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModBoomtownBuilding</effect>
             <effect type="CommandAdd" tech="ModBoomtownBuilding" page="2" column="1">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -5202,7 +6224,11 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModBoomtownBuilding">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="Data" amount="0.70" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
             </effect>
         </effects>
     </tech>
@@ -5228,11 +6254,28 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModFrontierCompanies">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModContractedGuards</effect>
             <effect type="CommandAdd" tech="ModContractedGuards" page="2" column="2">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
             </effect>
         </effects>
     </tech>
@@ -5258,897 +6301,326 @@
 
         <effects>
             <effect type="CommandRemove" tech="ModContractedGuards">
-                <target type="ProtoUnit">ModBunkerMills</target>
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="Data" amount="1.10" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
             </effect>
         </effects>
     </tech>
 
 
-    <!--  =========================  -->
-    <!--  Universal Mod Activation   -->
-    <!--  =========================  -->
 
 
-    <!-- European civilizations -->
-    <tech name="Age0British" type="Normal">
+    <!-- ################################################################# -->
+    <!-- SECTION 3: SPECIAL TECHNOLOGIES, COMMANDS, POWERS, AND SHIPMENTS  -->
+    <!-- Shadows, subciv support, special commands, and repeatable sends.  -->
+    <!-- ################################################################# -->
+
+    <!-- ========================================================= -->
+    <!-- CBE Volatile Shadow Technologies                          -->
+    <!-- Hidden, reversible effects driven by live prerequisites.  -->
+    <!-- ========================================================= -->
+
+    <!-- Test harness: the Colonial Secretariat supplies +75 population
+         capacity while this volatile tech is active. This validates a
+         reversible PopulationCapAddition before policy-state bridging. -->
+    <tech name="CBEShadowTechState" type="Normal">
+        <dbid>991207</dbid>
+        <status>UNOBTAINABLE</status>
+        <flag>Shadow</flag>
+    </tech>
+
+    <tech name="CBEWarEconomyPopCapShadowTest" type="Normal">
+        <dbid>991208</dbid>
+        <status>UNOBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEWarEconomyBookMarker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
         <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect type="Data" amount="75.00" subtype="PopulationCapAddition" relativity="Absolute">
+                <target type="ProtoUnit">CBEColonialSecretariat</target>
+            </effect>
         </effects>
     </tech>
 
-    <tech name="Age0French" type="Normal">
+    <!-- Reversible Trade Shipments effects. The Merchant Republics-style
+         one-time refund of previously collected trade income is intentionally
+         omitted because this policy can be selected repeatedly. -->
+    <tech name="CBETradeShipmentEffectsShadow" type="Normal">
+        <dbid>991218</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBETradeShipmentPolicyBookMarker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
         <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="XP" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="InventoryAmount" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Market" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Market" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.33" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">LogicalTypeLandMilitary</target>
+            </effect>
         </effects>
     </tech>
 
-    <tech name="Age0Spanish" type="Normal">
+    <tech name="CBEStateOfSiegeEffectsShadow" type="Normal">
+        <dbid>991210</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
         <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <!-- Attack range bonuses are action-specific technology effects. -->
+            <effect type="Data" action="VolleyRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="DefendRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="RangedAttack2" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="BowAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="GuardianRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect type="Data" action="RepeatingRangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+
+            <effect type="Data" action="CannonAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="2.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+
+            <effect type="Data" action="CannonAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="4.00" subtype="MaximumRange" relativity="Absolute">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
+            <!-- A lower RateOfFire value means less delay between attacks. -->
+            <effect type="Data" action="CannonAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="0.90" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">Outpost</target>
+            </effect>
+
+            <effect type="Data" action="CannonAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="FireAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="BuildingAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+            <effect type="Data" action="RangedAttackContained" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+                <target type="ProtoUnit">FortFrontier</target>
+            </effect>
+
         </effects>
     </tech>
 
-    <tech name="Age0Portuguese" type="Normal">
+    <!-- Each villager type is isolated so volatile reversal cannot enable foreign civilizations' villagers. -->
+    <tech name="CBEStateOfSiegeDisableSettlerShadow" type="Normal">
+        <dbid>991211</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="Settler" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
         <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Dutch" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0German" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Russian" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Ottoman" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect mergeMode="add" type="Data" amount="10.00"
-                subtype="BuildLimit" relativity="Assign">
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">Settler</target>
             </effect>
         </effects>
     </tech>
 
-
-    <!-- Asian civilizations -->
-    <tech name="YPAge0Chinese" type="Normal">
+    <tech name="CBEStateOfSiegeDisableCoureurShadow" type="Normal">
+        <dbid>991212</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="Coureur" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
         <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">Coureur</target>
+            </effect>
         </effects>
     </tech>
 
-    <tech name="YPAge0Japanese" type="Normal">
+    <tech name="CBEStateOfSiegeDisableNativeShadow" type="Normal">
+        <dbid>991213</dbid>
+        <status>OBTAINABLE</status>
+        <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="SettlerNative" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
         <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="YPAge0Indians" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-
-    <!-- Native American civilizations -->
-    <tech name="Age0Lakota" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Haudenosaunee" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="Age0Aztecs" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-
-    <!-- Definitive Edition civilizations -->
-    <tech name="DEAge0Inca" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">SettlerNative</target>
             </effect>
         </effects>
     </tech>
 
-    <tech name="DEAge0Swedish" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">Settler</target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Americans" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">Settler</target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Mexicans" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-
-            <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
-                <target type="ProtoUnit">Settler</target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Hausa" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Ethiopian" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Maltese" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-    <tech name="DEAge0Italians" type="Normal">
-        <effects>
-            <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
-        </effects>
-    </tech>
-
-
-    <!-- New World Prospects citizen roll 1 weighted shipment tickets -->
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket01" type="Normal">
-        <dbid>991400</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
+    <tech name="CBEStateOfSiegeDisableChineseShadow" type="Normal">
+        <dbid>991214</dbid>
+        <status>OBTAINABLE</status>
         <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="ypSettlerAsian" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
         <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ypSettlerAsian</target>
             </effect>
         </effects>
     </tech>
 
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket02" type="Normal">
-        <dbid>991401</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
+    <tech name="CBEStateOfSiegeDisableJapaneseShadow" type="Normal">
+        <dbid>991215</dbid>
+        <status>OBTAINABLE</status>
         <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="ypSettlerJapanese" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
         <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ypSettlerJapanese</target>
             </effect>
         </effects>
     </tech>
 
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket03" type="Normal">
-        <dbid>991402</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
+    <tech name="CBEStateOfSiegeDisableIndianShadow" type="Normal">
+        <dbid>991216</dbid>
+        <status>OBTAINABLE</status>
         <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="ypSettlerIndian" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
         <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">ypSettlerIndian</target>
             </effect>
         </effects>
     </tech>
 
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket04" type="Normal">
-        <dbid>991403</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
+    <tech name="CBEStateOfSiegeDisableAfricanShadow" type="Normal">
+        <dbid>991217</dbid>
+        <status>OBTAINABLE</status>
         <flag>Shadow</flag>
+        <flag>Volatile</flag>
+        <flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEStateOfSiegePolicyBookMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="deSettlerAfrican" count="1" operator="gte" state="deadState,aliveState" />
+        </prereqs>
         <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket05" type="Normal">
-        <dbid>991404</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket06" type="Normal">
-        <dbid>991405</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket07" type="Normal">
-        <dbid>991406</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket08" type="Normal">
-        <dbid>991407</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket09" type="Normal">
-        <dbid>991408</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket10" type="Normal">
-        <dbid>991409</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket11" type="Normal">
-        <dbid>991410</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket12" type="Normal">
-        <dbid>991411</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket13" type="Normal">
-        <dbid>991412</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket14" type="Normal">
-        <dbid>991413</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket15" type="Normal">
-        <dbid>991414</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket16" type="Normal">
-        <dbid>991415</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket17" type="Normal">
-        <dbid>991416</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket18" type="Normal">
-        <dbid>991417</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket19" type="Normal">
-        <dbid>991418</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Coureur" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR1Ticket20" type="Normal">
-        <dbid>991419</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <!-- New World Prospects citizen roll 2 weighted shipment tickets -->
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket01" type="Normal">
-        <dbid>991420</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket02" type="Normal">
-        <dbid>991421</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket03" type="Normal">
-        <dbid>991422</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket04" type="Normal">
-        <dbid>991423</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket05" type="Normal">
-        <dbid>991424</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket06" type="Normal">
-        <dbid>991425</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket07" type="Normal">
-        <dbid>991426</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket08" type="Normal">
-        <dbid>991427</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket09" type="Normal">
-        <dbid>991428</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket10" type="Normal">
-        <dbid>991429</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket11" type="Normal">
-        <dbid>991430</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket12" type="Normal">
-        <dbid>991431</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket13" type="Normal">
-        <dbid>991432</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket14" type="Normal">
-        <dbid>991433</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket15" type="Normal">
-        <dbid>991434</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket16" type="Normal">
-        <dbid>991435</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket17" type="Normal">
-        <dbid>991436</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket18" type="Normal">
-        <dbid>991437</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatSPCLenapeVillager" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket19" type="Normal">
-        <dbid>991438</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Coureur" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR2Ticket20" type="Normal">
-        <dbid>991439</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="CoureurCree" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <!-- New World Prospects citizen roll 3 weighted shipment tickets -->
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket01" type="Normal">
-        <dbid>991440</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket02" type="Normal">
-        <dbid>991441</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket03" type="Normal">
-        <dbid>991442</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket04" type="Normal">
-        <dbid>991443</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket05" type="Normal">
-        <dbid>991444</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket06" type="Normal">
-        <dbid>991445</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket07" type="Normal">
-        <dbid>991446</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket08" type="Normal">
-        <dbid>991447</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Settler" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket09" type="Normal">
-        <dbid>991448</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket10" type="Normal">
-        <dbid>991449</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Pilgrim" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket11" type="Normal">
-        <dbid>991450</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket12" type="Normal">
-        <dbid>991451</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatNomad" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket13" type="Normal">
-        <dbid>991452</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatSPCLenapeVillager" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket14" type="Normal">
-        <dbid>991453</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatSPCLenapeVillager" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket15" type="Normal">
-        <dbid>991454</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="Coureur" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket16" type="Normal">
-        <dbid>991455</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="CoureurCree" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket17" type="Normal">
-        <dbid>991456</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deNatRoyalHuntsman" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket18" type="Normal">
-        <dbid>991457</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deMiner" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket19" type="Normal">
-        <dbid>991458</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="deMiner" relativity="Absolute">
-                <target type="Player"></target>
-            </effect>
-        </effects>
-    </tech>
-
-    <tech mergeMode="add" name="ModNWPCitizenR3Ticket20" type="Normal">
-        <dbid>991459</dbid>
-        <researchpoints>0.0000</researchpoints>
-        <status>UNOBTAINABLE</status>
-        <flag>Shadow</flag>
-        <effects>
-            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit" unittype="SettlerWagon" relativity="Absolute">
-                <target type="Player"></target>
+            <effect type="Data" amount="0.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">deSettlerAfrican</target>
             </effect>
         </effects>
     </tech>
@@ -6255,8 +6727,8 @@
         <dbid>991201</dbid>
         <displaynameid>9913006</displaynameid>
         <rollovertextid>9913007</rollovertextid>
-        <cost resourcetype="Ships">1.0000</cost>
-        <researchpoints>40.0000</researchpoints>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <icon>resources\images\icons\techs\infinite_food.png</icon>
         <flag>YPInfiniteTech</flag>
@@ -6271,8 +6743,8 @@
         <dbid>991202</dbid>
         <displaynameid>9913009</displaynameid>
         <rollovertextid>9913010</rollovertextid>
-        <cost resourcetype="Ships">1.0000</cost>
-        <researchpoints>40.0000</researchpoints>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <icon>resources\images\icons\techs\infinite_wood.png</icon>
         <flag>YPInfiniteTech</flag>
@@ -6287,13 +6759,266 @@
         <dbid>991203</dbid>
         <displaynameid>9913012</displaynameid>
         <rollovertextid>9913013</rollovertextid>
-        <cost resourcetype="Ships">1.0000</cost>
-        <researchpoints>40.0000</researchpoints>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <icon>resources\images\icons\techs\infinite_gold.png</icon>
         <flag>YPInfiniteTech</flag>
         <effects>
             <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="CrateofCoin" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Colonial Secretariat copies of the Great Bank resource shipments.
+         Separate technology statuses keep the mutually exclusive routes isolated. -->
+    <tech name="CBESprawlingFoodShipment" type="Normal">
+        <dbid>991222</dbid>
+        <displaynameid>9913006</displaynameid>
+        <rollovertextid>9913007</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_food.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofFood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBESprawlingWoodShipment" type="Normal">
+        <dbid>991223</dbid>
+        <displaynameid>9913009</displaynameid>
+        <rollovertextid>9913010</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_wood.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofWood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBESprawlingCoinShipment" type="Normal">
+        <dbid>991224</dbid>
+        <displaynameid>9913012</displaynameid>
+        <rollovertextid>9913013</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_gold.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofCoin" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Repeatable Sprawling hunt shipment unlocked by Abundant Game. -->
+    <tech name="CBEAbundantGameShipment" type="Normal">
+        <dbid>991227</dbid>
+        <displaynameid>9913033</displaynameid>
+        <rollovertextid>9913034</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_bison.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <!-- Send three Bison for every Hunting Lodge owned when shipped. -->
+            <effect type="Data" amount="3.00"
+                subtype="FreeHomeCityUnitByUnitCount"
+                counttype="ModHuntingLodge"
+                unittype="Bison"
+                relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Repeatable Breadbasket Colony exchanges. Each converts the player's
+         entire Food stockpile when its 30-second research time completes. -->
+    <tech name="CBEBreadbasketFoodToWoodExchange" type="Normal">
+        <dbid>991228</dbid>
+        <displaynameid>9913036</displaynameid>
+        <rollovertextid>9913037</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_wood.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="0.75"
+                toresource="Wood" fromresource="Food">
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEBreadbasketFoodToCoinExchange" type="Normal">
+        <dbid>991229</dbid>
+        <displaynameid>9913039</displaynameid>
+        <rollovertextid>9913040</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_gold.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="0.70"
+                toresource="Gold" fromresource="Food">
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Repeatable Treasury Exchange conversions. Each converts the player's
+         entire Coin stockpile when its 30-second research time completes. -->
+    <tech name="CBETreasuryCoinToWoodExchange" type="Normal">
+        <dbid>991231</dbid>
+        <displaynameid>9913042</displaynameid>
+        <rollovertextid>9913043</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_wood.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="1.25"
+                toresource="Wood" fromresource="Gold">
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBETreasuryCoinToFoodExchange" type="Normal">
+        <dbid>991232</dbid>
+        <displaynameid>9913045</displaynameid>
+        <rollovertextid>9913046</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_food.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="1.10"
+                toresource="Food" fromresource="Gold">
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEColonialMigrantsShipment" type="Normal">
+        <dbid>991219</dbid>
+        <displaynameid>9913021</displaynameid>
+        <rollovertextid>9913022</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <cost resourcetype="Food">500.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_settler.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <!-- Worker roll 1: common migrant -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                </units>
+            </effect>
+
+            <!-- Worker roll 2: common or uncommon migrant -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                </units>
+            </effect>
+
+            <!-- Worker roll 3: all migrant tiers available -->
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnitRandom" relativity="Absolute">
+                <target type="Player"></target>
+                <units>
+                    <unit>Settler</unit>
+                    <unit>Pilgrim</unit>
+                    <unit>deNatNomad</unit>
+                    <unit>deNatSPCLenapeVillager</unit>
+                    <unit>Coureur</unit>
+                    <unit>CoureurCree</unit>
+                    <unit>ypSettlerAsian</unit>
+                    <unit>deSettlerAfrican</unit>
+                    <unit>SettlerWagon</unit>
+                </units>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBENativeScoutsShipment" type="Normal">
+        <dbid>991220</dbid>
+        <displaynameid>9913024</displaynameid>
+        <rollovertextid>9913025</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>45.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_cree.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="5.00" subtype="FreeHomeCityUnit"
+                unittype="NatMercTracker" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBECallInTheReserveShipment" type="Normal">
+        <dbid>991221</dbid>
+        <displaynameid>9913027</displaynameid>
+        <rollovertextid>9913028</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <cost resourcetype="Food">200.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_colonial_militia.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="12.00" subtype="FreeHomeCityUnit"
+                unittype="ModConscript" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Citadel-exclusive mixed-resource shipment unlocked by Citadel Treasury. -->
+    <tech name="CBECitadelStockpileShipment" type="Normal">
+        <dbid>991226</dbid>
+        <displaynameid>9913030</displaynameid>
+        <rollovertextid>9913031</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_mixed.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofFood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofWood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofCoin" relativity="Absolute">
                 <target type="Player"></target>
             </effect>
         </effects>

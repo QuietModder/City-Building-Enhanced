@@ -30,12 +30,17 @@
 
             <!-- Bunker Mills -->
             <string _locid="9900003">Bunker Mills</string>
-            <string _locid="9900004">A fortified mill that to help enhance economy and defend your colony</string>
+            <string _locid="9900004">A fortified Citadel mill that generates resources and supports nearby Settlers. Food, Wood, and Coin branch upgrades unlock matching local gathering auras.</string>
             <string _locid="9900005">Bunker Mills</string>
 
             <string _locid="9900006">Olive Orchard</string>
             <string _locid="9900007">A large cultivated olive orchard. Villagers gather Wood from its mature trees.</string>
             <string _locid="9900008">Olive Orchard</string>
+
+            <!-- Caravanserai -->
+            <string _locid="9900009">Caravanserai</string>
+            <string _locid="9900010">A fortified caravan station that arranges special economic and military shipments unlocked through City Planning.</string>
+            <string _locid="9900011">Arranges City Planning shipments.</string>
 
 
             <!-- ========================================================= -->
@@ -79,6 +84,31 @@
             <string _locid="9902022">Deploys into the appropriate population-supporting residence for your civilization.</string>
             <string _locid="9902023">Builds a civilization-appropriate House.</string>
 
+            <string _locid="9902024">Hunting Lodge</string>
+            <string _locid="9902025">A defensive hunting post that automatically gathers Food from nearby huntable animals.</string>
+            <string _locid="9902026">Defensive hunting post.</string>
+
+            <string _locid="9902027">The Presidio</string>
+            <string _locid="9902028">A fortified administrative headquarters that manages city planning, civic programs, and frontier development.</string>
+            <string _locid="9902029">Fortified administrative headquarters.</string>
+
+            <!-- Colonial administration buildings -->
+            <string _locid="9902030">Colonial Secretariat</string>
+            <string _locid="9902031">Manages persistent colony policies such as War Economy, Trade Charter, and Civil Defense.</string>
+            <string _locid="9902032">Manages colony policies.</string>
+
+            <string _locid="9902033">Government House</string>
+            <string _locid="9902034">The governor's headquarters, used to activate temporary emergency powers.</string>
+            <string _locid="9902035">Activates emergency powers.</string>
+
+            <string _locid="9902036">Peltryman</string>
+            <string _locid="9902037">Versatile ranged infantry and economic unit. Gathers Food and Wood, collects resource crates and treasures, regenerates while idle, performs Carbine and Eagle Eye attacks, and earns bonuses through Hunting Promotions.</string>
+            <string _locid="9902038">Ranged villager limited to five units.</string>
+
+            <!-- Citadel Cree Coureur -->
+            <string _locid="9902039">Cree Coureur</string>
+            <string _locid="9902040">Cree Coureur des Bois. Strong ranged villager with superior gathering rates and resistance to ranged attacks.</string>
+            <string _locid="9902041">Strong ranged villager.</string>
 
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
@@ -234,7 +264,7 @@
             <string _locid="9909041"></string>
 
             <string _locid="9909042">Citadel Treasury</string>
-            <string _locid="9909043"></string>
+            <string _locid="9909043">Bunker Mills generate an additional 0.25 Coin per second and gain +1 build limit. Unlocks the Citadel Stockpile shipment and the Treasury Exchange technology.</string>
 
             <string _locid="9909044">Waystation Centers</string>
             <string _locid="9909045">Markets become housing for travelers providing protection and services +5 population</string>
@@ -246,7 +276,7 @@
             <string _locid="9909049">Market build limit increased by 2</string>
 
             <string _locid="9909050">Frontier Compacts</string>
-            <string _locid="9909051"></string>
+            <string _locid="9909051">Trade Posts cost 10% less Wood. Unlocks the Native Scouts shipment at the Colonial Secretariat.</string>
 
             <string _locid="9909052">Border Pacts</string>
             <string _locid="9909053"></string>
@@ -258,7 +288,7 @@
             <string _locid="9909057"></string>
 
             <string _locid="9909058">Guardian of the Accords</string>
-            <string _locid="9909059"></string>
+            <string _locid="9909059">Native warriors move 15% faster, attack 25% faster, train 10% faster, and have 125% higher build limits. Mercenary Cree Trackers gain the upgrades from 1st Michigan Volunteer Sharpshooters: +60% base hit points and damage, Eagle Eye, and +9 line of sight.</string>
 
             <string _locid="9909060">Civic Workshop</string>
             <string _locid="9909061"></string>
@@ -270,133 +300,136 @@
             <string _locid="9909065">The settlement must survive. Each settler when defeated comes back as a filibuster</string>
 
             <string _locid="9909066">Expeditionary Corps</string>
-            <string _locid="9909067"></string>
+            <string _locid="9909067">Enables Filibuster training at The Presidio. Filibusters and Peltrymen gain +35% damage, +35% hit points, deal 3x damage against pets and treasure guardians, and gain +0.25 damage against heroes.</string>
 
             <string _locid="9909068">New World Prospects</string>
             <string _locid="9909069">Increases the shared Settler build limit by 2 and delivers a House Wagon that can construct your civilization's available housing.</string>
 
             <string _locid="9909070">Pioneer Arrivals</string>
-            <string _locid="9909071">Increases the shared Settler build limit by 2 and attracts 3 citizens. Each citizen is rolled independently, with Pilgrims common and exceptional workers appearing more rarely.</string>
+            <string _locid="9909071">Increases the shared Settler build limit by 3, delivers a House Wagon, and attracts 3 citizens drawn from the common and uncommon settler tiers.</string>
 
             <string _locid="9909072">Homestead Migration</string>
-            <string _locid="9909073"></string>
+            <string _locid="9909073">Increases the shared Settler build limit by 10, delivers a House Wagon, and attracts 3 citizens drawn from the common and uncommon settler tiers.</string>
 
             <string _locid="9909074">Township Immigration</string>
-            <string _locid="9909075"></string>
+            <string _locid="9909075">Increases the shared Settler build limit by 15, delivers a House Wagon, and attracts 3 citizens with all settler tiers available.</string>
 
             <string _locid="9909076">Settler Recruitment</string>
-            <string _locid="9909077"></string>
+            <string _locid="9909077">Increases the shared Settler build limit by 15, delivers a House Wagon, attracts 3 citizens with all settler tiers available, and unlocks Request Colonial Migrants at the Colonial Secretariat.</string>
 
             <string _locid="9909078">A Second Chance</string>
-            <string _locid="9909079"></string>
+            <string _locid="9909079">Increases the shared Settler build limit by 25, delivers a House Wagon, and attracts 3 citizens with all settler tiers available.</string>
 
             <string _locid="9909080">Pioneering Settlement</string>
-            <string _locid="9909081"></string>
+            <string _locid="9909081">Increases the build limit of Houses by 5.</string>
 
             <string _locid="9909082">Expanding Homestead</string>
-            <string _locid="9909083"></string>
+            <string _locid="9909083">Increases the build limit of Houses by 5.</string>
 
             <string _locid="9909084">Growing Township</string>
-            <string _locid="9909085"></string>
+            <string _locid="9909085">Increases the build limit of Houses by 5. Ships 1 Homestead Wagon and 1 Military Wagon. Both wagons can also be trained at The Presidio.</string>
 
             <string _locid="9909086">Incorporated Township</string>
-            <string _locid="9909087"></string>
+            <string _locid="9909087">Increases the build limit of Houses by 5.</string>
 
             <string _locid="9909088">Property Tax</string>
-            <string _locid="9909089"></string>
+            <string _locid="9909089">Increases the build limit of Houses by 5. Each House automatically generates 0.10 Coin per second.</string>
 
             <string _locid="9909090">Living off the Land</string>
-            <string _locid="9909091"></string>
+            <string _locid="9909091">Settlers gather Food 5% faster from huntable animals and berry bushes. Huntables, Trees, and Mines yield 10% more resources. Hunting Lodges cost 15% less Wood.</string>
 
             <string _locid="9909092">Hunting Grounds</string>
-            <string _locid="9909093"></string>
+            <string _locid="9909093">Hunting Lodges increase nearby Settlers' natural Food gathering rate by 10%. Hunting Lodges harvest nearby huntable animals 12.5% faster.</string>
 
             <string _locid="9909094">Game Trails</string>
-            <string _locid="9909095"></string>
+            <string _locid="9909095">All Settlers move 10% faster.</string>
 
             <string _locid="9909096">Frontier Hunting</string>
-            <string _locid="9909097"></string>
+            <string _locid="9909097">Hunting Lodges and Settlers gain +5 ranged attack.</string>
 
             <string _locid="9909098">Seasonal Camps</string>
-            <string _locid="9909099"></string>
+            <string _locid="9909099">Huntables, Trees, and Mines yield 10% more resources.</string>
 
             <string _locid="9909100">Abundant Game</string>
-            <string _locid="9909101"></string>
+            <string _locid="9909101">Unlocks the repeatable Buffalo Herds shipment at the Caravanserai.</string>
 
             <string _locid="9909102">Plows and Pastures</string>
-            <string _locid="9909103"></string>
+            <string _locid="9909103">Villagers gather Food from all farm-type buildings 15% faster, and herdable animals fatten 10% faster.</string>
 
             <string _locid="9909104">Homestead Plots</string>
-            <string _locid="9909105"></string>
+            <string _locid="9909105">Villagers gain 30% Food gather rate at all farm-type buildings, and herdable animals fatten 20% faster. Combined with Plows and Pastures: +45% farm gathering and +30% fattening.</string>
 
             <string _locid="9909106">Open Pastures</string>
-            <string _locid="9909107"></string>
+            <string _locid="9909107">Increases the build limit of all herdable animal types by 15%.</string>
 
             <string _locid="9909108">Harvest Estates</string>
-            <string _locid="9909109"></string>
+            <string _locid="9909109">Farm-type buildings provide +5 population, cost 10% less Wood, and construct 10% faster. The population bonus adds to existing housing effects.</string>
 
             <string _locid="9909110">Breadbasket Colony</string>
-            <string _locid="9909111"></string>
+            <string _locid="9909111">Unlocks repeatable Food-to-Wood and Food-to-Coin exchanges on the second row of the Caravanserai.</string>
 
             <string _locid="9909112">Lifeline to the Old World</string>
-            <string _locid="9909113"></string>
+            <string _locid="9909113">Unlocks repeatable Food, Wood, and Coin shipment requests at the Colonial Secretariat.</string>
 
             <string _locid="9909114">Colonial Dispatches</string>
-            <string _locid="9909115"></string>
+            <string _locid="9909115">Grants 1 shipment point, generates 0.25 XP per second, and allows the Caravanserai to be selected as the arrival point for economic or military Home City shipments.</string>
 
             <string _locid="9909116">Waystation Markets</string>
-            <string _locid="9909117"></string>
+            <string _locid="9909117">Improves Market and Livestock Market exchange rates by 5%.</string>
 
             <string _locid="9909118">Established Trade Routes</string>
-            <string _locid="9909119"></string>
+            <string _locid="9909119">Unlocks the Trade Shipments policy at the Colonial Secretariat.</string>
 
             <string _locid="9909120">Licensed Traders</string>
-            <string _locid="9909121"></string>
+            <string _locid="9909121">Improves Market and Livestock Market exchange rates by 10% and increases goods received whenever a trader reaches your Trading Posts by 10%.</string>
 
             <string _locid="9909122">Merchant Convoys</string>
-            <string _locid="9909123"></string>
+            <string _locid="9909123">Increases goods received whenever a trader reaches your Trading Posts by 50%.</string>
 
             <string _locid="9909124">Clearing the Frontier</string>
-            <string _locid="9909125"></string>
+            <string _locid="9909125">Settlers and villagers gain +5 line of sight and +0.25 damage multiplier against treasure guardians.</string>
 
             <string _locid="9909126">Settlers' Roads</string>
-            <string _locid="9909127"></string>
+            <string _locid="9909127">Settlers and villagers move 10% faster.</string>
 
             <string _locid="9909128">Clearing Crews</string>
-            <string _locid="9909129"></string>
+            <string _locid="9909129">Settlers and villagers gather Wood from trees and Groves 15% faster.</string>
 
             <string _locid="9909130">Surveyed Lots</string>
-            <string _locid="9909131"></string>
+            <string _locid="9909131">Increases the Outpost build limit by 7. Outposts and Forts gain veterancy from defeating enemy units.</string>
 
             <string _locid="9909132">Open Country</string>
-            <string _locid="9909133"></string>
+            <string _locid="9909133">Increases the Fort build limit by 2.</string>
 
             <string _locid="9909134">Voyageurs</string>
-            <string _locid="9909135"></string>
+            <string _locid="9909135">Economic and construction wagons move 15% faster and construct buildings 20% faster.</string>
 
             <string _locid="9909136">Colonial Markets</string>
-            <string _locid="9909137"></string>
+            <string _locid="9909137">Market technologies research 25% faster.</string>
 
             <string _locid="9909138">Caravans</string>
-            <string _locid="9909139"></string>
+            <string _locid="9909139">Generates 0.75 Food, Wood, and Coin per second through permanent overland commerce.</string>
 
             <string _locid="9909140">Loose Standards</string>
-            <string _locid="9909141"></string>
+            <string _locid="9909141">Buildings cost 10% fewer resources but have 10% fewer hit points.</string>
 
             <string _locid="9909142">Quick Construction</string>
-            <string _locid="9909143"></string>
+            <string _locid="9909143">Buildings construct 20% faster.</string>
 
             <string _locid="9909144">Cheap Materials</string>
-            <string _locid="9909145"></string>
+            <string _locid="9909145">Buildings cost an additional 15% fewer resources but have an additional 10% fewer hit points.</string>
 
             <string _locid="9909146">Boomtown Building</string>
-            <string _locid="9909147"></string>
+            <string _locid="9909147">Buildings construct an additional 30% faster.</string>
 
             <string _locid="9909148">Frontier Companies</string>
-            <string _locid="9909149"></string>
+            <string _locid="9909149">Mercenaries cost 10% fewer resources and train 10% faster.</string>
 
             <string _locid="9909150">Contracted Guards</string>
-            <string _locid="9909151"></string>
+            <string _locid="9909151">Mercenaries gain 10% hit points and damage.</string>
+
+            <string _locid="9909152">Treasury Exchange</string>
+            <string _locid="9909153">Coin gathering from Plantations and civilization-specific Coin farms is increased by 25%. Unlocks repeatable Coin-to-Wood and Coin-to-Food exchanges on the second row of the Caravanserai.</string>
 
 
             <!-- ========================================================= -->
@@ -409,7 +442,7 @@
             <string _locid="9910001"></string>
 
             <string _locid="9910002">Secure the Waste</string>
-            <string _locid="9910003"></string>
+            <string _locid="9910003">Outposts cost 10% less Wood and build 15% faster. Settlers gain +1 line of sight. Unlocks Peltrymen at The Presidio with a build limit of 5.</string>
 
             <string _locid="9910004">Colonial Works</string>
             <string _locid="9910005"></string>
@@ -421,7 +454,7 @@
             <string _locid="9910009"></string>
 
             <string _locid="9910010">Perimeter Fortifications</string>
-            <string _locid="9910011"></string>
+            <string _locid="9910011">Unlocks the Call in the Reserve shipment at the Colonial Secretariat.</string>
 
             <string _locid="9910012">Earth-Backed Rampart</string>
             <string _locid="9910013"></string>
@@ -439,7 +472,7 @@
             <string _locid="9910021"></string>
 
             <string _locid="9910022">Established Fortifications</string>
-            <string _locid="9910023"></string>
+            <string _locid="9910023">Unlocks Frontier Forts, Fort Towers, and Fixed Guns for Architects, strengthens defensive structures, and unlocks the State of Siege policy at the Colonial Secretariat.</string>
 
             <string _locid="9910024">Citadel Expansion</string>
             <string _locid="9910025"></string>
@@ -462,6 +495,24 @@
             <!-- ========================================================= -->
 
             <!-- ========================================================= -->
+            <!-- CBE VOLATILE SHADOW TECHNOLOGIES                           -->
+            <!-- Hidden systems: no player-facing string records.           -->
+            <!-- ========================================================= -->
+
+            <string _locid="9911000">Hands Off Policy</string>
+            <string _locid="9911001">Hands Off Policy is active.</string>
+            <string _locid="9911002">Prosperity Charter</string>
+            <string _locid="9911003">Enacts the Prosperity Charter: villagers gather 15% faster and build 25% faster, while unfinished buildings auto-build 25% faster. Military buildings work 25% slower, while land military has 15% less damage and health.</string>
+            <string _locid="9911004">War Economy</string>
+            <string _locid="9911005">Enacts a War Economy: supports 75 additional population, land military moves 10% faster, military buildings work 20% faster, and land military deals 5% more damage. Villagers gather 15% slower and have 10% less health.</string>
+            <string _locid="9911006">Development Charter</string>
+            <string _locid="9911007">Enacts the Development Charter: Economic Buildings work 20% faster for research and advancement. Military Buildings work 20% slower and land military moves 10% slower.</string>
+            <string _locid="9911008">Trade Shipments</string>
+            <string _locid="9911009">Enacts Trade Shipments: The Colonial Secretariat generates 1.25 XP per second, future Trade Route income is increased by 25%, and Market exchange rates are 10% more favorable. Villagers gather resources 10% slower, and land military units take 33% longer to train.</string>
+            <string _locid="9911010">State of Siege</string>
+            <string _locid="9911011">State of Siege policy is active.</string>
+
+            <!-- ========================================================= -->
             <!-- 9912000s - CBE SUBCIVS                                    -->
             <!-- Range: 9912000 - 9912999                                  -->
             <!-- ========================================================= -->
@@ -482,15 +533,15 @@
             <string _locid="9913005">Provides population space while the village is under your control.</string>
 
             <string _locid="9913006">Request Food Shipment</string>
-            <string _locid="9913007">Spends a Home City shipment to send food crates to your gather point.</string>
+            <string _locid="9913007">Spends two Home City shipments to send food crates to your gather point. Arrives in 120 seconds.</string>
             <string _locid="9913008">Send food crates.</string>
 
             <string _locid="9913009">Request Wood Shipment</string>
-            <string _locid="9913010">Spends a Home City shipment to send wood crates to your gather point.</string>
+            <string _locid="9913010">Spends two Home City shipments to send wood crates to your gather point. Arrives in 120 seconds.</string>
             <string _locid="9913011">Send wood crates.</string>
 
             <string _locid="9913012">Request Coin Shipment</string>
-            <string _locid="9913013">Spends a Home City shipment to send coin crates to your gather point.</string>
+            <string _locid="9913013">Spends two Home City shipments to send coin crates to your gather point. Arrives in 120 seconds.</string>
             <string _locid="9913014">Send coin crates.</string>
 
             <string _locid="9913015">Papal Company</string>
@@ -499,6 +550,48 @@
             <string _locid="9913018">Clerical Envoys</string>
             <string _locid="9913019">Allows this Papal Embassy to train Priests, Missionaries, and Inquisitors.</string>
             <string _locid="9913020">Unlock Embassy healers.</string>
+
+            <string _locid="9913021">Request Colonial Migrants</string>
+            <string _locid="9913022">Spends two Home City shipments and 500 Food to send three randomly selected workers, with a chance to receive uncommon or rare specialists. Arrives in 120 seconds.</string>
+            <string _locid="9913023">Send three migrant workers.</string>
+
+            <!-- Native Scouts shipment -->
+            <string _locid="9913024">Native Scouts</string>
+            <string _locid="9913025">Spends two Home City shipments to call five Mercenary Cree Trackers to your gather point. Arrives in 45 seconds.</string>
+            <string _locid="9913026">Call five Mercenary Cree Trackers.</string>
+
+            <!-- Call in the Reserve shipment -->
+            <string _locid="9913027">Call in the Reserve</string>
+            <string _locid="9913028">Spends two Home City shipments and 200 Food to call twelve Conscripts to your gather point. Arrives in 30 seconds.</string>
+            <string _locid="9913029">Call in twelve Conscripts.</string>
+
+            <!-- Citadel Stockpile shipment -->
+            <string _locid="9913030">Citadel Stockpile</string>
+            <string _locid="9913031">Spends two Home City shipments to send 100 Food, 100 Wood, and 100 Coin to your gather point. Arrives in 120 seconds.</string>
+            <string _locid="9913032">Send 100 of each resource.</string>
+
+            <!-- Buffalo Herds shipment -->
+            <string _locid="9913033">Buffalo Herds</string>
+            <string _locid="9913034">Spends two Home City shipments to send three Bison for every Hunting Lodge you currently own to your shipment gather point. Arrives in 120 seconds.</string>
+            <string _locid="9913035">Send three Bison per Hunting Lodge.</string>
+
+            <!-- Breadbasket Colony exchanges -->
+            <string _locid="9913036">Exchange Food for Wood</string>
+            <string _locid="9913037">Spends one Home City shipment. After 30 seconds, exchanges your entire Food stockpile at a rate of 1 Food for 0.75 Wood.</string>
+            <string _locid="9913038">Exchange all Food for Wood.</string>
+
+            <string _locid="9913039">Exchange Food for Coin</string>
+            <string _locid="9913040">Spends one Home City shipment. After 30 seconds, exchanges your entire Food stockpile at a rate of 1 Food for 0.70 Coin.</string>
+            <string _locid="9913041">Exchange all Food for Coin.</string>
+
+            <!-- Treasury Exchange conversions -->
+            <string _locid="9913042">Exchange Coin for Wood</string>
+            <string _locid="9913043">Spends one Home City shipment. After 30 seconds, exchanges your entire Coin stockpile at a rate of 1 Coin for 1.25 Wood.</string>
+            <string _locid="9913044">Exchange all Coin for Wood.</string>
+
+            <string _locid="9913045">Exchange Coin for Food</string>
+            <string _locid="9913046">Spends one Home City shipment. After 30 seconds, exchanges your entire Coin stockpile at a rate of 1 Coin for 1.10 Food.</string>
+            <string _locid="9913047">Exchange all Coin for Food.</string>
 
 
         </language>
