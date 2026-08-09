@@ -264,7 +264,7 @@
             <string _locid="9909041"></string>
 
             <string _locid="9909042">Citadel Treasury</string>
-            <string _locid="9909043"></string>
+            <string _locid="9909043">Bunker Mills generate an additional 0.25 Coin per second and gain +1 build limit. Unlocks the Citadel Stockpile shipment and the Treasury Exchange technology.</string>
 
             <string _locid="9909044">Waystation Centers</string>
             <string _locid="9909045">Markets become housing for travelers providing protection and services +5 population</string>
@@ -351,82 +351,85 @@
             <string _locid="9909099">Huntables, Trees, and Mines yield 10% more resources.</string>
 
             <string _locid="9909100">Abundant Game</string>
-            <string _locid="9909101"></string>
+            <string _locid="9909101">Unlocks the repeatable Buffalo Herds shipment at the Caravanserai.</string>
 
             <string _locid="9909102">Plows and Pastures</string>
-            <string _locid="9909103"></string>
+            <string _locid="9909103">Villagers gather Food from all farm-type buildings 15% faster, and herdable animals fatten 10% faster.</string>
 
             <string _locid="9909104">Homestead Plots</string>
-            <string _locid="9909105"></string>
+            <string _locid="9909105">Villagers gain 30% Food gather rate at all farm-type buildings, and herdable animals fatten 20% faster. Combined with Plows and Pastures: +45% farm gathering and +30% fattening.</string>
 
             <string _locid="9909106">Open Pastures</string>
-            <string _locid="9909107"></string>
+            <string _locid="9909107">Increases the build limit of all herdable animal types by 15%.</string>
 
             <string _locid="9909108">Harvest Estates</string>
-            <string _locid="9909109"></string>
+            <string _locid="9909109">Farm-type buildings provide +5 population, cost 10% less Wood, and construct 10% faster. The population bonus adds to existing housing effects.</string>
 
             <string _locid="9909110">Breadbasket Colony</string>
-            <string _locid="9909111"></string>
+            <string _locid="9909111">Unlocks repeatable Food-to-Wood and Food-to-Coin exchanges on the second row of the Caravanserai.</string>
 
             <string _locid="9909112">Lifeline to the Old World</string>
             <string _locid="9909113">Unlocks repeatable Food, Wood, and Coin shipment requests at the Colonial Secretariat.</string>
 
             <string _locid="9909114">Colonial Dispatches</string>
-            <string _locid="9909115"></string>
+            <string _locid="9909115">Grants 1 shipment point, generates 0.25 XP per second, and allows the Caravanserai to be selected as the arrival point for economic or military Home City shipments.</string>
 
             <string _locid="9909116">Waystation Markets</string>
-            <string _locid="9909117"></string>
+            <string _locid="9909117">Improves Market and Livestock Market exchange rates by 5%.</string>
 
             <string _locid="9909118">Established Trade Routes</string>
             <string _locid="9909119">Unlocks the Trade Shipments policy at the Colonial Secretariat.</string>
 
             <string _locid="9909120">Licensed Traders</string>
-            <string _locid="9909121"></string>
+            <string _locid="9909121">Improves Market and Livestock Market exchange rates by 10% and increases goods received whenever a trader reaches your Trading Posts by 10%.</string>
 
             <string _locid="9909122">Merchant Convoys</string>
-            <string _locid="9909123"></string>
+            <string _locid="9909123">Increases goods received whenever a trader reaches your Trading Posts by 50%.</string>
 
             <string _locid="9909124">Clearing the Frontier</string>
-            <string _locid="9909125"></string>
+            <string _locid="9909125">Settlers and villagers gain +5 line of sight and +0.25 damage multiplier against treasure guardians.</string>
 
             <string _locid="9909126">Settlers' Roads</string>
-            <string _locid="9909127"></string>
+            <string _locid="9909127">Settlers and villagers move 10% faster.</string>
 
             <string _locid="9909128">Clearing Crews</string>
-            <string _locid="9909129"></string>
+            <string _locid="9909129">Settlers and villagers gather Wood from trees and Groves 15% faster.</string>
 
             <string _locid="9909130">Surveyed Lots</string>
-            <string _locid="9909131"></string>
+            <string _locid="9909131">Increases the Outpost build limit by 7. Outposts and Forts gain veterancy from defeating enemy units.</string>
 
             <string _locid="9909132">Open Country</string>
-            <string _locid="9909133"></string>
+            <string _locid="9909133">Increases the Fort build limit by 2.</string>
 
             <string _locid="9909134">Voyageurs</string>
-            <string _locid="9909135"></string>
+            <string _locid="9909135">Economic and construction wagons move 15% faster and construct buildings 20% faster.</string>
 
             <string _locid="9909136">Colonial Markets</string>
-            <string _locid="9909137"></string>
+            <string _locid="9909137">Market technologies research 25% faster.</string>
 
             <string _locid="9909138">Caravans</string>
-            <string _locid="9909139"></string>
+            <string _locid="9909139">Generates 0.75 Food, Wood, and Coin per second through permanent overland commerce.</string>
 
             <string _locid="9909140">Loose Standards</string>
-            <string _locid="9909141"></string>
+            <string _locid="9909141">Buildings cost 10% fewer resources but have 10% fewer hit points.</string>
 
             <string _locid="9909142">Quick Construction</string>
-            <string _locid="9909143"></string>
+            <string _locid="9909143">Buildings construct 20% faster.</string>
 
             <string _locid="9909144">Cheap Materials</string>
-            <string _locid="9909145"></string>
+            <string _locid="9909145">Buildings cost an additional 15% fewer resources but have an additional 10% fewer hit points.</string>
 
             <string _locid="9909146">Boomtown Building</string>
-            <string _locid="9909147"></string>
+            <string _locid="9909147">Buildings construct an additional 30% faster.</string>
 
             <string _locid="9909148">Frontier Companies</string>
-            <string _locid="9909149"></string>
+            <string _locid="9909149">Mercenaries cost 10% fewer resources and train 10% faster.</string>
 
             <string _locid="9909150">Contracted Guards</string>
-            <string _locid="9909151"></string>
+            <string _locid="9909151">Mercenaries gain 10% hit points and damage.</string>
+
+            <string _locid="9909152">Treasury Exchange</string>
+            <string _locid="9909153">Coin gathering from Plantations and civilization-specific Coin farms is increased by 25%. Unlocks repeatable Coin-to-Wood and Coin-to-Food exchanges on the second row of the Caravanserai.</string>
 
 
             <!-- ========================================================= -->
@@ -561,6 +564,34 @@
             <string _locid="9913027">Call in the Reserve</string>
             <string _locid="9913028">Spends two Home City shipments and 200 Food to call twelve Conscripts to your gather point. Arrives in 30 seconds.</string>
             <string _locid="9913029">Call in twelve Conscripts.</string>
+
+            <!-- Citadel Stockpile shipment -->
+            <string _locid="9913030">Citadel Stockpile</string>
+            <string _locid="9913031">Spends two Home City shipments to send 100 Food, 100 Wood, and 100 Coin to your gather point. Arrives in 120 seconds.</string>
+            <string _locid="9913032">Send 100 of each resource.</string>
+
+            <!-- Buffalo Herds shipment -->
+            <string _locid="9913033">Buffalo Herds</string>
+            <string _locid="9913034">Spends two Home City shipments to send three Bison for every Hunting Lodge you currently own to your shipment gather point. Arrives in 120 seconds.</string>
+            <string _locid="9913035">Send three Bison per Hunting Lodge.</string>
+
+            <!-- Breadbasket Colony exchanges -->
+            <string _locid="9913036">Exchange Food for Wood</string>
+            <string _locid="9913037">Spends one Home City shipment. After 30 seconds, exchanges your entire Food stockpile at a rate of 1 Food for 0.75 Wood.</string>
+            <string _locid="9913038">Exchange all Food for Wood.</string>
+
+            <string _locid="9913039">Exchange Food for Coin</string>
+            <string _locid="9913040">Spends one Home City shipment. After 30 seconds, exchanges your entire Food stockpile at a rate of 1 Food for 0.70 Coin.</string>
+            <string _locid="9913041">Exchange all Food for Coin.</string>
+
+            <!-- Treasury Exchange conversions -->
+            <string _locid="9913042">Exchange Coin for Wood</string>
+            <string _locid="9913043">Spends one Home City shipment. After 30 seconds, exchanges your entire Coin stockpile at a rate of 1 Coin for 1.25 Wood.</string>
+            <string _locid="9913044">Exchange all Coin for Wood.</string>
+
+            <string _locid="9913045">Exchange Coin for Food</string>
+            <string _locid="9913046">Spends one Home City shipment. After 30 seconds, exchanges your entire Coin stockpile at a rate of 1 Coin for 1.10 Food.</string>
+            <string _locid="9913047">Exchange all Coin for Food.</string>
 
 
         </language>

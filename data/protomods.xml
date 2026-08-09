@@ -4603,7 +4603,7 @@
 
     <!-- ========================================================= -->
     <!-- Colonial Secretariat                                      -->
-    <!-- Great Bank visual; reserved for colony policy controls.   -->
+    <!-- Lombard visual; reserved for colony policy controls.      -->
     <!-- ========================================================= -->
     <unit id="9036" name="CBEColonialSecretariat">
         <dbid>9036</dbid>
@@ -4616,7 +4616,7 @@
 
         <maxvelocity>0.0000</maxvelocity>
         <movementtype>land</movementtype>
-        <animfile>buildings\spc\city_state\great_bank.xml</animfile>
+        <animfile>buildings\lombard\lombard.xml</animfile>
         <deadreplacement>BuildingRubble4x4</deadreplacement>
         <deadreplacementlifespan>15</deadreplacementlifespan>
         <impacttype>Wood</impacttype>

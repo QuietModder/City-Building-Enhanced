@@ -3672,10 +3672,88 @@
                 <target type="ProtoUnit">ModBunkerMills</target>
             </effect>
 
+            <!-- Unlock the Citadel's repeatable mixed-resource shipment. -->
+            <effect type="TechStatus" status="obtainable">CBECitadelStockpileShipment</effect>
+            <effect type="CommandAdd" tech="CBECitadelStockpileShipment" page="0" column="2">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
+            <!-- Continue the Coin branch to its terminal exchange technology. -->
+            <effect type="TechStatus" status="obtainable">CBETreasuryExchange</effect>
+            <effect type="CommandAdd" tech="CBETreasuryExchange" page="2" column="1">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModCitadelTreasury">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
 
+        </effects>
+    </tech>
+
+    <!-- Terminal technology for the Bunker Mill Coin branch. -->
+    <tech mergeMode="add" name="CBETreasuryExchange" type="Normal">
+        <dbid>991230</dbid>
+        <displaynameid>9909152</displaynameid>
+        <rollovertextid>9909153</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>75.0000</researchpoints>
+
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <flag>CountsTowardEconomicScore</flag>
+
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+
+        <prereqs>
+            <techstatus status="Active">ModCitadelTreasury</techstatus>
+            <techstatus status="Active">Industrialize</techstatus>
+        </prereqs>
+
+        <effects>
+            <!-- Workers gather Coin 25% faster from standard Plantations. -->
+            <effect type="Data" action="Gather" amount="1.25"
+                subtype="WorkRate" unittype="Plantation"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Civilization-specific Coin farm modes. -->
+            <effect type="Data2" action="Gather" amount="1.25"
+                subtype="WorkRateSpecific" resource="Gold" unittype="ypRicePaddy"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data2" action="Gather" amount="1.25"
+                subtype="WorkRateSpecific" resource="Gold" unittype="deField"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data2" action="Gather" amount="1.25"
+                subtype="WorkRateSpecific" resource="Gold" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" action="AutoGatherCoin" amount="1.25"
+                subtype="WorkRate" unittype="Gold"
+                relativity="BasePercent">
+                <target type="ProtoUnit">deHacienda</target>
+            </effect>
+
+            <!-- Unlock repeatable second-row Coin exchange options. -->
+            <effect type="TechStatus" status="obtainable">CBETreasuryCoinToWoodExchange</effect>
+            <effect type="TechStatus" status="obtainable">CBETreasuryCoinToFoodExchange</effect>
+            <effect type="CommandAdd" tech="CBETreasuryCoinToWoodExchange" page="1" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" tech="CBETreasuryCoinToFoodExchange" page="1" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
+            <effect type="CommandRemove" tech="CBETreasuryExchange">
+                <target type="ProtoUnit">ModPresidio</target>
+            </effect>
         </effects>
     </tech>
 
@@ -5163,6 +5241,12 @@
         </prereqs>
 
         <effects>
+            <!-- Unlock the repeatable Buffalo Herds shipment. -->
+            <effect type="TechStatus" status="obtainable">CBEAbundantGameShipment</effect>
+            <effect type="CommandAdd" tech="CBEAbundantGameShipment" page="0" column="4">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModAbundantGame">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -5189,6 +5273,46 @@
         </prereqs>
 
         <effects>
+            <!-- Villagers gather Food 15% faster from all farm-type buildings. -->
+            <effect type="Data" action="Gather" amount="1.15"
+                subtype="WorkRate" unittype="AbstractFarmBuilding"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <!-- Herdables fatten 10% faster while passive or assigned to the
+                 civilization-specific livestock buildings. -->
+            <effect type="Data" action="AutoGather" amount="1.10"
+                subtype="WorkRate" unittype="Herdable"
+                relativity="BasePercent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="ypVillage"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="LivestockPen"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="GatherHacienda" amount="1.10"
+                subtype="InventoryRate" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="Farm"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.10"
+                subtype="WorkRate" unittype="deLivestockMarket"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModPlowsAndPastures">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -5219,6 +5343,44 @@
         </prereqs>
 
         <effects>
+            <!-- Apply double the Plows and Pastures bonuses. -->
+            <effect type="Data" action="Gather" amount="1.30"
+                subtype="WorkRate" unittype="AbstractFarmBuilding"
+                relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
+            <effect type="Data" action="AutoGather" amount="1.20"
+                subtype="WorkRate" unittype="Herdable"
+                relativity="BasePercent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="ypVillage"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="LivestockPen"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="GatherHacienda" amount="1.20"
+                subtype="InventoryRate" unittype="deHacienda"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="Farm"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.20"
+                subtype="WorkRate" unittype="deLivestockMarket"
+                relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHomesteadPlots">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -5249,6 +5411,11 @@
         </prereqs>
 
         <effects>
+            <!-- Increase the build limit of all herdable animal types by 15%. -->
+            <effect type="Data" amount="1.15" subtype="BuildLimit" relativity="BasePercent">
+                <target type="ProtoUnit">Herdable</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModOpenPastures">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -5279,6 +5446,25 @@
         </prereqs>
 
         <effects>
+            <!-- Every farm-type building provides five additional population.
+                 Absolute addition stacks with existing Hacienda and homestead housing. -->
+            <effect type="Data" amount="5.00"
+                subtype="PopulationCapAddition" relativity="Absolute">
+                <target type="ProtoUnit">AbstractFarmBuilding</target>
+            </effect>
+
+            <!-- Farm-type buildings cost 10% less Wood. -->
+            <effect type="Data" amount="0.90" subtype="Cost"
+                resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractFarmBuilding</target>
+            </effect>
+
+            <!-- Farm-type buildings require 10% fewer build points. -->
+            <effect type="Data" amount="0.90"
+                subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractFarmBuilding</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModHarvestEstates">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -5309,6 +5495,16 @@
         </prereqs>
 
         <effects>
+            <!-- Unlock repeatable second-row Food exchange options. -->
+            <effect type="TechStatus" status="obtainable">CBEBreadbasketFoodToWoodExchange</effect>
+            <effect type="TechStatus" status="obtainable">CBEBreadbasketFoodToCoinExchange</effect>
+            <effect type="CommandAdd" tech="CBEBreadbasketFoodToWoodExchange" page="1" column="0">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" tech="CBEBreadbasketFoodToCoinExchange" page="1" column="1">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="CommandRemove" tech="ModBreadbasketColony">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
@@ -5384,6 +5580,24 @@
             <effect type="CommandRemove" tech="ModColonialDispatches">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="1.00" subtype="Resource" resource="Ships" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="ResourceTrickleRate" resource="XP" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+
+            <effect type="CommandAdd" command="SetBuildingAsHomeCityGatherPointEconomic" page="2" column="4">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="CommandAdd" command="SetBuildingAsHomeCityGatherPointMilitary" page="2" column="5">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="SetUnitType" unittype="HCGatherPointPri3" relativity="Assign">
+                <target type="ProtoUnit">CBEDispatchOffice</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModWaystationMarkets</effect>
             <effect type="CommandAdd" tech="ModWaystationMarkets" page="1" column="4">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5414,6 +5628,20 @@
             <effect type="CommandRemove" tech="ModWaystationMarkets">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.95" subtype="Market" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="Market" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.95" subtype="deLivestockMarket" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="deLivestockMarket" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModEstablishedTradeRoutes</effect>
             <effect type="CommandAdd" tech="ModEstablishedTradeRoutes" page="1" column="4">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5477,6 +5705,36 @@
             <effect type="CommandRemove" tech="ModLicensedTraders">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.90" subtype="Market" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Market" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="deLivestockMarket" component="BuyFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="deLivestockMarket" component="SellFactor" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="XP" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="InventoryAmount" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModMerchantConvoys</effect>
             <effect type="CommandAdd" tech="ModMerchantConvoys" page="1" column="4">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5507,6 +5765,22 @@
             <effect type="CommandRemove" tech="ModMerchantConvoys">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="XP" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
+            <effect type="Data" amount="1.50" subtype="InventoryAmount" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractTradeCrate</target>
+            </effect>
         </effects>
     </tech>
 
@@ -5532,6 +5806,14 @@
             <effect type="CommandRemove" tech="ModClearingTheFrontier">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="5.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModSettlersRoads</effect>
             <effect type="CommandAdd" tech="ModSettlersRoads" page="1" column="5">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5562,6 +5844,11 @@
             <effect type="CommandRemove" tech="ModSettlersRoads">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="1.10" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModClearingCrews</effect>
             <effect type="CommandAdd" tech="ModClearingCrews" page="1" column="5">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5592,6 +5879,14 @@
             <effect type="CommandRemove" tech="ModClearingCrews">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" action="Gather" amount="1.15" subtype="WorkRate" unittype="Tree" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+            <effect type="Data" action="Gather" amount="1.15" subtype="WorkRate" unittype="ypGroveBuilding" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractVillager</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModSurveyedLots</effect>
             <effect type="CommandAdd" tech="ModSurveyedLots" page="1" column="5">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5622,6 +5917,18 @@
             <effect type="CommandRemove" tech="ModSurveyedLots">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="7.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="ProtoUnitFlag" flagid="125" relativity="Assign">
+                <target type="ProtoUnit">AbstractOutpost</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="ProtoUnitFlag" flagid="125" relativity="Assign">
+                <target type="ProtoUnit">AbstractFort</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModOpenCountry</effect>
             <effect type="CommandAdd" tech="ModOpenCountry" page="1" column="5">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5652,6 +5959,10 @@
             <effect type="CommandRemove" tech="ModOpenCountry">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="2.00" subtype="BuildLimit" relativity="Absolute">
+                <target type="ProtoUnit">AbstractFort</target>
+            </effect>
         </effects>
     </tech>
 
@@ -5678,6 +5989,14 @@
             <effect type="CommandRemove" tech="ModVoyageurs">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWagon</target>
+            </effect>
+            <effect type="Data" action="Build" amount="1.20" subtype="WorkRate" unittype="Building" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractWagon</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModColonialMarkets</effect>
             <effect type="CommandAdd" tech="ModColonialMarkets" page="2" column="0">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5708,6 +6027,11 @@
             <effect type="CommandRemove" tech="ModColonialMarkets">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.75" subtype="ResearchPoints" relativity="Percent">
+                <target type="techWithFlag">DEMarketTechnology</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModCaravans</effect>
             <effect type="CommandAdd" tech="ModCaravans" page="2" column="0">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5738,6 +6062,16 @@
             <effect type="CommandRemove" tech="ModCaravans">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.75" subtype="ResourceTrickleRate" resource="Food" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.75" subtype="ResourceTrickleRate" resource="Wood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="0.75" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
         </effects>
     </tech>
 
@@ -5763,6 +6097,23 @@
             <effect type="CommandRemove" tech="ModLooseStandards">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModQuickConstruction</effect>
             <effect type="CommandAdd" tech="ModQuickConstruction" page="2" column="1">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5793,6 +6144,11 @@
             <effect type="CommandRemove" tech="ModQuickConstruction">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.80" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModCheapMaterials</effect>
             <effect type="CommandAdd" tech="ModCheapMaterials" page="2" column="1">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5823,6 +6179,23 @@
             <effect type="CommandRemove" tech="ModCheapMaterials">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModBoomtownBuilding</effect>
             <effect type="CommandAdd" tech="ModBoomtownBuilding" page="2" column="1">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5853,6 +6226,10 @@
             <effect type="CommandRemove" tech="ModBoomtownBuilding">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.70" subtype="BuildPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Building</target>
+            </effect>
         </effects>
     </tech>
 
@@ -5879,6 +6256,23 @@
             <effect type="CommandRemove" tech="ModFrontierCompanies">
                 <target type="ProtoUnit">ModPresidio</target>
             </effect>
+
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Wood" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Gold" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Influence" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">ModContractedGuards</effect>
             <effect type="CommandAdd" tech="ModContractedGuards" page="2" column="2">
                 <target type="ProtoUnit">ModPresidio</target>
@@ -5908,6 +6302,13 @@
         <effects>
             <effect type="CommandRemove" tech="ModContractedGuards">
                 <target type="ProtoUnit">ModPresidio</target>
+            </effect>
+
+            <effect type="Data" amount="1.10" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">Mercenary</target>
             </effect>
         </effects>
     </tech>
@@ -6423,6 +6824,96 @@
         </effects>
     </tech>
 
+    <!-- Repeatable Sprawling hunt shipment unlocked by Abundant Game. -->
+    <tech name="CBEAbundantGameShipment" type="Normal">
+        <dbid>991227</dbid>
+        <displaynameid>9913033</displaynameid>
+        <rollovertextid>9913034</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_bison.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <!-- Send three Bison for every Hunting Lodge owned when shipped. -->
+            <effect type="Data" amount="3.00"
+                subtype="FreeHomeCityUnitByUnitCount"
+                counttype="ModHuntingLodge"
+                unittype="Bison"
+                relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Repeatable Breadbasket Colony exchanges. Each converts the player's
+         entire Food stockpile when its 30-second research time completes. -->
+    <tech name="CBEBreadbasketFoodToWoodExchange" type="Normal">
+        <dbid>991228</dbid>
+        <displaynameid>9913036</displaynameid>
+        <rollovertextid>9913037</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_wood.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="0.75"
+                toresource="Wood" fromresource="Food">
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEBreadbasketFoodToCoinExchange" type="Normal">
+        <dbid>991229</dbid>
+        <displaynameid>9913039</displaynameid>
+        <rollovertextid>9913040</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_gold.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="0.70"
+                toresource="Gold" fromresource="Food">
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Repeatable Treasury Exchange conversions. Each converts the player's
+         entire Coin stockpile when its 30-second research time completes. -->
+    <tech name="CBETreasuryCoinToWoodExchange" type="Normal">
+        <dbid>991231</dbid>
+        <displaynameid>9913042</displaynameid>
+        <rollovertextid>9913043</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_wood.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="1.25"
+                toresource="Wood" fromresource="Gold">
+            </effect>
+        </effects>
+    </tech>
+
+    <tech name="CBETreasuryCoinToFoodExchange" type="Normal">
+        <dbid>991232</dbid>
+        <displaynameid>9913045</displaynameid>
+        <rollovertextid>9913046</rollovertextid>
+        <cost resourcetype="Ships">1.0000</cost>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_food.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="ResourceExchange" multiplier="1.10"
+                toresource="Food" fromresource="Gold">
+            </effect>
+        </effects>
+    </tech>
+
     <tech name="CBEColonialMigrantsShipment" type="Normal">
         <dbid>991219</dbid>
         <displaynameid>9913021</displaynameid>
@@ -6502,6 +6993,32 @@
         <effects>
             <effect type="Data" amount="12.00" subtype="FreeHomeCityUnit"
                 unittype="ModConscript" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Citadel-exclusive mixed-resource shipment unlocked by Citadel Treasury. -->
+    <tech name="CBECitadelStockpileShipment" type="Normal">
+        <dbid>991226</dbid>
+        <displaynameid>9913030</displaynameid>
+        <rollovertextid>9913031</rollovertextid>
+        <cost resourcetype="Ships">2.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\infinite_mixed.png</icon>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofFood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofWood" relativity="Absolute">
+                <target type="Player"></target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="FreeHomeCityUnit"
+                unittype="CrateofCoin" relativity="Absolute">
                 <target type="Player"></target>
             </effect>
         </effects>
