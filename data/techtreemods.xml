@@ -6702,6 +6702,8 @@
         <dbid>991239</dbid>
         <displaynameid>9911014</displaynameid>
         <rollovertextid>9911015</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_british_icon.png</icon>
@@ -6716,6 +6718,13 @@
             <effect civ="British" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="1.07" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
             <effect type="Data" amount="1.07" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateRedcoat</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateLifeGuard</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deRanger</target></effect>
@@ -6727,7 +6736,10 @@
         <dbid>991240</dbid>
         <displaynameid>9911016</displaynameid>
         <rollovertextid>9911017</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
@@ -6739,6 +6751,13 @@
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
             <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateRedcoat</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateLifeGuard</target></effect>
             <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deRanger</target></effect>
@@ -6752,6 +6771,8 @@
         <dbid>991241</dbid>
         <displaynameid>9911018</displaynameid>
         <rollovertextid>9911019</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_french_icon.png</icon><sequestertech>CBEDismissFrenchMission</sequestertech>
@@ -6763,6 +6784,11 @@
             <effect type="TechStatus" status="obtainable">DEHCImmigrantsFrenchForEU</effect>
             <effect civ="French" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="1.05" subtype="WorkRate" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateYoungGarde</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGendarmes</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNatMercRoyalMusketeer</target></effect>
@@ -6773,7 +6799,10 @@
         <dbid>991242</dbid>
         <displaynameid>9911020</displaynameid>
         <rollovertextid>9911021</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
@@ -6783,6 +6812,11 @@
             <effect type="TechStatus" status="unobtainable">DEHCImmigrantsFrenchForEU</effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.95" subtype="WorkRate" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="0.75" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="0.75" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateYoungGarde</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGendarmes</target></effect>
             <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNatMercRoyalMusketeer</target></effect>
@@ -6795,6 +6829,8 @@
         <dbid>991243</dbid>
         <displaynameid>9911022</displaynameid>
         <rollovertextid>9911023</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_spanish_icon.png</icon><sequestertech>CBEDismissSpanishMission</sequestertech>
@@ -6807,6 +6843,7 @@
             <effect type="TechStatus" status="obtainable">DEHCNewSpainViceroyaltyForEU</effect>
             <effect civ="Spanish" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.80" subtype="ResourceTrickleRate" resource="XP" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" action="Gather" amount="0.50" subtype="WorkRate" unittype="AbstractMine" relativity="Absolute"><target type="ProtoUnit">AbstractVillager</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateEspadachins</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGarrochista</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Missionary</target></effect>
@@ -6817,13 +6854,17 @@
         <dbid>991244</dbid>
         <displaynameid>9911024</displaynameid>
         <rollovertextid>9911025</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.80" subtype="ResourceTrickleRate" resource="XP" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" action="Gather" amount="-0.50" subtype="WorkRate" unittype="AbstractMine" relativity="Absolute"><target type="ProtoUnit">AbstractVillager</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateEspadachins</target></effect>
             <effect type="TechStatus" status="unobtainable">HCXPSpanishGoldForEU</effect>
             <effect type="TechStatus" status="unobtainable">HCExplorerSpanishForEU</effect>
@@ -6840,6 +6881,8 @@
         <dbid>991245</dbid>
         <displaynameid>9911026</displaynameid>
         <rollovertextid>9911027</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_portuguese_icon.png</icon><sequestertech>CBEDismissPortugueseMission</sequestertech>
@@ -6851,6 +6894,11 @@
             <effect type="TechStatus" status="obtainable">HCDragoonCombatPortugueseForEU</effect>
             <effect civ="Portuguese" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.85" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.15" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGuerreiros</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateJinete</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">OrganGun</target></effect>
@@ -6860,13 +6908,21 @@
         <dbid>991246</dbid>
         <displaynameid>9911028</displaynameid>
         <rollovertextid>9911029</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="1.15" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="-0.15" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGuerreiros</target></effect>
             <effect type="TechStatus" status="unobtainable">DEHCFeitoriasForEU</effect>
             <effect type="TechStatus" status="unobtainable">HCXPRangefindingForEU</effect>
@@ -6881,6 +6937,8 @@
         <dbid>991247</dbid>
         <displaynameid>9911030</displaynameid>
         <rollovertextid>9911031</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_dutch_icon.png</icon><sequestertech>CBEDismissDutchMission</sequestertech>
@@ -6892,6 +6950,9 @@
             <effect type="TechStatus" status="obtainable">HCXPMilitaryReformsForEU</effect>
             <effect civ="Dutch" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.80" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" amount="1.35" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" action="AutoGather" amount="1.15" subtype="WorkRate" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">Bank</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateStadhouders</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCarabineer</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Halberdier</target></effect>
@@ -6902,13 +6963,19 @@
         <dbid>991248</dbid>
         <displaynameid>9911032</displaynameid>
         <rollovertextid>9911033</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.80" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.65" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" amount="0.65" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" action="AutoGather" amount="0.85" subtype="WorkRate" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">Bank</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateStadhouders</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCarabineer</target></effect>
             <effect type="TechStatus" status="unobtainable">HCXPAdmiralTrompForEU</effect>
@@ -6924,6 +6991,8 @@
         <dbid>991249</dbid>
         <displaynameid>9911034</displaynameid>
         <rollovertextid>9911035</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_germans_icon.png</icon><sequestertech>CBEDismissGermanMission</sequestertech>
@@ -6938,6 +7007,10 @@
             <effect type="Data" amount="0.40" subtype="ResourceTrickleRate" resource="Food" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.40" subtype="ResourceTrickleRate" resource="Wood" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.40" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">AbstractCavalryInfantry</target></effect>
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="0.15" subtype="ArmorSpecific" newtype="Ranged" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateZweihander</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCzapakaUhlan</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">SettlerWagon</target></effect>
@@ -6948,7 +7021,10 @@
         <dbid>991250</dbid>
         <displaynameid>9911036</displaynameid>
         <rollovertextid>9911037</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
@@ -6957,6 +7033,10 @@
             <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Food" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Wood" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.10" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">AbstractCavalryInfantry</target></effect>
+            <effect type="Data" amount="0.75" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="0.75" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="-0.15" subtype="ArmorSpecific" newtype="Ranged" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateZweihander</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCzapakaUhlan</target></effect>
             <effect type="TechStatus" status="unobtainable">DEHCCircleArmyForEU</effect>
@@ -6973,6 +7053,8 @@
         <dbid>991251</dbid>
         <displaynameid>9911038</displaynameid>
         <rollovertextid>9911039</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_russians_icon.png</icon><sequestertech>CBEDismissRussianMission</sequestertech>
@@ -6986,6 +7068,10 @@
             <effect civ="Russians" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
             <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
+            <effect type="Data" amount="0.80" subtype="TrainPoints" relativity="Percent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Gold" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateSiberianCossack</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCannon</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deLegionMagyarHussar</target></effect>
@@ -6996,7 +7082,10 @@
         <dbid>991252</dbid>
         <displaynameid>9911040</displaynameid>
         <rollovertextid>9911041</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
@@ -7004,6 +7093,10 @@
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="1.10" subtype="TrainPoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
             <effect type="Data" amount="1.10" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
+            <effect type="Data" amount="1.20" subtype="TrainPoints" relativity="Percent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Gold" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateSiberianCossack</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCannon</target></effect>
             <effect type="TechStatus" status="unobtainable">HCRansackForEU</effect>
@@ -7020,6 +7113,8 @@
         <dbid>991253</dbid>
         <displaynameid>9911042</displaynameid>
         <rollovertextid>9911043</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\eso\flag_ottomans_icon.png</icon><sequestertech>CBEDismissOttomanMission</sequestertech>
@@ -7034,6 +7129,8 @@
             <effect type="Data" amount="7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">EconomicUnit</target></effect>
             <effect type="Data" amount="7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Military</target></effect>
             <effect type="Data" amount="7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
+            <effect type="Data" amount="0.85" subtype="MaximumVelocity" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateTufanciCorps</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">AbusGun</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Spahi</target></effect>
@@ -7045,7 +7142,10 @@
         <dbid>991254</dbid>
         <displaynameid>9911044</displaynameid>
         <rollovertextid>9911045</rollovertextid>
-        <researchpoints>45.0000</researchpoints><status>UNOBTAINABLE</status>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
@@ -7054,6 +7154,8 @@
             <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">EconomicUnit</target></effect>
             <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Military</target></effect>
             <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="0.65" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
+            <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateTufanciCorps</target></effect>
             <effect type="TechStatus" status="unobtainable">HCArtilleryCombatOttomanForEU</effect>
             <effect type="TechStatus" status="unobtainable">HCJanissaryCostForEU</effect>
@@ -7071,6 +7173,8 @@
         <dbid>991234</dbid>
         <displaynameid>9911046</displaynameid>
         <rollovertextid>9911047</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints>
         <status>UNOBTAINABLE</status>
@@ -7087,7 +7191,9 @@
             <effect type="TechStatus" status="obtainable">DEHCUsuryForEU</effect>
             <effect type="TechStatus" status="obtainable">HCSilkRoadTeamForEU</effect>
             <effect civ="DEItalians" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
-            <effect type="Data" amount="0.90" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" action="AutoGatherFoodInvestment" amount="1.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
+            <effect type="Data" action="AutoGatherWoodInvestment" amount="1.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">dePapalGuard</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalZouave</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalElmetto</target></effect>
@@ -7099,7 +7205,10 @@
         <dbid>991235</dbid>
         <displaynameid>9911048</displaynameid>
         <rollovertextid>9911049</rollovertextid>
-        <researchpoints>45.0000</researchpoints>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag>
@@ -7108,7 +7217,9 @@
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
-            <effect type="Data" amount="1.10" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" action="AutoGatherFoodInvestment" amount="0.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
+            <effect type="Data" action="AutoGatherWoodInvestment" amount="0.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
             <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">dePapalGuard</target></effect>
             <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalZouave</target></effect>
             <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalElmetto</target></effect>
@@ -7125,6 +7236,8 @@
         <dbid>991236</dbid>
         <displaynameid>9911050</displaynameid>
         <rollovertextid>9911051</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
         <cost resourcetype="Gold">300.0000</cost>
         <researchpoints>10.0000</researchpoints>
         <status>UNOBTAINABLE</status>
@@ -7154,7 +7267,10 @@
         <dbid>991237</dbid>
         <displaynameid>9911052</displaynameid>
         <rollovertextid>9911053</rollovertextid>
-        <researchpoints>45.0000</researchpoints>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints>
         <status>UNOBTAINABLE</status>
         <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
         <flag>NativeDance</flag>

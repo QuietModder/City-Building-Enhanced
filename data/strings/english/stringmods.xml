@@ -111,47 +111,47 @@
             <string _locid="9911013">Invite foreign advisers, merchants, and military specialists to the Government House. Only one Foreign Mission may be hosted at a time.</string>
 
             <string _locid="9911014">British Mission</string>
-            <string _locid="9911015">British advisers increase the hit points of villagers and land military units by 7%. Unlocks Redcoats, Life Guards, Rangers, Rockets, Privateers, and British research at the Government House.</string>
+            <string _locid="9911015">British advisers increase villager and land-military hit points by 7%; Musketeer hit points and damage by 15% and range by 3; and Hussar hit points and damage by 15%. Unlocks British units and research at the Government House.</string>
             <string _locid="9911016">Dismiss the British Mission</string>
             <string _locid="9911017">Ends the British Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911018">French Mission</string>
-            <string _locid="9911019">French advisers improve villager work rates by 5%. Unlocks Young Guard, Gendarmes, Royal Musketeers, Napoleon Guns, and French research at the Government House.</string>
+            <string _locid="9911019">French advisers improve villager work rates by 5%; Rifleman hit points and damage by 25%; and Rifleman range by 3. Unlocks French units and research at the Government House.</string>
             <string _locid="9911020">Dismiss the French Mission</string>
             <string _locid="9911021">Ends the French Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911022">Spanish Mission</string>
-            <string _locid="9911023">Spanish advisers generate 0.8 experience per second. Unlocks Espadachins, Garrochistas, Missionaries, Conquistadors, and Spanish research at the Government House.</string>
+            <string _locid="9911023">Spanish advisers generate 0.8 experience per second and improve villager mining work rates. Unlocks Spanish units and research at the Government House.</string>
             <string _locid="9911024">Dismiss the Spanish Mission</string>
             <string _locid="9911025">Ends the Spanish Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911026">Portuguese Mission</string>
-            <string _locid="9911027">Portuguese engineers reduce building Wood costs by 15%. Unlocks Guerreiros, Jinetes, Organ Guns, and Portuguese research at the Government House.</string>
+            <string _locid="9911027">Portuguese engineers reduce building Wood costs by 15%; increase Musketeer and gunpowder-cavalry hit points and damage by 15%; and grant Musketeers 15% hand resistance. Unlocks Portuguese units and research at the Government House.</string>
             <string _locid="9911028">Dismiss the Portuguese Mission</string>
             <string _locid="9911029">Ends the Portuguese Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911030">Dutch Mission</string>
-            <string _locid="9911031">Dutch financiers generate 0.8 Coin per second. Unlocks Stadhouders, Carabineers, Halberdiers, Great Cannons, and Dutch research at the Government House.</string>
+            <string _locid="9911031">Dutch financiers generate 0.8 Coin per second, increase Halberdier hit points and damage by 35%, and improve Bank productivity by 15%. Unlocks Dutch units and research at the Government House.</string>
             <string _locid="9911032">Dismiss the Dutch Mission</string>
             <string _locid="9911033">Ends the Dutch Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911034">German Mission</string>
-            <string _locid="9911035">German quartermasters generate 0.4 Food, Wood, and Coin per second. Unlocks Zweihanders, Czapka Uhlans, Settler Wagons, War Wagons, and German research at the Government House.</string>
+            <string _locid="9911035">German quartermasters generate 0.4 Food, Wood, and Coin per second; reduce cavalry-infantry Food costs by 10%; and increase Rifleman hit points and damage by 25% with 15% ranged resistance. Unlocks German units and research at the Government House.</string>
             <string _locid="9911036">Dismiss the German Mission</string>
             <string _locid="9911037">Ends the German Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911038">Russian Mission</string>
-            <string _locid="9911039">Russian organizers reduce land economic-unit Food costs and training time by 10%. Unlocks Siberian Cossacks, Consulate Cannons, Magyar Hussars, Lipka Tatars, and Russian research at the Government House.</string>
+            <string _locid="9911039">Russian organizers reduce land economic-unit Food costs and training time by 10%, and reduce land-military Food, Wood, and Coin costs and training time by 20%. Unlocks Russian units and research at the Government House.</string>
             <string _locid="9911040">Dismiss the Russian Mission</string>
             <string _locid="9911041">Ends the Russian Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911042">Ottoman Mission</string>
-            <string _locid="9911043">Ottoman surveyors increase line of sight for economic units, military units, and buildings by 7. Unlocks Tufanci Corps, Abus Guns, Spahis, Great Bombards, Humbaracı, and Ottoman research at the Government House.</string>
+            <string _locid="9911043">Ottoman surveyors increase economic-unit, military-unit, and building line of sight by 7. Ottoman artillery gains 35% hit points but moves 15% slower. Unlocks Ottoman units and research at the Government House.</string>
             <string _locid="9911044">Dismiss the Ottoman Mission</string>
             <string _locid="9911045">Ends the Ottoman Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
             <string _locid="9911046">Italian Mission</string>
-            <string _locid="9911047">Italian architects reduce building Wood costs by 10%. Unlocks Papal Guards, Papal Zouaves, Papal Elmetti, Papal Bombards, and Italian research at the Government House.</string>
+            <string _locid="9911047">Italian architects reduce building Wood costs by 20% and improve Lombard Food and Wood investment yields by 50%. Unlocks Italian units and research at the Government House.</string>
             <string _locid="9911048">Dismiss the Italian Mission</string>
             <string _locid="9911049">Ends the Italian Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
 
