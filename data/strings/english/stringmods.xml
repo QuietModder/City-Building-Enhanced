@@ -657,6 +657,8 @@
             <string _locid="9911135">Diplomatic State Marker</string>
             <string _locid="9911136">Hidden marker used to track Foreign Mission duration and diplomatic reputation.</string>
             <string _locid="9911137">Internal Foreign Mission state.</string>
+            <string _locid="9911138">Choose a Foreign Mission to Host</string>
+            <string _locid="9911139">Choose a foreign nation whose mission will be hosted at the Government House.</string>
 
             <!-- ========================================================= -->
             <!-- 9912000s - CBE SUBCIVS                                    -->

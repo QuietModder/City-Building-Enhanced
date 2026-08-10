@@ -6683,6 +6683,9 @@
         <status>UNOBTAINABLE</status>
         <flag>Shadow</flag>
         <effects>
+            <!-- Player-local rename: this availability tech is never
+                 activated for Asian civilizations and their Consulates. -->
+            <effect type="SetName" tech="ypPickConsulateTech" newname="9911138" newrollover="9911139" />
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
             <effect type="TechStatus" status="active">CBEForeignMissionSelectionPermission</effect>
             <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty15Minute</effect>
@@ -7142,6 +7145,9 @@
             <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect type="Data" amount="0.15" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <!-- Hold the Line uses a separate Stand Ground armor table, so
+                 mirror the mission's Hand-resistance bonus into that table. -->
+            <effect type="Data" amount="0.15" subtype="TacticArmor" tactic="StandGround" armortype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGuerreiros</target></effect>
             <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateJinete</target></effect>
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">OrganGun</target></effect>
@@ -7167,6 +7173,7 @@
             <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect type="Data" amount="-0.15" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="-0.15" subtype="TacticArmor" tactic="StandGround" armortype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
             <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGuerreiros</target></effect>
             <effect type="TechStatus" status="unobtainable">DEHCFeitoriasForEU</effect>
             <effect type="TechStatus" status="unobtainable">HCXPRangefindingForEU</effect>
