@@ -426,48 +426,64 @@
     <tech name="Age0British" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionBritish</effect>
         </effects>
     </tech>
 
     <tech name="Age0French" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionFrench</effect>
         </effects>
     </tech>
 
     <tech name="Age0Spanish" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionSpanish</effect>
         </effects>
     </tech>
 
     <tech name="Age0Portuguese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionPortuguese</effect>
         </effects>
     </tech>
 
     <tech name="Age0Dutch" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionDutch</effect>
         </effects>
     </tech>
 
     <tech name="Age0German" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionGermans</effect>
         </effects>
     </tech>
 
     <tech name="Age0Russian" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionRussians</effect>
         </effects>
     </tech>
 
     <tech name="Age0Ottoman" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+<effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionOttomans</effect>
 
             <effect mergeMode="add" type="Data" amount="10.00"
                 subtype="BuildLimit" relativity="Assign">
@@ -481,18 +497,30 @@
     <tech name="YPAge0Chinese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <!-- Asian civilizations retain their existing Consulate system. -->
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGovernmentHouse</target>
+            </effect>
         </effects>
     </tech>
 
     <tech name="YPAge0Japanese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <!-- Asian civilizations retain their existing Consulate system. -->
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGovernmentHouse</target>
+            </effect>
         </effects>
     </tech>
 
     <tech name="YPAge0Indians" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <!-- Asian civilizations retain their existing Consulate system. -->
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGovernmentHouse</target>
+            </effect>
         </effects>
     </tech>
 
@@ -501,18 +529,21 @@
     <tech name="Age0Lakota" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
         </effects>
     </tech>
 
     <tech name="Age0Haudenosaunee" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
         </effects>
     </tech>
 
     <tech name="Age0Aztecs" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
         </effects>
     </tech>
 
@@ -521,6 +552,7 @@
     <tech name="DEAge0Inca" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
 
             <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
                 <target type="ProtoUnit">SettlerNative</target>
@@ -531,6 +563,8 @@
     <tech name="DEAge0Swedish" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+            <effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionSwedish</effect>
 
             <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
                 <target type="ProtoUnit">Settler</target>
@@ -541,6 +575,7 @@
     <tech name="DEAge0Americans" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
 
             <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
                 <target type="ProtoUnit">Settler</target>
@@ -551,6 +586,7 @@
     <tech name="DEAge0Mexicans" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
 
             <effect type="Data" amount="10.00" subtype="BuildLimit" relativity="Assign">
                 <target type="ProtoUnit">Settler</target>
@@ -561,24 +597,29 @@
     <tech name="DEAge0Hausa" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
         </effects>
     </tech>
 
     <tech name="DEAge0Ethiopian" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
         </effects>
     </tech>
 
     <tech name="DEAge0Maltese" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
         </effects>
     </tech>
 
     <tech name="DEAge0Italians" type="Normal">
         <effects>
             <effect mergeMode="add" type="TechStatus" status="active">CityBuildingEnhancedEnable</effect>
+            <effect mergeMode="add" type="TechStatus" status="active">CBEForeignMissionsAvailability</effect>
+            <effect mergeMode="add" type="TechStatus" status="unobtainable">CBEForeignMissionItalians</effect>
         </effects>
     </tech>
 
@@ -6625,7 +6666,1935 @@
         </effects>
     </tech>
 
-    <!-- ========================================================= -->
+    <!-- ######################################################### -->
+    <!-- GOVERNMENT HOUSE FOREIGN MISSIONS SYSTEM                  -->
+    <!-- Civilization-aware mission availability, relationships,   -->
+    <!-- dismissal, and supporting technologies belong here.       -->
+    <!-- ######################################################### -->
+
+    <!-- Each mission is CBE-owned so these mechanics cannot alter the
+         original Asian Consulate technologies or their localization. -->
+
+    <!-- Central availability is activated only by non-Asian civilization
+         startup technologies. European civilizations then remove their own
+         mission from the selection pool in their individual startup hook. -->
+    <tech name="CBEForeignMissionsAvailability" type="Normal">
+        <dbid>991233</dbid>
+        <status>UNOBTAINABLE</status>
+        <flag>Shadow</flag>
+        <effects>
+            <!-- Player-local rename: this availability tech is never
+                 activated for Asian civilizations and their Consulates. -->
+            <effect type="SetName" tech="ypPickConsulateTech" newname="9911138" newrollover="9911139" />
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="active">CBEForeignMissionSelectionPermission</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty15Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty10Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty5Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty3Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock75</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock50</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock25</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock0</effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation100Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation75Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation50Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation25Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation0Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer3Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer5Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer10Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer15Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionDismissalPulseMarker</target></effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911130" />
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionBritish</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionFrench</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionSpanish</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPortuguese</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionDutch</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionGermans</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionRussians</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionOttomans</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionItalians</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionSwedish</effect>
+        </effects>
+    </tech>
+
+    <!-- Legacy permission state retained for save/reference compatibility.
+         Picker visibility is the reputation gate; mission choices do not use
+         a second state that can become desynchronized from the picker. -->
+    <tech name="CBEForeignMissionSelectionPermission" type="Normal">
+        <dbid>991304</dbid><status>UNOBTAINABLE</status><flag>Shadow</flag>
+    </tech>
+
+    <!-- Diplomatic reputation is stored as one persistent marker. Each
+         surviving duration marker triggers one volatile shadow pulse that
+         permanently transforms the reputation state downward by 25. The
+         stages deliberately chain from 15 to 3 minutes. -->
+    <tech name="CBEForeignMissionPenalty15Minute" type="Normal">
+        <dbid>991292</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer15Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation100Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation100Marker" toprotoid="CBEForeignMissionReputation75Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer15Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911131" />
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionPenalty10Minute" type="Normal">
+        <dbid>991293</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer10Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation75Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation75Marker" toprotoid="CBEForeignMissionReputation50Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer10Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911132" />
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionPenalty5Minute" type="Normal">
+        <dbid>991294</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer5Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation50Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation50Marker" toprotoid="CBEForeignMissionReputation25Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer5Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911133" />
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionPenalty3Minute" type="Normal">
+        <dbid>991295</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer3Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation25Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation25Marker" toprotoid="CBEForeignMissionReputation0Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer3Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation0To25</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911134" />
+        </effects>
+    </tech>
+
+    <!-- The engine automatically restores ypPickConsulateTech after a
+         sequestered relation ends. These volatile locks continuously hide it
+         while the persistent reputation marker is below 100. -->
+    <tech name="CBEForeignMissionReputationPickerLock75" type="Normal">
+        <dbid>991300</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation75Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation75To100" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionReputationPickerLock50" type="Normal">
+        <dbid>991301</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation50Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation50To75" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionReputationPickerLock25" type="Normal">
+        <dbid>991302</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation25Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation25To50" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionReputationPickerLock0" type="Normal">
+        <dbid>991303</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation0Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation0To25</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation0To25" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Four backend steps share a name, icon, cost, and command slot. To the
+         player this is one repeatable +25 reputation action. -->
+    <tech name="CBERepairDiplomaticReputation0To25" type="Normal">
+        <dbid>991296</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation0Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation0Marker" toprotoid="CBEForeignMissionReputation25Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation0To25</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911133" />
+        </effects>
+    </tech>
+    <tech name="CBERepairDiplomaticReputation25To50" type="Normal">
+        <dbid>991297</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation25Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation25Marker" toprotoid="CBEForeignMissionReputation50Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911132" />
+        </effects>
+    </tech>
+    <tech name="CBERepairDiplomaticReputation50To75" type="Normal">
+        <dbid>991298</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation50Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation50Marker" toprotoid="CBEForeignMissionReputation75Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911131" />
+        </effects>
+    </tech>
+    <tech name="CBERepairDiplomaticReputation75To100" type="Normal">
+        <dbid>991299</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation75Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation75Marker" toprotoid="CBEForeignMissionReputation100Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="CommandAdd" tech="ypPickConsulateTech" page="18" column="0"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911130" />
+        </effects>
+    </tech>
+
+    <!-- British Mission -->
+    <tech name="CBEForeignMissionBritish" type="Normal">
+        <dbid>991239</dbid>
+        <displaynameid>9911014</displaynameid>
+        <rollovertextid>9911015</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_british_icon.png</icon>
+        <sequestertech>CBEDismissBritishMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissBritishMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">DERangerForce</effect>
+            <effect type="TechStatus" status="obtainable">DEgreenwichForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEindustrialForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCImmigrantsBritishForEU</effect>
+            <effect civ="British" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.07" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="1.07" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateRedcoat</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateLifeGuard</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deRanger</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Rocket</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Privateer</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissBritishMission" type="Normal">
+        <dbid>991240</dbid>
+        <displaynameid>9911016</displaynameid>
+        <rollovertextid>9911017</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="unobtainable">DERangerForce</effect>
+            <effect type="TechStatus" status="unobtainable">DEgreenwichForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEindustrialForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCImmigrantsBritishForEU</effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Hussar</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateRedcoat</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateLifeGuard</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deRanger</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Rocket</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Privateer</target></effect>
+        </effects>
+    </tech>
+
+    <!-- French Mission -->
+    <tech name="CBEForeignMissionFrench" type="Normal">
+        <dbid>991241</dbid>
+        <displaynameid>9911018</displaynameid>
+        <rollovertextid>9911019</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_french_icon.png</icon><sequestertech>CBEDismissFrenchMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissFrenchMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">HCXPTirailleursForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCBuffaloSoldiersForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCImmigrantsFrenchForEU</effect>
+            <effect civ="French" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.05" subtype="WorkRate" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateYoungGarde</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGendarmes</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNatMercRoyalMusketeer</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deMercNapoleonGun</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissFrenchMission" type="Normal">
+        <dbid>991242</dbid>
+        <displaynameid>9911020</displaynameid>
+        <rollovertextid>9911021</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="unobtainable">HCXPTirailleursForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCBuffaloSoldiersForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCImmigrantsFrenchForEU</effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.95" subtype="WorkRate" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="0.75" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="0.75" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="DefendRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="StaggerRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" action="VolleyRangedAttack" amount="-3.00" subtype="MaximumRange" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateYoungGarde</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGendarmes</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNatMercRoyalMusketeer</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deMercNapoleonGun</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Spanish Mission -->
+    <tech name="CBEForeignMissionSpanish" type="Normal">
+        <dbid>991243</dbid>
+        <displaynameid>9911022</displaynameid>
+        <rollovertextid>9911023</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_spanish_icon.png</icon><sequestertech>CBEDismissSpanishMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissSpanishMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">HCXPSpanishGoldForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCExplorerSpanishForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCArchaicTrainingForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCNewSpainViceroyaltyForEU</effect>
+            <effect civ="Spanish" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.80" subtype="ResourceTrickleRate" resource="XP" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" action="Gather" amount="0.50" subtype="WorkRate" unittype="AbstractMine" relativity="Absolute"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateEspadachins</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGarrochista</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Missionary</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypNatConquistador</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissSpanishMission" type="Normal">
+        <dbid>991244</dbid>
+        <displaynameid>9911024</displaynameid>
+        <rollovertextid>9911025</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="-0.80" subtype="ResourceTrickleRate" resource="XP" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" action="Gather" amount="-0.50" subtype="WorkRate" unittype="AbstractMine" relativity="Absolute"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateEspadachins</target></effect>
+            <effect type="TechStatus" status="unobtainable">HCXPSpanishGoldForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCExplorerSpanishForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCArchaicTrainingForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCNewSpainViceroyaltyForEU</effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGarrochista</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Missionary</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypNatConquistador</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Portuguese Mission -->
+    <tech name="CBEForeignMissionPortuguese" type="Normal">
+        <dbid>991245</dbid>
+        <displaynameid>9911026</displaynameid>
+        <rollovertextid>9911027</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_portuguese_icon.png</icon><sequestertech>CBEDismissPortugueseMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissPortugueseMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">DEHCFeitoriasForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCXPRangefindingForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCDragoonCombatPortugueseForEU</effect>
+            <effect civ="Portuguese" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.85" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.15" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <!-- Hold the Line uses a separate Stand Ground armor table, so
+                 mirror the mission's Hand-resistance bonus into that table. -->
+            <effect type="Data" amount="0.15" subtype="TacticArmor" tactic="StandGround" armortype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGuerreiros</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateJinete</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">OrganGun</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissPortugueseMission" type="Normal">
+        <dbid>991246</dbid>
+        <displaynameid>9911028</displaynameid>
+        <rollovertextid>9911029</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.15" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
+            <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="0.85" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="-0.15" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect type="Data" amount="-0.15" subtype="TacticArmor" tactic="StandGround" armortype="Hand" relativity="Absolute"><target type="ProtoUnit">AbstractMusketeer</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGuerreiros</target></effect>
+            <effect type="TechStatus" status="unobtainable">DEHCFeitoriasForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCXPRangefindingForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCDragoonCombatPortugueseForEU</effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateJinete</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">OrganGun</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Dutch Mission -->
+    <tech name="CBEForeignMissionDutch" type="Normal">
+        <dbid>991247</dbid>
+        <displaynameid>9911030</displaynameid>
+        <rollovertextid>9911031</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_dutch_icon.png</icon><sequestertech>CBEDismissDutchMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissDutchMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">HCXPAdmiralTrompForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCBetterBanksForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCXPMilitaryReformsForEU</effect>
+            <effect civ="Dutch" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.80" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" amount="1.35" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" action="AutoGather" amount="1.15" subtype="WorkRate" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">Bank</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateStadhouders</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCarabineer</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">MercGreatCannon</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissDutchMission" type="Normal">
+        <dbid>991248</dbid>
+        <displaynameid>9911032</displaynameid>
+        <rollovertextid>9911033</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="-0.80" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.65" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" amount="0.65" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" action="AutoGather" amount="0.85" subtype="WorkRate" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">Bank</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateStadhouders</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCarabineer</target></effect>
+            <effect type="TechStatus" status="unobtainable">HCXPAdmiralTrompForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCBetterBanksForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCXPMilitaryReformsForEU</effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Halberdier</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">MercGreatCannon</target></effect>
+        </effects>
+    </tech>
+
+    <!-- German Mission -->
+    <tech name="CBEForeignMissionGermans" type="Normal">
+        <dbid>991249</dbid>
+        <displaynameid>9911034</displaynameid>
+        <rollovertextid>9911035</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_germans_icon.png</icon><sequestertech>CBEDismissGermanMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissGermanMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">DEHCCircleArmyForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCGermantownFarmersForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCXPSolingenSteelForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCGermanChevaulegersForEU</effect>
+            <effect civ="Germans" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.40" subtype="ResourceTrickleRate" resource="Food" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.40" subtype="ResourceTrickleRate" resource="Wood" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.40" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">AbstractCavalryInfantry</target></effect>
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="0.15" subtype="ArmorSpecific" newtype="Ranged" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateZweihander</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCzapakaUhlan</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">SettlerWagon</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">WarWagon</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissGermanMission" type="Normal">
+        <dbid>991250</dbid>
+        <displaynameid>9911036</displaynameid>
+        <rollovertextid>9911037</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Food" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Wood" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.10" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">AbstractCavalryInfantry</target></effect>
+            <effect type="Data" amount="0.75" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="0.75" subtype="Damage" allactions="1" relativity="BasePercent"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect type="Data" amount="-0.15" subtype="ArmorSpecific" newtype="Ranged" relativity="Absolute"><target type="ProtoUnit">AbstractRifleman</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateZweihander</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCzapakaUhlan</target></effect>
+            <effect type="TechStatus" status="unobtainable">DEHCCircleArmyForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCGermantownFarmersForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCXPSolingenSteelForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCGermanChevaulegersForEU</effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">SettlerWagon</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">WarWagon</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Russian Mission -->
+    <tech name="CBEForeignMissionRussians" type="Normal">
+        <dbid>991251</dbid>
+        <displaynameid>9911038</displaynameid>
+        <rollovertextid>9911039</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_russians_icon.png</icon><sequestertech>CBEDismissRussianMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissRussianMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">HCRansackForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCXPSuvorovReformsForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCXPNationalRedoubtForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCUniqueCombatRussianForEU</effect>
+            <effect civ="Russians" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
+            <effect type="Data" amount="0.90" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
+            <effect type="Data" amount="0.80" subtype="TrainPoints" relativity="Percent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Gold" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateSiberianCossack</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCannon</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deLegionMagyarHussar</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNatMercLipkaTatar</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissRussianMission" type="Normal">
+        <dbid>991252</dbid>
+        <displaynameid>9911040</displaynameid>
+        <rollovertextid>9911041</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.10" subtype="TrainPoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
+            <effect type="Data" amount="1.10" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
+            <effect type="Data" amount="1.20" subtype="TrainPoints" relativity="Percent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Gold" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateSiberianCossack</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateCannon</target></effect>
+            <effect type="TechStatus" status="unobtainable">HCRansackForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCXPSuvorovReformsForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCXPNationalRedoubtForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCUniqueCombatRussianForEU</effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deLegionMagyarHussar</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNatMercLipkaTatar</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Ottoman Mission -->
+    <tech name="CBEForeignMissionOttomans" type="Normal">
+        <dbid>991253</dbid>
+        <displaynameid>9911042</displaynameid>
+        <rollovertextid>9911043</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\eso\flag_ottomans_icon.png</icon><sequestertech>CBEDismissOttomanMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissOttomanMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">HCArtilleryCombatOttomanForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCJanissaryCostForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCExplorerOttomanForEU</effect>
+            <effect type="TechStatus" status="obtainable">ChurchKapikuluCorpsForEU</effect>
+            <effect civ="Ottomans" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">EconomicUnit</target></effect>
+            <effect type="Data" amount="7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Military</target></effect>
+            <effect type="Data" amount="7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
+            <effect type="Data" amount="0.85" subtype="MaximumVelocity" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateTufanciCorps</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">AbusGun</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Spahi</target></effect>
+            <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGreatBombard</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deHumbaraci</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEDismissOttomanMission" type="Normal">
+        <dbid>991254</dbid>
+        <displaynameid>9911044</displaynameid>
+        <rollovertextid>9911045</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints><status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">EconomicUnit</target></effect>
+            <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Military</target></effect>
+            <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" amount="0.65" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
+            <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent"><target type="ProtoUnit">AbstractArtillery</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateTufanciCorps</target></effect>
+            <effect type="TechStatus" status="unobtainable">HCArtilleryCombatOttomanForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCJanissaryCostForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCExplorerOttomanForEU</effect>
+            <effect type="TechStatus" status="unobtainable">ChurchKapikuluCorpsForEU</effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">AbusGun</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">Spahi</target></effect>
+            <effect mergeMode="add" type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">ypConsulateGreatBombard</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deHumbaraci</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Italian Mission -->
+    <tech name="CBEForeignMissionItalians" type="Normal">
+        <dbid>991234</dbid>
+        <displaynameid>9911046</displaynameid>
+        <rollovertextid>9911047</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\italians\holy_league.png</icon>
+        <sequestertech>CBEDismissItalianMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag>
+        <flag>YPUseBigButton3</flag>
+        <flag>YPConsulateTech</flag>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissItalianMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">DEHCAdvancedLombardForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCRomanTacticsForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCUsuryForEU</effect>
+            <effect type="TechStatus" status="obtainable">HCSilkRoadTeamForEU</effect>
+            <effect civ="DEItalians" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.80" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" action="AutoGatherFoodInvestment" amount="1.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
+            <effect type="Data" action="AutoGatherWoodInvestment" amount="1.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">dePapalGuard</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalZouave</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalElmetto</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalBombard</target></effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEDismissItalianMission" type="Normal">
+        <dbid>991235</dbid>
+        <displaynameid>9911048</displaynameid>
+        <rollovertextid>9911049</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag>
+        <flag>YPInfiniteTech</flag>
+        <flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.20" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
+            <effect type="Data" action="AutoGatherFoodInvestment" amount="0.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
+            <effect type="Data" action="AutoGatherWoodInvestment" amount="0.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">dePapalGuard</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalZouave</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalElmetto</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deNMPapalBombard</target></effect>
+            <effect type="TechStatus" status="unobtainable">DEHCAdvancedLombardForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCRomanTacticsForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCUsuryForEU</effect>
+            <effect type="TechStatus" status="unobtainable">HCSilkRoadTeamForEU</effect>
+        </effects>
+    </tech>
+
+    <!-- Swedish Mission -->
+    <tech name="CBEForeignMissionSwedish" type="Normal">
+        <dbid>991236</dbid>
+        <displaynameid>9911050</displaynameid>
+        <rollovertextid>9911051</rollovertextid>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">300.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <researchpoints>10.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\sweden\dominions.png</icon>
+        <sequestertech>CBEDismissSwedishMission</sequestertech>
+        <flag>CountsTowardEconomicScore</flag>
+        <flag>YPUseBigButton3</flag>
+        <flag>YPConsulateTech</flag>
+        <flag>YPInfiniteTech</flag>
+        <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">CBEDismissSwedishMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="TechStatus" status="obtainable">DEHCEngelsbergIronworksForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCNorthernForestsForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCTrampleTacticsForEU</effect>
+            <effect type="TechStatus" status="obtainable">DEHCSveaLifeguardForEU</effect>
+            <effect civ="DESwedish" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1.07" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="1.07" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeAffectedByVillagerUpgrades</target></effect>
+            <effect type="Data" amount="1.07" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deCarolean</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deFinnishRider</target></effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deLeatherCannon</target></effect>
+        </effects>
+    </tech>
+
+    <tech name="CBEDismissSwedishMission" type="Normal">
+        <dbid>991237</dbid>
+        <displaynameid>9911052</displaynameid>
+        <rollovertextid>9911053</rollovertextid>
+        <cost resourcetype="Food">1500.0000</cost>
+        <cost resourcetype="Wood">1500.0000</cost>
+        <cost resourcetype="Gold">1500.0000</cost>
+        <researchpoints>120.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_endrelations.png</icon>
+        <flag>NativeDance</flag>
+        <flag>YPInfiniteTech</flag>
+        <flag>YPSequesterTech</flag>
+        <effects>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
+            <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeAffectedByVillagerUpgrades</target></effect>
+            <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandMilitary</target></effect>
+            <effect type="TechStatus" status="unobtainable">DEHCEngelsbergIronworksForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCNorthernForestsForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCTrampleTacticsForEU</effect>
+            <effect type="TechStatus" status="unobtainable">DEHCSveaLifeguardForEU</effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deCarolean</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deFinnishRider</target></effect>
+            <effect type="Data" amount="-1.00" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">deLeatherCannon</target></effect>
+        </effects>
+    </tech>
+<tech name="DERangerForce" type="Normal">
+    <dbid>991255</dbid>
+    <displaynameid>9911054</displaynameid>
+    <cost resourcetype="Gold">1000.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources/images/icons/techs/rogers_rangers/rangers.png</icon>
+    <rollovertextid>9911055</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractGunpowderTrooper</target>
+      </effect>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="deRanger" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="VeterancyEnable" relativity="Absolute">
+        <target type="ProtoUnit">AbstractRangedInfantry</target>
+      </effect>
+      <effect type="Data" amount="1.05" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+        <target type="ProtoUnit">AbstractRangedInfantry</target>
+      </effect>
+      <effect type="Data" amount="1.05" subtype="VeterancyBonus" rank="0" modifytype="Damage" relativity="Assign">
+        <target type="ProtoUnit">AbstractRangedInfantry</target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+        <target type="ProtoUnit">AbstractRangedInfantry</target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="VeterancyBonus" rank="1" modifytype="Damage" relativity="Assign">
+        <target type="ProtoUnit">AbstractRangedInfantry</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+        <target type="ProtoUnit">AbstractRangedInfantry</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="VeterancyBonus" rank="2" modifytype="Damage" relativity="Assign">
+        <target type="ProtoUnit">AbstractRangedInfantry</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech mergeMode="add" name="DEgreenwichForEU" type="Normal">
+    <dbid>991256</dbid>
+    <displaynameid>9911056</displaynameid>
+    <cost resourcetype="Gold">600.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources/images/icons/techs/hc_virginia_company/greenwich_time.png</icon>
+    <rollovertextid>9911057</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="0.80" subtype="TrainPoints" relativity="BasePercent">
+        <target type="ProtoUnit">unit</target>
+      </effect>
+      <effect type="Data" amount="1.10" subtype="HitPoints" relativity="BasePercent">
+        <target type="ProtoUnit">unit</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech mergeMode="add" name="DEindustrialForEU" type="Normal">
+    <dbid>991257</dbid>
+    <displaynameid>9911058</displaynameid>
+    <cost resourcetype="Food">600.0000</cost>
+    <cost resourcetype="Wood">600.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\industrial_rev.png</icon>
+    <rollovertextid>9911059</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="2.00" subtype="FreeHomeCityUnit" unittype="FactoryWagon" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCImmigrantsBritishForEU" type="Normal">
+    <dbid>991258</dbid>
+    <displaynameid>9911060</displaynameid>
+    <cost resourcetype="Gold">100.0000</cost>
+    <cost resourcetype="Food">100.0000</cost>
+    <cost resourcetype="Wood">100.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\americans\immigrants\immigrants_british.png</icon>
+    <rollovertextid>9911061</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="Spawn" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHouse</target>
+      </effect>
+      <effect type="Data" action="Spawn" amount="1.00" subtype="WorkRate" unittype="Settler" relativity="Assign">
+        <target type="ProtoUnit">AbstractHouse</target>
+      </effect>
+      <effect type="TextOutput">110066</effect>
+      <effect type="TechStatus" status="active">DEHCImmigrantsStateCapitolShadow</effect>
+    </effects>
+  </tech>
+
+<tech name="HCXPTirailleursForEU" type="Normal">
+    <dbid>991259</dbid>
+    <displaynameid>9911062</displaynameid>
+    <cost resourcetype="Gold">1000.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\tirailleurs.png</icon>
+    <rollovertextid>9911063</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="MercFusilier" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" action="VolleyRangedAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractGunpowderTrooper</target>
+      </effect>
+      <effect type="Data" action="StaggerRangedAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractGunpowderTrooper</target>
+      </effect>
+      <effect type="Data" action="DefendRangedAttack" amount="0.85" subtype="RateOfFire" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractGunpowderTrooper</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCBuffaloSoldiersForEU" type="Normal">
+    <dbid>991260</dbid>
+    <displaynameid>9911064</displaynameid>
+    <cost resourcetype="Gold">1500.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_richelieus_regiment\hc_richelius_regiment.png</icon>
+    <rollovertextid>9911065</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="ypConsulateGendarmes" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.20" subtype="Damage" allactions="1" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.20" subtype="HitPoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="0.12" subtype="ArmorSpecific" newtype="Ranged" relativity="Absolute">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="VeterancyEnable" relativity="Absolute">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.05" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.05" subtype="VeterancyBonus" rank="0" modifytype="Damage" relativity="Assign">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="VeterancyBonus" rank="1" modifytype="Damage" relativity="Assign">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="VeterancyBonus" rank="2" modifytype="Damage" relativity="Assign">
+        <target type="ProtoUnit">AbstractCavalry</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCImmigrantsFrenchForEU" type="Normal">
+    <dbid>991261</dbid>
+    <displaynameid>9911066</displaynameid>
+    <cost resourcetype="Wood">400.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\americans\immigrants\immigrants_french.png</icon>
+    <rollovertextid>9911067</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="8.00" subtype="FreeHomeCityUnit" unittype="Coureur" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="ArmorType" newtype="Ranged" relativity="Absolute">
+        <target type="ProtoUnit">AbstractVillager</target>
+      </effect>
+      <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractVillager</target>
+      </effect>
+      <effect type="Data" amount="1.35" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">LogicalTypeAffectedByVillagerUpgrades</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCXPSpanishGoldForEU" type="Normal">
+    <dbid>991262</dbid>
+    <displaynameid>9911068</displaynameid>
+    <cost resourcetype="Food">300.0000</cost>
+    <cost resourcetype="Wood">300.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\Spanish_Gold.png</icon>
+    <rollovertextid>9911069</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="deCrateSpanishGold" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="deSPCSpanishShipRuinsGold" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCExplorerSpanishForEU" type="Normal">
+    <dbid>991263</dbid>
+    <displaynameid>9911070</displaynameid>
+    <cost resourcetype="Gold">800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_explorer_spanish_conquistador\hc_explorer_spanish.png</icon>
+    <rollovertextid>9911071</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.50" subtype="Damage" allactions="1" relativity="BasePercent">
+        <target type="ProtoUnit">Hero</target>
+      </effect>
+      <effect type="Data" amount="1.50" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">Hero</target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+        <target type="ProtoUnit">ypNatConquistador</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractArtillery" action="StaggerRangedAttack" relativity="Absolute">
+        <target type="ProtoUnit">ypNatConquistador</target>
+      </effect>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="ypNatConquistador" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCArchaicTrainingForEU" type="Normal">
+    <dbid>991264</dbid>
+    <displaynameid>9911072</displaynameid>
+    <cost resourcetype="Wood">1000.0000</cost>
+    <cost resourcetype="Gold">1000.0000</cost>
+    <researchpoints>60.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\pdzMercenaryEquipment.png</icon>
+    <rollovertextid>9911073</rollovertextid>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <flag>CountsTowardMilitaryScore</flag>
+    <effects>
+      <effect type="Data" action="MeleeHandAttack" amount="8" subtype="Damage" relativity="Absolute">
+        <target type="ProtoUnit">Crossbowman</target>
+      </effect>
+      <effect type="Data" action="VolleyHandAttack" amount="8" subtype="Damage" relativity="Absolute">
+        <target type="ProtoUnit">Crossbowman</target>
+      </effect>
+      <effect type="Data" action="DefendHandAttack" amount="8" subtype="Damage" relativity="Absolute">
+        <target type="ProtoUnit">Crossbowman</target>
+      </effect>
+      <effect type="Data" action="StaggerHandAttack" amount="8" subtype="Damage" relativity="Absolute">
+        <target type="ProtoUnit">Crossbowman</target>
+      </effect>
+      <effect type="Data" amount="0.20" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute">
+        <target type="ProtoUnit">Crossbowman</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractGunpowderTrooper" action="MeleeHandAttack" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractArtillery" action="MeleeHandAttack" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractGunpowderTrooper" action="DefendHandAttack" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractArtillery" action="DefendHandAttack" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractGunpowderTrooper" action="CoverHandAttack" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractArtillery" action="CoverHandAttack" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="0.8" subtype="DamageBonus" unittype="AbstractArtillery" action="CoverHandAttack" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="-1.00" subtype="PopulationCount" relativity="Absolute">
+        <target type="ProtoUnit">Mercenary</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCNewSpainViceroyaltyForEU" type="Normal">
+    <dbid>991265</dbid>
+    <displaynameid>9911074</displaynameid>
+    <cost resourcetype="Gold">400.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\spanish\new_spain.png</icon>
+    <rollovertextid>9911075</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="3.00" subtype="FreeHomeCityUnit" unittype="deHaciendaWagon" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="TechStatus" status="active">DEAltaCaliforniaShadow</effect>
+      <effect type="Data" amount="1.00" tactic="HaciendaSettler" subtype="TacticEnable" relativity="Absolute">
+        <target type="ProtoUnit">deHacienda</target>
+      </effect>
+      <effect type="Data" action="SpawnSettler" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">deHacienda</target>
+      </effect>
+      <effect type="Data" amount="1.00" tactic="HaciendaSoldado" subtype="TacticEnable" relativity="Absolute">
+        <target type="ProtoUnit">deHacienda</target>
+      </effect>
+      <effect type="Data" action="SpawnSoldado" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">deHacienda</target>
+      </effect>
+      <effect tech="ypFreeCoinCrate400" type="Data" amount="1.00" subtype="FreeHomeCityUnitIfTechObtainable" unittype="deCrateSpanishGold" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="TextOutputTechName">110130</effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCFeitoriasForEU" type="Normal">
+    <dbid>991266</dbid>
+    <displaynameid>9911076</displaynameid>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <cost resourcetype="Gold">300.0000</cost>
+    <icon>resources\images\icons\techs\native\house_braganca.png</icon>
+    <rollovertextid>9911077</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="AutoGatherFood" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">TownCenter</target>
+      </effect>
+      <effect type="Data" action="AutoGatherWood" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">TownCenter</target>
+      </effect>
+      <effect type="Data" action="AutoGatherGold" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">TownCenter</target>
+      </effect>
+      <effect type="Data" action="AutoGatherXP" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">TownCenter</target>
+      </effect>
+      <effect type="TextOutputTechName">110130</effect>
+    </effects>
+  </tech>
+
+<tech name="HCXPRangefindingForEU" type="Normal">
+    <dbid>991267</dbid>
+    <displaynameid>9911078</displaynameid>
+    <cost resourcetype="Gold">500.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\Range_Finding.png</icon>
+    <rollovertextid>9911079</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="CannonAttack" amount="8.00" subtype="MaximumRange" relativity="Absolute">
+        <target type="ProtoUnit">Mortar</target>
+      </effect>
+      <effect type="Data" amount="8.00" subtype="LOS" relativity="Absolute">
+        <target type="ProtoUnit">Mortar</target>
+      </effect>
+      <effect type="TextOutput">46888</effect>
+    </effects>
+  </tech>
+
+<tech name="HCDragoonCombatPortugueseForEU" type="Normal">
+    <dbid>991268</dbid>
+    <displaynameid>9911080</displaynameid>
+    <cost resourcetype="Gold">600.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_austro_hungarian_army3.png</icon>
+    <rollovertextid>9911081</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.30" subtype="Damage" allactions="1" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractGunpowderCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.30" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractGunpowderCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">Hussar</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent">
+        <target type="ProtoUnit">Hussar</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCXPAdmiralTrompForEU" type="Normal">
+    <dbid>991269</dbid>
+    <displaynameid>9911082</displaynameid>
+    <cost resourcetype="Gold">1200.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\Admiral_Tromp.png</icon>
+    <rollovertextid>9911083</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.75" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractWarShip</target>
+      </effect>
+      <effect type="TextOutput">47064</effect>
+    </effects>
+  </tech>
+
+<tech name="HCBetterBanksForEU" type="Normal">
+    <dbid>991270</dbid>
+    <displaynameid>9911084</displaynameid>
+    <cost resourcetype="Gold">1000.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_tulip_speculation\hc_tulip_speculation.png</icon>
+    <rollovertextid>9911085</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="AutoGather" amount="1.50" subtype="WorkRate" unittype="Gold" relativity="BasePercent">
+        <target type="ProtoUnit">Bank</target>
+      </effect>
+      <effect type="TextOutput">41802</effect>
+    </effects>
+  </tech>
+
+<tech name="HCXPMilitaryReformsForEU" type="Normal">
+    <dbid>991271</dbid>
+    <displaynameid>9911086</displaynameid>
+    <cost resourcetype="Gold">800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\Forced_March.png</icon>
+    <rollovertextid>9911087</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.15" subtype="MaximumVelocity" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractInfantry</target>
+      </effect>
+      <effect type="TextOutput">69791</effect>
+      <effect type="Data" action="CoverHandAttack" amount="0.25" subtype="DamageBonus" unittype="AbstractInfantry" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" action="DefendHandAttack" amount="0.25" subtype="DamageBonus" unittype="AbstractInfantry" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" action="MeleeHandAttack" amount="0.25" subtype="DamageBonus" unittype="AbstractInfantry" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCCircleArmyForEU" type="Normal">
+    <dbid>991272</dbid>
+    <displaynameid>9911088</displaynameid>
+    <researchpoints>40.0000</researchpoints>
+    <cost resourcetype="Gold">3800.0000</cost>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\germans\circle_army.png</icon>
+    <rollovertextid>9911089</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <effects>
+      <effect type="Data" amount="12.00" subtype="FreeHomeCityUnit" unittype="MercJaeger" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="MercLandsknecht" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="9.00" subtype="FreeHomeCityUnit" unittype="MercBlackRider" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">Mercenary</target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="Damage" allactions="1" relativity="BasePercent">
+        <target type="ProtoUnit">Mercenary</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCGermantownFarmersForEU" type="Normal">
+    <dbid>991273</dbid>
+    <displaynameid>9911090</displaynameid>
+    <cost resourcetype="Wood">400.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_advanced_mill\germantown_farmers.png</icon>
+    <rollovertextid>9911091</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.00" subtype="AddTrain" unittype="SettlerWagon" relativity="Absolute">
+        <target type="ProtoUnit">Mill</target>
+      </effect>
+      <effect type="Data" amount="5.00" subtype="FreeHomeCityUnit" unittype="SettlerWagon" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCXPSolingenSteelForEU" type="Normal">
+    <dbid>991274</dbid>
+    <displaynameid>9911092</displaynameid>
+    <cost resourcetype="Gold">800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\solingen_steel.png</icon>
+    <rollovertextid>9911093</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="MeleeHandAttack" amount="-0.15" subtype="RateOfFire" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" action="DefendHandAttack" amount="-0.15" subtype="RateOfFire" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractHandInfantry</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCGermanChevaulegersForEU" type="Normal">
+    <dbid>991275</dbid>
+    <displaynameid>9911094</displaynameid>
+    <cost resourcetype="Ships">1.0000</cost>
+    <cost resourcetype="Food">500.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\germans\bavarian_chevaulegers.png</icon>
+    <rollovertextid>9911095</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+        <target type="ProtoUnit">deChevauleger</target>
+      </effect>
+      <effect type="CommandAdd" proto="deChevauleger" page="0" column="4">
+        <target type="ProtoUnit">Stable</target>
+      </effect>
+      <effect type="CommandAdd" proto="deChevauleger" page="0" column="7">
+        <target type="ProtoUnit">FortFrontier</target>
+      </effect>
+      <effect type="CommandAdd" proto="deChevauleger" page="0" column="7">
+        <target type="ProtoUnit">Galleon</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCRansackForEU" type="Normal">
+    <dbid>991276</dbid>
+    <displaynameid>9911096</displaynameid>
+    <cost resourcetype="Gold">400.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_ransack\hc_ransack.png</icon>
+    <rollovertextid>9911097</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="BuildingAttack" amount="1.50" subtype="Damage" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractInfantry</target>
+      </effect>
+      <effect type="Data" action="MortarBuildingAttack" amount="1.50" subtype="Damage" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractInfantry</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCXPSuvorovReformsForEU" type="Normal">
+    <dbid>991277</dbid>
+    <displaynameid>9911098</displaynameid>
+    <cost resourcetype="Gold">1000.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\suvorov_reforms.png</icon>
+    <rollovertextid>9911099</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>HCUniqueCombatRussianForEU</flag>
+    <effects>
+      <effects>
+        <effect type="TextOutputTechName">110130</effect>
+        <effect type="TransformUnit" toprotoid="deRussianMusketeer" fromprotoid="Strelet">
+        </effect>
+      </effects>
+    </effects>
+  </tech>
+
+<tech name="HCXPNationalRedoubtForEU" type="Normal">
+    <dbid>991278</dbid>
+    <displaynameid>9911100</displaynameid>
+    <cost resourcetype="Gold">600.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\native\Factory_Blueprints.png</icon>
+    <rollovertextid>9911101</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="Build" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">Musketeer</target>
+      </effect>
+      <effect type="TextOutput">47086</effect>
+      <effect type="Data" amount="1.00" subtype="AddTrain" unittype="FortFrontier" relativity="Absolute">
+        <target type="ProtoUnit">Musketeer</target>
+      </effect>
+      <effect type="Data" amount="1.10" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">Musketeer</target>
+      </effect>
+      <effect type="Data" amount="1.10" subtype="Damage" allactions="1" relativity="BasePercent">
+        <target type="ProtoUnit">Musketeer</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCUniqueCombatRussianForEU" type="Normal">
+    <dbid>991279</dbid>
+    <displaynameid>9911102</displaynameid>
+    <cost resourcetype="Gold">800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_boyars\hc_boyars.png</icon>
+    <rollovertextid>9911103</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <effects>
+      <effect type="Data" action="GuardianAttack" amount="2.00" subtype="damagearea" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandCavalry</target>
+      </effect>
+      <effect type="Data" action="MeleeHandAttack" amount="2.00" subtype="damagearea" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandCavalry</target>
+      </effect>
+      <effect type="Data" action="DefendHandAttack" amount="2.00" subtype="damagearea" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandCavalry</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCArtilleryCombatOttomanForEU" type="Normal">
+    <dbid>991280</dbid>
+    <displaynameid>9911104</displaynameid>
+    <cost resourcetype="Gold">2800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\ottoman\topcular.png</icon>
+    <rollovertextid>9911105</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="AbusGun" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="deHumbaraci" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="-1.00" subtype="PopulationCount" relativity="Absolute">
+        <target type="ProtoUnit">deHumbaraci</target>
+      </effect>
+      <effect type="Data" amount="-1.00" subtype="PopulationCount" relativity="Absolute">
+        <target type="ProtoUnit">AbusGun</target>
+      </effect>
+      <effect type="Data" amount="-1.00" subtype="PopulationCount" relativity="Absolute">
+        <target type="ProtoUnit">deHumbaraci</target>
+      </effect>
+      <effect type="Data" amount="-1.00" subtype="PopulationCount" relativity="Absolute">
+        <target type="ProtoUnit">AbusGun</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCJanissaryCostForEU" type="Normal">
+    <dbid>991281</dbid>
+    <displaynameid>9911106</displaynameid>
+    <cost resourcetype="Gold">1000.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_acemi_olglan_school\hc_acemi_olglan_school.png</icon>
+    <rollovertextid>9911107</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect mergeMode="add" type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+        <target type="ProtoUnit">deNizam</target>
+      </effect>
+      <effect type="Data" amount="10.00" subtype="FreeHomeCityUnit" unittype="deNizam" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="AddTrain" unittype="deNizam" relativity="Absolute">
+        <target type="ProtoUnit">Barracks</target>
+      </effect>
+      <effect mergeMode="add" type="Data" amount="30.00" subtype="BuildLimit" relativity="Assign">
+        <target type="ProtoUnit">deNizam</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCExplorerOttomanForEU" type="Normal">
+    <dbid>991282</dbid>
+    <displaynameid>9911108</displaynameid>
+    <cost resourcetype="Gold">600.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\hc_explorer_ottoman_agha\hc_ottoman_explorer.png</icon>
+    <rollovertextid>9911109</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="2.00" subtype="FreeHomeCityUnit" unittype="Explorer" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.50" subtype="Damage" allactions="1" relativity="BasePercent">
+        <target type="ProtoUnit">Hero</target>
+      </effect>
+      <effect type="Data" amount="1.50" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">Hero</target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="MaximumVelocity" relativity="Absolute">
+        <target type="ProtoUnit">Explorer</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="ChurchKapikuluCorpsForEU" type="Normal">
+    <dbid>991283</dbid>
+    <displaynameid>9911110</displaynameid>
+    <cost resourcetype="Food">2500.0000</cost>
+    <researchpoints>15.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\ottoman\kapikulu_corps.png</icon>
+    <rollovertextid>9911111</rollovertextid>
+    <flag>UniqueTech</flag>
+    <flag>CheckLandHCGatherPoint</flag>
+    <effects>
+      <effect type="Data" amount="5.00" subtype="FreeHomeCityUnit" unittype="Spahi" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="0.10" subtype="ArmorSpecific" newtype="Hand" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHeavyCavalry</target>
+      </effect>
+      <effect type="SetName" proto="Spahi" culture="none" newname="125327">
+      </effect>
+      <effect type="Data" amount="0.00" subtype="UpdateVisual" unittype="Spahi" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech mergeMode="add" name="DEHCAdvancedLombardForEU" type="Normal">
+    <dbid>991284</dbid>
+    <displaynameid>9911112</displaynameid>
+    <researchpoints>40.0000</researchpoints>
+    <cost resourcetype="Food">400.0000</cost>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\italians\advanced_lombard.png</icon>
+    <rollovertextid>9911113</rollovertextid>
+    <flag>CountsTowardEconomicScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="4.00" subtype="FreeHomeCityUnit" unittype="deLombardWagon" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" amount="2000.00" subtype="InvestResource" resource="Gold" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCRomanTacticsForEU" type="Normal">
+    <dbid>991285</dbid>
+    <displaynameid>9911114</displaynameid>
+    <cost resourcetype="Gold">500.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\italians\roman_tactics.png</icon>
+    <rollovertextid>9911115</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.25" subtype="HitPoints" relativity="BasePercent">
+        <target type="ProtoUnit">Pikeman</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="HitPoints" relativity="BasePercent">
+        <target type="ProtoUnit">Halberdier</target>
+      </effect>
+      <effect type="Data" action="RomanTactics1" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">dePavisier</target>
+      </effect>
+      <effect type="Data" action="RomanTactics1" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">Pikeman</target>
+      </effect>
+      <effect type="Data" action="RomanTactics1" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+        <target type="ProtoUnit">Halberdier</target>
+      </effect>
+      <effect type="TextOutputTechName">110130</effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCUsuryForEU" type="Normal">
+    <dbid>991286</dbid>
+    <displaynameid>9911116</displaynameid>
+    <cost resourcetype="Gold">800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\italians\usury.png</icon>
+    <rollovertextid>9911117</rollovertextid>
+    <flag>CountsTowardEconomicScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="AutoGatherFoodInvestment" amount="1.25" subtype="Yield" unittype="Gold" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" action="AutoGatherWoodInvestment" amount="1.25" subtype="Yield" unittype="Gold" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" action="AutoGatherFoodInvestment" amount="2.00" subtype="WorkRate" unittype="Gold" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" action="AutoGatherFoodInvestment" amount="2.00" subtype="WorkRate" unittype="Wood" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" action="AutoGatherWoodInvestment" amount="2.00" subtype="WorkRate" unittype="Food" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" action="AutoGatherWoodInvestment" amount="2.00" subtype="WorkRate" unittype="Gold" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" action="AutoGatherCoinInvestment" amount="2.00" subtype="WorkRate" unittype="Food" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+      <effect type="Data" action="AutoGatherCoinInvestment" amount="2.00" subtype="WorkRate" unittype="Wood" relativity="BasePercent">
+        <target type="ProtoUnit">deLombard</target>
+      </effect>
+    </effects>
+  </tech>
+
+<tech name="HCSilkRoadTeamForEU" type="Normal">
+    <dbid>991287</dbid>
+    <displaynameid>9911118</displaynameid>
+    <cost resourcetype="Gold">400.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\italians\merchant_republics.png</icon>
+    <rollovertextid>9911119</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="2.00" subtype="InventoryAmount" resource="Wood" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractWoodCrate</target>
+      </effect>
+      <effect type="Data" amount="2.00" subtype="InventoryAmount" resource="Food" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractFoodCrate</target>
+      </effect>
+      <effect type="Data" amount="2.00" subtype="InventoryAmount" resource="Gold" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractCoinCrate</target>
+      </effect>
+      <effect type="Data" amount="2.00" subtype="InventoryAmount" resource="XP" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractXPCrate</target>
+      </effect>
+      <effect type="TextOutput">70511</effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCEngelsbergIronworksForEU" type="Normal">
+    <dbid>991288</dbid>
+    <displaynameid>9911120</displaynameid>
+    <cost resourcetype="Gold">100.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\sweden\engelsberg_ironworks.png</icon>
+    <rollovertextid>9911121</rollovertextid>
+    <flag>CountsTowardEconomicScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="AreaGatherMine" amount="0.00" subtype="ActionEnable" relativity="Assign">
+        <target type="ProtoUnit">deTorp</target>
+      </effect>
+      <effect type="Data" action="AreaGatherMine2" amount="1.00" subtype="ActionEnable" relativity="Assign">
+        <target type="ProtoUnit">deTorp</target>
+      </effect>
+      <effect type="Data" amount="4.00" subtype="FreeHomeCityUnit" unittype="deTorpWagon" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+        <target type="ProtoUnit">deTorpWagon</target>
+      </effect>
+      <effect type="SetName" proto="deTorp" culture="none" newname="91801">
+      </effect>
+      <effect type="SetName" proto="deTorp" culture="none" newname="91625" reqtech="DEHCSoldierTorps">
+      </effect>
+      <effect type="TextOutput">91753</effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCNorthernForestsForEU" type="Normal">
+    <dbid>991289</dbid>
+    <displaynameid>9911122</displaynameid>
+    <cost resourcetype="Gold">200.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\great_northern_forests.png</icon>
+    <rollovertextid>9911123</rollovertextid>
+    <flag>CountsTowardEconomicScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="SpawnTrees1" amount="1.00" subtype="ActionAdd" unittype="deTorp" relativity="Absolute">
+        <target type="Player">
+        </target>
+      </effect>
+      <effect type="Data" action="AreaGatherTree" amount="0.00" subtype="ActionEnable" relativity="Assign">
+        <target type="ProtoUnit">deTorp</target>
+      </effect>
+      <effect type="Data" action="AreaGatherTree2" amount="1.00" subtype="ActionEnable" relativity="Assign">
+        <target type="ProtoUnit">deTorp</target>
+      </effect>
+      <effect type="TextOutput">91775</effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCTrampleTacticsForEU" type="Normal">
+    <dbid>991290</dbid>
+    <displaynameid>9911124</displaynameid>
+    <cost resourcetype="Gold">800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\sweden\trample_tactics.png</icon>
+    <rollovertextid>9911125</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" action="MeleeHandAttack" amount="-0.35" subtype="RateOfFire" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandCavalry</target>
+      </effect>
+      <effect type="Data" action="DefendHandAttack" amount="-0.35" subtype="RateOfFire" relativity="Absolute">
+        <target type="ProtoUnit">AbstractHandCavalry</target>
+      </effect>
+      <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractHandCavalry</target>
+      </effect>
+      <effect type="TextOutput">91794</effect>
+    </effects>
+  </tech>
+
+<tech name="DEHCSveaLifeguardForEU" type="Normal">
+    <dbid>991291</dbid>
+    <displaynameid>9911126</displaynameid>
+    <cost resourcetype="Gold">800.0000</cost>
+    <researchpoints>40.0000</researchpoints>
+    <status>UNOBTAINABLE</status>
+    <icon>resources\images\icons\techs\sweden\svea_lifeguard.png</icon>
+    <rollovertextid>9911127</rollovertextid>
+    <flag>CountsTowardMilitaryScore</flag>
+    <flag>YPNeverObtainableAfterUse</flag>
+    <effects>
+      <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">AbstractMusketeer</target>
+      </effect>
+      <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+        <target type="ProtoUnit">Grenadier</target>
+      </effect>
+      <effect type="Data" amount="1.00" subtype="ArmorType" newtype="Ranged" relativity="Absolute">
+        <target type="ProtoUnit">AbstractMusketeer</target>
+      </effect>
+      <effect type="TextOutput">91693</effect>
+    </effects>
+  </tech>
+
     <!-- CBE City-State Subcivs                                    -->
     <!-- ========================================================= -->
 
