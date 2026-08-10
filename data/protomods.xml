@@ -4687,6 +4687,86 @@
     <!-- support prototypes together in this subsection.           -->
     <!-- ######################################################### -->
 
+    <!-- Persistent diplomatic-reputation states. Exactly one marker is
+         owned by each eligible player; repair and penalty technologies
+         transform it between the five 25-point states. -->
+    <unit id="9051" name="CBEForeignMissionReputation100Marker">
+        <dbid>9051</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid>
+        <rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz>
+        <maxvelocity>0</maxvelocity><movementtype>land</movementtype><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9052" name="CBEForeignMissionReputation75Marker">
+        <dbid>9052</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9053" name="CBEForeignMissionReputation50Marker">
+        <dbid>9053</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9054" name="CBEForeignMissionReputation25Marker">
+        <dbid>9054</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9055" name="CBEForeignMissionReputation0Marker">
+        <dbid>9055</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+
+    <!-- One marker survives to each duration threshold. On dismissal every
+         surviving marker removes 25 reputation, so the losses accumulate to
+         -100 / -75 / -50 / -25 / 0 at 3 / 5 / 10 / 15 minutes. -->
+    <unit id="9056" name="CBEForeignMissionTimer3Marker">
+        <dbid>9056</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><lifespan>180</lifespan><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9057" name="CBEForeignMissionTimer5Marker">
+        <dbid>9057</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><lifespan>300</lifespan><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9058" name="CBEForeignMissionTimer10Marker">
+        <dbid>9058</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><lifespan>600</lifespan><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9059" name="CBEForeignMissionTimer15Marker">
+        <dbid>9059</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><lifespan>900</lifespan><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>1</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+    <unit id="9060" name="CBEForeignMissionDismissalPulseMarker">
+        <dbid>9060</dbid><displaynameid>9911135</displaynameid><editornameid>9911135</editornameid><rollovertextid>9911136</rollovertextid><shortrollovertextid>9911137</shortrollovertextid>
+        <obstructionradiusx>0.1</obstructionradiusx><obstructionradiusz>0.1</obstructionradiusz><maxvelocity>0</maxvelocity><movementtype>land</movementtype><lifespan>8</lifespan><impacttype>Wood</impacttype><physicsinfo>crate</physicsinfo>
+        <initialhitpoints>1</initialhitpoints><maxhitpoints>1</maxhitpoints><los>0</los><trainpoints>1</trainpoints><buildlimit>8</buildlimit><populationcount>0</populationcount><allowedage>0</allowedage>
+        <unittype>Unit</unittype><unittype>UnitClass</unittype><unittype>LogicalTypeEasySelectAvoid</unittype><unittype>Unattackable</unittype>
+        <flag>DoNotCreateUnitGroupAutomatically</flag><flag>NoBloodOnDeath</flag><flag>NoHPBar</flag><flag>Immoveable</flag><flag>Invulnerable</flag><flag>NotPlayerPlaceable</flag><flag>NonAutoFormedUnit</flag><flag>NotSelectable</flag><flag>DoNotShowOnMiniMap</flag><flag>NonCollideable</flag><flag>Tracked</flag><flag>ForceFullTechUpdate</flag>
+    </unit>
+
     <!-- ========================================================= -->
     <!-- Government House                                          -->
     <!-- Consulate visual; reserved for Foreign Missions.          -->
@@ -4795,6 +4875,8 @@
         <!-- The Consulate picker opens the mission-selection panel. Each
              mission exposes its own dismissal action on the relation page. -->
         <tech row="0" page="18" column="0">ypPickConsulateTech</tech>
+        <!-- Reputation repair is added dynamically to page 0, column 5 by
+             the lock matching the player's current reputation tier. -->
         <tech row="0" page="20" column="2">CBEDismissBritishMission</tech>
         <tech row="0" page="20" column="2">CBEDismissFrenchMission</tech>
         <tech row="0" page="20" column="2">CBEDismissSpanishMission</tech>

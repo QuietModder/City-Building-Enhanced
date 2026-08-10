@@ -108,57 +108,57 @@
             <!-- ========================================================= -->
 
             <string _locid="9911012">Invite a Foreign Mission</string>
-            <string _locid="9911013">Invite foreign advisers, merchants, and military specialists to the Government House. Only one Foreign Mission may be hosted at a time.</string>
+            <string _locid="9911013">Invite foreign advisers, merchants, and military specialists to the Government House. Requires 100 Diplomatic Reputation. Only one Foreign Mission may be hosted at a time.</string>
 
             <string _locid="9911014">British Mission</string>
             <string _locid="9911015">British advisers increase villager and land-military hit points by 7%; Musketeer hit points and damage by 15% and range by 3; and Hussar hit points and damage by 15%. Unlocks British units and research at the Government House.</string>
             <string _locid="9911016">Dismiss the British Mission</string>
-            <string _locid="9911017">Ends the British Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911017">Ends the British Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911018">French Mission</string>
             <string _locid="9911019">French advisers improve villager work rates by 5%; Rifleman hit points and damage by 25%; and Rifleman range by 3. Unlocks French units and research at the Government House.</string>
             <string _locid="9911020">Dismiss the French Mission</string>
-            <string _locid="9911021">Ends the French Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911021">Ends the French Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911022">Spanish Mission</string>
             <string _locid="9911023">Spanish advisers generate 0.8 experience per second and improve villager mining work rates. Unlocks Spanish units and research at the Government House.</string>
             <string _locid="9911024">Dismiss the Spanish Mission</string>
-            <string _locid="9911025">Ends the Spanish Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911025">Ends the Spanish Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911026">Portuguese Mission</string>
             <string _locid="9911027">Portuguese engineers reduce building Wood costs by 15%; increase Musketeer and gunpowder-cavalry hit points and damage by 15%; and grant Musketeers 15% hand resistance. Unlocks Portuguese units and research at the Government House.</string>
             <string _locid="9911028">Dismiss the Portuguese Mission</string>
-            <string _locid="9911029">Ends the Portuguese Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911029">Ends the Portuguese Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911030">Dutch Mission</string>
             <string _locid="9911031">Dutch financiers generate 0.8 Coin per second, increase Halberdier hit points and damage by 35%, and improve Bank productivity by 15%. Unlocks Dutch units and research at the Government House.</string>
             <string _locid="9911032">Dismiss the Dutch Mission</string>
-            <string _locid="9911033">Ends the Dutch Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911033">Ends the Dutch Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911034">German Mission</string>
             <string _locid="9911035">German quartermasters generate 0.4 Food, Wood, and Coin per second; reduce cavalry-infantry Food costs by 10%; and increase Rifleman hit points and damage by 25% with 15% ranged resistance. Unlocks German units and research at the Government House.</string>
             <string _locid="9911036">Dismiss the German Mission</string>
-            <string _locid="9911037">Ends the German Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911037">Ends the German Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911038">Russian Mission</string>
             <string _locid="9911039">Russian organizers reduce land economic-unit Food costs and training time by 10%, and reduce land-military Food, Wood, and Coin costs and training time by 20%. Unlocks Russian units and research at the Government House.</string>
             <string _locid="9911040">Dismiss the Russian Mission</string>
-            <string _locid="9911041">Ends the Russian Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911041">Ends the Russian Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911042">Ottoman Mission</string>
             <string _locid="9911043">Ottoman surveyors increase economic-unit, military-unit, and building line of sight by 7. Ottoman artillery gains 35% hit points but moves 15% slower. Unlocks Ottoman units and research at the Government House.</string>
             <string _locid="9911044">Dismiss the Ottoman Mission</string>
-            <string _locid="9911045">Ends the Ottoman Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911045">Ends the Ottoman Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911046">Italian Mission</string>
             <string _locid="9911047">Italian architects reduce building Wood costs by 20% and improve Lombard Food and Wood investment yields by 50%. Unlocks Italian units and research at the Government House.</string>
             <string _locid="9911048">Dismiss the Italian Mission</string>
-            <string _locid="9911049">Ends the Italian Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911049">Ends the Italian Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <string _locid="9911050">Swedish Mission</string>
             <string _locid="9911051">Swedish officers increase the hit points of villagers and land military units by 7%. Unlocks Caroleans, Finnish Riders, Leather Cannons, and Swedish research at the Government House.</string>
             <string _locid="9911052">Dismiss the Swedish Mission</string>
-            <string _locid="9911053">Ends the Swedish Mission, removes its benefits and unit roster, and allows another Foreign Mission to be invited.</string>
+            <string _locid="9911053">Ends the Swedish Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
 
             <!-- Foreign Mission research translated and localized for CBE. -->
             <string _locid="9911054">Ranger Force</string>
@@ -645,6 +645,18 @@
             <string _locid="9911009">Enacts Trade Shipments: The Colonial Secretariat generates 1.25 XP per second, future Trade Route income is increased by 25%, and Market exchange rates are 10% more favorable. Villagers gather resources 10% slower, and land military units take 33% longer to train.</string>
             <string _locid="9911010">State of Siege</string>
             <string _locid="9911011">State of Siege policy is active.</string>
+
+            <!-- Foreign Mission diplomatic reputation -->
+            <string _locid="9911128">Repair Diplomatic Reputation</string>
+            <string _locid="9911129">Invest 1,500 Food, 1,500 Wood, and 1,500 Coin to restore 25 Diplomatic Reputation. Foreign Missions may only be selected at 100 reputation.</string>
+            <string _locid="9911130">Government House — Diplomatic Reputation: 100</string>
+            <string _locid="9911131">Government House — Diplomatic Reputation: 75</string>
+            <string _locid="9911132">Government House — Diplomatic Reputation: 50</string>
+            <string _locid="9911133">Government House — Diplomatic Reputation: 25</string>
+            <string _locid="9911134">Government House — Diplomatic Reputation: 0</string>
+            <string _locid="9911135">Diplomatic State Marker</string>
+            <string _locid="9911136">Hidden marker used to track Foreign Mission duration and diplomatic reputation.</string>
+            <string _locid="9911137">Internal Foreign Mission state.</string>
 
             <!-- ========================================================= -->
             <!-- 9912000s - CBE SUBCIVS                                    -->

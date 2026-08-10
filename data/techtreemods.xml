@@ -6684,6 +6684,26 @@
         <flag>Shadow</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="active">CBEForeignMissionSelectionPermission</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty15Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty10Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty5Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionPenalty3Minute</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock75</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock50</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock25</effect>
+            <effect type="TechStatus" status="obtainable">CBEForeignMissionReputationPickerLock0</effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation100Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation75Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation50Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation25Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionReputation0Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer3Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer5Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer10Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionTimer15Marker</target></effect>
+            <effect type="Data" amount="1" subtype="Enable" relativity="Absolute"><target type="ProtoUnit">CBEForeignMissionDismissalPulseMarker</target></effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911130" />
             <effect type="TechStatus" status="obtainable">CBEForeignMissionBritish</effect>
             <effect type="TechStatus" status="obtainable">CBEForeignMissionFrench</effect>
             <effect type="TechStatus" status="obtainable">CBEForeignMissionSpanish</effect>
@@ -6694,6 +6714,206 @@
             <effect type="TechStatus" status="obtainable">CBEForeignMissionOttomans</effect>
             <effect type="TechStatus" status="obtainable">CBEForeignMissionItalians</effect>
             <effect type="TechStatus" status="obtainable">CBEForeignMissionSwedish</effect>
+        </effects>
+    </tech>
+
+    <!-- Legacy permission state retained for save/reference compatibility.
+         Picker visibility is the reputation gate; mission choices do not use
+         a second state that can become desynchronized from the picker. -->
+    <tech name="CBEForeignMissionSelectionPermission" type="Normal">
+        <dbid>991304</dbid><status>UNOBTAINABLE</status><flag>Shadow</flag>
+    </tech>
+
+    <!-- Diplomatic reputation is stored as one persistent marker. Each
+         surviving duration marker triggers one volatile shadow pulse that
+         permanently transforms the reputation state downward by 25. The
+         stages deliberately chain from 15 to 3 minutes. -->
+    <tech name="CBEForeignMissionPenalty15Minute" type="Normal">
+        <dbid>991292</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer15Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation100Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation100Marker" toprotoid="CBEForeignMissionReputation75Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer15Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911131" />
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionPenalty10Minute" type="Normal">
+        <dbid>991293</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer10Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation75Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation75Marker" toprotoid="CBEForeignMissionReputation50Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer10Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911132" />
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionPenalty5Minute" type="Normal">
+        <dbid>991294</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer5Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation50Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation50Marker" toprotoid="CBEForeignMissionReputation25Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer5Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911133" />
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionPenalty3Minute" type="Normal">
+        <dbid>991295</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionDismissalPulseMarker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionTimer3Marker" count="1" operator="gte" state="aliveState" />
+            <typecount unit="CBEForeignMissionReputation25Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation25Marker" toprotoid="CBEForeignMissionReputation0Marker" />
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionTimer3Marker" toprotoid="CBEForeignMissionDismissalPulseMarker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation0To25</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911134" />
+        </effects>
+    </tech>
+
+    <!-- The engine automatically restores ypPickConsulateTech after a
+         sequestered relation ends. These volatile locks continuously hide it
+         while the persistent reputation marker is below 100. -->
+    <tech name="CBEForeignMissionReputationPickerLock75" type="Normal">
+        <dbid>991300</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation75Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation75To100" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionReputationPickerLock50" type="Normal">
+        <dbid>991301</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation50Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation50To75" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionReputationPickerLock25" type="Normal">
+        <dbid>991302</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation25Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation25To50" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+    <tech name="CBEForeignMissionReputationPickerLock0" type="Normal">
+        <dbid>991303</dbid><status>UNOBTAINABLE</status>
+        <flag>Shadow</flag><flag>Volatile</flag><flag>DEUnobtainableAfterActive</flag>
+        <prereqs>
+            <techstatus status="Active">CBEShadowTechState</techstatus>
+            <typecount unit="CBEForeignMissionReputation0Marker" count="1" operator="gte" state="aliveState" />
+        </prereqs>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">ypPickConsulateTech</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation0To25</effect>
+            <effect type="CommandRemove" tech="ypPickConsulateTech"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="CommandAdd" tech="CBERepairDiplomaticReputation0To25" page="0" column="5"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+        </effects>
+    </tech>
+
+    <!-- Four backend steps share a name, icon, cost, and command slot. To the
+         player this is one repeatable +25 reputation action. -->
+    <tech name="CBERepairDiplomaticReputation0To25" type="Normal">
+        <dbid>991296</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation0Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation0Marker" toprotoid="CBEForeignMissionReputation25Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation0To25</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911133" />
+        </effects>
+    </tech>
+    <tech name="CBERepairDiplomaticReputation25To50" type="Normal">
+        <dbid>991297</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation25Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation25Marker" toprotoid="CBEForeignMissionReputation50Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation25To50</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911132" />
+        </effects>
+    </tech>
+    <tech name="CBERepairDiplomaticReputation50To75" type="Normal">
+        <dbid>991298</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation50Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation50Marker" toprotoid="CBEForeignMissionReputation75Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation50To75</effect>
+            <effect type="TechStatus" status="obtainable">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911131" />
+        </effects>
+    </tech>
+    <tech name="CBERepairDiplomaticReputation75To100" type="Normal">
+        <dbid>991299</dbid><displaynameid>9911128</displaynameid><rollovertextid>9911129</rollovertextid>
+        <cost resourcetype="Food">1500</cost><cost resourcetype="Wood">1500</cost><cost resourcetype="Gold">1500</cost>
+        <researchpoints>180</researchpoints><status>OBTAINABLE</status>
+        <icon>resources\images\icons\ingame\politicians\consulate_openrelations.png</icon>
+        <flag>CountsTowardEconomicScore</flag><flag>YPInfiniteTech</flag>
+        <prereqs><typecount unit="CBEForeignMissionReputation75Marker" count="1" operator="gte" state="aliveState" /></prereqs>
+        <effects>
+            <effect type="TransformUnit" fromprotoid="CBEForeignMissionReputation75Marker" toprotoid="CBEForeignMissionReputation100Marker" />
+            <effect type="TechStatus" status="unobtainable" deactivate="true">CBERepairDiplomaticReputation75To100</effect>
+            <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="CommandAdd" tech="ypPickConsulateTech" page="18" column="0"><target type="ProtoUnit">CBEGovernmentHouse</target></effect>
+            <effect type="SetName" proto="CBEGovernmentHouse" culture="none" newname="9911130" />
         </effects>
     </tech>
 
@@ -6710,7 +6930,12 @@
         <sequestertech>CBEDismissBritishMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissBritishMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">DERangerForce</effect>
             <effect type="TechStatus" status="obtainable">DEgreenwichForEU</effect>
             <effect type="TechStatus" status="obtainable">DEindustrialForEU</effect>
@@ -6744,6 +6969,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="unobtainable">DERangerForce</effect>
             <effect type="TechStatus" status="unobtainable">DEgreenwichForEU</effect>
             <effect type="TechStatus" status="unobtainable">DEindustrialForEU</effect>
@@ -6778,7 +7004,12 @@
         <icon>resources\images\icons\eso\flag_french_icon.png</icon><sequestertech>CBEDismissFrenchMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissFrenchMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">HCXPTirailleursForEU</effect>
             <effect type="TechStatus" status="obtainable">DEHCBuffaloSoldiersForEU</effect>
             <effect type="TechStatus" status="obtainable">DEHCImmigrantsFrenchForEU</effect>
@@ -6807,6 +7038,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="unobtainable">HCXPTirailleursForEU</effect>
             <effect type="TechStatus" status="unobtainable">DEHCBuffaloSoldiersForEU</effect>
             <effect type="TechStatus" status="unobtainable">DEHCImmigrantsFrenchForEU</effect>
@@ -6836,7 +7068,12 @@
         <icon>resources\images\icons\eso\flag_spanish_icon.png</icon><sequestertech>CBEDismissSpanishMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissSpanishMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">HCXPSpanishGoldForEU</effect>
             <effect type="TechStatus" status="obtainable">HCExplorerSpanishForEU</effect>
             <effect type="TechStatus" status="obtainable">HCArchaicTrainingForEU</effect>
@@ -6862,6 +7099,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.80" subtype="ResourceTrickleRate" resource="XP" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" action="Gather" amount="-0.50" subtype="WorkRate" unittype="AbstractMine" relativity="Absolute"><target type="ProtoUnit">AbstractVillager</target></effect>
@@ -6888,7 +7126,12 @@
         <icon>resources\images\icons\eso\flag_portuguese_icon.png</icon><sequestertech>CBEDismissPortugueseMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissPortugueseMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">DEHCFeitoriasForEU</effect>
             <effect type="TechStatus" status="obtainable">HCXPRangefindingForEU</effect>
             <effect type="TechStatus" status="obtainable">HCDragoonCombatPortugueseForEU</effect>
@@ -6916,6 +7159,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="1.15" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
             <effect type="Data" amount="0.85" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractGunpowderCavalry</target></effect>
@@ -6944,7 +7188,12 @@
         <icon>resources\images\icons\eso\flag_dutch_icon.png</icon><sequestertech>CBEDismissDutchMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissDutchMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">HCXPAdmiralTrompForEU</effect>
             <effect type="TechStatus" status="obtainable">HCBetterBanksForEU</effect>
             <effect type="TechStatus" status="obtainable">HCXPMilitaryReformsForEU</effect>
@@ -6971,6 +7220,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.80" subtype="ResourceTrickleRate" resource="Gold" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.65" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">Halberdier</target></effect>
@@ -6998,7 +7248,12 @@
         <icon>resources\images\icons\eso\flag_germans_icon.png</icon><sequestertech>CBEDismissGermanMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissGermanMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">DEHCCircleArmyForEU</effect>
             <effect type="TechStatus" status="obtainable">HCGermantownFarmersForEU</effect>
             <effect type="TechStatus" status="obtainable">HCXPSolingenSteelForEU</effect>
@@ -7029,6 +7284,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Food" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-0.40" subtype="ResourceTrickleRate" resource="Wood" relativity="Absolute"><target type="Player"></target></effect>
@@ -7060,7 +7316,12 @@
         <icon>resources\images\icons\eso\flag_russians_icon.png</icon><sequestertech>CBEDismissRussianMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissRussianMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">HCRansackForEU</effect>
             <effect type="TechStatus" status="obtainable">HCXPSuvorovReformsForEU</effect>
             <effect type="TechStatus" status="obtainable">HCXPNationalRedoubtForEU</effect>
@@ -7090,6 +7351,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="1.10" subtype="TrainPoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
             <effect type="Data" amount="1.10" subtype="Cost" resource="Food" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeLandEconomy</target></effect>
@@ -7120,7 +7382,12 @@
         <icon>resources\images\icons\eso\flag_ottomans_icon.png</icon><sequestertech>CBEDismissOttomanMission</sequestertech>
         <flag>CountsTowardEconomicScore</flag><flag>YPUseBigButton3</flag><flag>YPConsulateTech</flag><flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissOttomanMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">HCArtilleryCombatOttomanForEU</effect>
             <effect type="TechStatus" status="obtainable">HCJanissaryCostForEU</effect>
             <effect type="TechStatus" status="obtainable">HCExplorerOttomanForEU</effect>
@@ -7150,6 +7417,7 @@
         <flag>NativeDance</flag><flag>YPInfiniteTech</flag><flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">EconomicUnit</target></effect>
             <effect type="Data" amount="-7.00" subtype="LOS" relativity="Absolute"><target type="ProtoUnit">Military</target></effect>
@@ -7185,7 +7453,12 @@
         <flag>YPConsulateTech</flag>
         <flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissItalianMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">DEHCAdvancedLombardForEU</effect>
             <effect type="TechStatus" status="obtainable">DEHCRomanTacticsForEU</effect>
             <effect type="TechStatus" status="obtainable">DEHCUsuryForEU</effect>
@@ -7216,6 +7489,7 @@
         <flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="1.20" subtype="Cost" resource="Wood" relativity="BasePercent"><target type="ProtoUnit">Building</target></effect>
             <effect type="Data" action="AutoGatherFoodInvestment" amount="0.50" subtype="Yield" unittype="Gold" relativity="BasePercent"><target type="ProtoUnit">deLombard</target></effect>
@@ -7248,7 +7522,12 @@
         <flag>YPConsulateTech</flag>
         <flag>YPInfiniteTech</flag>
         <effects>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer3Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer5Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer10Marker" relativity="Absolute"><target type="Player"></target></effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionTimer15Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">CBEDismissSwedishMission</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionReputation100Marker" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="TechStatus" status="obtainable">DEHCEngelsbergIronworksForEU</effect>
             <effect type="TechStatus" status="obtainable">DEHCNorthernForestsForEU</effect>
             <effect type="TechStatus" status="obtainable">DEHCTrampleTacticsForEU</effect>
@@ -7278,6 +7557,7 @@
         <flag>YPSequesterTech</flag>
         <effects>
             <effect type="TechStatus" status="obtainable">ypPickConsulateTech</effect>
+            <effect type="Data" amount="1" subtype="FreeHomeCityUnit" unittype="CBEForeignMissionDismissalPulseMarker" relativity="Absolute"><target type="Player"></target></effect>
             <effect civ="none" type="Data" amount="0.00" subtype="SetCivRelation" relativity="Absolute"><target type="Player"></target></effect>
             <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">AbstractVillager</target></effect>
             <effect type="Data" amount="0.93" subtype="Hitpoints" relativity="BasePercent"><target type="ProtoUnit">LogicalTypeAffectedByVillagerUpgrades</target></effect>
