@@ -671,20 +671,12 @@
             <!--  Tech Unlocks  -->
             <!--  Age II  -->
             <effect type="TechStatus" status="obtainable">ModCloseQuarters</effect>
-            <effect type="CommandAdd" tech="ModCloseQuarters" page="2" column="1">
+            <effect type="CommandAdd" tech="ModCloseQuarters" page="2" column="0">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
             <!--  Age III  -->
             <effect type="TechStatus" status="obtainable">ModCrackShots</effect>
-            <effect type="CommandAdd" tech="ModCrackShots" page="2" column="2">
-                <target type="ProtoUnit">ModCommandPost</target>
-            </effect>
-            <effect type="TechStatus" status="obtainable">ModSwordToAGunFight</effect>
-            <effect type="CommandAdd" tech="ModSwordToAGunFight" page="2" column="3">
-                <target type="ProtoUnit">ModCommandPost</target>
-            </effect>
-            <effect type="TechStatus" status="obtainable">ModHoldTheLine</effect>
-            <effect type="CommandAdd" tech="ModHoldTheLine" page="2" column="4">
+            <effect type="CommandAdd" tech="ModCrackShots" page="2" column="1">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
             <!--  Age IV  -->
@@ -796,6 +788,11 @@
             <effect type="CommandAdd" proto="ModBoneguard" page="0" column="1">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
+            <!--  Begin the Boneguard equipment branch.  -->
+            <effect type="TechStatus" status="obtainable">CBEDevastatingBlow</effect>
+            <effect type="CommandAdd" tech="CBEDevastatingBlow" page="2" column="3">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
             <!--  Archaic Infantry train 10% faster  -->
             <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractArchaicInfantry</target>
@@ -821,6 +818,11 @@
         <cost resourcetype="Wood">200.0000</cost>
         <cost resourcetype="Gold">100.0000</cost>
         <effects>
+            <!-- Infantry train 15% faster. -->
+            <effect type="Data" amount="0.85" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">AbstractInfantry</target>
+            </effect>
+
             <!--  10% cheaper infantry  -->
             <effect type="Data" amount="0.90" subtype="Cost" resource="Food"
                 relativity="BasePercent">
@@ -865,7 +867,7 @@
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
             <effect type="TechStatus" status="obtainable">ModWeaponsTraining</effect>
-            <effect type="CommandAdd" tech="ModWeaponsTraining" page="2" column="0">
+            <effect type="CommandAdd" tech="ModWeaponsTraining" page="2" column="2">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
         </effects>
@@ -909,8 +911,14 @@
             </effect> -->
 
             <!--  Infantry training XP reward +15%  -->
-            <effect type="Data" amount="0.15" subtype="BuildBounty" relativity="BasePercent">
+            <effect type="Data" amount="1.15" subtype="BuildBounty" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractInfantry</target>
+            </effect>
+
+            <!-- Continue the Austrian advisory branch on the doctrine page. -->
+            <effect type="TechStatus" status="obtainable">ModProfessionalOfficerCorps</effect>
+            <effect type="CommandAdd" tech="ModProfessionalOfficerCorps" page="3" column="0">
+                <target type="ProtoUnit">ModCommandPost</target>
             </effect>
 
             <!--  Remove 'this' tech to reuse its slot in the UI with incoming unlocks  -->
@@ -1106,6 +1114,64 @@
                 <target type="ProtoUnit">AbstractHandInfantry</target>
             </effect>
             <effect type="CommandRemove" tech="ModCloseQuarters">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">ModSwordToAGunFight</effect>
+            <effect type="CommandAdd" tech="ModSwordToAGunFight" page="2" column="0">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBEDevastatingBlow" type="Normal">
+        <dbid>991316</dbid>
+        <displaynameid>9905034</displaynameid>
+        <rollovertextid>9905035</rollovertextid>
+        <researchpoints>45.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+        <cost resourcetype="Food">300.0000</cost>
+        <cost resourcetype="Wood">100.0000</cost>
+        <cost resourcetype="Gold">300.0000</cost>
+        <effects>
+            <!-- Enable the Boneguard's automatic charged cleave in normal stances. -->
+            <effect type="Data" action="ChargeSwashbucklerAttack" amount="1.00"
+                subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <effect type="Data" action="ChargeSwashbucklerAttack" amount="100.00"
+                subtype="Damage" relativity="Assign">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <effect type="Data" action="ChargeSwashbucklerAttack" amount="2.00"
+                subtype="DamageArea" relativity="Assign">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <effect type="Data" action="ChargeSwashbucklerAttack" amount="300.00"
+                subtype="DamageCap" relativity="Assign">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <!-- Keep the charged cleave functional while the Boneguard is in cover mode. -->
+            <effect type="Data" action="ChargeSwashbucklerCoverAttack" amount="1.00"
+                subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <effect type="Data" action="ChargeSwashbucklerCoverAttack" amount="6.00"
+                subtype="Damage" relativity="Assign">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <effect type="Data" action="ChargeSwashbucklerCoverAttack" amount="2.00"
+                subtype="DamageArea" relativity="Assign">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <effect type="Data" action="ChargeSwashbucklerCoverAttack" amount="18.00"
+                subtype="DamageCap" relativity="Assign">
+                <target type="ProtoUnit">ModBoneguard</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEDevastatingBlow">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
         </effects>
@@ -1305,6 +1371,10 @@
             <effect type="CommandRemove" tech="ModSwordToAGunFight">
                 <target type="ProtoUnit">ModCommandPost</target>
             </effect>
+            <effect type="TechStatus" status="obtainable">ModHoldTheLine</effect>
+            <effect type="CommandAdd" tech="ModHoldTheLine" page="2" column="0">
+                <target type="ProtoUnit">ModCommandPost</target>
+            </effect>
         </effects>
     </tech>
 
@@ -1387,9 +1457,12 @@
             <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
                 <target type="ProtoUnit">AbstractInfantry</target>
             </effect>
-            <!--  Infantry kill/death XP bounty +10%; test this separately  -->
-            <effect type="Data" amount="0.10" subtype="Bounty" relativity="BasePercent">
+            <!-- Infantry kill/death XP bounty +10%. -->
+            <effect type="Data" amount="1.10" subtype="Bounty" relativity="BasePercent">
                 <target type="ProtoUnit">AbstractInfantry</target>
+            </effect>
+            <effect type="CommandRemove" tech="ModProfessionalOfficerCorps">
+                <target type="ProtoUnit">ModCommandPost</target>
             </effect>
         </effects>
     </tech>

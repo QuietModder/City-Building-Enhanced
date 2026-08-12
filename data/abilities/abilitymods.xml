@@ -18,4 +18,7 @@
   <natmerctracker>
     <ability>deChargeAbilityEagleEye<tech>ModGuardianOfTheAccords</tech><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </natmerctracker>
+  <modboneguard>
+    <ability>deChargeAbilitySwashbuckler<tech>CBEDevastatingBlow</tech><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
+  </modboneguard>
 </abilitymods>

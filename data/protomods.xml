@@ -2425,6 +2425,7 @@
         <initialhitpoints>175.0000</initialhitpoints>
         <maxhitpoints>175.0000</maxhitpoints>
         <los>12.0000</los>
+        <rechargetime>20.0000</rechargetime>
         <unitaitype>HandCombative</unitaitype>
         <trainpoints>30.0000</trainpoints>
         <bounty>13.0000</bounty>
@@ -2467,7 +2468,8 @@
         <command page="10" column="1">Stop</command>
         <command page="10" column="0">Garrison</command>
         <command page="10" column="7">Delete</command>
-        <tactics>swordsman.tactics</tactics>
+        <command page="11" column="0">Abilities</command>
+        <tactics>cbe_boneguard.tactics</tactics>
         <protoaction>
             <name>BuildingAttack</name>
             <damage>14.000000</damage>
@@ -2500,6 +2502,44 @@
             <damage>12.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>1.750000</rof>
+            <damagebonus type="AbstractCavalry">2.000000</damagebonus>
+            <damagebonus type="AbstractLightInfantry">2.000000</damagebonus>
+        </protoaction>
+        <protoaction>
+            <name>GuardianAttack</name>
+            <damage>12.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+        </protoaction>
+        <protoaction>
+            <name>GuardianCoverAttack</name>
+            <damage>6.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+        </protoaction>
+        <protoaction>
+            <name>ChargeSwashbucklerAttack</name>
+            <active>0</active>
+            <chargeaction>1</chargeaction>
+            <damage>100.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+            <damagecap>300.000000</damagecap>
+            <damagearea>2.000000</damagearea>
+            <damageflags>GAIAEnemy</damageflags>
+            <damagebonus type="AbstractCavalry">2.000000</damagebonus>
+            <damagebonus type="AbstractLightInfantry">2.000000</damagebonus>
+        </protoaction>
+        <protoaction>
+            <name>ChargeSwashbucklerCoverAttack</name>
+            <active>0</active>
+            <chargeaction>1</chargeaction>
+            <damage>6.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+            <damagecap>18.000000</damagecap>
+            <damagearea>2.000000</damagearea>
+            <damageflags>GAIAEnemy</damageflags>
             <damagebonus type="AbstractCavalry">2.000000</damagebonus>
             <damagebonus type="AbstractLightInfantry">2.000000</damagebonus>
         </protoaction>

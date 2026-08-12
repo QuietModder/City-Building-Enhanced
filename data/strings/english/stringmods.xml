@@ -295,7 +295,7 @@
             <string _locid="9905003">Unlocks Conscripts and Volunteers. Infantry train 15% faster and cost 10% less.</string>
 
             <string _locid="9905004">Austrian Military Advisory Mission</string>
-            <string _locid="9905005">Unlocks Line Infantry and Mounted Infantry. Infantry training XP reward increased by 15%.</string>
+            <string _locid="9905005">Unlocks Line Infantry and Professional Officer Corps. Infantry training XP reward increased by 15%.</string>
 
             <!-- Infantry Doctrine / Combat Technologies -->
             <string _locid="9905020">Weapons Training</string>
@@ -318,6 +318,9 @@
 
             <string _locid="9905032">Flexible Formations</string>
             <string _locid="9905033">Infantry movement speed increased by 10% and melee attacks apply stronger snare.</string>
+
+            <string _locid="9905034">Devastating Blow</string>
+            <string _locid="9905035">Boneguards periodically unleash a sweeping melee attack that damages nearby enemies. Recharges every 20 seconds.</string>
 
 
             <!-- ========================================================= -->
