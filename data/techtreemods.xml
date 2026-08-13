@@ -281,6 +281,11 @@
             <effect type="CommandAdd" proto="CBEGuildHall" page="3" column="4">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
+            <!-- Enable the four mutually exclusive Guild paths. -->
+            <effect type="TechStatus" status="obtainable">CBEChooseAdventurersLeague</effect>
+            <effect type="TechStatus" status="obtainable">CBEChooseBlackCompany</effect>
+            <effect type="TechStatus" status="obtainable">CBEChooseHuntersGuild</effect>
+            <effect type="TechStatus" status="obtainable">CBEChooseOrderSilverband</effect>
 
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModOliveOrchard</target>
@@ -6440,7 +6445,119 @@
     <!-- and heroic party promotions together in this subsection. -->
     <!-- ######################################################### -->
 
-    <!-- Future Guild Hall technologies go here. -->
+    <!-- ========================================================= -->
+    <!-- Guild Path Selection                                     -->
+    <!-- A researched path becomes the permanent prerequisite for -->
+    <!-- its party members, hirelings, and later technologies.     -->
+    <!-- ========================================================= -->
+
+    <!-- Adventurers League: balanced party and general hirelings. -->
+    <tech mergeMode="add" name="CBEChooseAdventurersLeague" type="Normal">
+        <dbid>991317</dbid>
+        <displaynameid>9914000</displaynameid>
+        <rollovertextid>9914001</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>5.0000</researchpoints>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">CBEChooseBlackCompany</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseHuntersGuild</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseOrderSilverband</effect>
+            <effect type="CommandRemove" tech="CBEChooseAdventurersLeague">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseBlackCompany">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseHuntersGuild">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Black Company: assassins, bounty hunters, and covert specialists. -->
+    <tech mergeMode="add" name="CBEChooseBlackCompany" type="Normal">
+        <dbid>991318</dbid>
+        <displaynameid>9914002</displaynameid>
+        <rollovertextid>9914003</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>5.0000</researchpoints>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">CBEChooseAdventurersLeague</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseHuntersGuild</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseOrderSilverband</effect>
+            <effect type="CommandRemove" tech="CBEChooseAdventurersLeague">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseBlackCompany">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseHuntersGuild">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Hunters Guild: hunters, trackers, pathfinders, and wilderness allies. -->
+    <tech mergeMode="add" name="CBEChooseHuntersGuild" type="Normal">
+        <dbid>991319</dbid>
+        <displaynameid>9914004</displaynameid>
+        <rollovertextid>9914005</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>5.0000</researchpoints>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">CBEChooseAdventurersLeague</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseBlackCompany</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseOrderSilverband</effect>
+            <effect type="CommandRemove" tech="CBEChooseAdventurersLeague">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseBlackCompany">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseHuntersGuild">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Order of the Silverband: an exclusive legendary-creature hunting party. -->
+    <tech mergeMode="add" name="CBEChooseOrderSilverband" type="Normal">
+        <dbid>991320</dbid>
+        <displaynameid>9914006</displaynameid>
+        <rollovertextid>9914007</rollovertextid>
+        <status>UNOBTAINABLE</status>
+        <researchpoints>5.0000</researchpoints>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <effects>
+            <effect type="TechStatus" status="unobtainable">CBEChooseAdventurersLeague</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseBlackCompany</effect>
+            <effect type="TechStatus" status="unobtainable">CBEChooseHuntersGuild</effect>
+            <effect type="CommandRemove" tech="CBEChooseAdventurersLeague">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseBlackCompany">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseHuntersGuild">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
 
 
 

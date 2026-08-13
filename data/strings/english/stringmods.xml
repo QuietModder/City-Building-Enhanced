@@ -754,6 +754,19 @@
             <string _locid="9900013">A gathering place for adventurers and treasure hunters. Guild services are not yet available.</string>
             <string _locid="9900014">Future home of adventurers and treasure-hunting expeditions.</string>
 
+            <!-- Guild Paths -->
+            <string _locid="9914000">Adventurers League</string>
+            <string _locid="9914001">Choose the Adventurers League. Unlocks a balanced hero party and general adventurer hirelings. Permanently excludes the other Guild paths.</string>
+
+            <string _locid="9914002">Black Company</string>
+            <string _locid="9914003">Choose the Black Company. Unlocks a hero party and hirelings focused on assassins, bounty hunters, and covert specialists. Permanently excludes the other Guild paths.</string>
+
+            <string _locid="9914004">Hunters Guild</string>
+            <string _locid="9914005">Choose the Hunters Guild. Unlocks a hero party and hirelings drawn from hunters, trackers, pathfinders, couriers, and wilderness allies. Permanently excludes the other Guild paths.</string>
+
+            <string _locid="9914006">Order of the Silverband</string>
+            <string _locid="9914007">Choose the Order of the Silverband. Unlocks an exclusive hero party specialized in hunting legendary creatures. Permanently excludes the other Guild paths.</string>
+
 
         </language>
     </stringtable>
