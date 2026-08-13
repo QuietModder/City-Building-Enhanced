@@ -275,6 +275,12 @@
             <effect type="CommandAdd" proto="CBEDispatchOffice" page="3" column="3">
                 <target type="ProtoUnit">ModArchitect</target>
             </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEGuildHall" page="3" column="4">
+                <target type="ProtoUnit">ModArchitect</target>
+            </effect>
 
             <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
                 <target type="ProtoUnit">ModOliveOrchard</target>
@@ -6427,6 +6433,14 @@
         </effects>
     </tech>
 
+
+    <!-- ######################################################### -->
+    <!-- GUILD HALL ADVENTURER SYSTEM                             -->
+    <!-- Keep Guild path selection, roster unlocks, role upgrades, -->
+    <!-- and heroic party promotions together in this subsection. -->
+    <!-- ######################################################### -->
+
+    <!-- Future Guild Hall technologies go here. -->
 
 
 

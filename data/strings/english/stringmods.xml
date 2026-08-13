@@ -42,7 +42,6 @@
             <string _locid="9900010">A fortified caravan station that arranges special economic and military shipments unlocked through City Planning.</string>
             <string _locid="9900011">Arranges City Planning shipments.</string>
 
-
             <!-- ========================================================= -->
             <!-- 9902000s - NEW UNITS                                      -->
             <!-- Range: 9902000 - 9902999                                  -->
@@ -743,6 +742,17 @@
             <string _locid="9913045">Exchange Coin for Food</string>
             <string _locid="9913046">Spends one Home City shipment. After 30 seconds, exchanges your entire Coin stockpile at a rate of 1 Coin for 1.10 Food.</string>
             <string _locid="9913047">Exchange all Coin for Food.</string>
+
+            <!-- ========================================================= -->
+            <!-- GUILD HALL ADVENTURER SYSTEM                             -->
+            <!-- Keep Guild building, path, party, hireling, technology,  -->
+            <!-- and ability text together in this dedicated subsection.  -->
+            <!-- ========================================================= -->
+
+            <!-- Guild Hall -->
+            <string _locid="9900012">Guild Hall</string>
+            <string _locid="9900013">A gathering place for adventurers and treasure hunters. Guild services are not yet available.</string>
+            <string _locid="9900014">Future home of adventurers and treasure-hunting expeditions.</string>
 
 
         </language>

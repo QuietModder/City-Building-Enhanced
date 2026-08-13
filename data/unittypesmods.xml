@@ -1,0 +1,21 @@
+<unittypesmods>
+  <!-- Guild affiliation: applied to every main party member and background hireling. -->
+  <unittype>CBEGuildAdventurer</unittype>
+
+  <!-- Roster status: each Guild adventurer should use one of these types. -->
+  <unittype>CBEGuildPartyMember</unittype>
+  <unittype>CBEGuildHireling</unittype>
+
+  <!-- Guild path: identifies which mutually exclusive path unlocks the unit. -->
+  <unittype>CBEAdventurersLeague</unittype>
+  <unittype>CBEBlackCompany</unittype>
+  <unittype>CBEHuntersGuild</unittype>
+  <unittype>CBEOrderSilverband</unittype>
+
+  <!-- Combat roles: units may have multiple role types. Every Vanguard should also be Frontline. -->
+  <unittype>CBEGuildFrontline</unittype>
+  <unittype>CBEGuildVanguard</unittype>
+  <unittype>CBEGuildRanger</unittype>
+  <unittype>CBEGuildSupport</unittype>
+  <unittype>CBEGuildMage</unittype>
+</unittypesmods>

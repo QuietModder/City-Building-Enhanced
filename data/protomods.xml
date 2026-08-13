@@ -5046,6 +5046,78 @@
 
         <command page="10" column="7">Delete</command>
     </unit>
+
+    <!-- ######################################################### -->
+    <!-- GUILD HALL ADVENTURER SYSTEM                             -->
+    <!-- Keep the Guild Hall, party members, hirelings, and future -->
+    <!-- Guild support prototypes together in this subsection.    -->
+    <!-- ######################################################### -->
+
+    <!-- ========================================================= -->
+    <!-- Guild Hall                                                -->
+    <!-- Empty Tavern-based hub reserved for adventurer systems.   -->
+    <!-- ========================================================= -->
+    <unit id="9061" name="CBEGuildHall">
+        <dbid>9061</dbid>
+        <displaynameid>9900012</displaynameid>
+        <editornameid>9900012</editornameid>
+        <rollovertextid>9900013</rollovertextid>
+        <shortrollovertextid>9900014</shortrollovertextid>
+        <obstructionradiusx>4.0000</obstructionradiusx>
+        <obstructionradiusz>4.0000</obstructionradiusz>
+        <maxvelocity>0.0000</maxvelocity>
+        <movementtype>land</movementtype>
+        <animfile>buildings\saloon\saloon.xml</animfile>
+        <deadreplacement>BuildingRubble4x4</deadreplacement>
+        <deadreplacementlifespan>15</deadreplacementlifespan>
+        <impacttype>Wood</impacttype>
+        <physicsinfo>house</physicsinfo>
+        <placementfile>buildinglarge.xml</placementfile>
+        <icon>resources\art\buildings\saloon_icon.png</icon>
+        <portraiticon>resources\art\buildings\saloon_portrait.png</portraiticon>
+        <initialhitpoints>2500.0000</initialhitpoints>
+        <maxhitpoints>2500.0000</maxhitpoints>
+        <los>12.0000</los>
+        <buildpoints>30.0000</buildpoints>
+        <buildlimit>1</buildlimit>
+        <bounty>40.0000</bounty>
+        <buildbounty>20.0000</buildbounty>
+        <cost resourcetype="Wood">200.0000</cost>
+        <buildingworkrate>1.0000</buildingworkrate>
+        <allowedage>1</allowedage>
+        <armor type="Siege" value="0.0000" />
+        <builderlimit>8</builderlimit>
+
+        <unittype>LogicalTypeValidSabotage</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWalls</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeShipsAndBuildings</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeBuildingsNotWallsOrGroves</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+        <unittype>Building</unittype>
+        <unittype>BuildingClass</unittype>
+        <unittype>MilitaryBuilding</unittype>
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+
+        <flag>CollidesWithProjectiles</flag>
+        <flag>StartsAtFullEfficiency</flag>
+        <flag>Immoveable</flag>
+        <flag>NoBloodOnDeath</flag>
+        <flag>ObscuresUnits</flag>
+        <flag>NonAutoFormedUnit</flag>
+        <flag>SelectWithObstruction</flag>
+        <flag>PaintTextureWhenPlacing</flag>
+        <flag>FlattenGround</flag>
+        <flag>Tracked</flag>
+
+        <command page="10" column="7">Delete</command>
+    </unit>
     <!-- ################################################################# -->
     <!-- SECTION 5: BUILDINGS FOR MAP GENERATION                           -->
     <!-- Building prototypes and props used by CBE map groupings.          -->
