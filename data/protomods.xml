@@ -4113,6 +4113,334 @@
         <rof>1.500000</rof>
       </protoaction>
     </unit>
+    <!-- ######################################################### -->
+    <!-- GUILD HALL ADVENTURER SYSTEM                             -->
+    <!-- Main party members and background hirelings are kept     -->
+    <!-- together here as their Guild rosters are developed.      -->
+    <!-- ######################################################### -->
+
+    <!-- ========================================================= -->
+    <!-- Adventurers League: Main Party                           -->
+    <!-- Bare-bones Age I party units; abilities are added later. -->
+    <!-- ========================================================= -->
+    <unit id="9062" name="CBELeagueShieldBearer">
+        <dbid>9062</dbid>
+        <displaynameid>9902042</displaynameid>
+        <editornameid>9902042</editornameid>
+        <rollovertextid>9902043</rollovertextid>
+        <shortrollovertextid>9902044</shortrollovertextid>
+        <populationcount>1</populationcount>
+        <obstructionradiusx>0.4900</obstructionradiusx>
+        <obstructionradiusz>0.4900</obstructionradiusz>
+        <formationcategory>Body</formationcategory>
+        <maxvelocity>4.0000</maxvelocity>
+        <maxrunvelocity>6.0000</maxrunvelocity>
+        <movementtype>land</movementtype>
+        <turnrate>18.0000</turnrate>
+        <animfile>units\infantry\redolero\redolero.xml</animfile>
+        <impacttype>Flesh</impacttype>
+        <physicsinfo>dude</physicsinfo>
+        <icon>resources\art\units\infantry\redolero\redolero_icon_64x64.png</icon>
+        <portraiticon>resources\art\units\infantry\redolero\redolero_portrait.png</portraiticon>
+        <initialhitpoints>200.0000</initialhitpoints>
+        <maxhitpoints>200.0000</maxhitpoints>
+        <los>12.0000</los>
+        <unitaitype>HandCombative</unitaitype>
+        <trainpoints>30.0000</trainpoints>
+        <buildlimit>1</buildlimit>
+        <allowedage>0</allowedage>
+        <armor type="Hand" value="0.1000" />
+        <armor type="Ranged" value="0.1000" />
+
+        <!-- Guild identity and roster status. -->
+        <unittype>CBEGuildAdventurer</unittype>
+        <unittype>CBEGuildPartyMember</unittype>
+        <unittype>CBEAdventurersLeague</unittype>
+
+        <!-- Party combat roles. -->
+        <unittype>CBEGuildFrontline</unittype>
+        <unittype>CBEGuildVanguard</unittype>
+
+        <!-- Standard combat classes. -->
+        <unittype>AbstractHandInfantry</unittype>
+        <unittype>AbstractInfantry</unittype>
+
+        <!-- Engine targeting and military behavior. -->
+        <unittype>LogicalTypeHealed</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeLandMilitary</unittype>
+        <unittype>LogicalTypeGarrisonInShips</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+
+        <!-- General scoring and unit classification. -->
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>Military</unittype>
+
+        <flag>CollidesWithProjectiles</flag>
+        <flag>ApplyHandicapTraining</flag>
+        <flag>CorpseDecays</flag>
+        <flag>ShowGarrisonButton</flag>
+        <flag>DontRotateObstruction</flag>
+        <flag>ObscuredByUnits</flag>
+        <flag>Tracked</flag>
+
+        <command page="10" column="1">Stop</command>
+        <command page="10" column="0">Garrison</command>
+        <command page="10" column="7">Delete</command>
+        <tactics>cbe_league_shieldbearer.tactics</tactics>
+        <protoaction>
+            <name>BuildingAttack</name>
+            <damage>10.000000</damage>
+            <damagetype>Siege</damagetype>
+            <maxrange>6.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>MeleeHandAttack</name>
+            <damage>10.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+        </protoaction>
+        <protoaction>
+            <name>DefendHandAttack</name>
+            <damage>10.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+        </protoaction>
+        <protoaction>
+            <name>CoverHandAttack</name>
+            <damage>10.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+        </protoaction>
+        <protoaction>
+            <name>CoverBuildingAttack</name>
+            <damage>10.000000</damage>
+            <damagetype>Siege</damagetype>
+            <maxrange>6.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+    </unit>
+
+    <unit id="9063" name="CBELeagueSaber">
+        <dbid>9063</dbid>
+        <displaynameid>9902045</displaynameid>
+        <editornameid>9902045</editornameid>
+        <rollovertextid>9902046</rollovertextid>
+        <shortrollovertextid>9902047</shortrollovertextid>
+        <populationcount>1</populationcount>
+        <obstructionradiusx>0.4900</obstructionradiusx>
+        <obstructionradiusz>0.4900</obstructionradiusz>
+        <formationcategory>Body</formationcategory>
+        <maxvelocity>4.0000</maxvelocity>
+        <maxrunvelocity>6.0000</maxrunvelocity>
+        <movementtype>land</movementtype>
+        <turnrate>18.0000</turnrate>
+        <animfile>units\spc\morgan_black\spc_morgan_black.xml</animfile>
+        <impacttype>Flesh</impacttype>
+        <physicsinfo>dude</physicsinfo>
+        <icon>resources\art\units\spc\morgan_black\morgan_black_icon_64x64.png</icon>
+        <portraiticon>resources\art\units\spc\morgan_black\morgan_black_igc_icon.png</portraiticon>
+        <initialhitpoints>175.0000</initialhitpoints>
+        <maxhitpoints>175.0000</maxhitpoints>
+        <los>12.0000</los>
+        <unitaitype>HandCombative</unitaitype>
+        <trainpoints>30.0000</trainpoints>
+        <buildlimit>1</buildlimit>
+        <allowedage>0</allowedage>
+        <armor type="Hand" value="0.0500" />
+        <armor type="Ranged" value="0.0500" />
+
+        <!-- Guild identity and roster status. -->
+        <unittype>CBEGuildAdventurer</unittype>
+        <unittype>CBEGuildPartyMember</unittype>
+        <unittype>CBEAdventurersLeague</unittype>
+
+        <!-- Party combat roles. -->
+        <unittype>CBEGuildFrontline</unittype>
+
+        <!-- Standard combat classes. -->
+        <unittype>AbstractHandInfantry</unittype>
+        <unittype>AbstractInfantry</unittype>
+
+        <!-- Engine targeting and military behavior. -->
+        <unittype>LogicalTypeHealed</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeLandMilitary</unittype>
+        <unittype>LogicalTypeGarrisonInShips</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+
+        <!-- General scoring and unit classification. -->
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>Military</unittype>
+
+        <flag>CollidesWithProjectiles</flag>
+        <flag>ApplyHandicapTraining</flag>
+        <flag>CorpseDecays</flag>
+        <flag>ShowGarrisonButton</flag>
+        <flag>DontRotateObstruction</flag>
+        <flag>ObscuredByUnits</flag>
+        <flag>Tracked</flag>
+
+        <command page="10" column="1">Stop</command>
+        <command page="10" column="0">Garrison</command>
+        <command page="10" column="7">Delete</command>
+        <tactics>cbe_league_saber.tactics</tactics>
+        <protoaction>
+            <name>BuildingAttack</name>
+            <damage>10.000000</damage>
+            <damagetype>Siege</damagetype>
+            <maxrange>6.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>HandAttack</name>
+            <damage>12.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>1.750000</rof>
+        </protoaction>
+    </unit>
+
+    <unit id="9064" name="CBELeagueArcher">
+        <dbid>9064</dbid>
+        <displaynameid>9902048</displaynameid>
+        <editornameid>9902048</editornameid>
+        <rollovertextid>9902049</rollovertextid>
+        <shortrollovertextid>9902050</shortrollovertextid>
+        <populationcount>1</populationcount>
+        <obstructionradiusx>0.4900</obstructionradiusx>
+        <obstructionradiusz>0.4900</obstructionradiusz>
+        <formationcategory>Ranged</formationcategory>
+        <maxvelocity>4.0000</maxvelocity>
+        <maxrunvelocity>6.0000</maxrunvelocity>
+        <movementtype>land</movementtype>
+        <turnrate>18.0000</turnrate>
+        <animfile>units\infantry_ranged\longbow\longbow.xml</animfile>
+        <impacttype>Flesh</impacttype>
+        <physicsinfo>dude</physicsinfo>
+        <icon>resources\art\units\infantry_ranged\longbow\longbow_icon.png</icon>
+        <portraiticon>resources\art\units\infantry_ranged\longbow\longbow_portrait.png</portraiticon>
+        <initialhitpoints>125.0000</initialhitpoints>
+        <maxhitpoints>125.0000</maxhitpoints>
+        <los>26.0000</los>
+        <projectileprotounit>Arrow</projectileprotounit>
+        <autoattackrange>22.0000</autoattackrange>
+        <unitaitype>RangedCombative</unitaitype>
+        <trainpoints>30.0000</trainpoints>
+        <buildlimit>1</buildlimit>
+        <allowedage>0</allowedage>
+        <armor type="Ranged" value="0.1000" />
+
+        <!-- Guild identity and roster status. -->
+        <unittype>CBEGuildAdventurer</unittype>
+        <unittype>CBEGuildPartyMember</unittype>
+        <unittype>CBEAdventurersLeague</unittype>
+
+        <!-- Party combat roles. -->
+        <unittype>CBEGuildRanger</unittype>
+        <unittype>CBEGuildSupport</unittype>
+
+        <!-- Standard combat classes. -->
+        <unittype>AbstractFootArcher</unittype>
+        <unittype>AbstractArcher</unittype>
+        <unittype>AbstractRangedInfantry</unittype>
+        <unittype>AbstractInfantry</unittype>
+
+        <!-- Engine targeting and military behavior. -->
+        <unittype>LogicalTypeHealed</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeLandMilitary</unittype>
+        <unittype>LogicalTypeGarrisonInShips</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+
+        <!-- General scoring and unit classification. -->
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>Military</unittype>
+
+        <flag>CollidesWithProjectiles</flag>
+        <flag>ApplyHandicapTraining</flag>
+        <flag>CorpseDecays</flag>
+        <flag>ShowGarrisonButton</flag>
+        <flag>DontRotateObstruction</flag>
+        <flag>ObscuredByUnits</flag>
+        <flag>Tracked</flag>
+
+        <command page="10" column="1">Stop</command>
+        <command page="10" column="0">Garrison</command>
+        <command page="10" column="7">Delete</command>
+        <tactics>cbe_league_archer.tactics</tactics>
+        <protoaction>
+            <name>VolleyRangedAttack</name>
+            <damage>12.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <minrange>2.000000</minrange>
+            <maxrange>22.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>BuildingAttack</name>
+            <damage>10.000000</damage>
+            <damagetype>Siege</damagetype>
+            <maxrange>6.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>VolleyHandAttack</name>
+            <damage>8.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>2.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>DefendRangedAttack</name>
+            <damage>12.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <minrange>2.000000</minrange>
+            <maxrange>22.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>DefendHandAttack</name>
+            <damage>8.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>2.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>StaggerRangedAttack</name>
+            <damage>12.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <minrange>2.000000</minrange>
+            <maxrange>22.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>StaggerHandAttack</name>
+            <damage>8.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>2.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>MeleeHandAttack</name>
+            <damage>8.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>2.000000</rof>
+        </protoaction>
+    </unit>
+
     <!-- ################################################################# -->
     <!-- SECTION 4: BUILDINGS                                              -->
     <!-- Custom constructible and special-purpose buildings.               -->

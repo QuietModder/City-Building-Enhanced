@@ -243,6 +243,19 @@
             <string _locid="9902040">Cree Coureur des Bois. Strong ranged villager with superior gathering rates and resistance to ranged attacks.</string>
             <string _locid="9902041">Strong ranged villager.</string>
 
+            <!-- Adventurers League main party -->
+            <string _locid="9902042">ShieldBearer</string>
+            <string _locid="9902043">Adventurers League vanguard. Durable hand infantry equipped to hold the front line.</string>
+            <string _locid="9902044">Durable frontline vanguard.</string>
+
+            <string _locid="9902045">Saber</string>
+            <string _locid="9902046">Adventurers League frontline fighter specializing in powerful melee attacks.</string>
+            <string _locid="9902047">Powerful melee party member.</string>
+
+            <string _locid="9902048">Archer</string>
+            <string _locid="9902049">Adventurers League ranger and support party member with exceptional attack range.</string>
+            <string _locid="9902050">Long-ranged party member.</string>
+
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
             <!-- Range: 9903000 - 9903999                                  -->
