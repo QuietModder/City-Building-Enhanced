@@ -256,6 +256,10 @@
             <string _locid="9902049">Adventurers League ranger and support party member with exceptional attack range.</string>
             <string _locid="9902050">Long-ranged party member.</string>
 
+            <string _locid="9902051">Caster</string>
+            <string _locid="9902052">Adventurers League mage and support party member. Hurls explosive fireballs at enemies and buildings, but is extremely vulnerable in close combat.</string>
+            <string _locid="9902053">Fireball-casting support mage.</string>
+
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
             <!-- Range: 9903000 - 9903999                                  -->

@@ -6495,6 +6495,12 @@
             <effect type="CommandAdd" proto="CBELeagueArcher" page="0" column="2">
                 <target type="ProtoUnit">CBEGuildHall</target>
             </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBELeagueCaster</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBELeagueCaster" page="0" column="3">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
 
             <!-- Every Guild path opens the shared expedition branch. -->
             <effect type="TechStatus" status="obtainable">CBEAssembleTheExpedition</effect>

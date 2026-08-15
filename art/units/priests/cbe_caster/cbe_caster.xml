@@ -1,0 +1,26 @@
+<animfile>
+  <!-- Minimal single-character root using the Portuguese Priest's base-game assets. -->
+  <definebone>bone_hat</definebone>
+  <definebone>bone_book</definebone>
+
+  <!-- Keep text identifiers inline: the game's art parser is whitespace-sensitive. -->
+  <attachment>med_hat<component>med_hat<assetreference type="GrannyModel"><file>units\priests\med_priest_hat</file></assetreference></component><anim>Idle<component>med_hat</component></anim></attachment>
+  <attachment>med_book<component>med_book<assetreference type="GrannyModel"><file>units\priests\med_priest_book</file></assetreference></component><anim>Idle<component>med_book</component></anim></attachment>
+
+  <!-- One party member does not need an LOD swap; retaining the normal model -->
+  <!-- prevents the custom unit from disappearing during camera transitions. -->
+  <component>ModelComp<assetreference type="GrannyModel"><file>units\priests\med_priest</file></assetreference><decal><effecttype>default</effecttype><texture isfakeshadow="1">shadows_selections\shadow_circle_32x32</texture><selectedtexture>shadows_selections\selection_circle_32x32</selectedtexture><width>1.0</width><height>1.0</height></decal><attach a="med_book" frombone="L HAND" tobone="L HAND" syncanims="0"></attach><attach a="med_hat" frombone="bone_hat" tobone="HEAD" syncanims="0"></attach></component>
+
+  <anim>Idle<assetreference type="GrannyAnim"><file>animation_library\shared\human_idle_generic_A</file></assetreference><component>ModelComp</component></anim>
+  <anim>Bored<assetreference type="GrannyAnim"><file>animation_library\shared\human_bored_generic_A</file></assetreference><component>ModelComp</component></anim>
+  <anim>Walk<assetreference type="GrannyAnim"><file>animation_library\shared\human_walk_generic_A</file><tag type="FootstepLeft" footprinttype="HumanLeft">0.14</tag><tag type="FootstepRight" footprinttype="HumanRight">0.61</tag></assetreference><component>ModelComp</component></anim>
+
+  <!-- Standing overhand throw: a reliable ranged release without a weapon or kneeling heal. -->
+  <anim>SpellAttack<assetreference type="GrannyAnim"><file>animation_library\natives\tomahawk\volley_ranged_attack</file><tag type="Attack">0.50</tag><tag type="SpecificSoundSet" checkvisible="1" set="Swoosh">0.50</tag></assetreference><component>ModelComp</component></anim>
+  <anim>HandAttack<assetreference type="GrannyAnim"><file>animation_library\shared\human_attack_generic_A</file><tag type="Attack">0.58</tag></assetreference><component>ModelComp</component></anim>
+
+  <anim>Death<assetreference type="GrannyAnim"><file>animation_library\shared\human_death_generic_A</file><tag type="SpecificSoundSet" checkvisible="1" set="RagdollImpact">0.79</tag></assetreference><component>ModelComp</component></anim>
+  <anim>Death_by_havoc<assetreference type="GrannyAnim"><file>animation_library\range\havoc_death</file></assetreference><assetreference type="GrannyAnim"><file>animation_library\range\havoc_deathB</file></assetreference><assetreference type="GrannyAnim"><file>animation_library\range\havoc_deathC</file></assetreference><assetreference type="GrannyAnim"><file>animation_library\range\havoc_deathD</file></assetreference><component>ModelComp</component></anim>
+  <anim>Death_havoc_flail<assetreference type="GrannyAnim"><file>animation_library\range\havoc_flail</file></assetreference><component>ModelComp</component></anim>
+  <anim>Death_havoc_spin<assetreference type="GrannyAnim"><file>animation_library\range\havoc_spin</file></assetreference><component>ModelComp</component></anim>
+</animfile>

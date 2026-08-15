@@ -4142,8 +4142,8 @@
         <physicsinfo>dude</physicsinfo>
         <icon>resources\art\units\infantry\redolero\redolero_icon_64x64.png</icon>
         <portraiticon>resources\art\units\infantry\redolero\redolero_portrait.png</portraiticon>
-        <initialhitpoints>200.0000</initialhitpoints>
-        <maxhitpoints>200.0000</maxhitpoints>
+        <initialhitpoints>20000.0000</initialhitpoints>
+        <maxhitpoints>20000.0000</maxhitpoints>
         <los>12.0000</los>
         <unitaitype>HandCombative</unitaitype>
         <trainpoints>30.0000</trainpoints>
@@ -4443,6 +4443,115 @@
         <protoaction>
             <name>MeleeHandAttack</name>
             <damage>8.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>2.000000</rof>
+        </protoaction>
+    </unit>
+
+    <!-- Priest-based low-fantasy spellcaster locked to the single Portuguese -->
+    <!-- visual variant through a minimal CBE-owned animation root.             -->
+    <unit id="9065" name="CBELeagueCaster">
+        <dbid>9065</dbid>
+        <displaynameid>9902051</displaynameid>
+        <editornameid>9902051</editornameid>
+        <rollovertextid>9902052</rollovertextid>
+        <shortrollovertextid>9902053</shortrollovertextid>
+        <populationcount>1</populationcount>
+        <obstructionradiusx>0.4900</obstructionradiusx>
+        <obstructionradiusz>0.4900</obstructionradiusz>
+        <formationcategory>Protected</formationcategory>
+        <maxvelocity>3.0000</maxvelocity>
+        <maxrunvelocity>5.0000</maxrunvelocity>
+        <movementtype>land</movementtype>
+        <turnrate>18.0000</turnrate>
+        <animfile>units\priests\cbe_caster\cbe_caster.xml</animfile>
+        <impacttype>Flesh</impacttype>
+        <physicsinfo>dude</physicsinfo>
+        <icon>resources\art\units\priests\we_priest_icon_64x64.png</icon>
+        <portraiticon>resources\art\units\priests\we_priest_portrait.png</portraiticon>
+        <initialhitpoints>100.0000</initialhitpoints>
+        <maxhitpoints>10000.0000</maxhitpoints>
+        <los>100.0000</los>
+        <projectileprotounit>FireBallGreat</projectileprotounit>
+        <autoattackrange>22.0000</autoattackrange>
+        <unitaitype>RangedCombative</unitaitype>
+        <trainpoints>30.0000</trainpoints>
+        <buildlimit>1</buildlimit>
+        <bounty>10.0000</bounty>
+        <buildbounty>10.0000</buildbounty>
+        <cost resourcetype="Food">75.0000</cost>
+        <cost resourcetype="Gold">75.0000</cost>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.0500" />
+
+        <!-- Guild identity and roster status. -->
+        <unittype>CBEGuildAdventurer</unittype>
+        <unittype>CBEGuildPartyMember</unittype>
+        <unittype>CBEAdventurersLeague</unittype>
+
+        <!-- Party combat roles. -->
+        <unittype>CBEGuildMage</unittype>
+        <unittype>CBEGuildSupport</unittype>
+
+        <!-- Standard combat classes. -->
+        <unittype>AbstractRangedInfantry</unittype>
+        <unittype>AbstractInfantry</unittype>
+        <unittype>Ranged</unittype>
+
+        <!-- Engine targeting and military behavior. -->
+        <unittype>LogicalTypeHealed</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>LogicalTypeLandMilitary</unittype>
+        <unittype>LogicalTypeGarrisonInShips</unittype>
+        <unittype>LogicalTypeMinimapFilterMilitary</unittype>
+
+        <!-- General scoring and unit classification. -->
+        <unittype>CountsTowardMilitaryScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>Unit</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>Military</unittype>
+
+        <flag>CollidesWithProjectiles</flag>
+        <flag>ApplyHandicapTraining</flag>
+        <flag>CorpseDecays</flag>
+        <flag>ShowGarrisonButton</flag>
+        <flag>DontRotateObstruction</flag>
+        <flag>ObscuredByUnits</flag>
+        <flag>Tracked</flag>
+
+        <command page="10" column="1">Stop</command>
+        <command page="10" column="0">Garrison</command>
+        <command page="10" column="7">Delete</command>
+        <tactics>cbe_league_caster.tactics</tactics>
+        <protoaction>
+            <name>RangedAttack</name>
+            <damage>13.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <minrange>2.000000</minrange>
+            <maxrange>12.000000</maxrange>
+            <rof>3.000000</rof>
+            <projectile>FireBallGreat</projectile>
+            <damagearea>2.000000</damagearea>
+            <damageflags>GAIAEnemy</damageflags>
+        </protoaction>
+        <protoaction>
+            <name>BuildingAttack</name>
+            <damage>15.000000</damage>
+            <damagetype>Siege</damagetype>
+            <maxrange>10.000000</maxrange>
+            <rof>3.000000</rof>
+            <projectile>FireBallGreat</projectile>
+            <damagearea>2.000000</damagearea>
+            <damageflags>GAIAEnemy</damageflags>
+        </protoaction>
+        <protoaction>
+            <name>HandAttack</name>
+            <damage>3.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>2.000000</rof>
         </protoaction>

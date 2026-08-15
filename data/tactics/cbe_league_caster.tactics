@@ -1,0 +1,52 @@
+<tactics>
+  <!-- A standing overhand ranged animation releases the Caster's fireball. -->
+  <action>
+    <name stringid="38127">RangedAttack</name>
+    <type>Attack</type>
+    <attackaction>1</attackaction>
+    <rangedlogic>1</rangedlogic>
+    <anim>SpellAttack</anim>
+    <animationrate>1.0</animationrate>
+    <idleanim>Idle</idleanim>
+    <accuracy>1.0</accuracy>
+    <perfectaccuracy>1</perfectaccuracy>
+    <trackrating>12</trackrating>
+    <projectile>FireBallGreat</projectile>
+    <impacteffect>effects\impacts\cbe_caster_fireball</impacteffect>
+    <minrange>2</minrange>
+    <maxrange>12</maxrange>
+    <rate type="Unit">1.0</rate>
+  </action>
+
+  <!-- Buildings use the same visible spell, with their separate Siege profile. -->
+  <action>
+    <name stringid="38118">BuildingAttack</name>
+    <type>Attack</type>
+    <attackaction>1</attackaction>
+    <rangedlogic>1</rangedlogic>
+    <anim>SpellAttack</anim>
+    <animationrate>1.0</animationrate>
+    <idleanim>Idle</idleanim>
+    <accuracy>1.0</accuracy>
+    <perfectaccuracy>1</perfectaccuracy>
+    <trackrating>12</trackrating>
+    <projectile>FireBallGreat</projectile>
+    <impacteffect>effects\impacts\cbe_caster_fireball</impacteffect>
+    <maxrange>10</maxrange>
+    <rate type="LogicalTypeShipsAndBuildings">1.0</rate>
+  </action>
+
+  <!-- Weak fallback attack when an enemy closes inside the spell's minimum range. -->
+  <action>
+    <name stringid="38134">HandAttack</name>
+    <type>HandAttack</type>
+    <attackaction>1</attackaction>
+    <handlogic>1</handlogic>
+    <anim>HandAttack</anim>
+    <maxrange>1.75</maxrange>
+    <impacteffect>effects\impacts\melee</impacteffect>
+    <rate type="Unit">1.0</rate>
+  </action>
+
+  <tactic>Normal<action priority="100">BuildingAttack</action><action priority="75">RangedAttack</action><action priority="25">HandAttack</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>1</runaway><autoretarget>1</autoretarget><idleanim>Idle</idleanim><boredanim>Bored</boredanim><deathanim>Death</deathanim><walkanim>Walk</walkanim><joganim>Walk</joganim><runanim>Walk</runanim></tactic>
+</tactics>
