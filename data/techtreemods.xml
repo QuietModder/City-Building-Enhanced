@@ -6475,6 +6475,32 @@
             <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
                 <target type="ProtoUnit">CBEGuildHall</target>
             </effect>
+
+            <!-- Unlock the Adventurers League's main party roster. -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBELeagueShieldBearer</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBELeagueShieldBearer" page="0" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBELeagueSaber</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBELeagueSaber" page="0" column="1">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBELeagueArcher</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBELeagueArcher" page="0" column="2">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+
+            <!-- Every Guild path opens the shared expedition branch. -->
+            <effect type="TechStatus" status="obtainable">CBEAssembleTheExpedition</effect>
+            <effect type="CommandAdd" tech="CBEAssembleTheExpedition" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
         </effects>
     </tech>
 
@@ -6500,6 +6526,12 @@
                 <target type="ProtoUnit">CBEGuildHall</target>
             </effect>
             <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+
+            <!-- Every Guild path opens the shared expedition branch. -->
+            <effect type="TechStatus" status="obtainable">CBEAssembleTheExpedition</effect>
+            <effect type="CommandAdd" tech="CBEAssembleTheExpedition" page="2" column="0">
                 <target type="ProtoUnit">CBEGuildHall</target>
             </effect>
         </effects>
@@ -6529,6 +6561,12 @@
             <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
                 <target type="ProtoUnit">CBEGuildHall</target>
             </effect>
+
+            <!-- Every Guild path opens the shared expedition branch. -->
+            <effect type="TechStatus" status="obtainable">CBEAssembleTheExpedition</effect>
+            <effect type="CommandAdd" tech="CBEAssembleTheExpedition" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
         </effects>
     </tech>
 
@@ -6554,6 +6592,266 @@
                 <target type="ProtoUnit">CBEGuildHall</target>
             </effect>
             <effect type="CommandRemove" tech="CBEChooseOrderSilverband">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+
+            <!-- Every Guild path opens the shared expedition branch. -->
+            <effect type="TechStatus" status="obtainable">CBEAssembleTheExpedition</effect>
+            <effect type="CommandAdd" tech="CBEAssembleTheExpedition" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- ========================================================= -->
+    <!-- Universal Guild Expedition Chain                         -->
+    <!-- Shared by every Guild path. Each step replaces itself in   -->
+    <!-- page 2, column 0 and increases main-party training time.    -->
+    <!-- ========================================================= -->
+
+    <!-- Age I: establish, survey, and equip the expedition. -->
+    <tech mergeMode="add" name="CBEAssembleTheExpedition" type="Normal">
+        <dbid>991321</dbid>
+        <displaynameid>9914008</displaynameid>
+        <rollovertextid>9914009</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <effects>
+            <!-- Expedition-wagon unlock added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBESurveyorsCharter</effect>
+            <effect type="CommandAdd" tech="CBESurveyorsCharter" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEAssembleTheExpedition">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBESurveyorsCharter" type="Normal">
+        <dbid>991322</dbid>
+        <displaynameid>9914010</displaynameid>
+        <rollovertextid>9914011</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBEAssembleTheExpedition</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Line-of-sight effect added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBEOutfittedForTheUnknown</effect>
+            <effect type="CommandAdd" tech="CBEOutfittedForTheUnknown" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBESurveyorsCharter">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBEOutfittedForTheUnknown" type="Normal">
+        <dbid>991323</dbid>
+        <displaynameid>9914012</displaynameid>
+        <rollovertextid>9914013</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBESurveyorsCharter</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Equipment and survivability effects added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBEBeyondTheFrontier</effect>
+            <effect type="CommandAdd" tech="CBEBeyondTheFrontier" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEOutfittedForTheUnknown">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Age II: explore beyond the frontier and master its dangers. -->
+    <tech mergeMode="add" name="CBEBeyondTheFrontier" type="Normal">
+        <dbid>991324</dbid>
+        <displaynameid>9914014</displaynameid>
+        <rollovertextid>9914015</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBEOutfittedForTheUnknown</techstatus>
+            <techstatus status="Active">Colonialize</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Expedition-movement effect added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBEFieldNotesAndFolklore</effect>
+            <effect type="CommandAdd" tech="CBEFieldNotesAndFolklore" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEBeyondTheFrontier">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBEFieldNotesAndFolklore" type="Normal">
+        <dbid>991325</dbid>
+        <displaynameid>9914016</displaynameid>
+        <rollovertextid>9914017</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBEBeyondTheFrontier</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Guardian-knowledge effect added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBERelicSeekers</effect>
+            <effect type="CommandAdd" tech="CBERelicSeekers" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEFieldNotesAndFolklore">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBERelicSeekers" type="Normal">
+        <dbid>991326</dbid>
+        <displaynameid>9914018</displaynameid>
+        <rollovertextid>9914019</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBEFieldNotesAndFolklore</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Treasure-hunting effect added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBETrialsOfTheWild</effect>
+            <effect type="CommandAdd" tech="CBETrialsOfTheWild" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBERelicSeekers">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBETrialsOfTheWild" type="Normal">
+        <dbid>991327</dbid>
+        <displaynameid>9914020</displaynameid>
+        <rollovertextid>9914021</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBERelicSeekers</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Survival effect added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBEHardWonRenown</effect>
+            <effect type="CommandAdd" tech="CBEHardWonRenown" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBETrialsOfTheWild">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <!-- Age III: earn renown, survive death, and become legends. -->
+    <tech mergeMode="add" name="CBEHardWonRenown" type="Normal">
+        <dbid>991328</dbid>
+        <displaynameid>9914022</displaynameid>
+        <rollovertextid>9914023</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBETrialsOfTheWild</techstatus>
+            <techstatus status="Active">Fortressize</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Combat-stat effect added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBEDefyDeath</effect>
+            <effect type="CommandAdd" tech="CBEDefyDeath" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEHardWonRenown">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBEDefyDeath" type="Normal">
+        <dbid>991329</dbid>
+        <displaynameid>9914024</displaynameid>
+        <rollovertextid>9914025</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBEHardWonRenown</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Major survival effect added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="TechStatus" status="obtainable">CBEBecomingLegends</effect>
+            <effect type="CommandAdd" tech="CBEBecomingLegends" page="2" column="0">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEDefyDeath">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+        </effects>
+    </tech>
+
+    <tech mergeMode="add" name="CBEBecomingLegends" type="Normal">
+        <dbid>991330</dbid>
+        <displaynameid>9914026</displaynameid>
+        <rollovertextid>9914027</rollovertextid>
+        <researchpoints>30.0000</researchpoints>
+        <status>UNOBTAINABLE</status>
+        <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
+        <prereqs>
+            <techstatus status="Active">CBEDefyDeath</techstatus>
+        </prereqs>
+        <effects>
+            <!-- Named-hero transformations and knockdown/revival added later. -->
+            <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="CommandRemove" tech="CBEBecomingLegends">
                 <target type="ProtoUnit">CBEGuildHall</target>
             </effect>
         </effects>

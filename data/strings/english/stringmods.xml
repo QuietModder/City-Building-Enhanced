@@ -780,6 +780,37 @@
             <string _locid="9914006">Order of the Silverband</string>
             <string _locid="9914007">Choose the Order of the Silverband. Unlocks an exclusive hero party specialized in hunting legendary creatures. Permanently excludes the other Guild paths.</string>
 
+            <!-- Universal Guild Expedition Chain -->
+            <string _locid="9914008">Assemble the Expedition</string>
+            <string _locid="9914009">Organize an expedition and prepare a covered wagon to transport its adventurers. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914010">Surveyor's Charter</string>
+            <string _locid="9914011">Commission trained surveyors to improve the expedition's awareness of unexplored territory. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914012">Outfitted for the Unknown</string>
+            <string _locid="9914013">Equip every adventurer with the dependable supplies needed to survive beyond settled lands. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914014">Beyond the Frontier</string>
+            <string _locid="9914015">Prepare the expedition for longer journeys through distant and difficult country. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914016">Field Notes and Folklore</string>
+            <string _locid="9914017">Combine recorded observations with local traditions to understand the creatures guarding the wilderness. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914018">Relic Seekers</string>
+            <string _locid="9914019">Train the expedition to locate and recover valuable relics from dangerous sites. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914020">Trials of the Wild</string>
+            <string _locid="9914021">The hardships of the wilderness temper surviving adventurers into a hardier expedition. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914022">Hard-Won Renown</string>
+            <string _locid="9914023">Past victories earn the expedition a formidable reputation and attract increasingly capable recruits. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914024">Defy Death</string>
+            <string _locid="9914025">Teach veteran adventurers to survive wounds and dangers that would end an ordinary expedition. New party members take 5 seconds longer to train.</string>
+
+            <string _locid="9914026">Becoming Legends</string>
+            <string _locid="9914027">The main party becomes a fellowship of named heroes capable of being knocked down and revived. New party members take 5 seconds longer to train.</string>
+
 
         </language>
     </stringtable>

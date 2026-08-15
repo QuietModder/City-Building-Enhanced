@@ -4148,6 +4148,8 @@
         <unitaitype>HandCombative</unitaitype>
         <trainpoints>30.0000</trainpoints>
         <buildlimit>1</buildlimit>
+        <cost resourcetype="Food">75.0000</cost>
+        <cost resourcetype="Gold">75.0000</cost>
         <allowedage>0</allowedage>
         <armor type="Hand" value="0.1000" />
         <armor type="Ranged" value="0.1000" />
@@ -4251,6 +4253,8 @@
         <unitaitype>HandCombative</unitaitype>
         <trainpoints>30.0000</trainpoints>
         <buildlimit>1</buildlimit>
+        <cost resourcetype="Food">75.0000</cost>
+        <cost resourcetype="Gold">75.0000</cost>
         <allowedage>0</allowedage>
         <armor type="Hand" value="0.0500" />
         <armor type="Ranged" value="0.0500" />
@@ -4318,7 +4322,7 @@
         <populationcount>1</populationcount>
         <obstructionradiusx>0.4900</obstructionradiusx>
         <obstructionradiusz>0.4900</obstructionradiusz>
-        <formationcategory>Ranged</formationcategory>
+        <formationcategory>Protected</formationcategory>
         <maxvelocity>4.0000</maxvelocity>
         <maxrunvelocity>6.0000</maxrunvelocity>
         <movementtype>land</movementtype>
@@ -4336,6 +4340,8 @@
         <unitaitype>RangedCombative</unitaitype>
         <trainpoints>30.0000</trainpoints>
         <buildlimit>1</buildlimit>
+        <cost resourcetype="Food">75.0000</cost>
+        <cost resourcetype="Gold">75.0000</cost>
         <allowedage>0</allowedage>
         <armor type="Ranged" value="0.1000" />
 
@@ -4351,6 +4357,7 @@
         <!-- Standard combat classes. -->
         <unittype>AbstractFootArcher</unittype>
         <unittype>AbstractArcher</unittype>
+        <unittype>AbstractSkirmisher</unittype>
         <unittype>AbstractRangedInfantry</unittype>
         <unittype>AbstractInfantry</unittype>
 
