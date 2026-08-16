@@ -17,6 +17,8 @@
 
   <!-- Standing overhand throw: a reliable ranged release without a weapon or kneeling heal. -->
   <anim>SpellAttack<assetreference type="GrannyAnim"><file>animation_library\natives\tomahawk\volley_ranged_attack</file><tag type="Attack">0.50</tag><tag type="SpecificSoundSet" checkvisible="1" set="Swoosh">0.50</tag></assetreference><component>ModelComp</component></anim>
+  <!-- Faster chakram casting gesture visually distinguishes the charged Greater Fireball. -->
+  <anim>GreaterSpellAttack<assetreference type="GrannyAnim"><file>units\asians\natives\chakram\chakram_throwB</file><tag type="Attack">0.31</tag><tag type="SpecificSoundSet" checkvisible="1" set="Swoosh">0.31</tag></assetreference><component>ModelComp</component></anim>
   <anim>HandAttack<assetreference type="GrannyAnim"><file>animation_library\shared\human_attack_generic_A</file><tag type="Attack">0.58</tag></assetreference><component>ModelComp</component></anim>
 
   <anim>Death<assetreference type="GrannyAnim"><file>animation_library\shared\human_death_generic_A</file><tag type="SpecificSoundSet" checkvisible="1" set="RagdollImpact">0.79</tag></assetreference><component>ModelComp</component></anim>

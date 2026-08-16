@@ -815,6 +815,10 @@
             <string _locid="9914026">Becoming Legends</string>
             <string _locid="9914027">The main party becomes a fellowship of named heroes capable of being knocked down and revived. New party members take 5 seconds longer to train.</string>
 
+            <!-- Adventurers League Caster abilities -->
+            <string _locid="9914028">Greater Fireball</string>
+            <string _locid="9914029">Every 30 seconds, the Caster hurls a greater fireball that deals 100 Siege damage to all enemies within an area of 3.</string>
+
 
         </language>
     </stringtable>

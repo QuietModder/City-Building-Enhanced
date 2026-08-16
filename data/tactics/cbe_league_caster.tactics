@@ -1,5 +1,30 @@
 <tactics>
-  <!-- A standing overhand ranged animation releases the Caster's fireball. -->
+  <!-- Greater Fireball automatically replaces the next attack whenever charged. -->
+  <action>
+    <name stringid="9914028">ChargeGreaterFireballAttack</name>
+    <type>Attack</type>
+    <attackaction>1</attackaction>
+    <rangedlogic>1</rangedlogic>
+    <chargeaction>1</chargeaction>
+    <anim>GreaterSpellAttack</anim>
+    <animationrate>1.0</animationrate>
+    <idleanim>Idle</idleanim>
+    <accuracy>1.0</accuracy>
+    <perfectaccuracy>1</perfectaccuracy>
+    <trackrating>12</trackrating>
+    <projectile>FireBallGreat</projectile>
+    <impacteffect>effects\impacts\cbe_caster_fireball</impacteffect>
+    <minrange>2</minrange>
+    <maxrange>16</maxrange>
+    <!-- Explicit categories keep the charge valid against armies, workers, -->
+    <!-- Guardians, pets, heroes, ships, and buildings.                    -->
+    <rate type="Military">1.0</rate>
+    <rate type="Economic">1.0</rate>
+    <rate type="Guardian">1.0</rate>
+    <rate type="LogicalTypeShipsAndBuildings">1.0</rate>
+  </action>
+
+  <!-- A standing overhand ranged animation releases the single-target fireball. -->
   <action>
     <name stringid="38127">RangedAttack</name>
     <type>Attack</type>
@@ -11,14 +36,14 @@
     <accuracy>1.0</accuracy>
     <perfectaccuracy>1</perfectaccuracy>
     <trackrating>12</trackrating>
-    <projectile>FireBallGreat</projectile>
-    <impacteffect>effects\impacts\cbe_caster_fireball</impacteffect>
+    <projectile>FireBall</projectile>
+    <impacteffect>effects\impacts\torch</impacteffect>
     <minrange>2</minrange>
     <maxrange>12</maxrange>
     <rate type="Unit">1.0</rate>
   </action>
 
-  <!-- Buildings use the same visible spell, with their separate Siege profile. -->
+  <!-- Buildings use the same single-target spell, with their separate Siege profile. -->
   <action>
     <name stringid="38118">BuildingAttack</name>
     <type>Attack</type>
@@ -30,8 +55,8 @@
     <accuracy>1.0</accuracy>
     <perfectaccuracy>1</perfectaccuracy>
     <trackrating>12</trackrating>
-    <projectile>FireBallGreat</projectile>
-    <impacteffect>effects\impacts\cbe_caster_fireball</impacteffect>
+    <projectile>FireBall</projectile>
+    <impacteffect>effects\impacts\torch</impacteffect>
     <maxrange>10</maxrange>
     <rate type="LogicalTypeShipsAndBuildings">1.0</rate>
   </action>
@@ -48,5 +73,11 @@
     <rate type="Unit">1.0</rate>
   </action>
 
-  <tactic>Normal<action priority="100">BuildingAttack</action><action priority="75">RangedAttack</action><action priority="25">HandAttack</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>1</runaway><autoretarget>1</autoretarget><idleanim>Idle</idleanim><boredanim>Bored</boredanim><deathanim>Death</deathanim><walkanim>Walk</walkanim><joganim>Walk</joganim><runanim>Walk</runanim></tactic>
+  <!-- Standard ranged-unit stance set. The Caster retains the charged spell -->
+  <!-- in every ranged stance and deliberately suppresses it in Melee stance. -->
+  <tactic>Volley<action priority="125">ChargeGreaterFireballAttack</action><action priority="100">BuildingAttack</action><action priority="75">RangedAttack</action><action priority="25">HandAttack</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>1</runaway><autoretarget>1</autoretarget><idleanim>Idle</idleanim><boredanim>Bored</boredanim><deathanim>Death</deathanim><walkanim>Walk</walkanim><joganim>Walk</joganim><runanim>Walk</runanim></tactic>
+  <tactic>Defend<action priority="125">ChargeGreaterFireballAttack</action><action priority="100">BuildingAttack</action><action priority="75">RangedAttack</action><action priority="25">HandAttack</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Idle</idleanim><boredanim>Bored</boredanim><deathanim>Death</deathanim><walkanim>Walk</walkanim><joganim>Walk</joganim><runanim>Walk</runanim></tactic>
+  <tactic>Stagger<action priority="125">ChargeGreaterFireballAttack</action><action priority="100">BuildingAttack</action><action priority="75">RangedAttack</action><action priority="25">HandAttack</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Idle</idleanim><boredanim>Bored</boredanim><deathanim>Death</deathanim><walkanim>Walk</walkanim><joganim>Walk</joganim><runanim>Walk</runanim></tactic>
+  <tactic>Melee<action priority="100">BuildingAttack</action><action priority="75">HandAttack</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Idle</idleanim><boredanim>Bored</boredanim><deathanim>Death</deathanim><walkanim>Walk</walkanim><joganim>Walk</joganim><runanim>Walk</runanim></tactic>
+  <tactic>StandGround<action priority="125">ChargeGreaterFireballAttack</action><action priority="100">BuildingAttack</action><action priority="75">RangedAttack</action><action priority="25">HandAttack</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Idle</idleanim><boredanim>Bored</boredanim><deathanim>Death</deathanim><walkanim>Walk</walkanim><joganim>Walk</joganim><runanim>Walk</runanim></tactic>
 </tactics>

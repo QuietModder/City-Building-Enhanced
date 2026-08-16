@@ -21,4 +21,7 @@
   <modboneguard>
     <ability>deChargeAbilitySwashbuckler<tech>CBEDevastatingBlow</tech><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </modboneguard>
+  <cbeleaguecaster>
+    <ability>CBEChargeAbilityGreaterFireball<bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
+  </cbeleaguecaster>
 </abilitymods>

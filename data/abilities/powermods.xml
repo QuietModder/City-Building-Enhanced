@@ -1,0 +1,9 @@
+<powermods>
+  <!-- UI presentation for the Caster's automatic charged attack. -->
+  <power name="CBEChargeAbilityGreaterFireball" type="GeneralEffect">
+    <displaynameid>9914028</displaynameid>
+    <rolloverid>9914029</rolloverid>
+    <icon>resources\images\icons\charged\cbe_greater_fireball.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+</powermods>

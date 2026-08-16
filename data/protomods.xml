@@ -4469,11 +4469,12 @@
         <physicsinfo>dude</physicsinfo>
         <icon>resources\art\units\priests\we_priest_icon_64x64.png</icon>
         <portraiticon>resources\art\units\priests\we_priest_portrait.png</portraiticon>
-        <initialhitpoints>100.0000</initialhitpoints>
+        <initialhitpoints>10000.0000</initialhitpoints>
         <maxhitpoints>10000.0000</maxhitpoints>
         <los>100.0000</los>
-        <projectileprotounit>FireBallGreat</projectileprotounit>
-        <autoattackrange>22.0000</autoattackrange>
+        <rechargetime>30.0000</rechargetime>
+        <projectileprotounit>FireBall</projectileprotounit>
+        <autoattackrange>16.0000</autoattackrange>
         <unitaitype>RangedCombative</unitaitype>
         <trainpoints>30.0000</trainpoints>
         <buildlimit>1</buildlimit>
@@ -4527,17 +4528,16 @@
         <command page="10" column="1">Stop</command>
         <command page="10" column="0">Garrison</command>
         <command page="10" column="7">Delete</command>
+        <command page="11" column="0">Abilities</command>
         <tactics>cbe_league_caster.tactics</tactics>
         <protoaction>
             <name>RangedAttack</name>
             <damage>13.000000</damage>
-            <damagetype>Ranged</damagetype>
+            <damagetype>Siege</damagetype>
             <minrange>2.000000</minrange>
             <maxrange>12.000000</maxrange>
             <rof>3.000000</rof>
-            <projectile>FireBallGreat</projectile>
-            <damagearea>2.000000</damagearea>
-            <damageflags>GAIAEnemy</damageflags>
+            <projectile>FireBall</projectile>
         </protoaction>
         <protoaction>
             <name>BuildingAttack</name>
@@ -4545,8 +4545,19 @@
             <damagetype>Siege</damagetype>
             <maxrange>10.000000</maxrange>
             <rof>3.000000</rof>
+            <projectile>FireBall</projectile>
+        </protoaction>
+        <protoaction>
+            <name>ChargeGreaterFireballAttack</name>
+            <active>1</active>
+            <chargeaction>1</chargeaction>
+            <damage>100.000000</damage>
+            <damagetype>Siege</damagetype>
+            <minrange>2.000000</minrange>
+            <maxrange>16.000000</maxrange>
+            <rof>3.000000</rof>
             <projectile>FireBallGreat</projectile>
-            <damagearea>2.000000</damagearea>
+            <damagearea>3.000000</damagearea>
             <damageflags>GAIAEnemy</damageflags>
         </protoaction>
         <protoaction>
