@@ -260,6 +260,10 @@
             <string _locid="9902052">Adventurers League mage and support party member. Hurls explosive fireballs at enemies and buildings, but is extremely vulnerable in close combat.</string>
             <string _locid="9902053">Fireball-casting support mage.</string>
 
+            <string _locid="9902054">Expedition Wagon</string>
+            <string _locid="9902055">A covered wagon that transports up to 12 infantry, villagers, or Guild members. It cannot construct a Town Center.</string>
+            <string _locid="9902056">Transports up to 12 infantry, villagers, or Guild members.</string>
+
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
             <!-- Range: 9903000 - 9903999                                  -->
@@ -786,25 +790,25 @@
 
             <!-- Universal Guild Expedition Chain -->
             <string _locid="9914008">Assemble the Expedition</string>
-            <string _locid="9914009">Organize an expedition and prepare a covered wagon to transport its adventurers. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914009">Organize an expedition and unlock the Expedition Wagon. Wagons gain +4 line of sight, party members gain +2 line of sight, and Guild adventurers train 10% faster. New party members also take 5 seconds longer to prepare.</string>
 
             <string _locid="9914010">Surveyor's Charter</string>
-            <string _locid="9914011">Commission trained surveyors to improve the expedition's awareness of unexplored territory. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914011">Commission trained surveyors. Guild adventurers gain +6 line of sight, +10% hit points, and +10% damage. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914012">Outfitted for the Unknown</string>
-            <string _locid="9914013">Equip every adventurer with the dependable supplies needed to survive beyond settled lands. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914013">Equip the main party for dangerous encounters. Party members gain +10% hit points and deal 1.25x damage against treasure guardians and pets. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914014">Beyond the Frontier</string>
-            <string _locid="9914015">Prepare the expedition for longer journeys through distant and difficult country. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914015">Guild Party Members gain +15 hit points and +5% speed. Expedition Wagons heal nearby Guild adventurers for 2 hit points per second and garrisoned units for 3 hit points per second. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914016">Field Notes and Folklore</string>
-            <string _locid="9914017">Combine recorded observations with local traditions to understand the creatures guarding the wilderness. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914017">Enemies defeated near Guild Party Members grant +25% experience. This effect does not stack. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914018">Relic Seekers</string>
-            <string _locid="9914019">Train the expedition to locate and recover valuable relics from dangerous sites. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914019">Defeated Guardians grant additional Gold equal to 25% of their normal experience bounty. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914020">Trials of the Wild</string>
-            <string _locid="9914021">The hardships of the wilderness temper surviving adventurers into a hardier expedition. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914021">Guild Party Members gain +15% hit points and an additional +0.25 damage multiplier against Guardians and Pets. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914022">Hard-Won Renown</string>
             <string _locid="9914023">Past victories earn the expedition a formidable reputation and attract increasingly capable recruits. New party members take 5 seconds longer to train.</string>

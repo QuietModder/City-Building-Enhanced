@@ -1,0 +1,17 @@
+<tactics>
+  <!-- Enabled by Beyond the Frontier. Restores 2 HP per second to nearby Guild adventurers. -->
+  <action>
+    <name stringid="68961">CBEExpeditionWagonHealingAura</name>
+    <type>AutoRangedModify</type>
+    <active>0</active>
+    <maxrange>18</maxrange>
+    <modifyabstracttype>CBEGuildAdventurer</modifyabstracttype>
+    <persistent>1</persistent>
+    <nostack>1</nostack>
+    <nostackignorepuid>1</nostackignorepuid>
+    <modifytype>UnitRegenRate</modifytype>
+    <modifyamount>2.0</modifyamount>
+  </action>
+
+  <tactic>Normal<speedmodifier>1.0</speedmodifier><action>CBEExpeditionWagonHealingAura</action></tactic>
+</tactics>

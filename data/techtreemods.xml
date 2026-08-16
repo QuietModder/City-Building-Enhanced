@@ -6624,7 +6624,27 @@
         <status>UNOBTAINABLE</status>
         <icon>resources\images\icons\techs\Squared Icons\unknown.png</icon>
         <effects>
-            <!-- Expedition-wagon unlock added later. -->
+            <!-- Unlock the shared expedition transport on Guild Hall page 0. -->
+            <effect type="Data" amount="1.00" subtype="Enable" relativity="Absolute">
+                <target type="ProtoUnit">CBEExpeditionWagon</target>
+            </effect>
+            <effect type="CommandAdd" proto="CBEExpeditionWagon" page="0" column="4">
+                <target type="ProtoUnit">CBEGuildHall</target>
+            </effect>
+
+            <!-- Initial expedition coordination and scouting bonuses. -->
+            <effect type="Data" amount="4.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">CBEExpeditionWagon</target>
+            </effect>
+            <effect type="Data" amount="2.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="0.90" subtype="TrainPoints" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildAdventurer</target>
+            </effect>
+
+            <!-- Every universal expedition upgrade adds five seconds to -->
+            <!-- the preparation time of newly trained main-party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6649,7 +6669,17 @@
             <techstatus status="Active">CBEAssembleTheExpedition</techstatus>
         </prereqs>
         <effects>
-            <!-- Line-of-sight effect added later. -->
+            <!-- Survey training improves every Guild adventurer. -->
+            <effect type="Data" amount="6.00" subtype="LOS" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildAdventurer</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildAdventurer</target>
+            </effect>
+            <effect type="Data" amount="1.10" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildAdventurer</target>
+            </effect>
+
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6674,7 +6704,18 @@
             <techstatus status="Active">CBESurveyorsCharter</techstatus>
         </prereqs>
         <effects>
-            <!-- Equipment and survivability effects added later. -->
+            <!-- Better equipment reinforces the main party against the -->
+            <!-- creatures most commonly encountered around treasures.  -->
+            <effect type="Data" amount="1.10" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="AbstractPet" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6701,7 +6742,25 @@
             <techstatus status="Active">Colonialize</techstatus>
         </prereqs>
         <effects>
-            <!-- Expedition-movement effect added later. -->
+            <!-- Party members become hardier and move more confidently beyond settled country. -->
+            <effect type="Data" amount="15.00" subtype="Hitpoints" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="Speed" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <!-- Expedition Wagons become mobile recovery points for nearby Guild adventurers. -->
+            <effect type="Data" action="CBEExpeditionWagonHealingAura" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBEExpeditionWagon</target>
+            </effect>
+
+            <!-- Passengers recover 3 HP per second while sheltered inside an Expedition Wagon. -->
+            <effect type="Data" amount="3.00" subtype="ContainedRegenRate" relativity="Assign">
+                <target type="ProtoUnit">CBEExpeditionWagon</target>
+            </effect>
+
+            <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6726,7 +6785,10 @@
             <techstatus status="Active">CBEBeyondTheFrontier</techstatus>
         </prereqs>
         <effects>
-            <!-- Guardian-knowledge effect added later. -->
+            <!-- Recorded encounters increase the XP bounty earned from enemies defeated near Party Members. -->
+            <effect type="Data" action="CBEFieldNotesBountyAura" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6751,7 +6813,12 @@
             <techstatus status="Active">CBEFieldNotesAndFolklore</techstatus>
         </prereqs>
         <effects>
-            <!-- Treasure-hunting effect added later. -->
+            <!-- Recover saleable relics from defeated treasure guardians. -->
+            <effect type="Data2" amount="1.00" subtype="BountyResourceOverride" unittype="Guardian" resource="Gold" extrabounty="true" bountyrate="25.00" relativity="Assign">
+                <target type="Player"></target>
+            </effect>
+
+            <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6776,7 +6843,18 @@
             <techstatus status="Active">CBERelicSeekers</techstatus>
         </prereqs>
         <effects>
-            <!-- Survival effect added later. -->
+            <!-- Surviving the wild strengthens the main party against its most dangerous creatures. -->
+            <effect type="Data" amount="1.15" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="Guardian" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="AbstractPet" allactions="1" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>

@@ -4568,6 +4568,99 @@
         </protoaction>
     </unit>
 
+    <!-- ========================================================= -->
+    <!-- Expedition Wagon                                          -->
+    <!-- Covered Wagon transport with no Town Center construction. -->
+    <!-- ========================================================= -->
+    <unit id="9067" name="CBEExpeditionWagon">
+        <dbid>9067</dbid>
+        <displaynameid>9902054</displaynameid>
+        <editornameid>9902054</editornameid>
+        <rollovertextid>9902055</rollovertextid>
+        <shortrollovertextid>9902056</shortrollovertextid>
+        <obstructionradiusx>0.9900</obstructionradiusx>
+        <obstructionradiusz>0.9900</obstructionradiusz>
+        <formationcategory>Protected</formationcategory>
+        <maxvelocity>6.0000</maxvelocity>
+        <maxrunvelocity>6.0000</maxrunvelocity>
+        <movementtype>land</movementtype>
+        <turnrate>5.0000</turnrate>
+        <animfile>units\villagers\covered_wagon\covered_wagon.xml</animfile>
+        <impacttype>Wood</impacttype>
+        <icon>resources\art\units\villagers\covered_wagon\covered_wagon_icon_64.png</icon>
+        <minimapicon>ui\minimap\wagon</minimapicon>
+        <portraiticon>resources\art\units\villagers\covered_wagon\covered_wagon_portrait.png</portraiticon>
+        <initialhitpoints>500.0000</initialhitpoints>
+        <maxhitpoints>500.0000</maxhitpoints>
+        <los>18.0000</los>
+        <projectileprotounit>InvisibleProjectile</projectileprotounit>
+        <unitaitype>Civilian</unitaitype>
+        <trainpoints>30.0000</trainpoints>
+        <buildlimit>5</buildlimit>
+        <carrycapacity resourcetype="Food">1.0000</carrycapacity>
+        <carrycapacity resourcetype="Wood">1.0000</carrycapacity>
+        <carrycapacity resourcetype="Gold">1.0000</carrycapacity>
+        <maxcontained>12</maxcontained>
+        <!-- Beyond the Frontier assigns this passenger recovery rate to 3 HP per second. -->
+        <containedregenrate>0.0000</containedregenrate>
+        <allowedage>0</allowedage>
+        <armor type="Siege" value="0.2000" />
+
+        <!-- Guild-system identity. -->
+        <unittype>CBEExpeditionBase</unittype>
+
+        <!-- Covered Wagon classification, excluding TC build-limit types. -->
+        <unittype>LogicalTypeMinimapFilterEconomic</unittype>
+        <unittype>LogicalTypeEasySelectAvoid</unittype>
+        <unittype>LogicalTypeHealed</unittype>
+        <unittype>LogicalTypeNeededForVictory</unittype>
+        <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeGarrisonInShips</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
+        <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
+        <unittype>CountsTowardEconomicScore</unittype>
+        <unittype>HasBountyValue</unittype>
+        <unittype>ConvertsHerds</unittype>
+        <unittype>AbstractWagon</unittype>
+        <unittype>CannotConvertHill</unittype>
+        <unittype>UnitClass</unittype>
+        <unittype>Unit</unittype>
+        <unittype>Economic</unittype>
+        <unittype>EconomicUnit</unittype>
+        <unittype>Transport</unittype>
+
+        <!-- Mobile land-transport behavior. -->
+        <flag>ShowGarrisonButton</flag>
+        <flag>AllowAutoGarrison</flag>
+        <flag>HideGarrisonFlag</flag>
+        <flag>CollidesWithProjectiles</flag>
+        <flag>ApplyHandicapTraining</flag>
+        <flag>CorpseDecays</flag>
+        <flag>DontRotateObstruction</flag>
+        <flag>ObscuredByUnits</flag>
+        <flag>DeadReplacementWhenDestroyed</flag>
+        <flag>ConstrainOrientation</flag>
+        <flag>OrientUnitWithGround</flag>
+        <flag>Tracked</flag>
+        <flag>UnitTransformFree</flag>
+
+        <!-- Infantry, all villager variants, and Guild personnel are valid passengers. -->
+        <contain>AbstractInfantry</contain>
+        <contain>AbstractVillager</contain>
+        <contain>CBEGuildPartyMember</contain>
+        <contain>CBEGuildHireling</contain>
+
+        <!-- Deliberately omits the TownCenter train command and Build action. -->
+        <command page="10" column="0">Garrison</command>
+        <command page="10" column="1">Eject</command>
+        <command page="10" column="2">Stop</command>
+        <command page="10" column="7">Delete</command>
+        <tactics>cbe_expedition_wagon.tactics</tactics>
+    </unit>
+
     <!-- ################################################################# -->
     <!-- SECTION 4: BUILDINGS                                              -->
     <!-- Custom constructible and special-purpose buildings.               -->
