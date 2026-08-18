@@ -2,21 +2,27 @@
     <stringtable>
         <language name="English">
 
-            <stringmods>
-                <StringTable>
-                    <Language name="English">
-                        <string _locID="122198">Bronze I</string>
-                        <string _locID="1221981">Bronze II</string>
-                        <string _locID="1221982">Bronze III</string>
-                        <string _locID="1221991">Silver I</string>
-                        <string _locID="122199">Silver II</string>
-                        <string _locID="1221992">Silver III</string>
-                        <string _locID="1222001">Gold I</string>
-                        <string _locID="1222002">Gold II</string>
-                        <string _locID="122200">Elite</string>
-                    </Language>
-                </StringTable>
-            </stringmods>
+            <!-- Global twenty-level combat-promotion ladder. -->
+            <string _locid="9914030">Level 1</string>
+            <string _locid="9914031">Level 2</string>
+            <string _locid="9914032">Level 3</string>
+            <string _locid="9914033">Level 4</string>
+            <string _locid="9914034">Level 5</string>
+            <string _locid="9914035">Level 6</string>
+            <string _locid="9914036">Level 7</string>
+            <string _locid="9914037">Level 8</string>
+            <string _locid="9914038">Level 9</string>
+            <string _locid="9914039">Level 10</string>
+            <string _locid="9914040">Level 11</string>
+            <string _locid="9914041">Level 12</string>
+            <string _locid="9914042">Level 13</string>
+            <string _locid="9914043">Level 14</string>
+            <string _locid="9914044">Level 15</string>
+            <string _locid="9914045">Level 16</string>
+            <string _locid="9914046">Level 17</string>
+            <string _locid="9914047">Level 18</string>
+            <string _locid="9914048">Level 19</string>
+            <string _locid="9914049">Level 20</string>
 
             <!-- ========================================================= -->
             <!-- 9900000s - NEW BUILDINGS                                  -->

@@ -9578,4 +9578,754 @@
             </effect>
         </effects>
     </tech>
+
+
+    <!-- =============================================================== -->
+    <!-- TWENTY-LEVEL TECHNOLOGY-GRANTED COMBAT PROMOTIONS              -->
+    <!-- Later Assign effects rescale every VeterancyEnable technology. -->
+    <!-- =============================================================== -->
+    <tech name="Age0Dutch" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="3" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1125" subtype="VeterancyBonus" rank="4" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="5" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1375" subtype="VeterancyBonus" rank="6" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1625" subtype="VeterancyBonus" rank="8" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="9" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1875" subtype="VeterancyBonus" rank="10" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="11" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2100" subtype="VeterancyBonus" rank="12" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2200" subtype="VeterancyBonus" rank="13" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2400" subtype="VeterancyBonus" rank="14" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="15" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2800" subtype="VeterancyBonus" rank="16" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3000" subtype="VeterancyBonus" rank="17" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3200" subtype="VeterancyBonus" rank="18" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3400" subtype="VeterancyBonus" rank="19" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+        </effects>
+    </tech>
+    <tech name="ChurchQuatrefage" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="3" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1125" subtype="VeterancyBonus" rank="4" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="5" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1375" subtype="VeterancyBonus" rank="6" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1625" subtype="VeterancyBonus" rank="8" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="9" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1875" subtype="VeterancyBonus" rank="10" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="11" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2100" subtype="VeterancyBonus" rank="12" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2200" subtype="VeterancyBonus" rank="13" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2400" subtype="VeterancyBonus" rank="14" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="15" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2800" subtype="VeterancyBonus" rank="16" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3000" subtype="VeterancyBonus" rank="17" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3200" subtype="VeterancyBonus" rank="18" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3400" subtype="VeterancyBonus" rank="19" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="0" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="1" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="2" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="3" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1125" subtype="VeterancyBonus" rank="4" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="5" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1375" subtype="VeterancyBonus" rank="6" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1625" subtype="VeterancyBonus" rank="8" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="9" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1875" subtype="VeterancyBonus" rank="10" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="11" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2100" subtype="VeterancyBonus" rank="12" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2200" subtype="VeterancyBonus" rank="13" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2400" subtype="VeterancyBonus" rank="14" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="15" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2800" subtype="VeterancyBonus" rank="16" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3000" subtype="VeterancyBonus" rank="17" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3200" subtype="VeterancyBonus" rank="18" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3400" subtype="VeterancyBonus" rank="19" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+        </effects>
+    </tech>
+    <tech name="DEHCFrenchRoyalArmy" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Musketeer</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">Halberdier</target>
+            </effect>
+        </effects>
+    </tech>
+    <tech name="DEHCFrenchBattleshipCard" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0625" subtype="VeterancyBonus" rank="4" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="5" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0875" subtype="VeterancyBonus" rank="6" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="7" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1125" subtype="VeterancyBonus" rank="8" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="9" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1375" subtype="VeterancyBonus" rank="10" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="11" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1600" subtype="VeterancyBonus" rank="12" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1700" subtype="VeterancyBonus" rank="13" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1900" subtype="VeterancyBonus" rank="14" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2100" subtype="VeterancyBonus" rank="15" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2300" subtype="VeterancyBonus" rank="16" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="17" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="18" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="19" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">deMercBattleship</target>
+            </effect>
+        </effects>
+    </tech>
+    <tech name="DERangerForce" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractRangedInfantry</target>
+            </effect>
+        </effects>
+    </tech>
+    <tech name="DEHCBuffaloSoldiersForEU" type="Normal">
+        <effects>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="MaxHP" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0125" subtype="VeterancyBonus" rank="0" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0250" subtype="VeterancyBonus" rank="1" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0375" subtype="VeterancyBonus" rank="2" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0500" subtype="VeterancyBonus" rank="3" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.0750" subtype="VeterancyBonus" rank="4" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1000" subtype="VeterancyBonus" rank="5" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1250" subtype="VeterancyBonus" rank="6" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1500" subtype="VeterancyBonus" rank="7" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.1750" subtype="VeterancyBonus" rank="8" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2000" subtype="VeterancyBonus" rank="9" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2250" subtype="VeterancyBonus" rank="10" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2500" subtype="VeterancyBonus" rank="11" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2600" subtype="VeterancyBonus" rank="12" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2700" subtype="VeterancyBonus" rank="13" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.2900" subtype="VeterancyBonus" rank="14" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3100" subtype="VeterancyBonus" rank="15" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3300" subtype="VeterancyBonus" rank="16" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3500" subtype="VeterancyBonus" rank="17" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3700" subtype="VeterancyBonus" rank="18" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+            <effect mergeMode="add" type="Data" amount="1.3900" subtype="VeterancyBonus" rank="19" modifytype="Damage" relativity="Assign">
+                <target type="ProtoUnit">AbstractCavalry</target>
+            </effect>
+        </effects>
+    </tech>
 </techtreemods>
