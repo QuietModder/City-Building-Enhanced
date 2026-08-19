@@ -250,7 +250,7 @@
             <string _locid="9902041">Strong ranged villager.</string>
 
             <!-- Adventurers League main party -->
-            <string _locid="9902042">ShieldBearer</string>
+            <string _locid="9902042">Shielder</string>
             <string _locid="9902043">Adventurers League vanguard. Durable hand infantry equipped to hold the front line.</string>
             <string _locid="9902044">Durable frontline vanguard.</string>
 
@@ -817,17 +817,24 @@
             <string _locid="9914021">Guild Party Members gain +15% hit points and an additional +0.25 damage multiplier against Guardians and Pets. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914022">Hard-Won Renown</string>
-            <string _locid="9914023">Past victories earn the expedition a formidable reputation and attract increasingly capable recruits. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914023">Each living Guild Party Member generates 0.15 XP per second and gains +5% damage. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914024">Defy Death</string>
-            <string _locid="9914025">Teach veteran adventurers to survive wounds and dangers that would end an ordinary expedition. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914025">Guild Party Members gain the hero-style passive health regeneration ability and become incapacitated instead of dying, allowing them to recover and return to the expedition. New party members take 5 seconds longer to train.</string>
 
             <string _locid="9914026">Becoming Legends</string>
-            <string _locid="9914027">The main party becomes a fellowship of named heroes capable of being knocked down and revived. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914027">The main party becomes true Heroes and gains the golden heroic presence, +25% base hit points and damage, and 20% faster primary and secondary charged-ability recharge. New party members take 5 seconds longer to train.</string>
 
             <!-- Adventurers League Caster abilities -->
             <string _locid="9914028">Greater Fireball</string>
             <string _locid="9914029">Every 30 seconds, the Caster hurls a greater fireball that deals 100 Siege damage to all enemies within an area of 3.</string>
+
+            <!-- Universal Guild Party abilities -->
+            <string _locid="9914050">Heroic Aura</string>
+            <string _locid="9914051">This Party Member projects a Heroic Aura. Its effects are expanded and improved through Guild technologies.</string>
+
+            <string _locid="9914052">Combat Promotion</string>
+            <string _locid="9914053">This Party Member earns permanent combat promotions by defeating enemies. Each rank increases maximum hit points and damage, while every second rank also improves attack and movement speed.</string>
 
 
         </language>

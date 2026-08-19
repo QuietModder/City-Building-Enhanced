@@ -6627,6 +6627,8 @@
         <icon>resources\art\units\infantry\redolero\redolero_icon_64x64.png</icon>
         <portraiticon>resources\art\units\infantry\redolero\redolero_portrait.png</portraiticon>
         <initialhitpoints>20000.0000</initialhitpoints>
+        <!-- Defy Death activates the standard hero-style regeneration rate after 3.5 idle seconds. -->
+        <unitregen idletimeout="3.5">0.0000</unitregen>
         <maxhitpoints>20000.0000</maxhitpoints>
         <los>12.0000</los>
         <unitaitype>HandCombative</unitaitype>
@@ -6637,6 +6639,31 @@
         <allowedage>0</allowedage>
         <armor type="Hand" value="0.1000" />
         <armor type="Ranged" value="0.1000" />
+
+        <!-- Universal Party Combat Promotion: cumulative twenty-level progression. -->
+        <!-- Every level: +2% HP/damage. Even levels: +1% speed/attack speed. -->
+        <veterancybonus>
+            <rank id="0"><veterancymodify modifytype="MaxHP">1.0200</veterancymodify><veterancymodify modifytype="Damage">1.0200</veterancymodify><veterancymodify modifytype="ROF">1.0000</veterancymodify><veterancymodify modifytype="Speed">1.0000</veterancymodify></rank>
+            <rank id="1"><veterancymodify modifytype="MaxHP">1.0400</veterancymodify><veterancymodify modifytype="Damage">1.0400</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="2"><veterancymodify modifytype="MaxHP">1.0600</veterancymodify><veterancymodify modifytype="Damage">1.0600</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="3"><veterancymodify modifytype="MaxHP">1.0800</veterancymodify><veterancymodify modifytype="Damage">1.0800</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="4"><veterancymodify modifytype="MaxHP">1.1000</veterancymodify><veterancymodify modifytype="Damage">1.1000</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="5"><veterancymodify modifytype="MaxHP">1.1200</veterancymodify><veterancymodify modifytype="Damage">1.1200</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="6"><veterancymodify modifytype="MaxHP">1.1400</veterancymodify><veterancymodify modifytype="Damage">1.1400</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="7"><veterancymodify modifytype="MaxHP">1.1600</veterancymodify><veterancymodify modifytype="Damage">1.1600</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="8"><veterancymodify modifytype="MaxHP">1.1800</veterancymodify><veterancymodify modifytype="Damage">1.1800</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="9"><veterancymodify modifytype="MaxHP">1.2000</veterancymodify><veterancymodify modifytype="Damage">1.2000</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="10"><veterancymodify modifytype="MaxHP">1.2200</veterancymodify><veterancymodify modifytype="Damage">1.2200</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="11"><veterancymodify modifytype="MaxHP">1.2400</veterancymodify><veterancymodify modifytype="Damage">1.2400</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="12"><veterancymodify modifytype="MaxHP">1.2600</veterancymodify><veterancymodify modifytype="Damage">1.2600</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="13"><veterancymodify modifytype="MaxHP">1.2800</veterancymodify><veterancymodify modifytype="Damage">1.2800</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="14"><veterancymodify modifytype="MaxHP">1.3000</veterancymodify><veterancymodify modifytype="Damage">1.3000</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="15"><veterancymodify modifytype="MaxHP">1.3200</veterancymodify><veterancymodify modifytype="Damage">1.3200</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="16"><veterancymodify modifytype="MaxHP">1.3400</veterancymodify><veterancymodify modifytype="Damage">1.3400</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="17"><veterancymodify modifytype="MaxHP">1.3600</veterancymodify><veterancymodify modifytype="Damage">1.3600</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="18"><veterancymodify modifytype="MaxHP">1.3800</veterancymodify><veterancymodify modifytype="Damage">1.3800</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="19"><veterancymodify modifytype="MaxHP">1.4000</veterancymodify><veterancymodify modifytype="Damage">1.4000</veterancymodify><veterancymodify modifytype="ROF">0.9000</veterancymodify><veterancymodify modifytype="Speed">1.1000</veterancymodify></rank>
+        </veterancybonus>
 
         <!-- Guild identity and roster status. -->
         <unittype>CBEGuildAdventurer</unittype>
@@ -6673,11 +6700,18 @@
         <flag>DontRotateObstruction</flag>
         <flag>ObscuredByUnits</flag>
         <flag>Tracked</flag>
+        <flag>ExperienceUnit</flag>
 
         <command page="10" column="1">Stop</command>
         <command page="10" column="0">Garrison</command>
         <command page="10" column="7">Delete</command>
+        <command page="11" column="0">Abilities</command>
         <tactics>cbe_league_shieldbearer.tactics</tactics>
+        <!-- Enabled by Hard-Won Renown; every living party member contributes its own XP trickle. -->
+        <protoaction>
+            <name>CBEHardWonRenownXP</name>
+            <rate type="XP">0.150000</rate>
+        </protoaction>
         <protoaction>
             <name>BuildingAttack</name>
             <damage>10.000000</damage>
@@ -6732,6 +6766,8 @@
         <icon>resources\art\units\spc\morgan_black\morgan_black_icon_64x64.png</icon>
         <portraiticon>resources\art\units\spc\morgan_black\morgan_black_igc_icon.png</portraiticon>
         <initialhitpoints>175.0000</initialhitpoints>
+        <!-- Defy Death activates the standard hero-style regeneration rate after 3.5 idle seconds. -->
+        <unitregen idletimeout="3.5">0.0000</unitregen>
         <maxhitpoints>175.0000</maxhitpoints>
         <los>12.0000</los>
         <unitaitype>HandCombative</unitaitype>
@@ -6742,6 +6778,31 @@
         <allowedage>0</allowedage>
         <armor type="Hand" value="0.0500" />
         <armor type="Ranged" value="0.0500" />
+
+        <!-- Universal Party Combat Promotion: cumulative twenty-level progression. -->
+        <!-- Every level: +2% HP/damage. Even levels: +1% speed/attack speed. -->
+        <veterancybonus>
+            <rank id="0"><veterancymodify modifytype="MaxHP">1.0200</veterancymodify><veterancymodify modifytype="Damage">1.0200</veterancymodify><veterancymodify modifytype="ROF">1.0000</veterancymodify><veterancymodify modifytype="Speed">1.0000</veterancymodify></rank>
+            <rank id="1"><veterancymodify modifytype="MaxHP">1.0400</veterancymodify><veterancymodify modifytype="Damage">1.0400</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="2"><veterancymodify modifytype="MaxHP">1.0600</veterancymodify><veterancymodify modifytype="Damage">1.0600</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="3"><veterancymodify modifytype="MaxHP">1.0800</veterancymodify><veterancymodify modifytype="Damage">1.0800</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="4"><veterancymodify modifytype="MaxHP">1.1000</veterancymodify><veterancymodify modifytype="Damage">1.1000</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="5"><veterancymodify modifytype="MaxHP">1.1200</veterancymodify><veterancymodify modifytype="Damage">1.1200</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="6"><veterancymodify modifytype="MaxHP">1.1400</veterancymodify><veterancymodify modifytype="Damage">1.1400</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="7"><veterancymodify modifytype="MaxHP">1.1600</veterancymodify><veterancymodify modifytype="Damage">1.1600</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="8"><veterancymodify modifytype="MaxHP">1.1800</veterancymodify><veterancymodify modifytype="Damage">1.1800</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="9"><veterancymodify modifytype="MaxHP">1.2000</veterancymodify><veterancymodify modifytype="Damage">1.2000</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="10"><veterancymodify modifytype="MaxHP">1.2200</veterancymodify><veterancymodify modifytype="Damage">1.2200</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="11"><veterancymodify modifytype="MaxHP">1.2400</veterancymodify><veterancymodify modifytype="Damage">1.2400</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="12"><veterancymodify modifytype="MaxHP">1.2600</veterancymodify><veterancymodify modifytype="Damage">1.2600</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="13"><veterancymodify modifytype="MaxHP">1.2800</veterancymodify><veterancymodify modifytype="Damage">1.2800</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="14"><veterancymodify modifytype="MaxHP">1.3000</veterancymodify><veterancymodify modifytype="Damage">1.3000</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="15"><veterancymodify modifytype="MaxHP">1.3200</veterancymodify><veterancymodify modifytype="Damage">1.3200</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="16"><veterancymodify modifytype="MaxHP">1.3400</veterancymodify><veterancymodify modifytype="Damage">1.3400</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="17"><veterancymodify modifytype="MaxHP">1.3600</veterancymodify><veterancymodify modifytype="Damage">1.3600</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="18"><veterancymodify modifytype="MaxHP">1.3800</veterancymodify><veterancymodify modifytype="Damage">1.3800</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="19"><veterancymodify modifytype="MaxHP">1.4000</veterancymodify><veterancymodify modifytype="Damage">1.4000</veterancymodify><veterancymodify modifytype="ROF">0.9000</veterancymodify><veterancymodify modifytype="Speed">1.1000</veterancymodify></rank>
+        </veterancybonus>
 
         <!-- Guild identity and roster status. -->
         <unittype>CBEGuildAdventurer</unittype>
@@ -6777,11 +6838,18 @@
         <flag>DontRotateObstruction</flag>
         <flag>ObscuredByUnits</flag>
         <flag>Tracked</flag>
+        <flag>ExperienceUnit</flag>
 
         <command page="10" column="1">Stop</command>
         <command page="10" column="0">Garrison</command>
         <command page="10" column="7">Delete</command>
+        <command page="11" column="0">Abilities</command>
         <tactics>cbe_league_saber.tactics</tactics>
+        <!-- Enabled by Hard-Won Renown; every living party member contributes its own XP trickle. -->
+        <protoaction>
+            <name>CBEHardWonRenownXP</name>
+            <rate type="XP">0.150000</rate>
+        </protoaction>
         <protoaction>
             <name>BuildingAttack</name>
             <damage>10.000000</damage>
@@ -6817,6 +6885,8 @@
         <icon>resources\art\units\infantry_ranged\longbow\longbow_icon.png</icon>
         <portraiticon>resources\art\units\infantry_ranged\longbow\longbow_portrait.png</portraiticon>
         <initialhitpoints>125.0000</initialhitpoints>
+        <!-- Defy Death activates the standard hero-style regeneration rate after 3.5 idle seconds. -->
+        <unitregen idletimeout="3.5">0.0000</unitregen>
         <maxhitpoints>125.0000</maxhitpoints>
         <los>26.0000</los>
         <projectileprotounit>Arrow</projectileprotounit>
@@ -6828,6 +6898,31 @@
         <cost resourcetype="Gold">75.0000</cost>
         <allowedage>0</allowedage>
         <armor type="Ranged" value="0.1000" />
+
+        <!-- Universal Party Combat Promotion: cumulative twenty-level progression. -->
+        <!-- Every level: +2% HP/damage. Even levels: +1% speed/attack speed. -->
+        <veterancybonus>
+            <rank id="0"><veterancymodify modifytype="MaxHP">1.0200</veterancymodify><veterancymodify modifytype="Damage">1.0200</veterancymodify><veterancymodify modifytype="ROF">1.0000</veterancymodify><veterancymodify modifytype="Speed">1.0000</veterancymodify></rank>
+            <rank id="1"><veterancymodify modifytype="MaxHP">1.0400</veterancymodify><veterancymodify modifytype="Damage">1.0400</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="2"><veterancymodify modifytype="MaxHP">1.0600</veterancymodify><veterancymodify modifytype="Damage">1.0600</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="3"><veterancymodify modifytype="MaxHP">1.0800</veterancymodify><veterancymodify modifytype="Damage">1.0800</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="4"><veterancymodify modifytype="MaxHP">1.1000</veterancymodify><veterancymodify modifytype="Damage">1.1000</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="5"><veterancymodify modifytype="MaxHP">1.1200</veterancymodify><veterancymodify modifytype="Damage">1.1200</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="6"><veterancymodify modifytype="MaxHP">1.1400</veterancymodify><veterancymodify modifytype="Damage">1.1400</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="7"><veterancymodify modifytype="MaxHP">1.1600</veterancymodify><veterancymodify modifytype="Damage">1.1600</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="8"><veterancymodify modifytype="MaxHP">1.1800</veterancymodify><veterancymodify modifytype="Damage">1.1800</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="9"><veterancymodify modifytype="MaxHP">1.2000</veterancymodify><veterancymodify modifytype="Damage">1.2000</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="10"><veterancymodify modifytype="MaxHP">1.2200</veterancymodify><veterancymodify modifytype="Damage">1.2200</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="11"><veterancymodify modifytype="MaxHP">1.2400</veterancymodify><veterancymodify modifytype="Damage">1.2400</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="12"><veterancymodify modifytype="MaxHP">1.2600</veterancymodify><veterancymodify modifytype="Damage">1.2600</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="13"><veterancymodify modifytype="MaxHP">1.2800</veterancymodify><veterancymodify modifytype="Damage">1.2800</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="14"><veterancymodify modifytype="MaxHP">1.3000</veterancymodify><veterancymodify modifytype="Damage">1.3000</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="15"><veterancymodify modifytype="MaxHP">1.3200</veterancymodify><veterancymodify modifytype="Damage">1.3200</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="16"><veterancymodify modifytype="MaxHP">1.3400</veterancymodify><veterancymodify modifytype="Damage">1.3400</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="17"><veterancymodify modifytype="MaxHP">1.3600</veterancymodify><veterancymodify modifytype="Damage">1.3600</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="18"><veterancymodify modifytype="MaxHP">1.3800</veterancymodify><veterancymodify modifytype="Damage">1.3800</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="19"><veterancymodify modifytype="MaxHP">1.4000</veterancymodify><veterancymodify modifytype="Damage">1.4000</veterancymodify><veterancymodify modifytype="ROF">0.9000</veterancymodify><veterancymodify modifytype="Speed">1.1000</veterancymodify></rank>
+        </veterancybonus>
 
         <!-- Guild identity and roster status. -->
         <unittype>CBEGuildAdventurer</unittype>
@@ -6870,11 +6965,18 @@
         <flag>DontRotateObstruction</flag>
         <flag>ObscuredByUnits</flag>
         <flag>Tracked</flag>
+        <flag>ExperienceUnit</flag>
 
         <command page="10" column="1">Stop</command>
         <command page="10" column="0">Garrison</command>
         <command page="10" column="7">Delete</command>
+        <command page="11" column="0">Abilities</command>
         <tactics>cbe_league_archer.tactics</tactics>
+        <!-- Enabled by Hard-Won Renown; every living party member contributes its own XP trickle. -->
+        <protoaction>
+            <name>CBEHardWonRenownXP</name>
+            <rate type="XP">0.150000</rate>
+        </protoaction>
         <protoaction>
             <name>VolleyRangedAttack</name>
             <damage>12.000000</damage>
@@ -6954,6 +7056,8 @@
         <icon>resources\art\units\priests\we_priest_icon_64x64.png</icon>
         <portraiticon>resources\art\units\priests\we_priest_portrait.png</portraiticon>
         <initialhitpoints>10000.0000</initialhitpoints>
+        <!-- Defy Death activates the standard hero-style regeneration rate after 3.5 idle seconds. -->
+        <unitregen idletimeout="3.5">0.0000</unitregen>
         <maxhitpoints>10000.0000</maxhitpoints>
         <los>100.0000</los>
         <rechargetime>30.0000</rechargetime>
@@ -6968,6 +7072,31 @@
         <cost resourcetype="Gold">75.0000</cost>
         <allowedage>0</allowedage>
         <armor type="Siege" value="0.0500" />
+
+        <!-- Universal Party Combat Promotion: cumulative twenty-level progression. -->
+        <!-- Every level: +2% HP/damage. Even levels: +1% speed/attack speed. -->
+        <veterancybonus>
+            <rank id="0"><veterancymodify modifytype="MaxHP">1.0200</veterancymodify><veterancymodify modifytype="Damage">1.0200</veterancymodify><veterancymodify modifytype="ROF">1.0000</veterancymodify><veterancymodify modifytype="Speed">1.0000</veterancymodify></rank>
+            <rank id="1"><veterancymodify modifytype="MaxHP">1.0400</veterancymodify><veterancymodify modifytype="Damage">1.0400</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="2"><veterancymodify modifytype="MaxHP">1.0600</veterancymodify><veterancymodify modifytype="Damage">1.0600</veterancymodify><veterancymodify modifytype="ROF">0.9900</veterancymodify><veterancymodify modifytype="Speed">1.0100</veterancymodify></rank>
+            <rank id="3"><veterancymodify modifytype="MaxHP">1.0800</veterancymodify><veterancymodify modifytype="Damage">1.0800</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="4"><veterancymodify modifytype="MaxHP">1.1000</veterancymodify><veterancymodify modifytype="Damage">1.1000</veterancymodify><veterancymodify modifytype="ROF">0.9800</veterancymodify><veterancymodify modifytype="Speed">1.0200</veterancymodify></rank>
+            <rank id="5"><veterancymodify modifytype="MaxHP">1.1200</veterancymodify><veterancymodify modifytype="Damage">1.1200</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="6"><veterancymodify modifytype="MaxHP">1.1400</veterancymodify><veterancymodify modifytype="Damage">1.1400</veterancymodify><veterancymodify modifytype="ROF">0.9700</veterancymodify><veterancymodify modifytype="Speed">1.0300</veterancymodify></rank>
+            <rank id="7"><veterancymodify modifytype="MaxHP">1.1600</veterancymodify><veterancymodify modifytype="Damage">1.1600</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="8"><veterancymodify modifytype="MaxHP">1.1800</veterancymodify><veterancymodify modifytype="Damage">1.1800</veterancymodify><veterancymodify modifytype="ROF">0.9600</veterancymodify><veterancymodify modifytype="Speed">1.0400</veterancymodify></rank>
+            <rank id="9"><veterancymodify modifytype="MaxHP">1.2000</veterancymodify><veterancymodify modifytype="Damage">1.2000</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="10"><veterancymodify modifytype="MaxHP">1.2200</veterancymodify><veterancymodify modifytype="Damage">1.2200</veterancymodify><veterancymodify modifytype="ROF">0.9500</veterancymodify><veterancymodify modifytype="Speed">1.0500</veterancymodify></rank>
+            <rank id="11"><veterancymodify modifytype="MaxHP">1.2400</veterancymodify><veterancymodify modifytype="Damage">1.2400</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="12"><veterancymodify modifytype="MaxHP">1.2600</veterancymodify><veterancymodify modifytype="Damage">1.2600</veterancymodify><veterancymodify modifytype="ROF">0.9400</veterancymodify><veterancymodify modifytype="Speed">1.0600</veterancymodify></rank>
+            <rank id="13"><veterancymodify modifytype="MaxHP">1.2800</veterancymodify><veterancymodify modifytype="Damage">1.2800</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="14"><veterancymodify modifytype="MaxHP">1.3000</veterancymodify><veterancymodify modifytype="Damage">1.3000</veterancymodify><veterancymodify modifytype="ROF">0.9300</veterancymodify><veterancymodify modifytype="Speed">1.0700</veterancymodify></rank>
+            <rank id="15"><veterancymodify modifytype="MaxHP">1.3200</veterancymodify><veterancymodify modifytype="Damage">1.3200</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="16"><veterancymodify modifytype="MaxHP">1.3400</veterancymodify><veterancymodify modifytype="Damage">1.3400</veterancymodify><veterancymodify modifytype="ROF">0.9200</veterancymodify><veterancymodify modifytype="Speed">1.0800</veterancymodify></rank>
+            <rank id="17"><veterancymodify modifytype="MaxHP">1.3600</veterancymodify><veterancymodify modifytype="Damage">1.3600</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="18"><veterancymodify modifytype="MaxHP">1.3800</veterancymodify><veterancymodify modifytype="Damage">1.3800</veterancymodify><veterancymodify modifytype="ROF">0.9100</veterancymodify><veterancymodify modifytype="Speed">1.0900</veterancymodify></rank>
+            <rank id="19"><veterancymodify modifytype="MaxHP">1.4000</veterancymodify><veterancymodify modifytype="Damage">1.4000</veterancymodify><veterancymodify modifytype="ROF">0.9000</veterancymodify><veterancymodify modifytype="Speed">1.1000</veterancymodify></rank>
+        </veterancybonus>
 
         <!-- Guild identity and roster status. -->
         <unittype>CBEGuildAdventurer</unittype>
@@ -7008,12 +7137,18 @@
         <flag>DontRotateObstruction</flag>
         <flag>ObscuredByUnits</flag>
         <flag>Tracked</flag>
+        <flag>ExperienceUnit</flag>
 
         <command page="10" column="1">Stop</command>
         <command page="10" column="0">Garrison</command>
         <command page="10" column="7">Delete</command>
         <command page="11" column="0">Abilities</command>
         <tactics>cbe_league_caster.tactics</tactics>
+        <!-- Enabled by Hard-Won Renown; every living party member contributes its own XP trickle. -->
+        <protoaction>
+            <name>CBEHardWonRenownXP</name>
+            <rate type="XP">0.150000</rate>
+        </protoaction>
         <protoaction>
             <name>RangedAttack</name>
             <damage>13.000000</damage>

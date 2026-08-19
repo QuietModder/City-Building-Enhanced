@@ -21,7 +21,39 @@
   <modboneguard>
     <ability>deChargeAbilitySwashbuckler<tech>CBEDevastatingBlow</tech><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </modboneguard>
+  <!-- ================================================================ -->
+  <!-- Guild Party Member ability-grid template                          -->
+  <!--                                                                  -->
+  <!-- Page 0: C0 Stance | C1 Stance | C2 Stance                        -->
+  <!--         C3 Stance | C4 Stance | C5 Stance                        -->
+  <!-- Page 1: C0 Combat Promotion | C1 Heroic Aura | C2 Regeneration   -->
+  <!--         C3 Activated I | C4 Activated II | C5 Activated III      -->
+  <!-- Page 2: C0 Hero Passive I | C1 Hero Passive II | C2 Passive III  -->
+  <!--         C3 Charged I | C4 Charged II | C5 Charged III            -->
+  <!--                                                                  -->
+  <!-- Use this slot map for every main Guild Party Member.             -->
+  <!-- ================================================================ -->
+
+  <!-- Defy Death displays the same passive health-regeneration ability used by heroes. -->
+  <cbeleagueshieldbearer>
+    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+  </cbeleagueshieldbearer>
+  <cbeleaguesaber>
+    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+  </cbeleaguesaber>
+  <cbeleaguearcher>
+    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+  </cbeleaguearcher>
   <cbeleaguecaster>
+    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEChargeAbilityGreaterFireball<bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </cbeleaguecaster>
 </abilitymods>

@@ -6881,7 +6881,15 @@
             <techstatus status="Active">Fortressize</techstatus>
         </prereqs>
         <effects>
-            <!-- Combat-stat effect added later. -->
+            <!-- Each active party member produces its own 0.15 XP/sec through this enabled AutoGather action. -->
+            <effect type="Data" action="CBEHardWonRenownXP" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="1.05" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6906,7 +6914,16 @@
             <techstatus status="Active">CBEHardWonRenown</techstatus>
         </prereqs>
         <effects>
-            <!-- Major survival effect added later. -->
+            <!-- Party members are incapacitated instead of dying. Flag 123 is cKnockoutDeath. -->
+            <effect type="Data" amount="1.00" subtype="ProtoUnitFlag" flagid="123" relativity="Assign">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <!-- Activates the standard hero-style idle health-regeneration passive. -->
+            <effect type="Data" amount="0.25" subtype="UnitRegenRate" relativity="Assign">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6931,7 +6948,28 @@
             <techstatus status="Active">CBEDefyDeath</techstatus>
         </prereqs>
         <effects>
-            <!-- Named-hero transformations and knockdown/revival added later. -->
+            <!-- Legendary status grants +25% base hit points and damage. -->
+            <effect type="Data" amount="1.25" subtype="Hitpoints" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="1.25" subtype="Damage" allactions="1" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <!-- Promote Party Members into true Heroes, enabling the engine's standard golden hero effect. -->
+            <effect type="Data" amount="1.00" subtype="SetUnitType" unittype="Hero" relativity="Assign">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <!-- Legendary Party Members recharge both charged-ability channels 20% faster. -->
+            <effect type="Data" amount="0.80" subtype="RechargeTime" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <effect type="Data" amount="0.80" subtype="AuxRechargeTime" relativity="BasePercent">
+                <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <!-- New legendary recruits require additional preparation. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
