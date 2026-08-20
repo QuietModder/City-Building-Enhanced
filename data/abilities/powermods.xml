@@ -15,6 +15,106 @@
     <allowduringnorush>1</allowduringnorush>
   </power>
 
+  <!-- Shielder's Shield Discipline passive: completely blocks incoming attacks. -->
+  <power name="CBEBlock" type="Dodge">
+    <displaynameid>9914057</displaynameid>
+    <rolloverid>9914058</rolloverid>
+    <icon>resources\images\icons\Passives\tech_passive_block.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+
+  <!-- Shielder's core role passive: protects nearby allies while growing stronger beside them. -->
+  <power name="CBEIAmYourShield" type="GeneralEffect">
+    <displaynameid>9914074</displaynameid>
+    <rolloverid>9914075</rolloverid>
+    <icon>resources\images\icons\Passives\tech_passive_i_am_your_shield.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+
+  <!-- Shielder's activated challenge strike and temporary defensive stance. -->
+  <power name="CBEChallenge" type="UnitAction">
+    <displaynameid>9914054</displaynameid>
+    <rolloverid>9914055</rolloverid>
+    <icon>resources\images\icons\Abilites\cbe_challenge.png</icon>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>10</activetime>
+    <radius>18.0</radius>
+    <placement forceonmap="1" enemy="" allowgaia="">unit</placement>
+    <abstractattacktargettype>Unit</abstractattacktargettype>
+    <unitaction>ChallengeAttack</unitaction>
+    <auxiliarypower>CBEChallengeArmor</auxiliarypower>
+    <auxiliarypowertargettype>self</auxiliarypowertargettype>
+    <forceattacktarget>1</forceattacktarget>
+    <alwaysaddtoplayer>1</alwaysaddtoplayer>
+    <allowduringnorush>1</allowduringnorush>
+    <forceglobalcooldown>1</forceglobalcooldown>
+    <startsoundset>BattlecryMedium</startsoundset>
+  </power>
+  <power name="CBEChallengeArmor" type="GeneralEffect">
+    <timerrolloverid>9914056</timerrolloverid>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>10</activetime>
+    <effect type="ArmorSpecific" newtype="Hand" relativity="Absolute" amount="0.10">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <effect type="ArmorSpecific" newtype="Ranged" relativity="Absolute" amount="0.10">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <messagealertplayerrelation>none</messagealertplayerrelation>
+    <placement forceonmap="1">LOSDontCare</placement>
+    <allowduringnorush>1</allowduringnorush>
+    <isauxiliarypower>1</isauxiliarypower>
+  </power>
+
+  <!-- Brace for Impact replaces Challenge with a 20-second version of its defensive buff. -->
+  <power name="CBEChallengeBraceForImpact" type="UnitAction">
+    <displaynameid>9914054</displaynameid>
+    <rolloverid>9914076</rolloverid>
+    <icon>resources\images\icons\Abilites\cbe_challenge.png</icon>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>20</activetime>
+    <radius>18.0</radius>
+    <placement forceonmap="1" enemy="" allowgaia="">unit</placement>
+    <abstractattacktargettype>Unit</abstractattacktargettype>
+    <unitaction>ChallengeAttack</unitaction>
+    <auxiliarypower>CBEChallengeArmorBraceForImpact</auxiliarypower>
+    <auxiliarypowertargettype>self</auxiliarypowertargettype>
+    <forceattacktarget>1</forceattacktarget>
+    <alwaysaddtoplayer>1</alwaysaddtoplayer>
+    <allowduringnorush>1</allowduringnorush>
+    <forceglobalcooldown>1</forceglobalcooldown>
+    <startsoundset>BattlecryMedium</startsoundset>
+  </power>
+  <power name="CBEChallengeArmorBraceForImpact" type="GeneralEffect">
+    <timerrolloverid>9914056</timerrolloverid>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>20</activetime>
+    <effect type="ArmorSpecific" newtype="Hand" relativity="Absolute" amount="0.10">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <effect type="ArmorSpecific" newtype="Ranged" relativity="Absolute" amount="0.10">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <messagealertplayerrelation>none</messagealertplayerrelation>
+    <placement forceonmap="1">LOSDontCare</placement>
+    <allowduringnorush>1</allowduringnorush>
+    <isauxiliarypower>1</isauxiliarypower>
+  </power>
+
+  <!-- Into the Breach: Shielder's primary and auxiliary charged attacks. -->
+  <power name="CBEChargeAbilityShieldBash" type="GeneralEffect">
+    <displaynameid>9914077</displaynameid>
+    <rolloverid>9914078</rolloverid>
+    <icon>resources\images\icons\charged\cbe_shield_bash.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEChargeAbilityHeavyStrike" type="GeneralEffect">
+    <displaynameid>9914080</displaynameid>
+    <rolloverid>9914081</rolloverid>
+    <icon>resources\images\icons\charged\cbe_heavy_strike.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+
   <!-- UI presentation for the Caster's automatic charged attack. -->
   <power name="CBEChargeAbilityGreaterFireball" type="GeneralEffect">
     <displaynameid>9914028</displaynameid>

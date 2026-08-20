@@ -6621,7 +6621,7 @@
         <maxrunvelocity>6.0000</maxrunvelocity>
         <movementtype>land</movementtype>
         <turnrate>18.0000</turnrate>
-        <animfile>units\infantry\redolero\redolero.xml</animfile>
+        <animfile>units\infantry\cbe_shielder\cbe_shielder.xml</animfile>
         <impacttype>Flesh</impacttype>
         <physicsinfo>dude</physicsinfo>
         <icon>resources\art\units\infantry\redolero\redolero_icon_64x64.png</icon>
@@ -6631,6 +6631,9 @@
         <unitregen idletimeout="3.5">0.0000</unitregen>
         <maxhitpoints>20000.0000</maxhitpoints>
         <los>12.0000</los>
+        <!-- Primary Shield Bash and auxiliary Heavy Strike charged-attack timers. -->
+        <rechargetime>12.0000</rechargetime>
+        <auxrechargetime>14.0000</auxrechargetime>
         <unitaitype>HandCombative</unitaitype>
         <trainpoints>30.0000</trainpoints>
         <buildlimit>1</buildlimit>
@@ -6639,6 +6642,10 @@
         <allowedage>0</allowedage>
         <armor type="Hand" value="0.1000" />
         <armor type="Ranged" value="0.1000" />
+        <!-- Block passive chance; Shield Discipline enables the dodge mechanic. -->
+        <dodgechance>10.0000</dodgechance>
+        <dodgemessageid>9914059</dodgemessageid>
+        <dodgesoundset>IroncladBlock</dodgesoundset>
 
         <!-- Universal Party Combat Promotion: cumulative twenty-level progression. -->
         <!-- Every level: +2% HP/damage. Even levels: +1% speed/attack speed. -->
@@ -6707,6 +6714,44 @@
         <command page="10" column="7">Delete</command>
         <command page="11" column="0">Abilities</command>
         <tactics>cbe_league_shieldbearer.tactics</tactics>
+
+        <!-- Into the Breach: primary charged shield bash. StunAttack supplies the 3-second stun. -->
+        <protoaction>
+            <name>ChargeStun</name>
+            <active>0</active>
+            <chargeaction>1</chargeaction>
+            <damage>25.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <maxrange>1.750000</maxrange>
+            <rof>3.000000</rof>
+            <damageflags>GAIAEnemy</damageflags>
+        </protoaction>
+
+        <!-- Into the Breach: auxiliary charged heavy strike. -->
+        <protoaction>
+            <name>CBEHeavyStrikeAttack</name>
+            <active>0</active>
+            <auxchargeaction>1</auxchargeaction>
+            <damage>75.000000</damage>
+            <damagetype>Hand</damagetype>
+            <maxrange>1.750000</maxrange>
+            <rof>1.750000</rof>
+            <damageflags>GAIAEnemy</damageflags>
+            <damagebonus type="Guardian">1.250000</damagebonus>
+            <damagebonus type="AbstractPet">1.250000</damagebonus>
+            <damagebonus type="AbstractInfantry">1.250000</damagebonus>
+        </protoaction>
+
+        <!-- Challenge is an activated melee sweep intended to provoke every enemy it damages. -->
+        <protoaction>
+            <name>ChallengeAttack</name>
+            <damage>25.000000</damage>
+            <damagetype>Hand</damagetype>
+            <maxrange>1.750000</maxrange>
+            <rof>1.750000</rof>
+            <damagearea>18.000000</damagearea>
+            <damageflags>GAIAEnemy</damageflags>
+        </protoaction>
         <!-- Enabled by Hard-Won Renown; every living party member contributes its own XP trickle. -->
         <protoaction>
             <name>CBEHardWonRenownXP</name>
@@ -7008,20 +7053,6 @@
         </protoaction>
         <protoaction>
             <name>DefendHandAttack</name>
-            <damage>8.000000</damage>
-            <damagetype>Hand</damagetype>
-            <rof>2.000000</rof>
-        </protoaction>
-        <protoaction>
-            <name>StaggerRangedAttack</name>
-            <damage>12.000000</damage>
-            <damagetype>Ranged</damagetype>
-            <minrange>2.000000</minrange>
-            <maxrange>22.000000</maxrange>
-            <rof>3.000000</rof>
-        </protoaction>
-        <protoaction>
-            <name>StaggerHandAttack</name>
             <damage>8.000000</damage>
             <damagetype>Hand</damagetype>
             <rof>2.000000</rof>

@@ -36,9 +36,20 @@
 
   <!-- Defy Death displays the same passive health-regeneration ability used by heroes. -->
   <cbeleagueshieldbearer>
+    <!-- Page 1: universal passives and activated abilities. -->
     <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
     <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <!-- Page 1, column 3 intentionally unused. -->
+    <ability>CBEChallenge<tech>CBERiseToTheChallenge</tech><rof>45</rof><forceshowrollover>true</forceshowrollover></ability>
+    <!-- Page 1, column 5 intentionally unused. -->
+
+    <!-- Page 2: Shielder-specific passives and charged abilities. -->
+    <ability>CBEBlock<tech>CBEShieldDiscipline</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEIAmYourShield<tech>CBERiseToTheChallenge</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <!-- Page 2, columns 2 and 3 intentionally unused. -->
+    <ability>CBEChargeAbilityShieldBash<tech>CBEIntoTheBreach</tech><rof>12</rof><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEChargeAbilityHeavyStrike<tech>CBEIntoTheBreach</tech><rof>14</rof><bindtoauxchargeaction>true</bindtoauxchargeaction><forceshowrollover>true</forceshowrollover></ability>
   </cbeleagueshieldbearer>
   <cbeleaguesaber>
     <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>

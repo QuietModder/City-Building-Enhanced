@@ -825,6 +825,41 @@
             <string _locid="9914026">Becoming Legends</string>
             <string _locid="9914027">The main party becomes true Heroes and gains the golden heroic presence, +25% base hit points and damage, and 20% faster primary and secondary charged-ability recharge. New party members take 5 seconds longer to train.</string>
 
+            <!-- Adventurers League: Shielder Technology Chain -->
+            <string _locid="9914060">Shield Discipline</string>
+            <string _locid="9914061">Unlocks Shielder's Block passive, granting a 10% chance to completely block an incoming attack, and increases Shielder's melee armor by 5 percentage points.</string>
+
+            <string _locid="9914062">Rise to the Challenge</string>
+            <string _locid="9914063">Unlocks I Am Your Shield and Challenge. Nearby allied military units take 10% less damage. Shielder regenerates 1 hit point per second, even in combat, and gains +5% damage per nearby allied military unit, up to +25%.</string>
+
+            <string _locid="9914064">Brace for Impact</string>
+            <string _locid="9914065">Increases Challenge's melee and ranged armor-bonus duration from 10 to 20 seconds. Shielder also gains +15% damage and +50 hit points.</string>
+
+            <string _locid="9914066">Into the Breach</string>
+            <string _locid="9914067">Unlocks Shield Bash and Heavy Strike. Shield Bash deals 25 Hand damage and stuns its target for 3 seconds every 12 seconds. Heavy Strike deals 75 Hand damage with +25% damage against Guardians, Pets, and Infantry every 14 seconds.</string>
+
+            <string _locid="9914068">Hold the Breach</string>
+            <string _locid="9914069">Shielder technology. Effects to be determined.</string>
+
+            <string _locid="9914070">Interpose</string>
+            <string _locid="9914071">Shielder technology. Effects to be determined.</string>
+
+            <string _locid="9914072">Unyielding Guardian</string>
+            <string _locid="9914073">Shielder technology. Effects to be determined.</string>
+
+            <!-- Adventurers League: Shielder abilities -->
+            <string _locid="9914074">I Am Your Shield</string>
+            <string _locid="9914075">Core Passive: Nearby allied military units within 24 range take 10% less damage. Shielder constantly regenerates 1 hit point per second and gains +5% damage per nearby allied military unit, up to +25%.</string>
+            <string _locid="9914076">Strike a nearby enemy for 25 Hand damage and damage all enemies within an area of 18, provoking their retaliation. Shielder gains +10% melee and ranged armor for 20 seconds. Cooldown: 45 seconds.</string>
+
+            <!-- Into the Breach charged abilities: three-string records. -->
+            <string _locid="9914077">Shield Bash</string>
+            <string _locid="9914078">Charged Attack: Deals 25 Hand damage and stuns the target for 3 seconds. Recharges every 12 seconds.</string>
+            <string _locid="9914079">A shield strike that briefly stuns one enemy.</string>
+            <string _locid="9914080">Heavy Strike</string>
+            <string _locid="9914081">Charged Attack: Deals 75 Hand damage with +25% damage against Guardians, Pets, and Infantry. Recharges every 14 seconds.</string>
+            <string _locid="9914082">A powerful sword strike especially effective against Guardians, Pets, and Infantry.</string>
+
             <!-- Adventurers League Caster abilities -->
             <string _locid="9914028">Greater Fireball</string>
             <string _locid="9914029">Every 30 seconds, the Caster hurls a greater fireball that deals 100 Siege damage to all enemies within an area of 3.</string>
@@ -835,6 +870,14 @@
 
             <string _locid="9914052">Combat Promotion</string>
             <string _locid="9914053">This Party Member earns permanent combat promotions by defeating enemies. Each rank increases maximum hit points and damage, while every second rank also improves attack and movement speed.</string>
+
+            <string _locid="9914054">Challenge</string>
+            <string _locid="9914055">Strike a nearby enemy for 25 Hand damage and damage all enemies within an area of 18, provoking their retaliation. Shielder gains +10% melee and ranged armor for 10 seconds. Cooldown: 45 seconds.</string>
+            <string _locid="9914056">Challenge: Shielder has +10% melee and ranged armor.</string>
+
+            <string _locid="9914057">Block</string>
+            <string _locid="9914058">Shielder has a 10% chance to completely block an incoming attack.</string>
+            <string _locid="9914059">Blocked!</string>
 
 
         </language>
