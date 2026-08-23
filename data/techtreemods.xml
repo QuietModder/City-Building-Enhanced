@@ -6649,6 +6649,10 @@
                 <target type="ProtoUnit">CBEGuildAdventurer</target>
             </effect>
 
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessAssembled" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <!-- Every universal expedition upgrade adds five seconds to -->
             <!-- the preparation time of newly trained main-party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
@@ -6686,6 +6690,10 @@
                 <target type="ProtoUnit">CBEGuildAdventurer</target>
             </effect>
 
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessAssembled" toprotopower="CBEHeroicProwessSurveyed" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
@@ -6720,6 +6728,10 @@
             </effect>
             <effect type="Data" amount="0.25" subtype="DamageBonus" unittype="AbstractPet" allactions="1" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessSurveyed" toprotopower="CBEHeroicProwessOutfitted" relativity="Percent">
+                <target type="Player"></target>
             </effect>
 
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
@@ -6766,6 +6778,10 @@
                 <target type="ProtoUnit">CBEExpeditionWagon</target>
             </effect>
 
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessOutfitted" toprotopower="CBEHeroicProwessFrontier" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
@@ -6794,6 +6810,10 @@
             <!-- Recorded encounters increase the XP bounty earned from enemies defeated near Party Members. -->
             <effect type="Data" action="CBEFieldNotesBountyAura" amount="1.00" subtype="ActionEnable" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <!-- Update the single Heroic Prowess icon with the newly unlocked aura. -->
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessFrontier" toprotopower="CBEHeroicProwessFieldNotes" relativity="Percent">
+                <target type="Player"></target>
             </effect>
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
@@ -6860,6 +6880,10 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
 
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessFieldNotes" toprotopower="CBEHeroicProwessTrials" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
@@ -6894,6 +6918,10 @@
             <effect type="Data" amount="1.05" subtype="Damage" allactions="1" relativity="BasePercent">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
+            <!-- Replace Heroic Prowess's earlier presentation with its cumulative Renown tooltip. -->
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessTrials" toprotopower="CBEHeroicProwessRenown" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
 
             <!-- Every universal-chain improvement raises the preparation time for new party members. -->
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
@@ -6927,6 +6955,10 @@
             <!-- Activates the standard hero-style idle health-regeneration passive. -->
             <effect type="Data" amount="0.25" subtype="UnitRegenRate" relativity="Assign">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <!-- Fold regeneration and incapacitation into the universal passive tooltip. -->
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessRenown" toprotopower="CBEHeroicProwessDefyDeath" relativity="Percent">
+                <target type="Player"></target>
             </effect>
 
             <!-- Every universal-chain improvement raises the preparation time for new party members. -->
@@ -6973,6 +7005,10 @@
             </effect>
             <effect type="Data" amount="0.80" subtype="AuxRechargeTime" relativity="BasePercent">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
+            </effect>
+            <!-- Becoming Legends supplies Heroic Prowess's final cumulative tooltip. -->
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessDefyDeath" toprotopower="CBEHeroicProwessLegend" relativity="Percent">
+                <target type="Player"></target>
             </effect>
 
             <!-- New legendary recruits require additional preparation. -->
@@ -7045,6 +7081,11 @@
                 <target type="ProtoUnit">CBELeagueShieldBearer</target>
             </effect>
 
+            <!-- Add the protection aura and personal effects to the existing class-passive tooltip. -->
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEShielderClassAbility" toprotopower="CBEShielderClassAbilityChallenge" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <!-- Challenge and I Am Your Shield are displayed by their technology-gated ability entries. -->
             <effect type="TechStatus" status="obtainable">CBEBraceForImpact</effect>
             <effect type="CommandAdd" tech="CBEBraceForImpact" page="2" column="1">
@@ -7080,6 +7121,11 @@
             </effect>
             <effect type="Data" amount="50.00" subtype="Hitpoints" relativity="Absolute">
                 <target type="ProtoUnit">CBELeagueShieldBearer</target>
+            </effect>
+
+            <!-- Show the cumulative permanent Shielder bonuses without adding another passive icon. -->
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEShielderClassAbilityChallenge" toprotopower="CBEShielderClassAbilityBraced" relativity="Percent">
+                <target type="Player"></target>
             </effect>
 
             <effect type="TechStatus" status="obtainable">CBEIntoTheBreach</effect>

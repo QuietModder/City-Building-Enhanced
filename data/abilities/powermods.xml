@@ -1,33 +1,85 @@
 <powermods>
-  <!-- Universal twenty-level kill-based progression for Guild Party Members. -->
-  <power name="CBECombatPromotion" type="UnitAction">
-    <displaynameid>9914052</displaynameid>
-    <rolloverid>9914053</rolloverid>
-    <icon>resources\images\icons\Passives\Combat_Promotion.png</icon>
+  <!-- Universal Party Member passive. Linear Guild upgrades replace only -->
+  <!-- its presentation data, leaving one consistent HUD icon per hero.   -->
+  <power name="CBEHeroicProwess" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914084</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessAssembled" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914085</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessSurveyed" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914086</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessOutfitted" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914087</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessFrontier" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914088</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessFieldNotes" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914089</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessTrials" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914090</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessRenown" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914091</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessDefyDeath" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914092</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessLegend" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914093</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
     <allowduringnorush>1</allowduringnorush>
   </power>
 
-  <!-- Universal Guild Party passive; technologies expand its hidden aura effects. -->
-  <power name="CBEHeroicAura" type="GeneralEffect">
-    <displaynameid>9914050</displaynameid>
-    <rolloverid>9914051</rolloverid>
-    <icon>resources\images\icons\Passives\tech_passive_heroic_aura.png</icon>
-    <allowduringnorush>1</allowduringnorush>
-  </power>
-
-  <!-- Shielder's Shield Discipline passive: completely blocks incoming attacks. -->
-  <power name="CBEBlock" type="Dodge">
-    <displaynameid>9914057</displaynameid>
-    <rolloverid>9914058</rolloverid>
-    <icon>resources\images\icons\Passives\tech_passive_block.png</icon>
-    <allowduringnorush>1</allowduringnorush>
-  </power>
-
-  <!-- Shielder's core role passive: protects nearby allies while growing stronger beside them. -->
-  <power name="CBEIAmYourShield" type="GeneralEffect">
+  <!-- Shielder class passive. Block and I Am Your Shield are represented -->
+  <!-- by one icon whose cumulative tooltip follows the linear class tree. -->
+  <power name="CBEShielderClassAbility" type="GeneralEffect">
     <displaynameid>9914074</displaynameid>
-    <rolloverid>9914075</rolloverid>
-    <icon>resources\images\icons\Passives\tech_passive_i_am_your_shield.png</icon>
+    <rolloverid>9914094</rolloverid>
+    <icon>resources\images\icons\Passives\shielder_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEShielderClassAbilityChallenge" type="GeneralEffect">
+    <displaynameid>9914074</displaynameid>
+    <rolloverid>9914095</rolloverid>
+    <icon>resources\images\icons\Passives\shielder_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEShielderClassAbilityBraced" type="GeneralEffect">
+    <displaynameid>9914074</displaynameid>
+    <rolloverid>9914096</rolloverid>
+    <icon>resources\images\icons\Passives\shielder_passive.png</icon>
     <allowduringnorush>1</allowduringnorush>
   </power>
 

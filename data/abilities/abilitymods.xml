@@ -22,49 +22,35 @@
     <ability>deChargeAbilitySwashbuckler<tech>CBEDevastatingBlow</tech><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </modboneguard>
   <!-- ================================================================ -->
-  <!-- Guild Party Member ability-grid template                          -->
+  <!-- Guild Party Member six-slot ability template                     -->
   <!--                                                                  -->
-  <!-- Page 0: C0 Stance | C1 Stance | C2 Stance                        -->
-  <!--         C3 Stance | C4 Stance | C5 Stance                        -->
-  <!-- Page 1: C0 Combat Promotion | C1 Heroic Aura | C2 Regeneration   -->
-  <!--         C3 Activated I | C4 Activated II | C5 Activated III      -->
-  <!-- Page 2: C0 Hero Passive I | C1 Hero Passive II | C2 Passive III  -->
-  <!--         C3 Charged I | C4 Charged II | C5 Charged III            -->
+  <!-- C0 Heroic Prowess (universal passive and aura information)       -->
+  <!-- C1 Unit/Class Ability (all hero-specific passives and auras)      -->
+  <!-- C2 Main Charged Ability/Attack                                   -->
+  <!-- C3 Auxiliary Charged Ability/Attack                              -->
+  <!-- C4 Activated Ability I                                           -->
+  <!-- C5 Activated Ability II                                          -->
   <!--                                                                  -->
-  <!-- Use this slot map for every main Guild Party Member.             -->
+  <!-- Passive tooltip powers are upgraded in place with                -->
+  <!-- PowerDataOverride so an upgrade never consumes another slot.     -->
   <!-- ================================================================ -->
 
-  <!-- Defy Death displays the same passive health-regeneration ability used by heroes. -->
   <cbeleagueshieldbearer>
-    <!-- Page 1: universal passives and activated abilities. -->
-    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <!-- Page 1, column 3 intentionally unused. -->
-    <ability>CBEChallenge<tech>CBERiseToTheChallenge</tech><rof>45</rof><forceshowrollover>true</forceshowrollover></ability>
-    <!-- Page 1, column 5 intentionally unused. -->
-
-    <!-- Page 2: Shielder-specific passives and charged abilities. -->
-    <ability>CBEBlock<tech>CBEShieldDiscipline</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>CBEIAmYourShield<tech>CBERiseToTheChallenge</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <!-- Page 2, columns 2 and 3 intentionally unused. -->
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEShielderClassAbility<tech>CBEShieldDiscipline</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEChargeAbilityShieldBash<tech>CBEIntoTheBreach</tech><rof>12</rof><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEChargeAbilityHeavyStrike<tech>CBEIntoTheBreach</tech><rof>14</rof><bindtoauxchargeaction>true</bindtoauxchargeaction><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEChallenge<tech>CBERiseToTheChallenge</tech><rof>45</rof><forceshowrollover>true</forceshowrollover></ability>
+    <!-- Activated Ability II is intentionally unused. -->
   </cbeleagueshieldbearer>
   <cbeleaguesaber>
-    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
   </cbeleaguesaber>
   <cbeleaguearcher>
-    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
   </cbeleaguearcher>
   <cbeleaguecaster>
-    <ability>CBECombatPromotion<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>CBEHeroicAura<tech>CBEFieldNotesAndFolklore</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
-    <ability>deUnitHealthRegen<tech>CBEDefyDeath</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEChargeAbilityGreaterFireball<bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </cbeleaguecaster>
 </abilitymods>

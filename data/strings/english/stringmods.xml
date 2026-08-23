@@ -879,6 +879,43 @@
             <string _locid="9914058">Shielder has a 10% chance to completely block an incoming attack.</string>
             <string _locid="9914059">Blocked!</string>
 
+            <!-- Consolidated six-slot Party Member passives. Heroic Prowess -->
+            <!-- progresses chronologically through the universal Guild chain. -->
+            <string _locid="9914083">Heroic Prowess</string>
+            <string _locid="9914084">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank.</string>
+
+            <!-- Assemble the Expedition -->
+            <string _locid="9914085">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Line of sight +2.</string>
+
+            <!-- Surveyor's Charter -->
+            <string _locid="9914086">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +10%; damage +10%; line of sight +8.</string>
+
+            <!-- Outfitted for the Unknown -->
+            <string _locid="9914087">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +20%; damage +10%; line of sight +8; Guardian and Pet damage multiplier +0.25.</string>
+
+            <!-- Beyond the Frontier -->
+            <string _locid="9914088">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +20% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.25.</string>
+
+            <!-- Field Notes and Folklore; Relic Seekers does not alter Party Member buffs. -->
+            <string _locid="9914089">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +20% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.25; enemy experience bounty +25% within 26 range (does not stack).</string>
+
+            <!-- Trials of the Wild -->
+            <string _locid="9914090">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack).</string>
+
+            <!-- Hard-Won Renown -->
+            <string _locid="9914091">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +15%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second.</string>
+
+            <!-- Defy Death -->
+            <string _locid="9914092">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +15%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25 hit points per second while idle; becomes incapacitated instead of dying.</string>
+
+            <!-- Becoming Legends -->
+            <string _locid="9914093">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +60% and +15; damage +40%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25 hit points per second while idle; becomes incapacitated instead of dying; charged-ability cooldown -20%; gains the golden heroic effect.</string>
+
+            <!-- I Am Your Shield cumulative class-passive states. -->
+            <string _locid="9914094">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points.</string>
+            <string _locid="9914095">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Nearby allied military units within 24 range take 10% less damage. Regeneration: +1 hit point per second. Damage: +5% per nearby ally, up to +25%.</string>
+            <string _locid="9914096">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Nearby allied military units within 24 range take 10% less damage. Regeneration: +1 hit point per second. Damage: +5% per nearby ally, up to +25%. Hit points: +50. Additional damage: +15%.</string>
+
 
         </language>
     </stringtable>
