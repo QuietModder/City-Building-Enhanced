@@ -83,7 +83,8 @@
     <allowduringnorush>1</allowduringnorush>
   </power>
 
-  <!-- Shielder's activated challenge strike and temporary defensive stance. -->
+  <!-- Challenge strikes a targeted enemy, then temporarily grants armor and -->
+  <!-- damage that scales with nearby enemies. -->
   <power name="CBEChallenge" type="UnitAction">
     <displaynameid>9914054</displaynameid>
     <rolloverid>9914055</rolloverid>
@@ -97,19 +98,17 @@
     <auxiliarypower>CBEChallengeArmor</auxiliarypower>
     <auxiliarypowertargettype>self</auxiliarypowertargettype>
     <forceattacktarget>1</forceattacktarget>
-    <alwaysaddtoplayer>1</alwaysaddtoplayer>
     <allowduringnorush>1</allowduringnorush>
-    <forceglobalcooldown>1</forceglobalcooldown>
     <startsoundset>BattlecryMedium</startsoundset>
   </power>
   <power name="CBEChallengeArmor" type="GeneralEffect">
     <timerrolloverid>9914056</timerrolloverid>
     <minimapeventtime sendalertto="none">1</minimapeventtime>
     <activetime>10</activetime>
-    <effect type="ArmorSpecific" newtype="Hand" relativity="Absolute" amount="0.10">
+    <effect type="ActionEnable" action="CBEChallengeDefense">
       <target type="ProtoUnit">CBELeagueShieldBearer</target>
     </effect>
-    <effect type="ArmorSpecific" newtype="Ranged" relativity="Absolute" amount="0.10">
+    <effect type="ActionEnable" action="CBEChallengeEnemyStrength">
       <target type="ProtoUnit">CBELeagueShieldBearer</target>
     </effect>
     <messagealertplayerrelation>none</messagealertplayerrelation>
@@ -118,7 +117,7 @@
     <isauxiliarypower>1</isauxiliarypower>
   </power>
 
-  <!-- Brace for Impact replaces Challenge with a 20-second version of its defensive buff. -->
+  <!-- Brace for Impact extends both Challenge effects to 20 seconds. -->
   <power name="CBEChallengeBraceForImpact" type="UnitAction">
     <displaynameid>9914054</displaynameid>
     <rolloverid>9914076</rolloverid>
@@ -132,25 +131,42 @@
     <auxiliarypower>CBEChallengeArmorBraceForImpact</auxiliarypower>
     <auxiliarypowertargettype>self</auxiliarypowertargettype>
     <forceattacktarget>1</forceattacktarget>
-    <alwaysaddtoplayer>1</alwaysaddtoplayer>
     <allowduringnorush>1</allowduringnorush>
-    <forceglobalcooldown>1</forceglobalcooldown>
     <startsoundset>BattlecryMedium</startsoundset>
   </power>
   <power name="CBEChallengeArmorBraceForImpact" type="GeneralEffect">
     <timerrolloverid>9914056</timerrolloverid>
     <minimapeventtime sendalertto="none">1</minimapeventtime>
     <activetime>20</activetime>
-    <effect type="ArmorSpecific" newtype="Hand" relativity="Absolute" amount="0.10">
+    <effect type="ActionEnable" action="CBEChallengeDefense">
       <target type="ProtoUnit">CBELeagueShieldBearer</target>
     </effect>
-    <effect type="ArmorSpecific" newtype="Ranged" relativity="Absolute" amount="0.10">
+    <effect type="ActionEnable" action="CBEChallengeEnemyStrength">
       <target type="ProtoUnit">CBELeagueShieldBearer</target>
     </effect>
     <messagealertplayerrelation>none</messagealertplayerrelation>
     <placement forceonmap="1">LOSDontCare</placement>
     <allowduringnorush>1</allowduringnorush>
     <isauxiliarypower>1</isauxiliarypower>
+  </power>
+
+  <!-- Hold the Breach diagnostic baseline: mirrors vanilla Divine Right. -->
+  <!-- Keep this direct self-buff working before layering other effects onto it. -->
+  <power name="CBELastBastion" type="GeneralEffect">
+    <displaynameid>9914097</displaynameid>
+    <rolloverid>9914098</rolloverid>
+    <timerrolloverid>9914099</timerrolloverid>
+    <icon>resources\images\icons\Abilites\cbe_last_bastion.png</icon>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>5</activetime>
+    <effect type="CanTargetButTakesNoDamage">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <messagealertplayerrelation>none</messagealertplayerrelation>
+    <placement forceonmap="1" ally="">full</placement>
+    <allowduringnorush>1</allowduringnorush>
+    <startsoundset>PowerInvulnerability</startsoundset>
+    <alwaysaddtoplayer>1</alwaysaddtoplayer>
   </power>
 
   <!-- Into the Breach: Shielder's primary and auxiliary charged attacks. -->

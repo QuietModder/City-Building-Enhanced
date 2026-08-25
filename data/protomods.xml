@@ -6626,10 +6626,10 @@
         <physicsinfo>dude</physicsinfo>
         <icon>resources\art\units\infantry\redolero\redolero_icon_64x64.png</icon>
         <portraiticon>resources\art\units\infantry\redolero\redolero_portrait.png</portraiticon>
-        <initialhitpoints>20000.0000</initialhitpoints>
+        <initialhitpoints>200.0000</initialhitpoints>
         <!-- Defy Death activates the standard hero-style regeneration rate after 3.5 idle seconds. -->
         <unitregen idletimeout="3.5">0.0000</unitregen>
-        <maxhitpoints>20000.0000</maxhitpoints>
+        <maxhitpoints>200.0000</maxhitpoints>
         <los>12.0000</los>
         <!-- Primary Shield Bash and auxiliary Heavy Strike charged-attack timers. -->
         <rechargetime>12.0000</rechargetime>
@@ -6688,7 +6688,11 @@
         <!-- Engine targeting and military behavior. -->
         <unittype>LogicalTypeHealed</unittype>
         <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
         <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
         <unittype>LogicalTypeLandMilitary</unittype>
         <unittype>LogicalTypeGarrisonInShips</unittype>
         <unittype>LogicalTypeMinimapFilterMilitary</unittype>
@@ -6717,7 +6721,7 @@
 
         <!-- Into the Breach: primary charged shield bash. StunAttack supplies the 3-second stun. -->
         <protoaction>
-            <name>ChargeStun</name>
+            <name>CBEShieldBashAttack</name>
             <active>0</active>
             <chargeaction>1</chargeaction>
             <damage>25.000000</damage>
@@ -6742,7 +6746,7 @@
             <damagebonus type="AbstractInfantry">1.250000</damagebonus>
         </protoaction>
 
-        <!-- Challenge is an activated melee sweep intended to provoke every enemy it damages. -->
+        <!-- Challenge strikes a targeted enemy and provokes every enemy caught in its area. -->
         <protoaction>
             <name>ChallengeAttack</name>
             <damage>25.000000</damage>
@@ -6864,7 +6868,11 @@
         <!-- Engine targeting and military behavior. -->
         <unittype>LogicalTypeHealed</unittype>
         <unittype>LogicalTypeHandUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
         <unittype>LogicalTypeHandUnitsAttack</unittype>
+        <unittype>LogicalTypeRangedUnitsAttack</unittype>
         <unittype>LogicalTypeLandMilitary</unittype>
         <unittype>LogicalTypeGarrisonInShips</unittype>
         <unittype>LogicalTypeMinimapFilterMilitary</unittype>
@@ -6991,6 +6999,7 @@
         <unittype>LogicalTypeHandUnitsAttack</unittype>
         <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
         <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
         <unittype>LogicalTypeRangedUnitsAttack</unittype>
         <unittype>LogicalTypeLandMilitary</unittype>
         <unittype>LogicalTypeGarrisonInShips</unittype>
@@ -7058,6 +7067,20 @@
             <rof>2.000000</rof>
         </protoaction>
         <protoaction>
+            <name>StaggerRangedAttack</name>
+            <damage>12.000000</damage>
+            <damagetype>Ranged</damagetype>
+            <minrange>2.000000</minrange>
+            <maxrange>22.000000</maxrange>
+            <rof>3.000000</rof>
+        </protoaction>
+        <protoaction>
+            <name>StaggerHandAttack</name>
+            <damage>8.000000</damage>
+            <damagetype>Hand</damagetype>
+            <rof>2.000000</rof>
+        </protoaction>
+        <protoaction>
             <name>MeleeHandAttack</name>
             <damage>8.000000</damage>
             <damagetype>Hand</damagetype>
@@ -7086,10 +7109,10 @@
         <physicsinfo>dude</physicsinfo>
         <icon>resources\art\units\priests\we_priest_icon_64x64.png</icon>
         <portraiticon>resources\art\units\priests\we_priest_portrait.png</portraiticon>
-        <initialhitpoints>10000.0000</initialhitpoints>
+        <initialhitpoints>100.0000</initialhitpoints>
         <!-- Defy Death activates the standard hero-style regeneration rate after 3.5 idle seconds. -->
         <unitregen idletimeout="3.5">0.0000</unitregen>
-        <maxhitpoints>10000.0000</maxhitpoints>
+        <maxhitpoints>100.0000</maxhitpoints>
         <los>100.0000</los>
         <rechargetime>30.0000</rechargetime>
         <projectileprotounit>FireBall</projectileprotounit>
@@ -7149,6 +7172,7 @@
         <unittype>LogicalTypeHandUnitsAttack</unittype>
         <unittype>LogicalTypeRangedUnitsAutoAttack</unittype>
         <unittype>LogicalTypeRangedUnitsAutoAttackNoVillagers</unittype>
+        <unittype>LogicalTypeVillagersAttack</unittype>
         <unittype>LogicalTypeRangedUnitsAttack</unittype>
         <unittype>LogicalTypeLandMilitary</unittype>
         <unittype>LogicalTypeGarrisonInShips</unittype>
@@ -7479,10 +7503,10 @@
     <!-- ========================================================= -->
     <unit id="10203" name="ModPresidio">
         <dbid>10203</dbid>
-        <displaynameid>9902027</displaynameid>
-        <editornameid>9902027</editornameid>
-        <rollovertextid>9902028</rollovertextid>
-        <shortrollovertextid>9902029</shortrollovertextid>
+        <displaynameid>9900018</displaynameid>
+        <editornameid>9900018</editornameid>
+        <rollovertextid>9900019</rollovertextid>
+        <shortrollovertextid>9900020</shortrollovertextid>
 
         <obstructionradiusx>5.0000</obstructionradiusx>
         <obstructionradiusz>5.0000</obstructionradiusz>
@@ -7705,8 +7729,8 @@
     <!-- ========================================================= -->
     <unit id="10202" name="ModHuntingLodge">
         <dbid>10202</dbid>
-        <displaynameid>9902024</displaynameid>
-        <editornameid>9902024</editornameid>
+        <displaynameid>9900015</displaynameid>
+        <editornameid>9900015</editornameid>
         <obstructionradiusx>2.0000</obstructionradiusx>
         <obstructionradiusz>2.0000</obstructionradiusz>
         <maxvelocity>0.0000</maxvelocity>
@@ -7719,8 +7743,8 @@
         <placementfile>buildingsmall.xml</placementfile>
         <icon>resources\art\buildings\asian_civs\spc\japanese_outpost\asian_outpost_icon.png</icon>
         <portraiticon>resources\art\buildings\asian_civs\spc\japanese_outpost\asian_outpost_icon_portrait.png</portraiticon>
-        <rollovertextid>9902025</rollovertextid>
-        <shortrollovertextid>9902026</shortrollovertextid>
+        <rollovertextid>9900016</rollovertextid>
+        <shortrollovertextid>9900017</shortrollovertextid>
 
         <initialhitpoints>1000.0000</initialhitpoints>
         <maxhitpoints>1000.0000</maxhitpoints>
@@ -7845,10 +7869,10 @@
     <!-- ========================================================= -->
     <unit id="9036" name="CBEColonialSecretariat">
         <dbid>9036</dbid>
-        <displaynameid>9902030</displaynameid>
-        <editornameid>9902030</editornameid>
-        <rollovertextid>9902031</rollovertextid>
-        <shortrollovertextid>9902032</shortrollovertextid>
+        <displaynameid>9900021</displaynameid>
+        <editornameid>9900021</editornameid>
+        <rollovertextid>9900022</rollovertextid>
+        <shortrollovertextid>9900023</shortrollovertextid>
         <obstructionradiusx>3.5000</obstructionradiusx>
         <obstructionradiusz>3.5000</obstructionradiusz>
 
@@ -8011,10 +8035,10 @@
     <!-- ========================================================= -->
     <unit id="9037" name="CBEGovernmentHouse">
         <dbid>9037</dbid>
-        <displaynameid>9902033</displaynameid>
-        <editornameid>9902033</editornameid>
-        <rollovertextid>9902034</rollovertextid>
-        <shortrollovertextid>9902035</shortrollovertextid>
+        <displaynameid>9900024</displaynameid>
+        <editornameid>9900024</editornameid>
+        <rollovertextid>9900025</rollovertextid>
+        <shortrollovertextid>9900026</shortrollovertextid>
         <obstructionradiusx>4.0000</obstructionradiusx>
         <obstructionradiusz>4.0000</obstructionradiusz>
         <maxvelocity>0.0000</maxvelocity>
@@ -11727,4 +11751,5 @@
             </rank>
         </veterancybonus>
     </Unit>
+
 </protomods>

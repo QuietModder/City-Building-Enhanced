@@ -1,23 +1,23 @@
 <veterancydata>
   <!-- Levels 1-12 require one additional kill each. Survivor levels then rise steeply. -->
-  <rank><numkills>1</numkills><icon>resources/images/icons/ranks/party_levels/level_01.png</icon><stringid>9914030</stringid></rank>
-  <rank><numkills>2</numkills><icon>resources/images/icons/ranks/party_levels/level_02.png</icon><stringid>9914031</stringid></rank>
-  <rank><numkills>3</numkills><icon>resources/images/icons/ranks/party_levels/level_03.png</icon><stringid>9914032</stringid></rank>
-  <rank><numkills>4</numkills><icon>resources/images/icons/ranks/party_levels/level_04.png</icon><stringid>9914033</stringid></rank>
-  <rank><numkills>5</numkills><icon>resources/images/icons/ranks/party_levels/level_05.png</icon><stringid>9914034</stringid></rank>
-  <rank><numkills>6</numkills><icon>resources/images/icons/ranks/party_levels/level_06.png</icon><stringid>9914035</stringid></rank>
-  <rank><numkills>7</numkills><icon>resources/images/icons/ranks/party_levels/level_07.png</icon><stringid>9914036</stringid></rank>
-  <rank><numkills>8</numkills><icon>resources/images/icons/ranks/party_levels/level_08.png</icon><stringid>9914037</stringid></rank>
-  <rank><numkills>9</numkills><icon>resources/images/icons/ranks/party_levels/level_09.png</icon><stringid>9914038</stringid></rank>
-  <rank><numkills>10</numkills><icon>resources/images/icons/ranks/party_levels/level_10.png</icon><stringid>9914039</stringid></rank>
-  <rank><numkills>11</numkills><icon>resources/images/icons/ranks/party_levels/level_11.png</icon><stringid>9914040</stringid></rank>
-  <rank><numkills>12</numkills><icon>resources/images/icons/ranks/party_levels/level_12.png</icon><stringid>9914041</stringid></rank>
-  <rank><numkills>14</numkills><icon>resources/images/icons/ranks/party_levels/level_13.png</icon><stringid>9914042</stringid></rank>
-  <rank><numkills>18</numkills><icon>resources/images/icons/ranks/party_levels/level_14.png</icon><stringid>9914043</stringid></rank>
-  <rank><numkills>24</numkills><icon>resources/images/icons/ranks/party_levels/level_15.png</icon><stringid>9914044</stringid></rank>
-  <rank><numkills>30</numkills><icon>resources/images/icons/ranks/party_levels/level_16.png</icon><stringid>9914045</stringid></rank>
-  <rank><numkills>34</numkills><icon>resources/images/icons/ranks/party_levels/level_17.png</icon><stringid>9914046</stringid></rank>
-  <rank><numkills>36</numkills><icon>resources/images/icons/ranks/party_levels/level_18.png</icon><stringid>9914047</stringid></rank>
-  <rank><numkills>38</numkills><icon>resources/images/icons/ranks/party_levels/level_19.png</icon><stringid>9914048</stringid></rank>
-  <rank><numkills>40</numkills><icon>resources/images/icons/ranks/party_levels/level_20.png</icon><stringid>9914049</stringid></rank>
+  <rank><numkills>1</numkills><icon>resources/images/icons/ranks/party_levels/level_01.png</icon><stringid>9911140</stringid></rank>
+  <rank><numkills>2</numkills><icon>resources/images/icons/ranks/party_levels/level_02.png</icon><stringid>9911141</stringid></rank>
+  <rank><numkills>3</numkills><icon>resources/images/icons/ranks/party_levels/level_03.png</icon><stringid>9911142</stringid></rank>
+  <rank><numkills>4</numkills><icon>resources/images/icons/ranks/party_levels/level_04.png</icon><stringid>9911143</stringid></rank>
+  <rank><numkills>5</numkills><icon>resources/images/icons/ranks/party_levels/level_05.png</icon><stringid>9911144</stringid></rank>
+  <rank><numkills>6</numkills><icon>resources/images/icons/ranks/party_levels/level_06.png</icon><stringid>9911145</stringid></rank>
+  <rank><numkills>7</numkills><icon>resources/images/icons/ranks/party_levels/level_07.png</icon><stringid>9911146</stringid></rank>
+  <rank><numkills>8</numkills><icon>resources/images/icons/ranks/party_levels/level_08.png</icon><stringid>9911147</stringid></rank>
+  <rank><numkills>9</numkills><icon>resources/images/icons/ranks/party_levels/level_09.png</icon><stringid>9911148</stringid></rank>
+  <rank><numkills>10</numkills><icon>resources/images/icons/ranks/party_levels/level_10.png</icon><stringid>9911149</stringid></rank>
+  <rank><numkills>11</numkills><icon>resources/images/icons/ranks/party_levels/level_11.png</icon><stringid>9911150</stringid></rank>
+  <rank><numkills>12</numkills><icon>resources/images/icons/ranks/party_levels/level_12.png</icon><stringid>9911151</stringid></rank>
+  <rank><numkills>14</numkills><icon>resources/images/icons/ranks/party_levels/level_13.png</icon><stringid>9911152</stringid></rank>
+  <rank><numkills>18</numkills><icon>resources/images/icons/ranks/party_levels/level_14.png</icon><stringid>9911153</stringid></rank>
+  <rank><numkills>24</numkills><icon>resources/images/icons/ranks/party_levels/level_15.png</icon><stringid>9911154</stringid></rank>
+  <rank><numkills>30</numkills><icon>resources/images/icons/ranks/party_levels/level_16.png</icon><stringid>9911155</stringid></rank>
+  <rank><numkills>34</numkills><icon>resources/images/icons/ranks/party_levels/level_17.png</icon><stringid>9911156</stringid></rank>
+  <rank><numkills>36</numkills><icon>resources/images/icons/ranks/party_levels/level_18.png</icon><stringid>9911157</stringid></rank>
+  <rank><numkills>38</numkills><icon>resources/images/icons/ranks/party_levels/level_19.png</icon><stringid>9911158</stringid></rank>
+  <rank><numkills>40</numkills><icon>resources/images/icons/ranks/party_levels/level_20.png</icon><stringid>9911159</stringid></rank>
 </veterancydata>

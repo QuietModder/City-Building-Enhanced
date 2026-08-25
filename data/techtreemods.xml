@@ -6690,7 +6690,7 @@
                 <target type="ProtoUnit">CBEGuildAdventurer</target>
             </effect>
 
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessAssembled" toprotopower="CBEHeroicProwessSurveyed" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessSurveyed" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -6730,7 +6730,7 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
 
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessSurveyed" toprotopower="CBEHeroicProwessOutfitted" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessOutfitted" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -6778,7 +6778,7 @@
                 <target type="ProtoUnit">CBEExpeditionWagon</target>
             </effect>
 
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessOutfitted" toprotopower="CBEHeroicProwessFrontier" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessFrontier" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -6812,7 +6812,7 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
             <!-- Update the single Heroic Prowess icon with the newly unlocked aura. -->
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessFrontier" toprotopower="CBEHeroicProwessFieldNotes" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessFieldNotes" relativity="Percent">
                 <target type="Player"></target>
             </effect>
             <effect type="Data" amount="5.00" subtype="TrainPoints" relativity="Absolute">
@@ -6880,7 +6880,7 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
 
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessFieldNotes" toprotopower="CBEHeroicProwessTrials" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessTrials" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -6919,7 +6919,7 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
             <!-- Replace Heroic Prowess's earlier presentation with its cumulative Renown tooltip. -->
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessTrials" toprotopower="CBEHeroicProwessRenown" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessRenown" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -6957,7 +6957,7 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
             <!-- Fold regeneration and incapacitation into the universal passive tooltip. -->
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessRenown" toprotopower="CBEHeroicProwessDefyDeath" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessDefyDeath" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -7007,7 +7007,7 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
             <!-- Becoming Legends supplies Heroic Prowess's final cumulative tooltip. -->
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwessDefyDeath" toprotopower="CBEHeroicProwessLegend" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEHeroicProwess" toprotopower="CBEHeroicProwessLegend" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -7124,7 +7124,7 @@
             </effect>
 
             <!-- Show the cumulative permanent Shielder bonuses without adding another passive icon. -->
-            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEShielderClassAbilityChallenge" toprotopower="CBEShielderClassAbilityBraced" relativity="Percent">
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEShielderClassAbility" toprotopower="CBEShielderClassAbilityBraced" relativity="Percent">
                 <target type="Player"></target>
             </effect>
 
@@ -7150,7 +7150,7 @@
         </prereqs>
         <effects>
             <!-- Unlock Shielder's primary Shield Bash and auxiliary Heavy Strike charges. -->
-            <effect type="Data" action="ChargeStun" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+            <effect type="Data" action="CBEShieldBashAttack" amount="1.00" subtype="ActionEnable" relativity="Absolute">
                 <target type="ProtoUnit">CBELeagueShieldBearer</target>
             </effect>
             <effect type="Data" action="CBEHeavyStrikeAttack" amount="1.00" subtype="ActionEnable" relativity="Absolute">
@@ -7178,7 +7178,7 @@
             <techstatus status="Active">CBEIntoTheBreach</techstatus>
         </prereqs>
         <effects>
-            <!-- Boilerplate progression only; gameplay effects are intentionally reserved. -->
+            <!-- Unlock Shielder's second activated ability, Last Bastion. -->
             <effect type="TechStatus" status="obtainable">CBEInterpose</effect>
             <effect type="CommandAdd" tech="CBEInterpose" page="2" column="1">
                 <target type="ProtoUnit">CBEGuildHall</target>

@@ -41,7 +41,8 @@
     <ability>CBEChargeAbilityShieldBash<tech>CBEIntoTheBreach</tech><rof>12</rof><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEChargeAbilityHeavyStrike<tech>CBEIntoTheBreach</tech><rof>14</rof><bindtoauxchargeaction>true</bindtoauxchargeaction><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEChallenge<tech>CBERiseToTheChallenge</tech><rof>45</rof><forceshowrollover>true</forceshowrollover></ability>
-    <!-- Activated Ability II is intentionally unused. -->
+    <!-- Mirrors the vanilla Unknown Drummer's Rally Army self-cast pattern. -->
+    <ability>CBELastBastion<tech>CBEHoldTheBreach</tech><rof>60</rof><castonself>true</castonself><donotforcestop>true</donotforcestop><activetimecooldown>true</activetimecooldown><forceshowrollover>true</forceshowrollover></ability>
   </cbeleagueshieldbearer>
   <cbeleaguesaber>
     <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
