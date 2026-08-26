@@ -2,22 +2,6 @@
     <stringtable>
         <language name="English">
 
-            <stringmods>
-                <StringTable>
-                    <Language name="English">
-                        <string _locID="122198">Bronze I</string>
-                        <string _locID="1221981">Bronze II</string>
-                        <string _locID="1221982">Bronze III</string>
-                        <string _locID="1221991">Silver I</string>
-                        <string _locID="122199">Silver II</string>
-                        <string _locID="1221992">Silver III</string>
-                        <string _locID="1222001">Gold I</string>
-                        <string _locID="1222002">Gold II</string>
-                        <string _locID="122200">Elite</string>
-                    </Language>
-                </StringTable>
-            </stringmods>
-
             <!-- ========================================================= -->
             <!-- 9900000s - NEW BUILDINGS                                  -->
             <!-- Range: 9900000 - 9900999                                  -->
@@ -41,6 +25,29 @@
             <string _locid="9900009">Caravanserai</string>
             <string _locid="9900010">A fortified caravan station that arranges special economic and military shipments unlocked through City Planning.</string>
             <string _locid="9900011">Arranges City Planning shipments.</string>
+
+            <!-- Guild Hall -->
+            <string _locid="9900012">Guild Hall</string>
+            <string _locid="9900013">A gathering place for adventurers and treasure hunters. Guild services are not yet available.</string>
+            <string _locid="9900014">Future home of adventurers and treasure-hunting expeditions.</string>
+
+            <!-- Colonial Administration Buildings -->
+            <!-- Existing 9902xxx IDs are retained so current XML references remain valid. -->
+            <string _locid="9900015">Hunting Lodge</string>
+            <string _locid="9900016">A defensive hunting post that automatically gathers Food from nearby huntable animals.</string>
+            <string _locid="9900017">Defensive hunting post.</string>
+
+            <string _locid="9900018">The Presidio</string>
+            <string _locid="9900019">A fortified administrative headquarters that manages city planning, civic programs, and frontier development.</string>
+            <string _locid="9900020">Fortified administrative headquarters.</string>
+
+            <string _locid="9900021">Colonial Secretariat</string>
+            <string _locid="9900022">Manages persistent colony policies such as War Economy, Trade Charter, and Civil Defense.</string>
+            <string _locid="9900023">Manages colony policies.</string>
+
+            <string _locid="9900024">Government House</string>
+            <string _locid="9900025">The governor's headquarters, where foreign advisers, merchants, and military missions can be received.</string>
+            <string _locid="9900026">Hosts a Foreign Mission.</string>
 
             <!-- ========================================================= -->
             <!-- 9902000s - NEW UNITS                                      -->
@@ -83,157 +90,6 @@
             <string _locid="9902022">Deploys into the appropriate population-supporting residence for your civilization.</string>
             <string _locid="9902023">Builds a civilization-appropriate House.</string>
 
-            <string _locid="9902024">Hunting Lodge</string>
-            <string _locid="9902025">A defensive hunting post that automatically gathers Food from nearby huntable animals.</string>
-            <string _locid="9902026">Defensive hunting post.</string>
-
-            <string _locid="9902027">The Presidio</string>
-            <string _locid="9902028">A fortified administrative headquarters that manages city planning, civic programs, and frontier development.</string>
-            <string _locid="9902029">Fortified administrative headquarters.</string>
-
-            <!-- Colonial administration buildings -->
-            <string _locid="9902030">Colonial Secretariat</string>
-            <string _locid="9902031">Manages persistent colony policies such as War Economy, Trade Charter, and Civil Defense.</string>
-            <string _locid="9902032">Manages colony policies.</string>
-
-            <string _locid="9902033">Government House</string>
-            <string _locid="9902034">The governor's headquarters, where foreign advisers, merchants, and military missions can be received.</string>
-            <string _locid="9902035">Hosts a Foreign Mission.</string>
-
-            <!-- ========================================================= -->
-            <!-- GOVERNMENT HOUSE FOREIGN MISSIONS SYSTEM                  -->
-            <!-- Keep English mission names, descriptions, diplomatic      -->
-            <!-- actions, and supporting text together in this subsection. -->
-            <!-- ========================================================= -->
-
-            <string _locid="9911012">Invite a Foreign Mission</string>
-            <string _locid="9911013">Invite foreign advisers, merchants, and military specialists to the Government House. Requires 100 Diplomatic Reputation. Only one Foreign Mission may be hosted at a time.</string>
-
-            <string _locid="9911014">British Mission</string>
-            <string _locid="9911015">British advisers increase villager and land-military hit points by 7%; Musketeer hit points and damage by 15% and range by 3; and Hussar hit points and damage by 15%. Unlocks British units and research at the Government House.</string>
-            <string _locid="9911016">Dismiss the British Mission</string>
-            <string _locid="9911017">Ends the British Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911018">French Mission</string>
-            <string _locid="9911019">French advisers improve villager work rates by 5%; Rifleman hit points and damage by 25%; and Rifleman range by 3. Unlocks French units and research at the Government House.</string>
-            <string _locid="9911020">Dismiss the French Mission</string>
-            <string _locid="9911021">Ends the French Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911022">Spanish Mission</string>
-            <string _locid="9911023">Spanish advisers generate 0.8 experience per second and improve villager mining work rates. Unlocks Spanish units and research at the Government House.</string>
-            <string _locid="9911024">Dismiss the Spanish Mission</string>
-            <string _locid="9911025">Ends the Spanish Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911026">Portuguese Mission</string>
-            <string _locid="9911027">Portuguese engineers reduce building Wood costs by 15%; increase Musketeer and gunpowder-cavalry hit points and damage by 15%; and grant Musketeers 15% hand resistance. Unlocks Portuguese units and research at the Government House.</string>
-            <string _locid="9911028">Dismiss the Portuguese Mission</string>
-            <string _locid="9911029">Ends the Portuguese Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911030">Dutch Mission</string>
-            <string _locid="9911031">Dutch financiers generate 0.8 Coin per second, increase Halberdier hit points and damage by 35%, and improve Bank productivity by 15%. Unlocks Dutch units and research at the Government House.</string>
-            <string _locid="9911032">Dismiss the Dutch Mission</string>
-            <string _locid="9911033">Ends the Dutch Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911034">German Mission</string>
-            <string _locid="9911035">German quartermasters generate 0.4 Food, Wood, and Coin per second; reduce cavalry-infantry Food costs by 10%; and increase Rifleman hit points and damage by 25% with 15% ranged resistance. Unlocks German units and research at the Government House.</string>
-            <string _locid="9911036">Dismiss the German Mission</string>
-            <string _locid="9911037">Ends the German Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911038">Russian Mission</string>
-            <string _locid="9911039">Russian organizers reduce land economic-unit Food costs and training time by 10%, and reduce land-military Food, Wood, and Coin costs and training time by 20%. Unlocks Russian units and research at the Government House.</string>
-            <string _locid="9911040">Dismiss the Russian Mission</string>
-            <string _locid="9911041">Ends the Russian Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911042">Ottoman Mission</string>
-            <string _locid="9911043">Ottoman surveyors increase economic-unit, military-unit, and building line of sight by 7. Ottoman artillery gains 35% hit points but moves 15% slower. Unlocks Ottoman units and research at the Government House.</string>
-            <string _locid="9911044">Dismiss the Ottoman Mission</string>
-            <string _locid="9911045">Ends the Ottoman Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911046">Italian Mission</string>
-            <string _locid="9911047">Italian architects reduce building Wood costs by 20% and improve Lombard Food and Wood investment yields by 50%. Unlocks Italian units and research at the Government House.</string>
-            <string _locid="9911048">Dismiss the Italian Mission</string>
-            <string _locid="9911049">Ends the Italian Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <string _locid="9911050">Swedish Mission</string>
-            <string _locid="9911051">Swedish officers increase the hit points of villagers and land military units by 7%. Unlocks Caroleans, Finnish Riders, Leather Cannons, and Swedish research at the Government House.</string>
-            <string _locid="9911052">Dismiss the Swedish Mission</string>
-            <string _locid="9911053">Ends the Swedish Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
-
-            <!-- Foreign Mission research translated and localized for CBE. -->
-            <string _locid="9911054">Ranger Force</string>
-            <string _locid="9911055">Improves Rangers and other gunpowder troops.</string>
-            <string _locid="9911056">Greenwich Time</string>
-            <string _locid="9911057">Reduces unit training time and increases unit hit points by 10%.</string>
-            <string _locid="9911058">Industrial Revolution</string>
-            <string _locid="9911059">Delivers two Factory Wagons to establish powerful resource or heavy-artillery production.</string>
-            <string _locid="9911060">British Immigrants</string>
-            <string _locid="9911061">Strengthens settlers and delivers experienced British immigrant workers.</string>
-            <string _locid="9911062">Napoleonic Military Reforms</string>
-            <string _locid="9911063">Delivers French fusiliers and improves the attack speed of gunpowder troops.</string>
-            <string _locid="9911064">Richelieu Cavalry Corps</string>
-            <string _locid="9911065">Improves cavalry armor, hit points, and damage and provides elite French cavalry.</string>
-            <string _locid="9911066">French Immigrants</string>
-            <string _locid="9911067">Strengthens Coureurs and provides experienced French immigrant workers.</string>
-            <string _locid="9911068">Spanish Gold</string>
-            <string _locid="9911069">Provides treasure wagons and improves villager Coin gathering.</string>
-            <string _locid="9911070">Spanish Conquistadors</string>
-            <string _locid="9911071">Strengthens the Explorer, provides Conquistadors, and improves their effectiveness against artillery.</string>
-            <string _locid="9911072">Mercenary Arsenal</string>
-            <string _locid="9911073">Improves archaic and hand infantry and reduces the population cost of mercenaries.</string>
-            <string _locid="9911074">Viceroyalty of New Spain</string>
-            <string _locid="9911075">Provides New Spain reinforcements and associated colonial improvements.</string>
-            <string _locid="9911076">Feitorias</string>
-            <string _locid="9911077">Establishes Portuguese trading infrastructure and its economic benefits.</string>
-            <string _locid="9911078">Rangefinding</string>
-            <string _locid="9911079">Improves the range and effectiveness of Portuguese artillery.</string>
-            <string _locid="9911080">Portuguese Dragoon Combat</string>
-            <string _locid="9911081">Improves the attack and hit points of Dragoons and related mounted gunpowder units.</string>
-            <string _locid="9911082">Admiral Tromp</string>
-            <string _locid="9911083">Improves the durability of warships.</string>
-            <string _locid="9911084">Better Banks</string>
-            <string _locid="9911085">Improves Bank productivity and capacity.</string>
-            <string _locid="9911086">Dutch Military Reforms</string>
-            <string _locid="9911087">Improves Dutch military organization and unit performance.</string>
-            <string _locid="9911088">Circle Army</string>
-            <string _locid="9911089">Provides a Holy Roman mercenary army and improves mercenary combat strength.</string>
-            <string _locid="9911090">Germantown Farmers</string>
-            <string _locid="9911091">Improves German settlers and the population capacity of German houses.</string>
-            <string _locid="9911092">Solingen Steel</string>
-            <string _locid="9911093">Improves the attack, hit points, and armor of hand infantry.</string>
-            <string _locid="9911094">German Chevau-légers</string>
-            <string _locid="9911095">Unlocks and improves German Chevau-léger cavalry.</string>
-            <string _locid="9911096">Ransack</string>
-            <string _locid="9911097">Increases infantry damage against buildings.</string>
-            <string _locid="9911098">Suvorov Reforms</string>
-            <string _locid="9911099">Reorganizes Russian infantry and improves their battlefield performance.</string>
-            <string _locid="9911100">National Redoubt</string>
-            <string _locid="9911101">Improves Musketeer attack and hit points and enables defensive construction under the required conditions.</string>
-            <string _locid="9911102">Russian Cavalry Combat</string>
-            <string _locid="9911103">Grants area damage to hand cavalry.</string>
-            <string _locid="9911104">Ottoman Artillery Expedition</string>
-            <string _locid="9911105">Provides Ottoman artillery reinforcements and reduces their population cost.</string>
-            <string _locid="9911106">Ottoman Janissaries</string>
-            <string _locid="9911107">Adds improved Janissaries to the standing infantry force.</string>
-            <string _locid="9911108">Ottoman Warlord</string>
-            <string _locid="9911109">Strengthens the Ottoman Explorer, increases movement speed, and provides an additional Explorer.</string>
-            <string _locid="9911110">Kapikulu Corps</string>
-            <string _locid="9911111">Provides and improves the Ottoman household corps.</string>
-            <string _locid="9911112">Advanced Lombards</string>
-            <string _locid="9911113">Provides Lombard Wagons and invests Coin to generate Food and Wood over time.</string>
-            <string _locid="9911114">Roman Tactics</string>
-            <string _locid="9911115">Improves Italian infantry through Roman tactical doctrine.</string>
-            <string _locid="9911116">Usury</string>
-            <string _locid="9911117">Improves Lombard investment returns and resource-conversion speed.</string>
-            <string _locid="9911118">Silk Road</string>
-            <string _locid="9911119">Improves trade income and commercial infrastructure.</string>
-            <string _locid="9911120">Engelsberg Ironworks</string>
-            <string _locid="9911121">Improves Swedish mining and ironworking production.</string>
-            <string _locid="9911122">Northern Forests</string>
-            <string _locid="9911123">Improves Swedish forestry and Wood production.</string>
-            <string _locid="9911124">Trample Tactics</string>
-            <string _locid="9911125">Improves hand cavalry hit points and attack speed.</string>
-            <string _locid="9911126">Svea Lifeguard</string>
-            <string _locid="9911127">Changes Musketeer resistance to ranged damage and increases Grenadier hit points.</string>
             <string _locid="9902036">Peltryman</string>
             <string _locid="9902037">Versatile ranged infantry and economic unit. Gathers Food and Wood, collects resource crates and treasures, regenerates while idle, performs Carbine and Eagle Eye attacks, and earns bonuses through Hunting Promotions.</string>
             <string _locid="9902038">Ranged villager limited to five units.</string>
@@ -243,8 +99,8 @@
             <string _locid="9902040">Cree Coureur des Bois. Strong ranged villager with superior gathering rates and resistance to ranged attacks.</string>
             <string _locid="9902041">Strong ranged villager.</string>
 
-            <!-- Adventurers League main party -->
-            <string _locid="9902042">ShieldBearer</string>
+            <!-- Adventurers League Main Party -->
+            <string _locid="9902042">Shielder</string>
             <string _locid="9902043">Adventurers League vanguard. Durable hand infantry equipped to hold the front line.</string>
             <string _locid="9902044">Durable frontline vanguard.</string>
 
@@ -260,10 +116,10 @@
             <string _locid="9902052">Adventurers League mage and support party member. Hurls explosive fireballs at enemies and buildings, but is extremely vulnerable in close combat.</string>
             <string _locid="9902053">Fireball-casting support mage.</string>
 
+            <!-- Guild Expedition Transport -->
             <string _locid="9902054">Expedition Wagon</string>
             <string _locid="9902055">A covered wagon that transports up to 12 infantry, villagers, or Guild members. It cannot construct a Town Center.</string>
             <string _locid="9902056">Transports up to 12 infantry, villagers, or Guild members.</string>
-
             <!-- ========================================================= -->
             <!-- 9903000s - UNIT CHAIN UPGRADES                            -->
             <!-- Range: 9903000 - 9903999                                  -->
@@ -669,7 +525,142 @@
             <string _locid="9911010">State of Siege</string>
             <string _locid="9911011">State of Siege policy is active.</string>
 
-            <!-- Foreign Mission diplomatic reputation -->
+            <!-- ========================================================= -->
+            <!-- GOVERNMENT HOUSE FOREIGN MISSIONS SYSTEM                  -->
+            <!-- Keep English mission names, descriptions, diplomatic      -->
+            <!-- actions, and supporting text together in this subsection. -->
+            <!-- ========================================================= -->
+
+            <string _locid="9911012">Invite a Foreign Mission</string>
+            <string _locid="9911013">Invite foreign advisers, merchants, and military specialists to the Government House. Requires 100 Diplomatic Reputation. Only one Foreign Mission may be hosted at a time.</string>
+
+            <string _locid="9911014">British Mission</string>
+            <string _locid="9911015">British advisers increase villager and land-military hit points by 7%; Musketeer hit points and damage by 15% and range by 3; and Hussar hit points and damage by 15%. Unlocks British units and research at the Government House.</string>
+            <string _locid="9911016">Dismiss the British Mission</string>
+            <string _locid="9911017">Ends the British Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911018">French Mission</string>
+            <string _locid="9911019">French advisers improve villager work rates by 5%; Rifleman hit points and damage by 25%; and Rifleman range by 3. Unlocks French units and research at the Government House.</string>
+            <string _locid="9911020">Dismiss the French Mission</string>
+            <string _locid="9911021">Ends the French Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911022">Spanish Mission</string>
+            <string _locid="9911023">Spanish advisers generate 0.8 experience per second and improve villager mining work rates. Unlocks Spanish units and research at the Government House.</string>
+            <string _locid="9911024">Dismiss the Spanish Mission</string>
+            <string _locid="9911025">Ends the Spanish Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911026">Portuguese Mission</string>
+            <string _locid="9911027">Portuguese engineers reduce building Wood costs by 15%; increase Musketeer and gunpowder-cavalry hit points and damage by 15%; and grant Musketeers 15% hand resistance. Unlocks Portuguese units and research at the Government House.</string>
+            <string _locid="9911028">Dismiss the Portuguese Mission</string>
+            <string _locid="9911029">Ends the Portuguese Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911030">Dutch Mission</string>
+            <string _locid="9911031">Dutch financiers generate 0.8 Coin per second, increase Halberdier hit points and damage by 35%, and improve Bank productivity by 15%. Unlocks Dutch units and research at the Government House.</string>
+            <string _locid="9911032">Dismiss the Dutch Mission</string>
+            <string _locid="9911033">Ends the Dutch Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911034">German Mission</string>
+            <string _locid="9911035">German quartermasters generate 0.4 Food, Wood, and Coin per second; reduce cavalry-infantry Food costs by 10%; and increase Rifleman hit points and damage by 25% with 15% ranged resistance. Unlocks German units and research at the Government House.</string>
+            <string _locid="9911036">Dismiss the German Mission</string>
+            <string _locid="9911037">Ends the German Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911038">Russian Mission</string>
+            <string _locid="9911039">Russian organizers reduce land economic-unit Food costs and training time by 10%, and reduce land-military Food, Wood, and Coin costs and training time by 20%. Unlocks Russian units and research at the Government House.</string>
+            <string _locid="9911040">Dismiss the Russian Mission</string>
+            <string _locid="9911041">Ends the Russian Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911042">Ottoman Mission</string>
+            <string _locid="9911043">Ottoman surveyors increase economic-unit, military-unit, and building line of sight by 7. Ottoman artillery gains 35% hit points but moves 15% slower. Unlocks Ottoman units and research at the Government House.</string>
+            <string _locid="9911044">Dismiss the Ottoman Mission</string>
+            <string _locid="9911045">Ends the Ottoman Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911046">Italian Mission</string>
+            <string _locid="9911047">Italian architects reduce building Wood costs by 20% and improve Lombard Food and Wood investment yields by 50%. Unlocks Italian units and research at the Government House.</string>
+            <string _locid="9911048">Dismiss the Italian Mission</string>
+            <string _locid="9911049">Ends the Italian Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <string _locid="9911050">Swedish Mission</string>
+            <string _locid="9911051">Swedish officers increase the hit points of villagers and land military units by 7%. Unlocks Caroleans, Finnish Riders, Leather Cannons, and Swedish research at the Government House.</string>
+            <string _locid="9911052">Dismiss the Swedish Mission</string>
+            <string _locid="9911053">Ends the Swedish Mission and removes its benefits and unit roster. Reputation loss: 100 before 3 minutes, 75 before 5 minutes, 50 before 10 minutes, 25 before 15 minutes, and none thereafter. Another mission requires 100 reputation.</string>
+
+            <!-- Foreign Mission research translated and localized for CBE. -->
+            <string _locid="9911054">Ranger Force</string>
+            <string _locid="9911055">Improves Rangers and other gunpowder troops.</string>
+            <string _locid="9911056">Greenwich Time</string>
+            <string _locid="9911057">Reduces unit training time and increases unit hit points by 10%.</string>
+            <string _locid="9911058">Industrial Revolution</string>
+            <string _locid="9911059">Delivers two Factory Wagons to establish powerful resource or heavy-artillery production.</string>
+            <string _locid="9911060">British Immigrants</string>
+            <string _locid="9911061">Strengthens settlers and delivers experienced British immigrant workers.</string>
+            <string _locid="9911062">Napoleonic Military Reforms</string>
+            <string _locid="9911063">Delivers French fusiliers and improves the attack speed of gunpowder troops.</string>
+            <string _locid="9911064">Richelieu Cavalry Corps</string>
+            <string _locid="9911065">Improves cavalry armor, hit points, and damage and provides elite French cavalry.</string>
+            <string _locid="9911066">French Immigrants</string>
+            <string _locid="9911067">Strengthens Coureurs and provides experienced French immigrant workers.</string>
+            <string _locid="9911068">Spanish Gold</string>
+            <string _locid="9911069">Provides treasure wagons and improves villager Coin gathering.</string>
+            <string _locid="9911070">Spanish Conquistadors</string>
+            <string _locid="9911071">Strengthens the Explorer, provides Conquistadors, and improves their effectiveness against artillery.</string>
+            <string _locid="9911072">Mercenary Arsenal</string>
+            <string _locid="9911073">Improves archaic and hand infantry and reduces the population cost of mercenaries.</string>
+            <string _locid="9911074">Viceroyalty of New Spain</string>
+            <string _locid="9911075">Provides New Spain reinforcements and associated colonial improvements.</string>
+            <string _locid="9911076">Feitorias</string>
+            <string _locid="9911077">Establishes Portuguese trading infrastructure and its economic benefits.</string>
+            <string _locid="9911078">Rangefinding</string>
+            <string _locid="9911079">Improves the range and effectiveness of Portuguese artillery.</string>
+            <string _locid="9911080">Portuguese Dragoon Combat</string>
+            <string _locid="9911081">Improves the attack and hit points of Dragoons and related mounted gunpowder units.</string>
+            <string _locid="9911082">Admiral Tromp</string>
+            <string _locid="9911083">Improves the durability of warships.</string>
+            <string _locid="9911084">Better Banks</string>
+            <string _locid="9911085">Improves Bank productivity and capacity.</string>
+            <string _locid="9911086">Dutch Military Reforms</string>
+            <string _locid="9911087">Improves Dutch military organization and unit performance.</string>
+            <string _locid="9911088">Circle Army</string>
+            <string _locid="9911089">Provides a Holy Roman mercenary army and improves mercenary combat strength.</string>
+            <string _locid="9911090">Germantown Farmers</string>
+            <string _locid="9911091">Improves German settlers and the population capacity of German houses.</string>
+            <string _locid="9911092">Solingen Steel</string>
+            <string _locid="9911093">Improves the attack, hit points, and armor of hand infantry.</string>
+            <string _locid="9911094">German Chevau-légers</string>
+            <string _locid="9911095">Unlocks and improves German Chevau-léger cavalry.</string>
+            <string _locid="9911096">Ransack</string>
+            <string _locid="9911097">Increases infantry damage against buildings.</string>
+            <string _locid="9911098">Suvorov Reforms</string>
+            <string _locid="9911099">Reorganizes Russian infantry and improves their battlefield performance.</string>
+            <string _locid="9911100">National Redoubt</string>
+            <string _locid="9911101">Improves Musketeer attack and hit points and enables defensive construction under the required conditions.</string>
+            <string _locid="9911102">Russian Cavalry Combat</string>
+            <string _locid="9911103">Grants area damage to hand cavalry.</string>
+            <string _locid="9911104">Ottoman Artillery Expedition</string>
+            <string _locid="9911105">Provides Ottoman artillery reinforcements and reduces their population cost.</string>
+            <string _locid="9911106">Ottoman Janissaries</string>
+            <string _locid="9911107">Adds improved Janissaries to the standing infantry force.</string>
+            <string _locid="9911108">Ottoman Warlord</string>
+            <string _locid="9911109">Strengthens the Ottoman Explorer, increases movement speed, and provides an additional Explorer.</string>
+            <string _locid="9911110">Kapikulu Corps</string>
+            <string _locid="9911111">Provides and improves the Ottoman household corps.</string>
+            <string _locid="9911112">Advanced Lombards</string>
+            <string _locid="9911113">Provides Lombard Wagons and invests Coin to generate Food and Wood over time.</string>
+            <string _locid="9911114">Roman Tactics</string>
+            <string _locid="9911115">Improves Italian infantry through Roman tactical doctrine.</string>
+            <string _locid="9911116">Usury</string>
+            <string _locid="9911117">Improves Lombard investment returns and resource-conversion speed.</string>
+            <string _locid="9911118">Silk Road</string>
+            <string _locid="9911119">Improves trade income and commercial infrastructure.</string>
+            <string _locid="9911120">Engelsberg Ironworks</string>
+            <string _locid="9911121">Improves Swedish mining and ironworking production.</string>
+            <string _locid="9911122">Northern Forests</string>
+            <string _locid="9911123">Improves Swedish forestry and Wood production.</string>
+            <string _locid="9911124">Trample Tactics</string>
+            <string _locid="9911125">Improves hand cavalry hit points and attack speed.</string>
+            <string _locid="9911126">Svea Lifeguard</string>
+            <string _locid="9911127">Changes Musketeer resistance to ranged damage and increases Grenadier hit points.</string>
+
+            <!-- Foreign Mission Diplomatic Reputation -->
             <string _locid="9911128">Repair Diplomatic Reputation</string>
             <string _locid="9911129">Invest 1,500 Food, 1,500 Wood, and 1,500 Coin to restore 25 Diplomatic Reputation. Foreign Missions may only be selected at 100 reputation.</string>
             <string _locid="9911130">Government House — Diplomatic Reputation: 100</string>
@@ -682,6 +673,31 @@
             <string _locid="9911137">Internal Foreign Mission state.</string>
             <string _locid="9911138">Choose a Foreign Mission to Host</string>
             <string _locid="9911139">Choose a foreign nation whose mission will be hosted at the Government House.</string>
+
+            <!-- ========================================================= -->
+            <!-- GLOBAL COMBAT PROMOTION LEVELS                           -->
+            <!-- Shared twenty-level kill-veterancy labels.               -->
+            <!-- ========================================================= -->
+            <string _locid="9911140">Level 1</string>
+            <string _locid="9911141">Level 2</string>
+            <string _locid="9911142">Level 3</string>
+            <string _locid="9911143">Level 4</string>
+            <string _locid="9911144">Level 5</string>
+            <string _locid="9911145">Level 6</string>
+            <string _locid="9911146">Level 7</string>
+            <string _locid="9911147">Level 8</string>
+            <string _locid="9911148">Level 9</string>
+            <string _locid="9911149">Level 10</string>
+            <string _locid="9911150">Level 11</string>
+            <string _locid="9911151">Level 12</string>
+            <string _locid="9911152">Level 13</string>
+            <string _locid="9911153">Level 14</string>
+            <string _locid="9911154">Level 15</string>
+            <string _locid="9911155">Level 16</string>
+            <string _locid="9911156">Level 17</string>
+            <string _locid="9911157">Level 18</string>
+            <string _locid="9911158">Level 19</string>
+            <string _locid="9911159">Level 20</string>
 
             <!-- ========================================================= -->
             <!-- 9912000s - CBE SUBCIVS                                    -->
@@ -763,66 +779,99 @@
             <string _locid="9913045">Exchange Coin for Food</string>
             <string _locid="9913046">Spends one Home City shipment. After 30 seconds, exchanges your entire Coin stockpile at a rate of 1 Coin for 1.10 Food.</string>
             <string _locid="9913047">Exchange all Coin for Food.</string>
-
             <!-- ========================================================= -->
-            <!-- GUILD HALL ADVENTURER SYSTEM                             -->
-            <!-- Keep Guild building, path, party, hireling, technology,  -->
-            <!-- and ability text together in this dedicated subsection.  -->
+            <!-- 9914000s - GUILD HALL ADVENTURER SYSTEM                 -->
+            <!-- Range: 9914000 - 9914999                                  -->
             <!-- ========================================================= -->
-
-            <!-- Guild Hall -->
-            <string _locid="9900012">Guild Hall</string>
-            <string _locid="9900013">A gathering place for adventurers and treasure hunters. Guild services are not yet available.</string>
-            <string _locid="9900014">Future home of adventurers and treasure-hunting expeditions.</string>
 
             <!-- Guild Paths -->
             <string _locid="9914000">Adventurers League</string>
             <string _locid="9914001">Choose the Adventurers League. Unlocks a balanced hero party and general adventurer hirelings. Permanently excludes the other Guild paths.</string>
-
             <string _locid="9914002">Black Company</string>
             <string _locid="9914003">Choose the Black Company. Unlocks a hero party and hirelings focused on assassins, bounty hunters, and covert specialists. Permanently excludes the other Guild paths.</string>
-
             <string _locid="9914004">Hunters Guild</string>
             <string _locid="9914005">Choose the Hunters Guild. Unlocks a hero party and hirelings drawn from hunters, trackers, pathfinders, couriers, and wilderness allies. Permanently excludes the other Guild paths.</string>
-
             <string _locid="9914006">Order of the Silverband</string>
             <string _locid="9914007">Choose the Order of the Silverband. Unlocks an exclusive hero party specialized in hunting legendary creatures. Permanently excludes the other Guild paths.</string>
 
-            <!-- Universal Guild Expedition Chain -->
+            <!-- Universal Guild Expedition Technology Chain -->
             <string _locid="9914008">Assemble the Expedition</string>
             <string _locid="9914009">Organize an expedition and unlock the Expedition Wagon. Wagons gain +4 line of sight, party members gain +2 line of sight, and Guild adventurers train 10% faster. New party members also take 5 seconds longer to prepare.</string>
-
             <string _locid="9914010">Surveyor's Charter</string>
             <string _locid="9914011">Commission trained surveyors. Guild adventurers gain +6 line of sight, +10% hit points, and +10% damage. New party members take 5 seconds longer to train.</string>
-
             <string _locid="9914012">Outfitted for the Unknown</string>
             <string _locid="9914013">Equip the main party for dangerous encounters. Party members gain +10% hit points and deal 1.25x damage against treasure guardians and pets. New party members take 5 seconds longer to train.</string>
-
             <string _locid="9914014">Beyond the Frontier</string>
             <string _locid="9914015">Guild Party Members gain +15 hit points and +5% speed. Expedition Wagons heal nearby Guild adventurers for 2 hit points per second and garrisoned units for 3 hit points per second. New party members take 5 seconds longer to train.</string>
-
             <string _locid="9914016">Field Notes and Folklore</string>
             <string _locid="9914017">Enemies defeated near Guild Party Members grant +25% experience. This effect does not stack. New party members take 5 seconds longer to train.</string>
-
             <string _locid="9914018">Relic Seekers</string>
             <string _locid="9914019">Defeated Guardians grant additional Gold equal to 25% of their normal experience bounty. New party members take 5 seconds longer to train.</string>
-
             <string _locid="9914020">Trials of the Wild</string>
             <string _locid="9914021">Guild Party Members gain +15% hit points and an additional +0.25 damage multiplier against Guardians and Pets. New party members take 5 seconds longer to train.</string>
-
             <string _locid="9914022">Hard-Won Renown</string>
-            <string _locid="9914023">Past victories earn the expedition a formidable reputation and attract increasingly capable recruits. New party members take 5 seconds longer to train.</string>
-
+            <string _locid="9914023">Each living Guild Party Member generates 0.15 XP per second and gains +5% damage. New party members take 5 seconds longer to train.</string>
             <string _locid="9914024">Defy Death</string>
-            <string _locid="9914025">Teach veteran adventurers to survive wounds and dangers that would end an ordinary expedition. New party members take 5 seconds longer to train.</string>
-
+            <string _locid="9914025">Guild Party Members gain the hero-style passive health regeneration ability and become incapacitated instead of dying, allowing them to recover and return to the expedition. New party members take 5 seconds longer to train.</string>
             <string _locid="9914026">Becoming Legends</string>
-            <string _locid="9914027">The main party becomes a fellowship of named heroes capable of being knocked down and revived. New party members take 5 seconds longer to train.</string>
+            <string _locid="9914027">The main party becomes true Heroes and gains the golden heroic presence, +25% base hit points and damage, and 20% faster primary and secondary charged-ability recharge. New party members take 5 seconds longer to train.</string>
 
-            <!-- Adventurers League Caster abilities -->
+            <!-- Adventurers League: Caster Abilities -->
             <string _locid="9914028">Greater Fireball</string>
             <string _locid="9914029">Every 30 seconds, the Caster hurls a greater fireball that deals 100 Siege damage to all enemies within an area of 3.</string>
 
+            <!-- Shielder: Challenge and Block -->
+            <string _locid="9914054">Challenge</string>
+            <string _locid="9914055">Strike a nearby enemy for 25 Hand damage and damage all enemies within an area of 18, provoking their retaliation. For 10 seconds, Shielder takes 10% less damage and gains +5% damage per opponent-controlled military unit within 16 range, up to +25%. Gaia-controlled treasure guardians and wildlife do not contribute. Cooldown: 45 seconds.</string>
+            <string _locid="9914056">Challenge: Shielder takes 10% less damage and gains +5% damage per opponent-controlled military unit within 16 range, up to +25%. Gaia-controlled treasure guardians and wildlife do not contribute.</string>
+            <string _locid="9914059">Blocked!</string>
+
+            <!-- Adventurers League: Shielder Technology Chain -->
+            <string _locid="9914060">Shield Discipline</string>
+            <string _locid="9914061">Unlocks Shielder's Block passive, granting a 10% chance to completely block an incoming attack, and increases Shielder's melee armor by 5 percentage points.</string>
+            <string _locid="9914062">Rise to the Challenge</string>
+            <string _locid="9914063">Unlocks I Am Your Shield and Challenge. Nearby allied military units take 10% less damage. Shielder regenerates 1 hit point per second, even in combat, and gains +5% damage per nearby allied military unit, up to +25%.</string>
+            <string _locid="9914064">Brace for Impact</string>
+            <string _locid="9914065">Increases Challenge's damage-reduction duration from 10 to 20 seconds. Shielder also gains +15% damage and +50 hit points.</string>
+            <string _locid="9914066">Into the Breach</string>
+            <string _locid="9914067">Unlocks Shield Bash and Heavy Strike. Shield Bash deals 25 Hand damage and stuns its target for 3 seconds every 12 seconds. Heavy Strike deals 75 Hand damage with +25% damage against Guardians, Pets, and Infantry every 14 seconds.</string>
+            <string _locid="9914068">Hold the Breach</string>
+            <string _locid="9914069">Unlocks Last Bastion. Shielder becomes invulnerable for 5 seconds and, for 14 seconds, regenerates 10 hit points per second and takes 25% less damage. Cooldown: 60 seconds.</string>
+            <string _locid="9914070">Interpose</string>
+            <string _locid="9914071">Shielder technology. Effects to be determined.</string>
+            <string _locid="9914072">Unyielding Guardian</string>
+            <string _locid="9914073">Shielder technology. Effects to be determined.</string>
+
+            <!-- Adventurers League: Shielder Ability Records -->
+            <string _locid="9914074">I Am Your Shield</string>
+            <string _locid="9914076">Strike a nearby enemy for 25 Hand damage and damage all enemies within an area of 18, provoking their retaliation. For 20 seconds, Shielder takes 10% less damage and gains +5% damage per opponent-controlled military unit within 16 range, up to +25%. Gaia-controlled treasure guardians and wildlife do not contribute. Cooldown: 45 seconds.</string>
+            <string _locid="9914077">Shield Bash</string>
+            <string _locid="9914078">Charged Attack: Deals 25 Hand damage and stuns the target for 3 seconds. Recharges every 12 seconds.</string>
+            <string _locid="9914080">Heavy Strike</string>
+            <string _locid="9914081">Charged Attack: Deals 75 Hand damage with +25% damage against Guardians, Pets, and Infantry. Recharges every 14 seconds.</string>
+
+            <!-- Universal Heroic Prowess Cumulative Tooltips -->
+            <string _locid="9914083">Heroic Prowess</string>
+            <string _locid="9914084">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank.</string>
+            <string _locid="9914085">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Line of sight +2.</string>
+            <string _locid="9914086">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +10%; damage +10%; line of sight +8.</string>
+            <string _locid="9914087">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +20%; damage +10%; line of sight +8; Guardian and Pet damage multiplier +0.25.</string>
+            <string _locid="9914088">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +20% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.25.</string>
+            <string _locid="9914089">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +20% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.25; enemy experience bounty +25% within 26 range (does not stack).</string>
+            <string _locid="9914090">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack).</string>
+            <string _locid="9914091">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +15%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second.</string>
+            <string _locid="9914092">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +15%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25 hit points per second while idle; becomes incapacitated instead of dying.</string>
+            <string _locid="9914093">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +60% and +15; damage +40%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25 hit points per second while idle; becomes incapacitated instead of dying; charged-ability cooldown -20%; gains the golden heroic effect.</string>
+
+            <!-- Shielder Class Passive Cumulative Tooltips -->
+            <string _locid="9914094">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points.</string>
+            <string _locid="9914095">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Nearby allied military units within 24 range take 10% less damage. Regeneration: +1 hit point per second. Damage: +5% per nearby ally, up to +25%.</string>
+            <string _locid="9914096">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Nearby allied military units within 24 range take 10% less damage. Regeneration: +1 hit point per second. Damage: +5% per nearby ally, up to +25%. Hit points: +50. Additional damage: +15%.</string>
+
+            <!-- Shielder: Last Bastion -->
+            <string _locid="9914097">Last Bastion</string>
+            <string _locid="9914098">Shielder becomes invulnerable for 5 seconds. Cooldown: 60 seconds.</string>
+            <string _locid="9914099">Last Bastion: temporarily invulnerable.</string>
 
         </language>
     </stringtable>

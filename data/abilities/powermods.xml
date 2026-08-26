@@ -1,4 +1,188 @@
 <powermods>
+  <!-- Universal Party Member passive. Linear Guild upgrades replace only -->
+  <!-- its presentation data, leaving one consistent HUD icon per hero.   -->
+  <power name="CBEHeroicProwess" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914084</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessAssembled" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914085</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessSurveyed" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914086</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessOutfitted" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914087</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessFrontier" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914088</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessFieldNotes" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914089</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessTrials" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914090</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessRenown" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914091</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessDefyDeath" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914092</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEHeroicProwessLegend" type="GeneralEffect">
+    <displaynameid>9914083</displaynameid>
+    <rolloverid>9914093</rolloverid>
+    <icon>resources\images\icons\Passives\heroic_prowess_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+
+  <!-- Shielder class passive. Block and I Am Your Shield are represented -->
+  <!-- by one icon whose cumulative tooltip follows the linear class tree. -->
+  <power name="CBEShielderClassAbility" type="GeneralEffect">
+    <displaynameid>9914074</displaynameid>
+    <rolloverid>9914094</rolloverid>
+    <icon>resources\images\icons\Passives\shielder_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEShielderClassAbilityChallenge" type="GeneralEffect">
+    <displaynameid>9914074</displaynameid>
+    <rolloverid>9914095</rolloverid>
+    <icon>resources\images\icons\Passives\shielder_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEShielderClassAbilityBraced" type="GeneralEffect">
+    <displaynameid>9914074</displaynameid>
+    <rolloverid>9914096</rolloverid>
+    <icon>resources\images\icons\Passives\shielder_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+
+  <!-- Challenge strikes a targeted enemy, then temporarily grants armor and -->
+  <!-- damage that scales with nearby enemies. -->
+  <power name="CBEChallenge" type="UnitAction">
+    <displaynameid>9914054</displaynameid>
+    <rolloverid>9914055</rolloverid>
+    <icon>resources\images\icons\Abilites\cbe_challenge.png</icon>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>10</activetime>
+    <radius>18.0</radius>
+    <placement forceonmap="1" enemy="" allowgaia="">unit</placement>
+    <abstractattacktargettype>Unit</abstractattacktargettype>
+    <unitaction>ChallengeAttack</unitaction>
+    <auxiliarypower>CBEChallengeArmor</auxiliarypower>
+    <auxiliarypowertargettype>self</auxiliarypowertargettype>
+    <forceattacktarget>1</forceattacktarget>
+    <allowduringnorush>1</allowduringnorush>
+    <startsoundset>BattlecryMedium</startsoundset>
+  </power>
+  <power name="CBEChallengeArmor" type="GeneralEffect">
+    <timerrolloverid>9914056</timerrolloverid>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>10</activetime>
+    <effect type="ActionEnable" action="CBEChallengeDefense">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <effect type="ActionEnable" action="CBEChallengeEnemyStrength">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <messagealertplayerrelation>none</messagealertplayerrelation>
+    <placement forceonmap="1">LOSDontCare</placement>
+    <allowduringnorush>1</allowduringnorush>
+    <isauxiliarypower>1</isauxiliarypower>
+  </power>
+
+  <!-- Brace for Impact extends both Challenge effects to 20 seconds. -->
+  <power name="CBEChallengeBraceForImpact" type="UnitAction">
+    <displaynameid>9914054</displaynameid>
+    <rolloverid>9914076</rolloverid>
+    <icon>resources\images\icons\Abilites\cbe_challenge.png</icon>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>20</activetime>
+    <radius>18.0</radius>
+    <placement forceonmap="1" enemy="" allowgaia="">unit</placement>
+    <abstractattacktargettype>Unit</abstractattacktargettype>
+    <unitaction>ChallengeAttack</unitaction>
+    <auxiliarypower>CBEChallengeArmorBraceForImpact</auxiliarypower>
+    <auxiliarypowertargettype>self</auxiliarypowertargettype>
+    <forceattacktarget>1</forceattacktarget>
+    <allowduringnorush>1</allowduringnorush>
+    <startsoundset>BattlecryMedium</startsoundset>
+  </power>
+  <power name="CBEChallengeArmorBraceForImpact" type="GeneralEffect">
+    <timerrolloverid>9914056</timerrolloverid>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>20</activetime>
+    <effect type="ActionEnable" action="CBEChallengeDefense">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <effect type="ActionEnable" action="CBEChallengeEnemyStrength">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <messagealertplayerrelation>none</messagealertplayerrelation>
+    <placement forceonmap="1">LOSDontCare</placement>
+    <allowduringnorush>1</allowduringnorush>
+    <isauxiliarypower>1</isauxiliarypower>
+  </power>
+
+  <!-- Hold the Breach diagnostic baseline: mirrors vanilla Divine Right. -->
+  <!-- Keep this direct self-buff working before layering other effects onto it. -->
+  <power name="CBELastBastion" type="GeneralEffect">
+    <displaynameid>9914097</displaynameid>
+    <rolloverid>9914098</rolloverid>
+    <timerrolloverid>9914099</timerrolloverid>
+    <icon>resources\images\icons\Abilites\cbe_last_bastion.png</icon>
+    <minimapeventtime sendalertto="none">1</minimapeventtime>
+    <activetime>5</activetime>
+    <effect type="CanTargetButTakesNoDamage">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <messagealertplayerrelation>none</messagealertplayerrelation>
+    <placement forceonmap="1" ally="">full</placement>
+    <allowduringnorush>1</allowduringnorush>
+    <startsoundset>PowerInvulnerability</startsoundset>
+    <alwaysaddtoplayer>1</alwaysaddtoplayer>
+  </power>
+
+  <!-- Into the Breach: Shielder's primary and auxiliary charged attacks. -->
+  <power name="CBEChargeAbilityShieldBash" type="GeneralEffect">
+    <displaynameid>9914077</displaynameid>
+    <rolloverid>9914078</rolloverid>
+    <icon>resources\images\icons\charged\cbe_shield_bash.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+  <power name="CBEChargeAbilityHeavyStrike" type="GeneralEffect">
+    <displaynameid>9914080</displaynameid>
+    <rolloverid>9914081</rolloverid>
+    <icon>resources\images\icons\charged\cbe_heavy_strike.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
+
   <!-- UI presentation for the Caster's automatic charged attack. -->
   <power name="CBEChargeAbilityGreaterFireball" type="GeneralEffect">
     <displaynameid>9914028</displaynameid>

@@ -26,6 +26,32 @@
     <impacteffect>effects\impacts\melee</impacteffect>
   </action>
   <action>
+    <name stringid="38129">StaggerRangedAttack</name>
+    <type>Attack</type>
+    <attackaction>1</attackaction>
+    <rangedlogic>1</rangedlogic>
+    <anim>Volley_standing_attack</anim>
+    <reloadanim>Volley_standing_reload</reloadanim>
+    <idleanim>Volley_standing_idle</idleanim>
+    <accuracy>1.0</accuracy>
+    <trackrating>12</trackrating>
+    <projectile>Arrow</projectile>
+    <minrange>2</minrange>
+    <rate type="Unit">1.0</rate>
+  </action>
+  <action>
+    <name stringid="38132">StaggerHandAttack</name>
+    <type>Attack</type>
+    <maxrange>1.75</maxrange>
+    <rate type="Unit">1.0</rate>
+    <attackaction>1</attackaction>
+    <handlogic>1</handlogic>
+    <speedboost>1</speedboost>
+    <anim>Charge_attack</anim>
+    <idleanim>Charge_idle</idleanim>
+    <impacteffect>effects\impacts\melee</impacteffect>
+  </action>
+  <action>
     <name stringid="38118">BuildingAttack</name>
     <type>Attack</type>
     <maxrange>6</maxrange>
@@ -50,26 +76,18 @@
     <anim>Charge_attack</anim><idleanim>Defend_idle</idleanim><impacteffect>effects\impacts\melee</impacteffect>
   </action>
   <action>
-    <name stringid="38129">StaggerRangedAttack</name>
-    <type>Attack</type><attackaction>1</attackaction><rangedlogic>1</rangedlogic>
-    <anim>Volley_standing_attack</anim><reloadanim>Volley_standing_reload</reloadanim><idleanim>Volley_standing_idle</idleanim>
-    <accuracy>1.0</accuracy><trackrating>12</trackrating><projectile>Arrow</projectile><minrange>2</minrange><rate type="Unit">1.0</rate>
-  </action>
-  <action>
-    <name stringid="38132">StaggerHandAttack</name>
-    <type>Attack</type><maxrange>1.75</maxrange><rate type="Unit">1.0</rate><attackaction>1</attackaction><handlogic>1</handlogic><speedboost>1</speedboost>
-    <anim>Charge_attack</anim><idleanim>Charge_idle</idleanim><impacteffect>effects\impacts\melee</impacteffect>
-  </action>
-  <action>
     <name stringid="38135">MeleeHandAttack</name>
     <type>Attack</type><maxrange>1.75</maxrange><rate type="Unit">1.0</rate><attackaction>1</attackaction><handlogic>1</handlogic><speedboost>1</speedboost>
     <anim>Charge_attack</anim><idleanim>Charge_idle</idleanim><impacteffect>effects\impacts\melee</impacteffect>
   </action>
+  <!-- Enabled by Hard-Won Renown. Each living party member generates 0.15 XP/sec. -->
+  <action><name stringid="43019">CBEHardWonRenownXP</name><type>AutoGather</type><active>0</active><persistent>1</persistent></action>
   <!-- Enabled by Field Notes and Folklore. Nearby enemy deaths grant +25% XP bounty. -->
   <action><name stringid="48943">CBEFieldNotesBountyAura</name><type>AutoRangedModify</type><active>0</active><maxrange>26</maxrange><persistent>1</persistent><nostack>1</nostack><nostackignorepuid>1</nostackignorepuid><modifytype>Bounty</modifytype><modifymultiplier>1.25</modifymultiplier></action>
-  <tactic>Volley<action priority="100">VolleyRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">VolleyHandAttack</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>1</runaway><autoretarget>1</autoretarget><idleanim>Volley_standing_idle</idleanim><boredanim>Volley_standing_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Volley_walk</walkanim><joganim>Volley_jog</joganim><runanim>Volley_run</runanim></tactic>
-  <tactic>Defend<action priority="100">DefendRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">DefendHandAttack</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
-  <tactic>Stagger<action priority="100">StaggerRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">StaggerHandAttack</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Cover_ranged_idle</idleanim><boredanim>Cover_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
-  <tactic>Melee<action priority="100">MeleeHandAttack</action><action priority="80">BuildingAttack</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Charge_idle</idleanim><boredanim>Charge_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Charge_walk</walkanim><joganim>Charge_jog</joganim><runanim>Charge_run</runanim></tactic>
-  <tactic>StandGround<action priority="100">DefendRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">DefendHandAttack</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
+  <!-- Ranged Party Members expose both Volley and Stagger stances. -->
+  <tactic>Volley<action priority="100">VolleyRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">VolleyHandAttack</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>1</runaway><autoretarget>1</autoretarget><idleanim>Volley_standing_idle</idleanim><boredanim>Volley_standing_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Volley_walk</walkanim><joganim>Volley_jog</joganim><runanim>Volley_run</runanim></tactic>
+  <tactic>Defend<action priority="100">DefendRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">DefendHandAttack</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
+  <tactic>Stagger<action priority="100">StaggerRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">StaggerHandAttack</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Cover_ranged_idle</idleanim><boredanim>Cover_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
+  <tactic>Melee<action priority="100">MeleeHandAttack</action><action priority="80">BuildingAttack</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Charge_idle</idleanim><boredanim>Charge_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Charge_walk</walkanim><joganim>Charge_jog</joganim><runanim>Charge_run</runanim></tactic>
+  <tactic>StandGround<action priority="100">DefendRangedAttack</action><action priority="75">BuildingAttack</action><action priority="25">DefendHandAttack</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><attacktype>LogicalTypeRangedUnitsAttack</attacktype><autoattacktype>LogicalTypeRangedUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeRangedUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
 </tactics>

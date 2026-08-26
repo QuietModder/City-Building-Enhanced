@@ -21,7 +21,37 @@
   <modboneguard>
     <ability>deChargeAbilitySwashbuckler<tech>CBEDevastatingBlow</tech><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </modboneguard>
+  <!-- ================================================================ -->
+  <!-- Guild Party Member six-slot ability template                     -->
+  <!--                                                                  -->
+  <!-- C0 Heroic Prowess (universal passive and aura information)       -->
+  <!-- C1 Unit/Class Ability (all hero-specific passives and auras)      -->
+  <!-- C2 Main Charged Ability/Attack                                   -->
+  <!-- C3 Auxiliary Charged Ability/Attack                              -->
+  <!-- C4 Activated Ability I                                           -->
+  <!-- C5 Activated Ability II                                          -->
+  <!--                                                                  -->
+  <!-- Passive tooltip powers are upgraded in place with                -->
+  <!-- PowerDataOverride so an upgrade never consumes another slot.     -->
+  <!-- ================================================================ -->
+
+  <cbeleagueshieldbearer>
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEShielderClassAbility<tech>CBEShieldDiscipline</tech><alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEChargeAbilityShieldBash<tech>CBEIntoTheBreach</tech><rof>12</rof><bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEChargeAbilityHeavyStrike<tech>CBEIntoTheBreach</tech><rof>14</rof><bindtoauxchargeaction>true</bindtoauxchargeaction><forceshowrollover>true</forceshowrollover></ability>
+    <ability>CBEChallenge<tech>CBERiseToTheChallenge</tech><rof>45</rof><forceshowrollover>true</forceshowrollover></ability>
+    <!-- Mirrors the vanilla Unknown Drummer's Rally Army self-cast pattern. -->
+    <ability>CBELastBastion<tech>CBEHoldTheBreach</tech><rof>60</rof><castonself>true</castonself><donotforcestop>true</donotforcestop><activetimecooldown>true</activetimecooldown><forceshowrollover>true</forceshowrollover></ability>
+  </cbeleagueshieldbearer>
+  <cbeleaguesaber>
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+  </cbeleaguesaber>
+  <cbeleaguearcher>
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
+  </cbeleaguearcher>
   <cbeleaguecaster>
+    <ability>CBEHeroicProwess<alwaysdisabledingrid>true</alwaysdisabledingrid><forceshowrollover>true</forceshowrollover></ability>
     <ability>CBEChargeAbilityGreaterFireball<bindtochargeaction>true</bindtochargeaction><forceshowrollover>true</forceshowrollover></ability>
   </cbeleaguecaster>
 </abilitymods>
