@@ -168,9 +168,9 @@
     <modelattachmentbone>bonethatdoesntexist</modelattachmentbone>
   </action>
 
-  <!-- Rise to the Challenge: Shielder continuously restores 1 HP/sec, including in combat. -->
+  <!-- Shield Discipline: permanent, flat self-healing that remains active during combat. -->
   <action>
-    <name stringid="9914074">CBEIAmYourShieldRegeneration</name>
+    <name stringid="9914074">CBEShieldDisciplineRegeneration</name>
     <type>AutoRangedModify</type>
     <active>0</active>
     <maxrange>1</maxrange>
@@ -178,8 +178,22 @@
     <modifyself>1</modifyself>
     <modifyselfonly>1</modifyselfonly>
     <persistent>1</persistent>
-    <modifytype>UnitRegenRate</modifytype>
-    <modifyamount>1.0</modifyamount>
+    <modifytype>HealRate</modifytype>
+    <modifyamount>2.0</modifyamount>
+  </action>
+
+  <!-- Hold the Breach: stacks another flat 3 HP/sec onto Shield Discipline. -->
+  <action>
+    <name stringid="9914074">CBEHoldTheBreachRegeneration</name>
+    <type>AutoRangedModify</type>
+    <active>0</active>
+    <maxrange>1</maxrange>
+    <modifyabstracttype>CBELeagueShieldBearer</modifyabstracttype>
+    <modifyself>1</modifyself>
+    <modifyselfonly>1</modifyselfonly>
+    <persistent>1</persistent>
+    <modifytype>HealRate</modifytype>
+    <modifyamount>3.0</modifyamount>
   </action>
 
   <!-- Rise to the Challenge: +5% damage per nearby allied military unit, capped at +25%. -->
@@ -233,7 +247,8 @@
     <modelattachmentbone>bonethatdoesntexist</modelattachmentbone>
   </action>
 
-  <!-- Last Bastion: temporary in-combat regeneration enabled for 14 seconds. -->
+  <!-- Last Bastion: HealRate supplies temporary in-combat healing separately -->
+  <!-- from Shielder's percentage-based idle UnitRegenRate. -->
   <action>
     <name stringid="9914097">CBELastBastionRegeneration</name>
     <type>AutoRangedModify</type>
@@ -243,12 +258,13 @@
     <modifyself>1</modifyself>
     <modifyselfonly>1</modifyselfonly>
     <persistent>1</persistent>
-    <modifytype>UnitRegenRate</modifytype>
-    <modifyamount>10.0</modifyamount>
+    <modifyduration>14000</modifyduration>
+    <modifytype>HealRate</modifytype>
+    <modifyamount>20.0</modifyamount>
   </action>
 
-  <tactic>Melee<action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">BuildingAttack</action><action priority="75">MeleeHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEIAmYourShieldRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Charge_idle</idleanim><boredanim>Charge_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Charge_walk</walkanim><joganim>Charge_jog</joganim><runanim>Charge_run</runanim></tactic>
-  <tactic>Defend<action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">BuildingAttack</action><action priority="75">DefendHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEIAmYourShieldRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
-  <tactic>Cover<speedmodifier>0.5</speedmodifier><action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">CoverBuildingAttack</action><action priority="75">CoverHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEIAmYourShieldRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Cover_idle</idleanim><boredanim>Cover_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
-  <tactic>StandGround<action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">BuildingAttack</action><action priority="75">DefendHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEIAmYourShieldRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
+  <tactic>Melee<action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">BuildingAttack</action><action priority="75">MeleeHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEShieldDisciplineRegeneration</action><action>CBEHoldTheBreachRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Charge_idle</idleanim><boredanim>Charge_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Charge_walk</walkanim><joganim>Charge_jog</joganim><runanim>Charge_run</runanim></tactic>
+  <tactic>Defend<action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">BuildingAttack</action><action priority="75">DefendHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEShieldDisciplineRegeneration</action><action>CBEHoldTheBreachRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
+  <tactic>Cover<speedmodifier>0.5</speedmodifier><action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">CoverBuildingAttack</action><action priority="75">CoverHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEShieldDisciplineRegeneration</action><action>CBEHoldTheBreachRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Cover_idle</idleanim><boredanim>Cover_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
+  <tactic>StandGround<action priority="130">CBEShieldBashAttack</action><action priority="125">CBEHeavyStrikeAttack</action><action priority="100">BuildingAttack</action><action priority="75">DefendHandAttack</action><action priority="2">ChallengeAttack</action><action>CBEChallengeEnemyStrength</action><action>CBEHardWonRenownXP</action><action>CBEFieldNotesBountyAura</action><action>CBEIAmYourShieldProtectionAura</action><action>CBEShieldDisciplineRegeneration</action><action>CBEHoldTheBreachRegeneration</action><action>CBEIAmYourShieldAlliedStrength</action><action>CBEChallengeDefense</action><action>CBELastBastionDefense</action><action>CBELastBastionRegeneration</action><attacktype>LogicalTypeHandUnitsAttack</attacktype><autoattacktype>LogicalTypeHandUnitsAutoAttack</autoattacktype><attackresponsetype>LogicalTypeHandUnitsAttack</attackresponsetype><runaway>0</runaway><autoretarget>1</autoretarget><idleanim>Defend_idle</idleanim><boredanim>Defend_bored</boredanim><deathanim>Death_by_melee</deathanim><walkanim>Cover_walk</walkanim><joganim>Cover_jog</joganim><runanim>Cover_run</runanim></tactic>
 </tactics>

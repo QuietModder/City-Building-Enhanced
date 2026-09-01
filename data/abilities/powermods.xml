@@ -82,6 +82,12 @@
     <icon>resources\images\icons\Passives\shielder_passive.png</icon>
     <allowduringnorush>1</allowduringnorush>
   </power>
+  <power name="CBEShielderClassAbilityHoldTheBreach" type="GeneralEffect">
+    <displaynameid>9914074</displaynameid>
+    <rolloverid>9914100</rolloverid>
+    <icon>resources\images\icons\Passives\shielder_passive.png</icon>
+    <allowduringnorush>1</allowduringnorush>
+  </power>
 
   <!-- Challenge strikes a targeted enemy, then temporarily grants armor and -->
   <!-- damage that scales with nearby enemies. -->
@@ -150,8 +156,8 @@
     <isauxiliarypower>1</isauxiliarypower>
   </power>
 
-  <!-- Hold the Breach diagnostic baseline: mirrors vanilla Divine Right. -->
-  <!-- Keep this direct self-buff working before layering other effects onto it. -->
+  <!-- Last Bastion: direct invulnerability mirrors the proven vanilla Divine Right -->
+  <!-- pattern. Regeneration carries its independent duration in the tactics action. -->
   <power name="CBELastBastion" type="GeneralEffect">
     <displaynameid>9914097</displaynameid>
     <rolloverid>9914098</rolloverid>
@@ -160,6 +166,9 @@
     <minimapeventtime sendalertto="none">1</minimapeventtime>
     <activetime>5</activetime>
     <effect type="CanTargetButTakesNoDamage">
+      <target type="ProtoUnit">CBELeagueShieldBearer</target>
+    </effect>
+    <effect type="ActionEnable" action="CBELastBastionRegeneration">
       <target type="ProtoUnit">CBELeagueShieldBearer</target>
     </effect>
     <messagealertplayerrelation>none</messagealertplayerrelation>

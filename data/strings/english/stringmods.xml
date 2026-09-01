@@ -828,15 +828,15 @@
 
             <!-- Adventurers League: Shielder Technology Chain -->
             <string _locid="9914060">Shield Discipline</string>
-            <string _locid="9914061">Unlocks Shielder's Block passive, granting a 10% chance to completely block an incoming attack, and increases Shielder's melee armor by 5 percentage points.</string>
+            <string _locid="9914061">Unlocks Shielder's Block passive, granting a 10% chance to completely block an incoming attack, increases Shielder's melee armor by 5 percentage points, and constantly regenerates 2 hit points per second, including during combat.</string>
             <string _locid="9914062">Rise to the Challenge</string>
-            <string _locid="9914063">Unlocks I Am Your Shield and Challenge. Nearby allied military units take 10% less damage. Shielder regenerates 1 hit point per second, even in combat, and gains +5% damage per nearby allied military unit, up to +25%.</string>
+            <string _locid="9914063">Unlocks I Am Your Shield and Challenge. Nearby allied military units take 10% less damage, and Shielder gains +5% damage per nearby allied military unit, up to +25%.</string>
             <string _locid="9914064">Brace for Impact</string>
             <string _locid="9914065">Increases Challenge's damage-reduction duration from 10 to 20 seconds. Shielder also gains +15% damage and +50 hit points.</string>
             <string _locid="9914066">Into the Breach</string>
             <string _locid="9914067">Unlocks Shield Bash and Heavy Strike. Shield Bash deals 25 Hand damage and stuns its target for 3 seconds every 12 seconds. Heavy Strike deals 75 Hand damage with +25% damage against Guardians, Pets, and Infantry every 14 seconds.</string>
             <string _locid="9914068">Hold the Breach</string>
-            <string _locid="9914069">Unlocks Last Bastion. Shielder becomes invulnerable for 5 seconds and, for 14 seconds, regenerates 10 hit points per second and takes 25% less damage. Cooldown: 60 seconds.</string>
+            <string _locid="9914069">Increases Shielder's constant regeneration by another 3 hit points per second, for 5 hit points per second total, and unlocks Last Bastion. Shielder becomes invulnerable for 5 seconds and, for 14 seconds, regenerates an additional 20 hit points per second and takes 25% less damage. Cooldown: 60 seconds.</string>
             <string _locid="9914070">Interpose</string>
             <string _locid="9914071">Shielder technology. Effects to be determined.</string>
             <string _locid="9914072">Unyielding Guardian</string>
@@ -860,18 +860,21 @@
             <string _locid="9914089">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +20% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.25; enemy experience bounty +25% within 26 range (does not stack).</string>
             <string _locid="9914090">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +10%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack).</string>
             <string _locid="9914091">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +15%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second.</string>
-            <string _locid="9914092">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +15%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25 hit points per second while idle; becomes incapacitated instead of dying.</string>
-            <string _locid="9914093">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +60% and +15; damage +40%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25 hit points per second while idle; becomes incapacitated instead of dying; charged-ability cooldown -20%; gains the golden heroic effect.</string>
+            <string _locid="9914092">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +35% and +15; damage +15%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25% of maximum hit points per second while idle; becomes incapacitated instead of dying.</string>
+            <string _locid="9914093">Combat Promotion: Hit points and damage +2% per rank; attack and movement speed +1% every second rank. Upgrade totals: Hit points +60% and +15; damage +40%; line of sight +8; movement speed +5%; Guardian and Pet damage multiplier +0.50; enemy experience bounty +25% within 26 range (does not stack); experience generation +0.15 per second; regeneration +0.25% of maximum hit points per second while idle; becomes incapacitated instead of dying; charged-ability cooldown -20%; gains the golden heroic effect.</string>
 
             <!-- Shielder Class Passive Cumulative Tooltips -->
-            <string _locid="9914094">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points.</string>
-            <string _locid="9914095">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Nearby allied military units within 24 range take 10% less damage. Regeneration: +1 hit point per second. Damage: +5% per nearby ally, up to +25%.</string>
-            <string _locid="9914096">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Nearby allied military units within 24 range take 10% less damage. Regeneration: +1 hit point per second. Damage: +5% per nearby ally, up to +25%. Hit points: +50. Additional damage: +15%.</string>
+            <string _locid="9914094">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Constant regeneration: +2 hit points per second.</string>
+            <string _locid="9914095">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Constant regeneration: +2 hit points per second. Nearby allied military units within 24 range take 10% less damage. Damage: +5% per nearby ally, up to +25%.</string>
+            <string _locid="9914096">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Constant regeneration: +2 hit points per second. Nearby allied military units within 24 range take 10% less damage. Damage: +5% per nearby ally, up to +25%. Hit points: +50. Additional damage: +15%.</string>
 
             <!-- Shielder: Last Bastion -->
             <string _locid="9914097">Last Bastion</string>
-            <string _locid="9914098">Shielder becomes invulnerable for 5 seconds. Cooldown: 60 seconds.</string>
-            <string _locid="9914099">Last Bastion: temporarily invulnerable.</string>
+            <string _locid="9914098">Effect test: Shielder regenerates an additional 20 hit points per second for 14 seconds, including while in combat. Cooldown: 60 seconds.</string>
+            <string _locid="9914099">Last Bastion: +20 hit points per second.</string>
+
+            <!-- Shielder Class Passive: Hold the Breach cumulative state -->
+            <string _locid="9914100">Block: 10% chance to completely block an incoming attack. Melee armor: +5 percentage points. Constant regeneration: +5 hit points per second. Nearby allied military units within 24 range take 10% less damage. Damage: +5% per nearby ally, up to +25%. Hit points: +50. Additional damage: +15%.</string>
 
         </language>
     </stringtable>

@@ -6953,7 +6953,7 @@
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
             <!-- Activates the standard hero-style idle health-regeneration passive. -->
-            <effect type="Data" amount="0.25" subtype="UnitRegenRate" relativity="Assign">
+            <effect type="Data" amount="0.25" subtype="UnitRegenRate" relativity="Absolute">
                 <target type="ProtoUnit">CBEGuildPartyMember</target>
             </effect>
             <!-- Fold regeneration and incapacitation into the universal passive tooltip. -->
@@ -7049,6 +7049,11 @@
                 <target type="ProtoUnit">CBELeagueShieldBearer</target>
             </effect>
 
+            <!-- Enable Shielder's personal constant regeneration of 2 HP per second. -->
+            <effect type="Data" action="CBEShieldDisciplineRegeneration" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBELeagueShieldBearer</target>
+            </effect>
+
             <effect type="TechStatus" status="obtainable">CBERiseToTheChallenge</effect>
             <effect type="CommandAdd" tech="CBERiseToTheChallenge" page="2" column="1">
                 <target type="ProtoUnit">CBEGuildHall</target>
@@ -7072,9 +7077,6 @@
         <effects>
             <!-- Unlock Shielder's core protection aura and personal bonuses. -->
             <effect type="Data" action="CBEIAmYourShieldProtectionAura" amount="1.00" subtype="ActionEnable" relativity="Absolute">
-                <target type="ProtoUnit">CBELeagueShieldBearer</target>
-            </effect>
-            <effect type="Data" action="CBEIAmYourShieldRegeneration" amount="1.00" subtype="ActionEnable" relativity="Absolute">
                 <target type="ProtoUnit">CBELeagueShieldBearer</target>
             </effect>
             <effect type="Data" action="CBEIAmYourShieldAlliedStrength" amount="1.00" subtype="ActionEnable" relativity="Absolute">
@@ -7178,6 +7180,16 @@
             <techstatus status="Active">CBEIntoTheBreach</techstatus>
         </prereqs>
         <effects>
+            <!-- Add another constant 3 HP per second, raising the permanent total to 5 HP per second. -->
+            <effect type="Data" action="CBEHoldTheBreachRegeneration" amount="1.00" subtype="ActionEnable" relativity="Absolute">
+                <target type="ProtoUnit">CBELeagueShieldBearer</target>
+            </effect>
+
+            <!-- Show the cumulative permanent Shielder bonuses in the class-passive tooltip. -->
+            <effect type="Data" amount="1.00" subtype="PowerDataOverride" fromprotopower="CBEShielderClassAbility" toprotopower="CBEShielderClassAbilityHoldTheBreach" relativity="Percent">
+                <target type="Player"></target>
+            </effect>
+
             <!-- Unlock Shielder's second activated ability, Last Bastion. -->
             <effect type="TechStatus" status="obtainable">CBEInterpose</effect>
             <effect type="CommandAdd" tech="CBEInterpose" page="2" column="1">
